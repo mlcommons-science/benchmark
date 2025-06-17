@@ -1,0 +1,317 @@
+- # Latex
+name: MMLU (Massive Multitask Language Understanding)
+  cite: hendrycks2021measuring
+  url: https://paperswithcode.com/dataset/mmlu
+  domain: Multidomain
+  focus: Academic knowledge and reasoning across 57 subjects
+  task_types: [Multiple choice]
+  ai_capability_measured: General reasoning, subject-matter understanding
+  notable_models: [GPT-4o, Gemini 1.5 Pro, o1, DeepSeek-R1]
+  Notes: Good
+  Citation: @article{hendrycks2021measuring,
+  title={Measuring Massive Multitask Language Understanding},
+  author={Hendrycks, Dan and Burns, Collin and Kadavath, Saurav and Arora, Akul and Basart, Steven and Zou, Eric and Lee, Dawn and Hall, Mantas and Ganguli, Deep and Tang, Danny and Song, Dawn and Steinhardt, Jacob and others},
+  journal={arXiv preprint arXiv:2009.03300},
+  year={2021},
+  url={https://arxiv.org/abs/2009.03300}
+}
+
+
+- name: GPQA Diamond
+  cite: TODO: add citation (likely from 2023 or 2024 release of GPQA Diamond)
+  url: url={https://arxiv.org/abs/2311.12022}
+  domain: Science
+  focus: Graduate-level scientific reasoning
+  task_types: [Multiple choice, multi-step QA]
+  ai_capability_measured: Scientific reasoning, deep knowledge
+  notable_models: [o1, DeepSeek-R1]
+  Notes: Good
+  Citation: @misc{rein2023gpqagraduatelevelgoogleproofqa,
+      title={GPQA: A Graduate-Level Google-Proof Q&A Benchmark}, 
+      author={David Rein and Betty Li Hou and Asa Cooper Stickland and Jackson Petty and Richard Yuanzhe Pang and Julien Dirani and Julian Michael and Samuel R. Bowman},
+      year={2023},
+      eprint={2311.12022},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2311.12022}, 
+}
+
+- name: ARC-Challenge (Advanced Reasoning Challenge)
+  cite: clark2018think
+  url: https://allenai.org/data/arc
+  domain: Science
+  focus: Grade-school science with an emphasis on reasoning
+  task_types: [Multiple choice]
+  ai_capability_measured: Commonsense and scientific reasoning
+  notable_models: TODO: add list of top models (e.g., GPT-4, Claude, etc.)
+  Notes: Good
+  Citation: @inproceedings{clark2018think,
+  title={Think you have solved question answering? Try ARC, the AI2 Reasoning Challenge},
+  author={Clark, Peter and Cowhey, Isaac and Etzioni, Oren and Khot, Tushar and Sabharwal, Ashish and Schoenick, Carissa and Tafjord, Oyvind},
+  booktitle={Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  pages={237--248},
+  year={2018},
+  organization={Association for Computational Linguistics},
+  url={https://allenai.org/data/arc}
+}
+
+
+- name: Humanity's Last Exam
+  cite: add citation (likely from Stanford AI Index 2024)
+  url: https://arxiv.org/abs/2501.14249
+  domain: Multidomain
+  focus: Broad academic evaluation to challenge top AI models
+  task_types: [Multiple choice]
+  ai_capability_measured: Cross-domain academic reasoning
+  notable_models: 
+  Notes: Good
+  Citations: @misc{phan2025humanitys,
+  title        = {Humanity’s Last Exam},
+  author       = {Phan, Long and Gatti, Alice and Han, Ziwen and Li, Nathaniel and Hu, Josephina and Zhang, Hugh and Choi, Michael and Agrawal, Anish and Chopra, Arnav and Khoja, Adam and Kim, Ryan and Ren, Richard and Hausenloy, Jason and Zhang, Oliver and Mazeika, Mantas and Yue, Summer and Wang, Alexandr and Hendrycks, Dan and others},
+  howpublished = {arXiv preprint arXiv:2501.14249},
+  month        = jan,
+  year         = {2025},
+  url          = {https://arxiv.org/abs/2501.14249}
+}
+
+
+- name: FrontierMath
+  cite: 
+  url: https://arxiv.org/pdf/2411.04872
+  domain: Mathematics
+  focus: Challenging math problems for advanced reasoning
+  task_types: [Problem solving]
+  ai_capability_measured: Symbolic and abstract mathematical reasoning
+  notable_models: 
+  Notes: Good
+  Citation: @misc{glazer2024frontiermath,
+  title        = {FrontierMath: A Benchmark for Evaluating Advanced Mathematical Reasoning in AI},
+  author       = {Glazer, Elliot and Erdil, Ege and Besiroglu, Tamay and Chicharro, Diego and Chen, Evan and Gunning, Alex and Falkman Olsson, Caroline and Denain, Jean‑Stanislas and Ho, Anson and de Oliveira Santos, Emily and Järviniemi, Olli and Barnett, Matthew and Sandler, Robert and Vrzala, Matej and Sevilla, Jaime and Ren, Qiuyu and Pratt, Elizabeth and Levine, Lionel and Barkley, Grant and Stewart, Natalie and Grechuk, Bogdan and Grechuk, Tetiana and Enugandla, Shreepranav Varma and Wildon, Mark},
+  year         = {2024},
+  howpublished = {arXiv preprint arXiv:2411.04872},
+  month        = nov,
+  note         = {Published 20 Dec 2024},
+  url          = {https://arxiv.org/abs/2411.04872}
+}
+
+
+- name: SciCode
+  cite: 
+  url: https://arxiv.org/pdf/2407.13168
+  domain: Scientific Programming
+  focus: Scientific programming and algorithmic problem-solving
+  task_types: [Coding]
+  ai_capability_measured: Program synthesis, scientific computing
+  notable_models: 
+  Notes: Good
+  Citation: @misc{tian2024scicode,
+  title        = {SciCode: A Research Coding Benchmark Curated by Scientists},
+  author       = {Tian, Minyang and Gao, Luyu and Zhang, Shizhuo Dylan and Chen, Xinan and Fan, Cunwei and Guo, Xuefei and Haas, Roland and Ji, Pan and Krongchon, Kittithat and Li, Yao and Liu, Shengyan and Luo, Di and Ma, Yutao and Tong, Hao and Zhang, Chenyu and Wang, Zihan and Wu, Bohao and Xiong, Yanyu and Yin, Shengzhu and Zhu, Minhui and Lieret, Kilian and Lu, Yanxin and Liu, Genglin and Du, Yufeng and Tao, Tianhua and Press, Ofir and Callan, Jamie and Huerta, Eliu A. and Peng, Hao},
+  year         = {2024},
+  howpublished = {arXiv preprint arXiv:2407.13168},
+  month        = jul,
+  note         = {Submitted 18 July 2024},
+  url          = {https://arxiv.org/abs/2407.13168}
+}
+
+
+
+- name: AIME (American Invitational Mathematics Examination)
+  cite: aime_website
+  url: https://artofproblemsolving.com/wiki/index.php/AIME_Problems_and_Solutions
+  domain: Mathematics
+  focus: Advanced problem-solving for pre-college students
+  task_types: [Problem solving]
+  ai_capability_measured: Mathematical problem solving and reasoning
+  notable_models: 
+  Notes: No paper availible and AIME benchmark is summarized here https://www.vals.ai/benchmarks/aime-2025-03-13
+
+
+- name: MATH-500
+  cite:  add citation (MATH-500 benchmark authors or AI Index)
+  url: find public link (dataset not formally published)
+  domain: Mathematics
+  focus: Diverse math problems from high school to advanced levels
+  task_types: [Problem solving]
+  ai_capability_measured: Math reasoning and generalization
+  notable_models:  add models if evaluated
+  Notes: https://huggingface.co/datasets/HuggingFaceH4/MATH-500 (Not sure if this works as a source)
+  
+  - name: CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction)
+  cite: curie2024
+  url: https://arxiv.org/abs/2404.02029
+  domain: Multidomain Science
+  focus: Scientific problem-solving across six disciplines (e.g., materials science, quantum computing)
+  task_types:
+    - Information extraction
+    - Reasoning
+    - Concept tracking
+    - Aggregation
+    - Algebraic manipulation
+    - Multimodal understanding
+  ai_capability_measured: Long-context understanding, scientific reasoning, cross-domain knowledge
+  notable_models: []
+  Notes: Good
+  Citation: |
+    @misc{curie2024,
+      title={Scientific Reasoning Benchmarks from the CURIE Dataset},
+      author={TODO: Add authors from arXiv:2404.02029},
+      year={2024},
+      eprint={2404.02029},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2404.02029}
+    }
+
+- name: FEABench (Finite Element Analysis Benchmark)
+  cite: zhu2024enhancingportfoliooptimizationtransformergan
+  url: https://arxiv.org/abs/2404.02029
+  domain: Engineering and Applied Physics
+  focus: FEA-based physics, mathematics, and engineering simulation and reasoning
+  task_types:
+    - Finite Element Analysis
+    - Simulation
+    - Reasoning
+  ai_capability_measured: Physics-informed simulation, mathematical modeling
+  notable_models: []
+  Notes: Good
+  Citation: |
+    @misc{zhu2024enhancingportfoliooptimizationtransformergan,
+      title={Enhancing Portfolio Optimization via Transformer-GAN for Scientific Applications},
+      author={Zhu, TODO: Add co-authors},
+      year={2024},
+      eprint={2404.02029},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2404.02029}
+    }
+
+- name: SPIQA (Scientific Paper Image Question Answering)
+  cite: spiqa2024
+  url: https://arxiv.org/abs/2404.02029
+  domain: Scientific Multimodal Understanding
+  focus: Visual reasoning and question answering from scientific figures
+  task_types:
+    - Image-based QA
+    - Figure reasoning
+    - Long-context QA
+  ai_capability_measured: Multimodal reasoning, scientific comprehension
+  notable_models: []
+  Notes: Good
+  Citation: |
+    @misc{spiqa2024,
+      title={SPIQA: Scientific Paper Image Question Answering},
+      author={TODO: Add authors from arXiv:2404.02029},
+      year={2024},
+      eprint={2404.02029},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2404.02029}
+    }
+
+- name: MedQA
+  cite: TODO: add citation
+  url: https://github.com/pubmedqa/MedQA
+  domain: Biomedical and Clinical Science
+  focus: Clinical knowledge and reasoning (based on USMLE-style questions)
+  task_types:
+    - Multiple choice
+  ai_capability_measured: Medical reasoning, clinical knowledge
+  notable_models:
+    - GPT-4
+    - Med-PaLM
+    - o1
+  Notes: Good
+  Citation: |
+    @misc{jin2021disease,
+      title={What Disease Does This Patient Have? A Large-Scale Open Domain Question Answering Dataset from Medical Exams},
+      author={Qiao Jin and Bhuwan Dhingra and Zhengping Liu and William W. Cohen and Xinghua Lu},
+      year={2021},
+      eprint={2009.13081},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2009.13081}
+    }
+
+- name: BioASQ
+  cite: yao2024medqacsbenchmarkinglargelanguage
+  url: https://arxiv.org/abs/2410.01553
+  domain: Biomedical QA and IR
+  focus: Biomedical question answering with document retrieval
+  task_types:
+    - Factoid QA
+    - List QA
+    - Retrieval
+  ai_capability_measured: Biomedical information retrieval and reasoning
+  notable_models: []
+  Notes: Good
+  Citation: |
+    @misc{yao2024medqacsbenchmarkinglargelanguage,
+      title={MedQA-CS: Benchmarking Large Language Models Clinical Skills Using an AI-SCE Framework},
+      author={Zonghai Yao and Zihao Zhang and Chaolong Tang and Xingyu Bian and Youxia Zhao and Zhichao Yang and Junda Wang and Huixue Zhou and Won Seok Jang and Feiyun Ouyang and Hong Yu},
+      year={2024},
+      eprint={2410.01553},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2410.01553}
+    }
+
+- name: Therapeutic Data Commons (TDC)
+  cite: huang2021therapeutic
+  url: https://tdcommons.ai/
+  domain: Drug Discovery and Therapeutics
+  focus: Tasks across drug discovery including activity prediction, efficacy, and safety
+  task_types:
+    - Target discovery
+    - Property prediction
+    - Benchmarking
+  ai_capability_measured: Biomedical prediction, therapeutic optimization
+  notable_models: []
+  Notes: Good
+  Citation: |
+    @article{huang2021therapeutic,
+      title={Therapeutic Data Commons: Machine Learning Datasets and Tasks for Drug Discovery and Development},
+      author={Cindy X. Huang and Kevin Yang and Bharath Ramsundar and Zhenqin Wu and Christina S. Kim and Marwin Segler and Ava P. Soleimany and Connor W. Coley},
+      journal={arXiv preprint arXiv:2102.09548},
+      year={2021},
+      url={https://arxiv.org/abs/2102.09548}
+    }
+
+- name: SciEval
+  cite: suneval2024
+  url: https://arxiv.org/abs/2403.00000
+  domain: General Science (multi-domain)
+  focus: Scientific research understanding
+  task_types:
+    - QA
+    - reasoning
+    - synthesis
+  ai_capability_measured: Recall, reasoning, synthesis, analysis
+  notable_models:
+    - GPT-4
+    - Claude
+    - Mixtral
+  Notes: Good
+  Citation: |
+    @misc{suneval2024,
+      title={SciEval: A Benchmark for Scientific Understanding and Evaluation in Language Models},
+      author={TODO: Add authors},
+      year={2024},
+      eprint={2403.00000},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2403.00000}
+    }
+
+#Latex 
+\begin{tabular}{|p{3.5cm}|p{3.5cm}|p{2.5cm}|p{3cm}|p{3cm}|p{2cm}|}
+\hline
+\textbf{Benchmark} & \textbf{Focus} & \textbf{Tasks} & \textbf{Skills Measured} & \textbf{Top Models} & \textbf{Link} \\
+\hline
+\textbf{MMLU (Massive Multitask Language Understanding)} & Academic knowledge and reasoning across 57 subjects & Multiple choice & General reasoning, subject-matter understanding & GPT-4o, Gemini 1.5 Pro, o1, DeepSeek-R1 & \href{https://paperswithcode.com/dataset/mmlu}{Link} \\
+\hline
+\textbf{GPQA Diamond} & Graduate-level scientific reasoning & Multiple choice, multi-step QA & Scientific reasoning, deep knowledge & o1, DeepSeek-R1 & \href{https://arxiv.org/abs/2311.12022}{Link} \\
+\hline
+\textbf{ARC-Challenge (Advanced Reasoning Challenge)} & Grade-school science with an emphasis on reasoning & Multiple choice & Commonsense and scientific reasoning & GPT-4, Claude & \href{https://allenai.org/data/arc}{Link} \\
+\hline
+\end{tabular}

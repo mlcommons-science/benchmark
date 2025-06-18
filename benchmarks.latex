@@ -1,47 +1,105 @@
 \documentclass{article}
 \usepackage{longtable}
-\usepackage{array}
+\usepackage{geometry}
+\usepackage{hyperref}
 
+\geometry{margin=1in}
 \begin{document}
 
-\begin{longtable}{|>{\raggedright\arraybackslash}p{3cm}|p{5cm}|p{5cm}|p{3cm}|}
-    \hline
-    \textbf{Name} & \textbf{Description} & \textbf{Tasks} & \textbf{Metrics} \\
-    \hline
-    \endfirsthead
-    \hline
-    \textbf{Name} & \textbf{Description} & \textbf{Tasks} & \textbf{Metrics} \\
-    \hline
-    \endhead
-    \hline
-    \endfoot
-    \hline
-    BaisBench (Biological AI Scientist Benchmark) & Designed to assess AI scientists' ability to generate biological discoveries through data analysis and reasoning with external knowledge in omics data-driven research. & Cell type annotation on single-cell datasets, Scientific discovery through multiple-choice questions derived from biological insights of recent single-cell studies. & Accuracy \\
-    \hline
-    MOLGEN & A benchmark for molecular generation tasks in chemistry and drug discovery. & Generating novel molecules with desired properties. & Diversity, Validity, Novelty, Property scores \\
-    \hline
-    Open Graph Benchmark (OGB) - Biology & Graph machine learning benchmarks for biological networks (e.g., protein-protein interaction networks, drug-target interactions). & Node classification, Link prediction, Graph classification on biological graphs. & Accuracy, AUC \\
-    \hline
-    Materials Project & A vast database of material properties, often used as a benchmark for AI models predicting new materials. & Predicting material properties (e.g., bandgaps, formation energies, stability) for inorganic compounds. & Mean Absolute Error (MAE), R-squared \\
-    \hline
-    OCP (Open Catalyst Project) & Benchmarks for discovering new catalysts using AI, focusing on predicting adsorption energies and forces. & Predicting catalyst properties and reaction outcomes. & MAE on energies and forces \\
-    \hline
-    JARVIS-Leaderboard (Joint Automated Repository for Various Integrated Simulations) & NIST-maintained leaderboards for AI models in materials science, covering various properties and simulations. & Material property prediction (e.g., superconducting transition temperature), Image classification in STEM, Force field prediction. & Task-specific metrics (e.g., MAE, accuracy) \\
-    \hline
-    Quantum Computing Benchmarks (e.g., QML Benchmarks) & Evaluates AI models for tasks in quantum computing, such as quantum state preparation, quantum control, and error correction. & Optimizing quantum circuits, Classifying quantum states. & Fidelity, Success probability \\
-    \hline
-    Fluid Dynamics Benchmarks (e.g., based on CFD data) & Benchmarks for AI models in computational fluid dynamics (CFD), such as predicting flow patterns or turbulence. & Solving Navier-Stokes equations, Predicting aerodynamic forces. & Error metrics (e.g., L2 error) \\
-    \hline
-    SatImgNet & Benchmark for analyzing satellite imagery, relevant for climate science, disaster monitoring, and urban planning. & Object detection, Semantic segmentation, Change detection in satellite images. & mAP, IoU, Accuracy \\
-    \hline
-    Climate Model Benchmarks (e.g., forecasting) & Evaluating AI models for climate forecasting, predicting weather patterns, and understanding climate change. & Predicting temperature, Precipitation, Extreme weather events. & RMSE, Bias \\
-    \hline
-    BIG-Bench (Beyond the Imitation Game Benchmark) & A very large and diverse benchmark that includes many tasks requiring scientific reasoning and knowledge, often pushing the limits of language models. & Problem-solving, Knowledge recall, Common-sense reasoning across a wide array of topics, including scientific ones. & Accuracy, Various task-specific metrics \\
-    \hline
-    CommonSenseQA & Tests common sense reasoning, which is crucial for scientific understanding and problem-solving. & Answering multiple-choice questions that require context utilization and human-like language understanding. & Accuracy \\
-    \hline
-    Winogrande & Assesses commonsense reasoning by resolving ambiguities in sentences that require an understanding of context. & Disambiguating sentences based on contextual understanding. & AUC \\
-    \hline
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{6pt}
+
+\begin{longtable}{|p{3.5cm}|p{5cm}|p{3.5cm}|p{2cm}|}
+\hline
+\textbf{Benchmark} & \textbf{Description / Tasks} & \textbf{Metrics} & \textbf{Citation / Resource} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Benchmark} & \textbf{Description / Tasks} & \textbf{Metrics} & \textbf{Citation / Resource} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+BaisBench & 
+Cell type annotation and scientific discovery in single-cell omics studies. & 
+Accuracy & 
+\cite{@misc{luo2025benchmarkingaiscientistsomics}} \newline \url{https://arxiv.org/abs/2505.08341} \\
+\hline
+
+MOLGEN & 
+Generating novel molecules with desired properties. & 
+Diversity, Validity, Novelty, Property scores & 
+\url{https://github.com/zjunlp/MolGen} \\
+\hline
+
+OGB - Biology & 
+Graph ML on biological networks (PPI, DTI). Tasks: Node classification, link prediction. & 
+Accuracy, AUC & 
+\cite{@misc{hu2021opengraphbenchmarkdatasets}} \newline \url{https://ogb.stanford.edu/docs/home/} \\
+\hline
+
+Materials Project & 
+Predict material properties like bandgaps, formation energies. & 
+MAE, R\textsuperscript{2} & 
+\url{https://materialsproject.org/} \\
+\hline
+
+Open Catalyst Project (OCP) & 
+Predict adsorption energies and reaction outcomes for catalysts. & 
+MAE (energies, forces) & 
+\url{https://opencatalystproject.org/} \\
+\hline
+
+JARVIS-Leaderboard & 
+Material property prediction, image classification in STEM, force field prediction. & 
+Task-specific metrics (e.g., MAE) & 
+\url{https://pages.nist.gov/jarvis_leaderboard/} \\
+\hline
+
+Quantum Computing Benchmarks & 
+Quantum state preparation, circuit optimization, error correction. & 
+Fidelity, Success probability & 
+\url{https://github.com/XanaduAI/qml-benchmarks}, \newline \url{https://pennylane.ai/datasets/collection/qml-benchmarks} \\
+\hline
+
+CFDBench & 
+AI for computational fluid dynamics (CFD). Solve Navier-Stokes, predict flow. & 
+L2 error & 
+\cite{@misc{luo2024cfdbenchlargescalebenchmarkmachine}} \newline \url{https://arxiv.org/abs/2310.05963} \\
+\hline
+
+SatImgNet & 
+Satellite image analysis: object detection, segmentation, change detection. & 
+mAP, IoU, Accuracy & 
+(No paper or official link) \\
+\hline
+
+Climate Model Benchmarks & 
+Forecasting temperature, precipitation, extreme weather events. & 
+RMSE, Bias & 
+\cite{@misc{nguyen2023climatelearnbenchmarkingmachinelearning}} \newline \url{https://arxiv.org/abs/2307.01909} \\
+\hline
+
+BIG-Bench & 
+General reasoning and knowledge benchmark across many domains. & 
+Accuracy, Task-specific & 
+\cite{@article{srivastava2023beyond}} \newline \url{https://github.com/google/BIG-bench} \\
+\hline
+
+CommonSenseQA & 
+Multiple-choice QA requiring commonsense reasoning. & 
+Accuracy & 
+\cite{@misc{alontalmor2019commonsenseqa}} \newline \url{https://paperswithcode.com/paper/commonsenseqa-a-question-answering-challenge} \\
+\hline
+
+Winogrande & 
+Disambiguating context-rich sentences using commonsense. & 
+AUC & 
+\url{https://leaderboard.allenai.org/winogrande/submissions/public} \\
+\hline
+
 \end{longtable}
 
 \end{document}

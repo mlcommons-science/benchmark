@@ -44,15 +44,16 @@
   notable_models: (Various graph neural networks and other graph ML models)
   resources: "https://ogb.stanford.edu/docs/home/"
   notes: Focuses on graph NNs
-  cite: \cite{@misc{hu2021opengraphbenchmarkdatasets,
-      title={Open Graph Benchmark: Datasets for Machine Learning on Graphs}, 
-      author={Weihua Hu and Matthias Fey and Marinka Zitnik and Yuxiao Dong and Hongyu Ren and Bowen Liu and Michele Catasta and Jure Leskovec},
-      year={2021},
-      eprint={2005.00687},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2005.00687}, 
-  }}
+  cite: |
+    @misc{hu2021opengraphbenchmarkdatasets,
+        title={Open Graph Benchmark: Datasets for Machine Learning on Graphs}, 
+        author={Weihua Hu and Matthias Fey and Marinka Zitnik and Yuxiao Dong and Hongyu Ren and Bowen Liu and Michele Catasta and Jure Leskovec},
+        year={2021},
+        eprint={2005.00687},
+        archivePrefix={arXiv},
+        primaryClass={cs.LG},
+        url={https://arxiv.org/abs/2005.00687}, 
+    }
 
 - name: Materials Project
   description: A vast database of material properties, often used as a benchmark for AI models predicting new materials.
@@ -113,15 +114,16 @@
   notable_models: (Physics-informed neural networks, traditional ML models)
   resources: "https://arxiv.org/abs/2310.05963"
   notes: The link leads to a paper called CFDBench. Nowhere in the CFDBench paper does the word 'aerodynamic' appear.
-  cite: \cite{@misc{luo2024cfdbenchlargescalebenchmarkmachine,
-      title={CFDBench: A Large-Scale Benchmark for Machine Learning Methods in Fluid Dynamics}, 
-      author={Yining Luo and Yingfa Chen and Zhen Zhang},
-      year={2024},
-      eprint={2310.05963},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2310.05963}, 
-  }}
+  cite: |
+    @misc{luo2024cfdbenchlargescalebenchmarkmachine,
+        title={CFDBench: A Large-Scale Benchmark for Machine Learning Methods in Fluid Dynamics}, 
+        author={Yining Luo and Yingfa Chen and Zhen Zhang},
+        year={2024},
+        eprint={2310.05963},
+        archivePrefix={arXiv},
+        primaryClass={cs.LG},
+        url={https://arxiv.org/abs/2310.05963}, 
+    }
   
 - name: SatImgNet
   description: Benchmark for analyzing satellite imagery, relevant for climate science, disaster monitoring, and urban planning.
@@ -150,15 +152,16 @@
   notable_models: (Neural weather models, climate models)
   resources: "https://arxiv.org/abs/2307.01909"
   notes: Closest result on Google is ClimateLearn, a framework for simplifying training/evaluation for ML models
-  cite: \cite{@misc{nguyen2023climatelearnbenchmarkingmachinelearning,
+  cite: |
+    @misc{nguyen2023climatelearnbenchmarkingmachinelearning,
       title={ClimateLearn: Benchmarking Machine Learning for Weather and Climate Modeling}, 
       author={Tung Nguyen and Jason Jewik and Hritik Bansal and Prakhar Sharma and Aditya Grover},
       year={2023},
       eprint={2307.01909},
       archivePrefix={arXiv},
       primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2307.01909}, 
-  }}
+      url={https://arxiv.org/abs/2307.01909}
+    }
   
 - name: BIG-Bench (Beyond the Imitation Game Benchmark)
   description: A very large and diverse benchmark that includes many tasks requiring scientific reasoning and knowledge, often pushing the limits of language models.
@@ -172,14 +175,15 @@
   notable_models: (Many large language models are evaluated on BIG-Bench)
   resources: "https://github.com/google/BIG-bench"
   notes: The citation provided already appears in the Benchmark Carpentry paper's bibliography, so the provided citation is copied from there.
-  cite: \cite{@article{srivastava2023beyond,
-    title={Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models},
-    author={BIG-bench authors},
-    journal={Transactions on Machine Learning Research},
-    issn={2835-8856},
-    year={2023},
-    url={https://openreview.net/forum?id=uyTL5Bvosj},
-  }}
+  cite: |
+    @article{srivastava2023beyond,
+      title={Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models},
+      author={BIG-bench authors},
+      journal={Transactions on Machine Learning Research},
+      issn={2835-8856},
+      year={2023},
+      url={https://openreview.net/forum?id=uyTL5Bvosj},
+    }
 
 - name: CommonSenseQA
   description: Tests common sense reasoning, which is crucial for scientific understanding and problem-solving.
@@ -190,12 +194,13 @@
   notable_models: (Evaluated across various LLMs)
   resources: "https://paperswithcode.com/paper/commonsenseqa-a-question-answering-challenge"
   notes: This new link leads to the paper. No provided BibTex, so the BibTex citation wa manually written.
-  cite: \cite{@misc{alontalmor2019commonsenseqa,
-      title={CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge}, 
-      author={Alon Talmor and Jonathan Herzig and Nicholas Lourie and Jonathan Berant},
-      year={2019},
-      url={https://paperswithcode.com/paper/commonsenseqa-a-question-answering-challenge}, 
-  }}
+  cite: |
+    @misc{alontalmor2019commonsenseqa,
+        title={CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge}, 
+        author={Alon Talmor and Jonathan Herzig and Nicholas Lourie and Jonathan Berant},
+        year={2019},
+        url={https://paperswithcode.com/paper/commonsenseqa-a-question-answering-challenge}, 
+    }
   
 - name: Winogrande
   description: Assesses commonsense reasoning by resolving ambiguities in sentences that require an understanding of context.

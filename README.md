@@ -5,6 +5,12 @@
 
 This is the list of current attriutes
 
+* date: date first found
+
+* expired: date when we first noted it is no longer valid
+
+* valid: yes if still valid
+
 * name: The name of the benchmark
 
 * url: The main url for the benchmark

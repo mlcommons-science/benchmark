@@ -31,3 +31,20 @@ This is the list of current attriutes
 * notes: additinal notes to this benchmark
 
 * cite: citations as enumerated list in bibtex format
+
+
+## Proposed Markdown
+
+
+```
+# Science Benchmarks
+
+## Name of the benchmark
+
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
+
+
+```

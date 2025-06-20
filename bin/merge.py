@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import yaml
 
 def load_yaml_file(filename):

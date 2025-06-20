@@ -47,10 +47,11 @@ This is the list of current attriutes
 
 ## Name of the benchmark
 
-| Syntax | Description |
+| Attribute | Description |
 | ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text |
+| name | abc |
+| date | xyz |
+...
 
 
 ```

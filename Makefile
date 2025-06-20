@@ -1,10 +1,10 @@
 # makefile that will create all the content
 
 all: content index
-  echo TODO
+	echo TODO
 
 content:
-  echo TODO
+	echo TODO
 
 index:
-  echo TODO
+	echo TODO

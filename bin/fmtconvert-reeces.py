@@ -1,5 +1,12 @@
 #!/usr/bin/env python
 
+"""
+Module to convert YAML tables into other formats
+
+If in the bin/ directory, to convert a table in source/table.yaml to Markdown:
+python fmtconvert.py ../source/table.yaml --md ../content/table.md
+"""
+
 import argparse
 import os
 import yaml
@@ -7,10 +14,11 @@ import yaml
 
 # Predefined list of all possible column names
 ALL_COLUMNS = [ 
+    "date", "expiration", "valid", 
     "name", "url", "domain", "focus",
     "keyword", "description", "task_types", "ai_capability_measured",
     "metrics", "models", "notes", 
-    "date", "expiration", "valid", "cite"
+    "cite"
 ]
 
 DEFAULT_OUTPUT_DIR = os.path.join("..", "source")
@@ -62,7 +70,7 @@ def write_markdown(records, output_path):
     Each row in `records` becomes one row of the table.
 
     Parameters:
-        records: a nested list containing the table's contents
+        records: a list containing the table's contents
         output_path: filepath to the output file
     """
 

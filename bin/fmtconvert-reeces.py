@@ -117,6 +117,11 @@ def write_latex(records: list[list], output_path:str) -> None:
         # Write records
         for record in records:
             row = " & ".join([str(record.get(col, '')) for col in ALL_COLUMNS])
+            
+            #Bugfix: % is a comment in Latex
+            row = row.replace("(%)", "(percent)")
+            row = row.replace("%", " percent")
+
             f.write(row + " \\\\ \\hline\n")
         
         f.write("\\end{tabular}\n\\end{table}\n")

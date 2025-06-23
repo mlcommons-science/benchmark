@@ -120,8 +120,8 @@
     - multiple-choice
     - multidisciplinary
   description: |
-    Humanity’s Last Exam is a multi-domain, multiple-choice benchmark containing 2,000
-    questions across diverse academic disciplines, designed to evaluate LLMs’ ability to
+    Humanity's Last Exam is a multi-domain, multiple-choice benchmark containing 2,000
+    questions across diverse academic disciplines, designed to evaluate LLMs' ability to
     reason across domains without external resources.
   task_types:
     - Multiple choice
@@ -132,7 +132,7 @@
   notes: Good
   cite:
     - "@misc{phan2025humanitys,
-       title={Humanity’s Last Exam},
+       title={Humanity's Last Exam},
        author={Phan, Long and Gatti, Alice and Han, Ziwen and others},
        year={2025},
        url={https://arxiv.org/abs/2501.14249}

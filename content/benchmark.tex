@@ -1,0 +1,74 @@
+% Output of format converting Python script
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l | l | l | l | l | l | l | l | l | l | l | l | l | l | l|}
+\hline
+date & expiration & valid & name & url & domain & focus & keyword & description & task_types & ai_capability_measured & metrics & models & notes & cite \\ \hline
+None & None & None & MMLU (Massive Multitask Language Understanding) & https://paperswithcode.com/dataset/mmlu & Multidomain & Academic knowledge and reasoning across 57 subjects & None & None & ['Multiple choice'] & General reasoning, subject-matter understanding & None & None & None & hendrycks2021measuring \\ \hline
+None & None & None & GPQA Diamond & https://arxiv.org/abs/2311.12022 & Science & Graduate-level scientific reasoning & None & None & ['Multiple choice', 'Multi-step QA'] & Scientific reasoning, deep knowledge & None & None & None & add citation \\ \hline
+None & None & None & ARC-Challenge (Advanced Reasoning Challenge) & https://allenai.org/data/arc & Science & Grade-school science with an emphasis on reasoning & None & None & ['Multiple choice'] & Commonsense and scientific reasoning & None & None & None & clark2018think \\ \hline
+None & None & None & Humanity's Last Exam & https://arxiv.org/abs/2501.14249 & Multidomain & Broad academic evaluation to challenge top AI models & None & None & ['Multiple choice'] & Cross-domain academic reasoning & None & None & None & add citation \\ \hline
+None & None & None & FrontierMath & https://arxiv.org/abs/2411.04872 & Mathematics & Challenging math problems for advanced reasoning & None & None & ['Problem solving'] & Symbolic and abstract mathematical reasoning & None & None & None & add citation \\ \hline
+None & None & None & SciCode & https://arxiv.org/abs/2407.13168 & Scientific Programming & Scientific programming and algorithmic problem-solving & None & None & ['Coding'] & Program synthesis, scientific computing & None & None & None & add citation \\ \hline
+None & None & None & AIME (American Invitational Mathematics Examination) & https://artofproblemsolving.com/wiki/index.php/AIME_Problems_and_Solutions & Mathematics & Advanced problem-solving for pre-college students & None & None & ['Problem solving'] & Mathematical problem solving and reasoning & None & None & None & aime_website \\ \hline
+None & None & None & MATH-500 & https://huggingface.co/datasets/HuggingFaceH4/MATH-500 & Mathematics & Diverse math problems from high school to advanced levels & None & None & ['Problem solving'] & Math reasoning and generalization & None & None & None & add citation \\ \hline
+None & None & None & CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction) & https://arxiv.org/abs/2404.02029 & Multidomain Science & Scientific problem-solving across six disciplines (e.g., materials science, quantum computing) & None & None & ['Information extraction', 'Reasoning', 'Concept tracking', 'Aggregation', 'Algebraic manipulation', 'Multimodal understanding'] & Long-context understanding, scientific reasoning, cross-domain knowledge & None & None & None & curie2024 \\ \hline
+None & None & None & FEABench (Finite Element Analysis Benchmark) & https://arxiv.org/abs/2404.02029 & Engineering and Applied Physics & FEA-based physics, mathematics, and engineering simulation and reasoning & None & None & ['Finite Element Analysis', 'Simulation', 'Reasoning'] & Physics-informed simulation, mathematical modeling & None & None & None & zhu2024enhancingportfoliooptimizationtransformergan \\ \hline
+None & None & None & SPIQA (Scientific Paper Image Question Answering) & https://arxiv.org/abs/2404.02029 & Scientific Multimodal Understanding & Visual reasoning and question answering from scientific figures & None & None & ['Image-based QA', 'Figure reasoning', 'Long-context QA'] & Multimodal reasoning, scientific comprehension & None & None & None & spiqa2024 \\ \hline
+None & None & None & MedQA & https://github.com/pubmedqa/MedQA & Biomedical and Clinical Science & Clinical knowledge and reasoning (based on USMLE-style questions) & None & None & None & None & None & None & None & add citation \\ \hline
+None & None & None & BaisBench (Biological AI Scientist Benchmark) & https://arxiv.org/abs/2505.08341 & None & Designed to assess AI scientists' ability to generate biological discoveries through data analysis and reasoning with external knowledge in omics data-driven research. & None & None & ['Cell type annotation on single-cell datasets', 'Scientific discovery through multiple-choice questions derived from biological insights of recent single-cell studies.'] & Accuracy & None & None & None & \cite{@misc{luo2025benchmarkingaiscientistsomics, title={Benchmarking AI scientists in omics data-driven biological research}, author={Erpai Luo and Jinmeng Jia and Yifan Xiong and Xiangyu Li and Xiaobo Guo and Baoqi Yu and Lei Wei and Xuegong Zhang}, year={2025}, eprint={2505.08341}, archivePrefix={arXiv}, primaryClass={cs.AI}, url={https://arxiv.org/abs/2505.08341}, }} \\ \hline
+None & None & None & MOLGEN & (Often part of broader computational chemistry AI platforms) & None & A benchmark for molecular generation tasks in chemistry and drug discovery. & None & None & ['Generating novel molecules with desired properties.'] & Diversity, Validity, Novelty, Property scores & None & None & None & None \\ \hline
+None & None & None & Open Graph Benchmark (OGB) - Biology & https://ogb.stanford.edu/docs/home/ & None & Graph machine learning benchmarks for biological networks (e.g., protein-protein interaction networks, drug-target interactions). & None & None & ['Node classification', 'Link prediction', 'Graph classification on biological graphs'] & Accuracy, AUC & None & None & None & @misc{hu2021opengraphbenchmarkdatasets,
+    title={Open Graph Benchmark: Datasets for Machine Learning on Graphs}, 
+    author={Weihua Hu and Matthias Fey and Marinka Zitnik and Yuxiao Dong and Hongyu Ren and Bowen Liu and Michele Catasta and Jure Leskovec},
+    year={2021},
+    eprint={2005.00687},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG},
+    url={https://arxiv.org/abs/2005.00687}, 
+}
+ \\ \hline
+None & None & None & Materials Project & https://materialsproject.org/ & None & A vast database of material properties, often used as a benchmark for AI models predicting new materials. & None & None & ['Predicting material properties (e.g., bandgaps, formation energies, stability) for inorganic compounds.'] & Mean Absolute Error (MAE), R-squared & None & None & None & None \\ \hline
+None & None & None & OCP (Open Catalyst Project) & https://opencatalystproject.org/ & None & Benchmarks for discovering new catalysts using AI, focusing on predicting adsorption energies and forces. & None & None & ['Predicting catalyst properties and reaction outcomes.'] & MAE on energies and forces & None & None & None & None \\ \hline
+None & None & None & JARVIS-Leaderboard (Joint Automated Repository for Various Integrated Simulations) & https://pages.nist.gov/jarvis_leaderboard/ & None & NIST-maintained leaderboards for AI models in materials science, covering various properties and simulations. & None & None & ['Material property prediction (e.g., superconducting transition temperature)', 'Image classification in STEM', 'Force field prediction.'] & Task-specific metrics (e.g., MAE, accuracy) & None & None & None & None \\ \hline
+None & None & None & Quantum Computing Benchmarks (e.g., QML Benchmarks) & ['https://github.com/XanaduAI/qml-benchmarks', 'https://pennylane.ai/datasets/collection/qml-benchmarks'] & None & Evaluates AI models for tasks in quantum computing, such as quantum state preparation, quantum control, and error correction. & None & None & ['Optimizing quantum circuits', 'Classifying quantum states.'] & Fidelity, Success probability & None & None & None & None \\ \hline
+None & None & None & Fluid Dynamics Benchmarks (e.g., based on CFD data) & https://arxiv.org/abs/2310.05963 & None & Benchmarks for AI models in computational fluid dynamics (CFD), such as predicting flow patterns or turbulence. & None & None & ['Solving Navier-Stokes equations', 'Predicting aerodynamic forces.'] & Error metrics (e.g., L2 error) & None & None & None & @misc{luo2024cfdbenchlargescalebenchmarkmachine,
+    title={CFDBench: A Large-Scale Benchmark for Machine Learning Methods in Fluid Dynamics}, 
+    author={Yining Luo and Yingfa Chen and Zhen Zhang},
+    year={2024},
+    eprint={2310.05963},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG},
+    url={https://arxiv.org/abs/2310.05963}, 
+}
+ \\ \hline
+None & None & None & SatImgNet & None & None & Benchmark for analyzing satellite imagery, relevant for climate science, disaster monitoring, and urban planning. & None & None & ['Object detection', 'Semantic segmentation', 'Change detection in satellite images.'] & mAP, IoU, Accuracy & None & None & None & None \\ \hline
+None & None & None & Climate Model Benchmarks (e.g., forecasting) & https://arxiv.org/abs/2307.01909 & None & Evaluating AI models for climate forecasting, predicting weather patterns, and understanding climate change. & None & None & ['Predicting temperature', 'Precipitation', 'Extreme weather events.'] & RMSE, Bias & None & None & None & @misc{nguyen2023climatelearnbenchmarkingmachinelearning,
+  title={ClimateLearn: Benchmarking Machine Learning for Weather and Climate Modeling}, 
+  author={Tung Nguyen and Jason Jewik and Hritik Bansal and Prakhar Sharma and Aditya Grover},
+  year={2023},
+  eprint={2307.01909},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG},
+  url={https://arxiv.org/abs/2307.01909}
+}
+ \\ \hline
+None & None & None & BIG-Bench (Beyond the Imitation Game Benchmark) & https://github.com/google/BIG-bench & None & A very large and diverse benchmark that includes many tasks requiring scientific reasoning and knowledge, often pushing the limits of language models. & None & None & ['Problem-solving', 'Knowledge recall', 'Common-sense reasoning across a wide array of topics, including scientific ones.'] & Accuracy, Various task-specific metrics. & None & None & None & @article{srivastava2023beyond,
+  title={Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models},
+  author={BIG-bench authors},
+  journal={Transactions on Machine Learning Research},
+  issn={2835-8856},
+  year={2023},
+  url={https://openreview.net/forum?id=uyTL5Bvosj},
+}
+ \\ \hline
+None & None & None & CommonSenseQA & https://paperswithcode.com/paper/commonsenseqa-a-question-answering-challenge & None & Tests common sense reasoning, which is crucial for scientific understanding and problem-solving. & None & None & ['Answering multiple-choice questions that require context utilization and human-like language understanding.'] & Accuracy & None & None & None & @misc{alontalmor2019commonsenseqa,
+    title={CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge}, 
+    author={Alon Talmor and Jonathan Herzig and Nicholas Lourie and Jonathan Berant},
+    year={2019},
+    url={https://paperswithcode.com/paper/commonsenseqa-a-question-answering-challenge}, 
+}
+ \\ \hline
+None & None & None & Winogrande & https://leaderboard.allenai.org/winogrande/submissions/public & None & Assesses commonsense reasoning by resolving ambiguities in sentences that require an understanding of context. & None & None & ['Disambiguating sentences based on contextual understanding.'] & AUC & None & None & None & None \\ \hline
+\end{tabular}
+\end{table}

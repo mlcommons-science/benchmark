@@ -455,7 +455,7 @@
     - Docking score
   models:
     - MolGen
-  notes: Domain-agnostic prefix tuning; SELFIES-based
+  notes: This is a model, not a benchmark
   cite:
     - "@article{fang2023domain,
        title={Domain-Agnostic Molecular Generation with Chemical Feedback},
@@ -546,7 +546,7 @@
     - adsorption energy
     - graph neural networks
   description: |
-    The Open Catalyst Project (OC20 & OC22) provides DFT-calculated catalyst–adsorbate 
+    The Open Catalyst Project (OC20 & OC22) provides DFT-calculated catalyst-adsorbate 
     relaxation datasets, challenging ML models to predict energies and forces for 
     renewable energy applications.
   task_types:
@@ -687,7 +687,7 @@
     - multi-task
   description: |
     SATIN (sometimes referred to as SatImgNet) is a multi-task metadataset of 27 satellite
-    imagery classification datasets evaluating zero-shot transfer of vision–language models
+    imagery classification datasets evaluating zero-shot transfer of vision-language models
     across diverse remote sensing tasks.
   task_types:
     - Image classification
@@ -727,7 +727,7 @@
   models:
     - CNN baselines
     - ResNet variants
-  notes: Includes physical and ML baselines
+  notes: Includes physical and ML baselines. Appears to be the same as the SatImgNet entry
   cite:
     - "@misc{nguyen2023climatelearnbenchmarkingmachinelearning, title={ClimateLearn:
       Benchmarking Machine Learning for Weather and Climate Modeling}, author={Tung\
@@ -747,7 +747,7 @@
     - multi-task
     - bias analysis
   description: |
-    BIG-Bench is a collaborative suite of 204 tasks designed to probe LLMs’ reasoning, 
+    BIG-Bench is a collaborative suite of 204 tasks designed to probe LLMs' reasoning, 
     knowledge, and bias across diverse domains and difficulty levels beyond simple imitation.
   task_types:
     - Few-shot evaluation

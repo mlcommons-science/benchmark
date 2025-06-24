@@ -1,0 +1,54 @@
+
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\usepackage{pdflscape}
+\usepackage{wasysym}
+\usepackage{longtable}
+\usepackage[style=ieee, url=true]{biblatex}
+\addbibresource{benchmarks.bib}
+\begin{document}
+\begin{landscape}
+{\footnotesize
+\begin{longtable}{|p{1.5cm}|p{2.5cm}|p{2cm}|p{2cm}|p{2.5cm}|p{3cm}|p{2cm}|p{2cm}|p{1cm}|}
+\hline
+Date & Name & Domain & Focus & Keyword & Task Types & Metrics & Models & Citation \\ \hline
+\endfirsthead
+\hline
+Date & Name & Domain & Focus & Keyword & Task Types & Metrics & Models & Citation \\ \hline
+\endhead
+\hline
+\multicolumn{9}{r}{Continued on next page} \\
+\endfoot
+\hline
+\endlastfoot
+2020-09-07 & MMLU (Massive Multitask Language Understanding) & Multidomain & Academic knowledge and reasoning across 57 subjects & [multitask, multiple-choice, zero-shot, few-shot, knowledge probing] & [Multiple choice] & [Accuracy] & [GPT-4o, Gemini 1.5 Pro, o1, DeepSeek-R1] & \cite{hendrycks2021measuring} \href{https://arxiv.org/abs/2009.03300}{$\Rightarrow$ } \\ \hline
+2023-11-20 & GPQA Diamond & Science & Graduate-level scientific reasoning & [Google-proof, graduate-level, science QA, chemistry, physics] & [Multiple choice, Multi-step QA] & [Accuracy] & [o1, DeepSeek-R1] & \cite{rein2023gpqagraduatelevelgoogleproofqa} \href{https://arxiv.org/abs/2311.12022}{$\Rightarrow$ } \\ \hline
+2018-03-14 & ARC-Challenge (Advanced Reasoning Challenge) & Science & Grade-school science with reasoning emphasis & [grade-school, science QA, challenge set, reasoning] & [Multiple choice] & [Accuracy] & [GPT-4, Claude] & \cite{clark2018think} \href{https://allenai.org/data/arc}{$\Rightarrow$ } \\ \hline
+2025-01-24 & Humanity's Last Exam & Multidomain & Broad cross-domain academic reasoning & [cross-domain, academic exam, multiple-choice, multidisciplinary] & [Multiple choice] & [Accuracy] & [] & \cite{phan2025humanitys} \href{https://arxiv.org/abs/2501.14249}{$\Rightarrow$ } \\ \hline
+2024-11-07 & FrontierMath & Mathematics & Challenging advanced mathematical reasoning & [symbolic reasoning, number theory, algebraic geometry, category theory] & [Problem solving] & [Accuracy] & [] & \cite{glazer2024frontiermath} \href{https://arxiv.org/abs/2411.04872}{$\Rightarrow$ } \\ \hline
+2024-07-18 & SciCode & Scientific Programming & Scientific code generation and problem solving & [code synthesis, scientific computing, programming benchmark] & [Coding] & [Solve rate ( percent)] & [Claude3.5-Sonnet] & \cite{tian2024scicode} \href{https://arxiv.org/abs/2407.13168}{$\Rightarrow$ } \\ \hline
+2025-03-13 & AIME (American Invitational Mathematics Examination) & Mathematics & Pre-college advanced problem solving & [algebra, combinatorics, number theory, geometry] & [Problem solving] & [Accuracy] & [] & \cite{www-aime} \href{https://www.vals.ai/benchmarks/aime-2025-03-13}{$\Rightarrow$ } \\ \hline
+2025-02-15 & MATH-500 & Mathematics & Math reasoning generalization & [calculus, algebra, number theory, geometry] & [Problem solving] & [Accuracy] & [] & \cite{huggingface2025math500} \href{https://huggingface.co/datasets/HuggingFaceH4/MATH-500}{$\Rightarrow$ } \\ \hline
+2024-04-02 & CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction) & Multidomain Science & Long-context scientific reasoning & [long-context, information extraction, multimodal] & [Information extraction, Reasoning, Concept tracking, Aggregation, Algebraic manipulation, Multimodal comprehension] & [Accuracy] & [] & \cite{curie2024} \href{https://arxiv.org/abs/2404.02029}{$\Rightarrow$ } \\ \hline
+2023-01-26 & FEABench (Finite Element Analysis Benchmark) & Computational Engineering & FEA simulation accuracy and performance & [finite element, simulation, PDE] & [Simulation, Performance evaluation] & [Solve time, Error norm] & [FEniCS, deal.II] & \cite{allen2023feabench} \href{https://github.com/alleninstitute/feabench}{$\Rightarrow$ } \\ \hline
+2024-07-12 & SPIQA (Scientific Paper Image Question Answering) & Computer Science & Multimodal QA on scientific figures & [multimodal QA, figure understanding, table comprehension, chain-of-thought] & [Question answering, Multimodal QA, Chain-of-Thought evaluation] & [Accuracy, F1 score] & [Chain-of-Thought models, Multimodal QA systems] & \cite{zhong2024spiqa} \href{https://arxiv.org/abs/2407.09413}{$\Rightarrow$ } \\ \hline
+2020-09-28 & MedQA & Medical Question Answering & Medical board exam QA & [USMLE, diagnostic QA, medical knowledge, multilingual] & [Multiple choice] & [Accuracy] & [Neural reader, Retrieval-based QA systems] & \cite{jin2020what} \href{https://arxiv.org/abs/2009.13081}{$\Rightarrow$ } \\ \hline
+2025-05-13 & BaisBench (Biological AI Scientist Benchmark) & Computational Biology & Omics-driven AI research tasks & [single-cell annotation, biological QA, autonomous discovery] & [Cell type annotation, Multiple choice] & [Annotation accuracy, QA accuracy] & [LLM-based AI scientist agents] & \cite{luo2025benchmarkingaiscientistsomics} \href{https://arxiv.org/abs/2505.08341}{$\Rightarrow$ } \\ \hline
+2023-01-26 & MOLGEN & Computational Chemistry & Molecular generation and optimization & [SELFIES, GAN, property optimization] & [Distribution learning, Goal-oriented generation] & [Validity percent, Novelty percent, QED, Docking score] & [MolGen] & \cite{fang2023domain} \href{https://arxiv.org/abs/2301.11259}{$\Rightarrow$ } \\ \hline
+2020-05-02 & Open Graph Benchmark (OGB) - Biology & Graph ML & Biological graph property prediction & [node prediction, link prediction, graph classification] & [Node property prediction, Link property prediction, Graph property prediction] & [Accuracy, ROC-AUC] & [GCN, GraphSAGE, GAT] & \cite{hu2020ogb} \href{https://arxiv.org/abs/2005.00687}{$\Rightarrow$ } \\ \hline
+2011-10-01 & Materials Project & Materials Science & DFT-based property prediction & [DFT, materials genome, high-throughput] & [Property prediction] & [MAE, R²] & [Automatminer, Crystal Graph Neural Networks] & \cite{jain2013materials} \href{https://materialsproject.org/}{$\Rightarrow$ } \\ \hline
+2020-10-20 & OCP (Open Catalyst Project) & Chemistry; Materials Science & Catalyst adsorption energy prediction & [DFT relaxations, adsorption energy, graph neural networks] & [Energy prediction, Force prediction] & [MAE (energy), MAE (force)] & [CGCNN, SchNet, DimeNet++, GemNet-OC] & \cite{chanussot2021oc20, tran2023oc22, doi:10.1021/acscatal.0c04525, tran2023b} \href{https://pubs.acs.org/doi/10.1021/acscatal.0c04525}{$\Rightarrow$ } \\ \hline
+2023-06-20 & JARVIS-Leaderboard & Materials Science; Benchmarking & Comparative evaluation of materials design methods & [leaderboards, materials methods, simulation] & [Method benchmarking, Leaderboard ranking] & [MAE, RMSE, Accuracy] & [] & \cite{choudhary2024jarvis} \href{https://doi.org/10.1038/s41524-024-01259-w}{$\Rightarrow$ } \\ \hline
+2022-02-22 & Quantum Computing Benchmarks (QML) & Quantum Computing & Quantum algorithm performance evaluation & [quantum circuits, state preparation, error correction] & [Circuit benchmarking, State classification] & [Fidelity, Success probability] & [IBM Q, IonQ, AQT@LBNL] & \cite{kiwit2023} \href{http://dx.doi.org/10.1109/QCE57702.2023.00061}{$\Rightarrow$ } \\ \hline
+2024-10-01 & CFDBench (Fluid Dynamics) & Fluid Dynamics; Scientific ML & Neural operator surrogate modeling & [neural operators, CFD, FNO, DeepONet] & [Surrogate modeling] & [L2 error, MAE] & [FNO, DeepONet, U-Net] & \cite{luo2024cfdbenchlargescalebenchmarkmachine} \href{https://arxiv.org/abs/2310.05963}{$\Rightarrow$ } \\ \hline
+None & SatImgNet & Remote Sensing & Satellite imagery classification & [land-use, zero-shot, multi-task] & [Image classification] & [Accuracy] & [] & \cite{roberts2023satinmultitaskmetadatasetclassifying} \href{https://arxiv.org/abs/2304.11619}{$\Rightarrow$ } \\ \hline
+2023-07-19 & ClimateLearn & Climate Science; Forecasting & ML for weather and climate modeling & [medium-range forecasting, ERA5, data-driven] & [Forecasting] & [RMSE, Anomaly correlation] & [CNN baselines, ResNet variants] & \cite{nguyen2023climatelearnbenchmarkingmachinelearning} \href{https://arxiv.org/abs/2307.01909}{$\Rightarrow$ } \\ \hline
+2022-06-09 & BIG-Bench (Beyond the Imitation Game Benchmark) & NLP; AI Evaluation & Diverse reasoning and generalization tasks & [few-shot, multi-task, bias analysis] & [Few-shot evaluation, Multi-task evaluation] & [Accuracy, Task-specific metrics] & [GPT-3, Dense Transformers, Sparse Transformers] & \cite{srivastava2023imitationgamequantifyingextrapolating} \href{https://arxiv.org/abs/2206.04615}{$\Rightarrow$ } \\ \hline
+2019-11-20 & CommonSenseQA & NLP; Commonsense & Commonsense question answering & [ConceptNet, multiple-choice, adversarial] & [Multiple choice] & [Accuracy] & [BERT-large, RoBERTa, GPT-3] & \cite{talmor2019commonsenseqaquestionansweringchallenge} \href{https://arxiv.org/abs/1811.00937}{$\Rightarrow$ } \\ \hline
+2019-07-24 & Winogrande & NLP; Commonsense & Winograd Schema-style pronoun resolution & [adversarial, pronoun resolution] & [Pronoun resolution] & [Accuracy, AUC] & [RoBERTa, BERT, GPT-2] & \cite{sakaguchi2019winograndeadversarialwinogradschema} \href{https://arxiv.org/abs/1907.10641}{$\Rightarrow$ } \\ \hline
+\end{longtable}
+}
+\end{landscape}
+\printbibliography
+\end{document}

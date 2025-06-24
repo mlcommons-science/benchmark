@@ -29,12 +29,12 @@
   notes: Good
   cite:
     - "@article{hendrycks2021measuring,
-       title={Measuring Massive Multitask Language Understanding},
-       author={Hendrycks, Dan and Burns, Collin and Kadavath, Saurav and others},
-       journal={arXiv preprint arXiv:2009.03300},
-       year={2021},
-       url={https://arxiv.org/abs/2009.03300}
-     }"
+      title={Measuring Massive Multitask Language Understanding},
+      author={Hendrycks, Dan and Burns, Collin and Kadavath, Saurav and others},
+      journal={arXiv preprint arXiv:2009.03300},
+      year={2021},
+      url={https://arxiv.org/abs/2009.03300}
+      }"
 
 - date: "2023-11-20"
   expired: null
@@ -66,11 +66,11 @@
   notes: Good
   cite:
     - "@misc{rein2023gpqagraduatelevelgoogleproofqa,
-       title={GPQA: A Graduate-Level Google-Proof Q&A Benchmark},
-       author={Rein, David and Hou, Betty Li and Stickland, Asa Cooper and others},
-       year={2023},
-       url={https://arxiv.org/abs/2311.12022}
-     }"
+      title={GPQA: A Graduate-Level Google-Proof Q&A Benchmark},
+      author={Rein, David and Hou, Betty Li and Stickland, Asa Cooper and others},
+      year={2023},
+      url={https://arxiv.org/abs/2311.12022}
+      }"
 
 - date: "2018-03-14"
   expired: null
@@ -99,13 +99,13 @@
   notes: Good
   cite:
     - "@inproceedings{clark2018think,
-       title={Think you have solved question answering? Try ARC, the AI2 Reasoning Challenge},
-       author={Clark, Peter and Cowhey, Isaac and Etzioni, Oren and others},
-       booktitle={EMNLP 2018},
-       pages={237–248},
-       year={2018},
-       url={https://allenai.org/data/arc}
-     }"
+      title={Think you have solved question answering? Try ARC, the AI2 Reasoning Challenge},
+      author={Clark, Peter and Cowhey, Isaac and Etzioni, Oren and others},
+      booktitle={EMNLP 2018},
+      pages={237–248},
+      year={2018},
+      url={https://allenai.org/data/arc}
+      }"
 
 - date: "2025-01-24"
   expired: null
@@ -132,11 +132,11 @@
   notes: Good
   cite:
     - "@misc{phan2025humanitys,
-       title={Humanity's Last Exam},
-       author={Phan, Long and Gatti, Alice and Han, Ziwen and others},
-       year={2025},
-       url={https://arxiv.org/abs/2501.14249}
-     }"
+      title={Humanity's Last Exam},
+      author={Phan, Long and Gatti, Alice and Han, Ziwen and others},
+      year={2025},
+      url={https://arxiv.org/abs/2501.14249}
+      }"
 
 - date: "2024-11-07"
   expired: null
@@ -294,11 +294,11 @@
   notes: Good
   cite:
     - "@misc{curie2024,
-       title={Scientific Reasoning Benchmarks from the CURIE Dataset},
-       author={TODO: Add authors},
-       year={2024},
-       url={https://arxiv.org/abs/2404.02029}
-     }"
+      title={Scientific Reasoning Benchmarks from the CURIE Dataset},
+      author={TODO: Add authors},
+      year={2024},
+      url={https://arxiv.org/abs/2404.02029}
+      }"
 
 - date: "2023-01-26"
   expired: null
@@ -328,11 +328,11 @@
   notes: Good
   cite:
     - "@misc{allen2023feabench,
-       title={FEABench: A Finite Element Analysis Benchmark},
-       author={Allen Institute},
-       year={2023},
-       url={https://github.com/alleninstitute/feabench}
-     }"
+      title={FEABench: A Finite Element Analysis Benchmark},
+      author={Allen Institute},
+      year={2023},
+      url={https://github.com/alleninstitute/feabench}
+      }"
 
 - date: "2024-07-12"
   expired: null
@@ -364,11 +364,11 @@
   notes: Good
   cite:
     - "@article{zhong2024spiqa,
-       title={SPIQA: Scientific Paper Image Question Answering},
-       author={Zhong, Xiaoyan and Gao, Yijian and Gururangan, Suchin},
-       year={2024},
-       url={https://arxiv.org/abs/2407.09413}
-     }"
+      title={SPIQA: Scientific Paper Image Question Answering},
+      author={Zhong, Xiaoyan and Gao, Yijian and Gururangan, Suchin},
+      year={2024},
+      url={https://arxiv.org/abs/2407.09413}
+      }"
 
 - date: "2020-09-28"
   expired: null
@@ -397,11 +397,11 @@
   notes: Multilingual (English, Simplified & Traditional Chinese)
   cite:
     - "@article{jin2020what,
-       title={What Disease Does This Patient Have? A Large-scale Open-domain Question Answering Dataset from Medical Exams},
-       author={Jin, Di and Li, Ying and Zhang, Yichong and others},
-       year={2020},
-       url={https://arxiv.org/abs/2009.13081}
-     }"
+      title={What Disease Does This Patient Have? A Large-scale Open-domain Question Answering Dataset from Medical Exams},
+      author={Jin, Di and Li, Ying and Zhang, Yichong and others},
+      year={2020},
+      url={https://arxiv.org/abs/2009.13081}
+      }"
 
 - date: "2025-05-13"
   expired: null
@@ -430,11 +430,11 @@
   notes: Underperforms human experts; aims to advance AI-driven discovery
   cite:
     - "@misc{luo2025benchmarkingaiscientistsomics,
-       title={Benchmarking AI scientists in omics data-driven biological research},
-       author={Luo, Erpai and Jia, Jinmeng and Xiong, Yifan and others},
-       year={2025},
-       url={https://arxiv.org/abs/2505.08341}
-     }"
+      title={Benchmarking AI scientists in omics data-driven biological research},
+      author={Luo, Erpai and Jia, Jinmeng and Xiong, Yifan and others},
+      year={2025},
+      url={https://arxiv.org/abs/2505.08341}
+      }"
 
 - date: "2023-01-26"
   expired: null
@@ -465,11 +465,11 @@
   notes: This is a model, not a benchmark
   cite:
     - "@article{fang2023domain,
-       title={Domain-Agnostic Molecular Generation with Chemical Feedback},
-       author={Fang, Yin and Zhang, Ningyu and Chen, Zhuo and others},
-       year={2023},
-       url={https://arxiv.org/abs/2301.11259}
-     }"
+      title={Domain-Agnostic Molecular Generation with Chemical Feedback},
+      author={Fang, Yin and Zhang, Ningyu and Chen, Zhuo and others},
+      year={2023},
+      url={https://arxiv.org/abs/2301.11259}
+      }"
 
 - date: "2020-05-02"
   expired: null
@@ -501,11 +501,11 @@
   notes: Community-driven updates
   cite:
     - "@misc{hu2020ogb,
-       title={Open Graph Benchmark: Datasets for Machine Learning on Graphs},
-       author={Hu, Weihua and Fey, Matthias and Zitnik, Marinka and others},
-       year={2020},
-       url={https://arxiv.org/abs/2005.00687}
-     }"
+      title={Open Graph Benchmark: Datasets for Machine Learning on Graphs},
+      author={Hu, Weihua and Fey, Matthias and Zitnik, Marinka and others},
+      year={2020},
+      url={https://arxiv.org/abs/2005.00687}
+      }"
 
 - date: "2011-10-01"
   expired: null
@@ -605,7 +605,6 @@
       year = {2021},
       doi = {10.1021/acscatal.0c04525},
       URL = {https://doi.org/10.1021/acscatal.0c04525},eprint = {https://doi.org/10.1021/acscatal.0c04525}}"
-
     - "@article{Tran_2023,
       title={The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts},
       volume={13},
@@ -685,15 +684,17 @@
     - IonQ
     - AQT@LBNL
   notes: Hardware-agnostic, application-level metrics. The citation may not be correct.
-  cite: "@inproceedings{Kiwit_2023,
-          title={Application-Oriented Benchmarking of Quantum Generative Learning Using QUARK},
-          url={http://dx.doi.org/10.1109/QCE57702.2023.00061},
-          DOI={10.1109/qce57702.2023.00061},
-          booktitle={2023 IEEE International Conference on Quantum Computing and Engineering (QCE)},
-          publisher={IEEE},
-          author={Kiwit, Florian J. and Marso, Marwa and Ross, Philipp and Riofrío, Carlos A. and Klepsch, Johannes and Luckow, Andre},
-          year={2023},
-          month=sep, pages={475-484} }"
+  cite:
+    - "@inproceedings{Kiwit_2023,
+      title={Application-Oriented Benchmarking of Quantum Generative Learning Using QUARK},
+      url={http://dx.doi.org/10.1109/QCE57702.2023.00061},
+      DOI={10.1109/qce57702.2023.00061},
+      booktitle={2023 IEEE International Conference on Quantum Computing and Engineering (QCE)},
+      publisher={IEEE},
+      author={Kiwit, Florian J. and Marso, Marwa and Ross, Philipp and Riofrío, Carlos A. and Klepsch, Johannes and Luckow, Andre},
+      year={2023},
+      month=sep, pages={475-484}
+      }"
 
 - date: "2024-10-01"
   expired: null
@@ -721,12 +722,13 @@
     - DeepONet
     - U-Net
   notes: 302K frames across 739 cases
-  cite: "@misc{luo2024cfdbenchlargescalebenchmarkmachine,
-        title={CFDBench: A Large-Scale Benchmark for Machine Learning Methods in Fluid Dynamics},
-        author={Luo, Yining and Chen, Yingfa and Zhang, Zhen},
-        year={2024},
-        url={https://arxiv.org/abs/2310.05963}
-        }"
+  cite:
+    - "@misc{luo2024cfdbenchlargescalebenchmarkmachine,
+      title={CFDBench: A Large-Scale Benchmark for Machine Learning Methods in Fluid Dynamics},
+      author={Luo, Yining and Chen, Yingfa and Zhang, Zhen},
+      year={2024},
+      url={https://arxiv.org/abs/2310.05963}
+      }"
 
 - date: null
   expired: null
@@ -788,13 +790,13 @@
   notes: Includes physical and ML baselines. Appears to be the same as the SatImgNet entry
   cite:
     - "@misc{nguyen2023climatelearnbenchmarkingmachinelearning, 
-        title={ClimateLearn: Benchmarking Machine Learning for Weather and Climate Modeling}, 
-        author={Tung Nguyen and Jason Jewik and Hritik Bansal and Prakhar Sharma and Aditya Grover},
-        year={2023}, eprint={2307.01909}, 
-        archivePrefix={arXiv}, 
-        primaryClass={cs.LG},
-        url={https://arxiv.org/abs/2307.01909}
-       }"
+      title={ClimateLearn: Benchmarking Machine Learning for Weather and Climate Modeling}, 
+      author={Tung Nguyen and Jason Jewik and Hritik Bansal and Prakhar Sharma and Aditya Grover},
+      year={2023}, eprint={2307.01909}, 
+      archivePrefix={arXiv}, 
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2307.01909}
+      }"
 
 - date: "2022-06-09"
   expired: null
@@ -868,8 +870,6 @@
       primaryClass={cs.CL},
       url={https://arxiv.org/abs/1811.00937}, 
       }"
-      
-
 
 - date: "2019-07-24" 
   expired: null

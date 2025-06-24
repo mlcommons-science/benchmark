@@ -13,7 +13,7 @@ content: md tex
 	echo DONE
 
 md:
-	python bin/generate.py --files ${FILES}  --format=md --out=./content/md
+	python bin/generate.py --files ${FILES}  --format=md --out=./content
 
 tex:
 	python bin/generate.py --files ${FILES} --format=tex --out=./content --standalone --columns=${COLUMNS}
@@ -27,12 +27,13 @@ standalone:
 # produce file content/tex/benchmarks.pdf
 pdf: tex 
 	cd content/tex; pdflatex benchmarks
-	cd content/tex; bibtex benchmarks
+	cd content/tex; biber benchmarks
 	cd content/tex; pdflatex benchmarks
 	cd content/tex; pdflatex benchmarks
 
 clean:
 	rm -rf content/tex/benchmarks.*
+	rm -rf content/tex/*.log
 	rm -rf content/md/benchmarks.*
 
 

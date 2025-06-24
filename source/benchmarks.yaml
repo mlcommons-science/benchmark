@@ -66,7 +66,7 @@
   notes: Good
   cite:
     - "@misc{rein2023gpqagraduatelevelgoogleproofqa,
-      title={GPQA: A Graduate-Level Google-Proof Q&A Benchmark},
+      title={GPQA: A Graduate-Level Google-Proof Q and A Benchmark},
       author={Rein, David and Hou, Betty Li and Stickland, Asa Cooper and others},
       year={2023},
       url={https://arxiv.org/abs/2311.12022}
@@ -175,7 +175,7 @@
   name: SciCode
   url: https://arxiv.org/abs/2407.13168
   domain: Scientific Programming
-  focus: Scientific code generation & problem solving
+  focus: Scientific code generation and problem solving
   keyword:
     - code synthesis
     - scientific computing
@@ -306,7 +306,7 @@
   name: FEABench (Finite Element Analysis Benchmark)
   url: https://github.com/alleninstitute/feabench
   domain: Computational Engineering
-  focus: FEA simulation accuracy & performance
+  focus: FEA simulation accuracy and performance
   keyword:
     - finite element
     - simulation
@@ -394,7 +394,7 @@
   models:
     - Neural reader
     - Retrieval-based QA systems
-  notes: Multilingual (English, Simplified & Traditional Chinese)
+  notes: Multilingual (English, Simplified and Traditional Chinese)
   cite:
     - "@article{jin2020what,
       title={What Disease Does This Patient Have? A Large-scale Open-domain Question Answering Dataset from Medical Exams},
@@ -442,7 +442,7 @@
   name: MOLGEN
   url: https://github.com/zjunlp/MolGen
   domain: Computational Chemistry
-  focus: Molecular generation & optimization
+  focus: Molecular generation and optimization
   keyword:
     - SELFIES
     - GAN
@@ -490,7 +490,7 @@
     - Node property prediction
     - Link property prediction
     - Graph property prediction
-  ai_capability_measured: Scalability & generalization in graph ML for biology
+  ai_capability_measured: Scalability and generalization in graph ML for biology
   metrics:
     - Accuracy
     - ROC-AUC
@@ -556,7 +556,7 @@
     - adsorption energy
     - graph neural networks
   description: |
-    The Open Catalyst Project (OC20 & OC22) provides DFT-calculated catalyst-adsorbate 
+    The Open Catalyst Project (OC20 and OC22) provides DFT-calculated catalyst-adsorbate 
     relaxation datasets, challenging ML models to predict energies and forces for 
     renewable energy applications.
   task_types:
@@ -605,7 +605,7 @@
       year = {2021},
       doi = {10.1021/acscatal.0c04525},
       URL = {https://doi.org/10.1021/acscatal.0c04525},eprint = {https://doi.org/10.1021/acscatal.0c04525}}"
-    - "@article{Tran_2023,
+    - "@article{Tran-2023,
       title={The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts},
       volume={13},
       ISSN={2155-5435},
@@ -616,7 +616,8 @@
       publisher={American Chemical Society (ACS)},
       author={Tran, Richard and Lan, Janice and Shuaibi, Muhammed and Wood, Brandon M. and Goyal, Siddharth and Das, Abhishek and Heras-Domingo, Javier and Kolluru, Adeesh and Rizvi, Ammar and Shoghi, Nima and Sriram, Anuroop and Therrien, Félix and Abed, Jehad and Voznyy, Oleksandr and Sargent, Edward H. and Ulissi, Zachary and Zitnick, C. Lawrence},
       year={2023},
-      month=feb, pages={3066-3084} }"
+      month=feb, pages={3066-3084} 
+      }"
 
 - date: "2023-06-20"
   expired: null
@@ -685,7 +686,7 @@
     - AQT@LBNL
   notes: Hardware-agnostic, application-level metrics. The citation may not be correct.
   cite:
-    - "@inproceedings{Kiwit_2023,
+    - "@inproceedings{Kiwit-2023,
       title={Application-Oriented Benchmarking of Quantum Generative Learning Using QUARK},
       url={http://dx.doi.org/10.1109/QCE57702.2023.00061},
       DOI={10.1109/qce57702.2023.00061},
@@ -770,7 +771,7 @@
   name: ClimateLearn
   url: https://arxiv.org/abs/2307.01909
   domain: Climate Science; Forecasting
-  focus: ML for weather & climate modeling
+  focus: ML for weather and climate modeling
   keyword:
     - medium-range forecasting
     - ERA5
@@ -804,7 +805,7 @@
   name: BIG-Bench (Beyond the Imitation Game Benchmark)
   url: https://github.com/google/BIG-bench
   domain: NLP; AI Evaluation
-  focus: Diverse reasoning & generalization tasks
+  focus: Diverse reasoning and generalization tasks
   keyword:
     - few-shot
     - multi-task

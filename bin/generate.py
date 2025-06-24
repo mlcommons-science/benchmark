@@ -169,7 +169,8 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
                     \usepackage{pdflscape}
                     \usepackage{wasysym}
                     \usepackage{longtable}
-
+                    \usepackage[style=ieee, url=true]{biblatex}
+                    \addbibresource{benchmarks.bib}
                     \begin{document}
                     """)
                 f.write(preamble)
@@ -235,7 +236,10 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
             f.write("\\end{landscape}\n")
 
             if standalone:
+                
+                f.write("\\printbibliography\n")
                 f.write("\\end{document}\n")
+            
 
         # Also write BibTeX
         generate_bibtex(input_filepaths, output_filepath)

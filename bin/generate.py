@@ -6,13 +6,27 @@ import re
 from typing import List
 import textwrap
 
-ALL_COLUMNS = [ 
-    "date", "expiration", "valid", 
-    "name", "url", "domain", "focus",
-    "keyword", "description", "task_types", "ai_capability_measured",
-    "metrics", "models", "notes", 
-    "cite"
+ALL_COLUMNS = [
+    ("date", "1.5cm", "Date"),
+    ("expiration", "1.5cm", "Expiration"),
+    ("valid", "1.5cm", "Valid"),
+    ("name", "2.5cm", "Name"),
+    ("url", "2.5cm", "URL"),
+    ("domain", "2cm", "Domain"),
+    ("focus", "2cm", "Focus"),
+    ("keyword", "2.5cm", "Keyword"),
+    ("description", "4cm", "Description"),
+    ("task_types", "3cm", "Task Types"),
+    ("ai_capability_measured", "3cm", "AI Capability"),
+    ("metrics", "2cm", "Metrics"),
+    ("models", "2cm", "Models"),
+    ("notes", "3cm", "Notes"),
+    ("cite", "1cm", "Citation")
 ]
+
+def get_column_triples(selected: list[str]) -> list[tuple[str, str, str]]:
+    selected_lower = [s.lower() for s in selected]
+    return [triple for triple in ALL_COLUMNS if triple[0] in selected_lower]
 
 def load_yaml_file(file_path: str) -> list[dict]:
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -31,26 +45,28 @@ def merge_yaml_files(file_paths: list[str]) -> list[dict]:
 
     merged_records = []
     for record in records:
-        merged_record = {col: record.get(col, None) for col in ALL_COLUMNS}
+        merged_record = {col[0]: record.get(col[0], None) for col in ALL_COLUMNS}
         merged_records.append(merged_record)
 
     return merged_records
 
-def write_md(input_filepaths: list[str] = ['../source/benchmarks.yaml'], output_dir: str = '../content') -> None:
+def write_md(input_filepaths: list[str], output_dir: str, columns: List[tuple]) -> None:
     contents = merge_yaml_files(input_filepaths)
     os.makedirs(output_dir, exist_ok=True)
 
     with open(os.path.join(output_dir, "benchmarks.md"), 'w', encoding='utf-8') as md_file:
-        header_row = '| ' + ' | '.join(ALL_COLUMNS) + ' |'
-        md_file.write(header_row + '\n')
-        separator_row = '| ' + ' | '.join(['---'] * len(ALL_COLUMNS)) + ' |'
-        md_file.write(separator_row + '\n')
+        headers = [col[2] for col in columns]
+        md_file.write('| ' + ' | '.join(headers) + ' |\n')
+        md_file.write('| ' + ' | '.join(['---'] * len(columns)) + ' |\n')
 
         for row in contents:
-            cleaned_row = '| ' + ' | '.join(str(row.get(cell, '')) for cell in row) + ' |'
-            cleaned_row = cleaned_row.replace("\n", " ").replace("['", "").replace("']", "")
-            cleaned_row = cleaned_row.replace("', '", ", ").replace("','", ", ").replace("[]", "")
-            md_file.write(cleaned_row + '\n')
+            row_cells = []
+            for col_name, _, _ in columns:
+                val = row.get(col_name, '')
+                val = str(val).replace("\n", " ").replace("['", "").replace("']", "")
+                val = val.replace("', '", ", ").replace("','", ", ").replace("[]", "")
+                row_cells.append(val)
+            md_file.write('| ' + ' | '.join(row_cells) + ' |\n')
 
 def escape_latex(text):
     if not isinstance(text, str):
@@ -74,9 +90,29 @@ def extract_cite_label(cite_entry: str) -> str:
         return match.group(1)
     return ""
 
-def write_latex(input_filepaths: List[str] = ['../source/benchmarks.yaml'],
-                output_filepath: str = '../content/',
-                standalone: bool = False) -> None:
+def extract_cite_url(cite_entry: str) -> str:
+    match = re.search(r'url\s*=\s*[{"]([^}"]+)[}"]', cite_entry)
+    if match:
+        return match.group(1)
+    return ""
+
+def generate_bibtex(input_filepaths: List[str], output_dir: str) -> None:
+    os.makedirs(output_dir, exist_ok=True)
+    entries = []
+    for filepath in input_filepaths:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            records = yaml.safe_load(f)
+        if not isinstance(records, list):
+            continue
+        for record in records:
+            cite_entries = record.get("cite", [])
+            if cite_entries:
+                entries.extend(cite_entries)
+    with open(os.path.join(output_dir, "benchmarks.bib"), 'w', encoding='utf-8') as bib_file:
+        for entry in entries:
+            bib_file.write(entry.strip() + "\n\n")
+
+def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[tuple], standalone: bool = False) -> None:
     os.makedirs(output_filepath, exist_ok=True)
 
     for filepath in input_filepaths:
@@ -91,65 +127,51 @@ def write_latex(input_filepaths: List[str] = ['../source/benchmarks.yaml'],
 
         with open(output_tex_path, 'w', encoding='utf-8') as f:
             if standalone:
-                f.write("\\documentclass{article}\n")
-                f.write("\\usepackage{hyperref}\n")
-                f.write("\\usepackage[margin=1in]{geometry}\n")
-                f.write("\\usepackage{pdflscape}\n")
-                f.write("\\begin{document}\n")
+                preamble = textwrap.dedent(
+                    r"""
+                    \documentclass{article}
+                    \usepackage{hyperref}
+                    \usepackage[margin=1in]{geometry}
+                    \usepackage{pdflscape}
+                    \usepackage{longtable}
+                    \usepackage{wasysym}
+
+                    \begin{document}
+                    """)
+                f.write(preamble)
+
+            column_specs = "|".join([f"p{{{col[1]}}}" for col in columns])
+            headers = [f"\\textbf{{{col[2]}}}" for col in columns]
 
             f.write("\\begin{landscape}\n")
-            f.write("\\begin{table}[h!]\n")
-
-
-            # f.write("\\begin{tabular}{|" + " | ".join(["l"] * len(ALL_COLUMNS)) + "|}\n")
-
-            # date & expiration & valid & name & url & domain & focus & keyword
-            # & description & task_types & ai_capability_measured & metrics &
-            # models & notes & cite
-            
-            width = """
-               |
-               p{1cm}|
-               p{1cm}|
-               p{1cm}|
-               p{1cm}|
-               p{1cm}|
-               p{1cm}|
-               p{1cm}|
-               p{1cm}|
-               p{1cm}|
-               p{1cm}|
-               p{1cm}|
-               p{1cm}|
-               p{1cm}|
-               p{1cm}|
-               p{1cm}|
-            """
-            columns = textwrap.dedent(width).strip()
-            f.write("\\begin{tabular}{" + columns+ "}\n")
-
+            f.write("{\\footnotesize\n")
+            f.write(f"\\begin{{longtable}}{{|{column_specs}|}}\n")
             f.write("\\hline\n")
-            f.write(" & ".join(ALL_COLUMNS) + " \\\\ \\hline\n")
+            # Header for first page
+            f.write(" & ".join(headers) + " \\\\ \\hline\n")
+            f.write("\\endfirsthead\n")
+            # Header for subsequent pages
+            f.write("\\hline\n")
+            f.write(" & ".join(headers) + " \\\\ \\hline\n")
+            f.write("\\endhead\n")
 
             for record in records:
                 row = []
                 cite_keys = [extract_cite_label(c) for c in record.get("cite", []) if c]
+                cite_urls = [extract_cite_url(c) for c in record.get("cite", []) if c]
+                primary_url = cite_urls[0] if cite_urls else record.get("url", "")
 
-                for col in ALL_COLUMNS:
-                    val = record.get(col, '')
+                for col_name, _, _ in columns:
+                    val = record.get(col_name, '')
 
-                    if col == "cite":
+                    if col_name == "cite":
                         cite_part = f"\\cite{{{', '.join(cite_keys)}}}" if cite_keys else ""
-                        url = record.get("url", "")
-                        url_part = f" \\href{{url}}{{{escape_latex(url)}}}" if url else ""
+                        url_part = f" \\href{{{primary_url}}}{{$\\Rightarrow$ }}" if primary_url else ""
                         val = cite_part + url_part
-
-                    elif col == "url":
-                        val = ""  # already handled in cite
-
+                    elif col_name == "url":
+                        val = ""  # already shown with citation
                     elif isinstance(val, list):
                         val = "[" + ", ".join(escape_latex(str(v)) for v in val) + "]"
-
                     else:
                         val = escape_latex(val)
 
@@ -157,30 +179,31 @@ def write_latex(input_filepaths: List[str] = ['../source/benchmarks.yaml'],
 
                 f.write(" & ".join(row) + " \\\\ \\hline\n")
 
-            f.write("\\end{tabular}\n\\end{table}\n")
-
+            f.write("\\end{longtable}\n")
+            f.write("}\n")
             f.write("\\end{landscape}\n")
 
             if standalone:
                 f.write("\\end{document}\n")
 
+        # Also write BibTeX
+        generate_bibtex(input_filepaths, output_filepath)
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="A script to process files with specified format and output directory.")
+    parser = argparse.ArgumentParser(description="Process YAML benchmark files to MD or LaTeX.")
 
     parser.add_argument('--files', '-i', type=str, nargs='+', required=True,
-                        help='One or more file paths to process. Required argument.')
-
+                        help='YAML file paths to process.')
     parser.add_argument('--format', '-f', type=str, choices=['md', 'tex'],
-                        help="Output file format. Must be 'md' (Markdown) or 'tex' (LaTeX)")
-
+                        help="Output file format: 'md' or 'tex'")
     parser.add_argument('--standalone', '-s', action='store_true',
-                        help="If set, generates the table with a LaTeX preamble. Only valid when format is 'tex'")
-
+                        help="Include full LaTeX document preamble.")
     parser.add_argument('--out-dir', '-o', type=str, default='../content/',
-                        help="Output directory for processed files. Default: '../content/'")
-
+                        help="Output directory")
+    parser.add_argument('--columns', type=lambda s: s.split(','),
+                        help="Subset of columns to include (comma-separated, e.g. name,url,description)")
     parser.add_argument('--readme', action='store_true',
-                        help="Prints the contents of the README help document")
+                        help="Show README.md content")
 
     args = parser.parse_args()
 
@@ -190,22 +213,13 @@ if __name__ == "__main__":
             sys.exit(0)
 
     if args.standalone and args.format != 'tex':
-        parser.error("--standalone flag may be used only when --format option is 'tex'")
+        parser.error("--standalone is only valid with --format tex")
 
     for file in args.files:
         if not os.path.exists(file):
-            parser.error("The file " + file + " does not exist")
+            parser.error(f"The file {file} does not exist")
 
-    if not os.path.isdir(args.out_dir):
-        os.makedirs(args.out_dir, exist_ok=True)
+    os.makedirs(args.out_dir, exist_ok=True)
 
-    if args.format == 'md' and not os.path.isdir(os.path.join(args.out_dir, "md")):
-        os.makedirs(os.path.join(args.out_dir, "md"), exist_ok=True)
+    columns = get_column_triples(args.columns) if args.columns else ALL_COLUMNS
 
-    if args.format == 'tex' and not os.path.isdir(os.path.join(args.out_dir, "tex")):
-        os.makedirs(os.path.join(args.out_dir, "tex"), exist_ok=True)
-
-    if args.format == 'md':
-        write_md(args.files, os.path.join(args.out_dir, "md"))
-    elif args.format == 'tex':
-        write_latex(args.files, os.path.join(args.out_dir, "tex"), standalone=args.standalone)

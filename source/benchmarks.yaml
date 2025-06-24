@@ -224,7 +224,14 @@
   models: []
   notes: No formal paper; summary at https://www.vals.ai/benchmarks/aime-2025-03-13
   cite:
-    - "aime_website"
+    - "@misc{www-aime,
+       author = {},
+       title = {AIME},
+       url = "https://www.vals.ai/benchmarks/aime-2025-03-13",
+       month = {},
+       year = {},
+       note = "[Online; accessed 2025-06-24]"
+      }"
 
 - date: "2025-02-15"
   expired: null

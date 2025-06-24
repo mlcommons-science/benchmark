@@ -129,7 +129,7 @@ def extract_cite_keys(cite_entries):
     return keys
 
 def wrap_url_with_cite(url: str, cite_keys: List[str]) -> str:
-    """Wrap URL with \href{}{} and add \cite{} if keys present."""
+    """Wrap URL with \\href{}{} and add \\cite{} if keys present."""
     if cite_keys:
         return f"\\href{{{url}}}{{{url}}} \\cite{{{', '.join(cite_keys)}}}"
     return f"\\href{{{url}}}{{{url}}}"

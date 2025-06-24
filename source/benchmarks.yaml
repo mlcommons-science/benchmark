@@ -787,11 +787,14 @@
     - ResNet variants
   notes: Includes physical and ML baselines. Appears to be the same as the SatImgNet entry
   cite:
-    - "@misc{nguyen2023climatelearnbenchmarkingmachinelearning, title={ClimateLearn:
-      Benchmarking Machine Learning for Weather and Climate Modeling}, author={Tung\
-      Nguyen and Jason Jewik and Hritik Bansal and Prakhar Sharma and Aditya Grover},
-      year={2023}, eprint={2307.01909}, archivePrefix={arXiv}, primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2307.01909}}"
+    - "@misc{nguyen2023climatelearnbenchmarkingmachinelearning, 
+        title={ClimateLearn: Benchmarking Machine Learning for Weather and Climate Modeling}, 
+        author={Tung Nguyen and Jason Jewik and Hritik Bansal and Prakhar Sharma and Aditya Grover},
+        year={2023}, eprint={2307.01909}, 
+        archivePrefix={arXiv}, 
+        primaryClass={cs.LG},
+        url={https://arxiv.org/abs/2307.01909}
+       }"
 
 - date: "2022-06-09"
   expired: null

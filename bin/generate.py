@@ -38,6 +38,7 @@ def load_yaml_file(file_path: str) -> list[dict]:
         else:
             raise ValueError(f"Unsupported YAML format in {file_path}")
 
+
 def merge_yaml_files(file_paths: list[str]) -> list[dict]:
     records = []
     for path in file_paths:
@@ -50,7 +51,12 @@ def merge_yaml_files(file_paths: list[str]) -> list[dict]:
 
     return merged_records
 
+
 def write_md(input_filepaths: list[str], output_dir: str, columns: List[tuple]) -> None:
+    """
+    Combines the YAML tables at `input_filepaths`
+    """
+
     contents = merge_yaml_files(input_filepaths)
     os.makedirs(output_dir, exist_ok=True)
 
@@ -60,13 +66,41 @@ def write_md(input_filepaths: list[str], output_dir: str, columns: List[tuple]) 
         md_file.write('| ' + ' | '.join(['---'] * len(columns)) + ' |\n')
 
         for row in contents:
+            current_article_name = None
+            current_url = None
+
             row_cells = []
             for col_name, _, _ in columns:
                 val = row.get(col_name, '')
+
+                #save the article's name
+                if col_name == "name":
+                    current_article_name = val
+                #save the article's URL
+                if col_name == "url":
+                    current_url = val
+
+                # replace characters that would break the MD table
                 val = str(val).replace("\n", " ").replace("['", "").replace("']", "")
                 val = val.replace("', '", ", ").replace("','", ", ").replace("[]", "")
+                val = val.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
+
+                # if adding the citation, put in [<title>][<URL>] format
+                if col_name == "cite":
+                    #Handle case where there are multiple URLs
+                    if isinstance(current_url, list):
+                        val = current_article_name.replace("(", " ").replace(")", " ") + " "
+                        for i in range(len(current_url)):
+                            val += f"[(Link {i+1})]({current_url[i]}) "
+                    #Case where there is only one URL
+                    else:
+                        val = f"[{current_article_name}]({current_url})"
+
                 row_cells.append(val)
+            
             md_file.write('| ' + ' | '.join(row_cells) + ' |\n')
+
+
 
 def escape_latex(text):
     if not isinstance(text, str):
@@ -225,6 +259,7 @@ if __name__ == "__main__":
 
     if args.standalone and args.format != 'tex':
         parser.error("--standalone is only valid with --format tex")
+    
 
     for file in args.files:
         if not os.path.exists(file):

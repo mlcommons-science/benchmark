@@ -222,14 +222,14 @@
   metrics:
     - Accuracy
   models: []
-  notes: No formal paper; summary at https://www.vals.ai/benchmarks/aime-2025-03-13
+  notes:
   cite:
     - "@misc{www-aime,
-       author = {},
+       author = {TBD},
        title = {AIME},
        url = "https://www.vals.ai/benchmarks/aime-2025-03-13",
-       month = {},
-       year = {},
+       month = {TBD},
+       year = {TBD},
        note = "[Online; accessed 2025-06-24]"
       }"
 

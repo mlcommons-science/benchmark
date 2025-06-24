@@ -605,7 +605,7 @@
       year = {2021},
       doi = {10.1021/acscatal.0c04525},
       URL = {https://doi.org/10.1021/acscatal.0c04525},eprint = {https://doi.org/10.1021/acscatal.0c04525}}"
-    - "@article{Tran-2023,
+    - "@article{tran2023b,
       title={The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts},
       volume={13},
       ISSN={2155-5435},
@@ -614,7 +614,8 @@
       number={5},
       journal={ACS Catalysis},
       publisher={American Chemical Society (ACS)},
-      author={Tran, Richard and Lan, Janice and Shuaibi, Muhammed and Wood, Brandon M. and Goyal, Siddharth and Das, Abhishek and Heras-Domingo, Javier and Kolluru, Adeesh and Rizvi, Ammar and Shoghi, Nima and Sriram, Anuroop and Therrien, Félix and Abed, Jehad and Voznyy, Oleksandr and Sargent, Edward H. and Ulissi, Zachary and Zitnick, C. Lawrence},
+      author={Tran, Richard and Lan, Ja	rm -rf content/tex/*.log
+nice and Shuaibi, Muhammed and Wood, Brandon M. and Goyal, Siddharth and Das, Abhishek and Heras-Domingo, Javier and Kolluru, Adeesh and Rizvi, Ammar and Shoghi, Nima and Sriram, Anuroop and Therrien, Félix and Abed, Jehad and Voznyy, Oleksandr and Sargent, Edward H. and Ulissi, Zachary and Zitnick, C. Lawrence},
       year={2023},
       month=feb, pages={3066-3084} 
       }"
@@ -686,7 +687,7 @@
     - AQT@LBNL
   notes: Hardware-agnostic, application-level metrics. The citation may not be correct.
   cite:
-    - "@inproceedings{Kiwit-2023,
+    - "@inproceedings{kiwit2023,
       title={Application-Oriented Benchmarking of Quantum Generative Learning Using QUARK},
       url={http://dx.doi.org/10.1109/QCE57702.2023.00061},
       DOI={10.1109/qce57702.2023.00061},

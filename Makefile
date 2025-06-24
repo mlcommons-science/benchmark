@@ -17,6 +17,8 @@ md:
 
 tex:
 	python bin/generate.py --files ${FILES} --format=tex --out=./content --standalone --columns=${COLUMNS}
+	cd content/tex; bibtool -s -i benchmarks.bib -o tmp.bib
+	cd content/tex; mv tmp.bib benchmarks.bib
 
 
 standalone:

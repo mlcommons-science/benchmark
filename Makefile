@@ -13,10 +13,10 @@ content: md tex
 	echo DONE
 
 md:
-	python bin/generate.py --files ${FILES}  --format=md --out ./content
+	python bin/generate.py --files ${FILES}  --format=md --out=./content/md
 
 tex:
-	python bin/generate.py --files ${FILES} --format=tex --out ./content --standalone --columns=${COLUMNS}
+	python bin/generate.py --files ${FILES} --format=tex --out=./content --standalone --columns=${COLUMNS}
 
 
 standalone:
@@ -37,4 +37,4 @@ clean:
 view:
 	open content/tex/benchmarks.pdf
 
-debug: pdf view
+debug: tex pdf view

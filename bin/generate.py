@@ -133,27 +133,38 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
                     \usepackage{hyperref}
                     \usepackage[margin=1in]{geometry}
                     \usepackage{pdflscape}
-                    \usepackage{longtable}
                     \usepackage{wasysym}
+                    \usepackage{longtable}
 
                     \begin{document}
                     """)
                 f.write(preamble)
 
-            column_specs = "|".join([f"p{{{col[1]}}}" for col in columns])
-            headers = [f"\\textbf{{{col[2]}}}" for col in columns]
-
             f.write("\\begin{landscape}\n")
+
+            column_specs = "|".join([f"p{{{col[1]}}}" for col in columns])
+            headers = [col[2] for col in columns]
+
             f.write("{\\footnotesize\n")
             f.write(f"\\begin{{longtable}}{{|{column_specs}|}}\n")
             f.write("\\hline\n")
             # Header for first page
             f.write(" & ".join(headers) + " \\\\ \\hline\n")
             f.write("\\endfirsthead\n")
+
             # Header for subsequent pages
             f.write("\\hline\n")
             f.write(" & ".join(headers) + " \\\\ \\hline\n")
             f.write("\\endhead\n")
+
+            # Footer for all pages except last
+            f.write("\\hline\n")
+            f.write("\\multicolumn{" + str(len(columns)) + "}{r}{Continued on next page} \\\\\n")
+            f.write("\\endfoot\n")
+
+            # Footer for last page
+            f.write("\\hline\n")
+            f.write("\\endlastfoot\n")
 
             for record in records:
                 row = []
@@ -169,7 +180,7 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
                         url_part = f" \\href{{{primary_url}}}{{$\\Rightarrow$ }}" if primary_url else ""
                         val = cite_part + url_part
                     elif col_name == "url":
-                        val = ""  # already shown with citation
+                        val = ""  # already shown in cite
                     elif isinstance(val, list):
                         val = "[" + ", ".join(escape_latex(str(v)) for v in val) + "]"
                     else:
@@ -223,3 +234,7 @@ if __name__ == "__main__":
 
     columns = get_column_triples(args.columns) if args.columns else ALL_COLUMNS
 
+    if args.format == 'md':
+        write_md(args.files, os.path.join(args.out_dir, "md"), columns)
+    elif args.format == 'tex':
+        write_latex(args.files, os.path.join(args.out_dir, "tex"), columns, standalone=args.standalone)

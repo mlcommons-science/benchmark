@@ -216,7 +216,13 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
                     elif col_name == "url":
                         val = ""  # already shown in cite
                     elif isinstance(val, list):
-                        val = "[" + ", ".join(escape_latex(str(v)) for v in val) + "]"
+                        if args.authorlimit is not None and col_name in "authors":
+                            displayed = val[:args.authorlimit]
+                            suffix = ", et al." if len(val) > args.authorlimit else ""
+                            val = "[" + ", ".join(escape_latex(str(v)) for v in displayed) + suffix + "]"
+                        else:
+                            val = "[" + ", ".join(escape_latex(str(v)) for v in val) + "]"
+
                     else:
                         val = escape_latex(val)
 
@@ -249,6 +255,9 @@ if __name__ == "__main__":
                         help="Subset of columns to include (comma-separated, e.g. name,url,description)")
     parser.add_argument('--readme', action='store_true',
                         help="Show README.md content")
+    # Limiting the number of authors
+    parser.add_argument('--authorlimit', type=int, default=None,
+                    help="Limit number of authors (e.g., --authorlimit 10 adds 'et al.' if exceeded)")
 
     args = parser.parse_args()
 

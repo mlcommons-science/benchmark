@@ -526,6 +526,17 @@
     - Crystal Graph Neural Networks
   notes: Core component of the Materials Genome Initiative
   cite:
+    - "@article{jain2013materialsproject,
+    title     = "{Commentary: The Materials Project: A materials genome approach to accelerating materials innovation}",
+    author    = {Jain, Anubhav and Ong, Shyue Ping and Hautier, Geoffroy and Chen, Wei and Richards, William Davidson and Dacek, Stephen and Cholia, Shreyas and Gunter, Dan and Skinner, David and Ceder, Gerbrand and Persson, Kristin A.},
+    journal   = {APL Materials},
+    volume    = {1},
+    number    = {1},
+    pages     = {011002},
+    year      = {2013},
+    doi       = {10.1063/1.4812323},
+    url       = {https://doi.org/10.1063/1.4812323}
+    }"
     - "@article{jain2013materials,
        title={The Materials Project: A materials genome approach},
        author={Jain, Anubhav and Ong, Shyue Ping and others},
@@ -563,6 +574,28 @@
     - GemNet-OC
   notes: Public leaderboards; active community development
   cite:
+    - "@article{chanussot2021oc20,
+    title     = {The Open Catalyst 2020 (OC20) Dataset and Community Challenges},
+    author    = {Chanussot, Lowik and Das, Abhishek and Goyal, Siddharth and Lavril, Thibaut and Shuaibi, Muhammed and Rivi{\`e}re, Morgane and Tran, Kevin and Heras-Domingo, Javier and Ho, Caleb and Hu, Weihua and Palizhati, Aini and Sriram, Anuroop and Wood, Brandon and Yoon, Junwoong and Parikh, Devi and Zitnick, C. Lawrence and Ulissi, Zachary},
+    journal   = {ACS Catalysis},
+    volume    = {11},
+    number    = {10},
+    pages     = {6059--6072},
+    year      = {2021},
+    doi       = {10.1021/acscatal.0c04525},
+    url       = {https://pubs.acs.org/doi/10.1021/acscatal.0c04525}
+    }"
+    - "@article{tran2023oc22,
+    title     = {The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts},
+    author    = {Tran, Richard and Lan, Janice and Shuaibi, Muhammed and Wood, Brandon M. and Goyal, Siddharth and Das, Abhishek and Heras-Domingo, Javier and Kolluru, Adeesh and Rizvi, Ammar and Shoghi, Nima and Sriram, Anuroop and Therrien, Félix and Abed, Jehad and Voznyy, Oleksandr and Sargent, Edward H. and Ulissi, Zachary and Zitnick, C. Lawrence},
+    journal   = {ACS Catalysis},
+    volume    = {13},
+    number    = {5},
+    pages     = {3066--3084},
+    year      = {2023},
+    doi       = {10.1021/acscatal.2c05426},
+    url       = {https://pubs.acs.org/doi/10.1021/acscatal.2c05426}
+    }"
     - "@article{doi:10.1021/acscatal.0c04525,
       author = {Chanussot, Lowik and Das, Abhishek and Goyal, Siddharth and Lavril, Thibaut and Shuaibi, Muhammed and Riviere, Morgane and Tran, Kevin and Heras-Domingo, Javier and Ho, Caleb and Hu, Weihua and Palizhati, Aini and Sriram, Anuroop and Wood, Brandon and Yoon, Junwoong and Parikh, Devi and Zitnick, C. Lawrence and Ulissi, Zachary},
       title = {Open Catalyst 2020 (OC20) Dataset and Community Challenges},
@@ -614,16 +647,16 @@
   notes: 1,281 contributions across 274 benchmarks
   cite:
     - "@article{choudhary2024jarvis,
-      title = {JARVIS-Leaderboard: a large scale benchmark of materials design methods},
-      author = {Choudhary, Kamal and Wines, Daniel and Li, Kangming and Garrity, Kevin F. and Gupta, Vishu and Romero, Aldo H. and Krogel, Jaron T. and Saritas, Kayahan and Fuhr, Addis and Ganesh, Panchapakesan and Kent, Paul R. C. and Yan, Keqiang and Lin, Yuchao and Ji, Shuiwang and Blaiszik, Ben and Reiser, Patrick and Friederich, Pascal and Agrawal, Ankit and Tiwary, Pratyush and Beyerle, Eric and Minch, Peter and Rhone, Trevor D. and Takeuchi, Ichiro and Wexler, Robert B. and Mannodi-Kanakkithodi, Arun and Ertekin, Elif and Mishra, Avanish and Mathew, Nithin and Wood, Mitchell and Rohskopf, Andrew D. and Hattrick-Simpers, Jason and Wang, Shih-Han and Achenie, Luke E. K. and Xin, Hongliang and Williams, Maureen and Biacchi, Adam J. and Tavazza, Francesca},
-      journal = {npj Computational Materials},
-      volume = {10},
-      number = {1},
-      pages = {93},
-      year = {2024},
-      doi = {10.1038/s41524-024-01259-w},
-      url = {https://doi.org/10.1038/s41524-024-01259-w}
-      }"
+  title = {{JARVIS-Leaderboard}: a large scale benchmark of materials design methods},
+  author = {Choudhary, Kamal and Wines, Daniel and Li, Kangming and Garrity, Kevin F. and Gupta, Vishu and Romero, Aldo H. and Krogel, Jaron T. and Saritas, Kayahan and Fuhr, Addis and Ganesh, Panchapakesan and Kent, Paul R. C. and Yan, Keqiang and Lin, Yuchao and Ji, Shuiwang and Blaiszik, Ben and Reiser, Patrick and Friederich, Pascal and Agrawal, Ankit and Tiwary, Pratyush and Beyerle, Eric and Minch, Peter and Rhone, Trevor D. and Takeuchi, Ichiro and Wexler, Robert B. and Mannodi-Kanakkithodi, Arun and Ertekin, Elif and Mishra, Avanish and Mathew, Nithin and Wood, Mitchell and Rohskopf, Andrew D. and Hattrick-Simpers, Jason and Wang, Shih-Han and Achenie, Luke E. K. and Xin, Hongliang and Williams, Maureen and Biacchi, Adam J. and Tavazza, Francesca},
+  journal = {npj Computational Materials},
+  volume = {10},
+  number = {1},
+  pages = {93},
+  year = {2024},
+  doi = {10.1038/s41524-024-01259-w},
+  url = {https://doi.org/10.1038/s41524-024-01259-w}
+  }"
 
 - date: "2022-02-22"
   expired: null
@@ -654,7 +687,13 @@
     - AQT@LBNL
   notes: Hardware-agnostic, application-level metrics
   cite:
-    - "@misc{tomesh2022supermarq,...}"
+    - "@article{bowles2024subtle,
+  title     = "{B}etter than classical? The subtle art of benchmarking quantum machine learning models",
+  author    = "Bowles, Joseph and Ahmed, Shahnawaz and Schuld, Maria",
+  journal   = "arXiv preprint",
+  volume    = "arXiv:2403.07059",
+  year      = "2024",
+  url       = "https://arxiv.org/abs/2403.07059" }"
 
 - date: "2024-10-01"
   expired: null
@@ -713,12 +752,13 @@
   models: []
   notes: Public leaderboard available
   cite:
-    - "@article{roberts2023satin,...}"
-    - "@misc{nguyen2023climatelearnbenchmarkingmachinelearning, title={ClimateLearn:
-      Benchmarking Machine Learning for Weather and Climate Modeling}, author={Tung
-      Nguyen and Jason Jewik and Hritik Bansal and Prakhar Sharma and Aditya Grover},
-      year={2023}, eprint={2307.01909}, archivePrefix={arXiv}, primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2307.01909}}"
+    "@article{roberts2023satin,
+  title = "{SATIN}: A Multi-Task Metadataset for Classifying Satellite Imagery Using Vision–Language Models",
+  author = "Roberts, Jonathan and Han, Kai and Albanie, Samuel",
+  journal = "arXiv preprint arXiv:2304.11619",
+  year = "2023",
+  url = "https://arxiv.org/abs/2304.11619" }"
+
 
 - date: "2023-07-19"
   expired: null
@@ -814,9 +854,20 @@
     - GPT-3
   notes: Baseline 56%, human 89%
   cite:
-    - "@inproceedings{talmor2019commonsenseqa,...}"
+    - "@inproceedings{talmor-etal-2019-commonsenseqa,
+  title = "{C}ommonsense{QA}: A Question Answering Challenge Targeting Commonsense Knowledge",
+  author = "Talmor, Alon and Herzig, Jonathan and Lourie, Nicholas and Berant, Jonathan",
+  booktitle = "Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)",
+  pages = "4149--4158",
+  year = "2019",
+  address = "Minneapolis, Minnesota",
+  publisher = "Association for Computational Linguistics",
+  doi = "10.18653/v1/N19-1421",
+  url = "https://aclanthology.org/N19-1421/"}"
+  
 
-- date: "2019-07-24"
+
+- date: "2019-07-24" 
   expired: null
   valid: 'yes'
   name: Winogrande
@@ -842,4 +893,13 @@
     - GPT-2
   notes: Human ~94%
   cite:
-    - "@article{sakaguchi2019winogrande,...}"
+    - "@inproceedings{sakaguchi2020winogrande,
+  title = "{W}ino{G}rande: An Adversarial Winograd Schema Challenge at Scale",
+  author = "Sakaguchi, Keisuke and Le Bras, Ronan and Bhagavatula, Chandra and Choi, Yejin",
+  booktitle = "Proceedings of the AAAI Conference on Artificial Intelligence",
+  volume = "34",
+  number = "05",
+  pages = "8732--8740",
+  year = "2020",
+  publisher = "AAAI Press",
+  url = "https://ojs.aaai.org/index.php/AAAI/article/view/6428" }"

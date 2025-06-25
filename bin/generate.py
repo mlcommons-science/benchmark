@@ -15,7 +15,7 @@ ALL_COLUMNS = [
     ("url", "2.5cm", "URL"),
     ("domain", "2cm", "Domain"),
     ("focus", "2cm", "Focus"),
-    ("keyword", "2.5cm", "Keyword"),
+    ("keywords", "2.5cm", "Keywords"),
     ("description", "4cm", "Description"),
     ("task_types", "3cm", "Task Types"),
     ("ai_capability_measured", "3cm", "AI Capability"),

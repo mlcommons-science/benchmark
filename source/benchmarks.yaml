@@ -5,7 +5,7 @@
   url: https://paperswithcode.com/dataset/mmlu
   domain: Multidomain
   focus: Academic knowledge and reasoning across 57 subjects
-  keyword:
+  keywords:
     - multitask
     - multiple-choice
     - zero-shot
@@ -44,7 +44,7 @@
   url: https://arxiv.org/abs/2311.12022
   domain: Science
   focus: Graduate-level scientific reasoning
-  keyword:
+  keywords:
     - Google-proof
     - graduate-level
     - science QA
@@ -81,7 +81,7 @@
   url: https://allenai.org/data/arc
   domain: Science
   focus: Grade-school science with reasoning emphasis
-  keyword:
+  keywords:
     - grade-school
     - science QA
     - challenge set
@@ -117,7 +117,7 @@
   url: https://arxiv.org/abs/2501.14249
   domain: Multidomain
   focus: Broad cross-domain academic reasoning
-  keyword:
+  keywords:
     - cross-domain
     - academic exam
     - multiple-choice
@@ -149,7 +149,7 @@
   url: https://arxiv.org/abs/2411.04872
   domain: Mathematics
   focus: Challenging advanced mathematical reasoning
-  keyword:
+  keywords:
     - symbolic reasoning
     - number theory
     - algebraic geometry
@@ -181,7 +181,7 @@
   url: https://arxiv.org/abs/2407.13168
   domain: Scientific Programming
   focus: Scientific code generation and problem solving
-  keyword:
+  keywords:
     - code synthesis
     - scientific computing
     - programming benchmark
@@ -213,7 +213,7 @@
   url: https://artofproblemsolving.com/wiki/index.php/AIME_Problems_and_Solutions
   domain: Mathematics
   focus: Pre-college advanced problem solving
-  keyword:
+  keywords:
     - algebra
     - combinatorics
     - number theory
@@ -247,7 +247,7 @@
   url: https://huggingface.co/datasets/HuggingFaceH4/MATH-500
   domain: Mathematics
   focus: Math reasoning generalization
-  keyword:
+  keywords:
     - calculus
     - algebra
     - number theory
@@ -279,7 +279,7 @@
   url: https://arxiv.org/abs/2404.02029
   domain: Multidomain Science
   focus: Long-context scientific reasoning
-  keyword:
+  keywords:
     - long-context
     - information extraction
     - multimodal
@@ -316,7 +316,7 @@
   url: https://github.com/alleninstitute/feabench
   domain: Computational Engineering
   focus: FEA simulation accuracy and performance
-  keyword:
+  keywords:
     - finite element
     - simulation
     - PDE
@@ -351,7 +351,7 @@
   url: https://arxiv.org/abs/2407.09413
   domain: Computer Science
   focus: Multimodal QA on scientific figures
-  keyword:
+  keywords:
     - multimodal QA
     - figure understanding
     - table comprehension
@@ -388,7 +388,7 @@
   url: https://arxiv.org/abs/2009.13081
   domain: Medical Question Answering
   focus: Medical board exam QA
-  keyword:
+  keywords:
     - USMLE
     - diagnostic QA
     - medical knowledge
@@ -422,7 +422,7 @@
   url: https://arxiv.org/abs/2505.08341
   domain: Computational Biology
   focus: Omics-driven AI research tasks
-  keyword:
+  keywords:
     - single-cell annotation
     - biological QA
     - autonomous discovery
@@ -456,7 +456,7 @@
   url: https://github.com/zjunlp/MolGen
   domain: Computational Chemistry
   focus: Molecular generation and optimization
-  keyword:
+  keywords:
     - SELFIES
     - GAN
     - property optimization
@@ -492,7 +492,7 @@
   url: https://ogb.stanford.edu/docs/home/
   domain: Graph ML
   focus: Biological graph property prediction
-  keyword:
+  keywords:
     - node prediction
     - link prediction
     - graph classification
@@ -529,7 +529,7 @@
   url: https://materialsproject.org/
   domain: Materials Science
   focus: DFT-based property prediction
-  keyword:
+  keywords:
     - DFT
     - materials genome
     - high-throughput
@@ -567,7 +567,7 @@
   url: https://opencatalystproject.org/
   domain: Chemistry; Materials Science
   focus: Catalyst adsorption energy prediction
-  keyword:
+  keywords:
     - DFT relaxations
     - adsorption energy
     - graph neural networks
@@ -646,7 +646,7 @@
   url: https://arxiv.org/abs/2306.11688
   domain: Materials Science; Benchmarking
   focus: Comparative evaluation of materials design methods
-  keyword:
+  keywords:
     - leaderboards
     - materials methods
     - simulation
@@ -687,7 +687,7 @@
     - https://pennylane.ai/datasets/collection/qml-benchmarks
   domain: Quantum Computing
   focus: Quantum algorithm performance evaluation
-  keyword:
+  keywords:
     - quantum circuits
     - state preparation
     - error correction
@@ -726,7 +726,7 @@
   url: https://arxiv.org/abs/2310.05963
   domain: Fluid Dynamics; Scientific ML
   focus: Neural operator surrogate modeling
-  keyword:
+  keywords:
     - neural operators
     - CFD
     - FNO
@@ -761,7 +761,7 @@
   url: null
   domain: Remote Sensing
   focus: Satellite imagery classification
-  keyword:
+  keywords:
     - land-use
     - zero-shot
     - multi-task
@@ -796,7 +796,7 @@
   url: https://arxiv.org/abs/2307.01909
   domain: Climate Science; Forecasting
   focus: ML for weather and climate modeling
-  keyword:
+  keywords:
     - medium-range forecasting
     - ERA5
     - data-driven
@@ -831,7 +831,7 @@
   url: https://github.com/google/BIG-bench
   domain: NLP; AI Evaluation
   focus: Diverse reasoning and generalization tasks
-  keyword:
+  keywords:
     - few-shot
     - multi-task
     - bias analysis
@@ -869,7 +869,7 @@
   url: https://paperswithcode.com/paper/commonsenseqa-a-question-answering-challenge
   domain: NLP; Commonsense
   focus: Commonsense question answering
-  keyword:
+  keywords:
     - ConceptNet
     - multiple-choice
     - adversarial
@@ -906,7 +906,7 @@
   url: https://leaderboard.allenai.org/winogrande/submissions/public
   domain: NLP; Commonsense
   focus: Winograd Schema-style pronoun resolution
-  keyword:
+  keywords:
     - adversarial
     - pronoun resolution
   description: |

@@ -357,22 +357,54 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
 
     generate_bibtex(input_filepaths, output_filepath)
 
+def write_individual_latex_tables(input_filepaths: List[str], output_dir: str, columns: List[tuple], author_limit: int | None = 10) -> None:
+    """
+    Writes each benchmark entry as its own LaTeX table in separate .tex files.
+    """
+
+    os.makedirs(output_dir, exist_ok=True)
+    entries = merge_yaml_files(input_filepaths)
+
+    for i, entry in enumerate(entries):
+        entry_name = entry.get("name", f"entry_{i}")
+        filename = sanitize_filename(entry_name) + ".tex"
+        filepath = os.path.join(output_dir, filename)
+
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write("\\begin{table}[h!]\n\\centering\n")
+            f.write("\\begin{tabular}{|l|p{10cm}|}\n\\hline\n")
+
+            for col_name, _, col_display in columns:
+                val = entry.get(col_name, '')
+                if col_name == "cite":
+                    cite_keys = [extract_cite_label(c) for c in val] if isinstance(val, list) else []
+                    url = extract_cite_url(val[0]) if isinstance(val, list) and val else ""
+                    citation_str = (f"\\cite{{{', '.join(cite_keys)}}}" if cite_keys else "") + (
+                        f" \\href{{{url}}}{{$\\Rightarrow$ }}" if url else "")
+                    val = citation_str
+                elif isinstance(val, list):
+                    val = escape_latex(", ".join(map(str, val)))
+                else:
+                    val = escape_latex(val)
+
+                f.write(f"\\textbf{{{escape_latex(col_display)}}} & {val} \\\\ \\hline\n")
+
+            f.write("\\end{tabular}\n\\end{table}\n")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process YAML benchmark files to MD or LaTeX.")
 
     parser.add_argument('--files', '-i', type=str, nargs='+', required=True, help='YAML file paths to process.')
-    parser.add_argument('--format', '-f', type=str, choices=['md', 'tex'], help="Output file format: 'md' or 'tex'")
+    parser.add_argument('--format', '-f', type=str, choices=['md', 'tex','indv-tex'], help="Output file format: 'md' or 'tex' or each latex entry with its own table")
     parser.add_argument('--standalone', '-s', action='store_true', help="Include full LaTeX document preamble. Works only with LaTeX format")
     parser.add_argument('--out-dir', '-o', type=str, default='../content/', help="Output directory")
     parser.add_argument('--columns', '-c', type=lambda s: s.split(','), help="Subset of columns to include")
     parser.add_argument('--readme', action='store_true', help="Show README.md content")
     parser.add_argument('--index', '-I', action='store_true', help="Generate individual pages for each entry and an index.md. Works only with MD format")
-    parser.add_argument('--authorlimit', type=int, default=9999999, help="Limit number of authors for LaTeX")
     parser.add_argument('--authortruncation', type=int, default=None, help="Truncate authors for index pages")
     parser.add_argument('--withcitation', action='store_true', help="Include a row for BibTeX citations. Works only with Markdown format")
-
+ 
 
     args = parser.parse_args()
 
@@ -409,3 +441,5 @@ if __name__ == "__main__":
         write_md(args.files, os.path.join(args.out_dir, "md"), columns, args.authorlimit)
     elif args.format == 'tex':
         write_latex(args.files, os.path.join(args.out_dir, "tex"), columns, standalone=args.standalone, author_limit=args.authorlimit)
+    elif args.format == 'indv-tex':
+        write_individual_latex_tables(args.files, os.path.join(args.out_dir, "indv_tex"), columns, author_limit=args.authortruncation)

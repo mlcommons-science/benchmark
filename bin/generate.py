@@ -76,9 +76,9 @@ def write_md(input_filepaths: list[str], output_dir: str, columns: List[tuple]) 
                 #save the article's name
                 if col_name == "name":
                     current_article_name = val
-                #save the article's URL
-                if col_name == "url":
-                    current_url = val
+                # #save the article's URL
+                # if col_name == "url":
+                #     current_url = val
 
                 # replace characters that would break the MD table
                 val = str(val).replace("\n", " ").replace("['", "").replace("']", "")
@@ -87,14 +87,23 @@ def write_md(input_filepaths: list[str], output_dir: str, columns: List[tuple]) 
 
                 # if adding the citation, put in [<title>][<URL>] format
                 if col_name == "cite":
-                    #Handle case where there are multiple URLs
-                    if isinstance(current_url, list):
-                        val = current_article_name.replace("(", " ").replace(")", " ") + " "
-                        for i in range(len(current_url)):
-                            val += f"[(Link {i+1})]({current_url[i]}) "
-                    #Case where there is only one URL
-                    else:
-                        val = f"[{current_article_name}]({current_url})"
+                    # #Handle case where there are multiple URLs
+                    # if isinstance(current_url, list):
+                    #     val = current_article_name.replace("(", " ").replace(")", " ") + " "
+                    #     for i in range(len(current_url)):
+                    #         val += f"[(Link {i+1})]({current_url[i]}) "
+                    # #Case where there is only one URL
+                    # else:
+                    #     val = f"[{current_article_name}]({current_url})"
+                    
+                    #find the first instance of the string "http" in the value
+                    link_location = val.find("http")
+                    link_end_location = val.find("}", link_location)
+                    link = val[link_location:link_end_location]
+
+                    #put it in the citation
+                    val = f"[{current_article_name}]({link})"
+
 
                 row_cells.append(val)
             

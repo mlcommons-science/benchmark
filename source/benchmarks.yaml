@@ -677,8 +677,16 @@
     - IBM Q
     - IonQ
     - AQT@LBNL
-  notes: Hardware-agnostic, application-level metrics
-  cite: null
+  notes: Hardware-agnostic, application-level metrics. The citation may not be correct.
+  cite: "@inproceedings{Kiwit_2023,
+          title={Application-Oriented Benchmarking of Quantum Generative Learning Using QUARK},
+          url={http://dx.doi.org/10.1109/QCE57702.2023.00061},
+          DOI={10.1109/qce57702.2023.00061},
+          booktitle={2023 IEEE International Conference on Quantum Computing and Engineering (QCE)},
+          publisher={IEEE},
+          author={Kiwit, Florian J. and Marso, Marwa and Ross, Philipp and Riofrío, Carlos A. and Klepsch, Johannes and Luckow, Andre},
+          year={2023},
+          month=sep, pages={475-484} }"
 
 - date: "2024-10-01"
   expired: null
@@ -706,13 +714,12 @@
     - DeepONet
     - U-Net
   notes: 302K frames across 739 cases
-  cite:
-    - "@misc{luo2024cfdbenchlargescalebenchmarkmachine,
-       title={CFDBench: A Large-Scale Benchmark for Machine Learning Methods in Fluid Dynamics},
-       author={Luo, Yining and Chen, Yingfa and Zhang, Zhen},
-       year={2024},
-       url={https://arxiv.org/abs/2310.05963}
-     }"
+  cite: "@misc{luo2024cfdbenchlargescalebenchmarkmachine,
+        title={CFDBench: A Large-Scale Benchmark for Machine Learning Methods in Fluid Dynamics},
+        author={Luo, Yining and Chen, Yingfa and Zhang, Zhen},
+        year={2024},
+        url={https://arxiv.org/abs/2310.05963}
+        }"
 
 - date: null
   expired: null

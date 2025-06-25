@@ -6,7 +6,7 @@ import re
 from typing import List
 import textwrap
 
-ALL_COLUMNS = [
+COLUMN_TITLES = [
     ("date", "1.5cm", "Date"),
     ("expiration", "1.5cm", "Expiration"),
     ("valid", "1.5cm", "Valid"),
@@ -24,9 +24,12 @@ ALL_COLUMNS = [
     ("cite", "1cm", "Citation")
 ]
 
+FULL_CITE_TITLE = ("full_cite", "1cm", "Full BibTeX")
+
+
 def get_column_triples(selected: list[str]) -> list[tuple[str, str, str]]:
     selected_lower = [s.lower() for s in selected]
-    return [triple for triple in ALL_COLUMNS if triple[0] in selected_lower]
+    return [triple for triple in COLUMN_TITLES if triple[0] in selected_lower]
 
 def load_yaml_file(file_path: str) -> list[dict]:
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -46,15 +49,98 @@ def merge_yaml_files(file_paths: list[str]) -> list[dict]:
 
     merged_records = []
     for record in records:
-        merged_record = {col[0]: record.get(col[0], None) for col in ALL_COLUMNS}
+        merged_record = {col[0]: record.get(col[0], None) for col in COLUMN_TITLES}
         merged_records.append(merged_record)
 
     return merged_records
 
 
-def write_md(input_filepaths: list[str], output_dir: str, columns: List[tuple]) -> None:
+
+def get_bibtex(cell_val: str, author_limit: int|None) -> str:
     """
-    Combines the YAML tables at `input_filepaths`
+    Returns a substring of `cell_val` containing a BibTeX string.
+    If there is no BibTex string, returns the string "None".
+
+    If there are multiple BibTeX entries, the first entry is returned.
+
+    Parameters:
+        cell_val: string possibly containing a BibTeX entry
+        author_limit: maximum number of author names to include before truncating with "et al." If not None, must be a positive integer
+    Returns:
+        BibTeX entry in `cell_val` or "None"
+    """
+    assert type(cell_val)==str, "cell value must be a string"
+    assert author_limit==None or (type(author_limit)==int and author_limit>0), "author limit must be a positive integer"
+
+    match = re.search(r'@(?:\w+)\s*\{', cell_val)
+    if not match:
+        return "None"
+
+    start = match.start()
+    brace_count = 0
+    end = start
+    in_entry = False
+
+    while end < len(cell_val):
+        if cell_val[end] == '{':
+            brace_count += 1
+            in_entry = True
+        elif cell_val[end] == '}':
+            brace_count -= 1
+            if brace_count == 0 and in_entry:
+                end += 1
+                break
+        end += 1
+
+    bibtex_entry = cell_val[start:end] if in_entry and brace_count == 0 else "none"
+    if bibtex_entry == "none":
+        return "none"
+
+
+    # Find the 'author' field
+    author_match = re.search(r'author\s*=\s*\{([^}]*)\}', bibtex_entry, re.IGNORECASE)
+    if not author_match:
+        return bibtex_entry  # No author field found
+
+    authors = author_match.group(1)
+
+    # Split by 'and'
+    authors_list = authors.split(' and ')
+
+    # Recombine authors
+    new_authors = authors_list[0]
+    for a in range(1, min(len(authors_list), author_limit)):
+        new_authors += (" and " + authors_list[a])
+    
+    #Append 'et al.' if needed
+    if len(authors_list) > author_limit:
+        new_authors += " et al."
+
+    #Add authors to citation
+    modified_bibtex = (bibtex_entry[:author_match.start(1)] +
+                       new_authors +
+                       bibtex_entry[author_match.end(1):])
+
+    return modified_bibtex
+
+
+
+
+
+def write_md(input_filepaths: list[str], output_dir: str, columns: list[tuple], author_limit:int=10) -> None:
+    """
+    Combines the YAML tables at `input_filepaths` and exports the combined table 
+    to a Markdown file called "benchmarks.md" in `output_dir`.
+    Headers for each column are called `columns`.
+
+    If the output directory does not exist, the function creates a new directory
+    with the given name.
+
+    Parameters:
+        input_filepaths: list of filepaths
+        output_dir: directory to export results
+        columns: column names for the exported table
+        author_limit: maximum number of authors that appear in citations before being truncated with 'et al.'
     """
 
     contents = merge_yaml_files(input_filepaths)
@@ -67,51 +153,52 @@ def write_md(input_filepaths: list[str], output_dir: str, columns: List[tuple]) 
 
         for row in contents:
             current_article_name = None
-            current_url = None
 
             row_cells = []
             for col_name, _, _ in columns:
-                val = row.get(col_name, '')
+                cell_value = row.get(col_name, '')
 
                 #save the article's name
                 if col_name == "name":
-                    current_article_name = val
-                # #save the article's URL
-                # if col_name == "url":
-                #     current_url = val
+                    current_article_name = cell_value
 
                 # replace characters that would break the MD table
-                val = str(val).replace("\n", " ").replace("['", "").replace("']", "")
-                val = val.replace("', '", ", ").replace("','", ", ").replace("[]", "")
-                val = val.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
+                cell_value = str(cell_value).replace("\n", " ").replace("['", "").replace("']", "")
+                cell_value = cell_value.replace("', '", ", ").replace("','", ", ").replace("[]", "")
+                cell_value = cell_value.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
 
                 # if adding the citation, put in [<title>][<URL>] format
                 if col_name == "cite":
-                    # #Handle case where there are multiple URLs
-                    # if isinstance(current_url, list):
-                    #     val = current_article_name.replace("(", " ").replace(")", " ") + " "
-                    #     for i in range(len(current_url)):
-                    #         val += f"[(Link {i+1})]({current_url[i]}) "
-                    # #Case where there is only one URL
-                    # else:
-                    #     val = f"[{current_article_name}]({current_url})"
-                    
+
                     #find the first instance of the string "http" in the value
-                    link_location = val.find("http")
-                    link_end_location = val.find("}", link_location)
-                    link = val[link_location:link_end_location]
+                    link_start_location = cell_value.find("http")
+                    link_end_location = cell_value.find("}", link_start_location)
+                    link = cell_value[link_start_location:link_end_location]
 
-                    #put it in the citation
-                    val = f"[{current_article_name}]({link})"
+                    #put the link in the citation
+                    cell_value = f"[{current_article_name}]({link})"
+
+                # if adding citations, add the citation row with author limit
+                elif col_name == "full_cite":
+                    cell_value = get_bibtex(row.get("cite", '')[0], author_limit)
 
 
-                row_cells.append(val)
+                row_cells.append(cell_value)
             
             md_file.write('| ' + ' | '.join(row_cells) + ' |\n')
 
 
+def escape_latex(text) -> str:
+    """
+    Returns a copy of `text` where LaTeX special characters are replaced with valid escape sequences.
 
-def escape_latex(text):
+    If `text` is not a string, `text` is automatically converted to a string.
+
+    Parameters:
+        text: text to transform
+    Returns:
+        LaTeX friendly version of `text`
+    """
     if not isinstance(text, str):
         text = str(text)
     return (
@@ -154,6 +241,7 @@ def generate_bibtex(input_filepaths: List[str], output_dir: str) -> None:
     with open(os.path.join(output_dir, "benchmarks.bib"), 'w', encoding='utf-8') as bib_file:
         for entry in entries:
             bib_file.write(entry.strip() + "\n\n")
+
 
 def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[tuple], standalone: bool = False) -> None:
     os.makedirs(output_filepath, exist_ok=True)
@@ -230,9 +318,9 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
                     elif col_name == "url":
                         val = ""  # already shown in cite
                     elif isinstance(val, list):
-                        if args.authorlimit is not None and col_name in "authors":
-                            displayed = val[:args.authorlimit]
-                            suffix = ", et al." if len(val) > args.authorlimit else ""
+                        if args.author_limit is not None and col_name in "authors":
+                            displayed = val[:args.author_limit]
+                            suffix = ", et al." if len(val) > args.author_limit else ""
                             val = "[" + ", ".join(escape_latex(str(v)) for v in displayed) + suffix + "]"
                         else:
                             val = "[" + ", ".join(escape_latex(str(v)) for v in val) + "]"
@@ -257,6 +345,8 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
         # Also write BibTeX
         generate_bibtex(input_filepaths, output_filepath)
 
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process YAML benchmark files to MD or LaTeX.")
 
@@ -266,15 +356,19 @@ if __name__ == "__main__":
                         help="Output file format: 'md' or 'tex'")
     parser.add_argument('--standalone', '-s', action='store_true',
                         help="Include full LaTeX document preamble.")
-    parser.add_argument('--out-dir', '-o', type=str, default='../content/',
-                        help="Output directory")
+    parser.add_argument('--out-dir', '-o', type=str, default='content/',
+                        help="Output directory. Default: 'content/'")
     parser.add_argument('--columns', type=lambda s: s.split(','),
                         help="Subset of columns to include (comma-separated, e.g. name,url,description)")
     parser.add_argument('--readme', action='store_true',
                         help="Show README.md content")
     # Limiting the number of authors
-    parser.add_argument('--authorlimit', type=int, default=None,
+    parser.add_argument('--author-limit', type=int, default=None,
                     help="Limit number of authors (e.g., --authorlimit 10 adds 'et al.' if exceeded)")
+    parser.add_argument('--with-citation', action='store_true',
+                    help="Include a column for the full BibTeX citation")
+    
+
 
     args = parser.parse_args()
 
@@ -293,9 +387,15 @@ if __name__ == "__main__":
 
     os.makedirs(args.out_dir, exist_ok=True)
 
-    columns = get_column_triples(args.columns) if args.columns else ALL_COLUMNS
+    columns = get_column_triples(args.columns) if args.columns else COLUMN_TITLES
+
+    if args.with_citation:
+        columns.append(FULL_CITE_TITLE)
+
 
     if args.format == 'md':
-        write_md(args.files, os.path.join(args.out_dir, "md"), columns)
+        write_md(args.files, os.path.join(args.out_dir, "md"), columns, author_limit=args.author_limit)
     elif args.format == 'tex':
         write_latex(args.files, os.path.join(args.out_dir, "tex"), columns, standalone=args.standalone)
+    else:
+        raise AssertionError("Invalid format: " + args.format)

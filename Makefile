@@ -12,8 +12,12 @@ all: content standalone pdf
 content: md tex
 	echo DONE
 
-md:
+index:
 	python bin/generate.py --files ${FILES}  --format=md --out=./content
+
+
+md:
+	python bin/generate.py --files ${FILES}  --format=md --out=./content --index
 
 tex:
 	python bin/generate.py --files ${FILES} --format=tex --out=./content --standalone --columns=${COLUMNS}
@@ -32,7 +36,7 @@ pdf2: tex
 	cd content/tex; pdflatex benchmarks
 
 pdf: tex
-	cd content/tex && latexmk -pdf -silent benchmarks.tex
+	cd content/tex; latexmk -pdf -silent benchmarks.tex
 
 clean:
 	cd content/tex && latexmk -C

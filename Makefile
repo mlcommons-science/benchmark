@@ -12,10 +12,6 @@ all: content standalone pdf
 content: md tex
 	echo DONE
 
-index:
-	python bin/generate.py --files ${FILES}  --format=md --out=./content
-
-
 md:
 	python bin/generate.py --files ${FILES}  --format=md --out=./content --index
 

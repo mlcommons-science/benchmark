@@ -706,7 +706,6 @@
     - IonQ
     - AQT@LBNL
   notes: Hardware-agnostic, application-level metrics. The citation may not be correct.
-<<<<<<< HEAD
   cite: "@inproceedings{kiwit2023,
           title={Application-Oriented Benchmarking of Quantum Generative Learning Using QUARK},
           url={http://dx.doi.org/10.1109/QCE57702.2023.00061},
@@ -716,20 +715,6 @@
           author={Kiwit, Florian J. and Marso, Marwa and Ross, Philipp and Riofrío, Carlos A. and Klepsch, Johannes and Luckow, Andre},
           year={2023},
           month=sep, pages={475-484} }"
-=======
-  cite:
-    - |
-      @inproceedings{kiwit2023,
-        title={Application-Oriented Benchmarking of Quantum Generative Learning Using QUARK},
-        url={http://dx.doi.org/10.1109/QCE57702.2023.00061},
-        DOI={10.1109/qce57702.2023.00061},
-        booktitle={2023 IEEE International Conference on Quantum Computing and Engineering (QCE)},
-        publisher={IEEE},
-        author={Kiwit, Florian J. and Marso, Marwa and Ross, Philipp and Riofrío, Carlos A. and Klepsch, Johannes and Luckow, Andre},
-        year={2023},
-        month=sep, pages={475-484}
-      }
->>>>>>> 2911c063a0031b481363ba863b3cd9420859b96e
 
 - date: "2024-10-01"
   expired: null

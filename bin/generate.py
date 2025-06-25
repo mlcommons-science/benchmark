@@ -3,8 +3,8 @@ import os
 import sys
 import yaml
 import re
-import textwrap
 from typing import List
+import textwrap
 import bibtexparser
 
 COLUMN_TITLES = [
@@ -15,7 +15,7 @@ COLUMN_TITLES = [
     ("url", "2.5cm", "URL"),
     ("domain", "2cm", "Domain"),
     ("focus", "2cm", "Focus"),
-    ("keywords", "2.5cm", "Keywords"),
+    ("keyword", "2.5cm", "Keyword"),
     ("description", "4cm", "Description"),
     ("task_types", "3cm", "Task Types"),
     ("ai_capability_measured", "3cm", "AI Capability"),
@@ -42,13 +42,12 @@ def load_yaml_file(file_path: str) -> list[dict]:
         else:
             raise ValueError(f"Unsupported YAML format in {file_path}")
 
+
 def merge_yaml_files(file_paths: list[str]) -> list[dict]:
     records = []
     for path in file_paths:
         records.extend(load_yaml_file(path))
-    return records
 
-<<<<<<< HEAD
     merged_records = []
     for record in records:
         merged_record = {col[0]: record.get(col[0], None) for col in COLUMN_TITLES}
@@ -126,28 +125,9 @@ def get_bibtex(cell_val: str, author_limit: int|None) -> str:
     return modified_bibtex
 
 
-
-
-
-def write_md(input_filepaths: list[str], output_dir: str, columns: list[tuple], author_limit:int=10) -> None:
-    """
-    Combines the YAML tables at `input_filepaths` and exports the combined table 
-    to a Markdown file called "benchmarks.md" in `output_dir`.
-    Headers for each column are called `columns`.
-
-    If the output directory does not exist, the function creates a new directory
-    with the given name.
-
-    Parameters:
-        input_filepaths: list of filepaths
-        output_dir: directory to export results
-        columns: column names for the exported table
-        author_limit: maximum number of authors that appear in citations before being truncated with 'et al.'
-    """
-=======
 def sanitize_filename(name: str) -> str:
     return re.sub(r'[^\w\-_\. ]', '_', name).replace(' ', '_').lower()
->>>>>>> 2911c063a0031b481363ba863b3cd9420859b96e
+
 
 def write_individual_md_pages(input_filepaths: List[str], output_dir: str, columns: List[tuple], author_trunc: int = None) -> None:
     contents = merge_yaml_files(input_filepaths)
@@ -196,15 +176,32 @@ def write_individual_md_pages(input_filepaths: List[str], output_dir: str, colum
                         f.write(f"**{col_display}**: {val_str}\n\n")
             index_file.write(f"- [{entry_name}]({filename})\n")
 
-def write_md(input_filepaths: list[str], output_dir: str, columns: List[tuple]) -> None:
+
+def write_md(input_filepaths: list[str], output_dir: str, columns: list[tuple], author_limit:int=10) -> None:
+    """
+    Combines the YAML tables at `input_filepaths` and exports the combined table 
+    to a Markdown file called "benchmarks.md" in `output_dir`.
+    Headers for each column are called `columns`.
+
+    If the output directory does not exist, the function creates a new directory
+    with the given name.
+
+    Parameters:
+        input_filepaths: list of filepaths
+        output_dir: directory to export results
+        columns: column names for the exported table
+        author_limit: maximum number of authors that appear in citations before being truncated with 'et al.'
+    """
+
     contents = merge_yaml_files(input_filepaths)
     os.makedirs(output_dir, exist_ok=True)
+
     with open(os.path.join(output_dir, "benchmarks.md"), 'w', encoding='utf-8') as md_file:
         headers = [col[2] for col in columns]
         md_file.write('| ' + ' | '.join(headers) + ' |\n')
         md_file.write('| ' + ' | '.join(['---'] * len(columns)) + ' |\n')
+
         for row in contents:
-<<<<<<< HEAD
             current_article_name = None
 
             row_cells = []
@@ -252,32 +249,19 @@ def escape_latex(text) -> str:
     Returns:
         LaTeX friendly version of `text`
     """
-=======
-            current_article_name = row.get("name", "")
-            current_url = row.get("url", "")
-            row_cells = []
-            for col_name, _, _ in columns:
-                val = row.get(col_name, '')
-                if col_name == "cite":
-                    if isinstance(current_url, list):
-                        val = current_article_name + " " + " ".join(f"[(Link {i+1})]({url})" for i, url in enumerate(current_url))
-                    else:
-                        val = f"[{current_article_name}]({current_url})"
-                else:
-                    val = str(val).replace("\n", " ").replace("['", "").replace("']", "")
-                    val = val.replace("', '", ", ").replace("','", ", ").replace("[]", "")
-                    val = val.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
-                row_cells.append(val)
-            md_file.write('| ' + ' | '.join(row_cells) + ' |\n')
-
-def escape_latex(text):
->>>>>>> 2911c063a0031b481363ba863b3cd9420859b96e
     if not isinstance(text, str):
         text = str(text)
     return (
-        text.replace("\\", "\\textbackslash{}").replace("&", "\\&").replace("%", " percent")
-            .replace("_", "\\_").replace("#", "\\#").replace("{", "\\{").replace("}", "\\}")
-            .replace("^", "\\^{}").replace("~", "\\~{}").replace("$", "\\$")
+        text.replace("\\", "\\textbackslash{}")
+            .replace("&", "\\&")
+            .replace("%", " percent")
+            .replace("_", "\\_")
+            .replace("#", "\\#")
+            .replace("{", "\\{")
+            .replace("}", "\\}")
+            .replace("^", "\\^{}")
+            .replace("~", "\\~{}")
+            .replace("$", "\\$")
     )
 
 def extract_cite_label(cite_entry: str) -> str:
@@ -304,23 +288,24 @@ def generate_bibtex(input_filepaths: List[str], output_dir: str) -> None:
         for entry in entries:
             bib_file.write(entry.strip() + "\n\n")
 
-<<<<<<< HEAD
 
-def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[tuple], standalone: bool = False) -> None:
-=======
-def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[tuple], standalone: bool = False, author_limit: int = None) -> None:
->>>>>>> 2911c063a0031b481363ba863b3cd9420859b96e
+def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[tuple], standalone: bool = False, author_limit: int|None = 10) -> None:
     os.makedirs(output_filepath, exist_ok=True)
+
     for filepath in input_filepaths:
         with open(filepath, 'r', encoding='utf-8') as f:
             records = yaml.safe_load(f)
+
         if not isinstance(records, list):
             raise ValueError(f"{filepath} must contain a list of benchmark records")
+
         base_name = os.path.splitext(os.path.basename(filepath))[0]
         output_tex_path = os.path.join(output_filepath, f"{base_name}.tex")
+
         with open(output_tex_path, 'w', encoding='utf-8') as f:
             if standalone:
-                f.write(textwrap.dedent(r"""
+                preamble = textwrap.dedent(
+                    r"""
                     \documentclass{article}
                     \usepackage{hyperref}
                     \usepackage[margin=1in]{geometry}
@@ -330,7 +315,9 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
                     \usepackage[style=ieee, url=true]{biblatex}
                     \addbibresource{benchmarks.bib}
                     \begin{document}
-                """))
+                    """)
+                f.write(preamble)
+
             f.write("\\begin{landscape}\n{\\footnotesize\n")
             f.write(f"\\begin{{longtable}}{{|{'|'.join([f'p{{{col[1]}}}' for col in columns])}|}}\n\\hline\n")
             f.write(" & ".join([f"{{\\bf {col[2]}}}" for col in columns]) + " \\\\ \\hline\n\\endfirsthead\n")
@@ -348,54 +335,30 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
                     elif col_name == "url":
                         val = ""
                     elif isinstance(val, list):
-<<<<<<< HEAD
-                        if args.author_limit is not None and col_name in "authors":
-                            displayed = val[:args.author_limit]
-                            suffix = ", et al." if len(val) > args.author_limit else ""
+                        if author_limit is not None and col_name in "authors":
+                            displayed = val[:author_limit]
+                            suffix = ", et al." if len(val) > author_limit else ""
                             val = "[" + ", ".join(escape_latex(str(v)) for v in displayed) + suffix + "]"
-=======
-                        if author_limit is not None and col_name == "authors":
-                            val = ", ".join(escape_latex(v) for v in val[:author_limit])
-                            if len(val) > author_limit:
-                                val += ", et al."
->>>>>>> 2911c063a0031b481363ba863b3cd9420859b96e
+
                         else:
                             val = ", ".join(escape_latex(v) for v in val)
                     else:
                         val = escape_latex(val)
+
+        
                     row.append(val)
                 f.write(" & ".join(row) + " \\\\ \\hline\n")
             f.write("\\end{longtable}\n}\n\\end{landscape}\n")
             if standalone:
                 f.write("\\printbibliography\n\\end{document}\n")
+
     generate_bibtex(input_filepaths, output_filepath)
 
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process YAML benchmark files to MD or LaTeX.")
-<<<<<<< HEAD
 
-    parser.add_argument('--files', '-i', type=str, nargs='+', required=True,
-                        help='YAML file paths to process.')
-    parser.add_argument('--format', '-f', type=str, choices=['md', 'tex'],
-                        help="Output file format: 'md' or 'tex'")
-    parser.add_argument('--standalone', '-s', action='store_true',
-                        help="Include full LaTeX document preamble.")
-    parser.add_argument('--out-dir', '-o', type=str, default='content/',
-                        help="Output directory. Default: 'content/'")
-    parser.add_argument('--columns', type=lambda s: s.split(','),
-                        help="Subset of columns to include (comma-separated, e.g. name,url,description)")
-    parser.add_argument('--readme', action='store_true',
-                        help="Show README.md content")
-    # Limiting the number of authors
-    parser.add_argument('--author-limit', type=int, default=None,
-                    help="Limit number of authors (e.g., --authorlimit 10 adds 'et al.' if exceeded)")
-    parser.add_argument('--with-citation', action='store_true',
-                    help="Include a column for the full BibTeX citation")
-    
-
-=======
     parser.add_argument('--files', '-i', type=str, nargs='+', required=True, help='YAML file paths to process.')
     parser.add_argument('--format', '-f', type=str, choices=['md', 'tex'], help="Output file format: 'md' or 'tex'")
     parser.add_argument('--standalone', '-s', action='store_true', help="Include full LaTeX document preamble.")
@@ -405,7 +368,8 @@ if __name__ == "__main__":
     parser.add_argument('--index', action='store_true', help="Generate individual pages for each entry and an index.md")
     parser.add_argument('--authorlimit', type=int, default=None, help="Limit number of authors for LaTeX")
     parser.add_argument('--authortruncation', type=int, default=None, help="Truncate authors for index pages")
->>>>>>> 2911c063a0031b481363ba863b3cd9420859b96e
+    parser.add_argument('--withcitation', type=int, default=None, help="Truncate authors for index pages")
+
 
     args = parser.parse_args()
 
@@ -416,28 +380,19 @@ if __name__ == "__main__":
 
     if args.standalone and args.format != 'tex':
         parser.error("--standalone is only valid with --format tex")
+    
 
     for file in args.files:
         if not os.path.exists(file):
             parser.error(f"The file {file} does not exist")
 
     os.makedirs(args.out_dir, exist_ok=True)
-<<<<<<< HEAD
 
     columns = get_column_triples(args.columns) if args.columns else COLUMN_TITLES
 
-    if args.with_citation:
+    if args.format=='md' and args.withcitation:
         columns.append(FULL_CITE_TITLE)
 
-
-    if args.format == 'md':
-        write_md(args.files, os.path.join(args.out_dir, "md"), columns, author_limit=args.author_limit)
-    elif args.format == 'tex':
-        write_latex(args.files, os.path.join(args.out_dir, "tex"), columns, standalone=args.standalone)
-    else:
-        raise AssertionError("Invalid format: " + args.format)
-=======
-    columns = get_column_triples(args.columns) if args.columns else ALL_COLUMNS
 
     if args.index:
         write_individual_md_pages(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_trunc=args.authortruncation)
@@ -445,4 +400,3 @@ if __name__ == "__main__":
         write_md(args.files, os.path.join(args.out_dir, "md"), columns)
     elif args.format == 'tex':
         write_latex(args.files, os.path.join(args.out_dir, "tex"), columns, standalone=args.standalone, author_limit=args.authorlimit)
->>>>>>> 2911c063a0031b481363ba863b3cd9420859b96e

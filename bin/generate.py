@@ -343,13 +343,7 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
                     elif col_name == "url":
                         val = ""
                     elif isinstance(val, list):
-                        if author_limit is not None and col_name in "authors":
-                            displayed = val[:author_limit]
-                            suffix = ", et al." if len(val) > author_limit else ""
-                            val = "[" + ", ".join(escape_latex(str(v)) for v in displayed) + suffix + "]"
-
-                        else:
-                            val = ", ".join(escape_latex(v) for v in val)
+                        val = escape_latex(", ".join(map(str, val)))  # No square brackets
                     else:
                         val = escape_latex(val)
 

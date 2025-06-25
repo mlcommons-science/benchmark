@@ -10,5 +10,4 @@ Options:
 --md: converts input files to Markdown format
 --tex: converts to Latex format
 --print: prints input files to the standard output
---authorlimit N authors
 Reece Shiraishi

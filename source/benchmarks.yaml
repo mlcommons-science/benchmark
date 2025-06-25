@@ -28,13 +28,14 @@
     - DeepSeek-R1
   notes: Good
   cite:
-    - "@article{hendrycks2021measuring,
-      title={Measuring Massive Multitask Language Understanding},
-      author={Hendrycks, Dan and Burns, Collin and Kadavath, Saurav and others},
-      journal={arXiv preprint arXiv:2009.03300},
-      year={2021},
-      url={https://arxiv.org/abs/2009.03300}
-      }"
+    - |
+      @article{hendrycks2021measuring,
+        title={Measuring Massive Multitask Language Understanding},
+        author={Hendrycks, Dan and Burns, Collin and Kadavath, Saurav and others},
+        journal={arXiv preprint arXiv:2009.03300},
+        year={2021},
+        url={https://arxiv.org/abs/2009.03300}
+      }
 
 - date: "2023-11-20"
   expired: null

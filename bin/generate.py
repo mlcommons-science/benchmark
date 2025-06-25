@@ -178,7 +178,8 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
                     \usepackage{pdflscape}
                     \usepackage{wasysym}
                     \usepackage{longtable}
-
+                    \usepackage[style=ieee, url=true]{biblatex}
+                    \addbibresource{benchmarks.bib}
                     \begin{document}
                     """)
                 f.write(preamble)
@@ -188,16 +189,20 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
             column_specs = "|".join([f"p{{{col[1]}}}" for col in columns])
             headers = [col[2] for col in columns]
 
+            bf_headers = [f"{{\\bf {col[2]}}}" for col in columns]
+            #print (bf_headers)
+            #sys.exit(1)
+            
             f.write("{\\footnotesize\n")
             f.write(f"\\begin{{longtable}}{{|{column_specs}|}}\n")
             f.write("\\hline\n")
             # Header for first page
-            f.write(" & ".join(headers) + " \\\\ \\hline\n")
+            f.write(" & ".join(bf_headers) + " \\\\ \\hline\n")
             f.write("\\endfirsthead\n")
 
             # Header for subsequent pages
             f.write("\\hline\n")
-            f.write(" & ".join(headers) + " \\\\ \\hline\n")
+            f.write(" & ".join(bf_headers) + " \\\\ \\hline\n")
             f.write("\\endhead\n")
 
             # Footer for all pages except last
@@ -244,7 +249,10 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
             f.write("\\end{landscape}\n")
 
             if standalone:
+                
+                f.write("\\printbibliography\n")
                 f.write("\\end{document}\n")
+            
 
         # Also write BibTeX
         generate_bibtex(input_filepaths, output_filepath)

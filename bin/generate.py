@@ -24,6 +24,10 @@ ALL_COLUMNS = [
     ("cite", "1cm", "Citation")
 ]
 
+# Gregor:
+#    this seems like a bug as it should not be forced to be lower case ?
+#    capitalization in the yaml file is defined in the yaml file
+
 def get_column_triples(selected: list[str]) -> list[tuple[str, str, str]]:
     selected_lower = [s.lower() for s in selected]
     return [triple for triple in ALL_COLUMNS if triple[0] in selected_lower]

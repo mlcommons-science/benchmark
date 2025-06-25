@@ -1,6 +1,6 @@
 # Benchmark Runnables
 
-Run `generate.py` to convert the YAML table in the source/ folder to a Markdown or LaTeX table.
+Run `generate.py` to convert YAML files to a Markdown or LaTeX table.
 A valid Python installation is required to run the script.   
 
 `generate.py` takes a path to a YAML file representing a table as its input, as well as an output directory. The output appears as a table within an automatically generated subdirectory. The table is in a user-defined format.  

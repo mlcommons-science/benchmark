@@ -1,116 +1,54 @@
+
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\usepackage{pdflscape}
+\usepackage{wasysym}
+\usepackage{longtable}
+\usepackage[style=ieee, url=true]{biblatex}
+\addbibresource{benchmarks.bib}
+\begin{document}
 \begin{landscape}
 {\footnotesize
-\begin{longtable}{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{2.5cm}|p{2.5cm}|p{2cm}|p{2cm}|p{2.5cm}|p{4cm}|p{3cm}|p{3cm}|p{2cm}|p{2cm}|p{3cm}|p{1cm}|}
+\begin{longtable}{|p{1.5cm}|p{2.5cm}|p{2cm}|p{2cm}|p{3cm}|p{2cm}|p{2cm}|p{1cm}|}
 \hline
-{\bf Date} & {\bf Expiration} & {\bf Valid} & {\bf Name} & {\bf URL} & {\bf Domain} & {\bf Focus} & {\bf Keyword} & {\bf Description} & {\bf Task Types} & {\bf AI Capability} & {\bf Metrics} & {\bf Models} & {\bf Notes} & {\bf Citation} \\ \hline
+{\bf Date} & {\bf Name} & {\bf Domain} & {\bf Focus} & {\bf Task Types} & {\bf Metrics} & {\bf Models} & {\bf Citation} \\ \hline
 \endfirsthead
 \hline
-{\bf Date} & {\bf Expiration} & {\bf Valid} & {\bf Name} & {\bf URL} & {\bf Domain} & {\bf Focus} & {\bf Keyword} & {\bf Description} & {\bf Task Types} & {\bf AI Capability} & {\bf Metrics} & {\bf Models} & {\bf Notes} & {\bf Citation} \\ \hline
+{\bf Date} & {\bf Name} & {\bf Domain} & {\bf Focus} & {\bf Task Types} & {\bf Metrics} & {\bf Models} & {\bf Citation} \\ \hline
 \endhead
 \hline
-\multicolumn{15}{r}{Continued on next page} \\
+\multicolumn{8}{r}{Continued on next page} \\
 \endfoot
 \hline
 \endlastfoot
-2020-09-07 &  & yes & MMLU (Massive Multitask Language Understanding) &  & Multidomain & Academic knowledge and reasoning across 57 subjects &  & Measuring Massive Multitask Language Understanding (MMLU) is a benchmark of 57 
-multiple-choice tasks covering elementary mathematics, US history, computer science, 
-law, and more, designed to evaluate a model's breadth and depth of knowledge in 
-zero-shot and few-shot settings.
- & Multiple choice & General reasoning, subject-matter understanding & Accuracy & GPT-4o, Gemini 1.5 Pro, o1, DeepSeek-R1 & Good & \cite{hendrycks2021measuring} \href{https://arxiv.org/abs/2009.03300}{$\Rightarrow$ } \\ \hline
-2023-11-20 &  & yes & GPQA Diamond &  & Science & Graduate-level scientific reasoning &  & GPQA is a dataset of 448 challenging, multiple-choice questions in biology, physics,
-and chemistry, written by domain experts. It is “Google-proof”—experts score 65 percent 
-(74 percent after error correction) while skilled non-experts with web access score only 34 percent. 
-State-of-the-art LLMs like GPT-4 reach around 39 percent accuracy.
- & Multiple choice, Multi-step QA & Scientific reasoning, deep knowledge & Accuracy & o1, DeepSeek-R1 & Good & \cite{rein2023gpqagraduatelevelgoogleproofqa} \href{https://arxiv.org/abs/2311.12022}{$\Rightarrow$ } \\ \hline
-2018-03-14 &  & yes & ARC-Challenge (Advanced Reasoning Challenge) &  & Science & Grade-school science with reasoning emphasis &  & The AI2 Reasoning Challenge (ARC) Challenge set comprises 7,787 natural, grade-school
-science questions that retrieval-based and word co-occurrence algorithms both fail, 
-requiring advanced reasoning over a 14-million-sentence corpus.
- & Multiple choice & Commonsense and scientific reasoning & Accuracy & GPT-4, Claude & Good & \cite{clark2018think} \href{https://allenai.org/data/arc}{$\Rightarrow$ } \\ \hline
-2025-01-24 &  & yes & Humanity's Last Exam &  & Multidomain & Broad cross-domain academic reasoning &  & Humanity's Last Exam is a multi-domain, multiple-choice benchmark containing 2,000
-questions across diverse academic disciplines, designed to evaluate LLMs' ability to
-reason across domains without external resources.
- & Multiple choice & Cross-domain academic reasoning & Accuracy &  & Good & \cite{phan2025humanitys} \href{https://arxiv.org/abs/2501.14249}{$\Rightarrow$ } \\ \hline
-2024-11-07 &  & yes & FrontierMath &  & Mathematics & Challenging advanced mathematical reasoning &  & FrontierMath is a benchmark of hundreds of expert-vetted mathematics problems spanning
-number theory, real analysis, algebraic geometry, and category theory, measuring LLMs’ 
-ability to solve problems requiring deep abstract reasoning.
- & Problem solving & Symbolic and abstract mathematical reasoning & Accuracy &  & Good & \cite{glazer2024frontiermath} \href{https://arxiv.org/abs/2411.04872}{$\Rightarrow$ } \\ \hline
-2024-07-18 &  & yes & SciCode &  & Scientific Programming & Scientific code generation and problem solving &  & SciCode is a scientist-curated coding benchmark with 338 subproblems derived from 80
-real research tasks across 16 scientific subfields, evaluating models on knowledge recall, 
-reasoning, and code synthesis for scientific computing tasks.
- & Coding & Program synthesis, scientific computing & Solve rate ( percent) & Claude3.5-Sonnet & Good & \cite{tian2024scicode} \href{https://arxiv.org/abs/2407.13168}{$\Rightarrow$ } \\ \hline
-2025-03-13 &  & yes & AIME (American Invitational Mathematics Examination) &  & Mathematics & Pre-college advanced problem solving &  & The AIME is a 15-question, 3-hour exam for high-school students featuring challenging
-short-answer math problems in algebra, number theory, geometry, and combinatorics, 
-assessing depth of problem-solving ability.
- & Problem solving & Mathematical problem-solving and reasoning & Accuracy &  & None & \cite{www-aime} \href{https://www.vals.ai/benchmarks/aime-2025-03-13}{$\Rightarrow$ } \\ \hline
-2025-02-15 &  & yes & MATH-500 &  & Mathematics & Math reasoning generalization &  & MATH-500 is a curated subset of 500 problems from the OpenAI MATH dataset, spanning
-high-school to advanced levels, designed to evaluate LLMs’ mathematical reasoning and 
-generalization.
- & Problem solving & Math reasoning and generalization & Accuracy &  & Dataset hosted on Hugging Face & \cite{huggingface2025math500} \href{https://huggingface.co/datasets/HuggingFaceH4/MATH-500}{$\Rightarrow$ } \\ \hline
-2024-04-02 &  & yes & CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction) &  & Multidomain Science & Long-context scientific reasoning &  & CURIE is a benchmark of 580 problems across six scientific disciplines—materials
-science, quantum computing, biology, chemistry, climate science, and astrophysics—
-designed to evaluate LLMs on long-context understanding, reasoning, and information 
-extraction in realistic scientific workflows.
- & Information extraction, Reasoning, Concept tracking, Aggregation, Algebraic manipulation, Multimodal comprehension & Long-context understanding and scientific reasoning & Accuracy &  & Good & \cite{curie2024} \href{https://arxiv.org/abs/2404.02029}{$\Rightarrow$ } \\ \hline
-2023-01-26 &  & yes & FEABench (Finite Element Analysis Benchmark) &  & Computational Engineering & FEA simulation accuracy and performance &  & FEABench is a suite evaluating finite element analysis tools on standardized 
-PDE-based simulation tasks with complex geometries and boundary conditions, 
-measuring both accuracy and runtime performance.
- & Simulation, Performance evaluation & Numerical simulation accuracy and efficiency & Solve time, Error norm & FEniCS, deal.II & Good & \cite{allen2023feabench} \href{https://github.com/alleninstitute/feabench}{$\Rightarrow$ } \\ \hline
-2024-07-12 &  & yes & SPIQA (Scientific Paper Image Question Answering) &  & Computer Science & Multimodal QA on scientific figures &  & SPIQA assesses AI models' ability to interpret and answer questions about figures
-and tables in scientific papers by integrating visual and textual modalities 
-with chain-of-thought reasoning.
- & Question answering, Multimodal QA, Chain-of-Thought evaluation & Visual-textual reasoning in scientific contexts & Accuracy, F1 score & Chain-of-Thought models, Multimodal QA systems & Good & \cite{zhong2024spiqa} \href{https://arxiv.org/abs/2407.09413}{$\Rightarrow$ } \\ \hline
-2020-09-28 &  & yes & MedQA &  & Medical Question Answering & Medical board exam QA &  & MedQA is a large-scale multiple-choice dataset drawn from professional medical
-board exams (e.g., USMLE), testing AI systems on diagnostic and medical knowledge 
-questions in English and Chinese.
- & Multiple choice & Medical diagnosis and knowledge retrieval & Accuracy & Neural reader, Retrieval-based QA systems & Multilingual (English, Simplified and Traditional Chinese) & \cite{jin2020what} \href{https://arxiv.org/abs/2009.13081}{$\Rightarrow$ } \\ \hline
-2025-05-13 &  & yes & BaisBench (Biological AI Scientist Benchmark) &  & Computational Biology & Omics-driven AI research tasks &  & BaisBench evaluates AI scientists' ability to perform data-driven biological research
-by annotating cell types in single-cell datasets and answering MCQs derived from 
-biological study insights, measuring autonomous scientific discovery.
- & Cell type annotation, Multiple choice & Autonomous biological research capabilities & Annotation accuracy, QA accuracy & LLM-based AI scientist agents & Underperforms human experts; aims to advance AI-driven discovery & \cite{luo2025benchmarkingaiscientistsomics} \href{https://arxiv.org/abs/2505.08341}{$\Rightarrow$ } \\ \hline
-2023-01-26 &  & yes & MOLGEN &  & Computational Chemistry & Molecular generation and optimization &  & MolGen is a pre-trained molecular language model that generates chemically valid
-molecules using SELFIES and reinforcement learning, guided by chemical feedback 
-to optimize properties such as logP, QED, and docking score.
- & Distribution learning, Goal-oriented generation & Generation of valid and optimized molecular structures & Validity percent, Novelty percent, QED, Docking score & MolGen & This is a model, not a benchmark & \cite{fang2023domain} \href{https://arxiv.org/abs/2301.11259}{$\Rightarrow$ } \\ \hline
-2020-05-02 &  & yes & Open Graph Benchmark (OGB) - Biology &  & Graph ML & Biological graph property prediction &  & OGB-Biology is a suite of large-scale biological network datasets (protein-protein
-interaction, drug-target, etc.) with standardized splits and evaluation protocols 
-for node, link, and graph property prediction tasks.
- & Node property prediction, Link property prediction, Graph property prediction & Scalability and generalization in graph ML for biology & Accuracy, ROC-AUC & GCN, GraphSAGE, GAT & Community-driven updates & \cite{hu2020ogb} \href{https://arxiv.org/abs/2005.00687}{$\Rightarrow$ } \\ \hline
-2011-10-01 &  & yes & Materials Project &  & Materials Science & DFT-based property prediction &  & The Materials Project provides an open-access database of computed properties for
-inorganic materials via high-throughput density functional theory (DFT), accelerating 
-materials discovery.
- & Property prediction & Prediction of inorganic material properties & MAE, R² & Automatminer, Crystal Graph Neural Networks & Core component of the Materials Genome Initiative & \cite{jain2013materials} \href{https://materialsproject.org/}{$\Rightarrow$ } \\ \hline
-2020-10-20 &  & yes & OCP (Open Catalyst Project) &  & Chemistry; Materials Science & Catalyst adsorption energy prediction &  & The Open Catalyst Project (OC20 and OC22) provides DFT-calculated catalyst-adsorbate 
-relaxation datasets, challenging ML models to predict energies and forces for 
-renewable energy applications.
- & Energy prediction, Force prediction & Prediction of adsorption energies and forces & MAE (energy), MAE (force) & CGCNN, SchNet, DimeNet++, GemNet-OC & Public leaderboards; active community development & \cite{chanussot2021oc20, tran2023oc22, doi:10.1021/acscatal.0c04525, tran2023b} \href{https://pubs.acs.org/doi/10.1021/acscatal.0c04525}{$\Rightarrow$ } \\ \hline
-2023-06-20 &  & yes & JARVIS-Leaderboard &  & Materials Science; Benchmarking & Comparative evaluation of materials design methods &  & JARVIS-Leaderboard is a community-driven platform benchmarking AI, electronic
-structure, force-fields, quantum computing, and experimental methods across hundreds
-of materials science tasks.
- & Method benchmarking, Leaderboard ranking & Performance comparison across diverse materials design methods & MAE, RMSE, Accuracy &  & 1,281 contributions across 274 benchmarks & \cite{choudhary2024jarvis} \href{https://doi.org/10.1038/s41524-024-01259-w}{$\Rightarrow$ } \\ \hline
-2022-02-22 &  & yes & Quantum Computing Benchmarks (QML) &  & Quantum Computing & Quantum algorithm performance evaluation &  & A suite of benchmarks evaluating quantum hardware and algorithms on tasks such as state 
-preparation, circuit optimization, and error correction across multiple platforms.
- & Circuit benchmarking, State classification & Quantum algorithm performance and fidelity & Fidelity, Success probability & IBM Q, IonQ, AQT@LBNL & Hardware-agnostic, application-level metrics. The citation may not be correct. & \cite{, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , } \\ \hline
-2024-10-01 &  & yes & CFDBench (Fluid Dynamics) &  & Fluid Dynamics; Scientific ML & Neural operator surrogate modeling &  & CFDBench provides large-scale CFD data for four canonical fluid flow problems, 
-assessing neural operators' ability to generalize to unseen PDE parameters and domains.
- & Surrogate modeling & Generalization of neural operators for PDEs & L2 error, MAE & FNO, DeepONet, U-Net & 302K frames across 739 cases & \cite{luo2024cfdbenchlargescalebenchmarkmachine} \href{https://arxiv.org/abs/2310.05963}{$\Rightarrow$ } \\ \hline
-None &  & yes & SatImgNet &  & Remote Sensing & Satellite imagery classification &  & SATIN (sometimes referred to as SatImgNet) is a multi-task metadataset of 27 satellite
-imagery classification datasets evaluating zero-shot transfer of vision-language models
-across diverse remote sensing tasks.
- & Image classification & Zero-shot land-use classification & Accuracy &  & Public leaderboard available & \cite{roberts2023satinmultitaskmetadatasetclassifying} \href{https://arxiv.org/abs/2304.11619}{$\Rightarrow$ } \\ \hline
-2023-07-19 &  & yes & ClimateLearn &  & Climate Science; Forecasting & ML for weather and climate modeling &  & ClimateLearn provides standardized datasets and evaluation protocols for machine 
-learning models in medium-range weather and climate forecasting using ERA5 reanalysis.
- & Forecasting & Global weather prediction (3-5 days) & RMSE, Anomaly correlation & CNN baselines, ResNet variants & Includes physical and ML baselines. Appears to be the same as the SatImgNet entry & \cite{nguyen2023climatelearnbenchmarkingmachinelearning} \href{https://arxiv.org/abs/2307.01909}{$\Rightarrow$ } \\ \hline
-2022-06-09 &  & yes & BIG-Bench (Beyond the Imitation Game Benchmark) &  & NLP; AI Evaluation & Diverse reasoning and generalization tasks &  & BIG-Bench is a collaborative suite of 204 tasks designed to probe LLMs' reasoning, 
-knowledge, and bias across diverse domains and difficulty levels beyond simple imitation.
- & Few-shot evaluation, Multi-task evaluation & Reasoning and generalization across diverse tasks & Accuracy, Task-specific metrics & GPT-3, Dense Transformers, Sparse Transformers & Human baselines included & \cite{srivastava2023imitationgamequantifyingextrapolating} \href{https://arxiv.org/abs/2206.04615}{$\Rightarrow$ } \\ \hline
-2019-11-20 &  & yes & CommonSenseQA &  & NLP; Commonsense & Commonsense question answering &  & CommonsenseQA is a challenging multiple-choice QA dataset built from ConceptNet,
-requiring models to apply commonsense knowledge to select the correct answer 
-among five choices.
- & Multiple choice & Commonsense reasoning and knowledge integration & Accuracy & BERT-large, RoBERTa, GPT-3 & Baseline 56 percent, human 89 percent & \cite{talmor2019commonsenseqaquestionansweringchallenge} \href{https://arxiv.org/abs/1811.00937}{$\Rightarrow$ } \\ \hline
-2019-07-24 &  & yes & Winogrande &  & NLP; Commonsense & Winograd Schema-style pronoun resolution &  & WinoGrande is a large-scale adversarial dataset of 44,000 Winograd Schema-style 
-questions with reduced bias using AFLite, serving as both a benchmark and transfer 
-learning resource.
- & Pronoun resolution & Robust commonsense reasoning & Accuracy, AUC & RoBERTa, BERT, GPT-2 & Human \~{}94 percent & \cite{sakaguchi2019winograndeadversarialwinogradschema} \href{https://arxiv.org/abs/1907.10641}{$\Rightarrow$ } \\ \hline
+2020-09-07 & MMLU (Massive Multitask Language Understanding) & Multidomain & Academic knowledge and reasoning across 57 subjects & Multiple choice & Accuracy & GPT-4o, Gemini 1.5 Pro, o1, DeepSeek-R1 & \cite{hendrycks2021measuring} \href{https://arxiv.org/abs/2009.03300}{$\Rightarrow$ } \\ \hline
+2023-11-20 & GPQA Diamond & Science & Graduate-level scientific reasoning & Multiple choice, Multi-step QA & Accuracy & o1, DeepSeek-R1 & \cite{rein2023gpqagraduatelevelgoogleproofqa} \href{https://arxiv.org/abs/2311.12022}{$\Rightarrow$ } \\ \hline
+2018-03-14 & ARC-Challenge (Advanced Reasoning Challenge) & Science & Grade-school science with reasoning emphasis & Multiple choice & Accuracy & GPT-4, Claude & \cite{clark2018think} \href{https://allenai.org/data/arc}{$\Rightarrow$ } \\ \hline
+2025-01-24 & Humanity's Last Exam & Multidomain & Broad cross-domain academic reasoning & Multiple choice & Accuracy &  & \cite{phan2025humanitys} \href{https://arxiv.org/abs/2501.14249}{$\Rightarrow$ } \\ \hline
+2024-11-07 & FrontierMath & Mathematics & Challenging advanced mathematical reasoning & Problem solving & Accuracy &  & \cite{glazer2024frontiermath} \href{https://arxiv.org/abs/2411.04872}{$\Rightarrow$ } \\ \hline
+2024-07-18 & SciCode & Scientific Programming & Scientific code generation and problem solving & Coding & Solve rate ( percent) & Claude3.5-Sonnet & \cite{tian2024scicode} \href{https://arxiv.org/abs/2407.13168}{$\Rightarrow$ } \\ \hline
+2025-03-13 & AIME (American Invitational Mathematics Examination) & Mathematics & Pre-college advanced problem solving & Problem solving & Accuracy &  & \cite{www-aime} \href{https://www.vals.ai/benchmarks/aime-2025-03-13}{$\Rightarrow$ } \\ \hline
+2025-02-15 & MATH-500 & Mathematics & Math reasoning generalization & Problem solving & Accuracy &  & \cite{huggingface2025math500} \href{https://huggingface.co/datasets/HuggingFaceH4/MATH-500}{$\Rightarrow$ } \\ \hline
+2024-04-02 & CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction) & Multidomain Science & Long-context scientific reasoning & Information extraction, Reasoning, Concept tracking, Aggregation, Algebraic manipulation, Multimodal comprehension & Accuracy &  & \cite{curie2024} \href{https://arxiv.org/abs/2404.02029}{$\Rightarrow$ } \\ \hline
+2023-01-26 & FEABench (Finite Element Analysis Benchmark) & Computational Engineering & FEA simulation accuracy and performance & Simulation, Performance evaluation & Solve time, Error norm & FEniCS, deal.II & \cite{allen2023feabench} \href{https://github.com/alleninstitute/feabench}{$\Rightarrow$ } \\ \hline
+2024-07-12 & SPIQA (Scientific Paper Image Question Answering) & Computer Science & Multimodal QA on scientific figures & Question answering, Multimodal QA, Chain-of-Thought evaluation & Accuracy, F1 score & Chain-of-Thought models, Multimodal QA systems & \cite{zhong2024spiqa} \href{https://arxiv.org/abs/2407.09413}{$\Rightarrow$ } \\ \hline
+2020-09-28 & MedQA & Medical Question Answering & Medical board exam QA & Multiple choice & Accuracy & Neural reader, Retrieval-based QA systems & \cite{jin2020what} \href{https://arxiv.org/abs/2009.13081}{$\Rightarrow$ } \\ \hline
+2025-05-13 & BaisBench (Biological AI Scientist Benchmark) & Computational Biology & Omics-driven AI research tasks & Cell type annotation, Multiple choice & Annotation accuracy, QA accuracy & LLM-based AI scientist agents & \cite{luo2025benchmarkingaiscientistsomics} \href{https://arxiv.org/abs/2505.08341}{$\Rightarrow$ } \\ \hline
+2023-01-26 & MOLGEN & Computational Chemistry & Molecular generation and optimization & Distribution learning, Goal-oriented generation & Validity percent, Novelty percent, QED, Docking score & MolGen & \cite{fang2023domain} \href{https://arxiv.org/abs/2301.11259}{$\Rightarrow$ } \\ \hline
+2020-05-02 & Open Graph Benchmark (OGB) - Biology & Graph ML & Biological graph property prediction & Node property prediction, Link property prediction, Graph property prediction & Accuracy, ROC-AUC & GCN, GraphSAGE, GAT & \cite{hu2020ogb} \href{https://arxiv.org/abs/2005.00687}{$\Rightarrow$ } \\ \hline
+2011-10-01 & Materials Project & Materials Science & DFT-based property prediction & Property prediction & MAE, R² & Automatminer, Crystal Graph Neural Networks & \cite{jain2013materials} \href{https://materialsproject.org/}{$\Rightarrow$ } \\ \hline
+2020-10-20 & OCP (Open Catalyst Project) & Chemistry; Materials Science & Catalyst adsorption energy prediction & Energy prediction, Force prediction & MAE (energy), MAE (force) & CGCNN, SchNet, DimeNet++, GemNet-OC & \cite{chanussot2021oc20, tran2023oc22, doi:10.1021/acscatal.0c04525, tran2023b} \href{https://pubs.acs.org/doi/10.1021/acscatal.0c04525}{$\Rightarrow$ } \\ \hline
+2023-06-20 & JARVIS-Leaderboard & Materials Science; Benchmarking & Comparative evaluation of materials design methods & Method benchmarking, Leaderboard ranking & MAE, RMSE, Accuracy &  & \cite{choudhary2024jarvis} \href{https://doi.org/10.1038/s41524-024-01259-w}{$\Rightarrow$ } \\ \hline
+2022-02-22 & Quantum Computing Benchmarks (QML) & Quantum Computing & Quantum algorithm performance evaluation & Circuit benchmarking, State classification & Fidelity, Success probability & IBM Q, IonQ, AQT@LBNL & \cite{, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , } \\ \hline
+2024-10-01 & CFDBench (Fluid Dynamics) & Fluid Dynamics; Scientific ML & Neural operator surrogate modeling & Surrogate modeling & L2 error, MAE & FNO, DeepONet, U-Net & \cite{luo2024cfdbenchlargescalebenchmarkmachine} \href{https://arxiv.org/abs/2310.05963}{$\Rightarrow$ } \\ \hline
+None & SatImgNet & Remote Sensing & Satellite imagery classification & Image classification & Accuracy &  & \cite{roberts2023satinmultitaskmetadatasetclassifying} \href{https://arxiv.org/abs/2304.11619}{$\Rightarrow$ } \\ \hline
+2023-07-19 & ClimateLearn & Climate Science; Forecasting & ML for weather and climate modeling & Forecasting & RMSE, Anomaly correlation & CNN baselines, ResNet variants & \cite{nguyen2023climatelearnbenchmarkingmachinelearning} \href{https://arxiv.org/abs/2307.01909}{$\Rightarrow$ } \\ \hline
+2022-06-09 & BIG-Bench (Beyond the Imitation Game Benchmark) & NLP; AI Evaluation & Diverse reasoning and generalization tasks & Few-shot evaluation, Multi-task evaluation & Accuracy, Task-specific metrics & GPT-3, Dense Transformers, Sparse Transformers & \cite{srivastava2023imitationgamequantifyingextrapolating} \href{https://arxiv.org/abs/2206.04615}{$\Rightarrow$ } \\ \hline
+2019-11-20 & CommonSenseQA & NLP; Commonsense & Commonsense question answering & Multiple choice & Accuracy & BERT-large, RoBERTa, GPT-3 & \cite{talmor2019commonsenseqaquestionansweringchallenge} \href{https://arxiv.org/abs/1811.00937}{$\Rightarrow$ } \\ \hline
+2019-07-24 & Winogrande & NLP; Commonsense & Winograd Schema-style pronoun resolution & Pronoun resolution & Accuracy, AUC & RoBERTa, BERT, GPT-2 & \cite{sakaguchi2019winograndeadversarialwinogradschema} \href{https://arxiv.org/abs/1907.10641}{$\Rightarrow$ } \\ \hline
 \end{longtable}
 }
 \end{landscape}
+\printbibliography
+\end{document}

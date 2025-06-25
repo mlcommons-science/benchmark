@@ -1,7 +1,53 @@
-# benchmark
+# Scientific AI Benchmark Collection
+
+This repository holds a list of scientific AI benchmarks. 
+
+It is maintained through a yaml file to which anyone can add through a
+pull request. The file is located at:
+
+* https://github.com/mlcommons-science/benchmark/blob/main/source/benchmarks.yaml
+  
+To edit simply follow our
+[edit][https://github.com/mlcommons-science/benchmark/edit/main/source/benchmarks.yaml]
+link and create the pull request when done.
+
+Make sure that the entries are in the format specified and that
+indentation is used with 2 spaces, do not use tabs. The explanation of
+the attributes is given at the end of this README.
+
+Form this yaml file several documenta ar generated. An index file that
+points to individual markdown files for each benchmark 
+
+* https://github.com/mlcommons-science/benchmark/blob/main/content/md/index.md
+
+A pdf file that generates a table of selected attributes and its tex
+source and bibtex file
+
+* https://github.com/mlcommons-science/benchmark/blob/main/content/tex/benchmarks.pdf
+* https://github.com/mlcommons-science/benchmark/tree/main/content/tex
 
 
-## Attribute
+## Generating the PDF, TeX, and md files
+
+The content should not be directly modified, but instead only the YAML
+file. The content can be generated with a simple make file under the
+assumption you have latex, biber, and latexmk installed
+
+To generate the pdf and TeX files use
+
+```make pdf```
+
+To generate the markdown files use
+
+```make md```
+
+In case you need to start from a clean content dir, you can use
+
+```make clean```
+
+
+
+## Attributes
 
 This is the list of current attriutes
 

@@ -396,13 +396,14 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process YAML benchmark files to MD or LaTeX.")
 
     parser.add_argument('--files', '-i', type=str, nargs='+', required=True, help='YAML file paths to process.')
-    parser.add_argument('--format', '-f', type=str, choices=['md', 'tex','indv-tex'], help="Output file format: 'md' or 'tex' or each latex entry with its own table")
-    parser.add_argument('--standalone', '-s', action='store_true', help="Include full LaTeX document preamble. Works only with LaTeX format")
-    parser.add_argument('--out-dir', '-o', type=str, default='../content/', help="Output directory")
+    parser.add_argument('--format', '-f', required=True, type=str, choices=['md', 'tex', 'indv-md', 'indv-tex'], help="Output file format: 'md' or 'tex', or 'indv-md' or 'indv-tex' to put each entry with its own table")
+    parser.add_argument('--out-dir', '-o', type=str, default='./content/', help="Output directory")
+
+    parser.add_argument('--authortruncation', type=int, default=None, help="Truncate authors for index pages. Works only for MD format")
     parser.add_argument('--columns', '-c', type=lambda s: s.split(','), help="Subset of columns to include")
+    # parser.add_argument('--index', '-I', action='store_true', help="Generate individual pages for each entry and an index.md. Works only with MD format")
     parser.add_argument('--readme', action='store_true', help="Show README.md content")
-    parser.add_argument('--index', '-I', action='store_true', help="Generate individual pages for each entry and an index.md. Works only with MD format")
-    parser.add_argument('--authortruncation', type=int, default=None, help="Truncate authors for index pages")
+    parser.add_argument('--standalone', '-s', action='store_true', help="Include full LaTeX document preamble. Works only with LaTeX format")
     parser.add_argument('--withcitation', action='store_true', help="Include a row for BibTeX citations. Works only with Markdown format")
  
 
@@ -416,11 +417,14 @@ if __name__ == "__main__":
     #enforce flag policies
     if args.standalone and args.format != 'tex':
         parser.error("--standalone is only valid with --format tex")
-    if args.index and args.format != 'md':
-        parser.error("--index is only valid with --format md")
+    # if args.index and args.format != 'md':
+    #     parser.error("--index is only valid with --format md")
     if args.withcitation and args.format != 'md':
         parser.error("--withcitation is only valid with --format md")
-
+    if args.authortruncation != None and args.format != 'md':
+        parser.error("Author truncation is only valid with --format md")
+    if args.authortruncation != None and args.authortruncation<=0:
+        parser.error("Author truncation amount must be a positive integer")
 
     for file in args.files:
         if not os.path.exists(file):
@@ -435,7 +439,7 @@ if __name__ == "__main__":
         columns.append(FULL_CITE_TITLE)
 
 
-    if args.index:
+    if args.format == 'indv-md':
         write_individual_md_pages(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_trunc=args.authortruncation)
     elif args.format == 'md':
         write_md(args.files, os.path.join(args.out_dir, "md"), columns, args.authorlimit)

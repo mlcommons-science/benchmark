@@ -225,8 +225,10 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
                             displayed = val[:args.authorlimit]
                             suffix = ", et al." if len(val) > args.authorlimit else ""
                             val = "[" + ", ".join(escape_latex(str(v)) for v in displayed) + suffix + "]"
+                            val = " " + ", ".join(escape_latex(str(v)) for v in displayed) + suffix + " "                            
                         else:
-                            val = "[" + ", ".join(escape_latex(str(v)) for v in val) + "]"
+                            #val = "[" + ", ".join(escape_latex(str(v)) for v in val) + "]"
+                            val = " " + ", ".join(escape_latex(str(v)) for v in val) + " "
 
                     else:
                         val = escape_latex(val)

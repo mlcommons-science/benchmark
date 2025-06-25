@@ -25,15 +25,17 @@ standalone:
 	python bin/generate.py --files=${FILES} --format=tex --standalone --out-dir ./content
 
 # produce file content/tex/benchmarks.pdf
-pdf: tex 
+pdf2: tex 
 	cd content/tex; pdflatex benchmarks
 	cd content/tex; biber benchmarks
 	cd content/tex; pdflatex benchmarks
 	cd content/tex; pdflatex benchmarks
 
+pdf: tex
+	cd content/tex && latexmk -pdf -silent benchmarks.tex
+
 clean:
-	rm -rf content/tex/benchmarks.*
-	rm -rf content/tex/*.log
+	cd content/tex && latexmk -C
 	rm -rf content/md/benchmarks.*
 
 

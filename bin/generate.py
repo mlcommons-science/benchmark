@@ -1,11 +1,12 @@
 import argparse
+import bibtexparser
 import os
 import sys
 import yaml
 import re
 from typing import List
 import textwrap
-import bibtexparser
+
 
 COLUMN_TITLES = [
     ("date", "1.5cm", "Date"),
@@ -48,19 +49,20 @@ def merge_yaml_files(file_paths: list[str]) -> list[dict]:
     for path in file_paths:
         records.extend(load_yaml_file(path))
 
-    merged_records = []
-    for record in records:
-        merged_record = {col[0]: record.get(col[0], None) for col in COLUMN_TITLES}
-        merged_records.append(merged_record)
+    # merged_records = []
+    # for record in records:
+    #     merged_record = {col[0]: record.get(col[0], None) for col in COLUMN_TITLES}
+    #     merged_records.append(merged_record)
 
-    return merged_records
+    # return merged_records
+    return records
 
 
 
-def get_bibtex(cell_val: str, author_limit: int|None) -> str:
+def get_bibtex(cell_val: str, author_limit: int) -> str:
     """
-    Returns a substring of `cell_val` containing a BibTeX string.
-    If there is no BibTex string, returns the string "None".
+    Returns a substring of `cell_val` containing a BibTeX string with `author_limit` displayed authors.
+    If there is no BibTex string, returns the string "No citation found".
 
     If there are multiple BibTeX entries, the first entry is returned.
 
@@ -75,7 +77,7 @@ def get_bibtex(cell_val: str, author_limit: int|None) -> str:
 
     match = re.search(r'@(?:\w+)\s*\{', cell_val)
     if not match:
-        return "None"
+        return "No citation found"
 
     start = match.start()
     brace_count = 0
@@ -93,7 +95,7 @@ def get_bibtex(cell_val: str, author_limit: int|None) -> str:
                 break
         end += 1
 
-    bibtex_entry = cell_val[start:end] if in_entry and brace_count == 0 else "none"
+    bibtex_entry = cell_val[start:end] if in_entry and brace_count == 0 else "Format Error"
     if bibtex_entry == "none":
         return "none"
 
@@ -121,6 +123,9 @@ def get_bibtex(cell_val: str, author_limit: int|None) -> str:
     modified_bibtex = (bibtex_entry[:author_match.start(1)] +
                        new_authors +
                        bibtex_entry[author_match.end(1):])
+
+    #Remove newlines
+    modified_bibtex = modified_bibtex.replace("\n", " ")
 
     return modified_bibtex
 
@@ -223,7 +228,7 @@ def write_md(input_filepaths: list[str], output_dir: str, columns: list[tuple], 
                     #find the first instance of the string "http" in the value
                     link_start_location = cell_value.find("http")
                     link_end_location = cell_value.find("}", link_start_location)
-                    link = cell_value[link_start_location:link_end_location]
+                    link = cell_value[link_start_location:link_end_location].strip()
 
                     #put the link in the citation
                     cell_value = f"[{current_article_name}]({link})"
@@ -232,9 +237,8 @@ def write_md(input_filepaths: list[str], output_dir: str, columns: list[tuple], 
                 elif col_name == "full_cite":
                     cell_value = get_bibtex(row.get("cite", '')[0], author_limit)
 
-
                 row_cells.append(cell_value)
-            
+                
             md_file.write('| ' + ' | '.join(row_cells) + ' |\n')
 
 
@@ -345,9 +349,10 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
                     else:
                         val = escape_latex(val)
 
-        
                     row.append(val)
+
                 f.write(" & ".join(row) + " \\\\ \\hline\n")
+
             f.write("\\end{longtable}\n}\n\\end{landscape}\n")
             if standalone:
                 f.write("\\printbibliography\n\\end{document}\n")
@@ -361,14 +366,14 @@ if __name__ == "__main__":
 
     parser.add_argument('--files', '-i', type=str, nargs='+', required=True, help='YAML file paths to process.')
     parser.add_argument('--format', '-f', type=str, choices=['md', 'tex'], help="Output file format: 'md' or 'tex'")
-    parser.add_argument('--standalone', '-s', action='store_true', help="Include full LaTeX document preamble.")
+    parser.add_argument('--standalone', '-s', action='store_true', help="Include full LaTeX document preamble. Works only with LaTeX format")
     parser.add_argument('--out-dir', '-o', type=str, default='../content/', help="Output directory")
-    parser.add_argument('--columns', type=lambda s: s.split(','), help="Subset of columns to include")
+    parser.add_argument('--columns', '-c', type=lambda s: s.split(','), help="Subset of columns to include")
     parser.add_argument('--readme', action='store_true', help="Show README.md content")
-    parser.add_argument('--index', action='store_true', help="Generate individual pages for each entry and an index.md")
-    parser.add_argument('--authorlimit', type=int, default=None, help="Limit number of authors for LaTeX")
+    parser.add_argument('--index', '-I', action='store_true', help="Generate individual pages for each entry and an index.md. Works only with MD format")
+    parser.add_argument('--authorlimit', type=int, default=9999999, help="Limit number of authors for LaTeX")
     parser.add_argument('--authortruncation', type=int, default=None, help="Truncate authors for index pages")
-    parser.add_argument('--withcitation', type=int, default=None, help="Truncate authors for index pages")
+    parser.add_argument('--withcitation', action='store_true', help="Include a row for BibTeX citations. Works only with Markdown format")
 
 
     args = parser.parse_args()
@@ -378,9 +383,14 @@ if __name__ == "__main__":
             print(file.read())
             sys.exit(0)
 
+    #enforce flag policies
     if args.standalone and args.format != 'tex':
         parser.error("--standalone is only valid with --format tex")
-    
+    if args.index and args.format != 'md':
+        parser.error("--index is only valid with --format md")
+    if args.withcitation and args.format != 'md':
+        parser.error("--withcitation is only valid with --format md")
+
 
     for file in args.files:
         if not os.path.exists(file):
@@ -390,13 +400,14 @@ if __name__ == "__main__":
 
     columns = get_column_triples(args.columns) if args.columns else COLUMN_TITLES
 
-    if args.format=='md' and args.withcitation:
+
+    if args.withcitation:
         columns.append(FULL_CITE_TITLE)
 
 
     if args.index:
         write_individual_md_pages(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_trunc=args.authortruncation)
     elif args.format == 'md':
-        write_md(args.files, os.path.join(args.out_dir, "md"), columns)
+        write_md(args.files, os.path.join(args.out_dir, "md"), columns, args.authorlimit)
     elif args.format == 'tex':
         write_latex(args.files, os.path.join(args.out_dir, "tex"), columns, standalone=args.standalone, author_limit=args.authorlimit)

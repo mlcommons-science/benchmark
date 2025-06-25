@@ -211,6 +211,7 @@ def write_md(input_filepaths: list[str], output_dir: str, columns: list[tuple], 
 
             row_cells = []
             for col_name, _, _ in columns:
+
                 cell_value = row.get(col_name, '')
 
                 #save the article's name
@@ -235,7 +236,10 @@ def write_md(input_filepaths: list[str], output_dir: str, columns: list[tuple], 
 
                 # if adding citations, add the citation row with author limit
                 elif col_name == "full_cite":
-                    cell_value = get_bibtex(row.get("cite", '')[0], author_limit)
+                    if isinstance(row.get("cite", ''), list):
+                        cell_value = get_bibtex(row.get("cite", '')[0], author_limit)
+                    else:
+                        cell_value = get_bibtex(row.get("cite", ''), author_limit)
 
                 row_cells.append(cell_value)
                 

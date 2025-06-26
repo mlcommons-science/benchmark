@@ -24,7 +24,6 @@ generate.py [-h]
 [--authortruncation AUTHORTRUNCATION]  
 [--columns COLUMNS]  
 [--index]  
-[--readme]  
 [--standalone]  
 [--withcitation]
 
@@ -32,13 +31,13 @@ generate.py [-h]
 
 `--files FILES [FILES ...]`  
 One or more input YAML files, or paths to YAML files relative to the user's current directory.  
-Mandatory argument.  
+Required argument.  
 
 `--format {md, tex, indv-md, indv-tex} `  
 Output file format. Must be one of `md` or `tex`.  
 md -> Markdown. Result appears in {output directory}/md  
 tex -> LaTeX. Result appears  in {output directory}/tex  
-Mandatory argument.
+Required argument.
 
 `[--out-dir OUT_DIR]`  
 Specifies the output directory. Creates the directory if the chosen directory does not exist. Default: ../content/, placed in the directory above the script's location
@@ -57,11 +56,8 @@ If format is set to `md`, also creates a files called index.md
 
 `[--standalone]`  
 Puts the LaTeX table in a document with a preamble and header.  
-Valid only with format --tex.  
-
-`[--readme]`  
-Prints the contents of this README file. If this flag is set, the script will not convert its input file.  
+Valid only with `format --tex`.  
 
 `[--withcitation]`  
 The produced Markdown table will have an additional column containing the BibTeX citations of each entry.  
-Valid only with `--format md`    
+Valid only with `--format md`

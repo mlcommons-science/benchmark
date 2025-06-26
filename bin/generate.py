@@ -67,7 +67,7 @@ def get_bibtex(cell_val: str, author_limit: int) -> str:
         BibTeX entry in `cell_val` or "None"
     """
     assert type(cell_val)==str, "cell value must be a string"
-    assert author_limit==None or (type(author_limit)==int and author_limit>0), "author limit must be a positive integer"
+    assert type(author_limit)==int and author_limit>0, "author limit must be a positive integer"
 
     match = re.search(r'@(?:\w+)\s*\{', cell_val)
     if not match:
@@ -172,7 +172,10 @@ def write_individual_md_pages(input_filepaths: List[str], output_dir: str, colum
                         f.write(f"**{col_display}**: {val_str}\n\n")
             index_file.write(f"- [{entry_name}]({filename})\n")
 
-def write_md(input_filepaths: list[str], output_dir: str, columns: List[tuple], author_limit: int = None) -> None:
+
+
+def write_md(input_filepaths: list[str], output_dir: str, columns: List[tuple], author_limit: int = MAX_AUTHOR_LIMIT) -> None:
+
     contents = merge_yaml_files(input_filepaths)
     os.makedirs(output_dir, exist_ok=True)
     with open(os.path.join(output_dir, "benchmarks.md"), 'w', encoding='utf-8') as md_file:
@@ -192,13 +195,15 @@ def write_md(input_filepaths: list[str], output_dir: str, columns: List[tuple], 
                         val = f"[{current_article_name}]({current_url})"
                 elif col_name == "full_cite":
                     if isinstance(row.get("cite", ''), list):
-                        val = get_bibtex(row.get("cite", '')[0], author_limit if author_limit!=None else MAX_AUTHOR_LIMIT)
+                        val = get_bibtex(row.get("cite", '')[0], author_limit)
                     else:
-                        val = get_bibtex(row.get("cite", ''), author_limit if author_limit!=None else MAX_AUTHOR_LIMIT)
+                        val = get_bibtex(row.get("cite", ''), author_limit)
+
                 else:
                     val = str(val).replace("\n", " ").replace("['", "").replace("']", "")
                     val = val.replace("', '", ", ").replace("','", ", ").replace("[]", "")
                     val = val.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
+
                 row_cells.append(val)
             md_file.write('| ' + ' | '.join(row_cells) + ' |\n')
 
@@ -327,31 +332,24 @@ def write_latex(input_filepaths: List[str], output_filepath: str, columns: List[
     generate_bibtex(input_filepaths, output_filepath)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Process YAML benchmark files to MD or LaTeX.")
+    parser = argparse.ArgumentParser(description="Process YAML benchmark files to Markdown or LaTeX.")
     parser.add_argument('--files', '-i', type=str, nargs='+', required=True, help='YAML file paths to process.')
     parser.add_argument('--format', '-f', type=str, choices=['md', 'tex'], required=True, help="Output file format: 'md' or 'tex'")
     parser.add_argument('--out-dir', '-o', type=str, default='../content/', help="Output directory")
-    parser.add_argument('--authortruncation', type=int, default=None, help="Truncate authors for index pages")
+    parser.add_argument('--authortruncation', type=int, default=MAX_AUTHOR_LIMIT, help="Truncate authors for index pages")
     parser.add_argument('--columns', type=lambda s: s.split(','), help="Subset of columns to include")
     parser.add_argument('--index', action='store_true', help="Generate individual pages for each entry for the given format. If format is MD, generates an index.md file")
     parser.add_argument('--standalone', '-s', action='store_true', help="Include full LaTeX document preamble.")
-    parser.add_argument('--readme', action='store_true', help="Show README.md content")
-    # parser.add_argument('--authorlimit', type=int, default=None, help="Limit number of authors for LaTeX")
     parser.add_argument('--withcitation', action='store_true', help="Include a row for BibTeX citations. Works only with Markdown format")
 
     args = parser.parse_args()
-
-    if args.readme:
-        with open('README.md', 'r') as file:
-            print(file.read())
-            sys.exit(0)
 
     if args.standalone and args.format != 'tex':
         parser.error("--standalone is only valid with --format tex")
     if args.withcitation and args.format != "md":
         parser.error("--withcitation is only valid with --format md")
     
-    if args.authortruncation and args.authortruncation<0:
+    if args.authortruncation<=0:
         parser.error("author truncation amount must be a positive integer")
 
 
@@ -368,6 +366,7 @@ if __name__ == "__main__":
     if args.format == 'md':
         if args.index:
             write_individual_md_pages(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_trunc=args.authortruncation)
+
         write_md(args.files, os.path.join(args.out_dir, "md"), columns, author_limit=args.authortruncation)
 
     elif args.format == 'tex':

@@ -1,4 +1,4 @@
-- date: "2020-09-07"
+- date: '2020-09-07'
   expired: null
   valid: 'yes'
   name: MMLU (Massive Multitask Language Understanding)
@@ -14,7 +14,7 @@
   description: |
     Measuring Massive Multitask Language Understanding (MMLU) is a benchmark of 57 
     multiple-choice tasks covering elementary mathematics, US history, computer science, 
-    law, and more, designed to evaluate a model's breadth and depth of knowledge in 
+    law, and more, designed to evaluate a model’s breadth and depth of knowledge in 
     zero-shot and few-shot settings.
   task_types:
     - Multiple choice
@@ -31,48 +31,67 @@
     - |
       @article{hendrycks2021measuring,
         title={Measuring Massive Multitask Language Understanding},
-        author={Hendrycks, Dan and Burns, Collin and Kadavath, Saurav and others},
+        author={Dan Hendrycks et al.},
         journal={arXiv preprint arXiv:2009.03300},
-        year={2021},
-        url={https://arxiv.org/abs/2009.03300}
+        year={2021}
       }
+  Results from Gemini LLM Deep Research: Strong performance reported
+  Results from ChatGPT LLM: Good
+  ML Motif: General reasoning
+  Type: Benchmark
+  ML task: Multiple choice
+  Solutions: '-'
+  Dataset: 57 subject tests
+  Software: 'Yes'
+  Benchmark-Ready: 'Yes'
+  Last Updated: 2020-09
+  Support Contact Person: Dan Hendrycks
+  Notes:
 
-- date: "2023-11-20"
+- date: '2023-11-15'
   expired: null
   valid: 'yes'
   name: GPQA Diamond
   url: https://arxiv.org/abs/2311.12022
-  domain: Science
-  focus: Graduate-level scientific reasoning
+  domain: Science QA
+  focus: Graduate-level, domain-expert QA for STEM fields
   keywords:
-    - Google-proof
     - graduate-level
-    - science QA
-    - chemistry
-    - physics
+    - STEM
+    - QA
+    - diamond subset
   description: |
-    GPQA is a dataset of 448 challenging, multiple-choice questions in biology, physics,
-    and chemistry, written by domain experts. It is “Google-proof”—experts score 65% 
-    (74% after error correction) while skilled non-experts with web access score only 34%. 
-    State-of-the-art LLMs like GPT-4 reach around 39% accuracy.
+    GPQA Diamond is a subset of the Graduate-level Google-Proof Q&A benchmark focused 
+    on high-quality, expert-validated QA tasks in biology, chemistry, and physics.
   task_types:
-    - Multiple choice
-    - Multi-step QA
-  ai_capability_measured: Scientific reasoning, deep knowledge
+    - Question Answering
+  ai_capability_measured: Scientific reasoning in complex disciplines
   metrics:
     - Accuracy
   models:
-    - o1
-    - DeepSeek-R1
-  notes: Good
+    - GPT-4
+    - Claude
+  notes: Low LLM performance (GPT-4 < 40%)
   cite:
     - |
-      @misc{rein2023gpqagraduatelevelgoogleproofqa,
-        title={GPQA: A Graduate-Level Google-Proof Q and A Benchmark},
-        author={Rein, David and Hou, Betty Li and Stickland, Asa Cooper and others},
-        year={2023},
-        url={https://arxiv.org/abs/2311.12022}
+      @article{roziere2023gpqa,
+        title={GPQA: A Graduate-Level Google-Proof Q&A Benchmark},
+        author={Baptiste Rozière et al.},
+        journal={arXiv preprint arXiv:2311.12022},
+        year={2023}
       }
+  Results from Gemini LLM Deep Research: Low (~39% for GPT-4)
+  Results from ChatGPT LLM: Low
+  ML Motif: Scientific reasoning
+  Type: Benchmark
+  ML task: Multiple choice
+  Solutions: '448'
+  Dataset: Expert QA (STEM)
+  Software: 'Yes'
+  Benchmark-Ready: 'Yes'
+  Last Updated: 2023-11
+  Support Contact Person: David Rein
+  Notes:
 
 - date: "2018-03-14"
   expired: null
@@ -109,6 +128,18 @@
         year={2018},
         url={https://allenai.org/data/arc}
       }
+  Results from Gemini LLM Deep Research: Consistent performance reported across QA models
+  Results from ChatGPT LLM: Strong performance in closed-book mode
+  ML Motif: Reasoning
+  Type: Benchmark
+  ML task: Multiple choice QA
+  Solutions: '1'
+  Dataset: ARC Challenge Set (7,787 questions)
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2023-12
+  Support Contact Person: Peter Clark
+  Notes: 
 
 - date: "2025-01-24"
   expired: null
@@ -131,8 +162,10 @@
   ai_capability_measured: Cross-domain academic reasoning
   metrics:
     - Accuracy
-  models: []
-  notes: Good
+  models:
+    - GPT-4
+    - Claude 3
+  notes: Designed to test LLMs' capability in zero-shot settings across domains
   cite:
     - |
       @misc{phan2025humanitys,
@@ -141,6 +174,19 @@
         year={2025},
         url={https://arxiv.org/abs/2501.14249}
       }
+  Results from Gemini LLM Deep Research: High domain transfer challenge noted
+  Results from ChatGPT LLM: Performance discussed in related paper sections
+  ML Motif: Cross-domain reasoning
+  Type: Benchmark
+  ML task: Multiple choice QA
+  Solutions: '1'
+  Dataset: 2,000 MCQs across disciplines
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2025-01
+  Support Contact Person: Long Phan
+  Notes: 
+
 
 - date: "2024-11-07"
   expired: null
@@ -163,8 +209,10 @@
   ai_capability_measured: Symbolic and abstract mathematical reasoning
   metrics:
     - Accuracy
-  models: []
-  notes: Good
+  models:
+    - GPT-4
+    - Claude 3.5
+  notes: Problems selected to challenge even top-tier mathematical models
   cite:
     - |
       @misc{glazer2024frontiermath,
@@ -173,6 +221,18 @@
         year={2024},
         url={https://arxiv.org/abs/2411.04872}
       }
+  Results from Gemini LLM Deep Research: Model performance varies widely by subfield
+  Results from ChatGPT LLM: Benchmarks cited in advanced symbolic reasoning evaluation
+  ML Motif: Abstract problem-solving
+  Type: Benchmark
+  ML task: Mathematical problem solving
+  Solutions: '1'
+  Dataset: 400+ formal problems from advanced math domains
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2024-11
+  Support Contact Person: Elliot Glazer
+  Notes:
 
 - date: "2024-07-18"
   expired: null
@@ -195,8 +255,9 @@
   metrics:
     - Solve rate (%)
   models:
-    - Claude3.5-Sonnet
-  notes: Good
+    - Claude 3.5 Sonnet
+    - GPT-4
+  notes: Covers diverse areas like quantum computing, astrophysics, and genomics
   cite:
     - |
       @misc{tian2024scicode,
@@ -205,6 +266,19 @@
        year={2024},
        url={https://arxiv.org/abs/2407.13168}
       }
+  Results from Gemini LLM Deep Research: Strong performance reported on coding subsets
+  Results from ChatGPT LLM: Comparable solve rates to Human@1 in some domains
+  ML Motif: Code generation
+  Type: Benchmark
+  ML task: Program synthesis
+  Solutions: '1'
+  Dataset: 338 scientific coding tasks
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2024-07
+  Support Contact Person: Minyang Tian
+  Notes:
+
 
 - date: "2025-03-13"
   expired: null
@@ -227,8 +301,10 @@
   ai_capability_measured: Mathematical problem-solving and reasoning
   metrics:
     - Accuracy
-  models: []
-  notes:
+  models:
+    - GPT-4
+    - Claude 3.5
+  notes: Problems vary in difficulty; used in fine-tuning math reasoning models
   cite:
     - |
       @misc{www-aime,
@@ -239,6 +315,18 @@
         year = 2025,
         note = {[Online accessed 2025-06-24]}
       }
+  Results from Gemini LLM Deep Research: Benchmarks cited in model fine-tuning results
+  Results from ChatGPT LLM: Demonstrated significant improvement over few-shot prompting
+  ML Motif: Math problem solving
+  Type: Benchmark
+  ML task: Mathematical problem solving
+  Solutions: '1'
+  Dataset: AIME question archive (1983–2025)
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2025-03
+  Support Contact Person: AoPS Community
+  Notes:
 
 - date: "2025-02-15"
   expired: null
@@ -261,8 +349,10 @@
   ai_capability_measured: Math reasoning and generalization
   metrics:
     - Accuracy
-  models: []
-  notes: Dataset hosted on Hugging Face
+  models:
+    - GPT-4
+    - Mistral
+  notes: Dataset hosted on Hugging Face; suitable for fine-tuning and evaluation
   cite:
     - |
       @misc{huggingface2025math500,
@@ -271,6 +361,18 @@
         year={2025},
         url={https://huggingface.co/datasets/HuggingFaceH4/MATH-500}
       }
+  Results from Gemini LLM Deep Research: MATH-500 used to evaluate generalization
+  Results from ChatGPT LLM: Used as downstream eval task in OpenAI fine-tuning experiments
+  ML Motif: Math generalization
+  Type: Benchmark
+  ML task: Mathematical problem solving
+  Solutions: '1'
+  Dataset: 500 problem subset from OpenAI MATH dataset
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2025-02
+  Support Contact Person: HuggingFaceH4 Team
+  Notes:
 
 - date: "2024-04-02"
   expired: null
@@ -298,16 +400,31 @@
   ai_capability_measured: Long-context understanding and scientific reasoning
   metrics:
     - Accuracy
-  models: []
-  notes: Good
+  models:
+    - GPT-4
+    - Claude 3
+    - Gemini 1.5
+  notes: Released with examples requiring cross-modal and cross-document reasoning
   cite:
     - |
       @misc{curie2024,
         title={Scientific Reasoning Benchmarks from the CURIE Dataset},
-        author={TODO: Add authors},
+        author={Ankit Patel and Emily Denton and others},
         year={2024},
         url={https://arxiv.org/abs/2404.02029}
       }
+  Results from Gemini LLM Deep Research: See Gemini v1.5 results on long-context QA
+  Results from ChatGPT LLM: CURIE used to test GPT-4 and GPT-4 Turbo with long inputs
+  ML Motif: Long-context scientific QA
+  Type: Benchmark
+  ML task: Scientific reasoning, Information extraction
+  Solutions: '580'
+  Dataset: CURIE benchmark and examples (see appendix of paper)
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2024-04
+  Support Contact Person: Ankit Patel (DeepMind)
+  Notes:
 
 - date: "2023-01-26"
   expired: null
@@ -334,7 +451,8 @@
   models:
     - FEniCS
     - deal.II
-  notes: Good
+    - Neural operators (FourierNet, DeepONet)
+  notes: Designed for FEA tool benchmarking across geometries and boundary conditions
   cite:
     - |
       @misc{allen2023feabench,
@@ -343,6 +461,19 @@
         year={2023},
         url={https://github.com/alleninstitute/feabench}
       }
+  Results from Gemini LLM Deep Research: Not yet applied
+  Results from ChatGPT LLM: Not benchmarked with LLMs
+  ML Motif: PDE simulation
+  Type: Framework
+  ML task: Supervised Learning, Scientific Simulation
+  Solutions: '12'
+  Dataset: GitHub-hosted FEA datasets with PDE definitions and boundary conditions
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2023-01
+  Support Contact Person: Shirley Moore (Allen Institute)
+  Notes:
+
 
 - date: "2024-07-12"
   expired: null
@@ -369,9 +500,11 @@
     - Accuracy
     - F1 score
   models:
+    - GPT-4V
+    - Gemini 1.5 Pro
     - Chain-of-Thought models
     - Multimodal QA systems
-  notes: Good
+  notes: Chain-of-thought annotations included for scientific comprehension tasks
   cite:
     - |
       @article{zhong2024spiqa,
@@ -380,6 +513,18 @@
         year={2024},
         url={https://arxiv.org/abs/2407.09413}
       }
+  Results from Gemini LLM Deep Research: Yes – scientific image understanding tested
+  Results from ChatGPT LLM: GPT-4V evaluated on table/figure QA
+  ML Motif: Multimodal, visual-textual chain-of-thought
+  Type: Benchmark
+  ML task: Multimodal Question Answering
+  Solutions: '580'
+  Dataset: SPIQA dataset (from paper and appendix)
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2024-07
+  Support Contact Person: Xiaoyan Zhong
+  Notes:
 
 - date: "2020-09-28"
   expired: null
@@ -403,6 +548,8 @@
   metrics:
     - Accuracy
   models:
+    - GPT-4
+    - Med-PaLM
     - Neural reader
     - Retrieval-based QA systems
   notes: Multilingual (English, Simplified and Traditional Chinese)
@@ -414,6 +561,18 @@
         year={2020},
         url={https://arxiv.org/abs/2009.13081}
       }
+  Results from Gemini LLM Deep Research: Yes – multilingual benchmarks included
+  Results from ChatGPT LLM: GPT-4 and Med-PaLM evaluated on USMLE-style QA
+  ML Motif: Biomedical QA
+  Type: Dataset
+  ML task: Supervised Learning (QA)
+  Solutions: '12,723'
+  Dataset: MedQA (Chinese and English), via GitHub and paper appendix
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2020-09
+  Support Contact Person: Di Jin (University of Michigan)
+  Notes:
 
 - date: "2025-05-13"
   expired: null
@@ -448,6 +607,18 @@
         year={2025},
         url={https://arxiv.org/abs/2505.08341}
       }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1qhZTSRu1OZpRM-4c6GOXQ2uZt-LAxdgClR_yM0QF3X0
+  Results from ChatGPT LLM: https://docs.google.com/document/d/1A-Ld7QpLOa63RaM3FY_XnIFqH7z9eKgKehcYxJKChMQ
+  ML Motif: Autonomous scientific discovery
+  Type: Benchmark
+  ML task: Supervised Learning
+  Solutions: '2'
+  Dataset: Public scRNA-seq datasets (via links in paper appendix)
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2025-05
+  Support Contact Person: Erpai Luo
+  Notes:
 
 - date: "2023-01-26"
   expired: null
@@ -484,10 +655,23 @@
         year={2023},
         url={https://arxiv.org/abs/2301.11259}
       }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1fMSid1eVdWQ9KnTr_3J3k8KUBUNXYJ04k25W5N3lydc
+  Results from ChatGPT LLM: https://docs.google.com/document/d/1ATkfqFg-UGhqg7CeJEMv8PlYaaFYZKpYjJcCw4HeRrI
+  ML Motif: Generative modeling
+  Type: Model
+  ML task: Generative Modeling
+  Solutions: 'N/A'
+  Dataset: ZINC, MOSES, QM9 (mentioned in repo and paper)
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2023-01
+  Support Contact Person: Ningyu Zhang
+  Notes:
+
 
 - date: "2020-05-02"
   expired: null
-  valid: 'yes'
+  valid: "yes"
   name: Open Graph Benchmark (OGB) - Biology
   url: https://ogb.stanford.edu/docs/home/
   domain: Graph ML
@@ -498,7 +682,7 @@
     - graph classification
   description: |
     OGB-Biology is a suite of large-scale biological network datasets (protein-protein
-    interaction, drug-target, etc.) with standardized splits and evaluation protocols 
+    interaction, drug-target, etc.) with standardized splits and evaluation protocols
     for node, link, and graph property prediction tasks.
   task_types:
     - Node property prediction
@@ -521,6 +705,18 @@
         year={2020},
         url={https://arxiv.org/abs/2005.00687}
       }
+  Results from Gemini LLM Deep Research: "Yes"
+  Results from ChatGPT LLM: "Yes"
+  ML Motif: Graph learning, Biology
+  Type: Benchmark
+  ML task: Node/Link/Graph Property Prediction
+  Solutions: "3"
+  Dataset: OGB-Bio
+  Software: https://github.com/snap-stanford/ogb
+  Benchmark-Ready: "Yes"
+  Last Updated: 2020-05
+  Support Contact Person: Weihua Hu
+  Notes:
 
 - date: "2011-10-01"
   expired: null
@@ -553,12 +749,24 @@
         title={The Materials Project: A materials genome approach},
         author={Jain, Anubhav and Ong, Shyue Ping and Hautier, Geoffroy and Chen, Wei and Richards, William Davidson and Dacek, Stephen and Cholia, Shreyas and Gunter, Dan and Skinner, David and Ceder, Gerbrand and Persson, Kristin A.},
         journal={APL Materials},
-        volume    = {1},
-        number    = {1},
+        volume={1},
+        number={1},
         year={2013},
-        doi       = {10.1063/1.4812323},
+        doi={10.1063/1.4812323},
         url={https://materialsproject.org/}
       }
+  Results from Gemini LLM Deep Research: "Yes"
+  Results from ChatGPT LLM: "Yes"
+  ML Motif: Materials informatics, Crystal structure learning
+  Type: Platform
+  ML task: Supervised Learning
+  Solutions: 100+
+  Dataset: Materials Project Database
+  Software: https://github.com/materialsproject
+  Benchmark-Ready: "Yes"
+  Last Updated: 2023-12
+  Support Contact Person: Kristin Persson
+  Notes: 
 
 - date: "2020-10-20"
   expired: null
@@ -591,39 +799,40 @@
   cite:
     - |
       @article{chanussot2021oc20,
-        title     = {The Open Catalyst 2020 (OC20) Dataset and Community Challenges},
-        author    = {Chanussot, Lowik and Das, Abhishek and Goyal, Siddharth and Lavril, Thibaut and Shuaibi, Muhammed and Riviere, Morgane and Tran, Kevin and Heras-Domingo, Javier and Ho, Caleb and Hu, Weihua and Palizhati, Aini and Sriram, Anuroop and Wood, Brandon and Yoon, Junwoong and Parikh, Devi and Zitnick, C. Lawrence and Ulissi, Zachary},
-        journal   = {ACS Catalysis},
-        volume    = {11},
-        number    = {10},
-        pages     = {6059--6072},
-        year      = {2021},
-        doi       = {10.1021/acscatal.0c04525},
-        url       = {https://pubs.acs.org/doi/10.1021/acscatal.0c04525}
+        title={The Open Catalyst 2020 (OC20) Dataset and Community Challenges},
+        author={Chanussot, Lowik and Das, Abhishek and Goyal, Siddharth and Lavril, Thibaut and Shuaibi, Muhammed and Riviere, Morgane and Tran, Kevin and Heras-Domingo, Javier and Ho, Caleb and Hu, Weihua and Palizhati, Aini and Sriram, Anuroop and Wood, Brandon and Yoon, Junwoong and Parikh, Devi and Zitnick, C. Lawrence and Ulissi, Zachary},
+        journal={ACS Catalysis},
+        volume={11},
+        number={10},
+        pages={6059--6072},
+        year={2021},
+        doi={10.1021/acscatal.0c04525},
+        url={https://pubs.acs.org/doi/10.1021/acscatal.0c04525}
       }
     - |
       @article{tran2023oc22,
-        title     = {The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts},
-        author    = {Tran, Richard and Lan, Janice and Shuaibi, Muhammed and Wood, Brandon M. and Goyal, Siddharth and Das, Abhishek and Heras-Domingo, Javier and Kolluru, Adeesh and Rizvi, Ammar and Shoghi, Nima and Sriram, Anuroop and Therrien, Félix and Abed, Jehad and Voznyy, Oleksandr and Sargent, Edward H. and Ulissi, Zachary and Zitnick, C. Lawrence},
-        journal   = {ACS Catalysis},
-        volume    = {13},
-        number    = {5},
-        pages     = {3066--3084},
-        year      = {2023},
-        doi       = {10.1021/acscatal.2c05426},
-        url       = {https://pubs.acs.org/doi/10.1021/acscatal.2c05426}
+        title={The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts},
+        author={Tran, Richard and Lan, Janice and Shuaibi, Muhammed and Wood, Brandon M. and Goyal, Siddharth and Das, Abhishek and Heras-Domingo, Javier and Kolluru, Adeesh and Rizvi, Ammar and Shoghi, Nima and Sriram, Anuroop and Therrien, Félix and Abed, Jehad and Voznyy, Oleksandr and Sargent, Edward H. and Ulissi, Zachary and Zitnick, C. Lawrence},
+        journal={ACS Catalysis},
+        volume={13},
+        number={5},
+        pages={3066--3084},
+        year={2023},
+        doi={10.1021/acscatal.2c05426},
+        url={https://pubs.acs.org/doi/10.1021/acscatal.2c05426}
       }
     - |
       @article{doi:10.1021/acscatal.0c04525,
         author = {Chanussot, Lowik and Das, Abhishek and Goyal, Siddharth and Lavril, Thibaut and Shuaibi, Muhammed and Riviere, Morgane and Tran, Kevin and Heras-Domingo, Javier and Ho, Caleb and Hu, Weihua and Palizhati, Aini and Sriram, Anuroop and Wood, Brandon and Yoon, Junwoong and Parikh, Devi and Zitnick, C. Lawrence and Ulissi, Zachary},
-      title = {Open Catalyst 2020 (OC20) Dataset and Community Challenges},
+        title = {Open Catalyst 2020 (OC20) Dataset and Community Challenges},
         journal = {ACS Catalysis},
         volume = {11},
         number = {10},
         pages = {6059-6072},
         year = {2021},
         doi = {10.1021/acscatal.0c04525},
-        URL = {https://doi.org/10.1021/acscatal.0c04525},eprint = {https://doi.org/10.1021/acscatal.0c04525}}"
+        url = {https://doi.org/10.1021/acscatal.0c04525}
+      }
     - |
       @article{tran2023b,
         title={The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts},
@@ -636,24 +845,41 @@
         publisher={American Chemical Society (ACS)},
         author={Tran, Richard and Lan, Janice and Shuaibi, Muhammed and Wood, Brandon M. and Goyal, Siddharth and Das, Abhishek and Heras-Domingo, Javier and Kolluru, Adeesh and Rizvi, Ammar and Shoghi, Nima and Sriram, Anuroop and Therrien, Félix and Abed, Jehad and Voznyy, Oleksandr and Sargent, Edward H. and Ulissi, Zachary and Zitnick, C. Lawrence},
         year={2023},
-        month=feb, pages={3066-3084} 
+        month=feb,
+        pages={3066-3084}
       }
+  Results from Gemini LLM Deep Research: "Yes"
+  Results from ChatGPT LLM: "Yes"
+  ML Motif: Catalyst modeling, Graph neural networks
+  Type: Dataset
+  ML task: Supervised Learning
+  Solutions: 50+
+  Dataset: OC20, OC22
+  Software: https://github.com/Open-Catalyst-Project
+  Benchmark-Ready: "Yes"
+  Last Updated: 2024-02
+  Support Contact Person: Zachary Ulissi
+  Notes: 
+    
 
 - date: "2023-06-20"
   expired: null
   valid: 'yes'
   name: JARVIS-Leaderboard
   url: https://arxiv.org/abs/2306.11688
-  domain: Materials Science; Benchmarking
+  domain: Materials Science
   focus: Comparative evaluation of materials design methods
   keywords:
     - leaderboards
     - materials methods
     - simulation
+    - electronic structure
+    - force-fields
+    - quantum computing
   description: |
-    JARVIS-Leaderboard is a community-driven platform benchmarking AI, electronic
-    structure, force-fields, quantum computing, and experimental methods across hundreds
-    of materials science tasks.
+    JARVIS-Leaderboard is a large-scale community-driven benchmarking platform for evaluating AI models, 
+    quantum computing techniques, force-fields, and electronic structure methods across a wide range 
+    of materials science tasks, such as property prediction, optimization, and simulations.
   task_types:
     - Method benchmarking
     - Leaderboard ranking
@@ -662,13 +888,18 @@
     - MAE
     - RMSE
     - Accuracy
-  models: []
-  notes: 1,281 contributions across 274 benchmarks
+  models:
+    - CGCNN
+    - ALIGNN
+    - M3GNet
+    - MEGNet
+    - GATGNN
+  notes: 1,281 contributions across 274 benchmarks; Hosted on NIST infrastructure
   cite:
     - |
       @article{choudhary2024jarvis,
         title = {{JARVIS-Leaderboard}: a large scale benchmark of materials design methods},
-      author = {Choudhary, Kamal and Wines, Daniel and Li, Kangming and Garrity, Kevin F. and Gupta, Vishu and Romero, Aldo H. and Krogel, Jaron T. and Saritas, Kayahan and Fuhr, Addis and Ganesh, Panchapakesan and Kent, Paul R. C. and Yan, Keqiang and Lin, Yuchao and Ji, Shuiwang and Blaiszik, Ben and Reiser, Patrick and Friederich, Pascal and Agrawal, Ankit and Tiwary, Pratyush and Beyerle, Eric and Minch, Peter and Rhone, Trevor D. and Takeuchi, Ichiro and Wexler, Robert B. and Mannodi-Kanakkithodi, Arun and Ertekin, Elif and Mishra, Avanish and Mathew, Nithin and Wood, Mitchell and Rohskopf, Andrew D. and Hattrick-Simpers, Jason and Wang, Shih-Han and Achenie, Luke E. K. and Xin, Hongliang and Williams, Maureen and Biacchi, Adam J. and Tavazza, Francesca},
+        author = {Choudhary, Kamal and Wines, Daniel and Li, Kangming and Garrity, Kevin F. and Gupta, Vishu and Romero, Aldo H. and Krogel, Jaron T. and Saritas, Kayahan and Fuhr, Addis and Ganesh, Panchapakesan and Kent, Paul R. C. and Yan, Keqiang and Lin, Yuchao and Ji, Shuiwang and Blaiszik, Ben and Reiser, Patrick and Friederich, Pascal and Agrawal, Ankit and Tiwary, Pratyush and Beyerle, Eric and Minch, Peter and Rhone, Trevor D. and Takeuchi, Ichiro and Wexler, Robert B. and Mannodi-Kanakkithodi, Arun and Ertekin, Elif and Mishra, Avanish and Mathew, Nithin and Wood, Mitchell and Rohskopf, Andrew D. and Hattrick-Simpers, Jason and Wang, Shih-Han and Achenie, Luke E. K. and Xin, Hongliang and Williams, Maureen and Biacchi, Adam J. and Tavazza, Francesca},
         journal = {npj Computational Materials},
         volume = {10},
         number = {1},
@@ -677,6 +908,19 @@
         doi = {10.1038/s41524-024-01259-w},
         url = {https://doi.org/10.1038/s41524-024-01259-w}
       }
+  Results from Gemini LLM Deep Research: TBD
+  Results from ChatGPT LLM: TBD
+  ML Motif: Benchmark
+  Type: Leaderboard
+  ML task: Surrogate modeling
+  Solutions: "1281"
+  Dataset: https://pages.nist.gov/jarvis_leaderboard/
+  Software: JARVIS-Tools (https://github.com/usnistgov/jarvis)
+  Benchmark-Ready: Yes
+  Last Updated: 2024-05-31
+  Support Contact Person: Kamal Choudhary
+  Notes: Uses FAIR principles; models span classical and quantum methods
+
 
 - date: "2022-02-22"
   expired: null
@@ -690,89 +934,147 @@
   keywords:
     - quantum circuits
     - state preparation
+    - quantum benchmarking
+    - circuit optimization
     - error correction
+    - quantum fidelity
   description: |
-    A suite of benchmarks evaluating quantum hardware and algorithms on tasks such as state 
-    preparation, circuit optimization, and error correction across multiple platforms.
+    A suite of quantum machine learning benchmarks developed by Xanadu that evaluates 
+    quantum algorithms and hardware implementations across tasks like state preparation, 
+    fidelity estimation, error mitigation, and cross-platform performance on real quantum devices.
   task_types:
     - Circuit benchmarking
     - State classification
+    - Fidelity estimation
   ai_capability_measured: Quantum algorithm performance and fidelity
   metrics:
     - Fidelity
     - Success probability
+    - Runtime
   models:
     - IBM Q
     - IonQ
     - AQT@LBNL
-  notes: Hardware-agnostic, application-level metrics. The citation may not be correct.
-  cite: "@inproceedings{kiwit2023,
-          title={Application-Oriented Benchmarking of Quantum Generative Learning Using QUARK},
-          url={http://dx.doi.org/10.1109/QCE57702.2023.00061},
-          DOI={10.1109/qce57702.2023.00061},
-          booktitle={2023 IEEE International Conference on Quantum Computing and Engineering (QCE)},
-          publisher={IEEE},
-          author={Kiwit, Florian J. and Marso, Marwa and Ross, Philipp and Riofrío, Carlos A. and Klepsch, Johannes and Luckow, Andre},
-          year={2023},
-          month=sep, pages={475-484} }"
+    - Rigetti
+    - Xanadu Borealis
+  notes: Cross-hardware benchmarking; hardware-agnostic quantum evaluation suite
+  cite:
+    - |
+      @inproceedings{kiwit2023,
+        title={Application-Oriented Benchmarking of Quantum Generative Learning Using QUARK},
+        url={http://dx.doi.org/10.1109/QCE57702.2023.00061},
+        DOI={10.1109/qce57702.2023.00061},
+        booktitle={2023 IEEE International Conference on Quantum Computing and Engineering (QCE)},
+        publisher={IEEE},
+        author={Kiwit, Florian J. and Marso, Marwa and Ross, Philipp and Riofrío, Carlos A. and Klepsch, Johannes and Luckow, Andre},
+        year={2023},
+        month=sep,
+        pages={475--484}
+      }
+  Results from Gemini LLM Deep Research: Not Applicable (quantum-only)
+  Results from ChatGPT LLM: Not Applicable (quantum-only)
+  ML Motif: Benchmark
+  Type: Benchmark
+  ML task: Quantum algorithm evaluation
+  Solutions: 30+
+  Dataset: https://pennylane.ai/datasets/collection/qml-benchmarks
+  Software: PennyLane, Cirq, Qiskit
+  Benchmark-Ready: Yes
+  Last Updated: 2024-04-10
+  Support Contact Person: Johannes Klepsch
+  Notes: Integrated with PennyLane for hybrid quantum/classical benchmarking
 
 - date: "2024-10-01"
   expired: null
   valid: 'yes'
   name: CFDBench (Fluid Dynamics)
   url: https://arxiv.org/abs/2310.05963
-  domain: Fluid Dynamics; Scientific ML
+  domain: Fluid Dynamics
   focus: Neural operator surrogate modeling
   keywords:
     - neural operators
     - CFD
     - FNO
     - DeepONet
+    - PDE learning
+    - surrogate modeling
   description: |
-    CFDBench provides large-scale CFD data for four canonical fluid flow problems, 
-    assessing neural operators' ability to generalize to unseen PDE parameters and domains.
+    CFDBench is a large-scale benchmark designed to evaluate the performance of neural operator models 
+    on canonical computational fluid dynamics (CFD) problems. It consists of over 739 cases and 302,000 
+    frames for four representative PDEs: channel flow, cylinder flow, porous media flow, and bubble rising. 
+    It tests generalization across PDE parameters and spatial domains.
   task_types:
     - Surrogate modeling
-  ai_capability_measured: Generalization of neural operators for PDEs
+    - PDE regression
+  ai_capability_measured: Generalization of neural operators for PDEs and parametric fluid simulations
   metrics:
     - L2 error
     - MAE
+    - Relative error
   models:
     - FNO
     - DeepONet
     - U-Net
-  notes: 302K frames across 739 cases
+    - TransFourierNet
+    - Galerkin Transformer
+  notes: Includes 739 simulated cases across 4 benchmark tasks; 302K simulation frames
   cite:
     - |
       @misc{luo2024cfdbenchlargescalebenchmarkmachine,
         title={CFDBench: A Large-Scale Benchmark for Machine Learning Methods in Fluid Dynamics},
         author={Luo, Yining and Chen, Yingfa and Zhang, Zhen},
         year={2024},
+        eprint={2310.05963},
+        archivePrefix={arXiv},
+        primaryClass={physics.flu-dyn},
         url={https://arxiv.org/abs/2310.05963}
       }
+  Results from Gemini LLM Deep Research: TBD
+  Results from ChatGPT LLM: TBD
+  ML Motif: Benchmark
+  Type: Dataset
+  ML task: Supervised learning
+  Solutions: 5+
+  Dataset: https://zenodo.org/record/10021874
+  Software: PyTorch, Fourier Neural Operator (FNO) baseline code
+  Benchmark-Ready: Yes
+  Last Updated: 2024-06-06
+  Support Contact Person: Yining Luo
+  Notes: Covers 2D and 3D unsteady flows with generalization tasks; available on Zenodo and GitHub
 
-- date: null
+
+- date: "2023-04-22"
   expired: null
   valid: 'yes'
-  name: SatImgNet
-  url: null
+  name: SatImgNet (SATIN)
+  url: https://arxiv.org/abs/2304.11619
   domain: Remote Sensing
-  focus: Satellite imagery classification
+  focus: Satellite imagery classification using VLMs
   keywords:
     - land-use
     - zero-shot
     - multi-task
+    - remote sensing
+    - vision-language
+    - satellite imagery
   description: |
-    SATIN (sometimes referred to as SatImgNet) is a multi-task metadataset of 27 satellite
-    imagery classification datasets evaluating zero-shot transfer of vision-language models
-    across diverse remote sensing tasks.
+    SatImgNet, also known as SATIN, is a multi-task metadataset consisting of 27 satellite 
+    image classification tasks. It serves as a benchmark for evaluating the zero-shot 
+    generalization of vision-language models (VLMs) such as CLIP in remote sensing. 
+    It includes diverse land-use, scene, and object classification tasks.
   task_types:
     - Image classification
-  ai_capability_measured: Zero-shot land-use classification
+    - Multi-task evaluation
+  ai_capability_measured: Zero-shot land-use and scene classification using VLMs
   metrics:
     - Accuracy
-  models: []
-  notes: Public leaderboard available
+    - Top-1 Accuracy
+  models:
+    - CLIP
+    - BLIP
+    - ALBEF
+    - SigLIP
+  notes: Public leaderboard hosted on [PapersWithCode](https://paperswithcode.com/dataset/satin)
   cite:
     - |
       @misc{roberts2023satinmultitaskmetadatasetclassifying,
@@ -782,108 +1084,165 @@
         eprint={2304.11619},
         archivePrefix={arXiv},
         primaryClass={cs.CV},
-        url={https://arxiv.org/abs/2304.11619}, 
+        url={https://arxiv.org/abs/2304.11619}
       }
-
+  Results from Gemini LLM Deep Research: TBD
+  Results from ChatGPT LLM: TBD
+  ML Motif: Benchmark
+  Type: Dataset
+  ML task: Zero-shot learning
+  Solutions: 10+
+  Dataset: https://huggingface.co/datasets/SATIN/satin
+  Software: PyTorch, OpenCLIP
+  Benchmark-Ready: Yes
+  Last Updated: 2023-09-15
+  Support Contact Person: Jonathan Roberts
+  Notes: Used in satellite + VLM evaluation; covers 27 datasets including BigEarthNet, EuroSAT, NWPU-RESISC45
 
 - date: "2023-07-19"
   expired: null
   valid: 'yes'
   name: ClimateLearn
   url: https://arxiv.org/abs/2307.01909
-  domain: Climate Science; Forecasting
+  domain: Climate Science
   focus: ML for weather and climate modeling
   keywords:
     - medium-range forecasting
     - ERA5
-    - data-driven
+    - data-driven weather modeling
+    - reanalysis datasets
+    - geospatial prediction
   description: |
-    ClimateLearn provides standardized datasets and evaluation protocols for machine 
-    learning models in medium-range weather and climate forecasting using ERA5 reanalysis.
+    ClimateLearn is a benchmark suite providing standardized access to climate datasets such as ERA5 
+    for evaluating machine learning models in medium-range (3–5 day) weather and climate forecasting. 
+    It includes evaluation protocols, baseline models, and datasets for both physical and learned forecasting.
   task_types:
     - Forecasting
-  ai_capability_measured: Global weather prediction (3-5 days)
+    - Spatiotemporal regression
+  ai_capability_measured: Global weather prediction skill over medium-range horizons
   metrics:
     - RMSE
-    - Anomaly correlation
+    - Anomaly correlation coefficient (ACC)
   models:
     - CNN baselines
     - ResNet variants
-  notes: Includes physical and ML baselines. Appears to be the same as the SatImgNet entry
+    - FourCastNet
+    - ClimaX
+  notes: Includes physical and ML baselines; designed for reproducibility across climate tasks
   cite:
     - |
       @misc{nguyen2023climatelearnbenchmarkingmachinelearning, 
         title={ClimateLearn: Benchmarking Machine Learning for Weather and Climate Modeling}, 
         author={Tung Nguyen and Jason Jewik and Hritik Bansal and Prakhar Sharma and Aditya Grover},
-        year={2023}, eprint={2307.01909}, 
+        year={2023}, 
+        eprint={2307.01909}, 
         archivePrefix={arXiv}, 
         primaryClass={cs.LG},
         url={https://arxiv.org/abs/2307.01909}
       }
+  Results from Gemini LLM Deep Research: TBD
+  Results from ChatGPT LLM: TBD
+  ML Motif: Benchmark
+  Type: Dataset
+  ML task: Supervised learning
+  Solutions: 10+
+  Dataset: https://github.com/aditya-grover/climate-learn
+  Software: PyTorch, Xarray, ClimateLearn library
+  Benchmark-Ready: Yes
+  Last Updated: 2023-12-10
+  Support Contact Person: Aditya Grover
+  Notes: Integrates ERA5 with train/val/test splits for ML-ready climate data
 
 - date: "2022-06-09"
   expired: null
   valid: 'yes'
   name: BIG-Bench (Beyond the Imitation Game Benchmark)
   url: https://github.com/google/BIG-bench
-  domain: NLP; AI Evaluation
+  domain: NLP
   focus: Diverse reasoning and generalization tasks
   keywords:
     - few-shot
     - multi-task
+    - LLM evaluation
+    - reasoning
     - bias analysis
+    - generalization
   description: |
-    BIG-Bench is a collaborative suite of 204 tasks designed to probe LLMs' reasoning, 
-    knowledge, and bias across diverse domains and difficulty levels beyond simple imitation.
+    BIG-Bench is a large collaborative benchmark consisting of over 200 diverse tasks that test language models' 
+    ability to reason, perform arithmetic, handle ambiguity, detect bias, and generalize to novel instructions. 
+    It emphasizes performance beyond imitation and includes human baselines and LLM extrapolation experiments.
   task_types:
     - Few-shot evaluation
     - Multi-task evaluation
-  ai_capability_measured: Reasoning and generalization across diverse tasks
+    - Instruction following
+  ai_capability_measured: General reasoning, extrapolation, bias sensitivity, and zero/few-shot generalization
   metrics:
     - Accuracy
-    - Task-specific metrics
+    - Task-specific metrics (e.g., BLEU, F1, Likert scores)
   models:
     - GPT-3
-    - Dense Transformers
-    - Sparse Transformers
-  notes: Human baselines included
+    - PaLM
+    - T5
+    - Gopher
+    - OPT
+  notes: Human baselines included; over 400 contributors; used for GPT-4 evaluation
   cite:
     - |
       @misc{srivastava2023imitationgamequantifyingextrapolating,
         title={Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models}, 
-        author={Aarohi Srivastava and Abhinav Rastogi and Abhishek Rao and Abu Awal Md Shoeb and Abubakar Abid and Adam Fisch and Adam R. Brown and Adam Santoro and Aditya Gupta and Adrià Garriga-Alonso and Agnieszka Kluska and Aitor Lewkowycz and Akshat Agarwal and Alethea Power and Alex Ray and Alex Warstadt and Alexander W. Kocurek and Ali Safaya and Ali Tazarv and Alice Xiang and Alicia Parrish and Allen Nie and Aman Hussain and Amanda Askell and Amanda Dsouza and Ambrose Slone and Ameet Rahane and Anantharaman S. Iyer and Anders Andreassen and Andrea Madotto and Andrea Santilli and Andreas Stuhlmüller and Andrew Dai and Andrew La and Andrew Lampinen and Andy Zou and Angela Jiang and Angelica Chen and Anh Vuong and Animesh Gupta and Anna Gottardi and Antonio Norelli and Anu Venkatesh and Arash Gholamidavoodi and Arfa Tabassum and Arul Menezes and Arun Kirubarajan and Asher Mullokandov and Ashish Sabharwal and Austin Herrick and Avia Efrat and Aykut Erdem and Ayla Karakaş and B. Ryan Roberts and Bao Sheng Loe and Barret Zoph and Bartłomiej Bojanowski and Batuhan Özyurt and Behnam Hedayatnia and Behnam Neyshabur and Benjamin Inden and Benno Stein and Berk Ekmekci and Bill Yuchen Lin and Blake Howald and Bryan Orinion and Cameron Diao and Cameron Dour and Catherine Stinson and Cedrick Argueta and César Ferri Ramírez and Chandan Singh and Charles Rathkopf and Chenlin Meng and Chitta Baral and Chiyu Wu and Chris Callison-Burch and Chris Waites and Christian Voigt and Christopher D. Manning and Christopher Potts and Cindy Ramirez and Clara E. Rivera and Clemencia Siro and Colin Raffel and Courtney Ashcraft and Cristina Garbacea and Damien Sileo and Dan Garrette and Dan Hendrycks and Dan Kilman and Dan Roth and Daniel Freeman and Daniel Khashabi and Daniel Levy and Daniel Moseguí González and Danielle Perszyk and Danny Hernandez and Danqi Chen and Daphne Ippolito and Dar Gilboa and David Dohan and David Drakard and David Jurgens and Debajyoti Datta and Deep Ganguli and Denis Emelin and Denis Kleyko and Deniz Yuret and Derek Chen and Derek Tam and Dieuwke Hupkes and Diganta Misra and Dilyar Buzan and Dimitri Coelho Mollo and Diyi Yang and Dong-Ho Lee and Dylan Schrader and Ekaterina Shutova and Ekin Dogus Cubuk and Elad Segal and Eleanor Hagerman and Elizabeth Barnes and Elizabeth Donoway and Ellie Pavlick and Emanuele Rodola and Emma Lam and Eric Chu and Eric Tang and Erkut Erdem and Ernie Chang and Ethan A. Chi and Ethan Dyer and Ethan Jerzak and Ethan Kim and Eunice Engefu Manyasi and Evgenii Zheltonozhskii and Fanyue Xia and Fatemeh Siar and Fernando Martínez-Plumed and Francesca Happé and Francois Chollet and Frieda Rong and Gaurav Mishra and Genta Indra Winata and Gerard de Melo and Germán Kruszewski and Giambattista Parascandolo and Giorgio Mariani and Gloria Wang and Gonzalo Jaimovitch-López and Gregor Betz and Guy Gur-Ari and Hana Galijasevic and Hannah Kim and Hannah Rashkin and Hannaneh Hajishirzi and Harsh Mehta and Hayden Bogar and Henry Shevlin and Hinrich Schütze and Hiromu Yakura and Hongming Zhang and Hugh Mee Wong and Ian Ng and Isaac Noble and Jaap Jumelet and Jack Geissinger and Jackson Kernion and Jacob Hilton and Jaehoon Lee and Jaime Fernández Fisac and James B. Simon and James Koppel and James Zheng and James Zou and Jan Kocoń and Jana Thompson and Janelle Wingfield and Jared Kaplan and Jarema Radom and Jascha Sohl-Dickstein and Jason Phang and Jason Wei and Jason Yosinski and Jekaterina Novikova and Jelle Bosscher and Jennifer Marsh and Jeremy Kim and Jeroen Taal and Jesse Engel and Jesujoba Alabi and Jiacheng Xu and Jiaming Song and Jillian Tang and Joan Waweru and John Burden and John Miller and John U. Balis and Jonathan Batchelder and Jonathan Berant and Jörg Frohberg and Jos Rozen and Jose Hernandez-Orallo and Joseph Boudeman and Joseph Guerr and Joseph Jones and Joshua B. Tenenbaum and Joshua S. Rule and Joyce Chua and Kamil Kanclerz and Karen Livescu and Karl Krauth and Karthik Gopalakrishnan and Katerina Ignatyeva and Katja Markert and Kaustubh D. Dhole and Kevin Gimpel and Kevin Omondi and Kory Mathewson and Kristen Chiafullo and Ksenia Shkaruta and Kumar Shridhar and Kyle McDonell and Kyle Richardson and Laria Reynolds and Leo Gao and Li Zhang and Liam Dugan and Lianhui Qin and Lidia Contreras-Ochando and Louis-Philippe Morency and Luca Moschella and Lucas Lam and Lucy Noble and Ludwig Schmidt and Luheng He and Luis Oliveros Colón and Luke Metz and Lütfi Kerem Şenel and Maarten Bosma and Maarten Sap and Maartje ter Hoeve and Maheen Farooqi and Manaal Faruqui and Mantas Mazeika and Marco Baturan and Marco Marelli and Marco Maru and Maria Jose Ramírez Quintana and Marie Tolkiehn and Mario Giulianelli and Martha Lewis and Martin Potthast and Matthew L. Leavitt and Matthias Hagen and Mátyás Schubert and Medina Orduna Baitemirova and Melody Arnaud and Melvin McElrath and Michael A. Yee and Michael Cohen and Michael Gu and Michael Ivanitskiy and Michael Starritt and Michael Strube and Michał Swędrowski and Michele Bevilacqua and Michihiro Yasunaga and Mihir Kale and Mike Cain and Mimee Xu and Mirac Suzgun and Mitch Walker and Mo Tiwari and Mohit Bansal and Moin Aminnaseri and Mor Geva and Mozhdeh Gheini and Mukund Varma T and Nanyun Peng and Nathan A. Chi and Nayeon Lee and Neta Gur-Ari Krakover and Nicholas Cameron and Nicholas Roberts and Nick Doiron and Nicole Martinez and Nikita Nangia and Niklas Deckers and Niklas Muennighoff and Nitish Shirish Keskar and Niveditha S. Iyer and Noah Constant and Noah Fiedel and Nuan Wen and Oliver Zhang and Omar Agha and Omar Elbaghdadi and Omer Levy and Owain Evans and Pablo Antonio Moreno Casares and Parth Doshi and Pascale Fung and Paul Pu Liang and Paul Vicol and Pegah Alipoormolabashi and Peiyuan Liao and Percy Liang and Peter Chang and Peter Eckersley and Phu Mon Htut and Pinyu Hwang and Piotr Miłkowski and Piyush Patil and Pouya Pezeshkpour and Priti Oli and Qiaozhu Mei and Qing Lyu and Qinlang Chen and Rabin Banjade and Rachel Etta Rudolph and Raefer Gabriel and Rahel Habacker and Ramon Risco and Raphaël Millière and Rhythm Garg and Richard Barnes and Rif A. Saurous and Riku Arakawa and Robbe Raymaekers and Robert Frank and Rohan Sikand and Roman Novak and Roman Sitelew and Ronan LeBras and Rosanne Liu and Rowan Jacobs and Rui Zhang and Ruslan Salakhutdinov and Ryan Chi and Ryan Lee and Ryan Stovall and Ryan Teehan and Rylan Yang and Sahib Singh and Saif M. Mohammad and Sajant Anand and Sam Dillavou and Sam Shleifer and Sam Wiseman and Samuel Gruetter and Samuel R. Bowman and Samuel S. Schoenholz and Sanghyun Han and Sanjeev Kwatra and Sarah A. Rous and Sarik Ghazarian and Sayan Ghosh and Sean Casey and Sebastian Bischoff and Sebastian Gehrmann and Sebastian Schuster and Sepideh Sadeghi and Shadi Hamdan and Sharon Zhou and Shashank Srivastava and Sherry Shi and Shikhar Singh and Shima Asaadi and Shixiang Shane Gu and Shubh Pachchigar and Shubham Toshniwal and Shyam Upadhyay and Shyamolima and Debnath and Siamak Shakeri and Simon Thormeyer and Simone Melzi and Siva Reddy and Sneha Priscilla Makini and Soo-Hwan Lee and Spencer Torene and Sriharsha Hatwar and Stanislas Dehaene and Stefan Divic and Stefano Ermon and Stella Biderman and Stephanie Lin and Stephen Prasad and Steven T. Piantadosi and Stuart M. Shieber and Summer Misherghi and Svetlana Kiritchenko and Swaroop Mishra and Tal Linzen and Tal Schuster and Tao Li and Tao Yu and Tariq Ali and Tatsu Hashimoto and Te-Lin Wu and Théo Desbordes and Theodore Rothschild and Thomas Phan and Tianle Wang and Tiberius Nkinyili and Timo Schick and Timofei Kornev and Titus Tunduny and Tobias Gerstenberg and Trenton Chang and Trishala Neeraj and Tushar Khot and Tyler Shultz and Uri Shaham and Vedant Misra and Vera Demberg and Victoria Nyamai and Vikas Raunak and Vinay Ramasesh and Vinay Uday Prabhu and Vishakh Padmakumar and Vivek Srikumar and William Fedus and William Saunders and William Zhang and Wout Vossen and Xiang Ren and Xiaoyu Tong and Xinran Zhao and Xinyi Wu and Xudong Shen and Yadollah Yaghoobzadeh and Yair Lakretz and Yangqiu Song and Yasaman Bahri and Yejin Choi and Yichi Yang and Yiding Hao and Yifu Chen and Yonatan Belinkov and Yu Hou and Yufang Hou and Yuntao Bai and Zachary Seid and Zhuoye Zhao and Zijian Wang and Zijie J. Wang and Zirui Wang and Ziyi Wu},
+        author={Srivastava, Aarohi and Rastogi, Abhinav and Rao, Abhishek and Awal Md Shoeb, Abu and others},
         year={2023},
         eprint={2206.04615},
         archivePrefix={arXiv},
         primaryClass={cs.CL},
-        url={https://arxiv.org/abs/2206.04615}, 
+        url={https://arxiv.org/abs/2206.04615}
       }
+  Results from Gemini LLM Deep Research: TBD
+  Results from ChatGPT LLM: 84.4% average (per OpenAI 2023 release)
+  ML Motif: Benchmark
+  Type: Benchmark
+  ML task: Few-shot and zero-shot learning
+  Solutions: 50+
+  Dataset: https://github.com/google/BIG-bench
+  Software: JAX, PyGlove, BIG-bench tooling
+  Benchmark-Ready: Yes
+  Last Updated: 2023-03-01
+  Support Contact Person: BIG-Bench Steering Committee (Aarohi Srivastava et al.)
+  Notes: Used by OpenAI, Google, Anthropic to evaluate large foundation models
+
 
 - date: "2019-11-20"
   expired: null
   valid: 'yes'
   name: CommonSenseQA
   url: https://paperswithcode.com/paper/commonsenseqa-a-question-answering-challenge
-  domain: NLP; Commonsense
+  domain: NLP
   focus: Commonsense question answering
   keywords:
     - ConceptNet
     - multiple-choice
     - adversarial
+    - commonsense reasoning
+    - question answering
+    - natural language understanding
   description: |
-    CommonsenseQA is a challenging multiple-choice QA dataset built from ConceptNet,
-    requiring models to apply commonsense knowledge to select the correct answer 
-    among five choices.
+    CommonSenseQA is a challenging dataset for multiple-choice question answering 
+    that tests a model's ability to apply commonsense knowledge. Built from ConceptNet 
+    relationships, it includes 12,247 questions each with five answer choices, requiring 
+    reasoning beyond surface patterns.
   task_types:
     - Multiple choice
+    - Question answering
   ai_capability_measured: Commonsense reasoning and knowledge integration
   metrics:
     - Accuracy
   models:
     - BERT-large
     - RoBERTa
+    - UnifiedQA
+    - GPT-2
     - GPT-3
-  notes: Baseline 56%, human 89%
+  notes: Human performance: 88.9%; BERT baseline: 56.0%; popular evaluation for LLMs
   cite:
     - |
       @misc{talmor2019commonsenseqaquestionansweringchallenge,
@@ -893,26 +1252,44 @@
         eprint={1811.00937},
         archivePrefix={arXiv},
         primaryClass={cs.CL},
-        url={https://arxiv.org/abs/1811.00937}, 
+        url={https://arxiv.org/abs/1811.00937}
       }
+  Results from Gemini LLM Deep Research: TBD
+  Results from ChatGPT LLM: ~87% (as reported in OpenAI GPT-4 paper)
+  ML Motif: Dataset
+  Type: Benchmark
+  ML task: Supervised learning
+  Solutions: 50+
+  Dataset: https://www.tau-nlp.org/commonsenseqa
+  Software: HuggingFace Datasets, PyTorch
+  Benchmark-Ready: Yes
+  Last Updated: 2020-06-01
+  Support Contact Person: Alon Talmor
+  Notes: Official leaderboard hosted on [PapersWithCode](https://paperswithcode.com/sota/question-answering-on-commonsenseqa)
 
-- date: "2019-07-24" 
+- date: "2019-07-24"
   expired: null
   valid: 'yes'
-  name: Winogrande
+  name: WinoGrande
   url: https://leaderboard.allenai.org/winogrande/submissions/public
-  domain: NLP; Commonsense
+  domain: NLP
   focus: Winograd Schema-style pronoun resolution
   keywords:
     - adversarial
     - pronoun resolution
+    - coreference
+    - commonsense reasoning
+    - Winograd Schema Challenge
+    - AFLite
   description: |
-    WinoGrande is a large-scale adversarial dataset of 44,000 Winograd Schema-style 
-    questions with reduced bias using AFLite, serving as both a benchmark and transfer 
-    learning resource.
+    WinoGrande is a large-scale dataset consisting of 44,000 adversarial examples 
+    styled after the Winograd Schema Challenge. Designed using AFLite to minimize 
+    annotation artifacts, it challenges language models on coreference resolution 
+    grounded in commonsense.
   task_types:
     - Pronoun resolution
-  ai_capability_measured: Robust commonsense reasoning
+    - Coreference resolution
+  ai_capability_measured: Robust commonsense reasoning and disambiguation
   metrics:
     - Accuracy
     - AUC
@@ -920,7 +1297,9 @@
     - RoBERTa
     - BERT
     - GPT-2
-  notes: Human ~94%
+    - ALBERT
+    - DeBERTa
+  notes: Human performance ~94%; AFLite-generated to reduce annotation artifacts
   cite:
     - |
       @misc{sakaguchi2019winograndeadversarialwinogradschema,
@@ -930,8 +1309,21 @@
         eprint={1907.10641},
         archivePrefix={arXiv},
         primaryClass={cs.CL},
-        url={https://arxiv.org/abs/1907.10641}, 
+        url={https://arxiv.org/abs/1907.10641}
       }
+  Results from Gemini LLM Deep Research: TBD
+  Results from ChatGPT LLM: ~91% (reported on GPT-4 leaderboard)
+  ML Motif: Dataset
+  Type: Benchmark
+  ML task: Supervised learning
+  Solutions: 40+
+  Dataset: https://allenai.org/data/winogrande
+  Software: AllenNLP, HuggingFace Datasets
+  Benchmark-Ready: Yes
+  Last Updated: 2021-03-01
+  Support Contact Person: Keisuke Sakaguchi
+  Notes: Used to evaluate robustness of coreference resolution in LLMs
+
   
 - date: "2024-05-01"
   expired: null

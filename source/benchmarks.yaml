@@ -758,7 +758,7 @@
   expired: null
   valid: 'yes'
   name: SatImgNet
-  url: null
+  url: https://arxiv.org/abs/2304.11619
   domain: Remote Sensing
   focus: Satellite imagery classification
   keywords:
@@ -935,3 +935,360 @@
         primaryClass={cs.CL},
         url={https://arxiv.org/abs/1907.10641}, 
       }
+
+- date: "2025-06-27" 
+  expired: null
+  valid: 'yes'
+  name: Codabench
+  url: https://www.codabench.org/
+  domain: ML management
+  focus: null
+  keywords: null
+  description: |
+    Open-source framework that allows users to define datasets, algorithms, and documentation.
+    Enables creation and participation in competitions posted by users.
+    Data must be provided in a machine-gradeable format.
+  task_types: null
+  ai_capability_measured: null
+  metrics: null
+  models: null
+  notes: This is not a benchmark. This is a framework for posting and organizing benchmarks.
+  cite:
+    - |
+      @article{Xu_2022,
+      title={Codabench: Flexible, easy-to-use, and reproducible meta-benchmark platform},
+      volume={3},
+      ISSN={2666-3899},
+      url={http://dx.doi.org/10.1016/j.patter.2022.100543},
+      DOI={10.1016/j.patter.2022.100543},
+      number={7},
+      journal={Patterns},
+      publisher={Elsevier BV},
+      author={Xu, Zhen and Escalera, Sergio and Pavão, Adrien and Richard, Magali and Tu, Wei-Wei and Yao, Quanming and Zhao, Huan and Guyon, Isabelle},
+      year={2022},
+      month=jul, pages={100543} }
+
+
+- date: "2025-06-27" 
+  expired: null
+  valid: 'yes'
+  name: Sabath
+  url: https://github.com/icl-utk-edu/sabath
+  domain: ML management
+  focus: Physics
+  keywords: null
+  description: |
+    Surrogate AI Benchmarking Applications Testing Harness. Benchmarking infrastructure for ML models.
+    Designed to run on different hardware implementations. Has 10 surrogates (individual benchmarks).
+  task_types: null
+  ai_capability_measured: null
+  metrics: null
+  models: null
+  notes: This is not a benchmark. Some of the listed surrogates (i.e. Cosmoflow) appear like benchmarks.
+  cite: null
+
+- date: "2025-06-27" 
+  expired: null
+  valid: 'yes'
+  name: PDEBench
+  url: https://github.com/pdebench/PDEBench
+  domain: Physics, applied math
+  focus: Simulations of fluid flow
+  keywords: PDE, physics-informed, fluid flow
+  description: |
+    Series of time-dependent simulation tasks using partial differential equations.
+    Includes more examples for testing than existing benchmarks and APIs for generating more data.
+    Tasks focus on fluid flow models, such as the Navier-Stokes equation
+  task_types: null
+  ai_capability_measured: Predicting modeling of physical systems
+  metrics: root mean squared error
+  models: U-Net, Fourier neural operator, physics-informed NNs, gradient-based inverse method
+  notes: This is not a benchmark. Some of the listed surrogates (i.e. Cosmoflow) appear like benchmarks.
+  cite: |
+      @misc{takamoto2024pdebenchextensivebenchmarkscientific,
+      title={PDEBENCH: An Extensive Benchmark for Scientific Machine Learning}, 
+      author={Makoto Takamoto and Timothy Praditia and Raphael Leiteritz and Dan MacKinlay and Francesco Alesiani and Dirk Pflüger and Mathias Niepert},
+      year={2024},
+      eprint={2210.07182},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2210.07182}, 
+      }
+
+- date: "2025-06-27" 
+  expired: null
+  valid: 'yes'
+  name: The Well
+  url: https://polymathic-ai.org/the_well/
+  domain: Physics
+  focus: Biological systems, wave propagation
+  keywords: null
+  description: |
+    16 individual datasets for training machine learning models. Topics include acoustic scattering,
+    supernova explosions, and shear flow. Coordinate systems vary. Datasets are already split
+    into training, testing, and validation sets.
+  task_types: Depends on dataset
+  ai_capability_measured: Predicting modeling of physical systems
+  metrics: Accuracy (presumed)
+  models: null
+  notes: Most of the datasets are large. The smallest is around 7GB. The largest is about 1.5TB.
+  cite: |
+      @article{ohana2024well,
+      title={The well: a large-scale collection of diverse physics simulations for machine learning},
+      author={Ohana, Ruben and McCabe, Michael and Meyer, Lucas and Morel, Rudy and Agocs, Fruzsina and Beneitez, Miguel and Berger, Marsha and Burkhart, Blakesly and Dalziel, Stuart and Fielding, Drummond and others},
+      journal={Advances in Neural Information Processing Systems},
+      volume={37},
+      pages={44989--45037},
+      year={2024}
+      }
+
+- date: "2025-06-27" 
+  expired: null
+  valid: 'yes'
+  name: LLM Inference Bench
+  url: https://github.com/argonne-lcf/LLM-Inference-Bench
+  domain: Computing
+  focus: Hardware's AI performance
+  keywords: LLM, hardware acceleration
+  description: |
+    Measures the hardware inference performance for running a large language model
+  task_types: Running LLMs on the tested hardware
+  ai_capability_measured: Predicting modeling of physical systems
+  metrics: Ability to produce new text, time to first token, interval between token generation, throughput, power use
+  models: LLaMA, Mistral, Mixtral, Qwen
+  notes: What is tested is the hardware, not the LLM ran on the hardware
+  cite: |
+      @article{chitty2024llm,
+      title={LLM-Inference-Bench: Inference Benchmarking of Large Language Models on AI Accelerators},
+      author={Chitty-Venkata, Krishna Teja and Raskar, Siddhisanket and Kale, Bharat and Ferdaus, Farah and Tanikanti, Aditya and Raffenetti, Ken and Taylor, Valerie and Emani, Murali and Vishwanath, Venkatram},
+      journal={arXiv preprint arXiv:2411.00136},
+      year={2024}
+      }
+
+- date: "2025-06-27" 
+  expired: null
+  valid: 'yes'
+  name: SGLang Framework
+  url: https://github.com/sgl-project/sglang/tree/main/benchmark
+  domain: Computing
+  focus: Framework for LLMs
+  keywords: LLM
+  description: |
+    Provides frontends and backends for linking and customizing the output of LLMs
+  task_types: null
+  ai_capability_measured: null
+  metrics: null
+  models: null
+  notes: Documentation is in https://docs.sglang.ai/references/benchmark_and_profiling.html.
+  cite: |
+      @misc{zheng2024sglangefficientexecutionstructured,
+      title={SGLang: Efficient Execution of Structured Language Model Programs}, 
+      author={Lianmin Zheng and Liangsheng Yin and Zhiqiang Xie and Chuyue Sun and Jeff Huang and Cody Hao Yu and Shiyi Cao and Christos Kozyrakis and Ion Stoica and Joseph E. Gonzalez and Clark Barrett and Ying Sheng},
+      year={2024},
+      eprint={2312.07104},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2312.07104}, 
+      }
+
+- date: "2025-06-27" 
+  expired: null
+  valid: 'yes'
+  name: VLLM Project benchmarks
+  url: https://github.com/vllm-project/vllm/tree/main/benchmarks
+  domain: Computing
+  focus: General benchmarks for LLMs
+  keywords: null
+  description: |
+    Feeds input to a user-chosen LLM. Measures the LLM's throughput and accuracy.
+  task_types: QA
+  ai_capability_measured: null
+  metrics: Accuracy, throughput
+  models: ShareGPT, BurstGPT, Sonnet, Random, HuggingFace models 
+  notes: Documentation at https://docs.vllm.ai/en/v0.5.4/performance_benchmark/benchmarks.html
+  cite: null
+
+- date: "2025-06-27" 
+  expired: null
+  valid: 'yes'
+  name: Nixtla Neural Forecast
+  url: https://github.com/Nixtla/neuralforecast
+  domain: Computing
+  focus: Prediction models
+  keywords: neural forecasting
+  description: |
+    Implements about 30 prediction models with easy to use API.
+  task_types: null
+  ai_capability_measured: null
+  metrics: null
+  models: null 
+  notes: Not a benchmark. These are neural networks, but there is no provided way to measure them.
+  cite: |
+    @misc{olivares2022library_neuralforecast,
+    author={Kin G. Olivares and
+            Cristian Challú and
+            Azul Garza and
+            Max Mergenthaler Canseco and
+            Artur Dubrawski},
+    title = {{NeuralForecast}: User friendly state-of-the-art neural forecasting models.},
+    year={2022},
+    howpublished={{PyCon} Salt Lake City, Utah, US 2022},
+    url={https://github.com/Nixtla/neuralforecast}
+    }
+
+- date: "2025-06-27" 
+  expired: null
+  valid: 'yes'
+  name: HDR ML Anomaly Challenge (Gravitational Waves)
+  url: https://www.codabench.org/competitions/2626/
+  domain: Astronomy
+  focus: Gravitational wave observatory data processing
+  keywords: null
+  description: |
+    Submissions use data from LIGO to determine which gravitational wave events are not yet known.
+    Datasets use a mix of observed and synthetic events.
+  task_types: Distinguishing unknown gravitational wave events
+  ai_capability_measured: null
+  metrics: Accuracy
+  models: null 
+  notes: link at https://www.codabench.org/competitions/2626/
+  cite: null
+
+- date: "2025-06-27" 
+  expired: null
+  valid: 'yes'
+  name: HDR ML Anomaly Challenge (Butterfly Hybrid Detection)
+  url: https://www.codabench.org/competitions/3764/
+  domain: Biology
+  focus: Detecting hybrid subspecies of butterflies
+  keywords: null
+  description: |
+    Assesses a ML model's ability to find hybrid subspecies of butterflies.
+  task_types: Give a confidence score of how likely a butterfly is to be a hybrid
+  ai_capability_measured: null
+  metrics: Confidence score
+  models: null 
+  notes: null
+  cite: null
+
+- date: "2025-06-27" 
+  expired: null
+  valid: 'yes'
+  name: HDR ML Anomaly Challenge (Sea Level Rise)
+  url: https://www.codabench.org/competitions/3223/
+  domain: Oceanography
+  focus: Finding ocean events
+  keywords: null
+  description: |
+    Assesses a ML model's ability to detect sea level anomaly events, such as high tides and storms.
+    Uses 20 years of tide data from the US east coast.
+  task_types: Classify events as anomalous or not
+  ai_capability_measured: null
+  metrics: Binary value representing whether an anomaly is predicted
+  models: null 
+  notes: null
+  cite: null
+
+- date: "2025-06-27" 
+  expired: null
+  valid: 'yes'
+  name: ML Quantum Readout on QICK
+  url: https://github.com/fastmachinelearning/ml-quantum-readout
+  domain: Quantum computing
+  focus: Firmware
+  keywords: null
+  description: |
+    Uses hls4ml to create, train, and run ML algorithms on hardware. Designed for single qubit readouts on the QICK system.
+  task_types: null
+  ai_capability_measured: null
+  metrics: null
+  models: null 
+  notes: Not a benchmark, but a pre-implemented ML model
+  cite: null
+
+- date: "2025-06-27" 
+  expired: null
+  valid: 'yes'
+  name: SeaFloor AI
+  url: https://neurips.cc/virtual/2024/poster/97432
+  domain: Marine science
+  focus: Seafloor map analysis
+  keywords: sonar image mapping
+  description: |
+    Classification dataset of maps of the seafloor. Includes 696000 sonar images, 
+    696000 detailed descriptions, and 7 million question-answer pairs
+  task_types: Image and word classification
+  ai_capability_measured: Image analysis and summary
+  metrics: Accuracy
+  models: null 
+  notes: null
+  cite: |
+      @inproceedings{NEURIPS2024_274de7d6,
+      author = {Nguyen, Kien X. and Qiao, Fengchun and Trembanis, Arthur and Peng, Xi},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {22107--22123},
+      publisher = {Curran Associates, Inc.},
+      title = {SeafloorAI: A Large-scale Vision-Language Dataset for Seafloor Geological Survey},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/274de7d60333c0848f42e18ae97f13e3-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+      }
+
+- date: "2025-06-27" 
+  expired: null
+  valid: 'yes'
+  name: SuperCon3D
+  url: https://neurips.cc/virtual/2024/poster/97553
+  domain: Materials science
+  focus: Superconductivity predictions
+  keywords: null
+  description: |
+    Dataset of 3D cystal structures and associated critical temperature for superconductivity,
+    as well as two classifiers
+  task_types: Critical temperature prediction
+  ai_capability_measured: Prediction
+  metrics: Accuracy
+  models: SODNet, DiffCSP-SC 
+  notes: Focus of the paper is on the two new classifiers, not the dataset
+  cite: |
+    @inproceedings{NEURIPS2024_c4e3b55e,
+    author = {Chen, Pin and Peng, Luoxuan and Jiao, Rui and Mo, Qing and Wang, Zhen and Huang, Wenbing and Liu, Yang and Lu, Yutong},
+    booktitle = {Advances in Neural Information Processing Systems},
+    editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+    pages = {108902--108928},
+    publisher = {Curran Associates, Inc.},
+    title = {Learning Superconductivity from Ordered and Disordered Material Structures},
+    url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/c4e3b55ed4ac9ba52d7df11f8bddbbf4-Paper-Datasets_and_Benchmarks_Track.pdf},
+    volume = {37},
+    year = {2024}
+    }
+  
+- date: "2025-06-27" 
+  expired: null
+  valid: 'yes'
+  name: SuperCon3D
+  url: https://neurips.cc/virtual/2024/poster/97553
+  domain: Materials science
+  focus: Superconductivity predictions
+  keywords: null
+  description: |
+    Dataset of 3D cystal structures and associated critical temperature for superconductivity,
+    as well as two classifiers
+  task_types: Critical temperature prediction
+  ai_capability_measured: Prediction
+  metrics: Accuracy
+  models: SODNet, DiffCSP-SC 
+  notes: Focus of the paper is on the two new classifiers, not the dataset
+  cite: |
+    @inproceedings{NEURIPS2024_c4e3b55e,
+    author = {Chen, Pin and Peng, Luoxuan and Jiao, Rui and Mo, Qing and Wang, Zhen and Huang, Wenbing and Liu, Yang and Lu, Yutong},
+    booktitle = {Advances in Neural Information Processing Systems},
+    editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+    pages = {108902--108928},
+    publisher = {Curran Associates, Inc.},
+    title = {Learning Superconductivity from Ordered and Disordered Material Structures},
+    url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/c4e3b55ed4ac9ba52d7df11f8bddbbf4-Paper-Datasets_and_Benchmarks_Track.pdf},
+    volume = {37},
+    year = {2024}
+    }

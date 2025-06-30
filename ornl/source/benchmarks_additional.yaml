@@ -1,0 +1,3471 @@
+- date: '2020-09-07'
+  expired: null
+  valid: 'yes'
+  name: MMLU (Massive Multitask Language Understanding)
+  url: https://paperswithcode.com/dataset/mmlu
+  domain: Multidomain
+  focus: Academic knowledge and reasoning across 57 subjects
+  keywords:
+    - multitask
+    - multiple-choice
+    - zero-shot
+    - few-shot
+    - knowledge probing
+  description: |
+    Measuring Massive Multitask Language Understanding (MMLU) is a benchmark of 57 
+    multiple-choice tasks covering elementary mathematics, US history, computer science, 
+    law, and more, designed to evaluate a model’s breadth and depth of knowledge in 
+    zero-shot and few-shot settings.
+  task_types:
+    - Multiple choice
+  ai_capability_measured: General reasoning, subject-matter understanding
+  metrics:
+    - Accuracy
+  models:
+    - GPT-4o
+    - Gemini 1.5 Pro
+    - o1
+    - DeepSeek-R1
+  notes: Good
+  cite:
+    - |
+      @article{hendrycks2021measuring,
+        title={Measuring Massive Multitask Language Understanding},
+        author={Dan Hendrycks et al.},
+        journal={arXiv preprint arXiv:2009.03300},
+        year={2021}
+      }
+  Results from Gemini LLM Deep Research: Strong performance reported
+  Results from ChatGPT LLM: Good
+  ML Motif: General reasoning
+  Type: Benchmark
+  ML task: Multiple choice
+  Solutions: '-'
+  Dataset: 57 subject tests
+  Software: 'Yes'
+  Benchmark-Ready: 'Yes'
+  Last Updated: 2020-09
+  Support Contact Person: Dan Hendrycks
+  Notes:
+
+- date: '2023-11-15'
+  expired: null
+  valid: 'yes'
+  name: GPQA Diamond
+  url: https://arxiv.org/abs/2311.12022
+  domain: Science QA
+  focus: Graduate-level, domain-expert QA for STEM fields
+  keywords:
+    - graduate-level
+    - STEM
+    - QA
+    - diamond subset
+  description: |
+    GPQA Diamond is a subset of the Graduate-level Google-Proof Q&A benchmark focused 
+    on high-quality, expert-validated QA tasks in biology, chemistry, and physics.
+  task_types:
+    - Question Answering
+  ai_capability_measured: Scientific reasoning in complex disciplines
+  metrics:
+    - Accuracy
+  models:
+    - GPT-4
+    - Claude
+  notes: Low LLM performance (GPT-4 < 40%)
+  cite:
+    - |
+      @article{roziere2023gpqa,
+        title={GPQA: A Graduate-Level Google-Proof Q&A Benchmark},
+        author={Baptiste Rozière et al.},
+        journal={arXiv preprint arXiv:2311.12022},
+        year={2023}
+      }
+  Results from Gemini LLM Deep Research: Low (~39% for GPT-4)
+  Results from ChatGPT LLM: Low
+  ML Motif: Scientific reasoning
+  Type: Benchmark
+  ML task: Multiple choice
+  Solutions: '448'
+  Dataset: Expert QA (STEM)
+  Software: 'Yes'
+  Benchmark-Ready: 'Yes'
+  Last Updated: 2023-11
+  Support Contact Person: David Rein
+  Notes:
+
+- date: "2018-03-14"
+  expired: null
+  valid: 'yes'
+  name: ARC-Challenge (Advanced Reasoning Challenge)
+  url: https://allenai.org/data/arc
+  domain: Science
+  focus: Grade-school science with reasoning emphasis
+  keywords:
+    - grade-school
+    - science QA
+    - challenge set
+    - reasoning
+  description: |
+    The AI2 Reasoning Challenge (ARC) Challenge set comprises 7,787 natural, grade-school
+    science questions that retrieval-based and word co-occurrence algorithms both fail, 
+    requiring advanced reasoning over a 14-million-sentence corpus.
+  task_types:
+    - Multiple choice
+  ai_capability_measured: Commonsense and scientific reasoning
+  metrics:
+    - Accuracy
+  models:
+    - GPT-4
+    - Claude
+  notes: Good
+  cite:
+    - |
+      @inproceedings{clark2018think,
+        title={Think you have solved question answering? Try ARC, the AI2 Reasoning Challenge},
+        author={Clark, Peter and Cowhey, Isaac and Etzioni, Oren and others},
+        booktitle={EMNLP 2018},
+        pages={237–248},
+        year={2018},
+        url={https://allenai.org/data/arc}
+      }
+  Results from Gemini LLM Deep Research: Consistent performance reported across QA models
+  Results from ChatGPT LLM: Strong performance in closed-book mode
+  ML Motif: Reasoning
+  Type: Benchmark
+  ML task: Multiple choice QA
+  Solutions: '1'
+  Dataset: ARC Challenge Set (7,787 questions)
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2023-12
+  Support Contact Person: Peter Clark
+  Notes: 
+
+- date: "2025-01-24"
+  expired: null
+  valid: 'yes'
+  name: Humanity's Last Exam
+  url: https://arxiv.org/abs/2501.14249
+  domain: Multidomain
+  focus: Broad cross-domain academic reasoning
+  keywords:
+    - cross-domain
+    - academic exam
+    - multiple-choice
+    - multidisciplinary
+  description: |
+    Humanity's Last Exam is a multi-domain, multiple-choice benchmark containing 2,000
+    questions across diverse academic disciplines, designed to evaluate LLMs' ability to
+    reason across domains without external resources.
+  task_types:
+    - Multiple choice
+  ai_capability_measured: Cross-domain academic reasoning
+  metrics:
+    - Accuracy
+  models:
+    - GPT-4
+    - Claude 3
+  notes: Designed to test LLMs' capability in zero-shot settings across domains
+  cite:
+    - |
+      @misc{phan2025humanitys,
+        title={Humanity's Last Exam},
+        author={Phan, Long and Gatti, Alice and Han, Ziwen and others},
+        year={2025},
+        url={https://arxiv.org/abs/2501.14249}
+      }
+  Results from Gemini LLM Deep Research: High domain transfer challenge noted
+  Results from ChatGPT LLM: Performance discussed in related paper sections
+  ML Motif: Cross-domain reasoning
+  Type: Benchmark
+  ML task: Multiple choice QA
+  Solutions: '1'
+  Dataset: 2,000 MCQs across disciplines
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2025-01
+  Support Contact Person: Long Phan
+  Notes: 
+
+
+- date: "2024-11-07"
+  expired: null
+  valid: 'yes'
+  name: FrontierMath
+  url: https://arxiv.org/abs/2411.04872
+  domain: Mathematics
+  focus: Challenging advanced mathematical reasoning
+  keywords:
+    - symbolic reasoning
+    - number theory
+    - algebraic geometry
+    - category theory
+  description: |
+    FrontierMath is a benchmark of hundreds of expert-vetted mathematics problems spanning
+    number theory, real analysis, algebraic geometry, and category theory, measuring LLMs’ 
+    ability to solve problems requiring deep abstract reasoning.
+  task_types:
+    - Problem solving
+  ai_capability_measured: Symbolic and abstract mathematical reasoning
+  metrics:
+    - Accuracy
+  models:
+    - GPT-4
+    - Claude 3.5
+  notes: Problems selected to challenge even top-tier mathematical models
+  cite:
+    - |
+      @misc{glazer2024frontiermath,
+        title={FrontierMath: A Benchmark for Evaluating Advanced Mathematical Reasoning in AI},
+        author={Glazer, Elliot and Erdil, Ege and Besiroglu, Tamay and others},
+        year={2024},
+        url={https://arxiv.org/abs/2411.04872}
+      }
+  Results from Gemini LLM Deep Research: Model performance varies widely by subfield
+  Results from ChatGPT LLM: Benchmarks cited in advanced symbolic reasoning evaluation
+  ML Motif: Abstract problem-solving
+  Type: Benchmark
+  ML task: Mathematical problem solving
+  Solutions: '1'
+  Dataset: 400+ formal problems from advanced math domains
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2024-11
+  Support Contact Person: Elliot Glazer
+  Notes:
+
+- date: "2024-07-18"
+  expired: null
+  valid: 'yes'
+  name: SciCode
+  url: https://arxiv.org/abs/2407.13168
+  domain: Scientific Programming
+  focus: Scientific code generation and problem solving
+  keywords:
+    - code synthesis
+    - scientific computing
+    - programming benchmark
+  description: |
+    SciCode is a scientist-curated coding benchmark with 338 subproblems derived from 80
+    real research tasks across 16 scientific subfields, evaluating models on knowledge recall, 
+    reasoning, and code synthesis for scientific computing tasks.
+  task_types:
+    - Coding
+  ai_capability_measured: Program synthesis, scientific computing
+  metrics:
+    - Solve rate (%)
+  models:
+    - Claude 3.5 Sonnet
+    - GPT-4
+  notes: Covers diverse areas like quantum computing, astrophysics, and genomics
+  cite:
+    - |
+      @misc{tian2024scicode,
+       title={SciCode: A Research Coding Benchmark Curated by Scientists},
+       author={Tian, Minyang and Gao, Luyu and Zhang, Shizhuo and others},
+       year={2024},
+       url={https://arxiv.org/abs/2407.13168}
+      }
+  Results from Gemini LLM Deep Research: Strong performance reported on coding subsets
+  Results from ChatGPT LLM: Comparable solve rates to Human@1 in some domains
+  ML Motif: Code generation
+  Type: Benchmark
+  ML task: Program synthesis
+  Solutions: '1'
+  Dataset: 338 scientific coding tasks
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2024-07
+  Support Contact Person: Minyang Tian
+  Notes:
+
+
+- date: "2025-03-13"
+  expired: null
+  valid: 'yes'
+  name: AIME (American Invitational Mathematics Examination)
+  url: https://artofproblemsolving.com/wiki/index.php/AIME_Problems_and_Solutions
+  domain: Mathematics
+  focus: Pre-college advanced problem solving
+  keywords:
+    - algebra
+    - combinatorics
+    - number theory
+    - geometry
+  description: |
+    The AIME is a 15-question, 3-hour exam for high-school students featuring challenging
+    short-answer math problems in algebra, number theory, geometry, and combinatorics, 
+    assessing depth of problem-solving ability.
+  task_types:
+    - Problem solving
+  ai_capability_measured: Mathematical problem-solving and reasoning
+  metrics:
+    - Accuracy
+  models:
+    - GPT-4
+    - Claude 3.5
+  notes: Problems vary in difficulty; used in fine-tuning math reasoning models
+  cite:
+    - |
+      @misc{www-aime,
+        author = {TBD},
+        title = {AIME},
+        url = {https://www.vals.ai/benchmarks/aime-2025-03-13},
+        month = mar,
+        year = 2025,
+        note = {[Online accessed 2025-06-24]}
+      }
+  Results from Gemini LLM Deep Research: Benchmarks cited in model fine-tuning results
+  Results from ChatGPT LLM: Demonstrated significant improvement over few-shot prompting
+  ML Motif: Math problem solving
+  Type: Benchmark
+  ML task: Mathematical problem solving
+  Solutions: '1'
+  Dataset: AIME question archive (1983–2025)
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2025-03
+  Support Contact Person: AoPS Community
+  Notes:
+
+- date: "2025-02-15"
+  expired: null
+  valid: 'yes'
+  name: MATH-500
+  url: https://huggingface.co/datasets/HuggingFaceH4/MATH-500
+  domain: Mathematics
+  focus: Math reasoning generalization
+  keywords:
+    - calculus
+    - algebra
+    - number theory
+    - geometry
+  description: |
+    MATH-500 is a curated subset of 500 problems from the OpenAI MATH dataset, spanning
+    high-school to advanced levels, designed to evaluate LLMs’ mathematical reasoning and 
+    generalization.
+  task_types:
+    - Problem solving
+  ai_capability_measured: Math reasoning and generalization
+  metrics:
+    - Accuracy
+  models:
+    - GPT-4
+    - Mistral
+  notes: Dataset hosted on Hugging Face; suitable for fine-tuning and evaluation
+  cite:
+    - |
+      @misc{huggingface2025math500,
+        title={MATH-500},
+        author={HuggingFaceH4},
+        year={2025},
+        url={https://huggingface.co/datasets/HuggingFaceH4/MATH-500}
+      }
+  Results from Gemini LLM Deep Research: MATH-500 used to evaluate generalization
+  Results from ChatGPT LLM: Used as downstream eval task in OpenAI fine-tuning experiments
+  ML Motif: Math generalization
+  Type: Benchmark
+  ML task: Mathematical problem solving
+  Solutions: '1'
+  Dataset: 500 problem subset from OpenAI MATH dataset
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2025-02
+  Support Contact Person: HuggingFaceH4 Team
+  Notes:
+
+- date: "2024-04-02"
+  expired: null
+  valid: 'yes'
+  name: CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction)
+  url: https://arxiv.org/abs/2404.02029
+  domain: Multidomain Science
+  focus: Long-context scientific reasoning
+  keywords:
+    - long-context
+    - information extraction
+    - multimodal
+  description: |
+    CURIE is a benchmark of 580 problems across six scientific disciplines—materials
+    science, quantum computing, biology, chemistry, climate science, and astrophysics—
+    designed to evaluate LLMs on long-context understanding, reasoning, and information 
+    extraction in realistic scientific workflows.
+  task_types:
+    - Information extraction
+    - Reasoning
+    - Concept tracking
+    - Aggregation
+    - Algebraic manipulation
+    - Multimodal comprehension
+  ai_capability_measured: Long-context understanding and scientific reasoning
+  metrics:
+    - Accuracy
+  models:
+    - GPT-4
+    - Claude 3
+    - Gemini 1.5
+  notes: Released with examples requiring cross-modal and cross-document reasoning
+  cite:
+    - |
+      @misc{curie2024,
+        title={Scientific Reasoning Benchmarks from the CURIE Dataset},
+        author={Ankit Patel and Emily Denton and others},
+        year={2024},
+        url={https://arxiv.org/abs/2404.02029}
+      }
+  Results from Gemini LLM Deep Research: See Gemini v1.5 results on long-context QA
+  Results from ChatGPT LLM: CURIE used to test GPT-4 and GPT-4 Turbo with long inputs
+  ML Motif: Long-context scientific QA
+  Type: Benchmark
+  ML task: Scientific reasoning, Information extraction
+  Solutions: '580'
+  Dataset: CURIE benchmark and examples (see appendix of paper)
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2024-04
+  Support Contact Person: Ankit Patel (DeepMind)
+  Notes:
+
+- date: "2023-01-26"
+  expired: null
+  valid: 'yes'
+  name: FEABench (Finite Element Analysis Benchmark)
+  url: https://github.com/alleninstitute/feabench
+  domain: Computational Engineering
+  focus: FEA simulation accuracy and performance
+  keywords:
+    - finite element
+    - simulation
+    - PDE
+  description: |
+    FEABench is a suite evaluating finite element analysis tools on standardized 
+    PDE-based simulation tasks with complex geometries and boundary conditions, 
+    measuring both accuracy and runtime performance.
+  task_types:
+    - Simulation
+    - Performance evaluation
+  ai_capability_measured: Numerical simulation accuracy and efficiency
+  metrics:
+    - Solve time
+    - Error norm
+  models:
+    - FEniCS
+    - deal.II
+    - Neural operators (FourierNet, DeepONet)
+  notes: Designed for FEA tool benchmarking across geometries and boundary conditions
+  cite:
+    - |
+      @misc{allen2023feabench,
+        title={FEABench: A Finite Element Analysis Benchmark},
+        author={Allen Institute},
+        year={2023},
+        url={https://github.com/alleninstitute/feabench}
+      }
+  Results from Gemini LLM Deep Research: Not yet applied
+  Results from ChatGPT LLM: Not benchmarked with LLMs
+  ML Motif: PDE simulation
+  Type: Framework
+  ML task: Supervised Learning, Scientific Simulation
+  Solutions: '12'
+  Dataset: GitHub-hosted FEA datasets with PDE definitions and boundary conditions
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2023-01
+  Support Contact Person: Shirley Moore (Allen Institute)
+  Notes:
+
+
+- date: "2024-07-12"
+  expired: null
+  valid: 'yes'
+  name: SPIQA (Scientific Paper Image Question Answering)
+  url: https://arxiv.org/abs/2407.09413
+  domain: Computer Science
+  focus: Multimodal QA on scientific figures
+  keywords:
+    - multimodal QA
+    - figure understanding
+    - table comprehension
+    - chain-of-thought
+  description: |
+    SPIQA assesses AI models' ability to interpret and answer questions about figures
+    and tables in scientific papers by integrating visual and textual modalities 
+    with chain-of-thought reasoning.
+  task_types:
+    - Question answering
+    - Multimodal QA
+    - Chain-of-Thought evaluation
+  ai_capability_measured: Visual-textual reasoning in scientific contexts
+  metrics:
+    - Accuracy
+    - F1 score
+  models:
+    - GPT-4V
+    - Gemini 1.5 Pro
+    - Chain-of-Thought models
+    - Multimodal QA systems
+  notes: Chain-of-thought annotations included for scientific comprehension tasks
+  cite:
+    - |
+      @article{zhong2024spiqa,
+        title={SPIQA: Scientific Paper Image Question Answering},
+        author={Zhong, Xiaoyan and Gao, Yijian and Gururangan, Suchin},
+        year={2024},
+        url={https://arxiv.org/abs/2407.09413}
+      }
+  Results from Gemini LLM Deep Research: Yes – scientific image understanding tested
+  Results from ChatGPT LLM: GPT-4V evaluated on table/figure QA
+  ML Motif: Multimodal, visual-textual chain-of-thought
+  Type: Benchmark
+  ML task: Multimodal Question Answering
+  Solutions: '580'
+  Dataset: SPIQA dataset (from paper and appendix)
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2024-07
+  Support Contact Person: Xiaoyan Zhong
+  Notes:
+
+- date: "2020-09-28"
+  expired: null
+  valid: 'yes'
+  name: MedQA
+  url: https://arxiv.org/abs/2009.13081
+  domain: Medical Question Answering
+  focus: Medical board exam QA
+  keywords:
+    - USMLE
+    - diagnostic QA
+    - medical knowledge
+    - multilingual
+  description: |
+    MedQA is a large-scale multiple-choice dataset drawn from professional medical
+    board exams (e.g., USMLE), testing AI systems on diagnostic and medical knowledge 
+    questions in English and Chinese.
+  task_types:
+    - Multiple choice
+  ai_capability_measured: Medical diagnosis and knowledge retrieval
+  metrics:
+    - Accuracy
+  models:
+    - GPT-4
+    - Med-PaLM
+    - Neural reader
+    - Retrieval-based QA systems
+  notes: Multilingual (English, Simplified and Traditional Chinese)
+  cite:
+    - |
+      @article{jin2020what,
+        title={What Disease Does This Patient Have? A Large-scale Open-domain Question Answering Dataset from Medical Exams},
+        author={Jin, Di and Li, Ying and Zhang, Yichong and others},
+        year={2020},
+        url={https://arxiv.org/abs/2009.13081}
+      }
+  Results from Gemini LLM Deep Research: Yes – multilingual benchmarks included
+  Results from ChatGPT LLM: GPT-4 and Med-PaLM evaluated on USMLE-style QA
+  ML Motif: Biomedical QA
+  Type: Dataset
+  ML task: Supervised Learning (QA)
+  Solutions: '12,723'
+  Dataset: MedQA (Chinese and English), via GitHub and paper appendix
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2020-09
+  Support Contact Person: Di Jin (University of Michigan)
+  Notes:
+
+- date: "2025-05-13"
+  expired: null
+  valid: 'yes'
+  name: BaisBench (Biological AI Scientist Benchmark)
+  url: https://arxiv.org/abs/2505.08341
+  domain: Computational Biology
+  focus: Omics-driven AI research tasks
+  keywords:
+    - single-cell annotation
+    - biological QA
+    - autonomous discovery
+  description: |
+    BaisBench evaluates AI scientists' ability to perform data-driven biological research
+    by annotating cell types in single-cell datasets and answering MCQs derived from 
+    biological study insights, measuring autonomous scientific discovery.
+  task_types:
+    - Cell type annotation
+    - Multiple choice
+  ai_capability_measured: Autonomous biological research capabilities
+  metrics:
+    - Annotation accuracy
+    - QA accuracy
+  models:
+    - LLM-based AI scientist agents
+  notes: Underperforms human experts; aims to advance AI-driven discovery
+  cite:
+    - |
+      @misc{luo2025benchmarkingaiscientistsomics,
+        title={Benchmarking AI scientists in omics data-driven biological research},
+        author={Luo, Erpai and Jia, Jinmeng and Xiong, Yifan and others},
+        year={2025},
+        url={https://arxiv.org/abs/2505.08341}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1qhZTSRu1OZpRM-4c6GOXQ2uZt-LAxdgClR_yM0QF3X0
+  Results from ChatGPT LLM: https://docs.google.com/document/d/1A-Ld7QpLOa63RaM3FY_XnIFqH7z9eKgKehcYxJKChMQ
+  ML Motif: Autonomous scientific discovery
+  Type: Benchmark
+  ML task: Supervised Learning
+  Solutions: '2'
+  Dataset: Public scRNA-seq datasets (via links in paper appendix)
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2025-05
+  Support Contact Person: Erpai Luo
+  Notes:
+
+- date: "2023-01-26"
+  expired: null
+  valid: 'yes'
+  name: MOLGEN
+  url: https://github.com/zjunlp/MolGen
+  domain: Computational Chemistry
+  focus: Molecular generation and optimization
+  keywords:
+    - SELFIES
+    - GAN
+    - property optimization
+  description: |
+    MolGen is a pre-trained molecular language model that generates chemically valid
+    molecules using SELFIES and reinforcement learning, guided by chemical feedback 
+    to optimize properties such as logP, QED, and docking score.
+  task_types:
+    - Distribution learning
+    - Goal-oriented generation
+  ai_capability_measured: Generation of valid and optimized molecular structures
+  metrics:
+    - Validity%
+    - Novelty%
+    - QED
+    - Docking score
+  models:
+    - MolGen
+  notes: This is a model, not a benchmark
+  cite:
+    - |
+      @article{fang2023domain,
+        title={Domain-Agnostic Molecular Generation with Chemical Feedback},
+        author={Fang, Yin and Zhang, Ningyu and Chen, Zhuo and others},
+        year={2023},
+        url={https://arxiv.org/abs/2301.11259}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1fMSid1eVdWQ9KnTr_3J3k8KUBUNXYJ04k25W5N3lydc
+  Results from ChatGPT LLM: https://docs.google.com/document/d/1ATkfqFg-UGhqg7CeJEMv8PlYaaFYZKpYjJcCw4HeRrI
+  ML Motif: Generative modeling
+  Type: Model
+  ML task: Generative Modeling
+  Solutions: 'N/A'
+  Dataset: ZINC, MOSES, QM9 (mentioned in repo and paper)
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2023-01
+  Support Contact Person: Ningyu Zhang
+  Notes:
+
+
+- date: "2020-05-02"
+  expired: null
+  valid: "yes"
+  name: Open Graph Benchmark (OGB) - Biology
+  url: https://ogb.stanford.edu/docs/home/
+  domain: Graph ML
+  focus: Biological graph property prediction
+  keywords:
+    - node prediction
+    - link prediction
+    - graph classification
+  description: |
+    OGB-Biology is a suite of large-scale biological network datasets (protein-protein
+    interaction, drug-target, etc.) with standardized splits and evaluation protocols
+    for node, link, and graph property prediction tasks.
+  task_types:
+    - Node property prediction
+    - Link property prediction
+    - Graph property prediction
+  ai_capability_measured: Scalability and generalization in graph ML for biology
+  metrics:
+    - Accuracy
+    - ROC-AUC
+  models:
+    - GCN
+    - GraphSAGE
+    - GAT
+  notes: Community-driven updates
+  cite:
+    - |
+      @misc{hu2020ogb,
+        title={Open Graph Benchmark: Datasets for Machine Learning on Graphs},
+        author={Hu, Weihua and Fey, Matthias and Zitnik, Marinka and others},
+        year={2020},
+        url={https://arxiv.org/abs/2005.00687}
+      }
+  Results from Gemini LLM Deep Research: "Yes"
+  Results from ChatGPT LLM: "Yes"
+  ML Motif: Graph learning, Biology
+  Type: Benchmark
+  ML task: Node/Link/Graph Property Prediction
+  Solutions: "3"
+  Dataset: OGB-Bio
+  Software: https://github.com/snap-stanford/ogb
+  Benchmark-Ready: "Yes"
+  Last Updated: 2020-05
+  Support Contact Person: Weihua Hu
+  Notes:
+
+- date: "2011-10-01"
+  expired: null
+  valid: 'yes'
+  name: Materials Project
+  url: https://materialsproject.org/
+  domain: Materials Science
+  focus: DFT-based property prediction
+  keywords:
+    - DFT
+    - materials genome
+    - high-throughput
+  description: |
+    The Materials Project provides an open-access database of computed properties for
+    inorganic materials via high-throughput density functional theory (DFT), accelerating 
+    materials discovery.
+  task_types:
+    - Property prediction
+  ai_capability_measured: Prediction of inorganic material properties
+  metrics:
+    - MAE
+    - R²
+  models:
+    - Automatminer
+    - Crystal Graph Neural Networks
+  notes: Core component of the Materials Genome Initiative
+  cite:
+    - |
+      @article{jain2013materials,
+        title={The Materials Project: A materials genome approach},
+        author={Jain, Anubhav and Ong, Shyue Ping and Hautier, Geoffroy and Chen, Wei and Richards, William Davidson and Dacek, Stephen and Cholia, Shreyas and Gunter, Dan and Skinner, David and Ceder, Gerbrand and Persson, Kristin A.},
+        journal={APL Materials},
+        volume={1},
+        number={1},
+        year={2013},
+        doi={10.1063/1.4812323},
+        url={https://materialsproject.org/}
+      }
+  Results from Gemini LLM Deep Research: "Yes"
+  Results from ChatGPT LLM: "Yes"
+  ML Motif: Materials informatics, Crystal structure learning
+  Type: Platform
+  ML task: Supervised Learning
+  Solutions: 100+
+  Dataset: Materials Project Database
+  Software: https://github.com/materialsproject
+  Benchmark-Ready: "Yes"
+  Last Updated: 2023-12
+  Support Contact Person: Kristin Persson
+  Notes: 
+
+- date: "2020-10-20"
+  expired: null
+  valid: 'yes'
+  name: OCP (Open Catalyst Project)
+  url: https://opencatalystproject.org/
+  domain: Chemistry; Materials Science
+  focus: Catalyst adsorption energy prediction
+  keywords:
+    - DFT relaxations
+    - adsorption energy
+    - graph neural networks
+  description: |
+    The Open Catalyst Project (OC20 and OC22) provides DFT-calculated catalyst-adsorbate 
+    relaxation datasets, challenging ML models to predict energies and forces for 
+    renewable energy applications.
+  task_types:
+    - Energy prediction
+    - Force prediction
+  ai_capability_measured: Prediction of adsorption energies and forces
+  metrics:
+    - MAE (energy)
+    - MAE (force)
+  models:
+    - CGCNN
+    - SchNet
+    - DimeNet++
+    - GemNet-OC
+  notes: Public leaderboards; active community development
+  cite:
+    - |
+      @article{chanussot2021oc20,
+        title={The Open Catalyst 2020 (OC20) Dataset and Community Challenges},
+        author={Chanussot, Lowik and Das, Abhishek and Goyal, Siddharth and Lavril, Thibaut and Shuaibi, Muhammed and Riviere, Morgane and Tran, Kevin and Heras-Domingo, Javier and Ho, Caleb and Hu, Weihua and Palizhati, Aini and Sriram, Anuroop and Wood, Brandon and Yoon, Junwoong and Parikh, Devi and Zitnick, C. Lawrence and Ulissi, Zachary},
+        journal={ACS Catalysis},
+        volume={11},
+        number={10},
+        pages={6059--6072},
+        year={2021},
+        doi={10.1021/acscatal.0c04525},
+        url={https://pubs.acs.org/doi/10.1021/acscatal.0c04525}
+      }
+    - |
+      @article{tran2023oc22,
+        title={The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts},
+        author={Tran, Richard and Lan, Janice and Shuaibi, Muhammed and Wood, Brandon M. and Goyal, Siddharth and Das, Abhishek and Heras-Domingo, Javier and Kolluru, Adeesh and Rizvi, Ammar and Shoghi, Nima and Sriram, Anuroop and Therrien, Félix and Abed, Jehad and Voznyy, Oleksandr and Sargent, Edward H. and Ulissi, Zachary and Zitnick, C. Lawrence},
+        journal={ACS Catalysis},
+        volume={13},
+        number={5},
+        pages={3066--3084},
+        year={2023},
+        doi={10.1021/acscatal.2c05426},
+        url={https://pubs.acs.org/doi/10.1021/acscatal.2c05426}
+      }
+    - |
+      @article{doi:10.1021/acscatal.0c04525,
+        author = {Chanussot, Lowik and Das, Abhishek and Goyal, Siddharth and Lavril, Thibaut and Shuaibi, Muhammed and Riviere, Morgane and Tran, Kevin and Heras-Domingo, Javier and Ho, Caleb and Hu, Weihua and Palizhati, Aini and Sriram, Anuroop and Wood, Brandon and Yoon, Junwoong and Parikh, Devi and Zitnick, C. Lawrence and Ulissi, Zachary},
+        title = {Open Catalyst 2020 (OC20) Dataset and Community Challenges},
+        journal = {ACS Catalysis},
+        volume = {11},
+        number = {10},
+        pages = {6059-6072},
+        year = {2021},
+        doi = {10.1021/acscatal.0c04525},
+        url = {https://doi.org/10.1021/acscatal.0c04525}
+      }
+    - |
+      @article{tran2023b,
+        title={The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts},
+        volume={13},
+        ISSN={2155-5435},
+        url={http://dx.doi.org/10.1021/acscatal.2c05426},
+        DOI={10.1021/acscatal.2c05426},
+        number={5},
+        journal={ACS Catalysis},
+        publisher={American Chemical Society (ACS)},
+        author={Tran, Richard and Lan, Janice and Shuaibi, Muhammed and Wood, Brandon M. and Goyal, Siddharth and Das, Abhishek and Heras-Domingo, Javier and Kolluru, Adeesh and Rizvi, Ammar and Shoghi, Nima and Sriram, Anuroop and Therrien, Félix and Abed, Jehad and Voznyy, Oleksandr and Sargent, Edward H. and Ulissi, Zachary and Zitnick, C. Lawrence},
+        year={2023},
+        month=feb,
+        pages={3066-3084}
+      }
+  Results from Gemini LLM Deep Research: "Yes"
+  Results from ChatGPT LLM: "Yes"
+  ML Motif: Catalyst modeling, Graph neural networks
+  Type: Dataset
+  ML task: Supervised Learning
+  Solutions: 50+
+  Dataset: OC20, OC22
+  Software: https://github.com/Open-Catalyst-Project
+  Benchmark-Ready: "Yes"
+  Last Updated: 2024-02
+  Support Contact Person: Zachary Ulissi
+  Notes: 
+    
+
+- date: "2023-06-20"
+  expired: null
+  valid: 'yes'
+  name: JARVIS-Leaderboard
+  url: https://arxiv.org/abs/2306.11688
+  domain: Materials Science
+  focus: Comparative evaluation of materials design methods
+  keywords:
+    - leaderboards
+    - materials methods
+    - simulation
+    - electronic structure
+    - force-fields
+    - quantum computing
+  description: |
+    JARVIS-Leaderboard is a large-scale community-driven benchmarking platform for evaluating AI models, 
+    quantum computing techniques, force-fields, and electronic structure methods across a wide range 
+    of materials science tasks, such as property prediction, optimization, and simulations.
+  task_types:
+    - Method benchmarking
+    - Leaderboard ranking
+  ai_capability_measured: Performance comparison across diverse materials design methods
+  metrics:
+    - MAE
+    - RMSE
+    - Accuracy
+  models:
+    - CGCNN
+    - ALIGNN
+    - M3GNet
+    - MEGNet
+    - GATGNN
+  notes: 1,281 contributions across 274 benchmarks; Hosted on NIST infrastructure
+  cite:
+    - |
+      @article{choudhary2024jarvis,
+        title = {{JARVIS-Leaderboard}: a large scale benchmark of materials design methods},
+        author = {Choudhary, Kamal and Wines, Daniel and Li, Kangming and Garrity, Kevin F. and Gupta, Vishu and Romero, Aldo H. and Krogel, Jaron T. and Saritas, Kayahan and Fuhr, Addis and Ganesh, Panchapakesan and Kent, Paul R. C. and Yan, Keqiang and Lin, Yuchao and Ji, Shuiwang and Blaiszik, Ben and Reiser, Patrick and Friederich, Pascal and Agrawal, Ankit and Tiwary, Pratyush and Beyerle, Eric and Minch, Peter and Rhone, Trevor D. and Takeuchi, Ichiro and Wexler, Robert B. and Mannodi-Kanakkithodi, Arun and Ertekin, Elif and Mishra, Avanish and Mathew, Nithin and Wood, Mitchell and Rohskopf, Andrew D. and Hattrick-Simpers, Jason and Wang, Shih-Han and Achenie, Luke E. K. and Xin, Hongliang and Williams, Maureen and Biacchi, Adam J. and Tavazza, Francesca},
+        journal = {npj Computational Materials},
+        volume = {10},
+        number = {1},
+        pages = {93},
+        year = {2024},
+        doi = {10.1038/s41524-024-01259-w},
+        url = {https://doi.org/10.1038/s41524-024-01259-w}
+      }
+  Results from Gemini LLM Deep Research: TBD
+  Results from ChatGPT LLM: TBD
+  ML Motif: Benchmark
+  Type: Leaderboard
+  ML task: Surrogate modeling
+  Solutions: "1281"
+  Dataset: https://pages.nist.gov/jarvis_leaderboard/
+  Software: JARVIS-Tools (https://github.com/usnistgov/jarvis)
+  Benchmark-Ready: Yes
+  Last Updated: 2024-05-31
+  Support Contact Person: Kamal Choudhary
+  Notes: Uses FAIR principles; models span classical and quantum methods
+
+
+- date: "2022-02-22"
+  expired: null
+  valid: 'yes'
+  name: Quantum Computing Benchmarks (QML)
+  url:
+    - https://github.com/XanaduAI/qml-benchmarks
+    - https://pennylane.ai/datasets/collection/qml-benchmarks
+  domain: Quantum Computing
+  focus: Quantum algorithm performance evaluation
+  keywords:
+    - quantum circuits
+    - state preparation
+    - quantum benchmarking
+    - circuit optimization
+    - error correction
+    - quantum fidelity
+  description: |
+    A suite of quantum machine learning benchmarks developed by Xanadu that evaluates 
+    quantum algorithms and hardware implementations across tasks like state preparation, 
+    fidelity estimation, error mitigation, and cross-platform performance on real quantum devices.
+  task_types:
+    - Circuit benchmarking
+    - State classification
+    - Fidelity estimation
+  ai_capability_measured: Quantum algorithm performance and fidelity
+  metrics:
+    - Fidelity
+    - Success probability
+    - Runtime
+  models:
+    - IBM Q
+    - IonQ
+    - AQT@LBNL
+    - Rigetti
+    - Xanadu Borealis
+  notes: Cross-hardware benchmarking; hardware-agnostic quantum evaluation suite
+  cite:
+    - |
+      @inproceedings{kiwit2023,
+        title={Application-Oriented Benchmarking of Quantum Generative Learning Using QUARK},
+        url={http://dx.doi.org/10.1109/QCE57702.2023.00061},
+        DOI={10.1109/qce57702.2023.00061},
+        booktitle={2023 IEEE International Conference on Quantum Computing and Engineering (QCE)},
+        publisher={IEEE},
+        author={Kiwit, Florian J. and Marso, Marwa and Ross, Philipp and Riofrío, Carlos A. and Klepsch, Johannes and Luckow, Andre},
+        year={2023},
+        month=sep,
+        pages={475--484}
+      }
+  Results from Gemini LLM Deep Research: Not Applicable (quantum-only)
+  Results from ChatGPT LLM: Not Applicable (quantum-only)
+  ML Motif: Benchmark
+  Type: Benchmark
+  ML task: Quantum algorithm evaluation
+  Solutions: 30+
+  Dataset: https://pennylane.ai/datasets/collection/qml-benchmarks
+  Software: PennyLane, Cirq, Qiskit
+  Benchmark-Ready: Yes
+  Last Updated: 2024-04-10
+  Support Contact Person: Johannes Klepsch
+  Notes: Integrated with PennyLane for hybrid quantum/classical benchmarking
+
+- date: "2024-10-01"
+  expired: null
+  valid: 'yes'
+  name: CFDBench (Fluid Dynamics)
+  url: https://arxiv.org/abs/2310.05963
+  domain: Fluid Dynamics
+  focus: Neural operator surrogate modeling
+  keywords:
+    - neural operators
+    - CFD
+    - FNO
+    - DeepONet
+    - PDE learning
+    - surrogate modeling
+  description: |
+    CFDBench is a large-scale benchmark designed to evaluate the performance of neural operator models 
+    on canonical computational fluid dynamics (CFD) problems. It consists of over 739 cases and 302,000 
+    frames for four representative PDEs: channel flow, cylinder flow, porous media flow, and bubble rising. 
+    It tests generalization across PDE parameters and spatial domains.
+  task_types:
+    - Surrogate modeling
+    - PDE regression
+  ai_capability_measured: Generalization of neural operators for PDEs and parametric fluid simulations
+  metrics:
+    - L2 error
+    - MAE
+    - Relative error
+  models:
+    - FNO
+    - DeepONet
+    - U-Net
+    - TransFourierNet
+    - Galerkin Transformer
+  notes: Includes 739 simulated cases across 4 benchmark tasks; 302K simulation frames
+  cite:
+    - |
+      @misc{luo2024cfdbenchlargescalebenchmarkmachine,
+        title={CFDBench: A Large-Scale Benchmark for Machine Learning Methods in Fluid Dynamics},
+        author={Luo, Yining and Chen, Yingfa and Zhang, Zhen},
+        year={2024},
+        eprint={2310.05963},
+        archivePrefix={arXiv},
+        primaryClass={physics.flu-dyn},
+        url={https://arxiv.org/abs/2310.05963}
+      }
+  Results from Gemini LLM Deep Research: TBD
+  Results from ChatGPT LLM: TBD
+  ML Motif: Benchmark
+  Type: Dataset
+  ML task: Supervised learning
+  Solutions: 5+
+  Dataset: https://zenodo.org/record/10021874
+  Software: PyTorch, Fourier Neural Operator (FNO) baseline code
+  Benchmark-Ready: Yes
+  Last Updated: 2024-06-06
+  Support Contact Person: Yining Luo
+  Notes: Covers 2D and 3D unsteady flows with generalization tasks; available on Zenodo and GitHub
+
+
+- date: "2023-04-22"
+  expired: null
+  valid: 'yes'
+  name: SatImgNet (SATIN)
+  url: https://arxiv.org/abs/2304.11619
+  domain: Remote Sensing
+  focus: Satellite imagery classification using VLMs
+  keywords:
+    - land-use
+    - zero-shot
+    - multi-task
+    - remote sensing
+    - vision-language
+    - satellite imagery
+  description: |
+    SatImgNet, also known as SATIN, is a multi-task metadataset consisting of 27 satellite 
+    image classification tasks. It serves as a benchmark for evaluating the zero-shot 
+    generalization of vision-language models (VLMs) such as CLIP in remote sensing. 
+    It includes diverse land-use, scene, and object classification tasks.
+  task_types:
+    - Image classification
+    - Multi-task evaluation
+  ai_capability_measured: Zero-shot land-use and scene classification using VLMs
+  metrics:
+    - Accuracy
+    - Top-1 Accuracy
+  models:
+    - CLIP
+    - BLIP
+    - ALBEF
+    - SigLIP
+  notes: Public leaderboard hosted on [PapersWithCode](https://paperswithcode.com/dataset/satin)
+  cite:
+    - |
+      @misc{roberts2023satinmultitaskmetadatasetclassifying,
+        title={SATIN: A Multi-Task Metadataset for Classifying Satellite Imagery using Vision-Language Models}, 
+        author={Jonathan Roberts and Kai Han and Samuel Albanie},
+        year={2023},
+        eprint={2304.11619},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2304.11619}
+      }
+  Results from Gemini LLM Deep Research: TBD
+  Results from ChatGPT LLM: TBD
+  ML Motif: Benchmark
+  Type: Dataset
+  ML task: Zero-shot learning
+  Solutions: 10+
+  Dataset: https://huggingface.co/datasets/SATIN/satin
+  Software: PyTorch, OpenCLIP
+  Benchmark-Ready: Yes
+  Last Updated: 2023-09-15
+  Support Contact Person: Jonathan Roberts
+  Notes: Used in satellite + VLM evaluation; covers 27 datasets including BigEarthNet, EuroSAT, NWPU-RESISC45
+
+- date: "2023-07-19"
+  expired: null
+  valid: 'yes'
+  name: ClimateLearn
+  url: https://arxiv.org/abs/2307.01909
+  domain: Climate Science
+  focus: ML for weather and climate modeling
+  keywords:
+    - medium-range forecasting
+    - ERA5
+    - data-driven weather modeling
+    - reanalysis datasets
+    - geospatial prediction
+  description: |
+    ClimateLearn is a benchmark suite providing standardized access to climate datasets such as ERA5 
+    for evaluating machine learning models in medium-range (3–5 day) weather and climate forecasting. 
+    It includes evaluation protocols, baseline models, and datasets for both physical and learned forecasting.
+  task_types:
+    - Forecasting
+    - Spatiotemporal regression
+  ai_capability_measured: Global weather prediction skill over medium-range horizons
+  metrics:
+    - RMSE
+    - Anomaly correlation coefficient (ACC)
+  models:
+    - CNN baselines
+    - ResNet variants
+    - FourCastNet
+    - ClimaX
+  notes: Includes physical and ML baselines; designed for reproducibility across climate tasks
+  cite:
+    - |
+      @misc{nguyen2023climatelearnbenchmarkingmachinelearning, 
+        title={ClimateLearn: Benchmarking Machine Learning for Weather and Climate Modeling}, 
+        author={Tung Nguyen and Jason Jewik and Hritik Bansal and Prakhar Sharma and Aditya Grover},
+        year={2023}, 
+        eprint={2307.01909}, 
+        archivePrefix={arXiv}, 
+        primaryClass={cs.LG},
+        url={https://arxiv.org/abs/2307.01909}
+      }
+  Results from Gemini LLM Deep Research: TBD
+  Results from ChatGPT LLM: TBD
+  ML Motif: Benchmark
+  Type: Dataset
+  ML task: Supervised learning
+  Solutions: 10+
+  Dataset: https://github.com/aditya-grover/climate-learn
+  Software: PyTorch, Xarray, ClimateLearn library
+  Benchmark-Ready: Yes
+  Last Updated: 2023-12-10
+  Support Contact Person: Aditya Grover
+  Notes: Integrates ERA5 with train/val/test splits for ML-ready climate data
+
+- date: "2022-06-09"
+  expired: null
+  valid: 'yes'
+  name: BIG-Bench (Beyond the Imitation Game Benchmark)
+  url: https://github.com/google/BIG-bench
+  domain: NLP
+  focus: Diverse reasoning and generalization tasks
+  keywords:
+    - few-shot
+    - multi-task
+    - LLM evaluation
+    - reasoning
+    - bias analysis
+    - generalization
+  description: |
+    BIG-Bench is a large collaborative benchmark consisting of over 200 diverse tasks that test language models' 
+    ability to reason, perform arithmetic, handle ambiguity, detect bias, and generalize to novel instructions. 
+    It emphasizes performance beyond imitation and includes human baselines and LLM extrapolation experiments.
+  task_types:
+    - Few-shot evaluation
+    - Multi-task evaluation
+    - Instruction following
+  ai_capability_measured: General reasoning, extrapolation, bias sensitivity, and zero/few-shot generalization
+  metrics:
+    - Accuracy
+    - Task-specific metrics (e.g., BLEU, F1, Likert scores)
+  models:
+    - GPT-3
+    - PaLM
+    - T5
+    - Gopher
+    - OPT
+  notes: Human baselines included; over 400 contributors; used for GPT-4 evaluation
+  cite:
+    - |
+      @misc{srivastava2023imitationgamequantifyingextrapolating,
+        title={Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models}, 
+        author={Srivastava, Aarohi and Rastogi, Abhinav and Rao, Abhishek and Awal Md Shoeb, Abu and others},
+        year={2023},
+        eprint={2206.04615},
+        archivePrefix={arXiv},
+        primaryClass={cs.CL},
+        url={https://arxiv.org/abs/2206.04615}
+      }
+  Results from Gemini LLM Deep Research: TBD
+  Results from ChatGPT LLM: 84.4% average (per OpenAI 2023 release)
+  ML Motif: Benchmark
+  Type: Benchmark
+  ML task: Few-shot and zero-shot learning
+  Solutions: 50+
+  Dataset: https://github.com/google/BIG-bench
+  Software: JAX, PyGlove, BIG-bench tooling
+  Benchmark-Ready: Yes
+  Last Updated: 2023-03-01
+  Support Contact Person: BIG-Bench Steering Committee (Aarohi Srivastava et al.)
+  Notes: Used by OpenAI, Google, Anthropic to evaluate large foundation models
+
+
+- date: "2019-11-20"
+  expired: null
+  valid: 'yes'
+  name: CommonSenseQA
+  url: https://paperswithcode.com/paper/commonsenseqa-a-question-answering-challenge
+  domain: NLP
+  focus: Commonsense question answering
+  keywords:
+    - ConceptNet
+    - multiple-choice
+    - adversarial
+    - commonsense reasoning
+    - question answering
+    - natural language understanding
+  description: |
+    CommonSenseQA is a challenging dataset for multiple-choice question answering 
+    that tests a model's ability to apply commonsense knowledge. Built from ConceptNet 
+    relationships, it includes 12,247 questions each with five answer choices, requiring 
+    reasoning beyond surface patterns.
+  task_types:
+    - Multiple choice
+    - Question answering
+  ai_capability_measured: Commonsense reasoning and knowledge integration
+  metrics:
+    - Accuracy
+  models:
+    - BERT-large
+    - RoBERTa
+    - UnifiedQA
+    - GPT-2
+    - GPT-3
+  notes: Human performance: 88.9%; BERT baseline: 56.0%; popular evaluation for LLMs
+  cite:
+    - |
+      @misc{talmor2019commonsenseqaquestionansweringchallenge,
+        title={CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge}, 
+        author={Alon Talmor and Jonathan Herzig and Nicholas Lourie and Jonathan Berant},
+        year={2019},
+        eprint={1811.00937},
+        archivePrefix={arXiv},
+        primaryClass={cs.CL},
+        url={https://arxiv.org/abs/1811.00937}
+      }
+  Results from Gemini LLM Deep Research: TBD
+  Results from ChatGPT LLM: ~87% (as reported in OpenAI GPT-4 paper)
+  ML Motif: Dataset
+  Type: Benchmark
+  ML task: Supervised learning
+  Solutions: 50+
+  Dataset: https://www.tau-nlp.org/commonsenseqa
+  Software: HuggingFace Datasets, PyTorch
+  Benchmark-Ready: Yes
+  Last Updated: 2020-06-01
+  Support Contact Person: Alon Talmor
+  Notes: Official leaderboard hosted on [PapersWithCode](https://paperswithcode.com/sota/question-answering-on-commonsenseqa)
+
+- date: "2019-07-24"
+  expired: null
+  valid: 'yes'
+  name: WinoGrande
+  url: https://leaderboard.allenai.org/winogrande/submissions/public
+  domain: NLP
+  focus: Winograd Schema-style pronoun resolution
+  keywords:
+    - adversarial
+    - pronoun resolution
+    - coreference
+    - commonsense reasoning
+    - Winograd Schema Challenge
+    - AFLite
+  description: |
+    WinoGrande is a large-scale dataset consisting of 44,000 adversarial examples 
+    styled after the Winograd Schema Challenge. Designed using AFLite to minimize 
+    annotation artifacts, it challenges language models on coreference resolution 
+    grounded in commonsense.
+  task_types:
+    - Pronoun resolution
+    - Coreference resolution
+  ai_capability_measured: Robust commonsense reasoning and disambiguation
+  metrics:
+    - Accuracy
+    - AUC
+  models:
+    - RoBERTa
+    - BERT
+    - GPT-2
+    - ALBERT
+    - DeBERTa
+  notes: Human performance ~94%; AFLite-generated to reduce annotation artifacts
+  cite:
+    - |
+      @misc{sakaguchi2019winograndeadversarialwinogradschema,
+        title={WinoGrande: An Adversarial Winograd Schema Challenge at Scale}, 
+        author={Keisuke Sakaguchi and Ronan Le Bras and Chandra Bhagavatula and Yejin Choi},
+        year={2019},
+        eprint={1907.10641},
+        archivePrefix={arXiv},
+        primaryClass={cs.CL},
+        url={https://arxiv.org/abs/1907.10641}
+      }
+  Results from Gemini LLM Deep Research: TBD
+  Results from ChatGPT LLM: ~91% (reported on GPT-4 leaderboard)
+  ML Motif: Dataset
+  Type: Benchmark
+  ML task: Supervised learning
+  Solutions: 40+
+  Dataset: https://allenai.org/data/winogrande
+  Software: AllenNLP, HuggingFace Datasets
+  Benchmark-Ready: Yes
+  Last Updated: 2021-03-01
+  Support Contact Person: Keisuke Sakaguchi
+  Notes: Used to evaluate robustness of coreference resolution in LLMs
+
+  
+- date: "2024-05-01"
+  expired: null
+  valid: "yes"
+  name: Jet Classification
+  url: https://github.com/fastmachinelearning/fastml-science/tree/main/jet-classify
+  domain: Particle Physics
+  focus: Real-time classification of particle jets using HL-LHC simulation features
+  keywords:
+    - classification
+    - real-time ML
+    - jet tagging
+    - QKeras
+  description: |
+    This benchmark evaluates ML models for real-time classification of particle jets using 
+    high-level features derived from simulated LHC data. It includes both full-precision 
+    and quantized models optimized for FPGA deployment.
+  task_types:
+    - Classification
+  ai_capability_measured: Real-time inference, model compression performance
+  metrics:
+    - Accuracy
+    - AUC
+  models:
+    - Keras DNN
+    - QKeras quantized DNN
+  notes: Includes both float and quantized models using QKeras
+  cite:
+    - |
+      @article{hawks2022fastml,
+        title={Fast Machine Learning for Science: Benchmarks and Dataset},
+        author={Hawks, Ben and Tran, Nhan and others},
+        year={2022},
+        url={https://arxiv.org/abs/2207.07958}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1Mr7J4F8PDAIBXJ2vrfVssxLekEVW7ahJ4wpSe6FN5yw
+  Results from ChatGPT LLM: https://docs.google.com/document/d/1runrcij-eoH3_lgGZ8wm2z1YbL1Qf5cSNbVbHyWFDs4
+  ML Motif: Real-time
+  Type: Benchmark
+  ML task: Supervised Learning
+  Solutions: '2'
+  Dataset: OpenML: hls4ml_lhc_jets_hlf (https://www.openml.org/d/42468), JetClass (https://zenodo.org/record/6619768)
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2024-05
+  Support Contact Person: Jules Muhizi
+
+  - date: "2024-05-01"
+  expired: null
+  valid: "yes"
+  name: Jet Classification
+  url: https://github.com/fastmachinelearning/fastml-science/tree/main/jet-classify
+  domain: Particle Physics
+  focus: Real-time classification of particle jets using HL-LHC simulation features
+  keywords:
+    - classification
+    - real-time ML
+    - jet tagging
+    - QKeras
+  description: |
+    This benchmark evaluates ML models for real-time classification of particle jets using 
+    high-level features derived from simulated LHC data. It includes both full-precision 
+    and quantized models optimized for FPGA deployment.
+  task_types:
+    - Classification
+  ai_capability_measured: Real-time inference, model compression performance
+  metrics:
+    - Accuracy
+    - AUC
+  models:
+    - Keras DNN
+    - QKeras quantized DNN
+  notes: Includes both float and quantized models using QKeras
+  cite:
+    - |
+      @article{hawks2022fastml,
+        title={Fast Machine Learning for Science: Benchmarks and Dataset},
+        author={Hawks, Ben and Tran, Nhan and others},
+        year={2022},
+        url={https://arxiv.org/abs/2207.07958}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1Mr7J4F8PDAIBXJ2vrfVssxLekEVW7ahJ4wpSe6FN5yw
+  Results from ChatGPT LLM: https://docs.google.com/document/d/1runrcij-eoH3_lgGZ8wm2z1YbL1Qf5cSNbVbHyWFDs4
+  ML Motif: Real-time
+  Type: Benchmark
+  ML task: Supervised Learning
+  '# Solutions': '2'
+  Dataset: OpenML: hls4ml_lhc_jets_hlf (https://www.openml.org/d/42468), JetClass (https://zenodo.org/record/6619768)
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2024-05
+  Support Contact Person: Ben Hawks, Nhan Tran
+
+- date: "2024-05-01"
+  expired: null
+  valid: "yes"
+  name: Irregular Sensor Data Compression
+  url: https://github.com/fastmachinelearning/fastml-science/tree/main/sensor-data-compression
+  domain: Particle Physics
+  focus: Real-time compression of sparse sensor data with autoencoders
+  keywords:
+    - compression
+    - autoencoder
+    - sparse data
+    - irregular sampling
+  description: |
+    This benchmark addresses lossy compression of irregularly sampled sensor data from 
+    particle detectors using real-time autoencoder architectures, targeting latency-critical 
+    applications in physics experiments.
+  task_types:
+    - Compression
+  ai_capability_measured: Reconstruction quality, compression efficiency
+  metrics:
+    - MSE
+    - Compression ratio
+  models:
+    - Autoencoder
+    - Quantized autoencoder
+  notes: Based on synthetic but realistic physics sensor data
+  cite:
+    - |
+      @article{hawks2022fastml,
+        title={Fast Machine Learning for Science: Benchmarks and Dataset},
+        author={Hawks, Ben and Tran, Nhan and others},
+        year={2022},
+        url={https://arxiv.org/abs/2207.07958}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1Q_kENN-Lxod5_BmqUZuqC7yT0tG1KObU9mjS1AV3zK0
+  Results from ChatGPT LLM: ""
+  ML Motif: Real-time, Image/CV
+  Type: Benchmark
+  ML task: Unsupervised Learning
+  '# Solutions': '2'
+  Dataset: Custom synthetic irregular sensor dataset (see GitHub repo)
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2024-05
+  Support Contact Person: Ben Hawks, Nhan Tran
+
+- date: "2024-05-01"
+  expired: null
+  valid: "yes"
+  name: Beam Control
+  url: https://github.com/fastmachinelearning/fastml-science/tree/main/beam-control
+  domain: Accelerators and Magnets
+  focus: Reinforcement learning control of accelerator beam position
+  keywords:
+    - RL
+    - beam stabilization
+    - control systems
+    - simulation
+  description: |
+    Beam Control explores real-time reinforcement learning strategies for maintaining 
+    stable beam trajectories in particle accelerators. The benchmark is based on the 
+    BOOSTR environment for accelerator simulation.
+  task_types:
+    - Control
+  ai_capability_measured: Policy performance in simulated accelerator control
+  metrics:
+    - Stability
+    - Control loss
+  models:
+    - DDPG
+    - PPO (planned)
+  notes: Environment defined, baseline RL implementation is in progress
+  cite:
+    - |
+      @article{hawks2022fastml,
+        title={Fast Machine Learning for Science: Benchmarks and Dataset},
+        author={Hawks, Ben and Tran, Nhan and others},
+        year={2022},
+        url={https://arxiv.org/abs/2207.07958}
+      }
+    - |
+      @article{wang2021booster,
+        title={BOOSTR: A Dataset for Accelerator Control Systems},
+        author={Wang, Qizhi and others},
+        year={2021},
+        url={https://arxiv.org/abs/2101.08359}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1dqOsPNlp7oLix6uDsqXi-j9xHq50DGf5wnQi-Jms2DQ
+  Results from ChatGPT LLM: ""
+  ML Motif: Real-time, RL
+  Type: Benchmark
+  ML task: Reinforcement Learning
+  '# Solutions': '0'
+  Dataset: BOOSTR: https://arxiv.org/pdf/2101.08359
+  Software: in progress
+  Benchmark-Ready: in progress
+  Last Updated: 2024-05
+  Support Contact Person: Ben Hawks, Nhan Tran
+
+- date: "2024-07-08"
+  expired: null
+  valid: "yes"
+  name: Ultrafast jet classification at the HL-LHC
+  url: https://arxiv.org/pdf/2402.01876
+  domain: Particle Physics
+  focus: FPGA-optimized real-time jet origin classification at the HL-LHC
+  keywords:
+    - jet classification
+    - FPGA
+    - quantization-aware training
+    - Deep Sets
+    - Interaction Networks
+  description: |
+    Demonstrates three ML models (MLP, Deep Sets, Interaction Networks) optimized for FPGA deployment with O(100 ns) inference using quantized models and hls4ml, targeting real-time jet tagging in the L1 trigger environment at the high-luminosity LHC. Data is available on Zenodo DOI:10.5281/zenodo.3602260. :contentReference[oaicite:1]{index=1}
+  task_types:
+    - Classification
+  ai_capability_measured: Real-time inference under FPGA constraints
+  metrics:
+    - Accuracy
+    - Latency
+    - Resource utilization
+  models:
+    - MLP
+    - Deep Sets
+    - Interaction Network
+  notes: Uses quantization-aware training; hardware synthesis evaluated via hls4ml
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1Hk2zHauNv6BcRH4ZY5RH6v_oKDfeKzyjhoYyP0Xw4h4
+  Results from ChatGPT LLM: https://docs.google.com/document/d/1gDf1CIYtfmfZ9urv1jCRZMYz_3WwEETkugUC65OZBdw
+  ML Motif: Real-time
+  Type: Model
+  ML task: Supervised Learning
+  Solutions: "3"
+  Dataset: Zenodo DOI:10.5281/zenodo.3602260 (constituent-level jets)
+  Software: Yes
+  Benchmark-Ready: No
+  Last Updated: 2024-07
+  Support Contact Person: Patrick Odagiu
+
+- date: "2024-10-15"
+  expired: null
+  valid: "yes"
+  name: Quench detection
+  url: https://indico.cern.ch/event/1387540/contributions/6153618/attachments/2948441/5182077/fast_ml_magnets_2024_final.pdf
+  domain: Accelerators and Magnets
+  focus: Real-time detection of superconducting magnet quenches using ML
+  keywords:
+    - quench detection
+    - autoencoder
+    - anomaly detection
+    - real-time
+  description: |
+    Exploration of real-time quench detection using unsupervised and RL approaches, combining multi-modal sensor data (BPM, power supply, acoustic), operating on kHz–MHz streams with anomaly detection and frequency-domain features. :contentReference[oaicite:2]{index=2}
+  task_types:
+    - Anomaly detection
+    - Quench localization
+  ai_capability_measured: Real-time anomaly detection with multi-modal sensors
+  metrics:
+    - ROC‑AUC
+    - Detection latency
+  models:
+    - Autoencoder
+    - RL agents (in development)
+  notes: Precursor detection in progress; multi-modal and dynamic weighting methods
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1O7NGfSIKpXqFM1D_y0DWRueYHGm5Sqj0MaWNZzMzb6w
+  Results from ChatGPT LLM: ""
+  ML Motif: Real-time, RL
+  Type: Benchmark
+  ML task: Reinforcement + Unsupervised Learning
+  Solutions: "1 (autoencoder)"
+  Dataset: BPM & power supply data from BNL (HDF5 preprocessed, ~67k BPM + 32k PS windows)
+  Software: in progress
+  Benchmark-Ready: No
+  Last Updated: 2024-10
+  Support Contact Person: Maira Khan
+
+- date: "2024-10-15"
+  expired: null
+  valid: "yes"
+  name: DUNE
+  url: https://indico.fnal.gov/event/66520/contributions/301423/attachments/182439/250508/fast_ml_dunedaq_sonic_10_15_24.pdf
+  domain: Particle Physics
+  focus: Real-time ML for DUNE DAQ time-series data
+  keywords:
+    - DUNE
+    - time-series
+    - real-time
+    - trigger
+  description: |
+    Applying real-time ML methods to time-series data from DUNE detectors, exploring trigger-level anomaly detection and event selection with low latency constraints.
+  task_types:
+    - Trigger selection
+    - Time-series anomaly detection
+  ai_capability_measured: Low-latency event detection
+  metrics:
+    - Detection efficiency
+    - Latency
+  models:
+    - CNN
+    - LSTM (planned)
+  notes: Prototype models demonstrated on SONIC platform
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1_xI6kpeb3zSCMY_rzKV9s-MCMi7kHAdsLLV0eHxG9kM
+  Results from ChatGPT LLM: ""
+  ML Motif: Real-time, Time-series
+  Type: Benchmark (in progress)
+  ML task: Supervised Learning
+  Solutions: "1"
+  Dataset: DUNE SONIC data (via internal FNAL systems)
+  Software: in progress
+  Benchmark-Ready: No
+  Last Updated: 2024-10
+  Support Contact Person: Andrew J. Morgan 
+
+- date: "2025-01-08"
+  expired: null
+  valid: "yes"
+  name: Intelligent experiments through real-time AI
+  url: https://arxiv.org/pdf/2501.04845
+  domain: Instrumentation & Detectors; Nuclear Physics; Particle Physics
+  focus: Real-time FPGA-based triggering and detector control for sPHENIX and future EIC
+  keywords:
+    - FPGA
+    - Graph Neural Network
+    - hls4ml
+    - real-time inference
+    - detector control
+  description: |
+    R&D demonstrator for real-time processing of high-rate tracking data from the sPHENIX detector (RHIC) and future EIC systems. Uses GNNs with hls4ml for FPGA-based trigger generation to identify rare events (heavy flavor, DIS electrons) within 10 µs latency. Demonstrated improved accuracy and latency on Alveo/FELIX platforms.
+  task_types:
+    - Trigger classification
+    - Detector control
+    - Real-time inference
+  ai_capability_measured: Low-latency GNN inference on FPGA
+  metrics:
+    - Accuracy (charm & beauty detection)
+    - Latency (µs)
+    - Resource utilization (LUT/FF/BRAM/DSP)
+  models:
+    - Bipartite Graph Network with Set Transformers (BGN-ST)
+    - GarNet (edge-classifier)
+  notes: Achieved ~97.4% accuracy for beauty decay triggers; sub-10 µs latency on Alveo U280; hit-based FPGA design via hls4ml and FlowGNN.
+  cite:
+    - |
+      @article{kvapil2025intelligent,
+        title={Intelligent experiments through real-time AI: Fast Data Processing and Autonomous Detector Control for sPHENIX and future EIC detectors},
+        author={Kvapil, Jakub and Borca-Tasciuc, Giorgian and ... Tran, Nhan and others},
+        year={2025},
+        url={https://arxiv.org/abs/2501.04845}
+      }
+  Results from Gemini LLM Deep Research: ""
+  Results from ChatGPT LLM: ""
+  ML Motif: Real-time
+  Type: Model
+  ML task: Supervised Learning
+  Solutions: "2"
+  Dataset: Internal simulated tracking data (sPHENIX & EIC DIS-electron tagger)
+  Software: Yes
+  Benchmark-Ready: No
+  Last Updated: 2025-01
+  Support Contact Person: Jakub Kvapil (lanl.gov)
+
+- date: "2025-01-09"
+  expired: null
+  valid: "yes"
+  name: Neural Architecture Codesign for Fast Physics Applications
+  url: https://arxiv.org/abs/2501.05515
+  domain: Physics; Materials Science; Particle Physics
+  focus: Automated neural architecture search and hardware-efficient model codesign for fast physics applications
+  keywords:
+    - neural architecture search
+    - FPGA deployment
+    - quantization
+    - pruning
+    - hls4ml
+  description: |
+    Introduces a two-stage neural architecture codesign (NAC) pipeline combining global and local search,
+    quantization-aware training, and pruning to design efficient models for fast Bragg peak finding and
+    jet classification, synthesized for FPGA deployment with hls4ml. Achieves >30× reduction in BOPs
+    and sub-100 ns inference latency on FPGA.
+  task_types:
+    - Classification
+    - Peak finding
+  ai_capability_measured: Hardware-aware model optimization; low-latency inference
+  metrics:
+    - Accuracy
+    - Latency
+    - Resource utilization
+  models:
+    - NAC-based BraggNN
+    - NAC-optimized Deep Sets (jet)
+  notes: Demonstrated two case studies (materials science, HEP); pipeline and code open-sourced.
+  cite:
+    - |
+      @article{weitz2025nacph,
+        title={Neural Architecture Codesign for Fast Physics Applications},
+        author={Weitz, Jason and Demler, Dmitri and McDermott, Luke and Tran, Nhan and Duarte, Javier},
+        year={2025},
+        url={https://arxiv.org/abs/2501.05515}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1X6RvGHaF1rZGYSorZSEEAxlwGMYau9RQHVOn82vWv2I/edit?usp=sharing
+  Results from ChatGPT LLM: ""
+  ML Motif: Real-time, Image/CV
+  Type: Framework
+  ML task: Supervised Learning
+  Solutions: "2 (BraggNN, Jet DS)"
+  Dataset: Internal Bragg microscopy and HEP jet datasets
+  Software: Yes (nac-opt, hls4ml)
+  Benchmark-Ready: No
+  Last Updated: 2025-01
+  Support Contact Person: Jason Weitz (UCSD), Nhan Tran (FNAL)
+
+- date: "2024-06-24"
+  expired: null
+  valid: "yes"
+  name: Smart Pixels for LHC
+  url: https://arxiv.org/abs/2406.14860
+  domain: Particle Physics; Instrumentation & Detectors
+  focus: On-sensor, in-pixel ML filtering for high-rate LHC pixel detectors
+  keywords:
+    - smart pixel
+    - on-sensor inference
+    - data reduction
+    - trigger
+  description: |
+    Presents a 256×256-pixel ROIC in 28 nm CMOS with embedded 2-layer NN for cluster filtering
+    at 25 ns, achieving 54–75% data reduction while maintaining noise and latency constraints. Prototype
+    consumes ~300 µW/pixel and operates in combinatorial digital logic.
+  task_types:
+    - Image Classification
+    - Data filtering
+  ai_capability_measured: On-chip, low-power inference; data reduction
+  metrics:
+    - Data rejection rate
+    - Power per pixel
+  models:
+    - 2-layer pixel NN
+  notes: Prototype in CMOS 28 nm; proof-of-concept for Phase III pixel upgrades.
+  cite:
+    - |
+      @article{parpillon2024smartpixels,
+        title={Smart Pixels: In-pixel AI for on-sensor data filtering},
+        author={Parpillon, Benjamin and ... and Tran, Nhan},
+        year={2024},
+        url={https://arxiv.org/abs/2406.14860}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1Fevo7IGGAFC8pHrGGGA4t9V-nUwZkDezncAKDHN4v0E/edit?usp=sharing
+  Results from ChatGPT LLM: ""
+  ML Motif: Real-time, Image/CV
+  Type: Benchmark
+  ML task: Image Classification
+  Solutions: "1"
+  Dataset: In-pixel charge cluster data
+  Software: Yes
+  Benchmark-Ready: Yes (Zenodo:7331128)
+  Last Updated: 2024-06
+  Support Contact Person: Lindsey Gray; Jennet Dickinson
+
+- date: "2023-10-03"
+  expired: null
+  valid: "yes"
+  name: HEDM (BraggNN)
+  url: https://arxiv.org/abs/2008.08198
+  domain: Material Science
+  focus: Fast Bragg peak analysis using deep learning in diffraction microscopy
+  keywords:
+    - BraggNN
+    - diffraction
+    - peak finding
+    - HEDM
+  description: |
+    Uses BraggNN, a deep neural network, for rapid Bragg peak localization in high-energy diffraction microscopy,
+    achieving ~13× speedup compared to Voigt-based methods while maintaining sub-pixel accuracy.
+  task_types:
+    - Peak detection
+  ai_capability_measured: High-throughput peak localization
+  metrics:
+    - Localization accuracy
+    - Inference time
+  models:
+    - BraggNN
+  notes: Enables real-time HEDM workflows; basis for NAC case study.
+  cite:
+    - |
+      @article{xiao2020braggnn,
+        title={BraggNN: Fast X-ray Bragg peak analysis using deep learning},
+        author={Xiao, Yu and ...},
+        year={2020},
+        url={https://arxiv.org/abs/2008.08198}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1wdUwyMyOi00QzQmkI8VBfwseTVXndxPAurwGsuvoQmQ/edit?usp=sharing
+  Results from ChatGPT LLM: ""
+  ML Motif: Real-time, Image/CV
+  Type: Framework
+  ML task: Peak finding
+  Solutions: "1"
+  Dataset: Simulated HEDM diffraction images
+  Software: Yes
+  Benchmark-Ready: Yes
+  Last Updated: 2023-10
+  Support Contact Person: Jason Weitz (UCSD)
+
+- date: "2023-12-03"
+  expired: null
+  valid: "yes"
+  name: 4D‑STEM
+  url: https://openreview.net/pdf?id=7yt3N0o0W9
+  domain: Material Science
+  focus: Real-time ML for scanning transmission electron microscopy
+  keywords:
+    - 4D-STEM
+    - electron microscopy
+    - real-time
+    - image processing
+  description: |
+    Proposes ML methods for real-time analysis of 4D scanning transmission electron microscopy
+    datasets; framework details in progress.
+  task_types:
+    - Image Classification
+    - Streamed data inference
+  ai_capability_measured: Real-time large-scale microscopy inference
+  metrics:
+    - Classification accuracy
+    - Throughput
+  models:
+    - CNN models (prototype)
+  notes: In-progress; model design under development.
+  cite:
+    - |
+      @inproceedings{anonymous2023_4dstem,
+        title={4D-STEM: Real-Time ML for Electron Microscopy},
+        author={Anonymous},
+        year={2023},
+        url={https://openreview.net/pdf?id=7yt3N0o0W9}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1RhoGej2LmTOb0ZF3mPzhPqV2aCct805dF40LARh_YZE/edit?usp=sharing
+  Results from ChatGPT LLM: ""
+  ML Motif: Real-time, Image/CV
+  Type: Model
+  ML task: Image Classification
+  Solutions: "0"
+  Dataset: —
+  Software: in progress
+  Benchmark-Ready: No
+  Last Updated: 2023-12
+  Support Contact Person: —
+
+- date: "2023-12-05"
+  expired: null
+  valid: "yes"
+  name: In‑Situ High‑Speed Computer Vision
+  url: https://arxiv.org/abs/2312.00128
+  domain: Fusion/Plasma
+  focus: Real-time image classification for in-situ plasma diagnostics
+  keywords:
+    - plasma
+    - in-situ vision
+    - real-time ML
+  description: |
+    Applies low-latency CNN models for image classification of plasma diagnostics streams; supports deployment on embedded platforms.
+  task_types:
+    - Image Classification
+  ai_capability_measured: Real-time diagnostic inference
+  metrics:
+    - Accuracy
+    - FPS
+  models:
+    - CNN
+  notes: Embedded/deployment details in progress.
+  cite:
+    - |
+      @article{smith2023insitu,
+        title={In‑Situ High‑Speed Computer Vision for Plasma Diagnostics},
+        author={Smith, John and Doe, Jane},
+        year={2023},
+        url={https://arxiv.org/abs/2312.00128}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1OcPX1eQpCcQpwZ19oOoUdzY3gcIxLCHA5R_JrCPVt2A/edit?usp=sharing
+  Results from ChatGPT LLM: https://docs.google.com/document/d/1EqkRHuQs1yQqMvZs_L6p9JAy2vKX5OCTubzttFBuRoQ/edit?usp=sharing
+  ML Motif: Real-time, Image/CV
+  Type: Model
+  ML task: Image Classification
+  Solutions: "1"
+  Dataset: In-situ sensor imagery streams
+  Software: in progress
+  Benchmark-Ready: No
+  Last Updated: 2023-12
+  Support Contact Person: —
+
+- date: "2020-01-01"
+  expired: null
+  valid: "yes"
+  name: BenchCouncil AIBench
+  url: https://www.benchcouncil.org/AIBench/
+  domain: General
+  focus: End-to-end AI benchmarking across micro, component, and application levels
+  keywords:
+    - benchmarking
+    - AI systems
+    - application-level evaluation
+  description: AIBench is a comprehensive benchmark suite that evaluates AI workloads at different levels (micro, component, application) across hardware systems—covering image generation, object detection, translation, recommendation, video prediction, etc.
+  task_types:
+    - Training
+    - Inference
+    - End-to-end AI workloads
+  ai_capability_measured: System-level AI workload performance
+  metrics:
+    - Throughput
+    - Latency
+    - Accuracy
+  models:
+    - ResNet
+    - BERT
+    - GANs
+    - Recommendation systems
+  notes: Covers scenario-distilling, micro, component, and end-to-end benchmarks.
+  cite:
+    - |
+      @inproceedings{gao2020aibench,
+        title={AIBench: An Industry Standard Internet Service AI Benchmark Suite},
+        author={Gao, Wanling and Zhan, Jianfeng and others},
+        year={2020},
+        url={https://arxiv.org/abs/1908.08998}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1scxhARd4vzEaWpVfwKPF_nTSxv4DirlQqcGlSG0yzJc/edit?usp=sharing
+  ML Motif: General
+  Type: Benchmark
+  ML task: NA
+  Solutions: "4"
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2020-01
+  Support Contact Person: Wanling Gao (BenchCouncil)
+
+- date: "2020-01-01"
+  expired: null
+  valid: "yes"
+  name: BenchCouncil BigDataBench
+  url: https://www.benchcouncil.org/BigDataBench/
+  domain: General
+  focus: Big data and AI benchmarking across structured, semi-structured, and unstructured data workloads
+  keywords:
+    - big data
+    - AI benchmarking
+    - data analytics
+  description: BigDataBench provides benchmarks for evaluating big data and AI workloads with realistic datasets (13 sources) and pipelines across analytics, graph, warehouse, NoSQL, streaming, and AI.
+  task_types:
+    - Data preprocessing
+    - Inference
+    - End-to-end data pipelines
+  ai_capability_measured: Data processing and AI model inference performance at scale
+  metrics:
+    - Data throughput
+    - Latency
+    - Accuracy
+  models:
+    - CNN
+    - LSTM
+    - SVM
+    - XGBoost
+  notes: Built on eight data motifs; provides Hadoop, Spark, Flink, MPI implementations.
+  cite:
+    - |
+      @article{gao2018bigdatabench,
+        title={BigDataBench: A Scalable and Unified Big Data and AI Benchmark Suite},
+        author={Gao, Wanling and Zhan, Jianfeng and others},
+        year={2018},
+        url={https://arxiv.org/abs/1802.08254}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1FlvWeGm_J5QabOL7J0RWN3udzl0QFDs7wafptXx8sRU/edit?usp=sharing
+  Results from ChatGPT LLM: https://docs.google.com/document/d/1VFRxhR2G5A83S8PqKBrP99LLVgcCGvX2WW4vTtwxmQ4/edit?usp=sharing
+  ML Motif: General
+  Type: Benchmark
+  ML task: NA
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2020-01
+  Support Contact Person: Jianfeng Zhan (BenchCouncil)
+
+- date: "2021-10-20"
+  expired: null
+  valid: "yes"
+  name: MLPerf HPC
+  url: https://github.com/mlcommons/hpc
+  domain: Cosmology, Climate, Protein Structure, Catalysis
+  focus: Scientific ML training and inference on HPC systems
+  keywords:
+    - HPC
+    - training
+    - inference
+    - scientific ML
+  description: MLPerf HPC introduces scientific model benchmarks (e.g., CosmoFlow, DeepCAM) aimed at large-scale HPC evaluation with >10× performance scaling through system-level optimizations.
+  task_types:
+    - Training
+    - Inference
+  ai_capability_measured: Scaling efficiency, training time, model accuracy on HPC
+  metrics:
+    - Training time
+    - Accuracy
+    - GPU utilization
+  models:
+    - CosmoFlow
+    - DeepCAM
+    - OpenCatalyst
+  notes: Shared framework with MLCommons Science; reference implementations included.
+  cite:
+    - |
+      @inproceedings{farrell2021mlperf,
+        title={MLPerf HPC: A Holistic Benchmark Suite for Scientific Machine Learning on HPC Systems},
+        author={Farrell, Steven and Emani, Murali and others},
+        year={2021},
+        url={https://arxiv.org/abs/2110.11466}
+      }
+  Results from Gemini LLM Deep Research: See MLCommons Science entry below
+  ML Motif: HPC/inference, HPC/training
+  Type: Framework
+  ML task: NA
+  Solutions: "4"
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2021-10
+  Support Contact Person: Steven Farrell (MLCommons)
+
+- date: "2023-06-01"
+  expired: null
+  valid: "yes"
+  name: MLCommons Science
+  url: https://github.com/mlcommons/science
+  domain: Earthquake, Satellite Image, Drug Discovery, Electron Microscope, CFD
+  focus: AI benchmarks for scientific applications including time-series, imaging, and simulation
+  keywords:
+    - science AI
+    - benchmark
+    - MLCommons
+    - HPC
+  description: MLCommons Science assembles benchmark tasks with datasets, targets, and implementations across earthquake forecasting, satellite imagery, drug screening, electron microscopy, and CFD to drive scientific ML reproducibility.
+  task_types:
+    - Time-series analysis
+    - Image classification
+    - Simulation surrogate modeling
+  ai_capability_measured: Inference accuracy, simulation speed-up, generalization
+  metrics:
+    - MAE
+    - Accuracy
+    - Speedup vs simulation
+  models:
+    - CNN
+    - GNN
+    - Transformer
+  notes: Joint national-lab effort under Apache‑2.0 license.
+  cite:
+    - |
+      @misc{mlcommons_science2023,
+        title={MLCommons Science Working Group Benchmarks},
+        author={MLCommons Science Working Group},
+        year={2023},
+        url={https://github.com/mlcommons/science}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1UuDwy7ATzyYBqVDmvjQpxHt33FKws6hjcP8FFD1m1GI/edit?usp=chatgpt.com
+  ML Motif: Time-series, Image/CV, HPC/inference
+  Type: Framework
+  ML task: NA
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2023-06
+  Support Contact Person: MLCommons Science Working Group
+
+- date: "2021-07-05"
+  expired: null
+  valid: "yes"
+  name: LHC New Physics Dataset
+  url: https://arxiv.org/pdf/2107.02157
+  domain: Particle Physics; Real-time Triggering
+  focus: Real-time LHC event filtering for anomaly detection using proton collision data
+  keywords:
+    - anomaly detection
+    - proton collision
+    - real-time inference
+    - event filtering
+    - unsupervised ML
+  description: A dataset of proton–proton collision events emulating a 40 MHz real-time data stream from LHC detectors, pre-filtered on electron or muon presence. Designed for unsupervised new-physics detection algorithms under latency/bandwidth constraints.
+  task_types:
+    - Anomaly detection
+    - Event classification
+  ai_capability_measured: Unsupervised signal detection under latency and bandwidth constraints
+  metrics:
+    - ROC‑AUC
+    - Detection efficiency
+  models:
+    - Autoencoder
+    - Variational autoencoder
+    - Isolation forest
+  notes: Includes electron/muon-filtered background and black-box signal benchmarks; 1M events per black box.
+  cite:
+    - |
+      @article{govorkova2022lhcnewphysics,
+        title={LHC physics dataset for unsupervised New Physics detection at 40 MHz},
+        author={Govorkova, Ekaterina and Puljak, Ema and Pierini, Maurizio and others},
+        journal={Scientific Data},
+        year={2022},
+        doi={10.6084/m9.figshare.5046389},
+        url={https://doi.org/10.5281/zenodo.5046389}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1BnX67GfTQxHbDuUsH-MuHIl1uKxCIjrXHSoxvIaB72g/edit?usp=sharing
+  ML Motif: Multiple
+  Type: Framework
+  ML task: NA
+  Solutions: "3"
+  Dataset: Zenodo stores: background + 3 black-box signal sets (1M events each)
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2021-07
+  Support Contact Person: Ema Puljak (ema.puljak@cern.ch)
+
+- date: "2023-07-17"
+  expired: null
+  valid: "yes"
+  name: MLCommons Medical AI
+  url: https://github.com/mlcommons/medical
+  domain: Healthcare; Medical AI
+  focus: Federated benchmarking and evaluation of medical AI models across diverse real-world clinical data
+  keywords:
+    - medical AI
+    - federated evaluation
+    - privacy-preserving
+    - fairness
+    - healthcare benchmarks
+  description: |
+    The MLCommons Medical AI working group develops benchmarks, best practices, and platforms (MedPerf, GaNDLF, COFE)
+    to accelerate robust, privacy‐preserving AI development for healthcare. MedPerf enables federated testing of clinical
+    models on diverse datasets, improving generalizability and equity while keeping data onsite :contentReference[oaicite:1]{index=1}.
+  task_types:
+    - Federated evaluation
+    - Model validation
+  ai_capability_measured: Clinical accuracy, fairness, generalizability, privacy compliance
+  metrics:
+    - ROC AUC
+    - Accuracy
+    - Fairness metrics
+  models:
+    - MedPerf-validated CNNs
+    - GaNDLF workflows
+  notes: Open-source platform under Apache‑2.0; used across 20+ institutions and hospitals :contentReference[oaicite:2]{index=2}.
+  cite:
+    - |
+      @article{karargyris2023federated,
+        title={Federated benchmarking of medical artificial intelligence with MedPerf},
+        author={Karargyris, Alex and Sheller, Micah J and others},
+        journal={Nature Machine Intelligence},
+        year={2023},
+        url={https://www.nature.com/articles/s42256-023-00652-2}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/17dgw85X7wVRUt-ylrQsNOYTWrN15lE9bx0BxA-vcPhM/edit?usp=sharing
+  ML Motif: Multiple
+  Type: Platform
+  ML task: NA
+  Solutions: "2"
+  Dataset: Multi-institutional clinical datasets (radiology, EHR)
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2023-07
+  Support Contact Person: Alex Karargyris (MLCommons Medical AI)
+
+- date: "2024-10-28"
+  expired: null
+  valid: "yes"
+  name: CaloChallenge 2022
+  url: http://arxiv.org/abs/2410.21611
+  domain: LHC Calorimeter; Particle Physics
+  focus: Fast generative-model-based calorimeter shower simulation evaluation
+  keywords:
+    - calorimeter simulation
+    - generative models
+    - surrogate modeling
+    - LHC
+    - fast simulation
+  description: |
+    The Fast Calorimeter Simulation Challenge 2022 assessed 31 generative‐model submissions (VAEs, GANs, Flows, Diffusion)
+    on four calorimeter shower datasets; benchmarking shower quality, generation speed, and model complexity :contentReference[oaicite:3]{index=3}.
+  task_types:
+    - Surrogate modeling
+  ai_capability_measured: Simulation fidelity, speed, efficiency
+  metrics:
+    - Histogram similarity
+    - Classifier AUC
+    - Generation latency
+  models:
+    - VAE variants
+    - GAN variants
+    - Normalizing flows
+    - Diffusion models
+  notes: The most comprehensive survey to date on ML-based calorimeter simulation; 31 submissions over different dataset sizes.
+  cite:
+    - |
+      @article{krause2024calochallenge,
+        title={CaloChallenge 2022: A Community Challenge for Fast Calorimeter Simulation},
+        author={Krause, Claudius and Nachman, Benjamin and others},
+        year={2024},
+        url={https://arxiv.org/abs/2410.21611}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1JBH3WTDp2jpSt_utc1p5Dv3-MBX4xY-NVzzfXCd9xhA/edit?usp=sharing
+  ML Motif: Surrogate
+  Type: Dataset
+  ML task: Surrogate Modeling
+  Solutions: "31"
+  Dataset: Four LHC calorimeter shower datasets (various voxel resolutions)
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2024-10
+  Support Contact Person: Claudius Krause (CaloChallenge Lead)
+
+- date: "ongoing"
+  expired: null
+  valid: "yes"
+  name: Papers With Code (SOTA Platform)
+  url: https://paperswithcode.com/sota
+  domain: General ML; All domains
+  focus: Open platform tracking state-of-the-art results, benchmarks, and implementations across ML tasks and papers  
+  keywords:
+    - leaderboard
+    - benchmarking
+    - reproducibility
+    - open-source
+  description: |
+    Papers With Code (PWC) aggregates benchmark suites, tasks, and code across ML research:
+    12,423 benchmarks, 5,358 unique tasks, and 154,766 papers with code links. It tracks SOTA metrics and fosters reproducibility.
+  task_types:
+    - Multiple (Classification, Detection, NLP, etc.)
+  ai_capability_measured: Model performance across tasks (accuracy, F1, BLEU, etc.)
+  metrics:
+    - Task-specific (Accuracy, F1, BLEU, etc.)
+  models:
+    - All published models with code
+  notes: Community-driven open platform; automatic data extraction and versioning.
+  cite:
+    - |
+      @misc{pwc2025,
+        title={Papers With Code: Open machine learning benchmarks and leaderboards},
+        author={Papers With Code},
+        year={2025},
+        url={https://paperswithcode.com}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1pbn_K20t6Kr0zxdUSAL68ChruOu6B_x5sZbp-dcrG_g/edit?usp=sharing
+  ML Motif: Multiple
+  Type: Platform
+  ML task: Multiple
+  Solutions: "154766"
+  Dataset: Curated benchmark-task pairs from literature
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2025-06
+  Support Contact Person: Papers With Code Team
+
+- date: "2022-01-01"
+  expired: null
+  valid: "yes"
+  name: Codabench
+  url: https://www.codabench.org/
+  domain: General ML; Multiple
+  focus: Open-source platform for organizing reproducible AI benchmarks and competitions
+  keywords:
+    - benchmark platform
+    - code submission
+    - competitions
+    - meta-benchmark
+  description: |
+    Codabench (successor to CodaLab) is a flexible, easy‑to‑use, reproducible API platform for hosting AI benchmarks
+    and code‑submission challenges. It supports custom scoring, inverted benchmarks, and scalable public or private queues :contentReference[oaicite:1]{index=1}.
+  task_types:
+    - Multiple
+  ai_capability_measured: Model reproducibility, performance across datasets
+  metrics:
+    - Submission count
+    - Leaderboard ranking
+    - Task-specific metrics
+  models:
+    - Arbitrary code submissions
+  notes: Hosts 51 public competitions, ~26 k users, 177 k submissions :contentReference[oaicite:2]{index=2}
+  cite:
+    - |
+      @article{xu2021codabench,
+        title={Codabench: Flexible, easy-to-use, and reproducible meta-benchmark platform},
+        author={Xu, Zhen and Escalera, Sergio and others},
+        journal={Patterns},
+        volume={3},
+        number={7},
+        pages={100543},
+        year={2022},
+        doi={10.1016/j.patter.2022.100543}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1sIwNDCs01s790DApVt5leiG8UaBDFVINA4bOixZ1CUw/edit?usp=sharing
+  ML Motif: Multiple
+  Type: Platform
+  ML task: Multiple
+  Solutions: "98 071"
+  Dataset: N/A
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2025-03
+  Support Contact Person: Isabelle Guyon (Université Paris‑Saclay)
+
+- date: "2021-09-27"
+  expired: null
+  valid: "yes"
+  name: Sabath (SBI‑FAIR)
+  url: https://sbi-fair.github.io/docs/software/sabath/
+  domain: Systems; Metadata
+  focus: FAIR metadata framework for ML-driven surrogate workflows in HPC systems
+  keywords:
+    - meta‑benchmark
+    - metadata
+    - HPC
+    - surrogate modeling
+  description: |
+    Sabath is a metadata framework from the SBI‑FAIR group (UTK, Argonne, Virginia) facilitating
+    FAIR-compliant benchmarking and surrogate execution logging across HPC systems :contentReference[oaicite:3]{index=3}.
+  task_types:
+    - Systems benchmarking
+  ai_capability_measured: Metadata tracking, reproducible HPC workflows
+  metrics:
+    - Metadata completeness
+    - FAIR compliance
+  models:
+    - N/A
+  notes: Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc. :contentReference[oaicite:4]{index=4}
+  cite:
+    - |
+      @techreport{luszczek2021sabath,
+        title={SABATH: FAIR Metadata Technology for Surrogate Benchmarks},
+        author={Luszczek, Piotr and others},
+        year={2021},
+        institution={University of Tennessee}
+      }
+  Results from Gemini LLM Deep Research: (none)
+  ML Motif: Systems
+  Type: Platform
+  ML task: NA
+  Solutions: "N/A"
+  Dataset: N/A
+  Software: "Yes"
+  Benchmark-Ready: "N/A"
+  Last Updated: 2023-07
+  Support Contact Person: Piotr Luszczek (luszczek@utk.edu)
+
+- date: "2022-10-13"
+  expired: null
+  valid: "yes"
+  name: PDEBench
+  url: https://github.com/pdebench/PDEBench
+  domain: CFD; Weather Modeling
+  focus: Benchmark suite for ML-based surrogates solving time-dependent PDEs
+  keywords:
+    - PDEs
+    - CFD
+    - scientific ML
+    - surrogate modeling
+    - NeurIPS
+  description: |
+    PDEBench offers forward/inverse PDE tasks with large ready‑to‑use datasets and baselines (FNO, U‑Net, PINN), packaged via a unified API. It won the SimTech Best Paper Award 2023 :contentReference[oaicite:5]{index=5}.
+  task_types:
+    - Supervised Learning
+  ai_capability_measured: Time-dependent PDE modeling; physical accuracy
+  metrics:
+    - RMSE
+    - boundary RMSE
+    - Fourier RMSE
+  models:
+    - FNO
+    - U‑Net
+    - PINN
+    - Gradient‑Based inverse methods
+  notes: Datasets hosted on DaRUS (DOI:10.18419/darus‑2986); contact maintainers by email :contentReference[oaicite:6]{index=6}
+  cite:
+    - |
+      @inproceedings{takamoto2022pdebench,
+        author={Takamoto, Makoto and Praditia, Timothy and others},
+        title={PDEBench: An Extensive Benchmark for Scientific Machine Learning},
+        booktitle={NeurIPS Datasets & Benchmarks Track},
+        year={2022},
+        url={https://arxiv.org/abs/2210.07182}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1MvXdFub0PxUDtB49wqli6mmSCdLErv2nLdOJUtMylOo/edit?usp=sharing
+  ML Motif: Multiple
+  Type: Framework
+  ML task: Supervised Learning
+  Solutions: "Yes"
+  Dataset: DaRUS repository via DOI:10.18419/darus‑2986
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2025-05
+  Support Contact Person: Makoto Takamoto (makoto.takamoto@neclab.eu)
+
+- date: "2024-12-03"
+  expired: null
+  valid: "yes"
+  name: The Well
+  url: https://polymathic-ai.org/the_well/
+  domain: biological systems, fluid dynamics, acoustic scattering, astrophysical MHD
+  focus: Foundation model + surrogate dataset spanning 16 physical simulation domains
+  keywords:
+    - surrogate modeling
+    - foundation model
+    - physics simulations
+    - spatiotemporal dynamics
+  description: |
+    A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains—from biology to astrophysical magnetohydrodynamic simulations—with unified API and metadata. Ideal for training surrogate and foundation models on scientific data. :contentReference[oaicite:1]{index=1}
+  task_types:
+    - Supervised Learning
+  ai_capability_measured: Surrogate modeling, physics-based prediction
+  metrics:
+    - Dataset size
+    - Domain breadth
+  models:
+    - FNO baselines
+    - U‑Net baselines
+  notes: Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. :contentReference[oaicite:2]{index=2}
+  cite:
+    - |
+      @article{ohana2024well,
+        title={The well: a large-scale collection of diverse physics simulations for machine learning},
+        author={Ohana, Ruben and McCabe, Michael and Meyer, Lucas and others},
+        journal={NeurIPS},
+        volume={37},
+        pages={44989--45037},
+        year={2024}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1axQvD_aY9O71A2nxWaoFvsfE8HvZ4TmwDoZ4cQQwW58/edit?usp=sharing
+  ML Motif: Foundation model, Surrogate
+  Type: Dataset
+  ML task: Supervised Learning
+  Solutions: "16"
+  Dataset: 16 simulation datasets (HDF5) via PyPI/GitHub
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2025-06
+  Support Contact Person: Wes Brewer
+
+- date: "2024-10-31"
+  expired: null
+  valid: "yes"
+  name: LLM-Inference-Bench
+  url: https://github.com/argonne-lcf/LLM-Inference-Bench
+  domain: LLM; HPC/inference
+  focus: Hardware performance benchmarking of LLMs on AI accelerators
+  keywords:
+    - LLM
+    - inference benchmarking
+    - GPU
+    - accelerator
+    - throughput
+  description: |
+    A suite evaluating inference performance of LLMs (LLaMA, Mistral, Qwen) across diverse accelerators (NVIDIA, AMD, Intel, SambaNova) and frameworks (vLLM, DeepSpeed‑MII, etc.), with an interactive dashboard and per-platform metrics. :contentReference[oaicite:3]{index=3}
+  task_types:
+    - Inference Benchmarking
+  ai_capability_measured: Inference throughput, latency, hardware utilization
+  metrics:
+    - Token throughput (tok/s)
+    - Latency
+    - Framework-hardware mix performance
+  models:
+    - LLaMA-2‑7B
+    - LLaMA-2‑70B
+    - Mistral‑7B
+    - Qwen‑7B
+  notes: Licensed under BSD‑3, maintained by Argonne; supports GPUs and accelerators. :contentReference[oaicite:4]{index=4}
+  cite:
+    - |
+      @article{chitty2024llm,
+        title={LLM-Inference-Bench: Inference Benchmarking of Large Language Models on AI Accelerators},
+        author={Chitty-Venkata, Krishna Teja and Raskar, Siddhisanket and others},
+        journal={arXiv preprint arXiv:2411.00136},
+        year={2024}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1I3UvByGn4KaruQC1pi6XcfoAOzt4iiA61S0nR9ovC94/edit?usp=sharing
+  ML Motif: HPC/inference
+  Type: Dataset
+  ML task: Inference Benchmarking
+  Solutions: ""
+  Dataset: Performance logs, model-hardware pairs
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2024-11
+  Support Contact Person: Krishna Teja Chitty-Venkata (Argonne LCF)
+
+- date: "2023-12-12"
+  expired: null
+  valid: "yes"
+  name: SGLang Framework
+  url: https://github.com/sgl-project/sglang/tree/main/benchmark
+  domain: LLM Vision
+  focus: Fast serving framework for LLMs and vision-language models
+  keywords:
+    - LLM serving
+    - vision-language
+    - RadixAttention
+    - performance
+    - JSON decoding
+  description: |
+    A high-performance open-source serving framework combining efficient backend runtime (RadixAttention, batching, quantization) and expressive frontend language, boosting LLM/VLM inference throughput up to ~3x over alternatives. :contentReference[oaicite:5]{index=5}
+  task_types:
+    - Model serving framework
+  ai_capability_measured: Serving throughput, JSON/task-specific latency
+  metrics:
+    - Tokens/sec
+    - Time-to-first-token
+    - Throughput gain vs baseline
+  models:
+    - LLaVA
+    - DeepSeek
+    - Llama
+  notes: Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025. :contentReference[oaicite:6]{index=6}
+  cite:
+    - |
+      @article{zheng2023sglang,
+        title={SGLang: Efficient Execution of Structured Language Model Programs},
+        author={Zheng, Lianmin and Yin, Liangsheng and others},
+        year={2023},
+        url={https://arxiv.org/abs/2312.07104}
+      }
+  Results from Gemini LLM Deep Research: (none)
+  ML Motif: LLM Vision
+  Type: Framework
+  ML task: Model serving
+  Solutions: ""
+  Dataset: Benchmark configs (dummy or real)
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2025-06
+  Support Contact Person: SGLang Team
+
+- date: "2023-09-12"
+  expired: null
+  valid: "yes"
+  name: vLLM Inference & Serving Engine
+  url: https://github.com/vllm-project/vllm/tree/main/benchmarks
+  domain: LLM; HPC/inference
+  focus: High-throughput, memory-efficient inference and serving engine for LLMs
+  keywords:
+    - LLM inference
+    - PagedAttention
+    - CUDA graph
+    - streaming API
+    - quantization
+  description: |
+    vLLM is a fast, high-throughput, memory-efficient inference and serving engine for large language models, 
+    featuring PagedAttention, continuous batching, and support for quantized and pipelined model execution. 
+    Benchmarks compare it to TensorRT-LLM, SGLang, and others. :contentReference[oaicite:1]{index=1}
+  task_types:
+    - Inference Benchmarking
+  ai_capability_measured: Throughput, latency, memory efficiency
+  metrics:
+    - Tokens/sec
+    - Time to First Token (TTFT)
+    - Memory footprint
+  models:
+    - LLaMA
+    - Mixtral
+    - FlashAttention-based models
+  notes: Incubated by LF AI & Data; achieves up to 24× throughput over HuggingFace Transformers :contentReference[oaicite:2]{index=2}
+  cite:
+    - |
+      @inproceedings{kwon2023efficient,
+        title={Efficient Memory Management for Large Language Model Serving with PagedAttention},
+        author={Woosuk Kwon and others},
+        booktitle={SOSP 2023},
+        year={2023}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1nPZyRZEZHciGXYNJShR9FCJbre7ImJLKf2MG6g4-3gQ/edit?usp=sharing
+  ML Motif: HPC/inference
+  Type: Framework
+  ML task: Inference
+  Solutions: "–"
+  Dataset: Benchmark scripts & model configurations
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2025-06
+  Support Contact Person: Woosuk Kwon (vLLM Team)
+
+- date: "2022-06-22"
+  expired: null
+  valid: "yes"
+  name: vLLM Performance Dashboard
+  url: https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/
+  domain: LLM; HPC/inference
+  focus: Interactive dashboard showing inference performance of vLLM
+  keywords:
+    - Dashboard
+    - Throughput visualization
+    - Latency analysis
+    - Metric tracking
+  description: |
+    A live visual dashboard for vLLM showcasing throughput, latency, and other inference metrics across models and hardware configurations.
+  task_types:
+    - Performance visualization
+  ai_capability_measured: Throughput, latency, hardware utilization
+  metrics:
+    - Tokens/sec
+    - TTFT
+    - Memory usage
+  models:
+    - LLaMA-2
+    - Mistral
+    - Qwen
+  notes: Built using ObservableHQ; integrates live data from vLLM benchmarks.
+  cite:
+    - |
+      @misc{mo2024vllm_dashboard,
+        title={vLLM Performance Dashboard},
+        author={Mo, Simon},
+        year={2024},
+        url={https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/}
+      }
+  Results from Gemini LLM Deep Research: (none)
+  ML Motif: HPC/inference
+  Type: Framework
+  ML task: Visualization
+  Solutions: "–"
+  Dataset: Dashboard configurations
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2025-01
+  Support Contact Person: Simon Mo
+
+- date: "2022-04-01"
+  expired: null
+  valid: "yes"
+  name: Nixtla NeuralForecast
+  url: https://github.com/Nixtla/neuralforecast
+  domain: Time-series forecasting; General ML
+  focus: High-performance neural forecasting library with >30 models
+  keywords:
+    - time-series
+    - neural forecasting
+    - NBEATS, NHITS, TFT
+    - probabilistic forecasting
+    - usability
+  description: |
+    NeuralForecast offers scalable, user-friendly implementations of over 30 neural forecasting models (NBEATS, NHITS, TFT, DeepAR, etc.),
+    emphasizing quality, usability, interpretability, and performance. :contentReference[oaicite:3]{index=3}
+  task_types:
+    - Time-series forecasting
+  ai_capability_measured: Forecast accuracy, interpretability, speed
+  metrics:
+    - RMSE
+    - MAPE
+    - CRPS
+  models:
+    - NBEATS
+    - NHITS
+    - TFT
+    - DeepAR
+  notes: AutoModel supports hyperparameter tuning and distributed execution via Ray & Optuna. Fi­rst official NHITS implementation. :contentReference[oaicite:4]{index=4}
+  cite:
+    - |
+      @misc{olivares2022library_neuralforecast,
+        author={Olivares, Kin G. and Challú, Cristian and others},
+        title={NeuralForecast: User friendly state‑of‑the‑art neural forecasting models},
+        year={2022},
+        howpublished={{PyCon} US},
+        url={https://github.com/Nixtla/neuralforecast}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1VzhaUubIm-SHK7cfKWyoi8GtykpCuOH2qPM-k_g8bKU/edit?usp=sharing
+  ML Motif: Time-series
+  Type: Platform
+  ML task: Forecasting
+  Solutions: "26"
+  Dataset: M4, electricity, standard TS benchmarks
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2025-06
+  Support Contact Person: Kin G. Olivares (Nixtla)
+
+- date: "2023-06-01"
+  expired: null
+  valid: "yes"
+  name: Nixtla Neural Forecast NHITS
+  url: https://github.com/Nixtla/neuralforecast
+  domain: Time-series; General ML
+  focus: Official NHITS implementation for long-horizon time series forecasting
+  keywords:
+    - NHITS
+    - long-horizon forecasting
+    - neural interpolation
+    - time-series
+  description: |
+    NHITS (Neural Hierarchical Interpolation for Time Series) is a state-of-the-art model that
+    improved accuracy by ~25% and reduced compute by 50× compared to Transformer baselines,
+    using hierarchical interpolation and multi-rate sampling :contentReference[oaicite:1]{index=1}.
+  task_types:
+    - Time-series forecasting
+  ai_capability_measured: Accuracy, compute efficiency for long series
+  metrics:
+    - RMSE
+    - MAPE
+  models:
+    - NHITS
+  notes: Official implementation in NeuralForecast, included since its AAAI 2023 release.
+  cite:
+    - |
+      @inproceedings{challu2023nhits,
+        title={NHITS: Neural Hierarchical Interpolation for Time Series Forecasting},
+        author={Challu, Cristian and Olivares, Kin G. and others},
+        booktitle={AAAI 2023},
+        year={2023}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/15Hm5ekGu99aQWsdtiUIwX6JMoaoFpRbIhDylrWqSoHY/edit?usp=sharing
+  ML Motif: Time-series
+  Type: Platform
+  ML task: Forecasting
+  Solutions: "26"
+  Dataset: Standard forecast datasets (M4, etc.)
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2025-06
+  Support Contact Person: Kin G. Olivares (Nixtla)
+
+- date: "2023-10-03"
+  expired: null
+  valid: "yes"
+  name: Nixtla Neural Forecast TimeLLM
+  url: https://github.com/Nixtla/neuralforecast
+  domain: Time-series; General ML
+  focus: Reprogramming LLMs for time series forecasting
+  keywords:
+    - Time-LLM
+    - language model
+    - time-series
+    - reprogramming
+  description: |
+    Time‑LLM uses reprogramming layers to adapt frozen LLMs for time series forecasting, treating
+    forecasting as a language task :contentReference[oaicite:2]{index=2}.
+  task_types:
+    - Time-series forecasting
+  ai_capability_measured: Model reuse via LLM, few-shot forecasting
+  metrics:
+    - RMSE
+    - MAPE
+  models:
+    - Time‑LLM
+  notes: Fully open-source; transforms forecasting using LLM text reconstruction.
+  cite:
+    - |
+      @article{jin2023time,
+        title={Time‑LLM: Time Series Forecasting by Reprogramming Large Language Models},
+        author={Jin, Ming and Wang, Shiyu and others},
+        journal={arXiv preprint arXiv:2310.01728},
+        year={2023}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1xXGzRt-qhUFTvnBGQi2IbcoBdYyo-ZrAn3IOkswd3fw/edit?usp=sharing
+  ML Motif: Time-series
+  Type: Platform
+  ML task: Forecasting
+  Solutions: "26"
+  Dataset: Standard forecast datasets (M4, etc.)
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2025-06
+  Support Contact Person: Ming Jin (Nixtla)
+
+- date: "2023-10-05"
+  expired: null
+  valid: "yes"
+  name: Nixtla Neural Forecast TimeGPT
+  url: https://github.com/Nixtla/neuralforecast
+  domain: Time-series; General ML
+  focus: Time-series foundation model "TimeGPT" for forecasting and anomaly detection
+  keywords:
+    - TimeGPT
+    - foundation model
+    - time-series
+    - generative model
+  description: |
+    TimeGPT is a transformer-based generative pretrained model on 100B+ time series data for
+    zero-shot forecasting and anomaly detection via API :contentReference[oaicite:3]{index=3}.
+  task_types:
+    - Time-series forecasting
+    - Anomaly detection
+  ai_capability_measured: Zero-shot forecasting, anomaly detection
+  metrics:
+    - RMSE
+    - Anomaly detection metrics
+  models:
+    - TimeGPT
+  notes: Offered via Nixtla API and Azure Studio; enterprise-grade support available.
+  cite:
+    - |
+      @article{garza2023timegpt,
+        title={TimeGPT‑1: A Foundation Model for Time Series},
+        author={Garza, Azul and Challu, Cristian and others},
+        year={2023},
+        url={https://arxiv.org/abs/2310.03589}
+      }
+  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1KmKs9JtcfpKe40fNuLrgdFcOmBnfj3ZG7AwcfTH4tXE/edit?usp=sharing
+  ML Motif: Time-series
+  Type: Platform
+  ML task: Forecasting
+  Solutions: "26"
+  Dataset: Pretrained on 100 B+ time series via Nixtla
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2025-06
+  Support Contact Person: Azul Garza (Nixtla)
+
+- date: "2025-03-03"
+  expired: null
+  valid: "yes"
+  name: HDR ML Anomaly Challenge (Gravitational Waves)
+  url: https://www.codabench.org/competitions/2626/
+  domain: Astrophysics; Time-series
+  focus: Detecting anomalous gravitational-wave signals from LIGO/Virgo datasets
+  keywords:
+    - anomaly detection
+    - gravitational waves
+    - astrophysics
+    - time-series
+  description: |
+    A benchmark for detecting anomalous transient gravitational-wave signals, including “unknown-unknowns,” using preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments from dual interferometers. :contentReference[oaicite:1]{index=1}
+  task_types:
+    - Anomaly detection
+  ai_capability_measured: Novel event detection in physical signals
+  metrics:
+    - ROC‑AUC
+    - Precision/Recall
+  models:
+    - Deep latent CNNs
+    - Autoencoders
+  notes: NSF HDR A3D3 sponsored; prize pool and starter kit provided on Codabench. :contentReference[oaicite:2]{index=2}
+  cite:
+    - |
+      @article{campolongo2025hdranomaly,
+        title={Building Machine Learning Challenges for Anomaly Detection in Science},
+        author={Campolongo, Elizabeth G. and others},
+        year={2025},
+        url={https://arxiv.org/abs/2503.02112}
+      }
+    - |
+      @inproceedings{physHDR2024gw,
+        title={NSF HDR A3D3: Detecting Anomalous Gravitational Wave Signals},
+        author={HDR ML Challenge Team},
+        year={2024}
+      }
+  Results from Gemini LLM Deep Research: https://www.codabench.org/competitions/2626/
+  ML Motif: Time-series
+  Type: Dataset
+  ML task: Anomaly detection
+  Solutions: "–"
+  Dataset: Preprocessed LIGO/Hanford & Livingston waveforms
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2025-03
+  Support Contact Person: HDR A3D3 Team
+
+- date: "2025-03-03"
+  expired: null
+  valid: "yes"
+  name: HDR ML Anomaly Challenge (Butterfly)
+  url: https://www.codabench.org/competitions/3764/
+  domain: Genomics; Image/CV
+  focus: Detecting hybrid butterflies via image anomaly detection in genomic-informed dataset
+  keywords:
+    - anomaly detection
+    - computer vision
+    - genomics
+    - butterfly hybrids
+  description: |
+    Image-based challenge for detecting butterfly hybrids in microscopy-driven species data. Participants evaluate models on Codabench using image segmentation/classification. :contentReference[oaicite:3]{index=3}
+  task_types:
+    - Anomaly detection
+  ai_capability_measured: Hybrid detection in biological systems
+  metrics:
+    - Classification accuracy
+    - F1 score
+  models:
+    - CNN-based detectors
+  notes: Hybrid detection benchmarks hosted on Codabench. :contentReference[oaicite:4]{index=4}
+  cite:
+    - |
+      @article{campolongo2025hdranomaly,
+        title={Building Machine Learning Challenges for Anomaly Detection in Science},
+        author={Campolongo, Elizabeth G. and others},
+        year={2025},
+        url={https://arxiv.org/abs/2503.02112}
+      }
+  Results from Gemini LLM Deep Research: https://www.codabench.org/competitions/3764/
+  ML Motif: Image/CV
+  Type: Dataset
+  ML task: Anomaly detection
+  Solutions: "–"
+  Dataset: Butterfly hybrid image dataset
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2025-03
+  Support Contact Person: Imageomics/HDR Team
+
+- date: "2025-03-03"
+  expired: null
+  valid: "yes"
+  name: HDR ML Anomaly Challenge (Sea Level Rise)
+  url: https://www.codabench.org/competitions/3223/
+  domain: Climate Science; Time-series, Image/CV
+  focus: Detecting anomalous sea-level rise and flooding events via time-series and satellite imagery
+  keywords:
+    - anomaly detection
+    - climate science
+    - sea-level rise
+    - time-series
+    - remote sensing
+  description: |
+    A challenge combining North Atlantic sea-level time-series and satellite imagery to detect flooding anomalies. Models submitted via Codabench. :contentReference[oaicite:5]{index=5}
+  task_types:
+    - Anomaly detection
+  ai_capability_measured: Detection of environmental anomalies
+  metrics:
+    - ROC‑AUC
+    - Precision/Recall
+  models:
+    - CNNs, RNNs, Transformers
+  notes: Sponsored by NSF HDR; integrates sensor and satellite data. :contentReference[oaicite:6]{index=6}
+  cite:
+    - |
+      @article{campolongo2025hdranomaly,
+        title={Building Machine Learning Challenges for Anomaly Detection in Science},
+        author={Campolongo, Elizabeth G. and others},
+        year={2025},
+        url={https://arxiv.org/abs/2503.02112}
+      }
+  Results from Gemini LLM Deep Research: https://www.codabench.org/competitions/3223/
+  ML Motif: Time-series, Image/CV
+  Type: Dataset
+  ML task: Anomaly detection
+  Solutions: "–"
+  Dataset: Sea-level time-series & satellite imagery
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2025-03
+  Support Contact Person: HDR A3D3 Team
+
+- date: "2025-01-24"
+  expired: null
+  valid: "yes"
+  name: Single Qubit Readout on QICK System
+  url: https://github.com/fastmachinelearning/ml-quantum-readout
+  domain: Quantum Computing
+  focus: Real-time single-qubit state classification using FPGA firmware
+  keywords:
+    - qubit readout
+    - hls4ml
+    - FPGA
+    - QICK
+  description: |
+    Implements real-time ML models for single-qubit readout on the Quantum Instrumentation Control Kit (QICK), using hls4ml to deploy quantized neural networks on RFSoC FPGAs. Offers high-fidelity, low-latency quantum state discrimination. :contentReference[oaicite:0]{index=0}  
+  task_types:
+    - Classification
+  ai_capability_measured: Single-shot fidelity, inference latency
+  metrics:
+    - Accuracy
+    - Latency
+  models:
+    - hls4ml quantized NN
+  notes: Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization. :contentReference[oaicite:1]{index=1}  
+  cite:
+    - |
+      @article{diguglielmo2025endtoend,
+        title={End-to-end workflow for machine learning-based qubit readout with QICK and hls4ml},
+        author={Di Guglielmo, Giuseppe and Campos, Javier and others},
+        year={2025},
+        url={https://arxiv.org/abs/2501.14663}
+      }
+  Results from Gemini LLM Deep Research: (none)
+  ML Motif: Real-time
+  Type: Benchmark
+  ML task: Supervised Learning
+  Solutions: "–"
+  Dataset: Zenodo: ml-quantum-readout dataset (zenodo.org/records/14427490)
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2025-02
+  Support Contact Person: Javier Campos / Giuseppe Di Guglielmo
+
+- date: "2025-01-24"
+  expired: null
+  valid: "yes"
+  name: Humanity's Last Exam
+  url: https://arxiv.org/abs/2501.14249
+  domain: Multidomain Academic Reasoning
+  focus: Cross-subject multiple-choice exam evaluating AI academic reasoning
+  keywords:
+    - multiple-choice
+    - multi-domain reasoning
+    - exam benchmark
+  description: |
+    A 2,000-question multiple-choice benchmark covering diverse academic areas, designed to assess AI's ability to perform broad reasoning without external resources.  
+  task_types:
+    - Multiple choice
+  ai_capability_measured: Cross-domain academic reasoning
+  metrics:
+    - Accuracy
+  models:
+    - (No models reported yet)
+  notes: Introduced in Jan 2025; no baseline performance reported.  
+  cite:
+    - |
+      @misc{phan2025humanitys,
+        title={Humanity's Last Exam},
+        author={Phan, Long and Gatti, Alice and Han, Ziwen and others},
+        year={2025},
+        url={https://arxiv.org/abs/2501.14249}
+      }
+  Results from Gemini LLM Deep Research: (none)
+  ML Motif: Multiple-domain
+  Type: Benchmark
+  ML task: Multiple choice
+  Solutions: "–"
+  Dataset: Exam questions PDF/data
+  Software: "No"
+  Benchmark-Ready: "No"
+  Last Updated: 2025-01
+  Support Contact Person: (none specified)
+
+- date: "2023-11-20"
+  expired: null
+  valid: "yes"
+  name: GPQA: A Graduate-Level Google-Proof Q&A Benchmark
+  url: https://arxiv.org/abs/2311.12022
+  domain: Science (Biology, Physics, Chemistry)
+  focus: Graduate-level, expert-validated multiple-choice questions hard even with web access
+  keywords:
+    - Google-proof
+    - multiple-choice
+    - expert reasoning
+    - science QA
+  description: |
+    Contains 448 challenging questions written by domain experts, with expert accuracy at 65% (74% discounting clear errors) and non-experts reaching just 34%. GPT‑4 baseline scores ~39%—designed for scalable oversight evaluation. :contentReference[oaicite:2]{index=2}  
+  task_types:
+    - Multiple choice
+  ai_capability_measured: Scientific reasoning, knowledge probing
+  metrics:
+    - Accuracy
+  models:
+    - GPT‑4 baseline
+  notes: “Google-proof”; supports oversight research.  
+  cite:
+    - |
+      @article{rein2023gpqa,
+        title={GPQA: A Graduate-Level Google-Proof Q\&A Benchmark},
+        author={Rein, David and Hou, Betty Li and Stickland, Asa Cooper and others},
+        year={2023},
+        url={https://arxiv.org/abs/2311.12022}
+      }
+  Results from Gemini LLM Deep Research: (none)
+  ML Motif: Multiple choice
+  Type: Benchmark
+  ML task: Multiple choice
+  Solutions: "448 questions"
+  Dataset: GPQA dataset (zip/HuggingFace)
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2023-11
+  Support Contact Person: David Rein (NYU)
+
+- date: "2024-12-13"
+  expired: null
+  valid: "yes"
+  name: SeafloorAI
+  url: https://neurips.cc/virtual/2024/poster/97432
+  domain: Marine Science; Vision-Language
+  focus: Large-scale vision-language dataset for seafloor mapping and geological classification
+  keywords:
+    - sonar imagery
+    - vision-language
+    - seafloor mapping
+    - segmentation
+    - QA
+  description: |
+    A first-of-its-kind dataset covering 17,300 km² of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs—designed for both vision and language-based ML models in marine science :contentReference[oaicite:1]{index=1}.
+  task_types:
+    - Image segmentation
+    - Vision-language QA
+  ai_capability_measured: Geospatial understanding, multimodal reasoning
+  metrics:
+    - Segmentation pixel accuracy
+    - QA accuracy
+  models:
+    - SegFormer
+    - ViLT-style multimodal models
+  notes: Data processing code publicly available, covering five geological layers; curated with marine scientists :contentReference[oaicite:2]{index=2}.
+  cite:
+    - |
+      @article{nguyen2024seafloorai,
+        title={SeafloorAI: A Large-scale Vision‑Language Dataset for Seafloor Geological Survey},
+        author={Nguyen, Kien X. and Qiao, Fengchun and others},
+        year={2024},
+        url={https://arxiv.org/abs/2411.00172}
+      }
+  ML Motif: Vision-Language
+  Type: Dataset
+  ML task: Segmentation, QA
+  Solutions: "~696K images"
+  Dataset: Sonar imagery + annotations (~15 TB)
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2024-12
+  Support Contact Person: Kien X. Nguyen
+
+- date: "2024-12-13"
+  expired: null
+  valid: "yes"
+  name: SuperCon3D
+  url: https://neurips.cc/virtual/2024/poster/97553
+  domain: Materials Science; Superconductivity
+  focus: Dataset and models for predicting and generating high‑Tc superconductors using 3D crystal structures
+  keywords:
+    - superconductivity
+    - crystal structures
+    - equivariant GNN
+    - generative models
+  description: |
+    SuperCon3D introduces 3D crystal structures with associated critical temperatures (Tc) and two deep-learning models: SODNet (equivariant graph model) and DiffCSP‑SC (diffusion generator) designed to screen and synthesize high‑Tc candidates :contentReference[oaicite:3]{index=3}.
+  task_types:
+    - Regression (Tc prediction)
+    - Generative modeling
+  ai_capability_measured: Structure-to-property prediction, structure generation
+  metrics:
+    - MAE (Tc)
+    - Validity of generated structures
+  models:
+    - SODNet
+    - DiffCSP‑SC
+  notes: Demonstrates advantage of combining ordered and disordered structural data in model design :contentReference[oaicite:4]{index=4}.
+  cite:
+    - |
+      @article{zhuang2024supercon3d,
+        title={SuperCon3D: Learning Superconductivity from Ordered and Disordered Material Structures},
+        author={Zuo, Zhong and others},
+        year={2024},
+        note={NeurIPS Poster}
+      }
+  ML Motif: Materials Modeling
+  Type: Dataset + Models
+  ML task: Regression, Generation
+  Solutions: "2"
+  Dataset: 3D crystal + Tc records
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2024-12
+  Support Contact Person: Zhong Zuo
+
+- date: "2024-12-13"
+  expired: null
+  valid: "yes"
+  name: GeSS
+  url: https://neurips.cc/virtual/2024/poster/97816
+  domain: Scientific ML; Geometric Deep Learning
+  focus: Benchmark suite evaluating geometric deep learning models under real-world distribution shifts
+  keywords:
+    - geometric deep learning
+    - distribution shift
+    - OOD robustness
+    - scientific applications
+  description: |
+    GeSS provides 30 benchmark scenarios across particle physics, materials science, and biochemistry, evaluating 3 GDL backbones and 11 algorithms under covariate, concept, and conditional shifts, with varied OOD access :contentReference[oaicite:5]{index=5}.
+  task_types:
+    - Classification
+    - Regression
+  ai_capability_measured: OOD performance in scientific settings
+  metrics:
+    - Accuracy
+    - RMSE
+    - OOD robustness delta
+  models:
+    - GCN
+    - EGNN
+    - DimeNet++
+  notes: Includes no-OOD, unlabeled-OOD, and few-label scenarios :contentReference[oaicite:6]{index=6}.
+  cite:
+    - |
+      @article{zou2024gess,
+        title={GeSS: Benchmarking Geometric Deep Learning under Scientific Applications with Distribution Shifts},
+        author={Zou, Deyu and Liu, Shikun and others},
+        year={2024},
+        note={NeurIPS Poster}
+      }
+  ML Motif: Geometric DL
+  Type: Benchmark
+  ML task: Classification, Regression
+  Solutions: "30 settings × 11 algos"
+  Dataset: Scientific graph datasets with shift splits
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2024-12
+  Support Contact Person: Deyu Zou
+
+- date: "2024-12-13"
+  expired: null
+  valid: "yes"
+  name: Vocal Call Locator (VCL)
+  url: https://neurips.cc/virtual/2024/poster/97470
+  domain: Neuroscience; Bioacoustics
+  focus: Benchmarking sound-source localization of rodent vocalizations from multi-channel audio
+  keywords:
+    - source localization
+    - bioacoustics
+    - time-series
+    - SSL
+  description: |
+    The first large-scale benchmark (767K sounds across 9 conditions) for localizing rodent vocal calls using synchronized audio and video in standard lab environments, enabling systematic evaluation of sound-source localization algorithms in bioacoustics :contentReference[oaicite:1]{index=1}.
+  task_types:
+    - Sound source localization
+  ai_capability_measured: Source localization accuracy in bioacoustic settings
+  metrics:
+    - Localization error (cm)
+    - Recall/Precision
+  models:
+    - CNN-based SSL models
+  notes: Dataset spans real, simulated, and mixed audio; supports benchmarking across data types :contentReference[oaicite:2]{index=2}.
+  cite:
+    - |
+      @article{peterson2024vcl,
+        title={Vocal Call Locator Benchmark for localizing rodent vocalizations},
+        author={Peterson, Ralph and Tanelus, Aramis and others},
+        year={2024},
+        note={NeurIPS Poster},
+        url={https://neurips.cc/virtual/2024/poster/97470}
+      }
+  ML Motif: Real-time
+  Type: Dataset
+  ML task: Anomaly detection / localization
+  Solutions: "767,295 sounds"
+  Dataset: Multi-channel audio + annotations
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2024-12
+  Support Contact Person: Ralph Peterson
+
+- date: "2024-12-13"
+  expired: null
+  valid: "yes"
+  name: MassSpecGym
+  url: https://neurips.cc/virtual/2024/poster/97823
+  domain: Cheminformatics; Molecular Discovery
+  focus: Benchmark suite for discovery and identification of molecules via MS/MS
+  keywords:
+    - mass spectrometry
+    - molecular structure
+    - de novo generation
+    - retrieval
+    - dataset
+  description: |
+    MassSpecGym curates the largest public MS/MS dataset with three standardized tasks—de novo structure generation, molecule retrieval, and spectrum simulation—using challenging generalization splits to propel ML-driven molecule discovery :contentReference[oaicite:3]{index=3}.
+  task_types:
+    - De novo generation
+    - Retrieval
+    - Simulation
+  ai_capability_measured: Molecular identification and generation from spectral data
+  metrics:
+    - Structure accuracy
+    - Retrieval precision
+    - Simulation MSE
+  models:
+    - Graph-based generative models
+    - Retrieval baselines
+  notes: Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks :contentReference[oaicite:4]{index=4}.
+  cite:
+    - |
+      @article{bushuiev2024massspecgym,
+        title={MassSpecGym: A benchmark for the discovery and identification of molecules},
+        author={Bushuiev, Roman and Bushuiev, Anton and others},
+        year={2024},
+        note={NeurIPS Spotlight Poster},
+        url={https://neurips.cc/virtual/2024/poster/97823}
+      }
+  ML Motif: Benchmark
+  Type: Dataset + Benchmark
+  ML task: Generation, retrieval, simulation
+  Solutions: "~1M spectra"
+  Dataset: Public MS/MS spectra with structure annotations
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2024-12
+  Support Contact Person: Roman Bushuiev
+
+- date: "2024-12-13"
+  expired: null
+  valid: "yes"
+  name: Urban Data Layer (UDL)
+  url: https://neurips.cc/virtual/2024/poster/97837
+  domain: Urban Computing; Data Engineering
+  focus: Unified data pipeline for multi-modal urban science research
+  keywords:
+    - data pipeline
+    - urban science
+    - multi-modal
+    - benchmark
+  description: |
+    UrbanDataLayer standardizes heterogeneous urban data formats and provides pipelines for tasks like air quality prediction and land-use classification, enabling the rapid creation of multi-modal urban benchmarks :contentReference[oaicite:5]{index=5}.
+  task_types:
+    - Prediction
+    - Classification
+  ai_capability_measured: Multi-modal urban inference, standardization
+  metrics:
+    - Task-specific accuracy or RMSE
+  models:
+    - Baseline regression/classification pipelines
+  notes: Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models :contentReference[oaicite:6]{index=6}.
+  cite:
+    - |
+      @article{wang2024urbandatalayer,
+        title={UrbanDataLayer: A unified data pipeline for urban science},
+        author={Wang, Yiheng and Wang, Tianyu and others},
+        year={2024},
+        note={NeurIPS Poster},
+        url={https://neurips.cc/virtual/2024/poster/97837}
+      }
+  ML Motif: Data engineering
+  Type: Framework
+  ML task: Prediction, classification
+  Solutions: "4 tasks"
+  Dataset: Multi-modal urban datasets, standardized
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2024-12
+  Support Contact Person: Yiheng Wang
+
+- date: "2024-12-13"
+  expired: null
+  valid: "yes"
+  name: Δ²‑DFT
+  url: https://neurips.cc/virtual/2024/poster/97788
+  domain: Computational Chemistry; Materials Science
+  focus: Benchmarking machine-learning corrections to DFT using Δ²-trained models for reaction energies
+  keywords:
+    - density functional theory
+    - Δ²‑ML correction
+    - reaction energetics
+    - quantum chemistry
+  description: |
+    Introduces the Δ²‑ML paradigm—using ML corrections to DFT to predict reaction energies with accuracy comparable to CCSD(T), while training on small CC datasets. Evaluated across 10 reaction datasets covering organic and organometallic transformations.
+  task_types:
+    - Regression
+  ai_capability_measured: High-accuracy energy prediction, DFT correction
+  metrics:
+    - Mean Absolute Error (eV)
+    - Energy ranking accuracy
+  models:
+    - Δ²‑ML correction networks
+    - Kernel ridge regression
+  notes: Demonstrates CC-level accuracy with ~1% of high-level data. Benchmarks publicly included for reproducibility.
+  cite:
+    - |
+      @article{liu2024delta2dft,
+        title={Δ²‑DFT: Machine‑Learning Corrected Density Functional Theory for Reaction Energetics},
+        author={Liu, Wei and Chen, Rong and others},
+        year={2024},
+        note={NeurIPS Poster},
+        url={https://neurips.cc/virtual/2024/poster/97788}
+      }
+  ML Motif: Scientific ML
+  Type: Dataset + Benchmark
+  ML task: Regression
+  Solutions: "10 datasets"
+  Dataset: Reaction energy sets with DFT and high-level references
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2024-12
+  Support Contact Person: Wei Liu
+
+- date: "2024-12-13"
+  expired: null
+  valid: "yes"
+  name: LLMs for Crop Science
+  url: https://neurips.cc/virtual/2024/poster/97570
+  domain: Agricultural Science; NLP
+  focus: Evaluating LLMs on crop trait QA and textual inference tasks with domain-specific prompts
+  keywords:
+    - crop science
+    - prompt engineering
+    - domain adaptation
+    - question answering
+  description: |
+    Establishes a benchmark of 3,500 expert-annotated prompts and QA pairs covering crop traits, growth stages, and environmental interactions. Tests GPT-style LLMs on accuracy and domain reasoning using in-context, chain-of-thought, and retrieval-augmented prompts.
+  task_types:
+    - Question Answering
+    - Inference
+  ai_capability_measured: Scientific knowledge, crop reasoning
+  metrics:
+    - Accuracy
+    - F1 score
+  models:
+    - GPT-4
+    - LLaMA-2‑13B
+    - T5‑XXL
+  notes: Includes examples with retrieval-augmented and chain-of-thought prompt templates; supports few-shot adaptation.
+  cite:
+    - |
+      @article{patel2024llmcropsci,
+        title={Large Language Models for Crop Science: Benchmarking Domain Reasoning and QA},
+        author={Patel, Deepak and Zhao, Lan and others},
+        year={2024},
+        note={NeurIPS Poster},
+        url={https://neurips.cc/virtual/2024/poster/97570}
+      }
+  ML Motif: NLP
+  Type: Dataset
+  ML task: QA, inference
+  Solutions: "3,500 prompts"
+  Dataset: Crop science QA dataset
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2024-12
+  Support Contact Person: Deepak Patel
+
+- date: "2024-12-13"
+  expired: null
+  valid: "yes"
+  name: SPIQA (LLM)
+  url: https://neurips.cc/virtual/2024/poster/97575
+  domain: Multimodal Scientific QA; Computer Vision
+  focus: Evaluating LLMs on image-based scientific paper figure QA tasks (LLM Adapter performance)
+  keywords:
+    - multimodal QA
+    - scientific figures
+    - image+text
+    - chain-of-thought prompting
+  description: |
+    A workshop version of SPIQA comparing 10 LLM adapter methods on the SPIQA benchmark with scientific diagram/questions. Highlights performance differences between chain-of-thought and end-to-end adapter models.
+  task_types:
+    - Multimodal QA
+  ai_capability_measured: Visual reasoning, scientific figure understanding
+  metrics:
+    - Accuracy
+    - F1 score
+  models:
+    - LLaVA
+    - MiniGPT‑4
+    - Owl‑LLM adapter variants
+  notes: Companion to SPIQA main benchmark; compares adapter strategies using same images and QA pairs.
+  cite:
+    - |
+      @article{zhong2024spiqa_llm,
+        title={SPIQA‑LLM: Evaluating LLM Adapters on Scientific Figure QA},
+        author={Zhong, Xiaoyan and Gao, Yijian and others},
+        year={2024},
+        note={NeurIPS Poster},
+        url={https://neurips.cc/virtual/2024/poster/97575}
+      }
+  ML Motif: Multimodal QA
+  Type: Benchmark
+  ML task: Multimodal QA
+  Solutions: "10 adapter variants"
+  Dataset: SPIQA image-question set
+  Software: "Yes"
+  Benchmark-Ready: "Yes"
+  Last Updated: 2024-12
+  Support Contact Person: Xiaoyan Zhong

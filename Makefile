@@ -1,6 +1,7 @@
 # makefile that will create all the content
 
 FILES=source/benchmarks.yaml
+SCRIPT=bin/generate.py
 
 COLUMNS=date,name,domain,focus,keyword,task_types,metrics,models,cite
 
@@ -13,16 +14,16 @@ content: md tex
 	echo DONE
 
 md:
-	python bin/generate.py --files ${FILES}  --format=md --out=./content --index
+	python ${SCRIPT} --files ${FILES}  --format=md --out=./content --index
 
 tex:
-	python bin/generate.py --files ${FILES} --format=tex --out=./content --standalone --columns=${COLUMNS}
+	python ${SCRIPT} --files ${FILES} --format=tex --out=./content --standalone --columns=${COLUMNS}
 	cd content/tex; bibtool -s -i benchmarks.bib -o tmp.bib
 	cd content/tex; mv tmp.bib benchmarks.bib
 
 
 standalone:
-	python bin/generate.py --files=${FILES} --format=tex --standalone --out-dir ./content
+	python ${SCRIPT} --files=${FILES} --format=tex --standalone --out-dir ./content
 
 # produce file content/tex/benchmarks.pdf
 pdf2: tex 

@@ -1,6 +1,9 @@
 # makefile that will create all the content
 
-FILES=source/benchmarks.yaml source/benchmarks-addon.yaml 
+# FILES=source/benchmarks.yaml
+# FILES=source/benchmarks-addon.yaml
+FILES=source/benchmarks.yaml source/benchmarks-addon.yaml
+
 SCRIPT=bin/generate-fermi.py
 
 COLUMNS=date,name,domain,focus,keyword,task_types,metrics,models,cite
@@ -24,6 +27,12 @@ tex:
 
 standalone:
 	python ${SCRIPT} --files=${FILES} --format=tex --standalone --out-dir ./content
+
+pdf3: 
+	cd content/tex; pdflatex benchmarks
+	# cd content/tex; biber benchmarks
+	cd content/tex; pdflatex benchmarks
+	cd content/tex; pdflatex benchmarks
 
 # produce file content/tex/benchmarks.pdf
 pdf2: tex 

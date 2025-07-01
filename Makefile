@@ -1,7 +1,7 @@
 # makefile that will create all the content
 
-FILES=source/benchmarks.yaml
-SCRIPT=bin/generate.py
+FILES=source/benchmarks.yaml source/benchmarks_addition.yaml 
+SCRIPT=bin/generate-fermi.py
 
 COLUMNS=date,name,domain,focus,keyword,task_types,metrics,models,cite
 

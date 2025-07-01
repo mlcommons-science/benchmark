@@ -1,8 +1,8 @@
 # makefile that will create all the content
 
-# FILES=source/benchmarks.yaml
-# FILES=source/benchmarks-addon.yaml
-FILES=source/benchmarks.yaml source/benchmarks-addon.yaml
+FILES=source/benchmarks.yaml
+FILES2=source/benchmarks-addon.yaml
+FILES3=source/benchmarks.yaml source/benchmarks-addon.yaml
 
 SCRIPT=bin/generate-fermi.py
 
@@ -19,8 +19,17 @@ content: md tex
 md:
 	python ${SCRIPT} --files ${FILES}  --format=md --out=./content --index
 
+md-fermi:
+	python ${SCRIPT} --files ${FILES}  --format=md --out=./content --index
+
 tex:
 	python ${SCRIPT} --files ${FILES} --format=tex --out=./content --standalone --columns=${COLUMNS}
+	# python ${SCRIPT} --files ${FILES} --format=tex --out=./content --standalone --columns=${COLUMNS}
+	cd content/tex; bibtool -s -i benchmarks.bib -o tmp.bib
+	cd content/tex; mv tmp.bib benchmarks.bib
+
+tex-fermi:
+	python ${SCRIPT} --tex=benchmarks.tex --files ${FILES3} --format=tex --out=./content --standalone --columns=${COLUMNS}
 	cd content/tex; bibtool -s -i benchmarks.bib -o tmp.bib
 	cd content/tex; mv tmp.bib benchmarks.bib
 
@@ -28,18 +37,6 @@ tex:
 standalone:
 	python ${SCRIPT} --files=${FILES} --format=tex --standalone --out-dir ./content
 
-pdf3: 
-	cd content/tex; pdflatex benchmarks
-	# cd content/tex; biber benchmarks
-	cd content/tex; pdflatex benchmarks
-	cd content/tex; pdflatex benchmarks
-
-# produce file content/tex/benchmarks.pdf
-pdf2: tex 
-	cd content/tex; pdflatex benchmarks
-	cd content/tex; biber benchmarks
-	cd content/tex; pdflatex benchmarks
-	cd content/tex; pdflatex benchmarks
 
 pdf: tex
 	cd content/tex; latexmk -pdf -silent benchmarks.tex
@@ -53,3 +50,7 @@ view:
 	open content/tex/benchmarks.pdf
 
 debug: tex pdf view
+
+check:
+	python -c "import yaml, sys; print(yaml.safe_load(sys.stdin))" < source/benchmarks.yaml
+	python -c "import yaml, sys; print(yaml.safe_load(sys.stdin))" < source/benchmarks-addon.yaml

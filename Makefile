@@ -7,6 +7,7 @@ FILES3=source/benchmarks.yaml source/benchmarks-addon2.yaml
 SCRIPT=bin/generate-fermi.py
 
 COLUMNS=date,name,domain,focus,keyword,task_types,metrics,models,cite
+COLUMNS2=date,name,domain,focus,keyword,task_types,metrics,models,cite,
 
 .PHONY: all content single tex pdf
 

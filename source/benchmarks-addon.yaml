@@ -1242,7 +1242,7 @@
     - UnifiedQA
     - GPT-2
     - GPT-3
-  notes: Human performance: 88.9%; BERT baseline: 56.0%; popular evaluation for LLMs
+  notes: "Human performance- 88.9%; BERT baseline- 56.0%; popular evaluation for LLMs"
   cite:
     - |
       @misc{talmor2019commonsenseqaquestionansweringchallenge,
@@ -1365,13 +1365,13 @@
   Type: Benchmark
   ML task: Supervised Learning
   Solutions: '2'
-  Dataset: OpenML: hls4ml_lhc_jets_hlf (https://www.openml.org/d/42468), JetClass (https://zenodo.org/record/6619768)
+  Dataset: "OpenML: hls4ml_lhc_jets_hlf (https://www.openml.org/d/42468), JetClass (https://zenodo.org/record/6619768)"
   Software: Yes
   Benchmark-Ready: Yes
   Last Updated: 2024-05
   Support Contact Person: Jules Muhizi
 
-  - date: "2024-05-01"
+- date: "2024-05-01"
   expired: null
   valid: "yes"
   name: Jet Classification
@@ -1411,7 +1411,7 @@
   Type: Benchmark
   ML task: Supervised Learning
   '# Solutions': '2'
-  Dataset: OpenML: hls4ml_lhc_jets_hlf (https://www.openml.org/d/42468), JetClass (https://zenodo.org/record/6619768)
+  Dataset: "OpenML: hls4ml_lhc_jets_hlf (https://www.openml.org/d/42468), JetClass (https://zenodo.org/record/6619768)"
   Software: Yes
   Benchmark-Ready: Yes
   Last Updated: 2024-05
@@ -1510,7 +1510,7 @@
   Type: Benchmark
   ML task: Reinforcement Learning
   '# Solutions': '0'
-  Dataset: BOOSTR: https://arxiv.org/pdf/2101.08359
+  Dataset: "BOOSTR: https://arxiv.org/pdf/2101.08359"
   Software: in progress
   Benchmark-Ready: in progress
   Last Updated: 2024-05
@@ -2123,7 +2123,7 @@
   Type: Framework
   ML task: NA
   Solutions: "3"
-  Dataset: Zenodo stores: background + 3 black-box signal sets (1M events each)
+  Dataset: "Zenodo stores: background + 3 black-box signal sets (1M events each)"
   Software: "Yes"
   Benchmark-Ready: "Yes"
   Last Updated: 2021-07
@@ -2430,7 +2430,7 @@
   models:
     - FNO baselines
     - U‑Net baselines
-  notes: Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. :contentReference[oaicite:2]{index=2}
+  notes: "Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. :contentReference[oaicite:2]{index=2}"
   cite:
     - |
       @article{ohana2024well,
@@ -2988,7 +2988,7 @@
   Type: Benchmark
   ML task: Supervised Learning
   Solutions: "–"
-  Dataset: Zenodo: ml-quantum-readout dataset (zenodo.org/records/14427490)
+  Dataset: "Zenodo: ml-quantum-readout dataset (zenodo.org/records/14427490)"
   Software: "Yes"
   Benchmark-Ready: "Yes"
   Last Updated: 2025-02
@@ -3037,7 +3037,7 @@
 - date: "2023-11-20"
   expired: null
   valid: "yes"
-  name: GPQA: A Graduate-Level Google-Proof Q&A Benchmark
+  name: "GPQA: A Graduate-Level Google-Proof Q&A Benchmark"
   url: https://arxiv.org/abs/2311.12022
   domain: Science (Biology, Physics, Chemistry)
   focus: Graduate-level, expert-validated multiple-choice questions hard even with web access

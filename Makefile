@@ -24,7 +24,7 @@ tex-old:
 	cd content/tex; mv tmp.bib benchmarks.bib
 
 tex:
-	python ${SCRIPT} --tex=benchmarks.tex --files ${FILES} --format=tex --out=./content --standalone --columns=${COLUMNS}
+	python ${SCRIPT} --files ${FILES} --format=tex --out=./content --standalone --columns=${COLUMNS} # --tex=benchmarks.tex
 	cd content/tex; bibtool -s -i benchmarks.bib -o tmp.bib
 	cd content/tex; mv tmp.bib benchmarks.bib
 

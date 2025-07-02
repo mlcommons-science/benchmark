@@ -1,17 +1,8 @@
 # makefile that will create all the content
 
-FILES=source/benchmarks.yaml
-
-#source/benchmarks-addon.yaml 
-#SCRIPT=bin/generate-fermi.py
+FILES=source/benchmarks.yaml source/benchmarks-addon.yaml
 
 SCRIPT=bin/generate.py
-
-FILES2=source/benchmarks-addon.yaml
-FILES3=source/benchmarks.yaml source/benchmarks-addon.yaml
-
-
-
 
 COLUMNS=date,name,domain,focus,keyword,task_types,metrics,models,cite
 
@@ -26,17 +17,14 @@ content: md tex
 md:
 	python ${SCRIPT} --files ${FILES}  --format=md --out=./content --index
 
-md-fermi:
-	python ${SCRIPT} --files ${FILES}  --format=md --out=./content --index
-
-tex:
+tex-old:
 	python ${SCRIPT} --files ${FILES} --format=tex --out=./content --standalone --columns=${COLUMNS}
 	# python ${SCRIPT} --files ${FILES} --format=tex --out=./content --standalone --columns=${COLUMNS}
 	cd content/tex; bibtool -s -i benchmarks.bib -o tmp.bib
 	cd content/tex; mv tmp.bib benchmarks.bib
 
-tex-fermi:
-	python ${SCRIPT} --tex=benchmarks.tex --files ${FILES3} --format=tex --out=./content --standalone --columns=${COLUMNS}
+tex:
+	python ${SCRIPT} --tex=benchmarks.tex --files ${FILES} --format=tex --out=./content --standalone --columns=${COLUMNS}
 	cd content/tex; bibtool -s -i benchmarks.bib -o tmp.bib
 	cd content/tex; mv tmp.bib benchmarks.bib
 
@@ -59,5 +47,4 @@ view:
 debug: tex pdf view
 
 check:
-	python -c "import yaml, sys; print(yaml.safe_load(sys.stdin))" < source/benchmarks.yaml
-	python -c "import yaml, sys; print(yaml.safe_load(sys.stdin))" < source/benchmarks-addon.yaml
+	python ${SCRIPT} --files ${FILES} --check --format=tex 

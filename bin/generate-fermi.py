@@ -43,14 +43,112 @@ def load_yaml_file(file_path: str) -> list[dict]:
         else:
             raise ValueError(f"Unsupported YAML format in {file_path}")
 
-def merge_yaml_files(file_paths: list[str]) -> list[dict]:
-    records = []
-    for path in file_paths:
-        records.extend(load_yaml_file(path))
-    return records
-
 def sanitize_filename(name: str) -> str:
     return re.sub(r'[^\w\-_\. ]', '_', name).replace(' ', '_').lower()
+
+
+def merge_yaml_files(file_paths: list[str], disable_error_messages: bool = False) -> list[dict]:
+    """
+    Combines the contents of the files at `file_paths` into a single dictionary.
+    Each key in the dictionary is a fields in the YAML files (i.e. name, expired, cite).
+
+    If any duplicate "name" fields are found, the function prints an error message and
+    does not add the duplicate to the output.
+
+    Parameters:
+        file_paths: file paths of the YAMLs to merge
+        disable_error_messages: True if not printing error messages
+    Returns:
+        list of dictionaries representing combines YAML file entries
+    """
+    records = []
+    seen_names = set()
+    for path in file_paths:
+
+        for record in load_yaml_file(path):
+            name = record.get("name")
+            if name:
+
+                if name in seen_names and not disable_error_messages:
+                        print(f"\033[91mERROR: \"{name}\" is a duplicate. Duplicated names are not allowed\033[00m")
+                else:
+                    seen_names.add(name)
+                    records.append(record)
+
+    return records
+
+
+def escape_latex(text):
+    if not isinstance(text, str):
+        text = str(text)
+    return (
+        text.replace("\\", "\\textbackslash{}").replace("&", "\\&").replace("%", " percent")
+            .replace("_", "\\_").replace("#", "\\#").replace("{", "\\{").replace("}", "\\}")
+            .replace("^", "\\^{}").replace("~", "\\~{}").replace("$", "\\$")
+    )
+
+def extract_cite_label(cite_entry: str) -> str:
+    match = re.match(r'@\w+\{([^,]+),', cite_entry.strip())
+    return match.group(1) if match else ""
+
+def extract_cite_url(cite_entry: str) -> str:
+    match = re.search(r'url\s*=\s*[{"]([^}"]+)[}"]', cite_entry)
+    return match.group(1) if match else ""
+
+
+def unique_in_list(arr: list):
+    seen = set()
+    for item in arr:
+        if item in seen:
+            return True  # Duplicate found
+        seen.add(item)
+    return False  # No duplicates found
+
+def check_unique_names(yaml_data: list[dict]) -> None:
+    found = set()
+    for entry in yaml_data:
+        value = entry.get('name')
+        if value in found:
+            print(f"\033[91mERROR: {value} is a duplicate name\033[00m")
+        found.add(value)
+
+def check_unique_citations(yaml_data: list[dict]) -> None:
+    found = set()
+    for entry in yaml_data:
+        value = str(entry.get('cite'))
+        if value in found:
+            print(f"\033[91mERROR: {value} is a duplicate citation\033[00m")
+        found.add(value)
+
+def check_unique_citation_labels(yaml_data: list[dict]) -> None:
+    #Read label, not the entire citation
+    found = set()
+    for entry in yaml_data:
+        value = entry.get('cite')
+        label = extract_cite_label(value)
+        if label in found:
+            print(f"\033[91mERROR: {label} is a duplicate citation label\033[00m")
+        found.add(label)
+
+def check_yaml(file_paths: list[str]) -> None:
+
+    #Check if YAML files are syntactically correct
+    for path in file_paths:
+        try:
+            content = yaml.safe_load(path)
+        except Exception as e:
+            print(e)
+            sys.exit(1)
+
+    #Check if all names of entries are unique
+    contents = merge_yaml_files(file_paths)
+    check_unique_names(contents)
+
+    #Check if all citations are (string-wise) unique
+    check_unique_citations(contents)
+
+    #Check if all citation labels are unique
+    check_unique_citation_labels(contents)
 
 
 def get_bibtex(cell_val: str, author_limit: int) -> str:
@@ -207,48 +305,60 @@ def write_md(input_filepaths: list[str], output_dir: str, columns: List[tuple], 
                 row_cells.append(val)
             md_file.write('| ' + ' | '.join(row_cells) + ' |\n')
 
-def escape_latex(text):
-    if not isinstance(text, str):
-        text = str(text)
-    return (
-        text.replace("\\", "\\textbackslash{}").replace("&", "\\&").replace("%", " percent")
-            .replace("_", "\\_").replace("#", "\\#").replace("{", "\\{").replace("}", "\\}")
-            .replace("^", "\\^{}").replace("~", "\\~{}").replace("$", "\\$")
-    )
 
-def extract_cite_label(cite_entry: str) -> str:
-    match = re.match(r'@\w+\{([^,]+),', cite_entry.strip())
-    return match.group(1) if match else ""
-
-def extract_cite_url(cite_entry: str) -> str:
-    match = re.search(r'url\s*=\s*[{"]([^}"]+)[}"]', cite_entry)
-    return match.group(1) if match else ""
-
-def generate_bibtex(input_filepaths: List[str], output_dir: str) -> None:
+def generate_bibtex(input_filepaths: list[str], output_dir: str) -> None:
+    """
+    Combines the entries in `input_filepaths` and writes a BibTeX bibliography to `output_dir`/benchmarks.bib.
+    Prints any error messages to the standard output.
+    """
+  
     os.makedirs(output_dir, exist_ok=True)
     entries = []
-    for filepath in input_filepaths:
-        with open(filepath, 'r', encoding='utf-8') as f:
-            records = yaml.safe_load(f)
-        if not isinstance(records, list):
-            continue
-        for record in records:
-            cite_entries = record.get("cite", [])
-            if cite_entries:
-                entries.extend(cite_entries)
+    found_labels = set()
+    found_entries = set()
+    found_names = set()
+
+    records = merge_yaml_files(input_filepaths, disable_error_messages=True)
+    for record in records:
+
+        #Extract citations
+        record_cite_entries = record.get("cite", [])
+        name = record.get("name", [])
+
+        if name and record_cite_entries:
+            current_cite_entry = record_cite_entries[0]
+
+            #Check for error: When citation label in the citation is the same as another with another entry
+            if extract_cite_label(current_cite_entry.lower()) in found_labels:
+                print(f"\033[91mERROR: Entry with name \"{name}\" has the duplicate citation label \"{extract_cite_label(current_cite_entry)}\" (case-insensitive) \033[00m")
+
+            #Check for error: Cite in different entry is the same, but recorded under a different name in the YAML file
+            elif (str(current_cite_entry) in found_entries) and (name in found_names):
+                pass
+                #This error condition was checked in `merge_yaml_files`
+
+            #All checks passed- OK to write
+            else:
+                found_entries.add(str(current_cite_entry))
+                found_labels.add(extract_cite_label(current_cite_entry.lower()))
+                found_names.add(name)
+
+                entries.extend(record_cite_entries)
+
     with open(os.path.join(output_dir, "benchmarks.bib"), 'w', encoding='utf-8') as bib_file:
         for entry in entries:
             bib_file.write(entry.strip() + "\n\n")
 
 
-
 def write_individual_latex_tables(input_filepaths: List[str], output_dir: str, columns: List[tuple], author_limit: int | None = 10) -> None:
     """
     Writes each benchmark entry as its own LaTeX table in separate .tex files.
+
+    THIS FUNCTION DOES NOT PRINT ERRORS WHEN RECEIVING DUPLICATE ENTRIES.
     """
 
     os.makedirs(output_dir, exist_ok=True)
-    entries = merge_yaml_files(input_filepaths)
+    entries = merge_yaml_files(input_filepaths, disable_error_messages=True)
 
     for i, entry in enumerate(entries):
         entry_name = entry.get("name", f"entry_{i}")
@@ -277,29 +387,14 @@ def write_individual_latex_tables(input_filepaths: List[str], output_dir: str, c
             f.write("\\end{tabular}\n\\end{table}\n")
 
 
-def write_latex(input_filepaths: list[str], output_filepath: str, columns: list[tuple], standalone: bool = False, author_limit: int = MAX_AUTHOR_LIMIT) -> None:
+def write_latex(input_filepaths: list[str], output_filepath: str, columns: list[tuple], standalone: bool = False, author_limit: int = None) -> None:
     os.makedirs(output_filepath, exist_ok=True)
-    # for filepath in input_filepaths:
-    # with open(filepath, 'r', encoding='utf-8') as f:
-    #     records = yaml.safe_load(f)
-    # if not isinstance(records, list):
-    #     raise ValueError(f"{filepath} must contain a list of benchmark records")
-    # base_name = os.path.splitext(os.path.basename(filepath))[0]
-
-    records = merge_yaml_files(input_filepaths)
 
     output_tex_path = os.path.join(output_filepath, f"benchmarks.tex")
+
     with open(output_tex_path, 'w', encoding='utf-8') as f:
-        f.write(textwrap.dedent(r"""
-                % Automatically generated from YAML file collected by 
-                % Reece S, Fermilab, rcs374@cornell.edu
-                % Anjay K, Fermilab, anjay2k5@gmail.com
-                % Gregor von Laszewski, University of Virginia, laszewski@gmail.com
-                
-                % This file is automatically generated from 
-                % https://github.com/mlcommons-science/benchmark/blob/main/source/benchmarks.yaml
-                                
-            """))
+        records = merge_yaml_files(input_filepaths, disable_error_messages=True)
+
         if standalone:
             f.write(textwrap.dedent(r"""
                 \documentclass{article}
@@ -342,6 +437,7 @@ def write_latex(input_filepaths: list[str], output_filepath: str, columns: list[
         f.write("\\end{longtable}\n}\n\\end{landscape}\n")
         if standalone:
             f.write("\\printbibliography\n\\end{document}\n")
+
     generate_bibtex(input_filepaths, output_filepath)
 
 if __name__ == "__main__":
@@ -354,6 +450,7 @@ if __name__ == "__main__":
     parser.add_argument('--index', action='store_true', help="Generate individual pages for each entry for the given format. If format is MD, generates an index.md file")
     parser.add_argument('--standalone', '-s', action='store_true', help="Include full LaTeX document preamble.")
     parser.add_argument('--withcitation', action='store_true', help="Include a row for BibTeX citations. Works only with Markdown format")
+    parser.add_argument('--check', action='store_true')
 
     args = parser.parse_args()
 
@@ -372,6 +469,9 @@ if __name__ == "__main__":
 
     os.makedirs(args.out_dir, exist_ok=True)
     columns = get_column_triples(args.columns) if args.columns else ALL_COLUMNS
+
+    if args.check:
+        check_yaml(args.files)
 
     if args.withcitation:
         columns.append(FULL_CITE_COLUMN)

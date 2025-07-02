@@ -157,7 +157,7 @@
     - Deep Sets
     - Interaction Networks
   description: |
-    Demonstrates three ML models (MLP, Deep Sets, Interaction Networks) optimized for FPGA deployment with O(100 ns) inference using quantized models and hls4ml, targeting real-time jet tagging in the L1 trigger environment at the high-luminosity LHC. Data is available on Zenodo DOI:10.5281/zenodo.3602260. :contentReference[oaicite:1]{index=1}
+    Demonstrates three ML models (MLP, Deep Sets, Interaction Networks) optimized for FPGA deployment with O(100 ns) inference using quantized models and hls4ml, targeting real-time jet tagging in the L1 trigger environment at the high-luminosity LHC. Data is available on Zenodo DOI:10.5281/zenodo.3602260. :contentReference[oaicite:1]{index=1}
   task_types:
     - Classification
   ai_capability_measured: Real-time inference under FPGA constraints
@@ -195,7 +195,7 @@
     - anomaly detection
     - real-time
   description: |
-    Exploration of real-time quench detection using unsupervised and RL approaches, combining multi-modal sensor data (BPM, power supply, acoustic), operating on kHz–MHz streams with anomaly detection and frequency-domain features. :contentReference[oaicite:2]{index=2}
+    Exploration of real-time quench detection using unsupervised and RL approaches, combining multi-modal sensor data (BPM, power supply, acoustic), operating on kHz-MHz streams with anomaly detection and frequency-domain features. :contentReference[oaicite:2]{index=2}
   task_types:
     - Anomaly detection
     - Quench localization
@@ -283,7 +283,7 @@
   models:
     - Bipartite Graph Network with Set Transformers (BGN-ST)
     - GarNet (edge-classifier)
-  notes: Achieved ~97.4% accuracy for beauty decay triggers; sub-10 µs latency on Alveo U280; hit-based FPGA design via hls4ml and FlowGNN.
+  notes: Achieved ~97.4% accuracy for beauty decay triggers; sub-10 µs latency on Alveo U280; hit-based FPGA design via hls4ml and FlowGNN.
   cite:
     - |
       @article{kvapil2025intelligent,
@@ -321,7 +321,7 @@
     Introduces a two-stage neural architecture codesign (NAC) pipeline combining global and local search,
     quantization-aware training, and pruning to design efficient models for fast Bragg peak finding and
     jet classification, synthesized for FPGA deployment with hls4ml. Achieves >30× reduction in BOPs
-    and sub-100 ns inference latency on FPGA.
+    and sub-100 ns inference latency on FPGA.
   task_types:
     - Classification
     - Peak finding
@@ -368,7 +368,7 @@
     - trigger
   description: |
     Presents a 256×256-pixel ROIC in 28 nm CMOS with embedded 2-layer NN for cluster filtering
-    at 25 ns, achieving 54–75% data reduction while maintaining noise and latency constraints. Prototype
+    at 25 ns, achieving 54-75% data reduction while maintaining noise and latency constraints. Prototype
     consumes ~300 µW/pixel and operates in combinatorial digital logic.
   task_types:
     - Image Classification
@@ -379,7 +379,7 @@
     - Power per pixel
   models:
     - 2-layer pixel NN
-  notes: Prototype in CMOS 28 nm; proof-of-concept for Phase III pixel upgrades.
+  notes: Prototype in CMOS 28 nm; proof-of-concept for Phase III pixel upgrades.
   cite:
     - |
       @article{parpillon2024smartpixels,
@@ -722,13 +722,13 @@
     - real-time inference
     - event filtering
     - unsupervised ML
-  description: A dataset of proton–proton collision events emulating a 40 MHz real-time data stream from LHC detectors, pre-filtered on electron or muon presence. Designed for unsupervised new-physics detection algorithms under latency/bandwidth constraints.
+  description: A dataset of proton-proton collision events emulating a 40 MHz real-time data stream from LHC detectors, pre-filtered on electron or muon presence. Designed for unsupervised new-physics detection algorithms under latency/bandwidth constraints.
   task_types:
     - Anomaly detection
     - Event classification
   ai_capability_measured: Unsupervised signal detection under latency and bandwidth constraints
   metrics:
-    - ROC‑AUC
+    - ROC-AUC
     - Detection efficiency
   models:
     - Autoencoder
@@ -738,7 +738,7 @@
   cite:
     - |
       @article{govorkova2022lhcnewphysics,
-        title={LHC physics dataset for unsupervised New Physics detection at 40 MHz},
+        title={LHC physics dataset for unsupervised New Physics detection at 40 MHz},
         author={Govorkova, Ekaterina and Puljak, Ema and Pierini, Maurizio and others},
         journal={Scientific Data},
         year={2022},
@@ -772,7 +772,7 @@
   description: |
     The MLCommons Medical AI working group develops benchmarks, best practices, and platforms (MedPerf, GaNDLF, COFE)
     to accelerate robust, privacy‐preserving AI development for healthcare. MedPerf enables federated testing of clinical
-    models on diverse datasets, improving generalizability and equity while keeping data onsite :contentReference[oaicite:1]{index=1}.
+    models on diverse datasets, improving generalizability and equity while keeping data onsite :contentReference[oaicite:1]{index=1}.
   task_types:
     - Federated evaluation
     - Model validation
@@ -784,7 +784,7 @@
   models:
     - MedPerf-validated CNNs
     - GaNDLF workflows
-  notes: Open-source platform under Apache‑2.0; used across 20+ institutions and hospitals :contentReference[oaicite:2]{index=2}.
+  notes: Open-source platform under Apache‑2.0; used across 20+ institutions and hospitals :contentReference[oaicite:2]{index=2}.
   cite:
     - |
       @article{karargyris2023federated,
@@ -820,7 +820,7 @@
     - fast simulation
   description: |
     The Fast Calorimeter Simulation Challenge 2022 assessed 31 generative‐model submissions (VAEs, GANs, Flows, Diffusion)
-    on four calorimeter shower datasets; benchmarking shower quality, generation speed, and model complexity :contentReference[oaicite:3]{index=3}.
+    on four calorimeter shower datasets; benchmarking shower quality, generation speed, and model complexity :contentReference[oaicite:3]{index=3}.
   task_types:
     - Surrogate modeling
   ai_capability_measured: Simulation fidelity, speed, efficiency
@@ -919,7 +919,7 @@
     - Task-specific metrics
   models:
     - Arbitrary code submissions
-  notes: Hosts 51 public competitions, ~26 k users, 177 k submissions :contentReference[oaicite:2]{index=2}
+  notes: Hosts 51 public competitions, ~26 k users, 177 k submissions :contentReference[oaicite:2]{index=2}
   cite:
     - |
       @article{xu2021codabench,
@@ -936,7 +936,7 @@
   ML Motif: Multiple
   Type: Platform
   ML task: Multiple
-  Solutions: "98 071"
+  Solutions: "98 071"
   Dataset: N/A
   Software: "Yes"
   Benchmark-Ready: "Yes"
@@ -966,7 +966,7 @@
     - FAIR compliance
   models:
     - N/A
-  notes: Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc. :contentReference[oaicite:4]{index=4}
+  notes: Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc. :contentReference[oaicite:4]{index=4}
   cite:
     - |
       @techreport{luszczek2021sabath,
@@ -1047,7 +1047,7 @@
     - physics simulations
     - spatiotemporal dynamics
   description: |
-    A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains—from biology to astrophysical magnetohydrodynamic simulations—with unified API and metadata. Ideal for training surrogate and foundation models on scientific data. :contentReference[oaicite:1]{index=1}
+    A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains—from biology to astrophysical magnetohydrodynamic simulations—with unified API and metadata. Ideal for training surrogate and foundation models on scientific data. :contentReference[oaicite:1]{index=1}
   task_types:
     - Supervised Learning
   ai_capability_measured: Surrogate modeling, physics-based prediction
@@ -1057,7 +1057,7 @@
   models:
     - FNO baselines
     - U‑Net baselines
-  notes: "Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. :contentReference[oaicite:2]{index=2}"
+  notes: "Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. :contentReference[oaicite:2]{index=2}"
   cite:
     - |
       @article{ohana2024well,
@@ -1152,7 +1152,7 @@
     - LLaVA
     - DeepSeek
     - Llama
-  notes: Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025. :contentReference[oaicite:6]{index=6}
+  notes: Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025. :contentReference[oaicite:6]{index=6}
   cite:
     - |
       @article{zheng2023sglang,
@@ -1200,20 +1200,20 @@
     - LLaMA
     - Mixtral
     - FlashAttention-based models
-  notes: Incubated by LF AI & Data; achieves up to 24× throughput over HuggingFace Transformers :contentReference[oaicite:2]{index=2}
+  notes: Incubated by LF AI & Data; achieves up to 24× throughput over HuggingFace Transformers :contentReference[oaicite:2]{index=2}
   cite:
     - |
       @inproceedings{kwon2023efficient,
         title={Efficient Memory Management for Large Language Model Serving with PagedAttention},
-        author={Woosuk Kwon and others},
-        booktitle={SOSP 2023},
+        author={Woosuk Kwon and others},
+        booktitle={SOSP 2023},
         year={2023}
       }
   Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1nPZyRZEZHciGXYNJShR9FCJbre7ImJLKf2MG6g4-3gQ/edit?usp=sharing
   ML Motif: HPC/inference
   Type: Framework
   ML task: Inference
-  Solutions: "–"
+  Solutions: "-"
   Dataset: Benchmark scripts & model configurations
   Software: "Yes"
   Benchmark-Ready: "Yes"
@@ -1258,7 +1258,7 @@
   ML Motif: HPC/inference
   Type: Framework
   ML task: Visualization
-  Solutions: "–"
+  Solutions: "-"
   Dataset: Dashboard configurations
   Software: "Yes"
   Benchmark-Ready: "Yes"
@@ -1297,7 +1297,7 @@
   cite:
     - |
       @misc{olivares2022library_neuralforecast,
-        author={Olivares, Kin G. and Challú, Cristian and others},
+        author={Olivares, Kin G. and Challú, Cristian and others},
         title={NeuralForecast: User friendly state‑of‑the‑art neural forecasting models},
         year={2022},
         howpublished={{PyCon} US},
@@ -1338,13 +1338,13 @@
     - MAPE
   models:
     - NHITS
-  notes: Official implementation in NeuralForecast, included since its AAAI 2023 release.
+  notes: Official implementation in NeuralForecast, included since its AAAI 2023 release.
   cite:
     - |
       @inproceedings{challu2023nhits,
         title={NHITS: Neural Hierarchical Interpolation for Time Series Forecasting},
         author={Challu, Cristian and Olivares, Kin G. and others},
-        booktitle={AAAI 2023},
+        booktitle={AAAI 2023},
         year={2023}
       }
   Results from Gemini LLM Deep Research: https://docs.google.com/document/d/15Hm5ekGu99aQWsdtiUIwX6JMoaoFpRbIhDylrWqSoHY/edit?usp=sharing
@@ -1356,7 +1356,7 @@
   Software: "Yes"
   Benchmark-Ready: "Yes"
   Last Updated: 2025-06
-  Support Contact Person: Kin G. Olivares (Nixtla)
+  Support Contact Person: Kin G. Olivares (Nixtla)
 
 - date: "2023-10-03"
   expired: null
@@ -1399,7 +1399,7 @@
   Software: "Yes"
   Benchmark-Ready: "Yes"
   Last Updated: 2025-06
-  Support Contact Person: Ming Jin (Nixtla)
+  Support Contact Person: Ming Jin (Nixtla)
 
 - date: "2023-10-05"
   expired: null
@@ -1439,7 +1439,7 @@
   Type: Platform
   ML task: Forecasting
   Solutions: "26"
-  Dataset: Pretrained on 100 B+ time series via Nixtla
+  Dataset: Pretrained on 100 B+ time series via Nixtla
   Software: "Yes"
   Benchmark-Ready: "Yes"
   Last Updated: 2025-06
@@ -1458,7 +1458,7 @@
     - astrophysics
     - time-series
   description: |
-    A benchmark for detecting anomalous transient gravitational-wave signals, including “unknown-unknowns,” using preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments from dual interferometers. :contentReference[oaicite:1]{index=1}
+    A benchmark for detecting anomalous transient gravitational-wave signals, including “unknown-unknowns,” using preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments from dual interferometers. :contentReference[oaicite:1]{index=1}
   task_types:
     - Anomaly detection
   ai_capability_measured: Novel event detection in physical signals
@@ -1481,7 +1481,7 @@
   ML Motif: Time-series
   Type: Dataset
   ML task: Anomaly detection
-  Solutions: "–"
+  Solutions: "-"
   Dataset: Preprocessed LIGO/Hanford & Livingston waveforms
   Software: "Yes"
   Benchmark-Ready: "Yes"
@@ -1523,7 +1523,7 @@
   ML Motif: Image/CV
   Type: Dataset
   ML task: Anomaly detection
-  Solutions: "–"
+  Solutions: "-"
   Dataset: Butterfly hybrid image dataset
   Software: "Yes"
   Benchmark-Ready: "Yes"
@@ -1566,7 +1566,7 @@
   ML Motif: Time-series, Image/CV
   Type: Dataset
   ML task: Anomaly detection
-  Solutions: "–"
+  Solutions: "-"
   Dataset: Sea-level time-series & satellite imagery
   Software: "Yes"
   Benchmark-Ready: "Yes"
@@ -1595,7 +1595,7 @@
     - Latency
   models:
     - hls4ml quantized NN
-  notes: Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization. :contentReference[oaicite:1]{index=1}  
+  notes: Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization. :contentReference[oaicite:1]{index=1}  
   cite:
     - |
       @article{diguglielmo2025endtoend,
@@ -1608,7 +1608,7 @@
   ML Motif: Real-time
   Type: Benchmark
   ML task: Supervised Learning
-  Solutions: "–"
+  Solutions: "-"
   Dataset: "Zenodo: ml-quantum-readout dataset (zenodo.org/records/14427490)"
   Software: "Yes"
   Benchmark-Ready: "Yes"
@@ -1670,7 +1670,7 @@
     - segmentation
     - QA
   description: |
-    A first-of-its-kind dataset covering 17,300 km² of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs—designed for both vision and language-based ML models in marine science :contentReference[oaicite:1]{index=1}.
+    A first-of-its-kind dataset covering 17,300 km² of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs—designed for both vision and language-based ML models in marine science :contentReference[oaicite:1]{index=1}.
   task_types:
     - Image segmentation
     - Vision-language QA
@@ -1694,7 +1694,7 @@
   Type: Dataset
   ML task: Segmentation, QA
   Solutions: "~696K images"
-  Dataset: Sonar imagery + annotations (~15 TB)
+  Dataset: Sonar imagery + annotations (~15 TB)
   Software: "Yes"
   Benchmark-Ready: "Yes"
   Last Updated: 2024-12

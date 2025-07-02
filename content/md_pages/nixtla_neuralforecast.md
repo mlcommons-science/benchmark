@@ -26,7 +26,7 @@
 
 **Models**: NBEATS, NHITS, TFT, DeepAR
 
-**Notes**: AutoModel supports hyperparameter tuning and distributed execution via Ray & Optuna. Fi­rst official NHITS implementation. :contentReference oaicite:4 {index=4}
+**Notes**: AutoModel supports hyperparameter tuning and distributed execution via Ray and Optuna. Fi­rst official NHITS implementation. :contentReference oaicite:4 {index=4}
 
 **Citation**:
 

@@ -35,14 +35,14 @@
   - id: takamoto2022pdebench
   - url: https://arxiv.org/abs/2210.07182
   - year: 2022
-  - booktitle: NeurIPS Datasets & Benchmarks Track
+  - booktitle: NeurIPS Datasets and Benchmarks Track
   - title: PDEBench: An Extensive Benchmark for Scientific Machine Learning
   - author: Takamoto, Makoto, Praditia, Timothy, others
   - bibtex: |
       @inproceedings{takamoto2022pdebench,
         author={Takamoto, Makoto and Praditia, Timothy and others},
         title={PDEBench: An Extensive Benchmark for Scientific Machine Learning},
-        booktitle={NeurIPS Datasets & Benchmarks Track},
+        booktitle={NeurIPS Datasets and Benchmarks Track},
         year={2022},
         url={https://arxiv.org/abs/2210.07182}
       }

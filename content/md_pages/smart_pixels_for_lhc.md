@@ -10,7 +10,7 @@
 
 **URL**: https://arxiv.org/abs/2406.14860
 
-**Domain**: Particle Physics; Instrumentation & Detectors
+**Domain**: Particle Physics; Instrumentation and Detectors
 
 **Focus**: On-sensor, in-pixel ML filtering for high-rate LHC pixel detectors
 

@@ -10,19 +10,19 @@
 
 **URL**: https://arxiv.org/pdf/2501.04845
 
-**Domain**: Instrumentation & Detectors; Nuclear Physics; Particle Physics
+**Domain**: Instrumentation and Detectors; Nuclear Physics; Particle Physics
 
 **Focus**: Real-time FPGA-based triggering and detector control for sPHENIX and future EIC
 
 **Keywords**: FPGA, Graph Neural Network, hls4ml, real-time inference, detector control
 
-**Description**: R&D demonstrator for real-time processing of high-rate tracking data from the sPHENIX detector  RHIC  and future EIC systems. Uses GNNs with hls4ml for FPGA-based trigger generation to identify rare events  heavy flavor, DIS electrons  within 10 µs latency. Demonstrated improved accuracy and latency on Alveo/FELIX platforms. 
+**Description**: Resaerch and Development demonstrator for real-time processing of high-rate tracking data from the sPHENIX detector  RHIC  and future EIC systems. Uses GNNs with hls4ml for FPGA-based trigger generation to identify rare events  heavy flavor, DIS electrons  within 10 µs latency. Demonstrated improved accuracy and latency on Alveo/FELIX platforms. 
 
 **Task Types**: Trigger classification, Detector control, Real-time inference
 
 **AI Capability**: Low-latency GNN inference on FPGA
 
-**Metrics**: Accuracy  charm & beauty detection , Latency  µs , Resource utilization  LUT/FF/BRAM/DSP 
+**Metrics**: Accuracy  charm and beauty detection , Latency  µs , Resource utilization  LUT/FF/BRAM/DSP 
 
 **Models**: Bipartite Graph Network with Set Transformers  BGN-ST , GarNet  edge-classifier 
 

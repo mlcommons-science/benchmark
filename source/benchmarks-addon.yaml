@@ -213,7 +213,7 @@
   Type: Benchmark
   ML task: Reinforcement + Unsupervised Learning
   Solutions: "1 (autoencoder)"
-  Dataset: BPM & power supply data from BNL (HDF5 preprocessed, ~67k BPM + 32k PS windows)
+  Dataset: BPM and power supply data from BNL (HDF5 preprocessed, ~67k BPM + 32k PS windows)
   Software: in progress
   Benchmark-Ready: No
   Last Updated: 2024-10
@@ -261,7 +261,7 @@
   valid: "yes"
   name: Intelligent experiments through real-time AI
   url: https://arxiv.org/pdf/2501.04845
-  domain: Instrumentation & Detectors; Nuclear Physics; Particle Physics
+  domain: "Instrumentation and Detectors; Nuclear Physics; Particle Physics"
   focus: Real-time FPGA-based triggering and detector control for sPHENIX and future EIC
   keywords:
     - FPGA
@@ -270,14 +270,14 @@
     - real-time inference
     - detector control
   description: |
-    R&D demonstrator for real-time processing of high-rate tracking data from the sPHENIX detector (RHIC) and future EIC systems. Uses GNNs with hls4ml for FPGA-based trigger generation to identify rare events (heavy flavor, DIS electrons) within 10 µs latency. Demonstrated improved accuracy and latency on Alveo/FELIX platforms.
+    Resaerch and Development demonstrator for real-time processing of high-rate tracking data from the sPHENIX detector (RHIC) and future EIC systems. Uses GNNs with hls4ml for FPGA-based trigger generation to identify rare events (heavy flavor, DIS electrons) within 10 µs latency. Demonstrated improved accuracy and latency on Alveo/FELIX platforms.
   task_types:
     - Trigger classification
     - Detector control
     - Real-time inference
   ai_capability_measured: Low-latency GNN inference on FPGA
   metrics:
-    - Accuracy (charm & beauty detection)
+    - Accuracy (charm and beauty detection)
     - Latency (µs)
     - Resource utilization (LUT/FF/BRAM/DSP)
   models:
@@ -298,7 +298,7 @@
   Type: Model
   ML task: Supervised Learning
   Solutions: "2"
-  Dataset: Internal simulated tracking data (sPHENIX & EIC DIS-electron tagger)
+  Dataset: Internal simulated tracking data (sPHENIX and EIC DIS-electron tagger)
   Software: Yes
   Benchmark-Ready: No
   Last Updated: 2025-01
@@ -359,7 +359,7 @@
   valid: "yes"
   name: Smart Pixels for LHC
   url: https://arxiv.org/abs/2406.14860
-  domain: Particle Physics; Instrumentation & Detectors
+  domain: Particle Physics; Instrumentation and Detectors
   focus: On-sensor, in-pixel ML filtering for high-rate LHC pixel detectors
   keywords:
     - smart pixel
@@ -1019,7 +1019,7 @@
       @inproceedings{takamoto2022pdebench,
         author={Takamoto, Makoto and Praditia, Timothy and others},
         title={PDEBench: An Extensive Benchmark for Scientific Machine Learning},
-        booktitle={NeurIPS Datasets & Benchmarks Track},
+        booktitle={NeurIPS Datasets and Benchmarks Track},
         year={2022},
         url={https://arxiv.org/abs/2210.07182}
       }
@@ -1175,7 +1175,7 @@
 - date: "2023-09-12"
   expired: null
   valid: "yes"
-  name: vLLM Inference & Serving Engine
+  name: vLLM Inference and Serving Engine
   url: https://github.com/vllm-project/vllm/tree/main/benchmarks
   domain: LLM; HPC/inference
   focus: High-throughput, memory-efficient inference and serving engine for LLMs
@@ -1200,7 +1200,7 @@
     - LLaMA
     - Mixtral
     - FlashAttention-based models
-  notes: Incubated by LF AI & Data; achieves up to 24× throughput over HuggingFace Transformers :contentReference[oaicite:2]{index=2}
+  notes: Incubated by LF AI and Data; achieves up to 24× throughput over HuggingFace Transformers :contentReference[oaicite:2]{index=2}
   cite:
     - |
       @inproceedings{kwon2023efficient,
@@ -1214,7 +1214,7 @@
   Type: Framework
   ML task: Inference
   Solutions: "-"
-  Dataset: Benchmark scripts & model configurations
+  Dataset: Benchmark scripts and model configurations
   Software: "Yes"
   Benchmark-Ready: "Yes"
   Last Updated: 2025-06
@@ -1293,7 +1293,7 @@
     - NHITS
     - TFT
     - DeepAR
-  notes: AutoModel supports hyperparameter tuning and distributed execution via Ray & Optuna. Fi­rst official NHITS implementation. :contentReference[oaicite:4]{index=4}
+  notes: AutoModel supports hyperparameter tuning and distributed execution via Ray and Optuna. Fi­rst official NHITS implementation. :contentReference[oaicite:4]{index=4}
   cite:
     - |
       @misc{olivares2022library_neuralforecast,
@@ -1482,7 +1482,7 @@
   Type: Dataset
   ML task: Anomaly detection
   Solutions: "-"
-  Dataset: Preprocessed LIGO/Hanford & Livingston waveforms
+  Dataset: Preprocessed LIGO/Hanford and Livingston waveforms
   Software: "Yes"
   Benchmark-Ready: "Yes"
   Last Updated: 2025-03
@@ -1567,7 +1567,7 @@
   Type: Dataset
   ML task: Anomaly detection
   Solutions: "-"
-  Dataset: Sea-level time-series & satellite imagery
+  Dataset: Sea-level time-series and satellite imagery
   Software: "Yes"
   Benchmark-Ready: "Yes"
   Last Updated: 2025-03
@@ -1618,7 +1618,7 @@
 - date: "2023-11-20"
   expired: null
   valid: "yes"
-  name: "GPQA: A Graduate-Level Google-Proof Q&A Benchmark"
+  name: "GPQA: A Graduate-Level Google-Proof Question and Answer Benchmark"
   url: https://arxiv.org/abs/2311.12022
   domain: Science (Biology, Physics, Chemistry)
   focus: Graduate-level, expert-validated multiple-choice questions hard even with web access
@@ -1640,7 +1640,7 @@
   cite:
     - |
       @article{rein2023gpqa,
-        title={GPQA: A Graduate-Level Google-Proof Q\&A Benchmark},
+        title={GPQA: A Graduate-Level Google-Proof Q and A Benchmark},
         author={Rein, David and Hou, Betty Li and Stickland, Asa Cooper and others},
         year={2023},
         url={https://arxiv.org/abs/2311.12022}

@@ -36,7 +36,7 @@
   - pages: 475-484
   - month: September
   - year: 2023
-  - author: Kiwit, Florian J. and Marso, Marwa and Ross, Philipp and Riofrío, Carlos A. and Klepsch, Johannes and Luckow, Andre
+  - author: Kiwit, Florian J., Marso, Marwa, Ross, Philipp, Riofrío, Carlos A., Klepsch, Johannes, Luckow, Andre
   - publisher: IEEE
   - booktitle: 2023 IEEE International Conference on Quantum Computing and Engineering (QCE)
   - doi: 10.1109/qce57702.2023.00061

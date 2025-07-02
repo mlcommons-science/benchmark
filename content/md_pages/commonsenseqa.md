@@ -38,7 +38,7 @@
   - archiveprefix: arXiv
   - eprint: 1811.00937
   - year: 2019
-  - author: Alon Talmor and Jonathan Herzig and Nicholas Lourie and Jonathan Berant
+  - author: Alon Talmor, Jonathan Herzig, Nicholas Lourie, Jonathan Berant
   - title: CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge
   - bibtex: |
       @misc{talmor2019commonsenseqaquestionansweringchallenge,

@@ -35,7 +35,7 @@
   - id: zhong2024spiqa
   - url: https://arxiv.org/abs/2407.09413
   - year: 2024
-  - author: Zhong, Xiaoyan and Gao, Yijian and Gururangan, Suchin
+  - author: Zhong, Xiaoyan, Gao, Yijian, Gururangan, Suchin
   - title: SPIQA: Scientific Paper Image Question Answering
   - bibtex: |
       @article{zhong2024spiqa,

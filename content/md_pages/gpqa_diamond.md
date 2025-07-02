@@ -35,7 +35,7 @@
   - id: rein2023gpqagraduatelevelgoogleproofqa
   - url: https://arxiv.org/abs/2311.12022
   - year: 2023
-  - author: Rein, David and Hou, Betty Li and Stickland, Asa Cooper and others
+  - author: Rein, David, Hou, Betty Li, Stickland, Asa Cooper, others
   - title: GPQA: A Graduate-Level Google-Proof Q and A Benchmark
   - bibtex: |
       @misc{rein2023gpqagraduatelevelgoogleproofqa,

@@ -35,7 +35,7 @@
   - id: glazer2024frontiermath
   - url: https://arxiv.org/abs/2411.04872
   - year: 2024
-  - author: Glazer, Elliot and Erdil, Ege and Besiroglu, Tamay and others
+  - author: Glazer, Elliot, Erdil, Ege, Besiroglu, Tamay, others
   - title: FrontierMath: A Benchmark for Evaluating Advanced Mathematical Reasoning in AI
   - bibtex: |
       @misc{glazer2024frontiermath,

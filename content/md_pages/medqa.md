@@ -35,7 +35,7 @@
   - id: jin2020what
   - url: https://arxiv.org/abs/2009.13081
   - year: 2020
-  - author: Jin, Di and Li, Ying and Zhang, Yichong and others
+  - author: Jin, Di, Li, Ying, Zhang, Yichong, others
   - title: What Disease Does This Patient Have? A Large-scale Open-domain Question Answering Dataset from Medical Exams
   - bibtex: |
       @article{jin2020what,

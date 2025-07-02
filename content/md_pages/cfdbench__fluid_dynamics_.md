@@ -35,7 +35,7 @@
   - id: luo2024cfdbenchlargescalebenchmarkmachine
   - url: https://arxiv.org/abs/2310.05963
   - year: 2024
-  - author: Luo, Yining and Chen, Yingfa and Zhang, Zhen
+  - author: Luo, Yining, Chen, Yingfa, Zhang, Zhen
   - title: CFDBench: A Large-Scale Benchmark for Machine Learning Methods in Fluid Dynamics
   - bibtex: |
       @misc{luo2024cfdbenchlargescalebenchmarkmachine,

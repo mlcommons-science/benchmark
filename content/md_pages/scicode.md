@@ -35,7 +35,7 @@
   - id: tian2024scicode
   - url: https://arxiv.org/abs/2407.13168
   - year: 2024
-  - author: Tian, Minyang and Gao, Luyu and Zhang, Shizhuo and others
+  - author: Tian, Minyang, Gao, Luyu, Zhang, Shizhuo, others
   - title: SciCode: A Research Coding Benchmark Curated by Scientists
   - bibtex: |
       @misc{tian2024scicode,

@@ -35,7 +35,7 @@
   - id: luo2025benchmarkingaiscientistsomics
   - url: https://arxiv.org/abs/2505.08341
   - year: 2025
-  - author: Luo, Erpai and Jia, Jinmeng and Xiong, Yifan and others
+  - author: Luo, Erpai, Jia, Jinmeng, Xiong, Yifan, others
   - title: Benchmarking AI scientists in omics data-driven biological research
   - bibtex: |
       @misc{luo2025benchmarkingaiscientistsomics,

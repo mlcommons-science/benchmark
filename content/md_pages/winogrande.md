@@ -38,7 +38,7 @@
   - archiveprefix: arXiv
   - eprint: 1907.10641
   - year: 2019
-  - author: Keisuke Sakaguchi and Ronan Le Bras and Chandra Bhagavatula and Yejin Choi
+  - author: Keisuke Sakaguchi, Ronan Le Bras, Chandra Bhagavatula, Yejin Choi
   - title: WinoGrande: An Adversarial Winograd Schema Challenge at Scale
   - bibtex: |
       @misc{sakaguchi2019winograndeadversarialwinogradschema,

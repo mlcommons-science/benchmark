@@ -35,7 +35,7 @@
   - id: hu2020ogb
   - url: https://arxiv.org/abs/2005.00687
   - year: 2020
-  - author: Hu, Weihua and Fey, Matthias and Zitnik, Marinka and others
+  - author: Hu, Weihua, Fey, Matthias, Zitnik, Marinka, others
   - title: Open Graph Benchmark: Datasets for Machine Learning on Graphs
   - bibtex: |
       @misc{hu2020ogb,

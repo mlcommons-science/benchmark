@@ -40,7 +40,7 @@
   - number: 10
   - volume: 11
   - journal: ACS Catalysis
-  - author: Chanussot, Lowik and Das, Abhishek and Goyal, Siddharth and Lavril, Thibaut and Shuaibi, Muhammed and Riviere, Morgane and Tran, Kevin and Heras-Domingo, Javier and Ho, Caleb and Hu, Weihua and Palizhati, Aini and Sriram, Anuroop and Wood, Brandon and Yoon, Junwoong and Parikh, Devi and Zitnick, C. Lawrence and Ulissi, Zachary
+  - author: Chanussot, Lowik, Das, Abhishek, Goyal, Siddharth, Lavril, Thibaut, Shuaibi, Muhammed, Riviere, Morgane, Tran, Kevin, Heras-Domingo, Javier, Ho, Caleb, Hu, Weihua, Palizhati, Aini, Sriram, Anuroop, Wood, Brandon, Yoon, Junwoong, Parikh, Devi, Zitnick, C. Lawrence, Ulissi, Zachary
   - title: The Open Catalyst 2020 (OC20) Dataset and Community Challenges
   - bibtex: |
       @article{chanussot2021oc20,
@@ -64,7 +64,7 @@
   - number: 5
   - volume: 13
   - journal: ACS Catalysis
-  - author: Tran, Richard and Lan, Janice and Shuaibi, Muhammed and Wood, Brandon M. and Goyal, Siddharth and Das, Abhishek and Heras-Domingo, Javier and Kolluru, Adeesh and Rizvi, Ammar and Shoghi, Nima and Sriram, Anuroop and Therrien, Félix and Abed, Jehad and Voznyy, Oleksandr and Sargent, Edward H. and Ulissi, Zachary and Zitnick, C. Lawrence
+  - author: Tran, Richard, Lan, Janice, Shuaibi, Muhammed, Wood, Brandon M., Goyal, Siddharth, Das, Abhishek, Heras-Domingo, Javier, Kolluru, Adeesh, Rizvi, Ammar, Shoghi, Nima, Sriram, Anuroop, Therrien, Félix, Abed, Jehad, Voznyy, Oleksandr, Sargent, Edward H., Ulissi, Zachary, Zitnick, C. Lawrence
   - title: The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts
   - bibtex: |
       @article{tran2023oc22,
@@ -90,7 +90,7 @@
   - volume: 11
   - journal: ACS Catalysis
   - title: Open Catalyst 2020 (OC20) Dataset and Community Challenges
-  - author: Chanussot, Lowik and Das, Abhishek and Goyal, Siddharth and Lavril, Thibaut and Shuaibi, Muhammed and Riviere, Morgane and Tran, Kevin and Heras-Domingo, Javier and Ho, Caleb and Hu, Weihua and Palizhati, Aini and Sriram, Anuroop and Wood, Brandon and Yoon, Junwoong and Parikh, Devi and Zitnick, C. Lawrence and Ulissi, Zachary
+  - author: Chanussot, Lowik, Das, Abhishek, Goyal, Siddharth, Lavril, Thibaut, Shuaibi, Muhammed, Riviere, Morgane, Tran, Kevin, Heras-Domingo, Javier, Ho, Caleb, Hu, Weihua, Palizhati, Aini, Sriram, Anuroop, Wood, Brandon, Yoon, Junwoong, Parikh, Devi, Zitnick, C. Lawrence, Ulissi, Zachary
   - bibtex: |
       @article{doi:10.1021/acscatal.0c04525,
         author = {Chanussot, Lowik and Das, Abhishek and Goyal, Siddharth and Lavril, Thibaut and Shuaibi, Muhammed and Riviere, Morgane and Tran, Kevin and Heras-Domingo, Javier and Ho, Caleb and Hu, Weihua and Palizhati, Aini and Sriram, Anuroop and Wood, Brandon and Yoon, Junwoong and Parikh, Devi and Zitnick, C. Lawrence and Ulissi, Zachary},
@@ -108,7 +108,7 @@
   - pages: 3066-3084
   - month: February
   - year: 2023
-  - author: Tran, Richard and Lan, Janice and Shuaibi, Muhammed and Wood, Brandon M. and Goyal, Siddharth and Das, Abhishek and Heras-Domingo, Javier and Kolluru, Adeesh and Rizvi, Ammar and Shoghi, Nima and Sriram, Anuroop and Therrien, Félix and Abed, Jehad and Voznyy, Oleksandr and Sargent, Edward H. and Ulissi, Zachary and Zitnick, C. Lawrence
+  - author: Tran, Richard, Lan, Janice, Shuaibi, Muhammed, Wood, Brandon M., Goyal, Siddharth, Das, Abhishek, Heras-Domingo, Javier, Kolluru, Adeesh, Rizvi, Ammar, Shoghi, Nima, Sriram, Anuroop, Therrien, Félix, Abed, Jehad, Voznyy, Oleksandr, Sargent, Edward H., Ulissi, Zachary, Zitnick, C. Lawrence
   - publisher: American Chemical Society (ACS)
   - journal: ACS Catalysis
   - number: 5

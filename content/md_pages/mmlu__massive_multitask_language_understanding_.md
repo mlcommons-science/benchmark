@@ -36,7 +36,7 @@
   - url: https://arxiv.org/abs/2009.03300
   - year: 2021
   - journal: arXiv preprint arXiv:2009.03300
-  - author: Hendrycks, Dan and Burns, Collin and Kadavath, Saurav and others
+  - author: Hendrycks, Dan, Burns, Collin, Kadavath, Saurav, others
   - title: Measuring Massive Multitask Language Understanding
   - bibtex: |
       @article{hendrycks2021measuring,

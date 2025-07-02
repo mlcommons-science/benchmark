@@ -39,7 +39,7 @@
   - number: 1
   - volume: 1
   - journal: APL Materials
-  - author: Jain, Anubhav and Ong, Shyue Ping and Hautier, Geoffroy and Chen, Wei and Richards, William Davidson and Dacek, Stephen and Cholia, Shreyas and Gunter, Dan and Skinner, David and Ceder, Gerbrand and Persson, Kristin A.
+  - author: Jain, Anubhav, Ong, Shyue Ping, Hautier, Geoffroy, Chen, Wei, Richards, William Davidson, Dacek, Stephen, Cholia, Shreyas, Gunter, Dan, Skinner, David, Ceder, Gerbrand, Persson, Kristin A.
   - title: The Materials Project: A materials genome approach
   - bibtex: |
       @article{jain2013materials,

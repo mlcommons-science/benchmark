@@ -35,7 +35,7 @@
   - id: fang2023domain
   - url: https://arxiv.org/abs/2301.11259
   - year: 2023
-  - author: Fang, Yin and Zhang, Ningyu and Chen, Zhuo and others
+  - author: Fang, Yin, Zhang, Ningyu, Chen, Zhuo, others
   - title: Domain-Agnostic Molecular Generation with Chemical Feedback
   - bibtex: |
       @article{fang2023domain,

@@ -40,7 +40,7 @@
   - number: 1
   - volume: 10
   - journal: npj Computational Materials
-  - author: Choudhary, Kamal and Wines, Daniel and Li, Kangming and Garrity, Kevin F. and Gupta, Vishu and Romero, Aldo H. and Krogel, Jaron T. and Saritas, Kayahan and Fuhr, Addis and Ganesh, Panchapakesan and Kent, Paul R. C. and Yan, Keqiang and Lin, Yuchao and Ji, Shuiwang and Blaiszik, Ben and Reiser, Patrick and Friederich, Pascal and Agrawal, Ankit and Tiwary, Pratyush and Beyerle, Eric and Minch, Peter and Rhone, Trevor D. and Takeuchi, Ichiro and Wexler, Robert B. and Mannodi-Kanakkithodi, Arun and Ertekin, Elif and Mishra, Avanish and Mathew, Nithin and Wood, Mitchell and Rohskopf, Andrew D. and Hattrick-Simpers, Jason and Wang, Shih-Han and Achenie, Luke E. K. and Xin, Hongliang and Williams, Maureen and Biacchi, Adam J. and Tavazza, Francesca
+  - author: Choudhary, Kamal, Wines, Daniel, Li, Kangming, Garrity, Kevin F., Gupta, Vishu, Romero, Aldo H., Krogel, Jaron T., Saritas, Kayahan, Fuhr, Addis, Ganesh, Panchapakesan, Kent, Paul R. C., Yan, Keqiang, Lin, Yuchao, Ji, Shuiwang, Blaiszik, Ben, Reiser, Patrick, Friederich, Pascal, Agrawal, Ankit, Tiwary, Pratyush, Beyerle, Eric, Minch, Peter, Rhone, Trevor D., Takeuchi, Ichiro, Wexler, Robert B., Mannodi-Kanakkithodi, Arun, Ertekin, Elif, Mishra, Avanish, Mathew, Nithin, Wood, Mitchell, Rohskopf, Andrew D., Hattrick-Simpers, Jason, Wang, Shih-Han, Achenie, Luke E. K., Xin, Hongliang, Williams, Maureen, Biacchi, Adam J., Tavazza, Francesca
   - title: {JARVIS-Leaderboard}: a large scale benchmark of materials design methods
   - bibtex: |
       @article{choudhary2024jarvis,

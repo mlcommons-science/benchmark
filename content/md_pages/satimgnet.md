@@ -38,7 +38,7 @@
   - archiveprefix: arXiv
   - eprint: 2304.11619
   - year: 2023
-  - author: Jonathan Roberts and Kai Han and Samuel Albanie
+  - author: Jonathan Roberts, Kai Han, Samuel Albanie
   - title: SATIN: A Multi-Task Metadataset for Classifying Satellite Imagery using Vision-Language Models
   - bibtex: |
       @misc{roberts2023satinmultitaskmetadatasetclassifying,

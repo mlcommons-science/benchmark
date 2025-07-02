@@ -37,7 +37,7 @@
   - year: 2018
   - pages: 237–248
   - booktitle: EMNLP 2018
-  - author: Clark, Peter and Cowhey, Isaac and Etzioni, Oren and others
+  - author: Clark, Peter, Cowhey, Isaac, Etzioni, Oren, others
   - title: Think you have solved question answering? Try ARC, the AI2 Reasoning Challenge
   - bibtex: |
       @inproceedings{clark2018think,

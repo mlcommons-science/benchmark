@@ -38,7 +38,7 @@
   - archiveprefix: arXiv
   - eprint: 2307.01909
   - year: 2023
-  - author: Tung Nguyen and Jason Jewik and Hritik Bansal and Prakhar Sharma and Aditya Grover
+  - author: Tung Nguyen, Jason Jewik, Hritik Bansal, Prakhar Sharma, Aditya Grover
   - title: ClimateLearn: Benchmarking Machine Learning for Weather and Climate Modeling
   - bibtex: |
       @misc{nguyen2023climatelearnbenchmarkingmachinelearning, 

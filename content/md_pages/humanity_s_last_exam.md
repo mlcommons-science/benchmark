@@ -35,7 +35,7 @@
   - id: phan2025humanitys
   - url: https://arxiv.org/abs/2501.14249
   - year: 2025
-  - author: Phan, Long and Gatti, Alice and Han, Ziwen and others
+  - author: Phan, Long, Gatti, Alice, Han, Ziwen, others
   - title: Humanity's Last Exam
   - bibtex: |
       @misc{phan2025humanitys,

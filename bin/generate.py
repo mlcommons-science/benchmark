@@ -22,16 +22,49 @@ ALL_COLUMNS = [
     ("metrics", "2cm", "Metrics"),
     ("models", "2cm", "Models"),
     ("notes", "3cm", "Notes"),
-    ("cite", "1cm", "Citation")
+    ("cite", "1cm", "Citation"),
+    ("ratings", "1cm", "Ratings"),
 ]
 
 FULL_CITE_COLUMN = ("full_cite", "1cm", "Full BibTeX")
+
+RATINGS_COLUMNS = [
+    ("problem_spec_rating", "1cm", "Problem Specification Rating"),
+    ("problem_spec_reason", "3cm", "Problem Specification Reason"),
+    ("dataset_rating", "1cm", "Dataset Rating"),
+    ("dataset_reason", "3cm", "Dataset Reason"),
+    ("metrics_rating", "1cm", "Metrics Rating"),
+    ("metrics_reason", "3cm", "Metrics Reason"),
+    ("reference_solution_rating", "1cm", "Reference Solution Rating"),
+    ("reference_solution_reason", "3cm", "Reference Solution Reason"),
+    ("documentation_rating", "1cm", "Documentation Rating"),
+    ("documentation_reason", "3cm", "Documentation Reason")
+]
 
 MAX_AUTHOR_LIMIT = 9999
 
 def get_column_triples(selected: list[str]) -> list[tuple[str, str, str]]:
     selected_lower = [s.lower() for s in selected]
     return [triple for triple in ALL_COLUMNS if triple[0] in selected_lower]
+
+def reformat_for_ratings(cols: list[tuple[str, str, str]]) -> list[tuple[str, str, str]]:
+    """
+    Returns a copy of `cols`. If the final index of `cols` contains a column title named "ratings", the "ratings"
+    column is replaced with all entries from `RATINGS_COLUMNS`.
+
+    Parameters:
+        cols: list of columns to modify
+    Returns:
+        `cols` with the "ratings" column replaced (provided "ratings" is the last column name)
+    """
+    columns = cols
+    if len(columns)>0 and columns[-1][0]=='ratings':
+        columns.pop(-1)
+        for ratings_column in RATINGS_COLUMNS:
+            columns.append(ratings_column)
+    
+    return columns
+
 
 def load_yaml_file(file_path: str) -> list[dict]:
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -128,11 +161,11 @@ def check_unique_citations(yaml_data: list[dict]) -> None:
 
         #Fix missing citations
         if value=="None":
-            print(f"\033[91mERROR: The entry {entry} has a missing citation\033[00m")
+            print(f"\033[91mERROR: The entry \033[33m{entry}\033[91m has a missing citation\033[00m")
             continue
 
         if value in found:
-            print(f"\033[91mERROR: {value} is a duplicate citation\033[00m")
+            print(f"\033[91mERROR: \033[33m{value}\033[91m is a duplicate citation\033[00m")
         found.add(value)
 
 def check_unique_citation_labels(yaml_data: list[dict]) -> None:
@@ -153,6 +186,7 @@ def check_unique_citation_labels(yaml_data: list[dict]) -> None:
         if label in found:
             print(f"\033[91mERROR: {label} is a duplicate citation label\033[00m")
         found.add(label)
+
 def validate_required_fields(yaml_data: list, required_fields: list[str] | None) -> None:
     if not required_fields:
         return  # No validation needed
@@ -185,7 +219,7 @@ def check_yaml(file_paths: list[str], required_fields: list[str] | None = None) 
     #Check of required fields are there
     if required_fields:
         validate_required_fields(content, required_fields)
-        print(required_fields)
+        # print(required_fields)
 
     #Check if all names of entries are unique
     contents = merge_yaml_files(file_paths)
@@ -320,7 +354,7 @@ def write_individual_md_pages(input_filepaths: list[str], output_dir: str, colum
 
 
 
-def write_md_table(input_filepaths: list[str], output_dir: str, columns: List[tuple], author_limit: int = MAX_AUTHOR_LIMIT) -> None:
+def write_md_table(input_filepaths: list[str], output_dir: str, columns: list[tuple], author_limit: int = MAX_AUTHOR_LIMIT) -> None:
 
     contents = merge_yaml_files(input_filepaths)
     os.makedirs(output_dir, exist_ok=True)
@@ -329,6 +363,7 @@ def write_md_table(input_filepaths: list[str], output_dir: str, columns: List[tu
         md_file.write('| ' + ' | '.join(headers) + ' |\n')
         md_file.write('| ' + ' | '.join(['---'] * len(columns)) + ' |\n')
         for row in contents:
+
             current_article_name = row.get("name", "")
             current_url = row.get("url", "")
             row_cells = []
@@ -351,6 +386,16 @@ def write_md_table(input_filepaths: list[str], output_dir: str, columns: List[tu
                     val = val.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
 
                 row_cells.append(val)
+            
+            # if row.get("ratings", None):
+            #     ratings_contents = row.get("ratings", "")
+            #     for column_name in RATINGS_COLUMNS:
+            #         val = ratings_contents.get(column_name)
+            #         print(val)
+
+            #         row_cells.append(val)
+
+            
             md_file.write('| ' + ' | '.join(row_cells) + ' |\n')
 
 
@@ -398,7 +443,7 @@ def generate_bibtex(input_filepaths: list[str], output_dir: str) -> None:
             bib_file.write(entry.strip() + "\n\n")
 
 
-def write_individual_latex_tables(input_filepaths: List[str], output_dir: str, columns: List[tuple], author_limit: int | None = 10) -> None:
+def write_individual_latex_tables(input_filepaths: list[str], output_dir: str, columns: list[tuple], author_limit: int | None = 10) -> None:
     """
     Writes each benchmark entry as its own LaTeX table in separate .tex files.
 
@@ -520,33 +565,30 @@ if __name__ == "__main__":
 
     os.makedirs(args.out_dir, exist_ok=True)
     columns = get_column_triples(args.columns) if args.columns else ALL_COLUMNS
+    # columns = reformat_for_ratings(columns)
+
 
     # Required fields in YAML file
-if args.required:
-    # --required is explicitly provided, so make all columns required
-    required_fields = args.columns
-    check_yaml(args.files, required_fields=required_fields )
-else:
-    required_fields = None  # No required fields
+    if args.required:
+        # --required is explicitly provided, so make all columns required
+        required_fields = args.columns
+        check_yaml(args.files, required_fields=required_fields )
+    else:
+        required_fields = None  # No required fields
 
-if args.check:
-    check_yaml(args.files, required_fields=required_fields)
+    if args.check:
+        check_yaml(args.files, required_fields=required_fields)
 
-if args.withcitation:
-    columns.append(FULL_CITE_COLUMN)
-   
-if args.format == 'md':
-    if args.index:
-        write_individual_md_pages(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_trunc=args.authortruncation)
+    if args.withcitation:
+        columns.append(FULL_CITE_COLUMN)
+    
+    if args.format == 'md':
+        if args.index:
+            write_individual_md_pages(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_trunc=args.authortruncation)
 
-    write_md_table(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_limit=args.authortruncation)
+        write_md_table(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_limit=args.authortruncation)
 
-elif args.format == 'tex':
-    if args.index:
-        write_individual_latex_tables(args.files, os.path.join(args.out_dir, "tex_pages"), columns, author_limit=args.authortruncation)
-    write_latex(args.files, os.path.join(args.out_dir, "tex"), columns, standalone=args.standalone, author_limit=args.authortruncation)
-
-columns = get_column_triples(args.columns) if args.columns else ALL_COLUMNS
-
-
-
+    elif args.format == 'tex':
+        if args.index:
+            write_individual_latex_tables(args.files, os.path.join(args.out_dir, "tex_pages"), columns, author_limit=args.authortruncation)
+        write_latex(args.files, os.path.join(args.out_dir, "tex"), columns, standalone=args.standalone, author_limit=args.authortruncation)

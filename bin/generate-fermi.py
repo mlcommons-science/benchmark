@@ -50,7 +50,16 @@ def merge_yaml_files(file_paths: list[str]) -> list[dict]:
     return records
 
 def sanitize_filename(name: str) -> str:
-    return re.sub(r'[^\w\-_\. ]', '_', name).replace(' ', '_').lower()
+    output = ""
+    for ch in name:
+        if 32<=ord(ch)<=126:
+            output += ch
+
+    output = re.sub(r' {2,}', ' ', output) #Replace 2+ spaces with single space
+    output = output.strip().replace("(", "").replace(")", "").replace(" ", "_")
+
+    # print(f'"{output}"')
+    return output
 
 
 def get_bibtex(cell_val: str, author_limit: int) -> str:

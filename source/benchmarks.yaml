@@ -36,6 +36,17 @@
         year={2021},
         url={https://arxiv.org/abs/2009.03300}
       }
+  ratings:
+    - problem_spec_rating: 6
+    - problem_spec_reason: TO DO
+    - dataset_rating: 6.5
+    - dataset_reason: TO DO
+    - metrics_rating: 10
+    - metrics_reason: TO DO
+    - reference_solution_rating: 0
+    - reference_solution_reason: TO DO
+    - documentation_rating: 6
+    - documentation_reason: TO DO
 
 - date: "2023-11-20"
   expired: null
@@ -73,6 +84,17 @@
         year={2023},
         url={https://arxiv.org/abs/2311.12022}
       }
+  ratings:
+    - problem_spec_rating: 6.5
+    - problem_spec_reason: Good description of how the problems are received, but little specification on how the models are tested
+    - dataset_rating: 8.5
+    - dataset_reason: Easily able to access dataset. No labels or train/test/valid split
+    - metrics_rating: 10
+    - metrics_reason: Each question has a correct answer
+    - reference_solution_rating: 7.5
+    - reference_solution_reason: Common models such as GPT-3.5 were compared. Reproducibility of results unknown
+    - documentation_rating: 1
+    - documentation_reason: No reference solution, platform for reproduction, or procedure for replication
 
 - date: "2018-03-14"
   expired: null
@@ -109,6 +131,17 @@
         year={2018},
         url={https://allenai.org/data/arc}
       }
+  ratings:
+    - problem_spec_rating: 9
+    - problem_spec_reason: Exact format of data, questions, and answers are specified. No HW constraints
+    - dataset_rating: 10
+    - dataset_reason: Data accessible, offers instructions on how to download the data via CLI tools
+    - metrics_rating: 10
+    - metrics_reason: (by default) All questions in the dataset are multiple choice, all have a correct answer
+    - reference_solution_rating: 4.5
+    - reference_solution_reason: There are over 300 models listed, but very few, if any, show performance on the dataset
+    - documentation_rating: 4
+    - documentation_reason: There are easy ways to download the dataset. Documentation quantity and clarity depends on authors of tested models
 
 - date: "2025-01-24"
   expired: null
@@ -141,6 +174,18 @@
         year={2025},
         url={https://arxiv.org/abs/2501.14249}
       }
+  ratings:
+    - problem_spec_rating: 8.5
+    - problem_spec_reason: Format of inputs (natural language) and outputs (multiple choice or natural language) specified. No HW constraints specified
+    - dataset_rating: 6
+    - dataset_reason: Data accessible through Hugging Face, but requires giving contact information to access
+    - metrics_rating: 10
+    - metrics_reason: (by default) All questions in the dataset are multiple choice, all have a correct answer
+    - reference_solution_rating: 6
+    - reference_solution_reason: Performance for cutting-edge models listed, but does not specify exact version of the models or how to reproduce the result
+    - documentation_rating: 0.5
+    - documentation_reason: No specified way to reproduce the reference solution
+  
 
 - date: "2024-11-07"
   expired: null
@@ -173,6 +218,17 @@
         year={2024},
         url={https://arxiv.org/abs/2411.04872}
       }
+  ratings:
+    - problem_spec_rating: 9
+    - problem_spec_reason: Well-specified process for asking questions and receiving answers. No HW constraints
+    - dataset_rating: 0.5
+    - dataset_reason: Paper and website had no link to any dataset. It may still exist somewhere
+    - metrics_rating: 10
+    - metrics_reason: (by default) All questions in the dataset are multiple choice, all have a correct answer
+    - reference_solution_rating: 9
+    - reference_solution_reason: Displays result of leading models on the benchmark
+    - documentation_rating: 0.5
+    - documentation_reason: No specified way to reproduce the reference solution
 
 - date: "2024-07-18"
   expired: null
@@ -205,6 +261,17 @@
        year={2024},
        url={https://arxiv.org/abs/2407.13168}
       }
+  ratings:
+    - problem_spec_rating: 6
+    - problem_spec_reason: Expected outputs and broad types of inputs stated. Few details on output grading. No HW constraints.
+    - dataset_rating: 0.5
+    - dataset_reason: Paper and website had no link to any dataset. It may still exist somewhere
+    - metrics_rating: 4
+    - metrics_reason: Metrics stated, but not specified in detail
+    - reference_solution_rating: 9
+    - reference_solution_reason: Models presented with scores
+    - documentation_rating: 0.5
+    - documentation_reason: No specified way to reproduce the reference solution
 
 - date: "2025-03-13"
   expired: null
@@ -239,6 +306,17 @@
         year = 2025,
         note = {[Online accessed 2025-06-24]}
       }
+  ratings:
+    - problem_spec_rating: 3
+    - problem_spec_reason: Obvious what the problems are, but not specified how to administer them to AI models. No HW constraints
+    - dataset_rating: 9
+    - dataset_reason: Easily accessible data with problems and solutions
+    - metrics_rating: 10
+    - metrics_reason: (by default) Answer is correct or it's not
+    - reference_solution_rating: 0
+    - reference_solution_reason:  Not given. Human performance stats exist, but no mentions of AI performance
+    - documentation_rating: 0
+    - documentation_reason: Not given
 
 - date: "2025-02-15"
   expired: null
@@ -271,6 +349,17 @@
         year={2025},
         url={https://huggingface.co/datasets/HuggingFaceH4/MATH-500}
       }
+  ratings:
+    - problem_spec_rating: 3
+    - problem_spec_reason: Known what the problems are, but method of presentation and evaluation is not stated. No HW constraints
+    - dataset_rating: 9.9
+    - dataset_reason: Problems and solutions are easily downloaded. Could not find a way to download the data
+    - metrics_rating: 2
+    - metrics_reason:  Problem spec states that all of the AI’s reasoning steps are subject to grading, but no specified way to evaluate the steps
+    - reference_solution_rating: 0
+    - reference_solution_reason:  Not given
+    - documentation_rating: 0.5
+    - documentation_reason: Not given. Implicit instructions to download dataset.
 
 - date: "2024-04-02"
   expired: null
@@ -308,6 +397,17 @@
         year={2024},
         url={https://arxiv.org/abs/2404.02029}
       }
+  ratings:
+    - problem_spec_rating: 0
+    - problem_spec_reason: This is an AI model, not a benchmark
+    - dataset_rating: 0
+    - dataset_reason: This is an AI model, not a benchmark
+    - metrics_rating: 0
+    - metrics_reason: This is an AI model, not a benchmark
+    - reference_solution_rating: 0
+    - reference_solution_reason: This is an AI model, not a benchmark
+    - documentation_rating: 0
+    - documentation_reason: This is an AI model, not a benchmark
 
 - date: "2023-01-26"
   expired: null
@@ -343,6 +443,17 @@
         year={2023},
         url={https://github.com/alleninstitute/feabench}
       }
+  ratings:
+    - problem_spec_rating: 0
+    - problem_spec_reason: Using the link results in a 404 Not Found error
+    - dataset_rating: 0
+    - dataset_reason: Using the link results in a 404 Not Found error
+    - metrics_rating: 0
+    - metrics_reason: Using the link results in a 404 Not Found error
+    - reference_solution_rating: 0
+    - reference_solution_reason: Using the link results in a 404 Not Found error
+    - documentation_rating: 0
+    - documentation_reason: Using the link results in a 404 Not Found error
 
 - date: "2024-07-12"
   expired: null
@@ -380,6 +491,17 @@
         year={2024},
         url={https://arxiv.org/abs/2407.09413}
       }
+  ratings:
+    - problem_spec_rating: 10
+    - problem_spec_reason: Task administration clearly defined; prompt instructions explicitly given, no ambiguity in format or scope.
+    - dataset_rating: 9
+    - dataset_reason: Dataset is available (via paper/appendix), includes train/test/valid split. FAIR-compliant with minor gaps in versioning or access standardization.
+    - metrics_rating: 9
+    - metrics_reason: Uses quantitative metrics (Accuracy, F1) aligned with the task. Well-suited for benchmarking multimodal reasoning.
+    - reference_solution_rating: 5
+    - reference_solution_reason: Multiple model results (e.g., GPT-4V, Gemini) reported; baselines exist, but full runnable code not confirmed for all.
+    - documentation_rating: 2
+    - documentation_reason: Dataset and benchmark description provided; code/software mentioned; however, full step-by-step setup or containerized environment not stated.
 
 - date: "2020-09-28"
   expired: null
@@ -414,6 +536,17 @@
         year={2020},
         url={https://arxiv.org/abs/2009.13081}
       }
+  ratings:
+    - problem_spec_rating: 9
+    - problem_spec_reason: Task is clearly defined as multiple-choice QA for medical board exams; input and output formats are explicit; task scope is rigorous and structured. System constraints not specified.
+    - dataset_rating: 8
+    - dataset_reason: Dataset is publicly available (GitHub, paper, Hugging Face), well-structured. However, versioning and metadata could be more standardized to fully meet FAIR criteria.
+    - metrics_rating: 9
+    - metrics_reason: Uses clear, quantitative metric (accuracy), standard for multiple-choice benchmarks; easily comparable across models.
+    - reference_solution_rating: 7
+    - reference_solution_reason: Model results reported (GPT-4, Med-PaLM, etc.); implementations discussed in papers, but runnable baselines not fully packaged or documented.
+    - documentation_rating: 6
+    - documentation_reason: Dataset and paper are accessible; instructions on how to use the source code available, but environment setup or full reproducibility workflow is not packaged.
 
 - date: "2025-05-13"
   expired: null
@@ -448,6 +581,18 @@
         year={2025},
         url={https://arxiv.org/abs/2505.08341}
       }
+  ratings:
+    - problem_spec_rating: 9
+    - problem_spec_reason:  Task clearly defined—cell type annotation and biological QA; input/output formats are well-described; system constraints are not deeply quantified.
+    - dataset_rating: 8
+    - dataset_reason: Uses public scRNA-seq datasets linked in paper appendix; structured and accessible, though versioning and full metadata not formalized per FAIR standards.
+    - metrics_rating: 9
+    - metrics_reason: Includes precise and interpretable metrics (annotation and QA accuracy); directly aligned with task outputs and benchmarking goals.
+    - reference_solution_rating: 7
+    - reference_solution_reason: Model evaluations and LLM agent results discussed; however, no fully packaged, runnable baseline with training/eval pipeline confirmed yet.
+    - documentation_rating: 8
+    - documentation_reason: Dataset and paper accessible; IPYNB files for setup are available on the github repo; further instructions are minimal.
+
 
 - date: "2023-01-26"
   expired: null
@@ -484,6 +629,17 @@
         year={2023},
         url={https://arxiv.org/abs/2301.11259}
       }
+  ratings:
+    - problem_spec_rating: 8
+    - problem_spec_reason: The molecular generation task is well-defined, with input/output via SELFIES and chemical properties
+    - dataset_rating: 7
+    - dataset_reason: Uses standard datasets (ZINC, MOSES, QM9); accessible and widely used, but FAIR metadata, versioning, and splits are not detailed within this specific repo.
+    - metrics_rating: 9
+    - metrics_reason: Metrics like Validity%, Novelty%, QED, and Docking Score are quantitative, supporting clear model evaluation.
+    - reference_solution_rating: 6
+    - reference_solution_reason: Model is released and functional; some training/evaluation code exists, but it's not framed as a reusable baseline in a benchmark context.
+    - documentation_rating: 6.5
+    - documentation_reason: Code is available and usable; instructions exist, though setup may require domain knowledge or adaptation for different datasets/environments.
 
 - date: "2020-05-02"
   expired: null
@@ -521,6 +677,17 @@
         year={2020},
         url={https://arxiv.org/abs/2005.00687}
       }
+  ratings:
+    - problem_spec_rating: 10
+    - problem_spec_reason: Tasks (node/link/graph property prediction) are clearly specified with input/output formats and standardized protocols; constraints (e.g., splits) are well-defined.
+    - dataset_rating: 10
+    - dataset_reason: Fully FAIR- datasets are versioned, split, and accessible via a standardized API; extensive metadata and documentation are included.
+    - metrics_rating: 10
+    - metrics_reason: Reproducible, quantitative metrics (e.g., ROC-AUC, accuracy) that are tightly aligned with the tasks.
+    - reference_solution_rating: 7
+    - reference_solution_reason: Multiple baselines implemented and documented (GCN, GAT, GraphSAGE), though most are provided by 3rd parties.
+    - documentation_rating: 10
+    - documentation_reason: Full codebase available via GitHub, with documented installation and usage instructions.
 
 - date: "2011-10-01"
   expired: null
@@ -559,6 +726,17 @@
         doi       = {10.1063/1.4812323},
         url={https://materialsproject.org/}
       }
+  ratings:
+    - problem_spec_rating: 8
+    - problem_spec_reason: The platform offers a wide range of material property prediction tasks, but task framing and I/O formats vary by API use and are not always standardized across use cases.
+    - dataset_rating: 8
+    - dataset_reason: Data is versioned, accessible through both UI and API, with rich metadata and citations; widely reused. API key required to access data.
+    - metrics_rating: 10
+    - metrics_reason: Uses numerical metrics like MAE and R²
+    - reference_solution_rating: 6
+    - reference_solution_reason: Numerous models (e.g., Automatminer, CGCNN) trained on the database, but no single canonical baseline is tightly integrated into the platform.
+    - documentation_rating: 7
+    - documentation_reason: Extensive API, code repositories, and user guides exist, but end-to-end benchmarking workflows require additional setup by users. 'Documentation' link did not work.
 
 - date: "2020-10-20"
   expired: null
@@ -638,6 +816,17 @@
         year={2023},
         month=feb, pages={3066-3084} 
       }
+  ratings:
+    - problem_spec_rating: 10
+    - problem_spec_reason: Tasks (energy and force prediction) are clearly defined with explicit I/O specifications, constraints, and physical relevance for renewable energy.
+    - dataset_rating: 9.5
+    - dataset_reason: Fully FAIR- OC20, per-adsorbate trajectories, and OC22 are versioned; datasets come with standardized splits, metadata, and are downloadable.
+    - metrics_rating: 10
+    - metrics_reason: MAE (energy and force) are standard and reproducible.
+    - reference_solution_rating: 9
+    - reference_solution_reason: Multiple baselines (GemNet-OC, DimeNet++, etc.) implemented and evaluated; highly cited with documented performance.
+    - documentation_rating: 9
+    - documentation_reason: Code, data loaders, usage instructions, and leaderboard available; minor setup effort may still be required for full reproduction.
 
 - date: "2023-06-20"
   expired: null
@@ -677,6 +866,17 @@
         doi = {10.1038/s41524-024-01259-w},
         url = {https://doi.org/10.1038/s41524-024-01259-w}
       }
+  ratings:
+    - problem_spec_rating: 6
+    - problem_spec_reason: Tasks are clearly defined; heterogeneity in benchmarks slightly reduces uniformity; I/O format is not specified
+    - dataset_rating: 9
+    - dataset_reason: Data is versioned, public, and adheres to FAIR principles across the NIST-hosted infrastructure; however, metadata completeness varies slightly across benchmarks.
+    - metrics_rating: 4
+    - metrics_reason: Overall goal is stated, but the exact metric evaluated is not listed
+    - reference_solution_rating: 5
+    - reference_solution_reason: Many baselines across tasks (CGCNN, ALIGNN, M3GNet, etc.); documentation is good, but baselines may be hard to find or not available for every individual task.
+    - documentation_rating: 8.5
+    - documentation_reason: JARVIS-Tools and leaderboard APIs are well-documented and actively maintained; minimal setup burden, though some task-specific workflows may require additional guidance.
 
 - date: "2022-02-22"
   expired: null
@@ -718,6 +918,17 @@
         year={2023},
         month=sep, pages={475-484}
       }
+  ratings:
+    - problem_spec_rating: 9
+    - problem_spec_reason: Tasks like fidelity estimation, state preparation, and runtime benchmarking are clearly defined; I/O formats vary slightly across hardware but are consistently framed in PennyLane/Qiskit ecosystems.
+    - dataset_rating: 8
+    - dataset_reason: Datasets are accessible, structured, and interoperable via PennyLane; however, not all are versioned or richly annotated in conventional ML metadata standards.
+    - metrics_rating: 9
+    - metrics_reason: Quantitative and well-motivated metrics (e.g., fidelity, success probability) are used, though reproducibility can depend on hardware noise profiles.
+    - reference_solution_rating: 5
+    - reference_solution_reason: Reference implementations exist and are integrated into tools like PennyLane, but performance varies per backend; not all benchmarks include reproducible reference runs.
+    - documentation_rating: 8
+    - documentation_reason: Strong integration with PennyLane and QML ecosystem; guides and code provided, but advanced hardware setup may pose reproducibility hurdles for newcomers.
 
 - date: "2024-10-01"
   expired: null
@@ -753,6 +964,17 @@
         year={2024},
         url={https://arxiv.org/abs/2310.05963}
       }
+  ratings:
+    - problem_spec_rating: 10
+    - problem_spec_reason: Tasks are clearly framed (PDE regression, surrogate modeling), with explicit details on the four canonical CFD problems, input/output structure, and generalization goals.
+    - dataset_rating: 10
+    - dataset_reason: Publicly available on Zenodo, versioned, with metadata and splits; covers thousands of simulations with proper documentation.
+    - metrics_rating: 9
+    - metrics_reason: Quantitative metrics (L2 error, MAE, relative error) are clearly defined and align with regression task objectives.
+    - reference_solution_rating: 8
+    - reference_solution_reason: Baseline models like FNO and DeepONet are implemented, but full reproduction pipelines or eval scripts may require additional user configuration.
+    - documentation_rating: 6
+    - documentation_reason: GitHub and Zenodo provide data and code, but setup for evaluating across all 739 cases requires moderate user effort and technical fluency with PyTorch-based frameworks. Reproducibility depends on full implementation details.
 
 - date: null
   expired: null
@@ -787,7 +1009,17 @@
         primaryClass={cs.CV},
         url={https://arxiv.org/abs/2304.11619}, 
       }
-
+  ratings:
+    - problem_spec_rating: 9
+    - problem_spec_reason: Tasks (image classification across 27 satellite datasets) are clearly defined with multi-task and zero-shot framing; input/output structure is mostly standard but some task-specific nuances require interpretation.
+    - dataset_rating: 9
+    - dataset_reason: Hosted on Hugging Face, versioned, FAIR-compliant with rich metadata; covers many well-known remote sensing datasets unified under one metadataset, though documentation depth varies slightly across tasks.
+    - metrics_rating: 9
+    - metrics_reason: Standard quantitative metrics (Accuracy, Top-1 Accuracy) aligned with classification tasks; consistent across models, with leaderboard results available.
+    - reference_solution_rating: 7
+    - reference_solution_reason: Baselines like CLIP, BLIP, ALBEF evaluated in the paper; full inference pipelines or training code may need reconstruction from paper or GitHub references.
+    - documentation_rating: 7
+    - documentation_reason: Good usage guidance via Hugging Face and paper; example scripts and evaluation tools exist, but end-to-end reproducibility may require manual integration of model checkpoints and preprocessing.
 
 - date: "2023-07-19"
   expired: null
@@ -823,6 +1055,17 @@
         primaryClass={cs.LG},
         url={https://arxiv.org/abs/2307.01909}
       }
+  ratings:
+    - problem_spec_rating: 10
+    - problem_spec_reason: Task framing (medium-range climate forecasting), input/output formats, and evaluation windows are clearly defined; benchmark supports both physical and learned models with detailed constraints.
+    - dataset_rating: 10
+    - dataset_reason: Provides standardized access to ERA5 and other reanalysis datasets, with ML-ready splits, metadata, and Xarray-compatible formats; versioned and fully FAIR-compliant.
+    - metrics_rating: 9
+    - metrics_reason: ACC and RMSE are standard, quantitative, and appropriate for climate forecasting; well-integrated into the benchmark, though interpretation across domains may vary.
+    - reference_solution_rating: 8
+    - reference_solution_reason: Multiple baselines (e.g., FourCastNet, ClimaX) are provided and evaluated; implementations are available but may require tuning or GPU-specific configuration.
+    - documentation_rating: 8.5
+    - documentation_reason: Comprehensive setup via GitHub, including data loaders, training scripts, config files, and reproducibility protocols; minor complexity in large-scale data preprocessing.
 
 - date: "2022-06-09"
   expired: null
@@ -861,6 +1104,24 @@
         primaryClass={cs.CL},
         url={https://arxiv.org/abs/2206.04615}, 
       }
+  ratings:
+  - problem_spec_rating: 9.0
+  - problem_spec_reason: Tasks are diverse and clearly described; input/output formats
+      are usually defined but vary widely, and system constraints are not standardized.
+  - dataset_rating: 9.0
+  - dataset_reason: Public, versioned, and well-documented; FAIR overall, though consistency
+      and metadata completeness vary across tasks.
+  - metrics_rating: 8.0
+  - metrics_reason: Many tasks use standard quantitative metrics (accuracy, BLEU,
+      F1), but others involve subjective ratings (e.g., Likert), which reduces cross-task
+      comparability.
+  - reference_solution_rating: 7.0
+  - reference_solution_reason: Human baselines and LLM performance results are included;
+      however, runnable reference solutions are limited and setup is not fully turnkey.
+  - documentation_rating: 8.0
+  - documentation_reason: Excellent GitHub documentation with usage examples, task
+      templates, and tooling; task diversity may require manual task-by-task execution
+      setup.
 
 - date: "2019-11-20"
   expired: null
@@ -898,6 +1159,24 @@
         primaryClass={cs.CL},
         url={https://arxiv.org/abs/1811.00937}, 
       }
+  ratings:
+  - problem_spec_rating: 9.0
+  - problem_spec_reason: Task and format (multiple-choice QA with 5 options) are clearly
+      defined; grounded in ConceptNet with consistent structure, though no hardware/system
+      constraints are specified.
+  - dataset_rating: 9.0
+  - dataset_reason: Public, versioned, and FAIR-compliant; includes metadata, splits,
+      and licensing; well-integrated with HuggingFace and other ML libraries.
+  - metrics_rating: 9.0
+  - metrics_reason: Accuracy is a simple, reproducible metric aligned with task goals;
+      no ambiguity in evaluation.
+  - reference_solution_rating: 8.0
+  - reference_solution_reason: Several baseline models (e.g., BERT, RoBERTa) are reported
+      with scores; implementations exist in public repos, but not bundled as an official
+      starter kit.
+  - documentation_rating: 7.0
+  - documentation_reason: Clear paper, GitHub repo, and integration with HuggingFace
+      Datasets; full reproducibility requires manually connecting models to dataset.
 
 - date: "2019-07-24" 
   expired: null
@@ -935,3 +1214,22 @@
         primaryClass={cs.CL},
         url={https://arxiv.org/abs/1907.10641}, 
       }
+  ratings:
+  - problem_spec_rating: 9.0
+  - problem_spec_reason: Task (pronoun/coreference resolution) is clearly defined
+      in Winograd Schema style, with consistent input/output format; no system constraints
+      included.
+  - dataset_rating: 9.0
+  - dataset_reason: Public, versioned, and FAIR-compliant with AFLite-generated splits
+      to reduce annotation artifacts; hosted by AllenAI with good metadata.
+  - metrics_rating: 9.0
+  - metrics_reason: Accuracy and AUC are quantitative and well-aligned with disambiguation
+      goals; standardized across evaluations.
+  - reference_solution_rating: 8.0
+  - reference_solution_reason: Baseline results for BERT, RoBERTa, GPT-2, etc., are
+      published, but official runnable baselines require setup via AllenNLP or other
+      frameworks.
+  - documentation_rating: 6.0
+  - documentation_reason: Dataset page and paper provide sufficient detail; usage
+      with HuggingFace is smooth, but full reproducibility for training requires configuration
+      effort.

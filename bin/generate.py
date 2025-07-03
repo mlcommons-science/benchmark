@@ -153,16 +153,38 @@ def check_unique_citation_labels(yaml_data: list[dict]) -> None:
         if label in found:
             print(f"\033[91mERROR: {label} is a duplicate citation label\033[00m")
         found.add(label)
+def validate_required_fields(yaml_data: list, required_fields: list[str] | None) -> None:
+    if not required_fields:
+        return  # No validation needed
 
-def check_yaml(file_paths: list[str]) -> None:
+    for i, entry in enumerate(yaml_data):
+        if not isinstance(entry, dict):
+            print(f"\033[93mWARNING: Entry #{i} is not a dictionary. Skipping.\033[00m")
+            continue  # skip bad entry
 
+        missing = []
+        for field in required_fields:
+            if field not in entry or entry[field] in [None, '', [], {}]:
+                missing.append(field)
+
+        if missing:
+            name = entry.get("name", f"<entry #{i}>")
+            print(f"\033[91mERROR: Entry '{name}' is missing required fields: {', '.join(missing)}\033[00m")
+
+
+def check_yaml(file_paths: list[str], required_fields: list[str] | None = None) -> None:
     #Check if YAML files are syntactically correct
     for path in file_paths:
         try:
-            content = yaml.safe_load(path)
+            with open(path, 'r', encoding='utf-8') as f:
+                content = yaml.safe_load(f)
+
         except Exception as e:
             print(e)
             sys.exit(1)
+    #Check of required fields are there
+    if required_fields:
+        validate_required_fields(content, required_fields)
 
     #Check if all names of entries are unique
     contents = merge_yaml_files(file_paths)
@@ -173,6 +195,7 @@ def check_yaml(file_paths: list[str]) -> None:
 
     #Check if all citation labels are unique
     check_unique_citation_labels(contents)
+
 
 
 def get_bibtex(cell_val: str, author_limit: int) -> str:
@@ -471,12 +494,15 @@ if __name__ == "__main__":
     parser.add_argument('--out-dir', '-o', type=str, default='../content/', help="Output directory")
     parser.add_argument('--authortruncation', type=int, default=MAX_AUTHOR_LIMIT, help="Truncate authors for index pages")
     parser.add_argument('--columns', type=lambda s: s.split(','), help="Subset of columns to include")
+    parser.add_argument('--required', action='store_true',help="Makes all the columns required that are listed in the --columns command")
     parser.add_argument('--check', action='store_true', help="Conduct formatting checks on inputted YAML files")
     parser.add_argument('--index', action='store_true', help="Generate individual pages for each entry for the given format. If format is MD, generates an index.md file")
     parser.add_argument('--standalone', '-s', action='store_true', help="Include full LaTeX document preamble.")
     parser.add_argument('--withcitation', action='store_true', help="Include a row for BibTeX citations. Works only with Markdown format")
 
     args = parser.parse_args()
+
+    
 
     if args.standalone and args.format != 'tex':
         parser.error("--standalone is only valid with --format tex")
@@ -494,19 +520,32 @@ if __name__ == "__main__":
     os.makedirs(args.out_dir, exist_ok=True)
     columns = get_column_triples(args.columns) if args.columns else ALL_COLUMNS
 
-    if args.check:
-        check_yaml(args.files)
+    # Required fields in YAML file
+if args.required:
+    # --required is explicitly provided, so make all columns required
+    required_fields = [col[0] for col in columns]
 
-    if args.withcitation:
-        columns.append(FULL_CITE_COLUMN)
+else:
+    required_fields = None  # No required fields
+
+if args.check:
+    check_yaml(args.files, required_fields=required_fields)
+
+if args.withcitation:
+    columns.append(FULL_CITE_COLUMN)
    
-    if args.format == 'md':
-        if args.index:
-            write_individual_md_pages(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_trunc=args.authortruncation)
+if args.format == 'md':
+    if args.index:
+        write_individual_md_pages(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_trunc=args.authortruncation)
 
-        write_md_table(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_limit=args.authortruncation)
+    write_md_table(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_limit=args.authortruncation)
 
-    elif args.format == 'tex':
-        if args.index:
-             write_individual_latex_tables(args.files, os.path.join(args.out_dir, "tex_pages"), columns, author_limit=args.authortruncation)
-        write_latex(args.files, os.path.join(args.out_dir, "tex"), columns, standalone=args.standalone, author_limit=args.authortruncation)
+elif args.format == 'tex':
+    if args.index:
+        write_individual_latex_tables(args.files, os.path.join(args.out_dir, "tex_pages"), columns, author_limit=args.authortruncation)
+    write_latex(args.files, os.path.join(args.out_dir, "tex"), columns, standalone=args.standalone, author_limit=args.authortruncation)
+
+columns = get_column_triples(args.columns) if args.columns else ALL_COLUMNS
+
+
+

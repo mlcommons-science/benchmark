@@ -386,6 +386,13 @@ def write_md_table(input_filepaths: list[str], output_dir: str, columns: list[tu
                     val = val.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
 
                 row_cells.append(val)
+            if row.get("ratings"):
+                ratings_list = row.get("ratings", [])
+                ratings_dict = {list(item.keys())[0]: list(item.values())[0] for item in ratings_list if isinstance(item, dict)}
+                for rating_col, _, _ in RATINGS_COLUMNS:
+                    val = ratings_dict.get(rating_col, "")
+                    row_cells.append(str(val))
+
             
             # if row.get("ratings", None):
             #     ratings_contents = row.get("ratings", "")

@@ -125,6 +125,12 @@ def check_unique_citations(yaml_data: list[dict]) -> None:
     found = set()
     for entry in yaml_data:
         value = str(entry.get('cite'))
+
+        #Fix missing citations
+        if value=="None":
+            print(f"\033[91mERROR: The entry {entry} has a missing citation\033[00m")
+            continue
+
         if value in found:
             print(f"\033[91mERROR: {value} is a duplicate citation\033[00m")
         found.add(value)
@@ -134,7 +140,16 @@ def check_unique_citation_labels(yaml_data: list[dict]) -> None:
     found = set()
     for entry in yaml_data:
         value = entry.get('cite')
-        label = extract_cite_label(value)
+
+        #Handle nonexistent citations
+        if value:
+            if type(value)==list:
+                label = extract_cite_label(value[0])
+            else:
+                label = extract_cite_label(str(value))
+        else:
+            continue
+
         if label in found:
             print(f"\033[91mERROR: {label} is a duplicate citation label\033[00m")
         found.add(label)
@@ -281,7 +296,7 @@ def write_individual_md_pages(input_filepaths: list[str], output_dir: str, colum
 
 
 
-def write_md(input_filepaths: list[str], output_dir: str, columns: List[tuple], author_limit: int = MAX_AUTHOR_LIMIT) -> None:
+def write_md_table(input_filepaths: list[str], output_dir: str, columns: List[tuple], author_limit: int = MAX_AUTHOR_LIMIT) -> None:
 
     contents = merge_yaml_files(input_filepaths)
     os.makedirs(output_dir, exist_ok=True)
@@ -456,10 +471,10 @@ if __name__ == "__main__":
     parser.add_argument('--out-dir', '-o', type=str, default='../content/', help="Output directory")
     parser.add_argument('--authortruncation', type=int, default=MAX_AUTHOR_LIMIT, help="Truncate authors for index pages")
     parser.add_argument('--columns', type=lambda s: s.split(','), help="Subset of columns to include")
+    parser.add_argument('--check', action='store_true', help="Conduct formatting checks on inputted YAML files")
     parser.add_argument('--index', action='store_true', help="Generate individual pages for each entry for the given format. If format is MD, generates an index.md file")
     parser.add_argument('--standalone', '-s', action='store_true', help="Include full LaTeX document preamble.")
     parser.add_argument('--withcitation', action='store_true', help="Include a row for BibTeX citations. Works only with Markdown format")
-    parser.add_argument('--check', action='store_true')
 
     args = parser.parse_args()
 
@@ -489,7 +504,7 @@ if __name__ == "__main__":
         if args.index:
             write_individual_md_pages(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_trunc=args.authortruncation)
 
-        write_md(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_limit=args.authortruncation)
+        write_md_table(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_limit=args.authortruncation)
 
     elif args.format == 'tex':
         if args.index:

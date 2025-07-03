@@ -38,8 +38,10 @@ pdf: tex
 
 clean:
 	cd content/tex && latexmk -C
-	rm -rf content/md/benchmarks.*
-
+	
+	mv content/md_pages/benchmarks.md content/
+	rm -rf content/md_pages/*
+	mv content/benchmarks.md content/md_pages
 
 view:
 	open content/tex/benchmarks.pdf

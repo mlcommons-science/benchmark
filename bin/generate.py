@@ -185,6 +185,7 @@ def check_yaml(file_paths: list[str], required_fields: list[str] | None = None) 
     #Check of required fields are there
     if required_fields:
         validate_required_fields(content, required_fields)
+        print(required_fields)
 
     #Check if all names of entries are unique
     contents = merge_yaml_files(file_paths)
@@ -523,8 +524,8 @@ if __name__ == "__main__":
     # Required fields in YAML file
 if args.required:
     # --required is explicitly provided, so make all columns required
-    required_fields = [col[0] for col in columns]
-
+    required_fields = args.columns
+    check_yaml(args.files, required_fields=required_fields )
 else:
     required_fields = None  # No required fields
 

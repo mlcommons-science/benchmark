@@ -43,6 +43,26 @@
   Benchmark-Ready: Yes
   Last Updated: 2024-05
   Support Contact Person: Jules Muhizi
+  ratings:
+  - problem_spec_rating: 8.0
+  - problem_spec_reason: Classification is clearly defined for real-time inference
+      on simulated LHC jets. Input features (HLFs) are documented, though exact latency
+      or resource constraints are not numerically specified.
+  - dataset_rating: 9.0
+  - dataset_reason: Two datasets (OpenML and Zenodo) are public, well-formatted, and
+      documented; FAIR principles are followed, though richer metadata would raise
+      confidence to a 10.
+  - metrics_rating: 9.0
+  - metrics_reason: AUC and Accuracy are standard, quantitative, and well-aligned
+      with goals of jet tagging and inference efficiency.
+  - reference_solution_rating: 8.0
+  - reference_solution_reason: Float and quantized Keras/QKeras models are provided
+      with results. Reproducibility is good, though full automation and documentation
+      could be improved.
+  - documentation_rating: 8.0
+  - documentation_reason: GitHub contains baseline code, data loaders, and references,
+      but setup for deployment (e.g., FPGA pipeline) requires familiarity with the
+      tooling.
 
 - date: "2024-05-01"
   expired: null
@@ -89,6 +109,24 @@
   Benchmark-Ready: Yes
   Last Updated: 2024-05
   Support Contact Person: Ben Hawks, Nhan Tran
+  ratings:
+  - problem_spec_rating: 9.0
+  - problem_spec_reason: Task is well defined (real-time compression of sparse, irregular
+      sensor data using autoencoders); latency constraints are implied but not fully
+      quantified.
+  - dataset_rating: 8.0
+  - dataset_reason: Dataset is custom and synthetic but described well; FAIR-compliance
+      is partial (reusable and accessible, but not externally versioned with rich
+      metadata).
+  - metrics_rating: 9.0
+  - metrics_reason: Uses standard quantitative metrics (MSE, compression ratio) clearly
+      aligned with compression and reconstruction goals.
+  - reference_solution_rating: 7.0
+  - reference_solution_reason: Baseline (autoencoder and quantized variant) is provided,
+      but training/inference pipeline is minimally documented and needs user setup.
+  - documentation_rating: 8.0
+  - documentation_reason: GitHub repo contains core components, but more structured
+      setup instructions and pretrained weights would improve usability.
 
 - date: "2024-05-01"
   expired: null
@@ -142,6 +180,23 @@
   Benchmark-Ready: in progress
   Last Updated: 2024-05
   Support Contact Person: Ben Hawks, Nhan Tran
+  ratings:
+  - problem_spec_rating: 8.0
+  - problem_spec_reason: Task is clear (RL control of beam stability), with BOOSTR-based
+      simulator; control objectives are well motivated, but system constraints and
+      reward structure are still under refinement.
+  - dataset_rating: 7.0
+  - dataset_reason: BOOSTR dataset exists and is cited, but integration into the benchmark
+      is in early stages; metadata and FAIR structure are limited.
+  - metrics_rating: 7.0
+  - metrics_reason: Stability and control loss are mentioned, but metrics are not
+      yet formalized with clear definitions or baselines.
+  - reference_solution_rating: 5.5
+  - reference_solution_reason: DDPG baseline mentioned; PPO planned; implementation
+      is still in progress with no reproducible results available yet.
+  - documentation_rating: 6.0
+  - documentation_reason: GitHub has a defined structure but is incomplete; setup
+      and execution instructions for training/evaluation are not fully established.
 
 - date: "2024-07-08"
   expired: null
@@ -181,11 +236,29 @@
   Benchmark-Ready: No
   Last Updated: 2024-07
   Support Contact Person: Patrick Odagiu
+  ratings:
+  - problem_spec_rating: 10.0
+  - problem_spec_reason: Real-time jet origin classification under FPGA constraints
+      is clearly defined, with explicit latency targets (~100 ns) and I/O formats.
+  - dataset_rating: 9.0
+  - dataset_reason: Data available on Zenodo with DOI, includes constituent-level
+      jets; accessible and well-documented, though not deeply versioned with full
+      FAIR metadata.
+  - metrics_rating: 10.0
+  - metrics_reason: Accuracy, latency, and hardware resource usage (LUTs, DSPs) are
+      rigorously measured and aligned with real-time goals.
+  - reference_solution_rating: 9.0
+  - reference_solution_reason: Includes models (MLP, Deep Sets, Interaction Networks)
+      with quantization-aware training and synthesis results via hls4ml; reproducible
+      but tightly coupled with specific toolchains.
+  - documentation_rating: 8.0
+  - documentation_reason: Paper and code (via hls4ml) are sufficient, but a centralized,
+      standalone repo for reproducing all models would enhance accessibility.
 
 - date: "2024-10-15"
   expired: null
   valid: "yes"
-  name: Quench detection
+  name: Quench Detection
   url: https://indico.cern.ch/event/1387540/contributions/6153618/attachments/2948441/5182077/fast_ml_magnets_2024_final.pdf
   domain: Accelerators and Magnets
   focus: Real-time detection of superconducting magnet quenches using ML
@@ -218,11 +291,28 @@
   Benchmark-Ready: No
   Last Updated: 2024-10
   Support Contact Person: Maira Khan
+  ratings:
+  - problem_spec_rating: 8.0
+  - problem_spec_reason: Task (quench detection via anomaly detection) is clearly
+      described; multi-modal sensors, streaming rates, and objective are provided,
+      but constraints (latency thresholds) are qualitative.
+  - dataset_rating: 7.0
+  - dataset_reason: Custom dataset using real data from BNL; HDF5 formatted and structured,
+      but access may be internal or limited, and not versioned for public FAIR use.
+  - metrics_rating: 8.0
+  - metrics_reason: ROC-AUC and detection latency are defined; relevant and quantitative
+      but not yet paired with benchmark baselines.
+  - reference_solution_rating: 6.0
+  - reference_solution_reason: Autoencoder prototype exists; RL methods are in development;
+      no fully reproducible pipeline is available yet.
+  - documentation_rating: 7.0
+  - documentation_reason: Slides and GDocs outline results; implementation is in progress
+      with limited setup/code release.
 
 - date: "2024-10-15"
   expired: null
   valid: "yes"
-  name: DUNE
+  name: DUNE (SONIC Time-Series Trigger Detection)
   url: https://indico.fnal.gov/event/66520/contributions/301423/attachments/182439/250508/fast_ml_dunedaq_sonic_10_15_24.pdf
   domain: Particle Physics
   focus: Real-time ML for DUNE DAQ time-series data
@@ -255,6 +345,23 @@
   Benchmark-Ready: No
   Last Updated: 2024-10
   Support Contact Person: Andrew J. Morgan 
+  ratings:
+  - problem_spec_rating: 8.0
+  - problem_spec_reason: Task (trigger-level anomaly detection) is clearly defined
+      for low-latency streaming input, but the problem framing lacks complete architectural/system
+      specs.
+  - dataset_rating: 6.0
+  - dataset_reason: Internal DUNE SONIC data; not publicly released and no formal
+      FAIR support; replicability is institutionally gated.
+  - metrics_rating: 7.0
+  - metrics_reason: Metrics include detection efficiency and latency, which are relevant,
+      but only lightly supported by baselines or formal eval scripts.
+  - reference_solution_rating: 5.0
+  - reference_solution_reason: One CNN prototype demonstrated; LSTM planned. No public
+      implementation or ready-to-run example yet.
+  - documentation_rating: 6.0
+  - documentation_reason: Slides and some internal documentation exist, but no full
+      pipeline or public GitHub repo yet.
 
 - date: "2025-01-08"
   expired: null
@@ -303,6 +410,24 @@
   Benchmark-Ready: No
   Last Updated: 2025-01
   Support Contact Person: Jakub Kvapil (lanl.gov)
+  ratings:
+  - problem_spec_rating: 10.0
+  - problem_spec_reason: Task is clearly defined (triggering on rare events with sub-10
+      microsecond latency); architecture, constraints, and system context (FPGA, Alveo) are
+      well detailed.
+  - dataset_rating: 7.0
+  - dataset_reason: Simulated tracking data from sPHENIX and EIC; internally structured
+      but not yet released in a public FAIR-compliant format.
+  - metrics_rating: 10.0
+  - metrics_reason: Accuracy, latency, and hardware resource utilization (LUTs, DSPs)
+      are clearly defined and used in evaluation.
+  - reference_solution_rating: 9.0
+  - reference_solution_reason: Graph-based models (BGN-ST, GarNet) are implemented
+      and tested on real hardware; reproducibility possible with hls4ml but full scripts
+      not bundled.
+  - documentation_rating: 8.0
+  - documentation_reason: Paper is detailed and tool usage (FlowGNN, hls4ml) is described,
+      but repo release and dataset access remain in progress.
 
 - date: "2025-01-09"
   expired: null
@@ -353,6 +478,24 @@
   Benchmark-Ready: No
   Last Updated: 2025-01
   Support Contact Person: Jason Weitz (UCSD), Nhan Tran (FNAL)
+  ratings:
+  - problem_spec_rating: 9.0
+  - problem_spec_reason: Task (automated neural architecture search for real-time
+      physics) is well formulated with clear latency, model compression, and deployment
+      goals.
+  - dataset_rating: 6.0
+  - dataset_reason: Internal Bragg and jet datasets used; not publicly hosted or FAIR-compliant,
+      though mentioned in the paper.
+  - metrics_rating: 10.0
+  - metrics_reason: BOP reduction, latency, and accuracy are all quantitatively evaluated.
+  - reference_solution_rating: 8.0
+  - reference_solution_reason: NAC-generated models for Bragg peak and jet classification
+      are described, but pipeline requires integration of several tools and is not
+      fully packaged.
+  - documentation_rating: 7.0
+  - documentation_reason: NAC pipeline, hls4ml usage, and results are discussed; code
+      (e.g., nac-opt) referenced, but replication requires stitching together toolchain
+      and data.
 
 - date: "2024-06-24"
   expired: null
@@ -367,7 +510,7 @@
     - data reduction
     - trigger
   description: |
-    Presents a 256×256-pixel ROIC in 28 nm CMOS with embedded 2-layer NN for cluster filtering
+    Presents a 256x256-pixel ROIC in 28 nm CMOS with embedded 2-layer NN for cluster filtering
     at 25 ns, achieving 54-75% data reduction while maintaining noise and latency constraints. Prototype
     consumes ~300 µW/pixel and operates in combinatorial digital logic.
   task_types:
@@ -399,6 +542,22 @@
   Benchmark-Ready: Yes (Zenodo:7331128)
   Last Updated: 2024-06
   Support Contact Person: Lindsey Gray; Jennet Dickinson
+  ratings:
+  - problem_spec_rating: 10.0
+  - problem_spec_reason: 'Fully specified: describes task (data filtering/classification),
+      system design (on-sensor inference), latency (25ns), and power constraints.'
+  - dataset_rating: 8.0
+  - dataset_reason: In-pixel charge cluster data used, but dataset release info is
+      minimal; FAIR metadata/versioning limited.
+  - metrics_rating: 9.0
+  - metrics_reason: Data rejection rate and power per pixel are clearly defined and
+      directly tied to hardware goals.
+  - reference_solution_rating: 9.0
+  - reference_solution_reason: 2-layer NN implementation is evaluated in hardware;
+      reproducible via hls4ml flow with results in paper.
+  - documentation_rating: 8.0
+  - documentation_reason: Paper is clear; Zenodo asset is referenced, but additional
+      GitHub or setup repo would improve reproducibility.
 
 - date: "2023-10-03"
   expired: null
@@ -414,7 +573,7 @@
     - HEDM
   description: |
     Uses BraggNN, a deep neural network, for rapid Bragg peak localization in high-energy diffraction microscopy,
-    achieving ~13× speedup compared to Voigt-based methods while maintaining sub-pixel accuracy.
+    achieving ~13x speedup compared to Voigt-based methods while maintaining sub-pixel accuracy.
   task_types:
     - Peak detection
   ai_capability_measured: High-throughput peak localization
@@ -443,11 +602,27 @@
   Benchmark-Ready: Yes
   Last Updated: 2023-10
   Support Contact Person: Jason Weitz (UCSD)
+  ratings:
+  - problem_spec_rating: 9.0
+  - problem_spec_reason: Peak localization task is well-defined for diffraction images;
+      input/output described clearly, but no system constraints.
+  - dataset_rating: 8.0
+  - dataset_reason: Simulated diffraction images provided; reusable and downloadable,
+      but not externally versioned or FAIR-structured.
+  - metrics_rating: 9.0
+  - metrics_reason: Inference speed and localization accuracy are standard and quantitatively
+      reported.
+  - reference_solution_rating: 8.0
+  - reference_solution_reason: BraggNN model and training pipeline exist, but need
+      stitching from separate repositories.
+  - documentation_rating: 8.0
+  - documentation_reason: Paper and codebase are available and usable, though not
+      fully turnkey.
 
 - date: "2023-12-03"
   expired: null
   valid: "yes"
-  name: 4D‑STEM
+  name: 4D-STEM
   url: https://openreview.net/pdf?id=7yt3N0o0W9
   domain: Material Science
   focus: Real-time ML for scanning transmission electron microscopy
@@ -488,11 +663,27 @@
   Benchmark-Ready: No
   Last Updated: 2023-12
   Support Contact Person: —
+  ratings:
+  - problem_spec_rating: 7.0
+  - problem_spec_reason: General task defined (real-time microscopy inference), but
+      no standardized I/O format, latency constraint, or complete problem framing
+      yet.
+  - dataset_rating: 0.0
+  - dataset_reason: Dataset not provided or described in any formal way.
+  - metrics_rating: 6.0
+  - metrics_reason: Mentions throughput and accuracy, but metrics are not formally
+      defined or benchmarked.
+  - reference_solution_rating: 2.0
+  - reference_solution_reason: Prototype CNNs described; no baseline or implementation
+      released.
+  - documentation_rating: 5.0
+  - documentation_reason: OpenReview paper and Gemini doc give some insight, but no
+      working code, environment, or example.
 
 - date: "2023-12-05"
   expired: null
   valid: "yes"
-  name: In‑Situ High‑Speed Computer Vision
+  name: In-Situ High-Speed Computer Vision
   url: https://arxiv.org/abs/2312.00128
   domain: Fusion/Plasma
   focus: Real-time image classification for in-situ plasma diagnostics
@@ -514,7 +705,7 @@
   cite:
     - |
       @article{smith2023insitu,
-        title={In‑Situ High‑Speed Computer Vision for Plasma Diagnostics},
+        title={In-Situ High-Speed Computer Vision for Plasma Diagnostics},
         author={Smith, John and Doe, Jane},
         year={2023},
         url={https://arxiv.org/abs/2312.00128}
@@ -530,6 +721,20 @@
   Benchmark-Ready: No
   Last Updated: 2023-12
   Support Contact Person: —
+  ratings:
+  - problem_spec_rating: 8.0
+  - problem_spec_reason: Task (plasma diagnostic classification) and real-time deployment
+      described; system specs (FPS targets) implied but not fully quantified.
+  - dataset_rating: 6.0
+  - dataset_reason: Dataset is sensor stream-based but not shared or FAIR-documented.
+  - metrics_rating: 8.0
+  - metrics_reason: FPS and classification accuracy reported and relevant.
+  - reference_solution_rating: 7.0
+  - reference_solution_reason: CNN model described and evaluated, but public implementation
+      and benchmarks are not available yet.
+  - documentation_rating: 6.0
+  - documentation_reason: Paper and Gemini doc exist, but full setup instructions
+      and tools are still in progress.
 
 - date: "2020-01-01"
   expired: null
@@ -575,6 +780,23 @@
   Benchmark-Ready: "Yes"
   Last Updated: 2020-01
   Support Contact Person: Wanling Gao (BenchCouncil)
+  ratings:
+  - problem_spec_rating: 9.0
+  - problem_spec_reason: Focused on structured/unstructured data pipelines; clearly
+      defined tasks spanning analytics to AI; some scenarios lack hardware constraint
+      modeling.
+  - dataset_rating: 9.0
+  - dataset_reason: Built from 13 real-world sources; structured for realistic big
+      data scenarios; partially FAIR-compliant with documented data motifs.
+  - metrics_rating: 9.0
+  - metrics_reason: Covers data throughput, latency, and accuracy; quantitative and
+      benchmark-ready.
+  - reference_solution_rating: 8.0
+  - reference_solution_reason: Many pipeline and model examples provided using Hadoop/Spark/Flink;
+      setup effort varies by task and platform.
+  - documentation_rating: 8.0
+  - documentation_reason: Strong documentation with examples and task specifications;
+      centralized support exists, but task-specific tuning may require domain expertise.
 
 - date: "2020-01-01"
   expired: null
@@ -620,6 +842,23 @@
   Benchmark-Ready: "Yes"
   Last Updated: 2020-01
   Support Contact Person: Jianfeng Zhan (BenchCouncil)
+  ratings:
+  - problem_spec_rating: 9.0
+  - problem_spec_reason: Focused on structured/unstructured data pipelines; clearly
+      defined tasks spanning analytics to AI; some scenarios lack hardware constraint
+      modeling.
+  - dataset_rating: 9.0
+  - dataset_reason: Built from 13 real-world sources; structured for realistic big
+      data scenarios; partially FAIR-compliant with documented data motifs.
+  - metrics_rating: 9.0
+  - metrics_reason: Covers data throughput, latency, and accuracy; quantitative and
+      benchmark-ready.
+  - reference_solution_rating: 8.0
+  - reference_solution_reason: Many pipeline and model examples provided using Hadoop/Spark/Flink;
+      setup effort varies by task and platform.
+  - documentation_rating: 8.0
+  - documentation_reason: Strong documentation with examples and task specifications;
+      centralized support exists, but task-specific tuning may require domain expertise.
 
 - date: "2021-10-20"
   expired: null
@@ -664,6 +903,17 @@
   Benchmark-Ready: "Yes"
   Last Updated: 2021-10
   Support Contact Person: Steven Farrell (MLCommons)
+  ratings:
+  - problem_spec_rating: 0
+  - problem_spec_reason: RETIRED as of January 2025
+  - dataset_rating: 0
+  - dataset_reason: RETIRED as of January 2025
+  - metrics_rating: 0
+  - metrics_reason: RETIRED as of January 2025
+  - reference_solution_rating: 0
+  - reference_solution_reason: RETIRED as of January 2025
+  - documentation_rating: 0
+  - documentation_reason: RETIRED as of January 2025
 
 - date: "2023-06-01"
   expired: null
@@ -708,6 +958,21 @@
   Benchmark-Ready: "Yes"
   Last Updated: 2023-06
   Support Contact Person: MLCommons Science Working Group
+  ratings:
+  - problem_spec_rating: 9.0
+  - problem_spec_reason: Diverse scientific tasks (earthquake, CFD, microscopy) with
+      detailed problem statements and goals; system constraints not uniformly applied.
+  - dataset_rating: 9.0
+  - dataset_reason: Domain-specific datasets (e.g., microscopy, climate); mostly public
+      and structured, but FAIR annotations are not always explicit.
+  - metrics_rating: 9.0
+  - metrics_reason: Task-specific metrics (MAE, speedup, accuracy) are clear and reproducible.
+  - reference_solution_rating: 9.0
+  - reference_solution_reason: Reference models (CNN, GNN, Transformer) provided with
+      training/evaluation pipelines.
+  - documentation_rating: 9.0
+  - documentation_reason: Well-documented, open-sourced, and maintained with examples;
+      strong community support and reproducibility focus.
 
 - date: "2021-07-05"
   expired: null
@@ -755,6 +1020,24 @@
   Benchmark-Ready: "Yes"
   Last Updated: 2021-07
   Support Contact Person: Ema Puljak (ema.puljak@cern.ch)
+  ratings:
+  - problem_spec_rating: 9.0
+  - problem_spec_reason: Task is clearly defined- real-time anomaly detection from
+      high-rate LHC collisions. Latency and bandwidth constraints are mentioned, though
+      not numerically enforced.
+  - dataset_rating: 9.0
+  - dataset_reason: Publicly available via Zenodo, with structured signal/background
+      splits, and rich metadata; nearly fully FAIR.
+  - metrics_rating: 9.0
+  - metrics_reason: ROC-AUC and detection efficiency are clearly defined and appropriate
+      for unsupervised anomaly detection.
+  - reference_solution_rating: 8.0
+  - reference_solution_reason: Several baseline methods (autoencoder, VAE, isolation
+      forest) are evaluated; runnable versions available via community repos but not
+      tightly bundled.
+  - documentation_rating: 8.0
+  - documentation_reason: Paper and data documentation are clear, and the dataset
+      is widely reused. Setup requires some manual effort to reproduce full pipelines.
 
 - date: "2023-07-17"
   expired: null
@@ -771,7 +1054,7 @@
     - healthcare benchmarks
   description: |
     The MLCommons Medical AI working group develops benchmarks, best practices, and platforms (MedPerf, GaNDLF, COFE)
-    to accelerate robust, privacy‐preserving AI development for healthcare. MedPerf enables federated testing of clinical
+    to accelerate robust, privacy-preserving AI development for healthcare. MedPerf enables federated testing of clinical
     models on diverse datasets, improving generalizability and equity while keeping data onsite :contentReference[oaicite:1]{index=1}.
   task_types:
     - Federated evaluation
@@ -784,12 +1067,12 @@
   models:
     - MedPerf-validated CNNs
     - GaNDLF workflows
-  notes: Open-source platform under Apache‑2.0; used across 20+ institutions and hospitals :contentReference[oaicite:2]{index=2}.
+  notes: Open-source platform under Apache-2.0; used across 20+ institutions and hospitals :contentReference[oaicite:2]{index=2}.
   cite:
     - |
       @article{karargyris2023federated,
         title={Federated benchmarking of medical artificial intelligence with MedPerf},
-        author={Karargyris, Alex and Sheller, Micah J and others},
+        author={Karargyris, Alex and Sheller, Micah J and others},
         journal={Nature Machine Intelligence},
         year={2023},
         url={https://www.nature.com/articles/s42256-023-00652-2}
@@ -804,6 +1087,22 @@
   Benchmark-Ready: "Yes"
   Last Updated: 2023-07
   Support Contact Person: Alex Karargyris (MLCommons Medical AI)
+  ratings:
+  - problem_spec_rating: 9.0
+  - problem_spec_reason: Evaluation setting (federated clinical benchmarking) is well-defined;
+      I/O interfaces vary slightly by task but are standardized in MedPerf platform.
+  - dataset_rating: 8.0
+  - dataset_reason: Uses distributed, real-world clinical datasets across institutions;
+      FAIR compliance varies across hospitals and data hosts.
+  - metrics_rating: 9.0
+  - metrics_reason: ROC AUC, accuracy, and fairness metrics are explicitly defined
+      and task-dependent; consistently tracked across institutions.
+  - reference_solution_rating: 8.0
+  - reference_solution_reason: Validated CNNs and GaNDLF pipelines are used and shared
+      via the MedPerf tool, but some implementations are abstracted behind the platform.
+  - documentation_rating: 9.0
+  - documentation_reason: Excellent documentation across MedPerf, GaNDLF, and COFE;
+      reproducibility handled via containerized flows and task templates.
 
 - date: "2024-10-28"
   expired: null
@@ -852,6 +1151,22 @@
   Benchmark-Ready: "Yes"
   Last Updated: 2024-10
   Support Contact Person: Claudius Krause (CaloChallenge Lead)
+  ratings:
+  - problem_spec_rating: 10.0
+  - problem_spec_reason: Simulation task (generative calorimeter showers) is clearly
+      stated with multiple datasets, fidelity requirements, and performance constraints.
+  - dataset_rating: 9.5
+  - dataset_reason: Public datasets available in multiple sizes and formats; well-documented;
+      not versioned
+  - metrics_rating: 10.0
+  - metrics_reason: Histogram similarity, classifier AUC, and generation latency are
+      clearly defined and benchmarked across all submissions.
+  - reference_solution_rating: 9.0
+  - reference_solution_reason: 31 model implementations submitted; some made public
+      and reproducible, though others remain undocumented or private.
+  - documentation_rating: 9.0
+  - documentation_reason: Paper, leaderboard, and Gemini doc are comprehensive; unified
+      repo or launchable baseline kit would push this to a 10.
 
 - date: "ongoing"
   expired: null
@@ -1549,7 +1864,7 @@
     - Anomaly detection
   ai_capability_measured: Detection of environmental anomalies
   metrics:
-    - ROC‑AUC
+    - ROC-AUC
     - Precision/Recall
   models:
     - CNNs, RNNs, Transformers
@@ -1558,7 +1873,7 @@
     - |
       @article{campolongo2025hdranomaly3,
         title={Building Machine Learning Challenges for Anomaly Detection in Science},
-        author={Campolongo, Elizabeth G. and others},
+        author={Campolongo, Elizabeth G. and others},
         year={2025},
         url={https://arxiv.org/abs/2503.02112}
       }
@@ -1600,7 +1915,7 @@
     - |
       @article{diguglielmo2025endtoend,
         title={End-to-end workflow for machine learning-based qubit readout with QICK and hls4ml},
-        author={Di Guglielmo, Giuseppe and Campos, Javier and others},
+        author={Di Guglielmo, Giuseppe and Campos, Javier and others},
         year={2025},
         url={https://arxiv.org/abs/2501.14663}
       }
@@ -1613,7 +1928,7 @@
   Software: "Yes"
   Benchmark-Ready: "Yes"
   Last Updated: 2025-02
-  Support Contact Person: Javier Campos / Giuseppe Di Guglielmo
+  Support Contact Person: Javier Campos / Giuseppe Di Guglielmo
 
 - date: "2023-11-20"
   expired: null
@@ -1635,7 +1950,7 @@
   metrics:
     - Accuracy
   models:
-    - GPT‑4 baseline
+    - GPT4 baseline
   notes: “Google-proof”; supports oversight research.  
   cite:
     - |
@@ -1670,7 +1985,7 @@
     - segmentation
     - QA
   description: |
-    A first-of-its-kind dataset covering 17,300 km² of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs—designed for both vision and language-based ML models in marine science :contentReference[oaicite:1]{index=1}.
+    A first-of-its-kind dataset covering 17,300 sq km of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs—designed for both vision and language-based ML models in marine science.
   task_types:
     - Image segmentation
     - Vision-language QA
@@ -1781,7 +2096,7 @@
   ML Motif: Geometric DL
   Type: Benchmark
   ML task: Classification, Regression
-  Solutions: "30 settings × 11 algos"
+  Solutions: "30 settings x 11 algos"
   Dataset: Scientific graph datasets with shift splits
   Software: "Yes"
   Benchmark-Ready: "Yes"

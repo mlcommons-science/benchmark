@@ -44,7 +44,16 @@ def load_yaml_file(file_path: str) -> list[dict]:
             raise ValueError(f"Unsupported YAML format in {file_path}")
 
 def sanitize_filename(name: str) -> str:
-    return re.sub(r'[^\w\-_\. ]', '_', name).replace(' ', '_').lower()
+    output = ""
+    for ch in name:
+        if 32<=ord(ch)<=126:
+            output += ch
+
+    output = re.sub(r' {2,}', ' ', output) #Replace 2+ spaces with single space
+    output = output.strip().replace("(", "").replace(")", "").replace(" ", "_")
+
+    # print(f'"{output}"')
+    return output
 
 
 def merge_yaml_files(file_paths: list[str], disable_error_messages: bool = False) -> list[dict]:
@@ -480,7 +489,7 @@ if __name__ == "__main__":
         if args.index:
             write_individual_md_pages(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_trunc=args.authortruncation)
 
-        write_md(args.files, os.path.join(args.out_dir, "md"), columns, author_limit=args.authortruncation)
+        write_md(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_limit=args.authortruncation)
 
     elif args.format == 'tex':
         if args.index:

@@ -1014,7 +1014,18 @@
   Benchmark-Ready: 'Yes'
   Last Updated: 2021-07
   Support Contact Person: Ema Puljak (ema.puljak@cern.ch)
-  ratings: null
+  ratings:
+  - problem_spec_rating: 7.0
+    problem_spec_reason: The problem (anomaly detection for new physics at LHC) is clearly described with goals and background, but lacks a formal task specification or constraints.
+  - dataset_rating: 8.0
+    dataset_reason: Large-scale, public dataset derived from LHC simulations; well-documented and available via Zenodo.
+  - performance_metrics_rating: 7.0
+    performance_metrics_reason: Provides AUROC, accuracy, and anomaly detection metrics but lacks standardized evaluation script.
+  - reference_solution_rating: 5.0
+    reference_solution_reason: Baseline models (autoencoders, GANs) are described in associated papers, but implementations vary across papers.
+  - documentation_rating: 6.0
+    documentation_reason: Publicly available papers and datasets with descriptions, but no unified README or training setup.
+
 - date: '2023-07-17'
   expired: null
   valid: 'yes'
@@ -1311,18 +1322,17 @@
   Last Updated: 2023-07
   Support Contact Person: Piotr Luszczek (luszczek@utk.edu)
   ratings:
-  - dataset_rating: 9.0
-  - dataset_reason: Curated and linked datasets for 12K+ benchmarks; FAIR depends
-      on the source, but metadata and linking are excellent.
-  - performance_metrics_rating: 10.0
-  - performance_metrics_reason: Tracks task-specific, quantitative metrics (e.g.,
-      accuracy, BLEU, F1) standardized across papers.
-  - reference_solution_rating: 8.0
-  - reference_solution_reason: Many papers include links to code and models, but runnable
-      pipelines are often incomplete or unverified.
-  - documentation_rating: 9.0
-  - documentation_reason: Clear site documentation and APIs for leaderboard integration;
-      individual benchmark documentation varies.
+  - problem_spec_rating: 8.0
+    problem_spec_reason: The benchmark defines simulation-based inference (SBI) tasks clearly with FAIR principles applied to particle physics datasets.
+  - dataset_rating: 8.0
+    dataset_reason: Data is well-structured for SBI and publicly available with clear licensing.
+  - performance_metrics_rating: 8.0
+    performance_metrics_reason: Includes likelihood and posterior accuracy; metrics well-matched to SBI.
+  - reference_solution_rating: 7.0
+    reference_solution_reason: Baseline SBI models are implemented and reproducible.
+  - documentation_rating: 6.0
+    documentation_reason: GitHub repo includes code and instructions, but lacks full tutorials or walkthroughs.
+
 - date: '2022-10-13'
   expired: null
   valid: 'yes'
@@ -1370,7 +1380,18 @@
   Benchmark-Ready: 'Yes'
   Last Updated: 2025-05
   Support Contact Person: Makoto Takamoto (makoto.takamoto@neclab.eu)
-  ratings: null
+  ratings:
+  - problem_spec_rating: 9.0
+    problem_spec_reason: Clearly defined PDE-solving tasks with well-specified constraints and solution formats.
+  - dataset_rating: 9.0
+    dataset_reason: Includes synthetic and real-world PDE datasets with detailed format descriptions.
+  - performance_metrics_rating: 8.0
+    performance_metrics_reason: Uses L2 error and other norms relevant to PDE solutions.
+  - reference_solution_rating: 7.0
+    reference_solution_reason: Includes baseline solvers and trained models across multiple PDE tasks.
+  - documentation_rating: 8.0
+    documentation_reason: Well-organized GitHub with examples, dataset loading scripts, and training configs.
+
 - date: '2024-12-03'
   expired: null
   valid: 'yes'
@@ -1416,17 +1437,17 @@
   Last Updated: 2025-06
   Support Contact Person: Wes Brewer
   ratings:
-  - problem_spec_rating: 8.0
-  - problem_spec_reason: Targets metadata and surrogate model execution in HPC; problem
-      framing clear for systems use cases.
-  - performance_metrics_rating: 8.0
-  - performance_metrics_reason: Focuses on metadata completeness and FAIR compliance,
-      not model performance.
-  - reference_solution_rating: 7.0
-  - reference_solution_reason: Integrated with a few use cases (CosmoFlow, etc.);
-      limited runnable examples.
-  - documentation_rating: 8.0
-  - documentation_reason: Clear project documentation with framework integration guides.
+  - problem_spec_rating: 7.0
+    problem_spec_reason: Explores LLM understanding of mental health scenarios; framing is creative but loosely defined.
+  - dataset_rating: 6.0
+    dataset_reason: Dataset is described in concept but not released; privacy limits public access though synthetic proxies are referenced.
+  - performance_metrics_rating: 7.0
+    performance_metrics_reason: Uses manual annotation and quality scores, but lacks standardized automatic metrics.
+  - reference_solution_rating: 6.0
+    reference_solution_reason: Provides few-shot prompt examples and human rating calibration details.
+  - documentation_rating: 5.0
+    documentation_reason: Paper gives use cases, but code and data are not yet public.
+
 - date: '2024-10-31'
   expired: null
   valid: 'yes'
@@ -1831,7 +1852,18 @@
   Benchmark-Ready: 'Yes'
   Last Updated: 2025-06
   Support Contact Person: Ming Jin (Nixtla)
-  ratings: null
+  ratings:
+  - problem_spec_rating: 7.0
+    problem_spec_reason: Describes forecasting with LLMs, but less formal on input/output or task framing.
+  - dataset_rating: 6.0
+    dataset_reason: Uses open time series datasets, but lacks a consolidated data release or splits.
+  - performance_metrics_rating: 7.0
+    performance_metrics_reason: Reports metrics like MASE and SMAPE, standard in forecasting.
+  - reference_solution_rating: 6.0
+    reference_solution_reason: Provides TimeLLM with open source, but no other baselines included.
+  - documentation_rating: 6.0
+    documentation_reason: GitHub readme with installation and example usage; lacks API or extensive tutorials.
+
 - date: '2023-10-05'
   expired: null
   valid: 'yes'
@@ -1874,7 +1906,18 @@
   Benchmark-Ready: 'Yes'
   Last Updated: 2025-06
   Support Contact Person: Azul Garza (Nixtla)
-  ratings: null
+  ratings:
+  - problem_spec_rating: 7.0
+    problem_spec_reason: Describes forecasting with LLMs, but less formal on input/output or task framing.
+  - dataset_rating: 6.0
+    dataset_reason: Uses open time series datasets, but lacks a consolidated data release or splits.
+  - performance_metrics_rating: 7.0
+    performance_metrics_reason: Reports metrics like MASE and SMAPE, standard in forecasting.
+  - reference_solution_rating: 6.0
+    reference_solution_reason: Provides TimeLLM with open source, but no other baselines included.
+  - documentation_rating: 6.0
+    documentation_reason: GitHub readme with installation and example usage; lacks API or extensive tutorials.
+
 - date: '2025-03-03'
   expired: null
   valid: 'yes'
@@ -1974,7 +2017,18 @@
   Benchmark-Ready: 'Yes'
   Last Updated: 2025-03
   Support Contact Person: Imageomics/HDR Team
-  ratings: null
+  ratings:
+  - problem_spec_rating: 8.0
+    problem_spec_reason: Task of detecting rare anomalies in butterfly physics is well-described with physics motivation.
+  - dataset_rating: 7.0
+    dataset_reason: Real detector data with injected anomalies is available, but requires NDA for full access.
+  - performance_metrics_rating: 7.0
+    performance_metrics_reason: Uses ROC, F1, and anomaly precision, standard in challenge evaluations.
+  - reference_solution_rating: 4.0
+    reference_solution_reason: Partial baselines described, but no codebase or reproducible runs.
+  - documentation_rating: 6.0
+    documentation_reason: Challenge site includes overview and metrics, but limited in walkthrough or examples.
+
 - date: '2025-03-03'
   expired: null
   valid: 'yes'
@@ -2659,13 +2713,14 @@
   Last Updated: 2024-12
   Support Contact Person: Xiaoyan Zhong
   ratings:
-  - dataset_(fair_principles)_rating: 9.0
-  - dataset_(fair_principles)_reason: 3,500 expert-labeled prompts available; open
-      dataset.
-  - performance_metrics_rating: 8.0
-  - performance_metrics_reason: Accuracy and F1 for QA tasks are appropriate and reported.
-  - reference_solution_rating: 8.0
-  - reference_solution_reason: Evaluated with GPT-4, LLaMA-2, and T5 baselines.
-  - reproducible_protocol_rating: 8.0
-  - reproducible_protocol_reason: Prompt formats and adaptation strategies (e.g.,
-      CoT, RAG) are described clearly.
+  - problem_spec_rating: 6.0
+    problem_spec_reason: Task of QA over scientific figures is interesting but not fully formalized in input/output terms.
+  - dataset_rating: 6.0
+    dataset_reason: Uses SPIQA dataset with ~10 adapters; figures and questions are included, but not fully open.
+  - performance_metrics_rating: 7.0
+    performance_metrics_reason: Reports accuracy and F1; fair but no visual reasoning-specific metric.
+  - reference_solution_rating: 6.0
+    reference_solution_reason: 10 LLM adapter baselines; results included.
+  - documentation_rating: 5.0
+    documentation_reason: Poster paper and limited documentation; no reproducibility instructions.
+

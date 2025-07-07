@@ -354,14 +354,19 @@ def write_individual_md_pages(input_filepaths: list[str], output_dir: str, colum
 
 
 
-def write_md_table(input_filepaths: list[str], output_dir: str, columns: list[tuple], author_limit: int = MAX_AUTHOR_LIMIT) -> None:
+def write_md_table(input_filepaths: list[str], output_dir: str, columns: list[tuple], 
+                   author_limit: int = MAX_AUTHOR_LIMIT, writing_ratings: bool = True) -> None:
 
     contents = merge_yaml_files(input_filepaths)
+
     os.makedirs(output_dir, exist_ok=True)
     with open(os.path.join(output_dir, "benchmarks.md"), 'w', encoding='utf-8') as md_file:
         headers = [col[2] for col in columns]
+        if writing_ratings:
+            for rc in RATINGS_COLUMNS:
+                headers.append(rc[2])
         md_file.write('| ' + ' | '.join(headers) + ' |\n')
-        md_file.write('| ' + ' | '.join(['---'] * len(columns)) + ' |\n')
+        md_file.write('| ' + ' | '.join(['---'] * len(headers)) + ' |\n')
         for row in contents:
 
             current_article_name = row.get("name", "")
@@ -386,23 +391,17 @@ def write_md_table(input_filepaths: list[str], output_dir: str, columns: list[tu
                     val = val.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
 
                 row_cells.append(val)
-            if row.get("ratings"):
+
+            if row.get("ratings") and writing_ratings:
                 ratings_list = row.get("ratings", [])
                 ratings_dict = {list(item.keys())[0]: list(item.values())[0] for item in ratings_list if isinstance(item, dict)}
-                for rating_col, _, _ in RATINGS_COLUMNS:
-                    val = ratings_dict.get(rating_col, "")
-                    row_cells.append(str(val))
-
-            
-            # if row.get("ratings", None):
-            #     ratings_contents = row.get("ratings", "")
-            #     for column_name in RATINGS_COLUMNS:
-            #         val = ratings_contents.get(column_name)
-            #         print(val)
-
-            #         row_cells.append(val)
-
-            
+                
+                if isinstance(ratings_dict, dict):
+                    for rating_col, _, _ in RATINGS_COLUMNS:
+                        val = ratings_dict.get(rating_col, "")
+                        if val != "":
+                            row_cells.append(str(val))
+                            
             md_file.write('| ' + ' | '.join(row_cells) + ' |\n')
 
 

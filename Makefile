@@ -1,10 +1,10 @@
 # makefile that will create all the content
 
-FILES=source/benchmarks.yaml source/benchmarks-addon.yaml
+FILES=source/benchmarks.yaml#source/benchmarks-addon.yaml
 
 SCRIPT=bin/generate.py
 
-COLUMNS=date,name,domain,focus,keyword,task_types,metrics,models,cite
+COLUMNS=date,name,domain,focus,keyword,task_types,metrics,models,cite,problem_spec_rating,problem_spec_reason,dataset_rating,dataset_reason,metrics_rating,metrics_reason,reference_solution_rating,reference_solution_reason,documentation_rating,documentation_reason
 
 .PHONY: all content single tex pdf
 

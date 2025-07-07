@@ -1016,16 +1016,21 @@
   Support Contact Person: Ema Puljak (ema.puljak@cern.ch)
   ratings:
   - problem_spec_rating: 7.0
-    problem_spec_reason: The problem (anomaly detection for new physics at LHC) is clearly described with goals and background, but lacks a formal task specification or constraints.
+    problem_spec_reason: The problem (anomaly detection for new physics at LHC) is
+      clearly described with goals and background, but lacks a formal task specification
+      or constraints.
   - dataset_rating: 8.0
-    dataset_reason: Large-scale, public dataset derived from LHC simulations; well-documented and available via Zenodo.
+    dataset_reason: Large-scale, public dataset derived from LHC simulations; well-documented
+      and available via Zenodo.
   - performance_metrics_rating: 7.0
-    performance_metrics_reason: Provides AUROC, accuracy, and anomaly detection metrics but lacks standardized evaluation script.
+    performance_metrics_reason: Provides AUROC, accuracy, and anomaly detection metrics
+      but lacks standardized evaluation script.
   - reference_solution_rating: 5.0
-    reference_solution_reason: Baseline models (autoencoders, GANs) are described in associated papers, but implementations vary across papers.
+    reference_solution_reason: Baseline models (autoencoders, GANs) are described
+      in associated papers, but implementations vary across papers.
   - documentation_rating: 6.0
-    documentation_reason: Publicly available papers and datasets with descriptions, but no unified README or training setup.
-
+    documentation_reason: Publicly available papers and datasets with descriptions,
+      but no unified README or training setup.
 - date: '2023-07-17'
   expired: null
   valid: 'yes'
@@ -1323,16 +1328,19 @@
   Support Contact Person: Piotr Luszczek (luszczek@utk.edu)
   ratings:
   - problem_spec_rating: 8.0
-    problem_spec_reason: The benchmark defines simulation-based inference (SBI) tasks clearly with FAIR principles applied to particle physics datasets.
+    problem_spec_reason: The benchmark defines simulation-based inference (SBI) tasks
+      clearly with FAIR principles applied to particle physics datasets.
   - dataset_rating: 8.0
-    dataset_reason: Data is well-structured for SBI and publicly available with clear licensing.
+    dataset_reason: Data is well-structured for SBI and publicly available with clear
+      licensing.
   - performance_metrics_rating: 8.0
-    performance_metrics_reason: Includes likelihood and posterior accuracy; metrics well-matched to SBI.
+    performance_metrics_reason: Includes likelihood and posterior accuracy; metrics
+      well-matched to SBI.
   - reference_solution_rating: 7.0
     reference_solution_reason: Baseline SBI models are implemented and reproducible.
   - documentation_rating: 6.0
-    documentation_reason: GitHub repo includes code and instructions, but lacks full tutorials or walkthroughs.
-
+    documentation_reason: GitHub repo includes code and instructions, but lacks full
+      tutorials or walkthroughs.
 - date: '2022-10-13'
   expired: null
   valid: 'yes'
@@ -1382,16 +1390,19 @@
   Support Contact Person: Makoto Takamoto (makoto.takamoto@neclab.eu)
   ratings:
   - problem_spec_rating: 9.0
-    problem_spec_reason: Clearly defined PDE-solving tasks with well-specified constraints and solution formats.
+    problem_spec_reason: Clearly defined PDE-solving tasks with well-specified constraints
+      and solution formats.
   - dataset_rating: 9.0
-    dataset_reason: Includes synthetic and real-world PDE datasets with detailed format descriptions.
+    dataset_reason: Includes synthetic and real-world PDE datasets with detailed format
+      descriptions.
   - performance_metrics_rating: 8.0
     performance_metrics_reason: Uses L2 error and other norms relevant to PDE solutions.
   - reference_solution_rating: 7.0
-    reference_solution_reason: Includes baseline solvers and trained models across multiple PDE tasks.
+    reference_solution_reason: Includes baseline solvers and trained models across
+      multiple PDE tasks.
   - documentation_rating: 8.0
-    documentation_reason: Well-organized GitHub with examples, dataset loading scripts, and training configs.
-
+    documentation_reason: Well-organized GitHub with examples, dataset loading scripts,
+      and training configs.
 - date: '2024-12-03'
   expired: null
   valid: 'yes'
@@ -1438,16 +1449,19 @@
   Support Contact Person: Wes Brewer
   ratings:
   - problem_spec_rating: 7.0
-    problem_spec_reason: Explores LLM understanding of mental health scenarios; framing is creative but loosely defined.
+    problem_spec_reason: Explores LLM understanding of mental health scenarios; framing
+      is creative but loosely defined.
   - dataset_rating: 6.0
-    dataset_reason: Dataset is described in concept but not released; privacy limits public access though synthetic proxies are referenced.
+    dataset_reason: Dataset is described in concept but not released; privacy limits
+      public access though synthetic proxies are referenced.
   - performance_metrics_rating: 7.0
-    performance_metrics_reason: Uses manual annotation and quality scores, but lacks standardized automatic metrics.
+    performance_metrics_reason: Uses manual annotation and quality scores, but lacks
+      standardized automatic metrics.
   - reference_solution_rating: 6.0
-    reference_solution_reason: Provides few-shot prompt examples and human rating calibration details.
+    reference_solution_reason: Provides few-shot prompt examples and human rating
+      calibration details.
   - documentation_rating: 5.0
     documentation_reason: Paper gives use cases, but code and data are not yet public.
-
 - date: '2024-10-31'
   expired: null
   valid: 'yes'
@@ -1854,16 +1868,19 @@
   Support Contact Person: Ming Jin (Nixtla)
   ratings:
   - problem_spec_rating: 7.0
-    problem_spec_reason: Describes forecasting with LLMs, but less formal on input/output or task framing.
+    problem_spec_reason: Describes forecasting with LLMs, but less formal on input/output
+      or task framing.
   - dataset_rating: 6.0
-    dataset_reason: Uses open time series datasets, but lacks a consolidated data release or splits.
+    dataset_reason: Uses open time series datasets, but lacks a consolidated data
+      release or splits.
   - performance_metrics_rating: 7.0
     performance_metrics_reason: Reports metrics like MASE and SMAPE, standard in forecasting.
   - reference_solution_rating: 6.0
-    reference_solution_reason: Provides TimeLLM with open source, but no other baselines included.
+    reference_solution_reason: Provides TimeLLM with open source, but no other baselines
+      included.
   - documentation_rating: 6.0
-    documentation_reason: GitHub readme with installation and example usage; lacks API or extensive tutorials.
-
+    documentation_reason: GitHub readme with installation and example usage; lacks
+      API or extensive tutorials.
 - date: '2023-10-05'
   expired: null
   valid: 'yes'
@@ -1908,16 +1925,19 @@
   Support Contact Person: Azul Garza (Nixtla)
   ratings:
   - problem_spec_rating: 7.0
-    problem_spec_reason: Describes forecasting with LLMs, but less formal on input/output or task framing.
+    problem_spec_reason: Describes forecasting with LLMs, but less formal on input/output
+      or task framing.
   - dataset_rating: 6.0
-    dataset_reason: Uses open time series datasets, but lacks a consolidated data release or splits.
+    dataset_reason: Uses open time series datasets, but lacks a consolidated data
+      release or splits.
   - performance_metrics_rating: 7.0
     performance_metrics_reason: Reports metrics like MASE and SMAPE, standard in forecasting.
   - reference_solution_rating: 6.0
-    reference_solution_reason: Provides TimeLLM with open source, but no other baselines included.
+    reference_solution_reason: Provides TimeLLM with open source, but no other baselines
+      included.
   - documentation_rating: 6.0
-    documentation_reason: GitHub readme with installation and example usage; lacks API or extensive tutorials.
-
+    documentation_reason: GitHub readme with installation and example usage; lacks
+      API or extensive tutorials.
 - date: '2025-03-03'
   expired: null
   valid: 'yes'
@@ -2019,16 +2039,20 @@
   Support Contact Person: Imageomics/HDR Team
   ratings:
   - problem_spec_rating: 8.0
-    problem_spec_reason: Task of detecting rare anomalies in butterfly physics is well-described with physics motivation.
+    problem_spec_reason: Task of detecting rare anomalies in butterfly physics is
+      well-described with physics motivation.
   - dataset_rating: 7.0
-    dataset_reason: Real detector data with injected anomalies is available, but requires NDA for full access.
+    dataset_reason: Real detector data with injected anomalies is available, but requires
+      NDA for full access.
   - performance_metrics_rating: 7.0
-    performance_metrics_reason: Uses ROC, F1, and anomaly precision, standard in challenge evaluations.
+    performance_metrics_reason: Uses ROC, F1, and anomaly precision, standard in challenge
+      evaluations.
   - reference_solution_rating: 4.0
-    reference_solution_reason: Partial baselines described, but no codebase or reproducible runs.
+    reference_solution_reason: Partial baselines described, but no codebase or reproducible
+      runs.
   - documentation_rating: 6.0
-    documentation_reason: Challenge site includes overview and metrics, but limited in walkthrough or examples.
-
+    documentation_reason: Challenge site includes overview and metrics, but limited
+      in walkthrough or examples.
 - date: '2025-03-03'
   expired: null
   valid: 'yes'
@@ -2538,17 +2562,17 @@
   - problem_spec_rating: 9.0
   - problem_spec_reason: Three tasks (de novo generation, retrieval, simulation) are
       clearly defined for MS/MS molecule discovery.
-  - dataset_(fair_principles)_rating: 10.0
-  - dataset_(fair_principles)_reason: Over 1 million spectra with structure annotations;
-      dataset is open-source and well-documented.
+  - dataset_rating: 10.0
+  - dataset_reason: Over 1 million spectra with structure annotations; dataset is
+      open-source and well-documented.
   - performance_metrics_rating: 9.0
   - performance_metrics_reason: Task-appropriate metrics (structure accuracy, precision,
       MSE) are specified and used consistently.
   - reference_solution_rating: 8.0
   - reference_solution_reason: Baseline models are available (graph-based and retrieval),
       though not exhaustive.
-  - reproducible_protocol_rating: 9.0
-  - reproducible_protocol_reason: GitHub repo and poster provide code and reproducibility
+  - documentation_rating: 9.0
+  - documentation_reason: GitHub repo and poster provide code and reproducibility
       guidance.
 - date: '2024-12-13'
   expired: null
@@ -2598,17 +2622,16 @@
   - problem_spec_rating: 8.0
   - problem_spec_reason: Clear goals around unifying urban data formats and tasks
       (e.g., air quality prediction), though some specifics could be more formal.
-  - dataset_(fair_principles)_rating: 9.0
-  - dataset_(fair_principles)_reason: Multi-modal data is standardized and accessible;
-      GitHub repo available.
+  - dataset_rating: 9.0
+  - dataset_reason: Multi-modal data is standardized and accessible; GitHub repo available.
   - performance_metrics_rating: 8.0
   - performance_metrics_reason: Uses common task metrics like accuracy/RMSE, though
       varies by task.
   - reference_solution_rating: 7.0
   - reference_solution_reason: Baseline regression/classification models included.
-  - reproducible_protocol_rating: 8.0
-  - reproducible_protocol_reason: Source code supports pipeline reuse, but formal
-      evaluation splits may vary.
+  - documentation_rating: 8.0
+  - documentation_reason: Source code supports pipeline reuse, but formal evaluation
+      splits may vary.
 - date: '2024-12-13'
   expired: null
   valid: 'yes'
@@ -2658,16 +2681,15 @@
   ratings:
   - problem_spec_rating: 9.0
   - problem_spec_reason: The task of ML correction to DFT energy predictions is well-specified.
-  - dataset_(fair_principles)_rating: 9.0
-  - dataset_(fair_principles)_reason: 10 public reaction datasets with DFT and CC
-      references; well-documented.
+  - dataset_rating: 9.0
+  - dataset_reason: 10 public reaction datasets with DFT and CC references; well-documented.
   - performance_metrics_rating: 8.0
   - performance_metrics_reason: Uses MAE and ranking accuracy, suitable for this task.
   - reference_solution_rating: 8.0
   - reference_solution_reason: Includes both Δ²‑ML and KRR baselines.
-  - reproducible_protocol_rating: 9.0
-  - reproducible_protocol_reason: Public benchmarks and clear reproducibility via
-      datasets and model code.
+  - documentation_rating: 9.0
+  - documentation_reason: Public benchmarks and clear reproducibility via datasets
+      and model code.
 - date: '2024-12-13'
   expired: null
   valid: 'yes'
@@ -2714,13 +2736,16 @@
   Support Contact Person: Xiaoyan Zhong
   ratings:
   - problem_spec_rating: 6.0
-    problem_spec_reason: Task of QA over scientific figures is interesting but not fully formalized in input/output terms.
+    problem_spec_reason: Task of QA over scientific figures is interesting but not
+      fully formalized in input/output terms.
   - dataset_rating: 6.0
-    dataset_reason: Uses SPIQA dataset with ~10 adapters; figures and questions are included, but not fully open.
+    dataset_reason: Uses SPIQA dataset with ~10 adapters; figures and questions are
+      included, but not fully open.
   - performance_metrics_rating: 7.0
-    performance_metrics_reason: Reports accuracy and F1; fair but no visual reasoning-specific metric.
+    performance_metrics_reason: Reports accuracy and F1; fair but no visual reasoning-specific
+      metric.
   - reference_solution_rating: 6.0
     reference_solution_reason: 10 LLM adapter baselines; results included.
   - documentation_rating: 5.0
-    documentation_reason: Poster paper and limited documentation; no reproducibility instructions.
-
+    documentation_reason: Poster paper and limited documentation; no reproducibility
+      instructions.

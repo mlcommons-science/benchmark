@@ -362,9 +362,15 @@ def write_md_table(input_filepaths: list[str], output_dir: str, columns: list[tu
     os.makedirs(output_dir, exist_ok=True)
     with open(os.path.join(output_dir, "benchmarks.md"), 'w', encoding='utf-8') as md_file:
         headers = [col[2] for col in columns]
+        #The "ratings" header is a dummy header
+
+        headers.remove(ALL_COLUMNS[-1][2]) #This is the header for "ratings"
+
+        #If writing the ratings, replace the "ratings" column with the 5 criteria and their accompanying descriptions
         if writing_ratings:
             for rc in RATINGS_COLUMNS:
                 headers.append(rc[2])
+
         md_file.write('| ' + ' | '.join(headers) + ' |\n')
         md_file.write('| ' + ' | '.join(['---'] * len(headers)) + ' |\n')
         for row in contents:
@@ -390,7 +396,8 @@ def write_md_table(input_filepaths: list[str], output_dir: str, columns: list[tu
                     val = val.replace("', '", ", ").replace("','", ", ").replace("[]", "")
                     val = val.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
 
-                row_cells.append(val)
+                if not col_name=="ratings":
+                    row_cells.append(val)
 
             if row.get("ratings") and writing_ratings:
                 ratings_list = row.get("ratings", [])
@@ -543,12 +550,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process YAML benchmark files to Markdown or LaTeX.")
     parser.add_argument('--files', '-i', type=str, nargs='+', required=True, help='YAML file paths to process.')
     parser.add_argument('--format', '-f', type=str, choices=['md', 'tex'], required=True, help="Output file format: 'md' or 'tex'")
-    parser.add_argument('--out-dir', '-o', type=str, default='../content/', help="Output directory")
+    parser.add_argument('--outdir', '-o', type=str, default='../content/', help="Output directory")
     parser.add_argument('--authortruncation', type=int, default=MAX_AUTHOR_LIMIT, help="Truncate authors for index pages")
     parser.add_argument('--columns', type=lambda s: s.split(','), help="Subset of columns to include")
-    parser.add_argument('--required', action='store_true',help="Makes all the columns required that are listed in the --columns command")
-    parser.add_argument('--check', action='store_true', help="Conduct formatting checks on inputted YAML files")
+    parser.add_argument('--check', action='store_true', help="Conduct formatting checks on inputted YAML files. Does not produce an output file.")
     parser.add_argument('--index', action='store_true', help="Generate individual pages for each entry for the given format. If format is MD, generates an index.md file")
+    parser.add_argument('--noratings', action='store_true', help="Removes rating columns from the output file")
+    parser.add_argument('--required', action='store_true',help="Makes all the columns required that are listed in the --columns command")
     parser.add_argument('--standalone', '-s', action='store_true', help="Include full LaTeX document preamble.")
     parser.add_argument('--withcitation', action='store_true', help="Include a row for BibTeX citations. Works only with Markdown format")
 
@@ -584,6 +592,7 @@ if __name__ == "__main__":
 
     if args.check:
         check_yaml(args.files, required_fields=required_fields)
+        sys.exit(0)
 
     if args.withcitation:
         columns.append(FULL_CITE_COLUMN)

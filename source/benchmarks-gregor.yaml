@@ -10,9 +10,10 @@
   - real-time ML
   - jet tagging
   - QKeras
-  description: "This benchmark evaluates ML models for real-time classification of\
-    \ particle jets using \nhigh-level features derived from simulated LHC data. It\
-    \ includes both full-precision \nand quantized models optimized for FPGA deployment.\n"
+  description: |
+    This benchmark evaluates ML models for real-time classification of
+    particle jets using \nhigh-level features derived from simulated LHC data. It
+    includes both full-precision \nand quantized models optimized for FPGA deployment.
   task_types:
   - Classification
   ai_capability_measured: Real-time inference, model compression performance
@@ -23,12 +24,17 @@
   - Keras DNN
   - QKeras quantized DNN
   notes: Includes both float and quantized models using QKeras
-  cite:
-  - "@article{hawks2022fastml,\n  title={Fast Machine Learning for Science: Benchmarks\
-    \ and Dataset},\n  author={Hawks, Ben and Tran, Nhan and others},\n  year={2022},\n\
-    \  url={https://arxiv.org/abs/2207.07958}\n}\n"
-  Results from Gemini LLM Deep Research: https://docs.google.com/document/d/1Mr7J4F8PDAIBXJ2vrfVssxLekEVW7ahJ4wpSe6FN5yw
-  Results from ChatGPT LLM: https://docs.google.com/document/d/1runrcij-eoH3_lgGZ8wm2z1YbL1Qf5cSNbVbHyWFDs4
+  cite: |
+    @article{hawks2022fastml,
+      title={Fast Machine Learning for Science: Benchmarks and Dataset},
+      author={Hawks, Ben and Tran, Nhan and others},
+      year={2022},
+      url={https://arxiv.org/abs/2207.07958}\n}
+  results:
+    - name: Gemini LLM Deep Research
+      url: https://docs.google.com/document/d/1Mr7J4F8PDAIBXJ2vrfVssxLekEVW7ahJ4wpSe6FN5yw
+    - name: ChatGPT LLM
+      url: https://docs.google.com/document/d/1runrcij-eoH3_lgGZ8wm2z1YbL1Qf5cSNbVbHyWFDs4
   ML Motif: Real-time
   Type: Benchmark
   ML task: Supervised Learning
@@ -42,23 +48,28 @@
   ratings:
     specification:
       rating: 9.0
-      reason: Task and format (multiple-choice QA with 5 options) are clearly
-      defined; grounded in ConceptNet with consistent structure, though no hardware/system
-      constraints are specified.
-    dataset
+      reason: |
+        Task and format (multiple-choice QA with 5 options) are clearly
+        defined; grounded in ConceptNet with consistent structure, though no hardware/system
+        constraints are specified.
+    dataset:
       rating: 9.0
-      reason: Public, versioned, and FAIR-compliant; includes metadata, splits,
-      and licensing; well-integrated with HuggingFace and other ML libraries.
+      reason: |
+        Public, versioned, and FAIR-compliant; includes metadata, splits,
+        and licensing; well-integrated with HuggingFace and other ML libraries.
     metrics:
       rating: 9.0
-      reason: Accuracy is a simple, reproducible metric aligned
-      with task goals; no ambiguity in evaluation.
+      reason: | 
+        Accuracy is a simple, reproducible metric aligned
+        with task goals; no ambiguity in evaluation.
     reference_solution:
       rating: 8.0
-      reason: Several baseline models (e.g., BERT, RoBERTa) are reported
-      with scores; implementations exist in public repos, but not bundled as an official
-      starter kit.
-    documentation
+      reason: |
+        Several baseline models (e.g., BERT, RoBERTa) are reported
+        with scores; implementations exist in public repos, but not bundled as an official
+        starter kit.
+    documentation:
       rating: 7.0
-      reason: Clear paper, GitHub repo, and integration with HuggingFace
-      Datasets; full reproducibility requires manually connecting models to dataset.
+      reason: |
+        Clear paper, GitHub repo, and integration with HuggingFace
+        Datasets; full reproducibility requires manually connecting models to dataset.

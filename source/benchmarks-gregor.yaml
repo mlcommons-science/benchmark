@@ -29,7 +29,8 @@
       title={Fast Machine Learning for Science: Benchmarks and Dataset},
       author={Hawks, Ben and Tran, Nhan and others},
       year={2022},
-      url={https://arxiv.org/abs/2207.07958}\n}
+      url={https://arxiv.org/abs/2207.07958}
+    }
   results:
     - name: Gemini LLM Deep Research
       url: https://docs.google.com/document/d/1Mr7J4F8PDAIBXJ2vrfVssxLekEVW7ahJ4wpSe6FN5yw
@@ -39,8 +40,11 @@
   Type: Benchmark
   ML task: Supervised Learning
   Solutions: '2'
-  Dataset: 'OpenML: hls4ml_lhc_jets_hlf (https://www.openml.org/d/42468), JetClass
-    (https://zenodo.org/record/6619768)'
+  Dataset: 
+    - name: OpenML
+      url: hls4ml_lhc_jets_hlf (https://www.openml.org/d/42468)
+    - name: JetClass
+      url: https://zenodo.org/record/6619768
   Software: true
   Benchmark-Ready: true
   Last Updated: 2024-05

@@ -100,16 +100,16 @@ def verify_checked_ratings(file_contents: list[dict], printing_warnings: bool = 
         #Check number of ratings
         if not len(ratings_dicts)==len(RATINGS_COLUMNS): #ignore the warning
             if printing_warnings:
-                print(f'\033[91mWARNING: There must be {len(RATINGS_COLUMNS)} rating categories in entry "{name}"\033[00m')
+                print(f'\033[91mWARNING: There must be {len(RATINGS_COLUMNS)} rating categories (found {len(ratings_dicts)} categories) in entry "{name}"\033[00m')
                 check_passed = False
                 continue
 
         #Check if each entry in RATINGS_COLUMNS exist
         for i in range(len(RATINGS_COLUMNS)):
-            if not ratings_dicts[i].get(RATINGS_COLUMNS[i][0]):
+            # print(ratings_dicts[i].get(RATINGS_COLUMNS[i][0]))
+            if ratings_dicts[i].get(RATINGS_COLUMNS[i][0])==None:
                 print(f'\033[91mWARNING: Category "{RATINGS_COLUMNS[i][0]}" missing from entry "{name}"\033[00m')
                 check_passed = False
-                continue
 
     return check_passed
 

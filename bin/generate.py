@@ -66,14 +66,21 @@ def reformat_for_ratings(cols: list[tuple[str, str, str]]) -> list[tuple[str, st
 
 
 def load_yaml_file(file_path: str) -> list[dict]:
-    with open(file_path, 'r', encoding='utf-8') as f:
-        content = yaml.safe_load(f)
-        if isinstance(content, dict):
-            return [content]
-        elif isinstance(content, list):
-            return content
-        else:
-            raise ValueError(f"Unsupported YAML format in {file_path}")
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = yaml.safe_load(f)
+    except yaml.YAMLError as e:
+        print(f"\033[91mYAML SYNTAX ERROR in {file_path}:\033[00m\n{e}")
+        return []  # Skip this file or entry instead of crashing
+
+    if isinstance(content, dict):
+        return [content]
+    elif isinstance(content, list):
+        return content
+    else:
+        print(f"\033[93mWARNING: Unsupported YAML format in {file_path}\033[00m")
+        return []
+
 
 def sanitize_filename(name: str) -> str:
     output = ""

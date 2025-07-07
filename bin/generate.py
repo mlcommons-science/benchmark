@@ -40,29 +40,78 @@ RATINGS_COLUMNS = [
     ("documentation_reason", "3cm", "Documentation Reason")
 ]
 
+CHECKED_RATINGS_COLUMNS = RATINGS_COLUMNS[:]
+
 MAX_AUTHOR_LIMIT = 9999
 
 def get_column_triples(selected: list[str]) -> list[tuple[str, str, str]]:
     selected_lower = [s.lower() for s in selected]
     return [triple for triple in ALL_COLUMNS if triple[0] in selected_lower]
 
-def reformat_for_ratings(cols: list[tuple[str, str, str]]) -> list[tuple[str, str, str]]:
+# def reformat_for_ratings(cols: list[tuple[str, str, str]]) -> list[tuple[str, str, str]]:
+#     """
+#     Returns a copy of `cols`. If the final index of `cols` contains a column title named "ratings", the "ratings"
+#     column is replaced with all entries from `RATINGS_COLUMNS`.
+
+#     Parameters:
+#         cols: list of columns to modify
+#     Returns:
+#         `cols` with the "ratings" column replaced (provided "ratings" is the last column name)
+#     """
+#     columns = cols
+#     if len(columns)>0 and columns[-1][0]=='ratings':
+#         columns.pop(-1)
+#         for ratings_column in RATINGS_COLUMNS:
+#             columns.append(ratings_column)
+    
+#     return columns
+
+def verify_checked_ratings(file_contents: list[dict], printing_warnings: bool = True) -> bool:
     """
-    Returns a copy of `cols`. If the final index of `cols` contains a column title named "ratings", the "ratings"
-    column is replaced with all entries from `RATINGS_COLUMNS`.
+    Returns True if all entries in `file_contents` have a "name", "cite", and "ratings" entry,
+    where each "ratings" entry contains the keys listed in `RATINGS_COLUMNS`.
 
     Parameters:
-        cols: list of columns to modify
+        file_contents: YAML entries to check
+        printing_warnings: whether to print error messages to the console for each missing rating. Default is True
     Returns:
-        `cols` with the "ratings" column replaced (provided "ratings" is the last column name)
+        whether the inputted file contents have the proper fields
     """
-    columns = cols
-    if len(columns)>0 and columns[-1][0]=='ratings':
-        columns.pop(-1)
-        for ratings_column in RATINGS_COLUMNS:
-            columns.append(ratings_column)
-    
-    return columns
+    check_passed = True
+
+    for entry in file_contents:
+
+        #Check name and cite first
+        name = entry.get("name")
+        url = entry.get("cite")
+        if (not name) or (not url):
+            print(f"\033[91mWARNING: Missing name or citation in entry \033[33m{entry}\033[00m")
+            check_passed = False
+            continue
+        
+        #Check if ratings exist
+        ratings_dicts = entry.get("ratings")
+        if not ratings_dicts:
+            if printing_warnings:
+                print(f'\033[91mWARNING: Ratings not present in entry "{name}"\033[00m')
+                check_passed = False
+                continue
+
+        #Check number of ratings
+        if not len(ratings_dicts)==len(RATINGS_COLUMNS): #ignore the warning
+            if printing_warnings:
+                print(f'\033[91mWARNING: There must be {len(RATINGS_COLUMNS)} rating categories in entry "{name}"\033[00m')
+                check_passed = False
+                continue
+
+        #Check if each entry in RATINGS_COLUMNS exist
+        for i in range(len(RATINGS_COLUMNS)):
+            if not ratings_dicts[i].get(RATINGS_COLUMNS[i][0]):
+                print(f'\033[91mWARNING: Category "{RATINGS_COLUMNS[i][0]}" missing from entry "{name}"\033[00m')
+                check_passed = False
+                continue
+
+    return check_passed
 
 
 def load_yaml_file(file_path: str) -> list[dict]:
@@ -91,7 +140,6 @@ def sanitize_filename(name: str) -> str:
     output = re.sub(r' {2,}', ' ', output) #Replace 2+ spaces with single space
     output = output.strip().replace("(", "").replace(")", "").replace(" ", "_")
 
-    # print(f'"{output}"')
     return output
 
 
@@ -414,6 +462,7 @@ def write_md_table(input_filepaths: list[str], output_dir: str, columns: list[tu
     """
 
     contents = merge_yaml_files(input_filepaths)
+    verify_checked_ratings(contents)
 
     os.makedirs(output_dir, exist_ok=True)
     with open(os.path.join(output_dir, "benchmarks.md"), 'w', encoding='utf-8') as md_file:
@@ -556,6 +605,8 @@ def write_latex(input_filepaths: list[str], output_filepath: str, columns: list[
 
     with open(output_tex_path, 'w', encoding='utf-8') as f:
         records = merge_yaml_files(input_filepaths, disable_error_messages=True)
+
+        verify_checked_ratings(records)
 
         if standalone:
             f.write(textwrap.dedent(r"""

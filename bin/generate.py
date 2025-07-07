@@ -4,7 +4,6 @@ import sys
 import yaml
 import re
 import textwrap
-from typing import List
 import bibtexparser
 
 ALL_COLUMNS = [
@@ -305,20 +304,26 @@ def get_bibtex(cell_val: str, author_limit: int) -> str:
 
 
 
-def write_individual_md_pages(input_filepaths: list[str], output_dir: str, columns: List[tuple], author_trunc: int = MAX_AUTHOR_LIMIT) -> None:
+def write_individual_md_pages(input_filepaths: list[str], output_dir: str, columns: list[tuple], 
+                              author_trunc: int = MAX_AUTHOR_LIMIT, writing_ratings: bool = True) -> None:
+    
     contents = merge_yaml_files(input_filepaths)
     os.makedirs(output_dir, exist_ok=True)
     index_path = os.path.join(output_dir, "index.md")
+
     with open(index_path, 'w', encoding='utf-8') as index_file:
         index_file.write("# Index of Benchmarks\n\n")
         for i, entry in enumerate(contents):
             entry_name = entry.get("name", f"entry_{i}")
             filename = sanitize_filename(entry_name) + ".md"
             filepath = os.path.join(output_dir, filename)
+
             with open(filepath, 'w', encoding='utf-8') as f:
                 f.write(f"# {entry_name}\n\n")
+
                 for col_name, _, col_display in columns:
                     val = entry.get(col_name, '')
+
                     if col_name == "cite" and isinstance(val, list):
                         f.write(f"**{col_display}**:\n\n")
                         for bibtex in val:
@@ -345,11 +350,30 @@ def write_individual_md_pages(input_filepaths: list[str], output_dir: str, colum
                             for raw_line in bibtex.strip().splitlines():
                                 f.write(f"      {raw_line}\n")
                         f.write("\n")
+
+
+                    #Handle special case for ratings
+                    elif col_name == "ratings":
+                        if writing_ratings:
+                            #`val` should be a list of dictionaries of the same length as RATINGS_COLUMNS
+                            for i in range(len(val)):
+                                ratings_col_display = RATINGS_COLUMNS[i][2]
+                                ratings_val_str = str(val[i].get(RATINGS_COLUMNS[i][0], ""))
+
+                                ratings_val_str = ratings_val_str.replace("\n", " ").replace("['", "").replace("']", "")
+                                ratings_val_str = ratings_val_str.replace("', '", ", ").replace("','", ", ").replace("[]", "")
+                                ratings_val_str = ratings_val_str.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
+
+                                f.write(f"**{ratings_col_display}**: {ratings_val_str}\n\n")
+                    
+                    #Proceed normally if not writing ratings
                     else:
                         val_str = str(val).replace("\n", " ").replace("['", "").replace("']", "")
                         val_str = val_str.replace("', '", ", ").replace("','", ", ").replace("[]", "")
                         val_str = val_str.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
                         f.write(f"**{col_display}**: {val_str}\n\n")
+
+
             index_file.write(f"- [{entry_name}]({filename})\n")
 
 
@@ -577,7 +601,7 @@ if __name__ == "__main__":
         if not os.path.exists(file):
             parser.error(f"The file {file} does not exist")
 
-    os.makedirs(args.out_dir, exist_ok=True)
+    os.makedirs(args.outdir, exist_ok=True)
     columns = get_column_triples(args.columns) if args.columns else ALL_COLUMNS
     # columns = reformat_for_ratings(columns)
 
@@ -599,11 +623,11 @@ if __name__ == "__main__":
     
     if args.format == 'md':
         if args.index:
-            write_individual_md_pages(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_trunc=args.authortruncation)
+            write_individual_md_pages(args.files, os.path.join(args.outdir, "md_pages"), columns, author_trunc=args.authortruncation)
 
-        write_md_table(args.files, os.path.join(args.out_dir, "md_pages"), columns, author_limit=args.authortruncation)
+        write_md_table(args.files, os.path.join(args.outdir, "md_pages"), columns, author_limit=args.authortruncation)
 
     elif args.format == 'tex':
         if args.index:
-            write_individual_latex_tables(args.files, os.path.join(args.out_dir, "tex_pages"), columns, author_limit=args.authortruncation)
-        write_latex(args.files, os.path.join(args.out_dir, "tex"), columns, standalone=args.standalone, author_limit=args.authortruncation)
+            write_individual_latex_tables(args.files, os.path.join(args.outdir, "tex_pages"), columns, author_limit=args.authortruncation)
+        write_latex(args.files, os.path.join(args.outdir, "tex"), columns, standalone=args.standalone, author_limit=args.authortruncation)

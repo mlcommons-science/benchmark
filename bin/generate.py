@@ -649,10 +649,10 @@ if __name__ == "__main__":
     if args.format == 'md':
         if args.index:
             write_individual_md_pages(args.files, os.path.join(args.outdir, "md_pages"), columns, 
-                                      author_trunc=args.authortruncation, writing_ratings=True)
+                                      author_trunc=args.authortruncation, writing_ratings=(not args.noratings))
 
         write_md_table(args.files, os.path.join(args.outdir, "md_pages"), columns, 
-                       author_limit=args.authortruncation, writing_ratings=True)
+                       author_limit=args.authortruncation, writing_ratings=(not args.noratings))
 
     elif args.format == 'tex':
         if args.index:

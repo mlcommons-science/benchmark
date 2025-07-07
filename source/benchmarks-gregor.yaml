@@ -12,8 +12,8 @@
   - QKeras
   description: |
     This benchmark evaluates ML models for real-time classification of
-    particle jets using \nhigh-level features derived from simulated LHC data. It
-    includes both full-precision \nand quantized models optimized for FPGA deployment.
+    particle jets using high-level features derived from simulated LHC data. It
+    includes both full-precision and quantized models optimized for FPGA deployment.
   task_types:
   - Classification
   ai_capability_measured: Real-time inference, model compression performance

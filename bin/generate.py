@@ -306,7 +306,21 @@ def get_bibtex(cell_val: str, author_limit: int) -> str:
 
 def write_individual_md_pages(input_filepaths: list[str], output_dir: str, columns: list[tuple], 
                               author_trunc: int = MAX_AUTHOR_LIMIT, writing_ratings: bool = True) -> None:
-    
+    """
+    Writes the contents of the YAML file(s) at `input_filepaths` to `output_dir`/md_pages.
+    Each entry in the YAML files appears as a separate file.
+
+    The files are indexed by `output_dir`/md_pages/index.md
+
+    Parameters:
+        input_filepaths: list of filepaths to the input YAML files
+        output_dir: directory for output
+        columns: which entries to include in the output MD files
+        author_trunc: number of authors to include in the file's bibtex citation
+        writing_ratings: whether to write the benchmark's ratings to the output files
+    """
+    assert type(author_trunc)==int and author_trunc>0, "author truncation amount must be positive"
+
     contents = merge_yaml_files(input_filepaths)
     os.makedirs(output_dir, exist_ok=True)
     index_path = os.path.join(output_dir, "index.md")
@@ -380,6 +394,17 @@ def write_individual_md_pages(input_filepaths: list[str], output_dir: str, colum
 
 def write_md_table(input_filepaths: list[str], output_dir: str, columns: list[tuple], 
                    author_limit: int = MAX_AUTHOR_LIMIT, writing_ratings: bool = True) -> None:
+    """
+    Writes the contents of the YAML file(s) at `input_filepaths` to `output_dir`/md_pages.
+    All entries in the YAML files appear in a single merged table.
+
+    Parameters:
+        input_filepaths: list of filepaths to the input YAML files
+        output_dir: directory for output
+        columns: which entries to include in the output MD files
+        author_trunc: number of authors to include in the file's bibtex citation
+        writing_ratings: whether to write the benchmark's ratings to the output files
+    """
 
     contents = merge_yaml_files(input_filepaths)
 
@@ -623,9 +648,11 @@ if __name__ == "__main__":
     
     if args.format == 'md':
         if args.index:
-            write_individual_md_pages(args.files, os.path.join(args.outdir, "md_pages"), columns, author_trunc=args.authortruncation)
+            write_individual_md_pages(args.files, os.path.join(args.outdir, "md_pages"), columns, 
+                                      author_trunc=args.authortruncation, writing_ratings=True)
 
-        write_md_table(args.files, os.path.join(args.outdir, "md_pages"), columns, author_limit=args.authortruncation)
+        write_md_table(args.files, os.path.join(args.outdir, "md_pages"), columns, 
+                       author_limit=args.authortruncation, writing_ratings=True)
 
     elif args.format == 'tex':
         if args.index:

@@ -1,7 +1,7 @@
 import yaml
 from yaml.representer import SafeRepresenter
 
-# --- Custom YAML block string formatting ---
+# --- YAML literal string formatting ---
 class LiteralString(str):
     pass
 
@@ -11,7 +11,29 @@ def literal_representer(dumper, data):
 yaml.add_representer(LiteralString, literal_representer)
 yaml.add_representer(type(None), SafeRepresenter.represent_none)
 
-# --- Helpers ---
+# --- Clean and annotate all strings ---
+def clean_string(value):
+    if not isinstance(value, str):
+        return value
+
+    cleaned = value.replace('\\n', '')  # Remove the string literal "\n"
+
+    if '\n' in cleaned or len(cleaned) > 80:
+        return LiteralString(cleaned.strip())
+
+    return cleaned.strip()
+
+def clean_all_strings(data):
+    if isinstance(data, dict):
+        return {k: clean_all_strings(v) for k, v in data.items()}
+    elif isinstance(data, list):
+        return [clean_all_strings(i) for i in data]
+    elif isinstance(data, str):
+        return clean_string(data)
+    else:
+        return data
+
+# --- Dataset parsing ---
 def split_datasets(dataset_str):
     datasets = []
     for item in dataset_str.split(', '):
@@ -23,6 +45,7 @@ def split_datasets(dataset_str):
             })
     return datasets
 
+# --- Rating transformation ---
 def format_ratings(rating_list):
     rating_map = {
         'problem_spec_rating': 'specification',
@@ -36,10 +59,11 @@ def format_ratings(rating_list):
         'documentation_rating': 'documentation',
         'documentation_reason': 'documentation'
     }
+
     ratings = {
         'software': {
             'rating': 0,
-            'reason': 'laksdjflkajsdlfkajsdlf'
+            'reason': LiteralString('Not yet evaluated')
         }
     }
 
@@ -53,10 +77,14 @@ def format_ratings(rating_list):
             if 'rating' in key:
                 ratings[section]['rating'] = value
             elif 'reason' in key:
-                ratings[section]['reason'] = LiteralString(value.strip())
+                ratings[section]['reason'] = LiteralString(value.replace('\\n', '').strip())
+
     return ratings
 
+# --- Transform each benchmark entry ---
 def transform_entry(entry):
+    entry = clean_all_strings(entry)
+
     return {
         'date': entry.get('date'),
         'last_updated': entry.get('Last Updated') or entry.get('date'),
@@ -67,7 +95,7 @@ def transform_entry(entry):
         'domain': entry.get('domain'),
         'focus': entry.get('focus'),
         'keywords': entry.get('keywords'),
-        'description': LiteralString(entry.get('description', '').strip()),
+        'description': LiteralString(entry.get('description', '')),
         'task_types': entry.get('task_types', []),
         'ai_capability_measured': [
             cap.strip() for cap in entry.get('ai_capability_measured', '').split(',')
@@ -78,12 +106,12 @@ def transform_entry(entry):
         'ml_motif': [entry.get('ML Motif')] if entry.get('ML Motif') else [],
         'type': entry.get('Type'),
         'ml_task': entry.get('ML task'),
-        'notes': entry.get('notes'),
+        'notes': LiteralString(entry.get('notes', '')) if 'notes' in entry else None,
         'contact': {
             'name': entry.get('Support Contact Person'),
             'email': None
         },
-        'cite': [LiteralString(c.strip()) for c in entry.get('cite', [])],
+        'cite': [LiteralString(c.replace('\\n', '').strip()) for c in entry.get('cite', [])],
         'dataset': split_datasets(entry.get('Dataset', '')),
         'results': [
             {
@@ -102,7 +130,7 @@ def transform_entry(entry):
         'ratings': format_ratings(entry.get('ratings', []))
     }
 
-# --- Main Process ---
+# --- Main execution ---
 def main():
     input_file = 'source/benchmarks-addon.yaml'
     output_file = 'benchmarks_transformed.yaml'

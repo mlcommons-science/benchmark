@@ -10,9 +10,10 @@
   - real-time ML
   - jet tagging
   - QKeras
-  description: "This benchmark evaluates ML models for real-time classification of\
-    \ particle jets using \nhigh-level features derived from simulated LHC data. It\
-    \ includes both full-precision \nand quantized models optimized for FPGA deployment.\n"
+  description: |
+    This benchmark evaluates ML models for real-time classification of
+    particle jets using high-level features derived from simulated LHC data. It
+    includes both full-precision \nand quantized models optimized for FPGA deployment.
   task_types:
   - Classification
   ai_capability_measured: Real-time inference, model compression performance
@@ -57,6 +58,7 @@
   - documentation_rating: 7.0
   - documentation_reason: Clear paper, GitHub repo, and integration with HuggingFace
       Datasets; full reproducibility requires manually connecting models to dataset.
+      
 - date: '2024-05-01'
   expired: null
   valid: 'yes'
@@ -69,9 +71,10 @@
   - autoencoder
   - sparse data
   - irregular sampling
-  description: "This benchmark addresses lossy compression of irregularly sampled\
-    \ sensor data from \nparticle detectors using real-time autoencoder architectures,\
-    \ targeting latency-critical \napplications in physics experiments.\n"
+  description: |
+    This benchmark addresses lossy compression of irregularly sampled
+    sensor data from \nparticle detectors using real-time autoencoder architectures,
+    targeting latency-critical \napplications in physics experiments.
   task_types:
   - Compression
   ai_capability_measured: Reconstruction quality, compression efficiency

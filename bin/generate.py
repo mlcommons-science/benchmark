@@ -40,6 +40,88 @@ RATINGS_COLUMNS = [
     ("documentation_reason", "3cm", "Documentation Reason")
 ]
 
+#THESE ARE SUGGESTIONS AND DO NOT NEED TO BE RIGOUOURSLY FOLLOWED
+
+# class Ratings(object):
+#     """
+#     Reads and verifies YAML file contents
+#     """
+
+#     def __init__(self):
+#         self.topics = self.read_format()
+
+#     def read_format(self, filename: str='benchmarks-gregor-format.yaml'):
+#         """
+#         Reads which topics topics from the formatting YAML
+#         """
+#         pass
+
+#     def check(self, content: list[dict]):
+#         """
+#         For each entry in `content`, 
+#         """
+#         for entry in content:
+#             for topic in self.topics:
+#                 if "rating" in entry[topic]:
+#                     print("yay")
+#                 else:
+#                     print("boo")
+                
+#                 if "reason" in entry[topic]:
+#                     print("yay")
+#                 else:
+#                     print("boo")
+
+# class Citation(object):
+#     """
+#     Contains a single BibTeX citation
+#     """
+
+#     def kind(self):
+#         pass
+
+#     def label(self):
+#         pass 
+
+#     def url(self):
+#         pass
+
+#     def attributes(self):
+#         """
+#         Everything but `kind` and `label`
+#         """
+#         pass
+
+#     def __str__(self):
+#         raise Exception("NOT YET IMPLEMENTED")
+
+#     def check(self):
+#         """
+#         "Is the kind valid, label properly formatted..."
+#         """
+#         pass
+
+   
+
+# class Citations(object):
+#     """
+#     Contains the citations of one YAML entry
+#     """
+#     pass 
+
+
+
+# class AllCitations(object):
+#     """
+#     Holds a list of Citations objects
+#     """
+#     pass
+
+
+# RATINGS_TOPICS = [
+#     #Insert ratings topics from gregor yaml format
+# ]
+
 CHECKED_RATINGS_COLUMNS = RATINGS_COLUMNS[:]
 
 MAX_AUTHOR_LIMIT = 9999
@@ -48,23 +130,6 @@ def get_column_triples(selected: list[str]) -> list[tuple[str, str, str]]:
     selected_lower = [s.lower() for s in selected]
     return [triple for triple in ALL_COLUMNS if triple[0] in selected_lower]
 
-# def reformat_for_ratings(cols: list[tuple[str, str, str]]) -> list[tuple[str, str, str]]:
-#     """
-#     Returns a copy of `cols`. If the final index of `cols` contains a column title named "ratings", the "ratings"
-#     column is replaced with all entries from `RATINGS_COLUMNS`.
-
-#     Parameters:
-#         cols: list of columns to modify
-#     Returns:
-#         `cols` with the "ratings" column replaced (provided "ratings" is the last column name)
-#     """
-#     columns = cols
-#     if len(columns)>0 and columns[-1][0]=='ratings':
-#         columns.pop(-1)
-#         for ratings_column in RATINGS_COLUMNS:
-#             columns.append(ratings_column)
-    
-#     return columns
 
 def verify_checked_ratings(file_contents: list[dict], printing_warnings: bool = True) -> bool:
     """
@@ -83,9 +148,13 @@ def verify_checked_ratings(file_contents: list[dict], printing_warnings: bool = 
 
         #Check name and cite first
         name = entry.get("name")
-        url = entry.get("cite")
-        if (not name) or (not url):
-            print(f"\033[91mWARNING: Missing name or citation in entry \033[33m{entry}\033[00m")
+        if not name:
+            print(f"\033[91mWARNING: Missing name in entry \033[33m{entry}\033[00m")
+            check_passed = False
+            continue
+        citation = entry.get("cite")
+        if not citation:
+            print(f'\033[91mWARNING: Missing citation in entry "{name}"\033[00m')
             check_passed = False
             continue
         
@@ -98,17 +167,17 @@ def verify_checked_ratings(file_contents: list[dict], printing_warnings: bool = 
                 continue
 
         #Check number of ratings
-        if not len(ratings_dicts)==len(RATINGS_COLUMNS): #ignore the warning
+        if not len(ratings_dicts)==len(CHECKED_RATINGS_COLUMNS): #ignore the warning
             if printing_warnings:
-                print(f'\033[91mWARNING: There must be {len(RATINGS_COLUMNS)} rating categories (found {len(ratings_dicts)} categories) in entry "{name}"\033[00m')
+                print(f'\033[91mWARNING: There must be {len(CHECKED_RATINGS_COLUMNS)} rating categories (found {len(ratings_dicts)} categories) in entry "{name}"\033[00m')
                 check_passed = False
                 continue
 
         #Check if each entry in RATINGS_COLUMNS exist
-        for i in range(len(RATINGS_COLUMNS)):
+        for i in range(len(CHECKED_RATINGS_COLUMNS)):
             # print(ratings_dicts[i].get(RATINGS_COLUMNS[i][0]))
-            if ratings_dicts[i].get(RATINGS_COLUMNS[i][0])==None:
-                print(f'\033[91mWARNING: Category "{RATINGS_COLUMNS[i][0]}" missing from entry "{name}"\033[00m')
+            if ratings_dicts[i].get(CHECKED_RATINGS_COLUMNS[i][0])==None:
+                print(f'\033[91mWARNING: Category "{CHECKED_RATINGS_COLUMNS[i][0]}" missing from entry "{name}"\033[00m')
                 check_passed = False
 
     return check_passed
@@ -173,6 +242,9 @@ def merge_yaml_files(file_paths: list[str], disable_error_messages: bool = False
 
     return records
 
+# #####################################################################################
+# Latex Formatting
+# #####################################################################################
 
 def escape_latex(text):
     if not isinstance(text, str):
@@ -187,9 +259,18 @@ def extract_cite_label(cite_entry: str) -> str:
     match = re.match(r'@\w+\{([^,]+),', cite_entry.strip())
     return match.group(1) if match else ""
 
+# -------------------------------------------------------------------------------------
+# Subsection
+# -------------------------------------------------------------------------------------
+
 def extract_cite_url(cite_entry: str) -> str:
     match = re.search(r'url\s*=\s*[{"]([^}"]+)[}"]', cite_entry)
     return match.group(1) if match else ""
+
+
+# #####################################################################################
+# Checking
+# #####################################################################################
 
 
 def unique_in_list(arr: list):
@@ -286,6 +367,10 @@ def check_yaml(file_paths: list[str], required_fields: list[str] | None = None) 
     check_unique_citation_labels(contents)
 
 
+# #####################################################################################
+# Get Bibtex
+# #####################################################################################
+
 
 def get_bibtex(cell_val: str, author_limit: int) -> str:
     """
@@ -357,6 +442,10 @@ def get_bibtex(cell_val: str, author_limit: int) -> str:
 
     return modified_bibtex
 
+
+# #####################################################################################
+# File Writing
+# #####################################################################################
 
 
 def write_individual_md_pages(input_filepaths: list[str], output_dir: str, columns: list[tuple], 
@@ -657,7 +746,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process YAML benchmark files to Markdown or LaTeX.")
     parser.add_argument('--files', '-i', type=str, nargs='+', required=True, help='YAML file paths to process.')
     parser.add_argument('--format', '-f', type=str, choices=['md', 'tex'], required=True, help="Output file format: 'md' or 'tex'")
-    parser.add_argument('--outdir', '-o', type=str, default='../content/', help="Output directory")
+    parser.add_argument('--outdir', '-o', type=str, default='../content/', required=True, help="Output directory")
     parser.add_argument('--authortruncation', type=int, default=MAX_AUTHOR_LIMIT, help="Truncate authors for index pages")
     parser.add_argument('--columns', type=lambda s: s.split(','), help="Subset of columns to include")
     parser.add_argument('--check', action='store_true', help="Conduct formatting checks on inputted YAML files. Does not produce an output file.")
@@ -686,7 +775,6 @@ if __name__ == "__main__":
 
     os.makedirs(args.outdir, exist_ok=True)
     columns = get_column_triples(args.columns) if args.columns else ALL_COLUMNS
-    # columns = reformat_for_ratings(columns)
 
 
     # Required fields in YAML file

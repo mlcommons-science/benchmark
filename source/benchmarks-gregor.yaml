@@ -1,10 +1,11 @@
 - date: '2024-05-01'
+  last_updated: '2024-05-01' #could also be null
   expired: null
-  valid: 'yes'
+  valid: 'yes' #CHECK DEFINITION
   name: Jet Classification
   url: https://github.com/fastmachinelearning/fastml-science/tree/main/jet-classify
   domain: Particle Physics
-  focus: Real-time classification of particle jets using HL-LHC simulation features
+  focus: Real-time classification of particle jets using HL-LHC simulation features #Perhaps put under "focus"
   keywords:
   - classification
   - real-time ML
@@ -16,40 +17,49 @@
     includes both full-precision and quantized models optimized for FPGA deployment.
   task_types:
   - Classification
-  ai_capability_measured: Real-time inference, model compression performance
+  ai_capability_measured: #Must be a YAML list
+  - Real-time inference 
+  - Model compression performance
   metrics:
   - Accuracy
   - AUC
   models:
   - Keras DNN
   - QKeras quantized DNN
+  ml_motif: #What type of ML is tested
+  - Real-time
+  type: Benchmark #i.e. actual benchmark, or just describes the application
+  ml_task: Supervised Learning
+  solutions: '2' #NOT NEEDED. Number of results as a list
   notes: Includes both float and quantized models using QKeras
-  cite: |
-    @article{hawks2022fastml,
-      title={Fast Machine Learning for Science: Benchmarks and Dataset},
-      author={Hawks, Ben and Tran, Nhan and others},
-      year={2022},
-      url={https://arxiv.org/abs/2207.07958}
-    }
+  contact: 
+    name: Jules Muhizi
+    email: null
+  cite: 
+    - |
+      @article{hawks2022fastml,
+        title={Fast Machine Learning for Science: Benchmarks and Dataset},
+        author={Hawks, Ben and Tran, Nhan and others},
+        year={2022},
+        url={https://arxiv.org/abs/2207.07958}
+      }
+  dataset: 
+    - name: OpenML
+      url: hls4ml_lhc_jets_hlf (https://www.openml.org/d/42468)
+    - name: JetClass
+      url: https://zenodo.org/record/6619768
   results:
     - name: Gemini LLM Deep Research
       url: https://docs.google.com/document/d/1Mr7J4F8PDAIBXJ2vrfVssxLekEVW7ahJ4wpSe6FN5yw
     - name: ChatGPT LLM
       url: https://docs.google.com/document/d/1runrcij-eoH3_lgGZ8wm2z1YbL1Qf5cSNbVbHyWFDs4
-  ML Motif: Real-time
-  Type: Benchmark
-  ML task: Supervised Learning
-  Solutions: '2'
-  Dataset: 
-    - name: OpenML
-      url: hls4ml_lhc_jets_hlf (https://www.openml.org/d/42468)
-    - name: JetClass
-      url: https://zenodo.org/record/6619768
-  Software: true
-  Benchmark-Ready: true
-  Last Updated: 2024-05
-  Support Contact Person: Jules Muhizi
+  fair: 
+    reproducible: true
+    benchmark_ready: true #"Is it runnable?"
   ratings:
+    software: #Can the end user set up and run the benchark
+      rating: 0
+      reason: laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |

@@ -37,7 +37,7 @@ class YamlManager(object):
 
     def _load_multiple_yaml_files(self, file_paths: list[str], enable_error_messages: bool = True) -> list[dict]:
         """
-        Combines the contents of the files at `file_paths`, adding them to the manager as a list of dictionaroes.
+        Combines the contents of the files at `file_paths`, adding them to the manager as a list of dictionaries.
         Each key in the dictionary is a field in the YAML files (i.e. name, expired, cite).
 
         If any duplicate "name" fields are found, the function prints an error message and
@@ -68,7 +68,7 @@ class YamlManager(object):
 
 
 
-    def load_yamls(self, file_paths: list[str], enable_error_messages: bool = True):
+    def load_yamls(self, file_paths: str | list[str], enable_error_messages: bool = True):
         """
         Combines the contents of the files at `file_paths`, adding them to the manager as a list of dictionaroes.
         Each key in the dictionary is a field in the YAML files (i.e. name, expired, cite).
@@ -77,27 +77,28 @@ class YamlManager(object):
         does not add the duplicate to the output.
 
         Parameters:
-            file_paths: file paths of the YAMLs to merge
-            enable_error_messages: True if printing error messages
-        Returns:
-            list of dictionaries representing combines YAML file entries
+            file_paths (str, list[str]): file paths of the YAMLs to merge
+            enable_error_messages (bool): True if printing error messages, False otherwise
         """
-        self._yaml_dicts = self._load_multiple_yaml_files(file_paths, enable_error_messages)
+        if isinstance(file_paths, str):
+            self._yaml_dicts = self._load_multiple_yaml_files([file_paths], enable_error_messages)
+        else:
+            self._yaml_dicts = self._load_multiple_yaml_files(file_paths, enable_error_messages)
 
 
     def load_checking_dict(self, path: str, enable_error_messages: bool = True) -> None:
         """
         Loads the dictionary for mandatory argument checking.
 
-        :param path: filepath to the checking dictionary
-        :param enable_error_messages: True if printing error messages
+        :param path (str): filepath to the checking dictionary
+        :param enable_error_messages (bool): True if printing error messages, False otherwise
         """
         self._checking_dict = self._load_multiple_yaml_files([path], enable_error_messages)
         self._checking_dict = self._checking_dict[0]
 
     
 
-    def verify_checked_ratings(self, printing_warnings: bool = True) -> bool:
+    def verify_fields(self, printing_warnings: bool = True) -> bool:
         """
         Returns True if all entries in the manager's YAML files have a "name", "cite", and "ratings" entry,
         where each "ratings" entry contains the keys listed in the manager's checked columns.

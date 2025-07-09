@@ -131,7 +131,7 @@ def get_column_triples(selected: list[str]) -> list[tuple[str, str, str]]:
     return [triple for triple in ALL_COLUMNS if triple[0] in selected_lower]
 
 
-def verify_checked_ratings(file_contents: list[dict], printing_warnings: bool = True) -> bool:
+def verify_checked_columns(file_contents: list[dict], printing_warnings: bool = True) -> bool:
     """
     Returns True if all entries in `file_contents` have a "name", "cite", and "ratings" entry,
     where each "ratings" entry contains the keys listed in `RATINGS_COLUMNS`.

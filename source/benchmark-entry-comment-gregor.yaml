@@ -24,15 +24,15 @@
 
   last_updated: '2024-05-01' #could also be null
     description: |
-      x 
+      The date when the entru was last updated. The format is YYYY-mm-dd
     condition: optional
   
-  expired: null
+  expired: null # this may be deprecated or duplicates the valid field
     description: |
-      x 
+      An indication if the benchmark is no longer valis
     condition: optional
     
-  valid: 'yes' #CHECK DEFINITION
+  valid: True
     date: 2025-01-01
     description: |
       Identifies if the benchmark is valid at the time of review. Invalidity may be caused by the code or data 
@@ -71,7 +71,7 @@
   - jet tagging
   - QKeras
     description: |
-      x 
+      List of keywords relevant for the benchmark
     condition: ">=1"
   
   description: |
@@ -118,7 +118,7 @@
   ml_motif: #What type of ML is tested
   - Real-time
     description: |
-      x 
+      The ML motif tested. TODO we need list of motifs to be in a formal document.
     condition: ">=1"
   
   type: Benchmark 

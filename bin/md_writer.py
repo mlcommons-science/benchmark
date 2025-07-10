@@ -14,6 +14,9 @@ class MarkdownWriter:
         """
         pass
 
+    def hello(self):
+        print("hallo world")
+
     def _sanitize_filename(self, name: str) -> str:
         """
         Returns a copy of `name` without non-printing characters, spaces, or non-ASCII characters.

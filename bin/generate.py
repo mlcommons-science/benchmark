@@ -551,7 +551,7 @@ def write_md_table(input_filepaths: list[str], output_dir: str, columns: list[tu
     """
 
     contents = merge_yaml_files(input_filepaths)
-    verify_checked_ratings(contents)
+    verify_checked_columns(contents)
 
     os.makedirs(output_dir, exist_ok=True)
     with open(os.path.join(output_dir, "benchmarks.md"), 'w', encoding='utf-8') as md_file:
@@ -695,7 +695,7 @@ def write_latex(input_filepaths: list[str], output_filepath: str, columns: list[
     with open(output_tex_path, 'w', encoding='utf-8') as f:
         records = merge_yaml_files(input_filepaths, disable_error_messages=True)
 
-        verify_checked_ratings(records)
+        verify_checked_columns(records)
 
         if standalone:
             f.write(textwrap.dedent(r"""

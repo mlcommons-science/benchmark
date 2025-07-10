@@ -1,5 +1,5 @@
 import yaml
-
+import sys
 
 class YamlManager(object):
 
@@ -96,12 +96,102 @@ class YamlManager(object):
         self._checking_dict = self._load_multiple_yaml_files([path], enable_error_messages)
         self._checking_dict = self._checking_dict[0]
 
-    
+
+    def _verify_dict(self, yaml_dict: dict, checking_dict: dict, current_section: str = "<whole document>", printing_warnings: bool = True) -> bool:
+        """
+        Returns whether `yaml_dict` contains all mandatory fields as stated in `checking_dict`.
+
+        `yaml_dict` is deemed valid if it has all fields and subfields that `checking_dict` contains, and
+        all fields marked as "mandatory" in `checking_dict` are non-null and present.
+
+        Parameters:
+            yaml_dict (dict): dictionary to test
+            checking_dict (dict): dictionary containing mandatory and optional fields
+            current_section (str, optional): sub-dictionary checked
+            printing_warnings (bool, optional): whether to print warning messages upon finding errors
+        Returns:
+            whether `yaml_dict` has the structure and mandatory fields of `checking_dict`
+        """
+
+        valid = True
+        # print("NEW CALL")
+        # print(checking_dict)
+        # print(yaml_dict)
+
+        for field in checking_dict:
+
+            checking_dict_value = checking_dict[field]
+            
+            print(field)
+            print(checking_dict_value)
+
+            yaml_dict_value = None
+            #Attempt to load the YAML dictionary value
+            try:
+                yaml_dict_value = yaml_dict[field]
+            except KeyError:
+                print(f"\033[91mWARNING: Field '{field}' in section '{current_section}' is missing. If optional and not present, set the subfields to null\033[00m")
+                valid = False
+                continue
+            
+            print(yaml_dict_value)
+            
+
+            if isinstance(checking_dict_value, dict):
+                #First, verify that the corresponding YAML entry is a dictionary
+                if not isinstance(yaml_dict_value, dict):
+                    print(f"\033[91mWARNING: Section '{field}' must contain subfields\033[00m")
+                    valid = False
+                    continue 
+                else:
+                    print("ok")
+
+                #Use the same dictionary-checking procedure on the values
+                if not self._verify_dict(yaml_dict_value, checking_dict_value, current_section=field):
+                    valid = False
+                    continue
+            
+            elif isinstance(checking_dict_value, str):
+                #"mandatory" check: see if the YAML dict value is present
+                if checking_dict_value.startswith("required"):
+                    if yaml_dict_value==None:
+                        print(f"\033[91mWARNING: Required field '{field}' in section '{current_section}' is not present in the file\033[00m")
+                        valid = False
+                        continue
+                    else:
+                        print("ok")
+            
+                #">=n" check: see if the value is a list, and if the correct number of elements are present
+                elif checking_dict_value.startswith(">="):
+                    required_length = -1
+                    try:
+                        required_length = int(checking_dict_value[2:].strip())
+                    except:
+                        print("FATAL: Required length is not a number")
+                        sys.exit(1)
+
+                    #list check
+                    if not isinstance(yaml_dict_value, list):
+                        print(f"\033[91mWARNING: Field {field} must be a list\033[00m")
+                        valid = False
+                        continue
+                    #length check
+                    elif not len(yaml_dict_value)>=required_length:
+                        print(f"\033[91mWARNING: Field {field} must be a list of length {required_length}\033[00m")
+                        valid = False
+                        continue
+                    else:
+                        print("ok")
+            
+            print()
+
+        return valid
+
 
     def verify_fields(self, printing_warnings: bool = True) -> bool:
         """
-        Returns True if all entries in the manager's YAML files have a "name", "cite", and "ratings" entry,
-        where each "ratings" entry contains the keys listed in the manager's checked columns.
+        Returns True if all entries in the manager's YAML files have the fields marked as "mandatory" in the checking dictionary.
+        Returns False otherwise.
 
         :param printing_warnings: whether to print error messages to the console for each missing rating. Default is True
         :return whether the inputted file contents have the proper fields
@@ -109,15 +199,8 @@ class YamlManager(object):
         valid = True
 
         # Iterate over the list of dictionaries
-        for idx, yaml_dict in enumerate(self._yaml_dicts):
-
-            # Iterate through the checking dictionary
-            for field, requirement in self._checking_dict.items():
-                if requirement == "mandatory":
-                    # If the field is mandatory and not present in the yaml_dict
-                    if field not in yaml_dict and printing_warnings:
-                        print(f"\033[91mWARNING: Field '{field}' is mandatory but missing in dictionary {idx+1}\033[00m")
-                        valid = False
+        for yaml_dict in self._yaml_dicts:
+            self._verify_dict(yaml_dict, self._checking_dict, printing_warnings=printing_warnings) #type: ignore
 
         return valid
     
@@ -127,3 +210,13 @@ class YamlManager(object):
         :return: the manager's list of YAML content dictionaries
         """
         return self._yaml_dicts
+
+
+if __name__ == "__main__":
+    m = YamlManager()
+    m.load_yamls("source/benchmarks-gregor.yaml")
+    m.load_checking_dict("source/benchmarks-gregor-format.yaml")
+
+    print(m._verify_dict(m._yaml_dicts[0], m._checking_dict)) # type: ignore
+
+

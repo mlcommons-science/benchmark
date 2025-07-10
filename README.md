@@ -6,7 +6,7 @@ It is maintained through a yaml file to which anyone can add through a
 pull request. The file is located at:
 
 * https://github.com/mlcommons-science/benchmark/blob/main/source/benchmarks.yaml
-  
+
 To edit simply follow our
 [edit][https://github.com/mlcommons-science/benchmark/edit/main/source/benchmarks.yaml]
 link and create the pull request when done.
@@ -15,7 +15,7 @@ Make sure that the entries are in the format specified and that
 indentation is used with 2 spaces, do not use tabs. The explanation of
 the attributes is given at the end of this README.
 
-Form this yaml file several documenta ar generated. An index file that
+Form this yaml file several documents are generated. An index file that
 points to individual markdown files for each benchmark 
 
 * https://github.com/mlcommons-science/benchmark/blob/main/content/md/index.md

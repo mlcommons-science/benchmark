@@ -190,10 +190,57 @@ class YamlManager(object):
         :return: the manager's list of YAML content dictionaries
         """
         return self._yaml_dicts
+    
+
+    def _get_single_dict_pretty(self, entry) -> list:
+        """
+        Returns:
+            the contents of the given dictionary in a writable format
+
+            Every entry should be in one dictionary
+        """
+        if not isinstance(entry, dict):
+            return []
+
+        output = []
+
+        #Get all fields except for "description" and "condition"
+        field_names = [key for key in entry if key not in ["description", "condition"]]
+
+        #Get all the values, sending each through this procedure
+        for field_name in field_names:
+            output_dict = dict()
+            output_dict[field_name] = entry.get(field_name)
+            output.append(output_dict)
+
+        return output
+
+
+    def get_dicts_pretty(self):
+        """
+        Returns:
+            the manager's list of YAML conent dictionaries in a writable format
+
+            Every entry should be in one dictionary
+        """
+        output = []
+        for current_dict in self._yaml_dicts:
+            name = [key for key in current_dict if key not in ["description", "condition"]][0]
+
+            output += self._get_single_dict_pretty(current_dict)
+            print(self._get_single_dict_pretty(current_dict))
+            print()
+
+        
+        return output
+            
+            
 
 
 if __name__ == "__main__":
     m = YamlManager()
     m.load_yamls("source/benchmark-entry-comment-gregor.yaml")
 
-    print(m.verify_fields())
+    print(m._yaml_dicts)
+    print()
+    print(m.get_dicts_pretty())

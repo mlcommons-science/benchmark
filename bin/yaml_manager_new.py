@@ -84,48 +84,48 @@ class YamlManager(object):
 
     def get_dicts(self) -> list[dict]:
         return self._yaml_dicts
-    
 
-    def _get_single_dict_pretty(self, entry) -> list:
-        """
-        Returns:
-            the contents of the given dictionary in a writable format
 
-            Every entry should be in one dictionary
-        """
-        if not isinstance(entry, dict):
-            return []
+    def _flatten(self, entry, parent_key=''):
+        result = []
+        for key, value in entry.items():
+            if key in ['description', 'condition']:
+                continue
+            new_key = f"{parent_key} - {key}" if parent_key else key
+
+            #dict: use same procedure
+            if isinstance(value, dict):
+                result.extend(self._flatten(value, parent_key=new_key))
+
+            #list: use procedure on each index, if it's a dict. Otherwise, add key/value pair
+            elif isinstance(value, list):
+                for v in value:
+                    if isinstance(v, dict):
+                        result.extend(self._flatten(v, parent_key=new_key))
+                    else:
+                        result.append({new_key: value})
+            
+            #anything else: append key/value pair as is
+            else:
+                result.append({new_key: str(value)})
+        return result
+
+
+    def extract_fields(self):
 
         output = []
-
-        #Get all fields except for "description" and "condition"
-        field_names = [key for key in entry if key not in ["description", "condition"]]
-
-        #Get all the values, sending each through this procedure
-        for field_name in field_names:
-            output_dict = dict()
-            output_dict[field_name] = entry.get(field_name)
-            output.append(output_dict)
-
+        for item in self._yaml_dicts:
+            output.extend(self._flatten(item))
         return output
 
 
-    def get_dicts_pretty(self):
-        """
-        Returns:
-            the manager's list of YAML conent dictionaries in a writable format
-
-            Every entry should be in one dictionary
-        """
-        output = []
-        for current_dict in self._yaml_dicts:
-            name = [key for key in current_dict if key not in ["description", "condition"]][0]
-
-            output += self._get_single_dict_pretty(current_dict)
-            print(self._get_single_dict_pretty(current_dict))
-            print()
-
-        
-        return output
             
-            
+if __name__ == '__main__':
+    m = YamlManager()
+    m.load_yamls("source/benchmark-entry-comment-gregor.yaml")
+
+    fields = m.extract_fields()
+    for f in fields:
+        print(f, end="\n")
+
+

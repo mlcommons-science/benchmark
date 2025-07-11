@@ -151,7 +151,7 @@
     email: null
   description: |
     A contact person or organization for this benchmark
-  condition: optional
+  condition: required
 
 - cite: 
     - |
@@ -189,70 +189,73 @@
     benchmark_ready: true  # This field is deprecated as true implies runnable
   description: |
     Attributes important with the fair principle. It is true if fair applies.
-  condition: optional
+  condition: required
 
 - ratings:
+
+  - software:
+    rating: -1
+    reason: Not yet evaluated
+    description: |
+      Evaluates maturity and software engineering aspects used to define this benchmark.
+    condition: optional
+
+  - specification:
+      rating: 9.0
+      reason: |
+        Task and format (multiple-choice QA with 5 options) are clearly
+        defined; grounded in ConceptNet with consistent structure, though no hardware/system
+        constraints are specified.
+      description: |
+        Evaluates the maturity of the specification and explanations for the existence of this benchmark.
+      condition: optional
+
+  - dataset:
+      rating: 9.0
+      reason: |
+        Public, versioned, and FAIR-compliant; includes metadata, splits,
+        and licensing; well-integrated with HuggingFace and other ML libraries.
+      description: |
+        Evaluates the dataset, including attributes such as:
+          - public availability
+          - versioning
+          - metadata
+          - licensing
+      condition: required
+
+  - metrics:
+      rating: 9.0
+      reason: | 
+        Accuracy is a simple, reproducible metric aligned
+        with task goals; no ambiguity in evaluation.
+      description: |
+        The existence and maturity of an accuracy value relevant for the domain community.
+      condition: optional
+
+  - reference_solution:
+      rating: 8.0
+      reason: |
+        Several baseline models (e.g., BERT, RoBerta) are reported
+        with scores; implementations exist in public repos, but not bundled as an official
+        starter kit.
+      description: |
+        The availability of a reference solution.
+      condition: optional
+
+  - documentation:
+      rating: 7.0
+      reason: |
+        Clear paper, GitHub repo, and integration with HuggingFace
+        Datasets; full reproducibility requires manually connecting models to dataset.
+      description: |
+        The maturity of the documentation, including how to replicate the benchmark.
+      condition: optional
+
+
   description: |
     A set of ratings associated with the benchmark. The goal is to rate all benchmarks, but this could
     be time-consuming and prevent listing here. To allow addition in the list without 
     ratings, we make this section optional. A value of -1 in any of the categories means 
     it has not been evaluated yet.
-  condition: optional
+  condition: '>=5'
 
-  software:
-    rating: 0
-    reason: laksdjflkajsdlfkajsdlf
-    description: |
-      Evaluates maturity and software engineering aspects used to define this benchmark.
-    condition: optional
-
-  specification:
-    rating: 9.0
-    reason: |
-      Task and format (multiple-choice QA with 5 options) are clearly
-      defined; grounded in ConceptNet with consistent structure, though no hardware/system
-      constraints are specified.
-    description: |
-      Evaluates the maturity of the specification and explanations for the existence of this benchmark.
-    condition: optional
-
-  dataset:
-    rating: 9.0
-    reason: |
-      Public, versioned, and FAIR-compliant; includes metadata, splits,
-      and licensing; well-integrated with HuggingFace and other ML libraries.
-    description: |
-      Evaluates the dataset, including attributes such as:
-        - public availability
-        - versioning
-        - metadata
-        - licensing
-    condition: optional
-
-  metrics:
-    rating: 9.0
-    reason: | 
-      Accuracy is a simple, reproducible metric aligned
-      with task goals; no ambiguity in evaluation.
-    description: |
-      The existence and maturity of an accuracy value relevant for the domain community.
-    condition: optional
-
-  reference_solution:
-    rating: 8.0
-    reason: |
-      Several baseline models (e.g., BERT, RoBerta) are reported
-      with scores; implementations exist in public repos, but not bundled as an official
-      starter kit.
-    description: |
-      The availability of a reference solution.
-    condition: optional
-
-  documentation:
-    rating: 7.0
-    reason: |
-      Clear paper, GitHub repo, and integration with HuggingFace
-      Datasets; full reproducibility requires manually connecting models to dataset.
-    description: |
-      The maturity of the documentation, including how to replicate the benchmark.
-    condition: optional

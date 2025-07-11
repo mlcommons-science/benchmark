@@ -38,10 +38,7 @@ class YamlManager(object):
     def _load_multiple_yaml_files(self, file_paths: list[str], enable_error_messages: bool = True) -> list[dict]:
         """
         Combines the contents of the files at `file_paths`, adding them to the manager as a list of dictionaries.
-        Each key in the dictionary is a field in the YAML files (i.e. name, expired, cite).
-
-        If any duplicate "name" fields are found, the function prints an error message and
-        does not add the duplicate to the output.
+        Each dictionary is a field in the YAML files (i.e. name, expired, cite).
 
         Parameters:
             file_paths: file paths of the YAMLs to merge
@@ -50,7 +47,6 @@ class YamlManager(object):
             list of dictionaries representing combines YAML file entries
         """
         records = []
-        seen_names = set()
         for path in file_paths:
             records += (self._load_single_yaml_file(path, enable_error_messages))
 
@@ -78,54 +74,117 @@ class YamlManager(object):
 
 
 
-    def _verify_dict(self, yaml_dict):
+    def _verify_dict(self, yaml_contents, printing_warnings: bool = True, dict_required: bool = False, parent_dict_name: str = "",) -> bool:
+        """
+        Returns whether all fields marked as "required" in the given yaml contents are present.
+
+        Parameters:
+            yaml_contents: contents of the current YAML file
+            printing_warnings (bool): whether to print warnings to the console
+            dict_required (bool): (for recursive calls) whether all subfields inside the input are required
+            parent_dict_name (str): (for recursive calls) the name of the parent field
+        """
 
         #Get the field name
-        field_names = [key for key in yaml_dict if key not in ["description", "condition"]]
+        field_names = [key for key in yaml_contents if key not in ["description", "condition"]]
         primary_field_name = field_names[0]
 
-        print(yaml_dict)
-        
-        
-        #Check if a condition field exists in the first place
-        if not isinstance(yaml_dict, dict) or not yaml_dict.get("condition", None):
-            print("UNCHECKED")
-            print()
-            return
-        
-        print()
 
-        #Check if the required field is present
-        if yaml_dict["condition"] == "required" and not yaml_dict.get(primary_field_name, None):
-            print(f"\033[91mERROR: Required field '{primary_field_name}' not present\033[00m")
-            return
+        #Check if a condition field exists in the first place. If not, check the field
+        if not isinstance(yaml_contents, dict) or not yaml_contents.get("condition", None):
+            valid_ = True
+            for name in field_names:
+                #Check individual subfields, if mandated
+                if dict_required and not yaml_contents.get(name):
+                    if printing_warnings:
+                        print(f"\033[91mERROR: Required subfield '{name}' in dictionary-like field '{parent_dict_name}' not present\033[00m")
+                    valid_ = False
+                
+            return valid_
+        
+        # print(yaml_dict)
+        # print(field_names)
+        # print()
 
-        #If field is itself a dictionary, check the dictionary
+        #Check if a required field is present
+        if ((yaml_contents.get("condition")=="required" or yaml_contents.get("condition", "").startswith(">="))
+            and not yaml_contents.get(primary_field_name, None)):
+
+            if printing_warnings:
+                print(f"\033[91mERROR: Required field in '{primary_field_name}' not present\033[00m")
+            return False
+        
+        #Check >=n presence
+        if yaml_contents.get("condition", "").startswith(">="):
+            required_value_count = -1
+            try:
+                required_value_count = int(yaml_contents.get("condition", "")[2:])
+            except ValueError:
+                if printing_warnings:
+                    print(f'\033[91mERROR: Condition on field "{primary_field_name}" is not a number- instead received "{yaml_contents.get("condition", "")[2:]}"\033[00m')
+                return False
+
+            if not isinstance(yaml_contents.get(primary_field_name), list):
+                if printing_warnings:
+                    print(f"\033[91mERROR: Field '{primary_field_name}' must contain a list\033[00m")
+                return False
+
+            if len(yaml_contents.get(primary_field_name, [])) < required_value_count:
+                if printing_warnings:
+                    print(f"\033[91mERROR: Field '{primary_field_name}' must have at least {required_value_count} list elements\033[00m")
+                return False
+            
+
+        #check subfields
+        valid = True
         for name in field_names:
-            if isinstance(yaml_dict.get(name, None), dict):
-                self._verify_dict(yaml_dict.get(name, None))
+            current_value = yaml_contents.get(name, None)
+
+            #If subfield is itself a dictionary, check the dictionary
+            if isinstance(current_value, dict):
+                if not self._verify_dict(yaml_contents.get(name, None), dict_required = yaml_contents.get("condition")=="required", parent_dict_name=primary_field_name):
+                    valid = False
+            
+            #Handle lists of dictionaries
+            if isinstance(current_value, list):
+                for i in current_value:
+                    if isinstance(i, dict):
+                         if not self._verify_dict(i, dict_required = i.get("condition","")=="required", parent_dict_name=primary_field_name):
+                            valid = False
 
 
-    def verify_fields(self, yaml_dicts, printing_warnings: bool = True) -> bool:
+            #Check all the other values
+            if yaml_contents.get("condition", "")=="required" and not yaml_contents.get(name):
+                if printing_warnings:
+                    print(f"\033[91mERROR: Required subfield '{name}' in '{primary_field_name}' not present\033[00m")
+                valid = False
+
+        return valid
+
+
+
+    def verify_fields(self, printing_warnings: bool = True) -> bool:
         """
         Returns True if all entries in the manager's YAML files have the fields marked as "mandatory" in the checking dictionary.
         Returns False otherwise.
 
         :param printing_warnings: whether to print error messages to the console for each missing rating. Default is True
-        :return whether the inputted file contents have the proper fields
+        :return: whether the inputted file contents have the proper fields
         """
         valid = True
 
         # Iterate over the list of dictionaries
-        for current_dict in yaml_dicts:
-            self._verify_dict(current_dict)
-            
+        for current_dict in self._yaml_dicts:
+            # print(current_dict)
+            if not self._verify_dict(current_dict, dict_required=False, printing_warnings=printing_warnings):
+                # print("Error here")
+                valid = False
+            # print()
 
         return valid
 
 
     
-
     def get_dicts(self) -> list[dict]:
         """
         :return: the manager's list of YAML content dictionaries
@@ -137,4 +196,4 @@ if __name__ == "__main__":
     m = YamlManager()
     m.load_yamls("source/benchmark-entry-comment-gregor.yaml")
 
-    m.verify_fields(m._yaml_dicts)
+    print(m.verify_fields())

@@ -1,148 +1,58 @@
 import os
-import re
-from random import randint
-from typing import Any
+from typing import List
 
-class MarkdownWriter:
-    """
-    A class to generate Markdown documentation from data structured as a (list of) dictionaries
-    """
+class YamlToMarkdownConverter:
+    def __init__(self, entries: List[dict]):
+        self.entries = entries
 
-    def __init__(self):
-        """
-        Initializes the MarkdownWriter instance
-        """
-        pass
+    def escape_md(self, text: str) -> str:
+        if not isinstance(text, str):
+            text = str(text)
+        # Escape Markdown special characters inside table cells if needed
+        return text.replace("|", "\\|").replace("\n", " ")
 
-    def hello(self):
-        print("hallo world")
+    def entry_to_rows(self, entry: dict) -> List[str]:
+        rows = []
+        for key, value in entry.items():
+            if key in ("description", "condition"):
+                continue
+            field_name = self.escape_md(key)
+            field_value = (
+                self.escape_md(value)
+                if not isinstance(value, list)
+                else ", ".join(map(self.escape_md, value))
+            )
+            description = self.escape_md(entry.get("description", ""))
+            condition = self.escape_md(entry.get("condition", ""))
+            rows.append(f"| {field_name} | {field_value} | {description} | {condition} |")
+        return rows
 
-    def _sanitize_filename(self, name: str) -> str:
-        """
-        Returns a copy of `name` without non-printing characters, spaces, or non-ASCII characters.
+    def generate_markdown_doc(self, title: str, rows: List[str]) -> str:
+        header = f"# {title}\n\n"
+        table_header = "| Field | Value | Description | Condition |\n"
+        table_divider = "|-------|--------|-------------|-----------|\n"
+        return header + table_header + table_divider + "\n".join(rows) + "\n"
 
-        Parameters:
-            name (str): The name to sanitize.
+    def convert_to_single_file(self, output_path: str):
+        all_rows = []
+        for entry in self.entries:
+            all_rows.extend(self.entry_to_rows(entry))
+        markdown = self.generate_markdown_doc("Benchmark Field Specification", all_rows)
 
-        Returns:
-            str: The sanitized filename.
-        """
-        output = "".join(ch for ch in name if 32 <= ord(ch) <= 126)
-        output = re.sub(r' {2,}', ' ', output)
-        output = output.strip().replace("(", "").replace(")", "").replace(" ", "_")
-        return output
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        with open(output_path, "w", encoding="utf-8") as f:
+            f.write(markdown)
 
-    def _clean_md_text(self, val: Any) -> str:
-        """
-        Returns a copy of `val` as a string of comma-separated values. Unwanted characters are removed.
+    def write_individual_entries(self, output_dir: str):
+        os.makedirs(output_dir, exist_ok=True)
 
-        If `val` is a list, returns a comma-separated list. Each element in the list is converted to a string.  
-        If `val` is None, returns the empty string.  
-        If `val` is not a list or None, returns a cleaned string version of the input.
+        for i, entry in enumerate(self.entries):
+            rows = self.entry_to_rows(entry)
+            markdown = self.generate_markdown_doc(f"Benchmark Entry {i+1}", rows)
 
-        Parameters:
-            val (str, list, or None): The value to clean and format.
-
-        Returns:
-            str: The cleaned text ready for use in Markdown.
-        """
-        if isinstance(val, list):
-            val_list = [str(val)
-                .replace("\n", " ")
-                .replace("['", "")
-                .replace("']", "")
-                .replace("', '", ", ")
-                .replace("','", ", ")
-                .replace("[", "")
-                .replace("]", "")
-                .replace("(", "")
-                .replace(")", "")
-                for v in val
-            ]
-            return ", ".join(map(str, val_list))
-        if val is None:
-            return ""
-        return (
-            str(val)
-            .replace("\n", " ")
-            .replace("['", "")
-            .replace("']", "")
-            .replace("', '", ", ")
-            .replace("','", ", ")
-            .replace("[", "")
-            .replace("]", "")
-            .replace("(", "")
-            .replace(")", "")
-        )
+            output_file = os.path.join(output_dir, f"entry_{i+1}.md")
+            with open(output_file, "w", encoding="utf-8") as f:
+                f.write(markdown)
 
 
-    def write_md_for_entry(self, entry: dict, output_dir: str, columns: list[tuple]):
-        """
-        Writes the contents of `entry` to `output_dir` as a table, using `columns` as the column names.
 
-        If the `entry` dictionary doesn't have a "name" field, the method prints an error message. The title becomes
-        "entry" plus a randomly generated number.
-
-        Parameters:
-            entry (dict): A dictionary representing a single entry's data.
-            output_dir (str): The directory where the Markdown file should be saved.
-            columns (list): A list of tuples representing the columns (name, width, display name).
-        """
-        os.makedirs(output_dir, exist_ok=True)  # Ensure the output directory exists
-
-        #Check entry name
-        entry_name = entry.get("name", None)
-        if not entry_name:
-            print(f"\033[91mWARNING: The given entry \033[33m'{entry}'\033[91m has no name. File written to '{entry_name}'.\033[00m")
-            entry_name = "entry_" + str(randint(0, 99999999))
-            
-        filename = self._sanitize_filename(entry_name) + ".md"  # Sanitize the entry name to create a valid filename
-        filepath = os.path.join(output_dir, filename)
-
-        # Open the file for writing the Markdown content
-        with open(filepath, 'w', encoding='utf-8') as f:
-            f.write(f"# {entry_name}\n\n")  # Write the title as the entry name
-
-            # Loop over columns and write the corresponding values
-            for col_name, _, col_display in columns:
-                val = entry.get(col_name, '')  # Get the column value from the entry
-                if col_name == "cite" and isinstance(val, list):  # Handle citations
-                    f.write(f"**{col_display}**:\n\n")
-                    for cite_entry in val:
-                        f.write(f"```bibtex\n{cite_entry.strip()}\n```\n\n")
-                else:  # Handle normal text
-                    val_str = self._clean_md_text(val)  # Clean and format the value
-                    f.write(f"**{col_display}**: {val_str}\n\n")
-
-
-    def write_md_for_all(self, entries: list[dict], output_path: str, columns: list[tuple]):
-        """
-        Writes the contents of `entries` to `output_path` as a single table, using `columns` as the column names.
-
-        `output_path` must include the output filename.
-
-        Parameters:
-            entries (list): A list of dictionaries, each representing an entry.
-            output_path (str): The path where the Markdown file should be saved.
-            columns (list): A list of tuples representing the columns (name, width, display name).
-        """
-        os.makedirs(os.path.dirname(output_path), exist_ok=True)  # Ensure the output directory exists
-
-        # Open the file for writing the Markdown content
-        with open(output_path, 'w', encoding='utf-8') as f:
-            headers = [col[2] for col in columns]  # Extract column headers
-            f.write("| " + " | ".join(headers) + " |\n")  # Write the table headers
-            f.write("| " + " | ".join(["---"] * len(headers)) + " |\n")  # Write the separator line
-
-            # Loop over entries and write each as a row in the table
-            for entry in entries:
-                row = []
-                for col_name, _, _ in columns:
-                    val = entry.get(col_name, "")  # Get the value for the column
-                    if col_name == "cite" and isinstance(val, list):  # Handle citations
-                        label_match = re.match(r'@\w+\{([^,]+),', val[0])
-                        label = label_match.group(1) if label_match else ""
-                        row.append(f"`{label}`")  # Add citation label to the row
-                    else:
-                        row.append(self._clean_md_text(val))  # Clean and add value to the row
-                f.write("| " + " | ".join(row) + " |\n")  # Write the row to the table

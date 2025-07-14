@@ -71,6 +71,8 @@ class YamlManager(object):
 
         If `overwriting_prev` is True, any previous contents are overwritten upon load.
 
+        Raises a YAMLError upon syntax errors. Raises a FileNotFoundError if an invalid filepath is given.
+
         Parameters:
             file_paths (str or list[str]): filepath(s) to load from
             overwriting_prev (bool): whether to overwrite the manager's existing contents. Default True
@@ -87,7 +89,6 @@ class YamlManager(object):
                 self._yaml_dicts =  self._load_multiple_yaml_files(file_paths, enable_error_messages)
             else:
                 self._yaml_dicts += self._load_multiple_yaml_files(file_paths, enable_error_messages)
-        
 
 
     # ---------------------------------------------------------------------------------------------------------
@@ -99,7 +100,8 @@ class YamlManager(object):
         """
         Returns a list of the raw internal dictionaries read to by the manager.
 
-        DO NOT MODIFY THE OUTPUT! The values returned are shallow copies. Any modification will affect the YAML manager's contents.
+        DO NOT MODIFY THE OUTPUT OF THIS FUNCTION!
+        The values returned are shallow copies. Any modification will affect the YAML manager's contents.
 
         Returns:
             manager's current file contents, as dictionaries
@@ -203,6 +205,9 @@ class YamlManager(object):
         if not isinstance(entry, dict):
             return True #Ignore non-dicts
 
+
+        valid_dict = True
+
         # Get condition
         condition = entry.get("condition")
 
@@ -210,16 +215,17 @@ class YamlManager(object):
             if key in ("description", "condition"):
                 continue
 
-            print(key)
-            print(condition)
-            print(parent_required)
-            print()
+            # print(key)
+            # print(condition)
+            # print(parent_required)
+            # print()
 
             # If condition is "required" or the parent dict is checked, field must be present
             if (condition=="required" or parent_required) and value is None:
                 if printing_errors:
                     print(f'\033[91mRequired field "{key}" in "{parent_name}" not present\033[00m')
-                return False
+                    print(f'\033[91mcolumn: {entry}\033[00m')
+                valid_dict =  False
             
             #Do >=
             elif condition != None and condition.startswith(">="):
@@ -228,17 +234,17 @@ class YamlManager(object):
                 except ValueError:
                     if printing_errors:
                         print(f'\033[91mCondition "{condition[2:]}" is not a number\033[00m')
-                    return False
+                    valid_dict = False
                 
                 if not isinstance(value, list) or len(value) < required_length:
                     if printing_errors:
                         print(f'\033[91mField "{key}" must be a list of length {required_length} or more\033[00m')
-                    return False
+                    valid_dict =  False
 
             #Recurse on the dict
             if isinstance(value, dict):
                 if not self._verify_entry(value, parent_required=(condition=='required'), parent_name=key):
-                    return False
+                    valid_dict =  False
 
             #Recurse on any dictionaries in the list  
             elif isinstance(value, list):
@@ -246,9 +252,9 @@ class YamlManager(object):
                     if isinstance(item, dict):
 
                         if not self._verify_entry(item, parent_required=(condition=='required'), parent_name=key):
-                            return False
+                            valid_dict =  False
                         
-        return True
+        return valid_dict
 
 
     def verify_yamls(self, printing_errors: bool = True) -> bool:
@@ -257,20 +263,24 @@ class YamlManager(object):
 
         Parameters:
             printing_errors (bool): whether to print error messages to the console
+        Returns:
+            whether all required entries in the YAMLs are present
         """
 
         # Top-level must be a list of dict entries
         if not isinstance(self._yaml_dicts, list):
             return False
 
+        valid = True
         for i in range(len(self._yaml_dicts)):
             #Check each column (type: dict) in each YAML dictionary stored
             for column in self._yaml_dicts[i]:
                 if not self._verify_entry(column, printing_errors=printing_errors):
-                    print(f'   \033[91min YAML entry {i+1}\033[00m')
-                    return False
+                    print(f'\033[91min YAML entry {i+1}\033[00m')
+                    print()
+                    valid = False
 
-        return True
+        return valid
 
 
 if __name__ == "__main__":

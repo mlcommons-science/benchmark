@@ -182,7 +182,7 @@
         url: https://docs.google.com/document/d/1runrcij-eoH3_lgGZ8wm2z1YbL1Qf5cSNbVbHyWFDs4
     description: |
       A list of results, ideally published on the web. It could also point to a paper.
-    condition: optional
+    condition: required
 
   - fair:
       reproducible: true
@@ -194,11 +194,11 @@
   - ratings:
 
     - software:
-      rating: -1
-      reason: Not yet evaluated
-      description: |
-        Evaluates maturity and software engineering aspects used to define this benchmark.
-      condition: optional
+        rating: -1
+        reason: Not yet evaluated
+        description: |
+          Evaluates maturity and software engineering aspects used to define this benchmark.
+        condition: optional
 
     - specification:
         rating: 9.0
@@ -221,7 +221,7 @@
             - versioning
             - metadata
             - licensing
-        condition: required
+        condition: optional
 
     - metrics:
         rating: 9.0
@@ -257,17 +257,19 @@
       be time-consuming and prevent listing here. To allow addition in the list without 
       ratings, we make this section optional. A value of -1 in any of the categories means 
       it has not been evaluated yet.
-    condition: '>=5'
+    condition: optional
+
+
 
 
 -
-  - date: 'Yesterday'
+  - date: 'Never'
     description: |
       The date of availability of the benchmark. If an official release date is 
       not available, use the date of adding the entry.
     condition: required
 
-  - version: v1.0
+  - version: v0.0
     description: |
       The version number of the benchmark
     condition: optional
@@ -431,7 +433,7 @@
         url: https://docs.google.com/document/d/1runrcij-eoH3_lgGZ8wm2z1YbL1Qf5cSNbVbHyWFDs4
     description: |
       A list of results, ideally published on the web. It could also point to a paper.
-    condition: optional
+    condition: required
 
   - fair:
       reproducible: true
@@ -443,11 +445,11 @@
   - ratings:
 
     - software:
-      rating: -1
-      reason: Not yet evaluated
-      description: |
-        Evaluates maturity and software engineering aspects used to define this benchmark.
-      condition: optional
+        rating: -1
+        reason: Not yet evaluated
+        description: |
+          Evaluates maturity and software engineering aspects used to define this benchmark.
+        condition: optional
 
     - specification:
         rating: 9.0
@@ -470,7 +472,7 @@
             - versioning
             - metadata
             - licensing
-        condition: required
+        condition: optional
 
     - metrics:
         rating: 9.0
@@ -506,5 +508,5 @@
       be time-consuming and prevent listing here. To allow addition in the list without 
       ratings, we make this section optional. A value of -1 in any of the categories means 
       it has not been evaluated yet.
-    condition: '>=5'
+    condition: optional
 

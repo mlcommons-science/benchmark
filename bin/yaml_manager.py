@@ -283,8 +283,8 @@ class YamlManager(object):
         return valid
 
 
-if __name__ == "__main__":
-    m = YamlManager()
-    m.load_yamls("source/benchmark-entry-comment-gregor.yaml")
+# if __name__ == "__main__":
+#     m = YamlManager()
+#     m.load_yamls("source/benchmark-entry-comment-gregor.yaml")
     
-    print(m.verify_yamls())
+#     print(m.verify_yamls())

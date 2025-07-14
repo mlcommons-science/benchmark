@@ -1,7 +1,7 @@
 import argparse
 import os
 import sys
-from yaml_manager_new import YamlManager
+from yaml_manager import YamlManager
 from md_writer import YamlToMarkdownConverter
 from latex_writer import YamlToLatexConverter
 

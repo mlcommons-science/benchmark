@@ -92,80 +92,26 @@ class YamlManager(object):
     # ---------------------------------------------------------------------------------------------------------
     #  Error Checking
     # ---------------------------------------------------------------------------------------------------------
-
-    def _verify_single_yaml(self, entry, required: bool = False, parent_key: str = '<overall>') -> bool:
-        
-        correct_format = True
-
-        for value in entry:
-
-            #dict: use same procedure on the dict
-            if isinstance(value, dict):
-                entry_required = value.get("condition") == 'required' or value.get("condition", "").startswith(">=")
-                
-
-            #list: use procedure on each index, if it's a dict. Otherwise, check if the index exists
-            elif isinstance(value, list):
-                for v in value:
-                    if isinstance(v, dict):
-                        correct_format = self._verify_single_yaml(value, value_required, parent_key=key)
-                    else:
-                        if required:
-                                correct_format = (value != None)
-            
-            #anything else: check if the value is required
-            else:
-                if required:
-                    correct_format = (value != None)
-
-            #error messages
-            if not correct_format:
-                print(f"\033[91mERROR: Required entry {key} in {parent_key} has no value\033[00m")
-
-        return correct_format
     
-    
-    def _verify_single_yaml(self, entry, required: bool = False, parent_key: str = '<overall>') -> bool:
-        
-        correct_format = True
-
-        for value in entry:
-
-            #dict
-            if isinstance(value, dict):
-                #TODO: Get a list of all keys in the dictionary that are not 'condition' or 'description'. Get a list of the associated values
-
-                entry_required = value.get("condition") == 'required' or value.get("condition", "").startswith(">=")
-
-                #TODO: If `entry_required` is True, ensure all the values that are not 'condition' or 'description' are present
-                #If not, set `correct_format` to False
-                #If `entry`
-
-                #TODO: Call this function on each of the non-'condition'/'description' values. 
-                #`required` should be set to `entry_required`. `parent_key` should be set to the key used to obtain the current value
-                
-
-            #list: call function on each of the indices
-            elif isinstance(value, list):
-                for v in value:
-                    if not self._verify_single_yaml(v, required, parent_key):
-                        correct_format = False
-                        #TODO: Print an error message here
-            
-            #anything else: assume True
-            else:
-                correct_format = required
-
-        return correct_format
 
 
-    def verify_contents(self) -> bool:
-        correct_format = True
-        for yaml in self._yaml_dicts:
-            if not self._verify_single_yaml(yaml):
-                correct_format = False
-        
-        return correct_format
+    def verify_fields(self, printing_warnings: bool = True) -> bool:
+        """
+        Returns True if all entries in the manager's YAML files have the fields marked as "mandatory" in the checking dictionary.
+        Returns False otherwise.
+
+        :param printing_warnings: whether to print error messages to the console for each missing rating. Default is True
+        :return whether the inputted file contents have the proper fields
+        """
+        valid = True
+
+        # Iterate over the list of dictionaries
+        for yaml_dict in self._yaml_dicts:
+            for entry in yaml_dict:
+                if not self._verify_entries(entry, printing_warnings=printing_warnings): #type: ignore
+                    valid = False
+
+        return valid
 
 
     # ---------------------------------------------------------------------------------------------------------
@@ -253,11 +199,76 @@ class YamlManager(object):
             
             output.append(current_entry)
         return output
-    
+
+
+
+def validate_entry(entry, parent_required: bool = False, parent_name: str = '<top>', printing_errors: bool = True) -> bool:
+    """
+    Returns True if the 
+    """
+
+    if not isinstance(entry, dict):
+        return True #Ignore non-dicts
+
+    # Get condition
+    condition = entry.get("condition")
+
+    for key, value in entry.items():
+        if key in ("description", "condition"):
+            continue
+
+        # If condition is "required" or the dict is checked, field must be present
+        if (condition == "required" or parent_required) and value is None:
+            if printing_errors:
+                print(f'\033[91mRequired field {key} in {parent_name} not present\033[00m')
+            return False
+        
+        #Do >=
+        elif condition != None and condition.startswith(">="):
+            try:
+                required_length = int(condition[2:])
+            except ValueError:
+                if printing_errors:
+                    print(f'\033[91mCondition {condition[2:]} is not a number\033[00m')
+                return False
+            
+            if not isinstance(value, list) or len(value) < required_length:
+                if printing_errors:
+                    print(f'\033[91mEntry {key} must be a list of length {required_length} or more\033[00m')
+                return False
+
+        #Recurse on the dict
+        if isinstance(value, dict):
+            if not validate_entry(value, parent_required=(condition=='required'), parent_name=key):
+                return False
+
+        #Recurse on any dictionaries in the list  
+        elif isinstance(value, list):
+            for item in value:
+                if isinstance(item, dict):
+
+                    if not validate_entry(item, parent_required=(condition=='required'), parent_name=key):
+                        return False
+                       
+    return True
+
+
+def validate_yaml_structure(yaml_data, printing_errors: bool = True):
+
+
+    # Top-level must be a list of dict entries
+    if not isinstance(yaml_data, list):
+        return False
+
+    for entry in yaml_data:
+        if not validate_entry(entry):
+            return False
+
+    return True
+
 
 if __name__ == "__main__":
     m = YamlManager()
     m.load_yamls("source/benchmark-entry-comment-gregor.yaml")
     
-    for y in m._yaml_dicts:
-        print(y, end='\n\n')
+    print(validate_yaml_structure(m._yaml_dicts[0]))

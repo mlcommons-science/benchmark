@@ -87,6 +87,85 @@ class YamlManager(object):
                 self._yaml_dicts =  self._load_multiple_yaml_files(file_paths, enable_error_messages)
             else:
                 self._yaml_dicts += self._load_multiple_yaml_files(file_paths, enable_error_messages)
+        
+
+    # ---------------------------------------------------------------------------------------------------------
+    #  Error Checking
+    # ---------------------------------------------------------------------------------------------------------
+
+    def _verify_single_yaml(self, entry, required: bool = False, parent_key: str = '<overall>') -> bool:
+        
+        correct_format = True
+
+        for value in entry:
+
+            #dict: use same procedure on the dict
+            if isinstance(value, dict):
+                entry_required = value.get("condition") == 'required' or value.get("condition", "").startswith(">=")
+                
+
+            #list: use procedure on each index, if it's a dict. Otherwise, check if the index exists
+            elif isinstance(value, list):
+                for v in value:
+                    if isinstance(v, dict):
+                        correct_format = self._verify_single_yaml(value, value_required, parent_key=key)
+                    else:
+                        if required:
+                                correct_format = (value != None)
+            
+            #anything else: check if the value is required
+            else:
+                if required:
+                    correct_format = (value != None)
+
+            #error messages
+            if not correct_format:
+                print(f"\033[91mERROR: Required entry {key} in {parent_key} has no value\033[00m")
+
+        return correct_format
+    
+    
+    def _verify_single_yaml(self, entry, required: bool = False, parent_key: str = '<overall>') -> bool:
+        
+        correct_format = True
+
+        for value in entry:
+
+            #dict
+            if isinstance(value, dict):
+                #TODO: Get a list of all keys in the dictionary that are not 'condition' or 'description'. Get a list of the associated values
+
+                entry_required = value.get("condition") == 'required' or value.get("condition", "").startswith(">=")
+
+                #TODO: If `entry_required` is True, ensure all the values that are not 'condition' or 'description' are present
+                #If not, set `correct_format` to False
+                #If `entry`
+
+                #TODO: Call this function on each of the non-'condition'/'description' values. 
+                #`required` should be set to `entry_required`. `parent_key` should be set to the key used to obtain the current value
+                
+
+            #list: call function on each of the indices
+            elif isinstance(value, list):
+                for v in value:
+                    if not self._verify_single_yaml(v, required, parent_key):
+                        correct_format = False
+                        #TODO: Print an error message here
+            
+            #anything else: assume True
+            else:
+                correct_format = required
+
+        return correct_format
+
+
+    def verify_contents(self) -> bool:
+        correct_format = True
+        for yaml in self._yaml_dicts:
+            if not self._verify_single_yaml(yaml):
+                correct_format = False
+        
+        return correct_format
 
 
     # ---------------------------------------------------------------------------------------------------------
@@ -158,17 +237,27 @@ class YamlManager(object):
         Example: if the parent dictionary's name is 'key' and a subdictionary's key is 'subkey', 
         the output dictionary will have an entry whose key is 'key - subkey'.
 
+        The 'description' and 'condition' fields are not added.
+
         Returns:
             well-formatted entries for table conversion
         """
+        # for y in self._yaml_dicts:
+        #     print(y, end='\n\n')
 
         output = []
-        for item in self._yaml_dicts:
-            output.append(self._flatten_dict(item))
+        for entry in self._yaml_dicts:
+            current_entry = []
+            for item in entry:
+                current_entry.extend(self._flatten_dict(item))
+            
+            output.append(current_entry)
         return output
     
 
-# if __name__ == "__main__":
-#     m = YamlManager()
-#     m.load_yamls("source/benchmark-entry-comment-gregor.yaml")
-#     print(m.get_table_formatted_dicts())
+if __name__ == "__main__":
+    m = YamlManager()
+    m.load_yamls("source/benchmark-entry-comment-gregor.yaml")
+    
+    for y in m._yaml_dicts:
+        print(y, end='\n\n')

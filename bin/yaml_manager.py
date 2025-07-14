@@ -89,30 +89,6 @@ class YamlManager(object):
                 self._yaml_dicts += self._load_multiple_yaml_files(file_paths, enable_error_messages)
         
 
-    # ---------------------------------------------------------------------------------------------------------
-    #  Error Checking
-    # ---------------------------------------------------------------------------------------------------------
-    
-
-
-    def verify_fields(self, printing_warnings: bool = True) -> bool:
-        """
-        Returns True if all entries in the manager's YAML files have the fields marked as "mandatory" in the checking dictionary.
-        Returns False otherwise.
-
-        :param printing_warnings: whether to print error messages to the console for each missing rating. Default is True
-        :return whether the inputted file contents have the proper fields
-        """
-        valid = True
-
-        # Iterate over the list of dictionaries
-        for yaml_dict in self._yaml_dicts:
-            for entry in yaml_dict:
-                if not self._verify_entries(entry, printing_warnings=printing_warnings): #type: ignore
-                    valid = False
-
-        return valid
-
 
     # ---------------------------------------------------------------------------------------------------------
     # Contents Presentation
@@ -201,74 +177,104 @@ class YamlManager(object):
         return output
 
 
+    # ---------------------------------------------------------------------------------------------------------
+    #  Error Checking
+    # ---------------------------------------------------------------------------------------------------------
+    
 
-def validate_entry(entry, parent_required: bool = False, parent_name: str = '<top>', printing_errors: bool = True) -> bool:
-    """
-    Returns True if the 
-    """
+    def _verify_entry(self, entry, parent_required: bool = False, parent_name: str = '<top level>', printing_errors: bool = True) -> bool:
+        """
+        Returns True if `entry` is not a dict, or `entry` contains all required fields.
 
-    if not isinstance(entry, dict):
-        return True #Ignore non-dicts
+        If `entry`'s "condition" field equals "required" and there are no fields other than "condition" or "description",
+        returns False.
 
-    # Get condition
-    condition = entry.get("condition")
+        if `entry`'s non-"condition"/"description" field is a list, all non-dicts in the list are checked using this procedure.
 
-    for key, value in entry.items():
-        if key in ("description", "condition"):
-            continue
+        Parameters:
+            entry (Any): the value to check
+            parent_required (bool): (for recursive calls) whether the parent dictionary's "condition" field is "required"
+            parent_name (str): (for recursive calls) name of the field of the parent dictionary
+            printing_errors (bool): whether to print error messages to the console
+        Returns:
+            whether the given entry is a valid dictionary (or not a dictionary)
+        """
 
-        # If condition is "required" or the dict is checked, field must be present
-        if (condition == "required" or parent_required) and value is None:
-            if printing_errors:
-                print(f'\033[91mRequired field {key} in {parent_name} not present\033[00m')
-            return False
-        
-        #Do >=
-        elif condition != None and condition.startswith(">="):
-            try:
-                required_length = int(condition[2:])
-            except ValueError:
+        if not isinstance(entry, dict):
+            return True #Ignore non-dicts
+
+        # Get condition
+        condition = entry.get("condition")
+
+        for key, value in entry.items():
+            if key in ("description", "condition"):
+                continue
+
+            print(key)
+            print(condition)
+            print(parent_required)
+            print()
+
+            # If condition is "required" or the parent dict is checked, field must be present
+            if (condition=="required" or parent_required) and value is None:
                 if printing_errors:
-                    print(f'\033[91mCondition {condition[2:]} is not a number\033[00m')
+                    print(f'\033[91mRequired field "{key}" in "{parent_name}" not present\033[00m')
                 return False
             
-            if not isinstance(value, list) or len(value) < required_length:
-                if printing_errors:
-                    print(f'\033[91mEntry {key} must be a list of length {required_length} or more\033[00m')
-                return False
+            #Do >=
+            elif condition != None and condition.startswith(">="):
+                try:
+                    required_length = int(condition[2:])
+                except ValueError:
+                    if printing_errors:
+                        print(f'\033[91mCondition "{condition[2:]}" is not a number\033[00m')
+                    return False
+                
+                if not isinstance(value, list) or len(value) < required_length:
+                    if printing_errors:
+                        print(f'\033[91mField "{key}" must be a list of length {required_length} or more\033[00m')
+                    return False
 
-        #Recurse on the dict
-        if isinstance(value, dict):
-            if not validate_entry(value, parent_required=(condition=='required'), parent_name=key):
-                return False
+            #Recurse on the dict
+            if isinstance(value, dict):
+                if not self._verify_entry(value, parent_required=(condition=='required'), parent_name=key):
+                    return False
 
-        #Recurse on any dictionaries in the list  
-        elif isinstance(value, list):
-            for item in value:
-                if isinstance(item, dict):
+            #Recurse on any dictionaries in the list  
+            elif isinstance(value, list):
+                for item in value:
+                    if isinstance(item, dict):
 
-                    if not validate_entry(item, parent_required=(condition=='required'), parent_name=key):
-                        return False
-                       
-    return True
-
-
-def validate_yaml_structure(yaml_data, printing_errors: bool = True):
+                        if not self._verify_entry(item, parent_required=(condition=='required'), parent_name=key):
+                            return False
+                        
+        return True
 
 
-    # Top-level must be a list of dict entries
-    if not isinstance(yaml_data, list):
-        return False
+    def verify_yamls(self, printing_errors: bool = True) -> bool:
+        """
+        Returns True if all YAML entries in the manager contains all fields marked as "required".
 
-    for entry in yaml_data:
-        if not validate_entry(entry):
+        Parameters:
+            printing_errors (bool): whether to print error messages to the console
+        """
+
+        # Top-level must be a list of dict entries
+        if not isinstance(self._yaml_dicts, list):
             return False
 
-    return True
+        for i in range(len(self._yaml_dicts)):
+            #Check each column (type: dict) in each YAML dictionary stored
+            for column in self._yaml_dicts[i]:
+                if not self._verify_entry(column, printing_errors=printing_errors):
+                    print(f'   \033[91min YAML entry {i+1}\033[00m')
+                    return False
+
+        return True
 
 
 if __name__ == "__main__":
     m = YamlManager()
     m.load_yamls("source/benchmark-entry-comment-gregor.yaml")
     
-    print(validate_yaml_structure(m._yaml_dicts[0]))
+    print(m.verify_yamls())

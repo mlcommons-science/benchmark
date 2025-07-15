@@ -10,8 +10,11 @@ import requests
 _RED = "\033[91m"
 """ANSI escape code. Changes to printing in red"""
 
-_WHITE = "\033[00m"
-"""ANSI escape code. Changes to printing in white"""
+_GREEN = "\033[32m"
+"""ANSI escape code. Changes to printing in green"""
+
+_DEFAULT_COLOR = "\033[00m"
+"""ANSI escape code. Changes to printing in the default color"""
 
 
 class YamlManager(object):
@@ -61,7 +64,7 @@ class YamlManager(object):
 
         except yaml.YAMLError as e:
             if enable_error_messages:
-                print(f'{_RED}YAML syntax error in "{file_path}": \n{e}{_WHITE}')
+                print(f'{_RED}YAML syntax error in "{file_path}": \n{e}{_DEFAULT_COLOR}')
             return []
 
 
@@ -243,7 +246,7 @@ class YamlManager(object):
             if (condition=="required" or parent_required) and value is None:
                 if printing_errors:
                     printed_parent_name = parent_name if parent_name=='<top level>' else f'"{parent_name}"'
-                    print(f'{_RED}Required field "{key}" in {printed_parent_name} not present{_WHITE}')
+                    print(f'{_RED}Required field "{key}" in {printed_parent_name} not present{_DEFAULT_COLOR}')
                 valid_dict =  False
             
             #Do >=
@@ -252,12 +255,12 @@ class YamlManager(object):
                     required_length = int(condition[2:])
                 except ValueError:
                     if printing_errors:
-                        print(f'{_RED}Condition "{condition[2:]}" is not a number{_WHITE}')
+                        print(f'{_RED}Condition "{condition[2:]}" is not a number{_DEFAULT_COLOR}')
                     valid_dict = False
                 
                 if not isinstance(value, list) or len(value) < required_length:
                     if printing_errors:
-                        print(f'{_RED}Field "{key}" must be a list of length {required_length} or more{_WHITE}')
+                        print(f'{_RED}Field "{key}" must be a list of length {required_length} or more{_DEFAULT_COLOR}')
                     valid_dict =  False
 
             #Recurse on the dict
@@ -276,7 +279,7 @@ class YamlManager(object):
         return valid_dict
 
 
-    def verify_yamls(self, printing_errors: bool = True) -> bool:
+    def verify_required_fields(self, printing_errors: bool = True) -> bool:
         """
         Returns True if all YAML entries in the manager contains all fields marked as "required".
 
@@ -295,21 +298,32 @@ class YamlManager(object):
             #Check each column (type: dict) in each YAML dictionary stored
             for column in self._yaml_dicts[i]:
                 if not self._verify_entry(column, printing_errors=printing_errors):
-                    print(f'{_RED}in YAML entry {i+1}{_WHITE}')
+                    print(f'{_RED}in YAML entry {i+1}{_DEFAULT_COLOR}')
                     print()
                     valid = False
 
         return valid
 
 
-    def extract_and_check_urls(self,entries):
-        urls = []
+    def check_urls(self, printing_status: bool = True) -> bool:
+        """
+        Returns whether all the URLs in the manager's YAML files are valid.
 
-        for entry in entries:
+        Any field without subfields that ends with "url" is checked. 
+        The "cite" field's URL is also checked.
+
+        Parameters:
+            printing_status (bool): whether to print statuses
+        Returns:
+            bool: True if all URLs are valid, False otherwise
+        """
+        urls = []
+        
+        for entry in self.get_table_formatted_dicts():
             for field in entry:
                 for key, value in field.items():
                     # Handle flat keys with 'url'
-                    if 'url' in key.lower():
+                    if key.lower().endswith('url'):
                         if isinstance(value, str):
                             urls.append(value)
                     # Handle BibTeX citation strings
@@ -322,18 +336,21 @@ class YamlManager(object):
         unique_urls = list(set(urls))
 
         # Check each URL
+        all_urls_valid = True
         for url in unique_urls:
             try:
                 response = requests.get(url, timeout=10)
                 if response.status_code == 200:
-                    print(f"[OK] {url}")
+                    if printing_status:
+                        print(f"{_GREEN}[OK] {url}{_DEFAULT_COLOR}")
                 else:
-                    print(f"[ERROR {response.status_code}] {url}")
+                    if printing_status:
+                        print(f"{_RED}[ERROR {response.status_code}] {url}{_DEFAULT_COLOR}")
+                    all_urls_valid = False
             except requests.RequestException as e:
-                print(f"[FAIL] {url} – {e}")
+                if printing_status:
+                    print(f"{_RED}[FAIL] {url} - {e}{_DEFAULT_COLOR}")
+                all_urls_valid = False
 
-
-
-if __name__ == "__main__":
-    m = YamlManager()
-    m.load_yamls("source/benchmark-entry-comment-gregor.yaml")
+        return all_urls_valid
+    

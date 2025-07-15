@@ -16,6 +16,7 @@ _GREEN = "\033[32m"
 _DEFAULT_COLOR = "\033[00m"
 """ANSI escape code. Changes to printing in the default color"""
 
+#or: use colorama or cloudmesh
 
 class YamlManager(object):
     """
@@ -151,7 +152,7 @@ class YamlManager(object):
         for key, value in entry.items():
             if key in ['description', 'condition']:
                 continue
-            new_key = f"{parent_key} - {key}" if parent_key else key
+            new_key = f"{parent_key}.{key}" if parent_key else key
 
             #dict: use same procedure
             if isinstance(value, dict):
@@ -171,33 +172,40 @@ class YamlManager(object):
         return result
 
 
-    def get_table_formatted_dicts(self) -> list[list[dict]]:
+    def get_table_formatted_dicts(self) -> list[dict]:
         """
         Returns a list of entries for table conversion.
 
-        The entries in the output list are lists of dictionaries.
+        The entries in the output list are dictionaries.
         In each dictionary, the key is the field name, and the value is the contents under the field name.  
         Each index in the output can be converted to a row in a Markdown or TeX table.
 
-        Any sub-dictionaries have their parent dictionary's key appended to it, separated by a dash.  
+        Any sub-dictionaries have their parent dictionary's key appended to it, separated by a dot.  
         Example: if the parent dictionary's name is 'key' and a subdictionary's key is 'subkey', 
-        the output dictionary will have an entry whose key is 'key - subkey'.
+        the output dictionary will have an entry whose key is 'key.subkey'.
 
         The 'description' and 'condition' fields are not added.
 
         Returns:
-            list[list[dict]]: well-formatted entries for table conversion
+            list[dict]: well-formatted entries for table conversion
         """
         # for y in self._yaml_dicts:
         #     print(y, end='\n\n')
 
         output = []
-        for entry in self._yaml_dicts:
-            current_entry = []
-            for item in entry:
-                current_entry.extend(self._flatten_dict(item))
+        for yaml in self._yaml_dicts:
+
+            current_row = []
+            for item in yaml:
+                current_row += self._flatten_dict(item)
             
-            output.append(current_entry)
+            current_row_dict = {}
+            for cell in current_row:
+                for k, v in cell.items():
+                    current_row_dict[k] = v
+
+            output.append(current_row_dict)
+
         return output
 
 
@@ -414,3 +422,10 @@ class YamlManager(object):
                 filenames_ok = False
 
         return filenames_ok
+
+
+if __name__ == '__main__':
+    m = YamlManager()
+    m.load_yamls("source/benchmark-entry-comment-gregor.yaml")
+    from pprint import pprint
+    pprint(m.get_table_formatted_dicts())

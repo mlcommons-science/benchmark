@@ -69,7 +69,7 @@ if __name__ == "__main__":
     manager = YamlManager()
     manager.load_yamls(args.files)
     entries = manager.get_table_formatted_dicts()
-    
+    manager.extract_and_validate_filenames(entries)
     
 
     if args.required:

@@ -102,7 +102,7 @@ if __name__ == "__main__":
         converter = YamlToLatexConverter(entries)
         if args.index:
             converter.write_individual_entries(os.path.join(args.outdir, "tex_pages"))
-        converter.write_single_file(os.path.join(args.outdir, "tex/benchmarks.tex"), args.columns)
+        converter.write_single_file(os.path.join(args.outdir, "tex/benchmarks.tex"))
     
     if  args.withurlcheck:
         manager.check_urls() # URL check

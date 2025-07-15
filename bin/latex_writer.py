@@ -1,10 +1,10 @@
 import os
+import re
 import textwrap
 
 class YamlToLatexConverter:
     def __init__(self, entries: list[dict]):
         self.entries = entries
-
 
     def _escape_latex(self, text: str) -> str:
         if not isinstance(text, str):
@@ -22,7 +22,6 @@ class YamlToLatexConverter:
                 .replace("^", "\\textasciicircum{}")
         )
 
-
     def _entry_to_rows(self, entry: dict) -> list[str]:
         rows = []
         for key, value in entry.items():
@@ -34,14 +33,8 @@ class YamlToLatexConverter:
                 if not isinstance(value, list)
                 else ", ".join(map(self._escape_latex, value))
             )
-            # description = self._escape_latex(entry.get("description", ""))
-            # condition = self._escape_latex(entry.get("condition", ""))
-            rows.append(
-                # f"{field_name} & {field_value} & {description} & {condition} \\\\ \\hline"
-                f"{field_name} & {field_value} \\\\ \\hline"
-            )
+            rows.append(f"{field_name} & {field_value} \\\\ \\hline")
         return rows
-
 
     def _generate_latex_doc(self, title: str, rows: list[str]) -> str:
         return textwrap.dedent(rf"""
@@ -49,15 +42,13 @@ class YamlToLatexConverter:
         \usepackage[margin=1in]{{geometry}}
         \usepackage{{longtable}}
         \begin{{document}}
-        \section*{{{title}}}
-        \begin{{longtable}}{{|p{{3cm}}|p{{3cm}}|p{{7cm}}|p{{2cm}}|}}
+        \section*{{{self._escape_latex(title)}}}
+        \begin{{longtable}}{{|p{{5cm}}|p{{10cm}}|}}
         \hline
-        \textbf{{Field}} & \textbf{{Value}} & \textbf{{Description}} & \textbf{{Condition}} \\
-        \hline
+        \textbf{{Field}} & \textbf{{Value}} \\\\ \hline
         \endfirsthead
         \hline
-        \textbf{{Field}} & \textbf{{Value}} & \textbf{{Description}} & \textbf{{Condition}} \\
-        \hline
+        \textbf{{Field}} & \textbf{{Value}} \\\\ \hline
         \endhead
         \hline
         \endfoot
@@ -68,47 +59,77 @@ class YamlToLatexConverter:
         \end{document}
         """)
 
-
-    # def write_single_file_old(self, output_path: str):
-    #     """Writes a single TeX entry to `output_path`"""
-    #     all_rows = []
-    #     for entry in self.entries:
-    #         for col in entry:
-    #             all_rows.extend(self._entry_to_rows(col))
-    #     latex = self._generate_latex_doc("Benchmark Field Specification", all_rows)
-
-    #     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    #     with open(output_path, "w", encoding="utf-8") as f:
-    #         f.write(latex)
-
-    
-    def write_single_file(self, output_path: str, columns: tuple):
-        """Writes a single TeX entry to `output_path`"""
-
+    def write_single_file(self, output_path: str):
+        """Writes all entries into one LaTeX document."""
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+        all_rows = []
+        for entry in self.entries:
+            all_rows.extend(self._entry_to_rows(entry))
+
+        latex = self._generate_latex_doc("Benchmark Field Specification", all_rows)
+
         with open(output_path, "w", encoding="utf-8") as f:
+            f.write(latex)
 
-            all_rows = []
-            for entry in self.entries:
-                print(entry)
-                line = []
-                for col in columns:
-                    line.append(entry[col])
-                    # # line.append(self._entry_to_rows(col))
-                    # all_rows.extend(self._entry_to_rows(col))
-                line_str = ' & '.join(map(str, line)) + '\\'
-                f.write(line_str)
-
+        self._write_bibtex(os.path.dirname(output_path))
 
     def write_individual_entries(self, output_dir: str):
-        """Writes single TeX entries, each containing one of the class's stored entries, to `output_path`"""
+        """Writes one LaTeX file per entry."""
         os.makedirs(output_dir, exist_ok=True)
 
-        for yaml in self.entries:
-            for i, entry in enumerate(yaml):
-                rows = self._entry_to_rows(entry)
-                latex = self._generate_latex_doc(f"Benchmark Entry {i+1}", rows)
+        for i, entry in enumerate(self.entries):
+            rows = self._entry_to_rows(entry)
+            latex = self._generate_latex_doc(f"Benchmark Entry {i+1}", rows)
+            output_path = os.path.join(output_dir, f"entry_{i+1}.tex")
+            with open(output_path, "w", encoding="utf-8") as f:
+                f.write(latex)
 
-                output_file = os.path.join(output_dir, f"entry_{i+1}.tex")
-                with open(output_file, "w", encoding="utf-8") as f:
-                    f.write(latex)
+        self._write_bibtex(output_dir)
+
+    def _extract_cite_label(self, bib_entry: str) -> str:
+        """
+        Extracts the citation label from a BibTeX entry like '@article{label,...}'
+        """
+        match = re.match(r"@\w+\{([^,]+),", bib_entry.strip())
+        return match.group(1) if match else "<unknown>"
+
+    def _write_bibtex(self, output_dir: str):
+        """
+        Writes a BibTeX bibliography to output_dir/benchmarks.bib from 'cite' fields in entries.
+        """
+        os.makedirs(output_dir, exist_ok=True)
+        bib_entries = []
+        found_labels = set()
+        found_entries = set()
+        found_names = set()
+
+        for record in self.entries:
+            record_cite_entries = record.get("cite", [])
+            name = record.get("name", "<no name>")
+
+            if isinstance(record_cite_entries, str):
+                record_cite_entries = [record_cite_entries]
+            elif not isinstance(record_cite_entries, list):
+                continue
+
+            for cite_entry in record_cite_entries:
+                if not isinstance(cite_entry, str) or not cite_entry.strip().startswith("@"):
+                    continue
+
+                label = self._extract_cite_label(cite_entry.lower())
+
+                if label in found_labels:
+                    print(f"\033[91mERROR: Duplicate citation label \"{label}\" found in entry \"{name}\".\033[00m")
+                elif cite_entry in found_entries and name in found_names:
+                    pass  # Same citation reused
+                else:
+                    found_labels.add(label)
+                    found_entries.add(cite_entry)
+                    found_names.add(name)
+                    bib_entries.append(cite_entry.strip())
+
+        bib_path = os.path.join(output_dir, "benchmarks.bib")
+        with open(bib_path, 'w', encoding='utf-8') as bib_file:
+            for entry in bib_entries:
+                bib_file.write(entry + "\n\n")

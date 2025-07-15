@@ -420,6 +420,4 @@ class YamlManager(object):
 
 
 if __name__ == '__main__':
-    m = YamlManager()
-    m.load_yamls("source/benchmark-entry-comment-gregor.yaml")
-    print(m.check_filenames())
+    pass

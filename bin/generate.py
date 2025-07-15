@@ -1,5 +1,4 @@
 import argparse
-from cloudmesh.common.console import Console
 import os
 import sys
 from yaml_manager import YamlManager

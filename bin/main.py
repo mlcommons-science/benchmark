@@ -73,10 +73,10 @@ if __name__ == "__main__":
     
 
     if args.required:
-        manager.verify_yamls()
+        manager.verify_required_fields()
 
     if args.check:
-        manager.verify_yamls()
+        manager.verify_required_fields()
         sys.exit(0)
 
     if args.withcitation:
@@ -95,4 +95,4 @@ if __name__ == "__main__":
         converter.write_single_file(os.path.join(args.outdir, "benchmarks.tex"))
     
     if  args.withurlcheck:
-        manager.extract_and_check_urls(entries) # URL check
+        manager.check_urls() # URL check

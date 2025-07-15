@@ -354,3 +354,28 @@ class YamlManager(object):
 
         return all_urls_valid
     
+    def extract_and_validate_filenames(self,entries: list[list[dict]]):
+            for i, entry in enumerate(entries):
+                # Flatten entry
+                flat = {}
+                for field in entry:
+                    flat.update(field)
+
+                name = flat.get("name")
+                if not name:
+                    raise ValueError(f"Entry #{i + 1} is missing a 'name' field")
+                if not isinstance(name, str):
+                    raise ValueError(f"Entry #{i + 1} has a non-string 'name': {name}")
+
+                # Validate name
+                for ch in name:
+                    if not (32 <= ord(ch) <= 126):
+                        raise ValueError(f"Invalid character in name (non-ASCII): {repr(ch)} in '{name}'")
+                if re.search(r' {2,}', name):
+                    raise ValueError(f"Entry #{i + 1} name has multiple consecutive spaces: '{name}'")
+                if name.strip() != name:
+                    raise ValueError(f"Entry #{i + 1} name has leading/trailing spaces: '{name}'")
+                if re.search(r'[()]', name):
+                    raise ValueError(f"Entry #{i + 1} name contains parentheses: '{name}'")
+                if not re.fullmatch(r'[\w\-. ]+', name):
+                    raise ValueError(f"Entry #{i + 1} name contains disallowed characters: '{name}'")

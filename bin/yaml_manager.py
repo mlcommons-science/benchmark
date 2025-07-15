@@ -279,7 +279,7 @@ class YamlManager(object):
         return valid_dict
 
 
-    def verify_required_fields(self, printing_errors: bool = True) -> bool:
+    def check_required_fields(self, printing_errors: bool = True) -> bool:
         """
         Returns True if all YAML entries in the manager contains all fields marked as "required".
 
@@ -354,28 +354,63 @@ class YamlManager(object):
 
         return all_urls_valid
     
-    def extract_and_validate_filenames(self,entries: list[list[dict]]):
-            for i, entry in enumerate(entries):
-                # Flatten entry
-                flat = {}
-                for field in entry:
-                    flat.update(field)
 
-                name = flat.get("name")
-                if not name:
-                    raise ValueError(f"Entry #{i + 1} is missing a 'name' field")
-                if not isinstance(name, str):
-                    raise ValueError(f"Entry #{i + 1} has a non-string 'name': {name}")
 
-                # Validate name
-                for ch in name:
-                    if not (32 <= ord(ch) <= 126):
-                        raise ValueError(f"Invalid character in name (non-ASCII): {repr(ch)} in '{name}'")
-                if re.search(r' {2,}', name):
-                    raise ValueError(f"Entry #{i + 1} name has multiple consecutive spaces: '{name}'")
-                if name.strip() != name:
-                    raise ValueError(f"Entry #{i + 1} name has leading/trailing spaces: '{name}'")
-                if re.search(r'[()]', name):
-                    raise ValueError(f"Entry #{i + 1} name contains parentheses: '{name}'")
-                if not re.fullmatch(r'[\w\-. ]+', name):
-                    raise ValueError(f"Entry #{i + 1} name contains disallowed characters: '{name}'")
+    def check_filenames(self, printing_errors: bool = True) -> bool:
+        """
+        Returns whether a properly formatted "name" field exists in each loaded YAML file.
+
+        Parameters:
+            printing_errors (bool, default=True): whether to print error messages to the console
+        Returns:
+            bool: True if all managed YAML files have properly formatted names, False otherwise
+        """
+        filenames_ok = True
+
+        formatted_entries = self.get_table_formatted_dicts()
+        for i, entry in enumerate(formatted_entries):
+            # Flatten entry
+            flat = {}
+            for field in entry:
+                flat.update(field)
+
+            name = flat.get("name")
+            if not name:
+                if printing_errors:
+                    print(f"{_RED}ERROR: Entry #{i + 1} is missing a 'name' field{_DEFAULT_COLOR}")
+                filenames_ok = False
+                continue
+            if not isinstance(name, str):
+                if printing_errors:
+                    print(f"{_RED}ERROR: Entry #{i + 1} has a non-string 'name': {name}{_DEFAULT_COLOR}")
+                filenames_ok = False
+                continue
+
+            # Validate name
+            for ch in name:
+                if not (32 <= ord(ch) <= 126):
+                    if printing_errors:
+                        print(f"{_RED}ERROR: Invalid character in name (non-ASCII): {repr(ch)} in '{name}'{_DEFAULT_COLOR}")
+                    filenames_ok = False
+
+            if re.search(r' {2,}', name):
+                if printing_errors:
+                    print(f"{_RED}ERROR: Entry #{i + 1} name has multiple consecutive spaces: '{name}'{_DEFAULT_COLOR}")
+                filenames_ok = False
+
+            if name.strip() != name:
+                if printing_errors:
+                    print(f"{_RED}ERROR: Entry #{i + 1} name has leading/trailing spaces: '{name}'{_DEFAULT_COLOR}")
+                filenames_ok = False
+
+            if re.search(r'[()]', name):
+                if printing_errors:
+                    print(f"{_RED}ERROR: Entry #{i + 1} name contains parentheses: '{name}'{_DEFAULT_COLOR}")
+                filenames_ok = False
+
+            if not re.fullmatch(r'[\w\-. ]+', name):
+                if printing_errors:
+                    print(f"{_RED}ERROR: Entry #{i + 1} name contains disallowed characters: '{name}'{_DEFAULT_COLOR}")
+                filenames_ok = False
+
+        return filenames_ok

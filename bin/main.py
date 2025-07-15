@@ -4,7 +4,6 @@ import sys
 from yaml_manager import YamlManager
 from md_writer import YamlToMarkdownConverter
 from latex_writer import YamlToLatexConverter
-import requests
 
 # Optional: define MAX_AUTHOR_LIMIT and FULL_CITE_COLUMN if not imported
 MAX_AUTHOR_LIMIT = 9999
@@ -69,15 +68,18 @@ if __name__ == "__main__":
     manager = YamlManager()
     manager.load_yamls(args.files)
     entries = manager.get_table_formatted_dicts()
-    manager.extract_and_validate_filenames(entries)
+
+    if not manager.check_filenames():
+        print("YAML filenames are not properly formatted")
+        sys.exit(1)
     
+    if args.check:
+        manager.check_required_fields()
+        sys.exit(0)
 
     if args.required:
-        manager.verify_required_fields()
+        manager.check_required_fields()
 
-    if args.check:
-        manager.verify_required_fields()
-        sys.exit(0)
 
     if args.withcitation:
         columns.append(FULL_CITE_COLUMN)

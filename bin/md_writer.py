@@ -56,20 +56,28 @@ class YamlToMarkdownConverter:
             return header + "_No entries found._\n"
 
         # 👇 STEP 1: Flatten all field dicts from all sublists
-        combined_fields = {}
-        for block in self.entries:
-            for field_dict in block:
+        all_combined_fields = []
+        for entry in self.entries:
+            combined_fields = {}
+            for field_dict in entry:
                 combined_fields.update(field_dict)
 
-        # 👇 STEP 2: Collect all unique keys
-        all_fields = combined_fields.keys()
+            all_combined_fields.append(combined_fields)
+
+        # 👇 STEP 2: Collect all keys (unique key functionality is deprecated)
+        all_fields = all_combined_fields[0].keys()
 
         # 👇 STEP 3: Create table rows
-        table_header = "| " + " | ".join(self._escape_md(k) for k in all_fields) + " |"
+        table_header = "| " + " | ".join(self._escape_md(k).replace("_", " ") for k in all_fields) + " |"
         table_divider = "| " + " | ".join(["---"] * len(all_fields)) + " |"
-        value_row = "| " + " | ".join(self._escape_md_value(combined_fields.get(k, "")) for k in all_fields) + " |"
+        
 
-        return header + table_header + "\n" + table_divider + "\n" + value_row + "\n"
+        value_rows = ""
+        for field in all_combined_fields:
+            single_value_row = "| " + " | ".join(self._escape_md_value(field.get(k, "")) for k in all_fields) + " |"
+            value_rows += single_value_row + "\n"
+
+        return header + table_header + "\n" + table_divider + "\n" + value_rows + "\n"
 
 
     def write_single_file(self, output_path: str):

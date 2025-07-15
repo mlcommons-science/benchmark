@@ -3,6 +3,8 @@ Contains a class for YAML file loading and formatting
 """
 
 import yaml
+import re
+import requests
 
 
 _RED = "\033[91m"
@@ -298,6 +300,38 @@ class YamlManager(object):
                     valid = False
 
         return valid
+
+
+    def extract_and_check_urls(self,entries):
+        urls = []
+
+        for entry in entries:
+            for field in entry:
+                for key, value in field.items():
+                    # Handle flat keys with 'url'
+                    if 'url' in key.lower():
+                        if isinstance(value, str):
+                            urls.append(value)
+                    # Handle BibTeX citation strings
+                    elif key == 'cite':
+                        if isinstance(value, list):
+                            for bib in value:
+                                urls.extend(re.findall(r'url\s*=\s*\{(.*?)\}', bib))
+
+        # Remove duplicates
+        unique_urls = list(set(urls))
+
+        # Check each URL
+        for url in unique_urls:
+            try:
+                response = requests.get(url, timeout=10)
+                if response.status_code == 200:
+                    print(f"[OK] {url}")
+                else:
+                    print(f"[ERROR {response.status_code}] {url}")
+            except requests.RequestException as e:
+                print(f"[FAIL] {url} – {e}")
+
 
 
 if __name__ == "__main__":

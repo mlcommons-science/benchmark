@@ -4,6 +4,7 @@ import sys
 from yaml_manager import YamlManager
 from md_writer import YamlToMarkdownConverter
 from latex_writer import YamlToLatexConverter
+import requests
 
 # Optional: define MAX_AUTHOR_LIMIT and FULL_CITE_COLUMN if not imported
 MAX_AUTHOR_LIMIT = 9999
@@ -47,6 +48,7 @@ if __name__ == "__main__":
     parser.add_argument('--required', action='store_true', help="Makes all the columns required that are listed in the --columns command")
     parser.add_argument('--standalone', '-s', action='store_true', help="Include full LaTeX document preamble.")
     parser.add_argument('--withcitation', action='store_true', help="Include a row for BibTeX citations. Works only with Markdown format")
+    parser.add_argument('--withurlcheck', action='store_true', help="Checks if url exists or not")
 
     args = parser.parse_args()
 
@@ -67,6 +69,8 @@ if __name__ == "__main__":
     manager = YamlManager()
     manager.load_yamls(args.files)
     entries = manager.get_table_formatted_dicts()
+    
+    
 
     if args.required:
         manager.verify_yamls()
@@ -89,3 +93,6 @@ if __name__ == "__main__":
         if args.index:
             converter.write_individual_entries(os.path.join(args.outdir, "tex_pages"))
         converter.write_single_file(os.path.join(args.outdir, "benchmarks.tex"))
+    
+    if  args.withurlcheck:
+        manager.extract_and_check_urls(entries) # URL check

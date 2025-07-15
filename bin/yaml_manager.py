@@ -168,7 +168,7 @@ class YamlManager(object):
             
             #anything else: append key/value pair as is
             else:
-                result.append({new_key: str(value)})
+                result.append({new_key: value})
         return result
 
 
@@ -328,17 +328,16 @@ class YamlManager(object):
         urls = []
         
         for entry in self.get_table_formatted_dicts():
-            for field in entry:
-                for key, value in field.items():
-                    # Handle flat keys with 'url'
-                    if key.lower().endswith('url'):
-                        if isinstance(value, str):
-                            urls.append(value)
-                    # Handle BibTeX citation strings
-                    elif key == 'cite':
-                        if isinstance(value, list):
-                            for bib in value:
-                                urls.extend(re.findall(r'url\s*=\s*\{(.*?)\}', bib))
+            for key, value in entry.items():
+                # Handle flat keys with 'url'
+                if key.lower().endswith('url'):
+                    if isinstance(value, str):
+                        urls.append(value)
+                # Handle BibTeX citation strings
+                elif key == 'cite':
+                    if isinstance(value, list):
+                        for bib in value:
+                            urls.extend(re.findall(r'url\s*=\s*\{(.*?)\}', bib))
 
         # Remove duplicates
         unique_urls = list(set(urls))
@@ -377,20 +376,16 @@ class YamlManager(object):
 
         formatted_entries = self.get_table_formatted_dicts()
         for i, entry in enumerate(formatted_entries):
-            # Flatten entry
-            flat = {}
-            for field in entry:
-                flat.update(field)
 
-            name = flat.get("name")
+            name = entry.get("name", None)
             if not name:
                 if printing_errors:
-                    print(f"{_RED}ERROR: Entry #{i + 1} is missing a 'name' field{_DEFAULT_COLOR}")
+                    print(f"{_RED}ERROR: Entry {i + 1} is missing a 'name' field{_DEFAULT_COLOR}")
                 filenames_ok = False
                 continue
             if not isinstance(name, str):
                 if printing_errors:
-                    print(f"{_RED}ERROR: Entry #{i + 1} has a non-string 'name': {name}{_DEFAULT_COLOR}")
+                    print(f"{_RED}ERROR: Entry {i + 1} has a non-string 'name': {name}{_DEFAULT_COLOR}")
                 filenames_ok = False
                 continue
 
@@ -398,27 +393,27 @@ class YamlManager(object):
             for ch in name:
                 if not (32 <= ord(ch) <= 126):
                     if printing_errors:
-                        print(f"{_RED}ERROR: Invalid character in name (non-ASCII): {repr(ch)} in '{name}'{_DEFAULT_COLOR}")
+                        print(f"{_RED}ERROR: Non-ASCII character in name: {repr(ch)} in '{name}'{_DEFAULT_COLOR}")
                     filenames_ok = False
 
             if re.search(r' {2,}', name):
                 if printing_errors:
-                    print(f"{_RED}ERROR: Entry #{i + 1} name has multiple consecutive spaces: '{name}'{_DEFAULT_COLOR}")
+                    print(f"{_RED}ERROR: Entry {i + 1} name has multiple consecutive spaces: '{name}'{_DEFAULT_COLOR}")
                 filenames_ok = False
 
             if name.strip() != name:
                 if printing_errors:
-                    print(f"{_RED}ERROR: Entry #{i + 1} name has leading/trailing spaces: '{name}'{_DEFAULT_COLOR}")
+                    print(f"{_RED}ERROR: Entry {i + 1} name has leading/trailing spaces: '{name}'{_DEFAULT_COLOR}")
                 filenames_ok = False
 
             if re.search(r'[()]', name):
                 if printing_errors:
-                    print(f"{_RED}ERROR: Entry #{i + 1} name contains parentheses: '{name}'{_DEFAULT_COLOR}")
+                    print(f"{_RED}ERROR: Entry {i + 1} name contains parentheses: '{name}'{_DEFAULT_COLOR}")
                 filenames_ok = False
 
             if not re.fullmatch(r'[\w\-. ]+', name):
                 if printing_errors:
-                    print(f"{_RED}ERROR: Entry #{i + 1} name contains disallowed characters: '{name}'{_DEFAULT_COLOR}")
+                    print(f"{_RED}ERROR: Entry {i + 1} name contains disallowed characters: '{name}'{_DEFAULT_COLOR}")
                 filenames_ok = False
 
         return filenames_ok
@@ -427,5 +422,4 @@ class YamlManager(object):
 if __name__ == '__main__':
     m = YamlManager()
     m.load_yamls("source/benchmark-entry-comment-gregor.yaml")
-    from pprint import pprint
-    pprint(m.get_table_formatted_dicts())
+    print(m.check_filenames())

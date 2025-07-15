@@ -6,7 +6,7 @@ from md_writer import YamlToMarkdownConverter
 from latex_writer import YamlToLatexConverter
 
 # Optional: define MAX_AUTHOR_LIMIT and FULL_CITE_COLUMN if not imported
-MAX_AUTHOR_LIMIT = 3
+MAX_AUTHOR_LIMIT = 9999
 FULL_CITE_COLUMN = ("full_cite", "1cm", "Full BibTeX")
 
 ALL_COLUMNS = [
@@ -28,6 +28,10 @@ ALL_COLUMNS = [
     ("ratings", "1cm", "Ratings"),
 ]
 
+
+def get_column_triples(selected: list[str]) -> list[tuple[str, str, str]]:
+    selected_lower = [s.lower() for s in selected]
+    return [triple for triple in ALL_COLUMNS if triple[0] in selected_lower]
 
 
 if __name__ == "__main__":
@@ -58,17 +62,17 @@ if __name__ == "__main__":
             parser.error(f"The file {file} does not exist")
 
     os.makedirs(args.outdir, exist_ok=True)
-    columns = get_column_triples(args.columns) if args.columns else []  # Fallback if ALL_COLUMNS not in scope
+    columns = get_column_triples(args.columns) if args.columns else ALL_COLUMNS # Fallback if ALL_COLUMNS not in scope
 
     manager = YamlManager()
     manager.load_yamls(args.files)
-    entries = manager.get_dicts()
+    entries = manager.get_table_formatted_dicts()
 
     if args.required:
-        manager.verify_fields(entries)
+        manager.verify_yamls()
 
     if args.check:
-        manager.verify_fields(entries)
+        manager.verify_yamls()
         sys.exit(0)
 
     if args.withcitation:
@@ -78,10 +82,10 @@ if __name__ == "__main__":
         converter = YamlToMarkdownConverter(entries)
         if args.index:
             converter.write_individual_entries(os.path.join(args.outdir, "md_pages"))
-        converter.convert_to_single_file(os.path.join(args.outdir, "benchmarks.md"))
+        converter.write_single_file(os.path.join(args.outdir, "benchmarks.md"))
 
     elif args.format == 'tex':
         converter = YamlToLatexConverter(entries)
         if args.index:
             converter.write_individual_entries(os.path.join(args.outdir, "tex_pages"))
-        converter.convert_to_single_file(os.path.join(args.outdir, "benchmarks.tex"))
+        converter.write_single_file(os.path.join(args.outdir, "benchmarks.tex"))

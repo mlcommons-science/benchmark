@@ -4,6 +4,14 @@ Contains a class for YAML file loading and formatting
 
 import yaml
 
+
+_RED = "\033[91m"
+"""ANSI escape code. Changes to printing in red"""
+
+_WHITE = "\033[00m"
+"""ANSI escape code. Changes to printing in white"""
+
+
 class YamlManager(object):
     """
     Loads, stores, and formats the contents of YAML files.
@@ -29,6 +37,12 @@ class YamlManager(object):
         """
         Loads a YAML file containing a flat list of field-level entries,
         and groups them into full benchmark entries using 'name' as the reset key.
+
+        Parameters:
+            file_path (str): filepath to load from
+            enable_error_messages (bool): whether to print syntax errors to the console. Default True
+        Returns:
+            list of benchmark entries for the YAML file
         """
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
@@ -45,7 +59,7 @@ class YamlManager(object):
 
         except yaml.YAMLError as e:
             if enable_error_messages:
-                print(f"\033[91mYAML SYNTAX ERROR in {file_path}: \n{e}\033[00m")
+                print(f'{_RED}YAML syntax error in "{file_path}": \n{e}{_WHITE}')
             return []
 
 
@@ -55,7 +69,7 @@ class YamlManager(object):
 
         Parameters:
             file_paths (list[str]): list of file paths to load from
-            enable_error_messages (bool): whether to print error messages to the console
+            enable_error_messages (bool): whether to print error messages to the console. Default True
         Returns:
             contents of given YAML files
         """
@@ -65,30 +79,31 @@ class YamlManager(object):
         return records
 
 
-    def load_yamls(self, file_paths: str | list[str], overwriting_prev: bool = True, enable_error_messages: bool = True) -> None:
+    def load_yamls(self, file_paths: str | list[str], overwriting_contents: bool = True, print_syntax_errors: bool = True) -> None:
         """
         Loads the contents of `file_paths` into this YamlManager.
 
         If `overwriting_prev` is True, any previous contents are overwritten upon load.
 
-        Raises a YAMLError upon syntax errors. Raises a FileNotFoundError if an invalid filepath is given.
+        Raises a FileNotFoundError if an invalid filepath is given.
+        If a YAML file contains syntax errors, the file is **not loaded**.
 
         Parameters:
             file_paths (str or list[str]): filepath(s) to load from
-            overwriting_prev (bool): whether to overwrite the manager's existing contents. Default True
-            enable_error_messages (bool): whether to print error messages on an unsuccessful load. Default True
+            overwriting_contents (bool, default=True): whether to overwrite the manager's existing contents.
+            print_syntax_errors (bool, default=True): whether to print error messages upon finding YAML syntax errors.
         """
         if isinstance(file_paths, str):
-            if overwriting_prev:
-                self._yaml_dicts =  self._load_multiple_yaml_files([file_paths], enable_error_messages)
+            if overwriting_contents:
+                self._yaml_dicts =  self._load_multiple_yaml_files([file_paths], print_syntax_errors)
             else:
-                self._yaml_dicts += self._load_multiple_yaml_files([file_paths], enable_error_messages)
+                self._yaml_dicts += self._load_multiple_yaml_files([file_paths], print_syntax_errors)
 
         else:
-            if overwriting_prev:
-                self._yaml_dicts =  self._load_multiple_yaml_files(file_paths, enable_error_messages)
+            if overwriting_contents:
+                self._yaml_dicts =  self._load_multiple_yaml_files(file_paths, print_syntax_errors)
             else:
-                self._yaml_dicts += self._load_multiple_yaml_files(file_paths, enable_error_messages)
+                self._yaml_dicts += self._load_multiple_yaml_files(file_paths, print_syntax_errors)
 
 
     # ---------------------------------------------------------------------------------------------------------
@@ -98,13 +113,13 @@ class YamlManager(object):
 
     def get_dicts(self) -> list[dict]:
         """
-        Returns a list of the raw internal dictionaries read to by the manager.
+        Returns a list of the raw internal dictionaries read to by the manager. Not intended for writing to tables.
 
         DO NOT MODIFY THE OUTPUT OF THIS FUNCTION!
         The values returned are shallow copies. Any modification will affect the YAML manager's contents.
 
         Returns:
-            manager's current file contents, as dictionaries
+            list[dict]: manager's current file contents, as dictionaries
         """
         return self._yaml_dicts
 
@@ -113,8 +128,10 @@ class YamlManager(object):
         """
         Turns `entry` into a list of dictionaries easily convertable into a table.
 
+        Values associated with "description" and "condition" are ignored.
+
         The output varies by `entry`'s datatype:  
-        - anything but a `dict` or a `list`: string value of entry is appended to the output.
+        - anything but a `dict` or a `list`: string value of entry is appended to the output as a dictionary.
         - `dict`: this procedure is applied to all sub-dictionaries. The parent dictionary's key is appended to all sub-dictionary keys.
         - `list`: this procedure is applied to all elements of the list
 
@@ -164,7 +181,7 @@ class YamlManager(object):
         The 'description' and 'condition' fields are not added.
 
         Returns:
-            well-formatted entries for table conversion
+            list[list[dict]]: well-formatted entries for table conversion
         """
         # for y in self._yaml_dicts:
         #     print(y, end='\n\n')
@@ -223,8 +240,8 @@ class YamlManager(object):
             # If condition is "required" or the parent dict is checked, field must be present
             if (condition=="required" or parent_required) and value is None:
                 if printing_errors:
-                    print(f'\033[91mRequired field "{key}" in "{parent_name}" not present\033[00m')
-                    print(f'\033[91mcolumn: {entry}\033[00m')
+                    printed_parent_name = parent_name if parent_name=='<top level>' else f'"{parent_name}"'
+                    print(f'{_RED}Required field "{key}" in {printed_parent_name} not present{_WHITE}')
                 valid_dict =  False
             
             #Do >=
@@ -233,12 +250,12 @@ class YamlManager(object):
                     required_length = int(condition[2:])
                 except ValueError:
                     if printing_errors:
-                        print(f'\033[91mCondition "{condition[2:]}" is not a number\033[00m')
+                        print(f'{_RED}Condition "{condition[2:]}" is not a number{_WHITE}')
                     valid_dict = False
                 
                 if not isinstance(value, list) or len(value) < required_length:
                     if printing_errors:
-                        print(f'\033[91mField "{key}" must be a list of length {required_length} or more\033[00m')
+                        print(f'{_RED}Field "{key}" must be a list of length {required_length} or more{_WHITE}')
                     valid_dict =  False
 
             #Recurse on the dict
@@ -262,9 +279,9 @@ class YamlManager(object):
         Returns True if all YAML entries in the manager contains all fields marked as "required".
 
         Parameters:
-            printing_errors (bool): whether to print error messages to the console
+            printing_errors (bool, default=True): whether to print error messages to the console
         Returns:
-            whether all required entries in the YAMLs are present
+            bool: whether all required entries in the YAMLs are present
         """
 
         # Top-level must be a list of dict entries
@@ -276,15 +293,13 @@ class YamlManager(object):
             #Check each column (type: dict) in each YAML dictionary stored
             for column in self._yaml_dicts[i]:
                 if not self._verify_entry(column, printing_errors=printing_errors):
-                    print(f'\033[91min YAML entry {i+1}\033[00m')
+                    print(f'{_RED}in YAML entry {i+1}{_WHITE}')
                     print()
                     valid = False
 
         return valid
 
 
-# if __name__ == "__main__":
-#     m = YamlManager()
-#     m.load_yamls("source/benchmark-entry-comment-gregor.yaml")
-    
-#     print(m.verify_yamls())
+if __name__ == "__main__":
+    m = YamlManager()
+    m.load_yamls("source/benchmark-entry-comment-gregor.yaml")

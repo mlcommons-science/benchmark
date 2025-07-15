@@ -38,9 +38,30 @@ class YamlToMarkdownConverter:
             current_contents += ' |\n'
 
 
-        with open(os.path.join(output_path, "benchmarks.md"), "w", encoding='utf-8') as f:
+        with open(output_path, "w", encoding='utf-8') as f:
             f.write(header + divider + current_contents)
-    
+    def write_individual_entries(self, output_dir: str, column_names: list[str]) -> None:
+        """
+        Writes one Markdown file per benchmark entry in the specified output directory.
+        """
+        os.makedirs(output_dir, exist_ok=True)
+
+        for i, entry in enumerate(self.entries):
+            filename = os.path.join(output_dir, f"entry_{i+1}.md")
+            with open(filename, "w", encoding="utf-8") as f:
+                header = " | " + " | ".join(column_names) + " |\n"
+                divider = "| --- " * len(column_names) + "|\n"
+                row = " |"
+
+                for col in column_names:
+                    value = entry.get(col, "")
+                    if isinstance(value, list):
+                        cell = ", ".join(self._escape_md(v) for v in value)
+                    else:
+                        cell = self._escape_md(value)
+                    row += f" {cell} |"
+                f.write(header + divider + row + "\n")
+
 
 if __name__ == "__main__":
     from yaml_manager import YamlManager

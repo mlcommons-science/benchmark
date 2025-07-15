@@ -95,8 +95,10 @@ if __name__ == "__main__":
     if args.format == 'md':
         converter = YamlToMarkdownConverter(entries)
         if args.index:
-            converter.write_individual_entries(os.path.join(args.outdir, "md_pages"))
-        converter.write_single_file(os.path.join(args.outdir, "benchmarks.md"))
+            md_output_dir = os.path.join(args.outdir, "md_pages")
+            os.makedirs(md_output_dir, exist_ok=True)
+            converter.write_individual_entries(os.path.join(md_output_dir, "benchmarks.md"), args.columns)
+        converter._generate_md_doc(os.path.join(args.outdir, "benchmarks.md"),args.columns)
 
     elif args.format == 'tex':
         converter = YamlToLatexConverter(entries)

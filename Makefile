@@ -1,6 +1,7 @@
 # makefile that will create all the content
 
-FILES=source/benchmarks.yaml#source/benchmarks-addon.yaml
+#FILES=source/benchmarks.yaml#source/benchmarks-addon.yaml
+FILES=source/benchmark-entry-comment-gregor.yaml
 
 SCRIPT=bin/generate.py
 
@@ -15,7 +16,7 @@ content: md tex
 	echo DONE
 
 md:
-	python ${SCRIPT} --files ${FILES}  --format=md --out=./content --index
+	python ${SCRIPT} --files ${FILES}  --format=md --out=./content --index --columns ${COLUMNS}
 
 tex-old:
 	python ${SCRIPT} --files ${FILES} --format=tex --out=./content --standalone --columns=${COLUMNS}
@@ -38,10 +39,10 @@ pdf: tex
 
 clean:
 	cd content/tex && latexmk -C
-	
-	mv content/md_pages/benchmarks.md content/
-	rm -rf content/md_pages/*
-	mv content/benchmarks.md content/md_pages
+	# Remove existing benchmark markdown files if they exist
+	rm -f content/benchmarks.md
+	rm -rf content/md_pages
+
 
 view:
 	open content/tex/benchmarks.pdf

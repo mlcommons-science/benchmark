@@ -34,7 +34,7 @@
     condition: optional
 
   - valid: true
-    date: '2025-01-01'
+    valid_date: '2025-01-01'
     description: |
       Identifies if the benchmark is valid at the time of review. Invalidity may be caused by the code or data 
       no longer being available.
@@ -285,7 +285,7 @@
     condition: optional
 
   - valid: true
-    date: '2025-01-01'
+    valid_date: '2025-01-01'
     description: |
       Identifies if the benchmark is valid at the time of review. Invalidity may be caused by the code or data 
       no longer being available.
@@ -491,7 +491,7 @@
           starter kit.
         description: |
           The availability of a reference solution.
-        condition: optional
+        condition: required
 
     - documentation:
         rating: 7.0

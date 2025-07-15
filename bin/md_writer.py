@@ -1,7 +1,7 @@
 import os
 
 class YamlToMarkdownConverter:
-    def __init__(self, entries: list[list[dict]]):
+    def __init__(self, entries: list[dict]):
         """
         entries: list of benchmark entries, where each entry is a list of {key: value} dictionaries
         """

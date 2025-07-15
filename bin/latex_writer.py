@@ -2,7 +2,7 @@ import os
 import textwrap
 
 class YamlToLatexConverter:
-    def __init__(self, entries: list[list[dict]]):
+    def __init__(self, entries: list[dict]):
         self.entries = entries
 
 
@@ -69,19 +69,39 @@ class YamlToLatexConverter:
         """)
 
 
-    def write_single_file(self, output_path: str):
-        all_rows = []
-        for entry in self.entries:
-            for col in entry:
-                all_rows.extend(self._entry_to_rows(col))
-        latex = self._generate_latex_doc("Benchmark Field Specification", all_rows)
+    # def write_single_file_old(self, output_path: str):
+    #     """Writes a single TeX entry to `output_path`"""
+    #     all_rows = []
+    #     for entry in self.entries:
+    #         for col in entry:
+    #             all_rows.extend(self._entry_to_rows(col))
+    #     latex = self._generate_latex_doc("Benchmark Field Specification", all_rows)
+
+    #     os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    #     with open(output_path, "w", encoding="utf-8") as f:
+    #         f.write(latex)
+
+    
+    def write_single_file(self, output_path: str, columns: tuple):
+        """Writes a single TeX entry to `output_path`"""
 
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         with open(output_path, "w", encoding="utf-8") as f:
-            f.write(latex)
+
+            all_rows = []
+            for entry in self.entries:
+                print(entry)
+                line = []
+                for col in columns:
+                    line.append(entry[col])
+                    # # line.append(self._entry_to_rows(col))
+                    # all_rows.extend(self._entry_to_rows(col))
+                line_str = ' & '.join(map(str, line)) + '\\'
+                f.write(line_str)
 
 
     def write_individual_entries(self, output_dir: str):
+        """Writes single TeX entries, each containing one of the class's stored entries, to `output_path`"""
         os.makedirs(output_dir, exist_ok=True)
 
         for yaml in self.entries:

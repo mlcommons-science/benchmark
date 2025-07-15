@@ -1,4 +1,5 @@
 import argparse
+from cloudmesh.common.console import Console
 import os
 import sys
 from yaml_manager import YamlManager
@@ -35,7 +36,15 @@ def get_column_triples(selected: list[str]) -> list[tuple[str, str, str]]:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Process YAML benchmark files to Markdown or LaTeX.")
+    # Console.error("hello world")
+    # Console.warning("hello world")
+    # Console.msg("hello world")
+
+    script_help = """Process YAML benchmark files to a Markdown or LaTeX table.
+    The user specifies one or more input files, the output table format, and the output directory.
+    All files in the output directory are under the output."""
+
+    parser = argparse.ArgumentParser(description=script_help)
     parser.add_argument('--files', '-i', type=str, nargs='+', required=True, help='YAML file paths to process.')
     parser.add_argument('--format', '-f', type=str, choices=['md', 'tex'], required=True, help="Output file format: 'md' or 'tex'")
     parser.add_argument('--outdir', '-o', type=str, default='../content/', required=True, help="Output directory")
@@ -94,7 +103,7 @@ if __name__ == "__main__":
         converter = YamlToLatexConverter(entries)
         if args.index:
             converter.write_individual_entries(os.path.join(args.outdir, "tex_pages"))
-        converter.write_single_file(os.path.join(args.outdir, "benchmarks.tex"))
+        converter.write_single_file(os.path.join(args.outdir, "tex/benchmarks.tex"), args.columns)
     
     if  args.withurlcheck:
         manager.check_urls() # URL check

@@ -2,6 +2,9 @@ import os
 import re
 import textwrap
 
+from pybtex.database import parse_string
+from pybtex.plugin import find_plugin
+
 _RED = "\033[91m"
 """ANSI escape code. Changes to printing in red"""
 
@@ -223,13 +226,16 @@ class LatexWriter:
                 f.write(latex)
 
  
-
-    def _extract_cite_label(self, bib_entry: str) -> str:
+    @staticmethod
+    def _extract_cite_label(bib_entry: str) -> str:
         """
         Extracts the citation label from a BibTeX entry like '@article{label,...}'
         """
         match = re.match(r"@\w+\{([^,]+),", bib_entry.strip())
         return match.group(1) if match else "<unknown>"
+
+
+
 
     def _write_bibtex(self, output_dir: str):
         """

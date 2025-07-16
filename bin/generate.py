@@ -35,9 +35,6 @@ def get_column_triples(selected: list[str]) -> list[tuple[str, str, str]]:
 
 
 if __name__ == "__main__":
-    # Console.error("hello world")
-    # Console.warning("hello world")
-    # Console.msg("hello world")
 
     script_help = """Process YAML benchmark files to a Markdown or LaTeX table.
     The user specifies one or more input files, the output table format, and the output directory.

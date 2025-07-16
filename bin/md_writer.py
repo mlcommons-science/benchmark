@@ -1,5 +1,24 @@
 import os
 import re
+from pybtex.database import parse_string
+from pybtex.plugin import find_plugin
+
+
+def bibtex_to_text(entry: list):
+
+    # Parse the BibTeX entry with the 'bibtex' format
+    bib_data = parse_string(entry[0], bib_format='bibtex')
+
+    # Use the default citation style (plain)
+    style = find_plugin('pybtex.style.formatting', 'plain')
+    formatter = style()
+
+    # Format the citation
+    print(formatter)
+    print(bib_data.entries.values())
+    formatted_citation = formatter.format_entries(bib_data.entries.values())[0]
+    return formatted_citation.text
+
 
 class MarkdownWriter:
     """Class to write formatted YAML contents to a Markdown file"""
@@ -67,8 +86,10 @@ class MarkdownWriter:
                 #Get current column name from the entries
                 col_data = entry.get(col, '')
 
+                if col=="cite":
+                    current_contents += bibtex_to_text(col_data)
                 #If list, append each entry in the list
-                if isinstance(col_data, list):
+                elif isinstance(col_data, list):
                     # for d in col_data:
                     #     current_contents += self._escape_md(d) + ","
                     current_contents += ", ".join(map(self._escape_md, col_data))

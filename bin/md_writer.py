@@ -19,7 +19,7 @@ class MarkdownWriter:
         Returns `text`, where all Markdown special characters are replaced with escape sequences.
 
         Parameters:
-            text (str): text to convert to MD
+            text: text to convert to MD
         Returns:
             MD-friendly version of `text`
         """
@@ -69,13 +69,16 @@ class MarkdownWriter:
 
                 #If list, append each entry in the list
                 if isinstance(col_data, list):
-                    for d in col_data:
-                        current_contents += self._escape_md(d) + ","
-                    current_contents += "|"
+                    # for d in col_data:
+                    #     current_contents += self._escape_md(d) + ","
+                    current_contents += ", ".join(map(self._escape_md, col_data))
                 #If not list, add to the list
                 else:
-                    current_contents += ' | ' + self._escape_md(col_data)
-            current_contents += ' |\n'
+                    current_contents += self._escape_md(str(col_data))
+                
+                current_contents += " | "
+
+            current_contents += '\n'
 
 
         os.makedirs(os.path.join(output_path, "md"), exist_ok=True)

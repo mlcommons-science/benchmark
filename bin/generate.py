@@ -77,8 +77,8 @@ if __name__ == "__main__":
     entries = manager.get_table_formatted_dicts()
 
     if not manager.check_filenames():
-        pass
-        # sys.exit(1)
+        if input("Continue? (y/n) ").startswith('n'):
+            sys.exit(1)
     
 
     if args.check:

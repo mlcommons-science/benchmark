@@ -12,6 +12,10 @@ COLUMNS=date,name,domain,focus,keywords,task_types,metrics,models,cite
 all: content standalone pdf
 	echo TODO
 
+install:
+	pip install cloudmesh-common
+	pip install pybtex
+
 content: md tex
 	echo DONE
 

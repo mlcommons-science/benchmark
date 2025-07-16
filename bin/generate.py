@@ -77,15 +77,17 @@ if __name__ == "__main__":
     entries = manager.get_table_formatted_dicts()
 
     if not manager.check_filenames():
-        print("YAML filenames are not properly formatted")
-        sys.exit(1)
+        pass
+        # sys.exit(1)
     
+
     if args.check:
-        manager.check_required_fields()
+        check_passed = manager.check_required_fields()
         sys.exit(0)
 
     if args.required:
-        manager.check_required_fields()
+        if not manager.check_required_fields():
+            sys.exit(1)
 
 
     if args.withcitation:

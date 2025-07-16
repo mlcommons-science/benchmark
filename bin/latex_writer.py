@@ -22,6 +22,27 @@ class LatexWriter:
         self._entries = entries
 
 
+    def _sanitize_filename(self, name: str) -> str:
+        """
+        Returns a lowercased version of `name` without whitespace and leading/trailing spaces.
+
+        Parameters:
+            name (str): filename to sanitize
+        Returns:
+            sanitized filename
+        """
+        output = ""
+        for ch in name:
+            if 32<=ord(ch)<=126:
+                output += ch
+
+        output = re.sub(r' {2,}', ' ', output) #Replace 2+ spaces with single space
+        output = output.strip().replace("(", "").replace(")", "").replace(" ", "_")
+
+        return output.lower()
+
+
+
     def _escape_latex(self, text: str) -> str:
         """
         Returns `text`, where all TeX special characters are replaced with escape sequences.
@@ -195,6 +216,7 @@ class LatexWriter:
         #Write each row to a file
         os.makedirs(os.path.join(output_path, "tex_pages"), exist_ok=True)
         for i in range(len(all_rows)):
+
             with open(os.path.join(output_path, "tex_pages", f"entry_{i+1}.tex"), "w") as f:
                     
                 latex = self._generate_latex_doc([all_rows[i]], columns, column_widths=column_widths)

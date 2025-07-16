@@ -1,4 +1,5 @@
 import os
+import re
 
 class MarkdownWriter:
     """Class to write formatted YAML contents to a Markdown file"""
@@ -26,6 +27,25 @@ class MarkdownWriter:
             text = str(text)
         return text.replace("|", "\\|").replace("\n", " ")
 
+
+    def _sanitize_filename(self, name: str) -> str:
+        """
+        Returns a lowercased version of `name` without whitespace and leading/trailing spaces.
+
+        Parameters:
+            name (str): filename to sanitize
+        Returns:
+            sanitized filename
+        """
+        output = ""
+        for ch in name:
+            if 32<=ord(ch)<=126:
+                output += ch
+
+        output = re.sub(r' {2,}', ' ', output) #Replace 2+ spaces with single space
+        output = output.strip().replace("(", "").replace(")", "").replace(" ", "_")
+
+        return output.lower()
 
 
     def write_table(self, output_path: str, column_names: list[str]) -> None:
@@ -74,7 +94,7 @@ class MarkdownWriter:
         os.makedirs(os.path.join(output_dir, "md_pages"), exist_ok=True)
 
         for i, entry in enumerate(self.entries):
-            filename = os.path.join(os.path.join(output_dir, "md_pages"), f"entry_{i+1}.md")
+            filename = os.path.join(os.path.join(output_dir, "md_pages"), self._sanitize_filename(entry.get("name", f"unknown_name_{i}"))) + ".md"
             with open(filename, "w", encoding="utf-8") as f:
                 header = " | " + " | ".join(column_names) + " |\n"
                 divider = "| --- " * len(column_names) + "|\n"

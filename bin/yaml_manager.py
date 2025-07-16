@@ -27,11 +27,14 @@ class YamlManager(object):
     or as a list of dictionaries for table output.
     """
 
-    def __init__(self):
+    def __init__(self, yamls: str | list[str]):
         """
-        Creates a new YamlManager. It initially has no contents loaded.
+        Creates a new YamlManager with the contents of `yamls`.
+
+        Parameters:
+            yamls (str or list[str]): one or more YAML filepaths to load from
         """
-        self._yaml_dicts = []
+        self._load_yamls(yamls)
 
 
     # ---------------------------------------------------------------------------------------------------------
@@ -85,7 +88,7 @@ class YamlManager(object):
         return records
 
 
-    def load_yamls(self, file_paths: str | list[str], overwriting_contents: bool = True, print_syntax_errors: bool = True) -> None:
+    def _load_yamls(self, file_paths: str | list[str], overwriting_contents: bool = True, print_syntax_errors: bool = True) -> None:
         """
         Loads the contents of `file_paths` into this YamlManager.
 

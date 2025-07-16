@@ -2,8 +2,8 @@ import argparse
 import os
 import sys
 from yaml_manager import YamlManager
-from md_writer import YamlToMarkdownConverter
-from latex_writer import YamlToLatexConverter
+from md_writer import MarkdownWriter
+from latex_writer import LatexWriter
 
 # Optional: define MAX_AUTHOR_LIMIT and FULL_CITE_COLUMN if not imported
 MAX_AUTHOR_LIMIT = 9999
@@ -73,8 +73,7 @@ if __name__ == "__main__":
     os.makedirs(args.outdir, exist_ok=True)
     columns = get_column_triples(args.columns) if args.columns else ALL_COLUMNS # Fallback if ALL_COLUMNS not in scope
 
-    manager = YamlManager()
-    manager.load_yamls(args.files)
+    manager = YamlManager(args.files)
     entries = manager.get_table_formatted_dicts()
 
     if not manager.check_filenames():
@@ -91,20 +90,20 @@ if __name__ == "__main__":
 
     if args.withcitation:
         columns.append(FULL_CITE_COLUMN)
+    
+        
+    if args.withurlcheck:
+        manager.check_urls() # URL check
+
 
     if args.format == 'md':
-        converter = YamlToMarkdownConverter(entries)
+        converter = MarkdownWriter(entries)
         if args.index:
-            md_output_dir = os.path.join(args.outdir, "md_pages")
-            os.makedirs(md_output_dir, exist_ok=True)
-            converter.write_individual_entries(os.path.join(md_output_dir, "benchmarks.md"), args.columns)
-        converter._generate_md_doc(os.path.join(args.outdir, "benchmarks.md"),args.columns)
+            converter.write_individual_entries(args.outdir, args.columns)
+        converter.write_table(args.outdir, args.columns)
 
     elif args.format == 'tex':
-        converter = YamlToLatexConverter(entries)
+        converter = LatexWriter(entries)
         if args.index:
-            converter.write_individual_entries(os.path.join(args.outdir, "tex_pages"))
-        converter.write_single_file(os.path.join(args.outdir, "tex/benchmarks.tex"))
-    
-    if  args.withurlcheck:
-        manager.check_urls() # URL check
+            converter.write_individual_entries(args.outdir, args.columns)
+        converter.write_table(args.outdir, columns=args.columns)

@@ -2,11 +2,35 @@ import os
 import re
 import textwrap
 
-class YamlToLatexConverter:
+_RED = "\033[91m"
+"""ANSI escape code. Changes to printing in red"""
+
+_DEFAULT_COLOR = "\033[00m"
+"""ANSI escape code. Changes to printing in the default color"""
+
+
+class LatexWriter:
+    """Class to write formatted YAML contents to a LaTeX file"""
+
     def __init__(self, entries: list[dict]):
-        self.entries = entries
+        """
+        Creates a new converter that writes `entries` to LaTeX files.
+
+        Parameters:
+            entries (list[dict]): list of benchmark entries, where each entry is a list of {key: value} dictionaries
+        """
+        self._entries = entries
+
 
     def _escape_latex(self, text: str) -> str:
+        """
+        Returns `text`, where all TeX special characters are replaced with escape sequences.
+
+        Parameters:
+            text (str): text to convert to LaTeX
+        Returns:
+            TeX-friendly version of `text`
+        """
         if not isinstance(text, str):
             text = str(text)
         return (
@@ -21,71 +45,162 @@ class YamlToLatexConverter:
                 .replace("~", "\\textasciitilde{}")
                 .replace("^", "\\textasciicircum{}")
         )
+    
+    
+    def _entry_to_row(self, row_dict: dict, columns: list[str]) -> str:
+        """
+        Returns a string containing `row_dict` converted to one row of the TeX table.
 
-    def _entry_to_rows(self, entry: dict) -> list[str]:
-        rows = []
-        for key, value in entry.items():
-            if key in ("description", "condition"):
+        This function handles one row at a time.
+
+        Parameters:
+            row_dict (dict): dictionary representing the row contents, whose keys are column names and associated values are contents of the column
+            columns (list[str]): list of column names to include
+        Returns:
+            row of TeX table
+        """
+        row_contents = ""
+        for key, value in row_dict.items():
+            if key in ("description", "condition") or (not key in columns):
                 continue
-            field_name = self._escape_latex(key)
+            
             field_value = (
                 self._escape_latex(value)
                 if not isinstance(value, list)
                 else ", ".join(map(self._escape_latex, value))
             )
-            rows.append(f"{field_name} & {field_value} \\\\ \\hline")
-        return rows
 
-    def _generate_latex_doc(self, title: str, rows: list[str]) -> str:
+            row_contents += f"{field_value} & "
+        
+        #Remove the last '& ' and add line end
+        row_contents = row_contents[:-2]
+        row_contents += "\\\\ \\hline"
+        
+        return row_contents
+
+
+    def _generate_latex_doc(self, rows: list[str], selected_columns: list[str], column_widths: list[int] | None = None, title: str = "Benchmarks") -> str:
+        """
+        Returns a string representing a TeX table generated from `rows` and containing only `selected_columns`.
+
+        Uses 2cm column widths if `column_widths` is None.
+
+        Parameters:
+            rows (list[str]): rows of table. Each index must be a valid row in a TeX table
+            selected_columns (list[str]): names of columns to include- any columns not in `selected_columns` will not appear in the table
+            column_widths (list[int] or None): widths of each column in centimeters. If not None, length must be the same length as `selected_columns` and all indices must be positive
+            title (str): title of the table. Default "Benchmarks".
+        Returns:
+            TeX table string to be written to a file
+        """
+        #enforce type preconditions
+        assert isinstance(rows, list), "rows must be a list of strings"
+        assert isinstance(selected_columns, list), "selected columns must be a list of strings"
+        #enforce length precondition
+        if column_widths != None:
+            assert len(selected_columns) != len(column_widths), f"length of column widths ({len(column_widths)}) must equal length of selected columns ({len(selected_columns)})"
+        
+        #Column length header
+        column_width_str = "{"
+
+        if column_widths==None:
+            #append 2cm column widths
+            column_width_str += ("|p{2cm}" * len(selected_columns))
+        else:
+            #individually append all the column widths to the header
+            for w in column_widths:
+                assert w>0, "all column widths must be positive"
+                column_width_str += "|p{" + str(w) + "cm}"
+
+        column_width_str += "|}"
+
+
+        #Column names
+        column_names_header = ""
+        for key, _ in self._entries[0].items():
+            if (not key in selected_columns):
+                continue
+            column_names_header += "\\textbf{{" + self._escape_latex(key) + "}} & "
+        column_names_header = column_names_header[:-2]
+        column_names_header += "\\\\\\\\ \\hline"
+
+
         return textwrap.dedent(rf"""
-        \documentclass{{article}}
-        \usepackage[margin=1in]{{geometry}}
-        \usepackage{{longtable}}
-        \begin{{document}}
-        \section*{{{self._escape_latex(title)}}}
-        \begin{{longtable}}{{|p{{5cm}}|p{{10cm}}|}}
-        \hline
-        \textbf{{Field}} & \textbf{{Value}} \\\\ \hline
-        \endfirsthead
-        \hline
-        \textbf{{Field}} & \textbf{{Value}} \\\\ \hline
-        \endhead
-        \hline
-        \endfoot
-        \hline
-        \endlastfoot
-        """) + "\n".join(rows) + textwrap.dedent(r"""
-        \end{longtable}
-        \end{document}
+            \documentclass{{article}}
+            \usepackage[margin=1in]{{geometry}}
+            \usepackage{{longtable}}
+            \begin{{document}}
+            \section*{{{self._escape_latex(title)}}}
+            \begin{{longtable}}{column_width_str}
+            \hline
+            {column_names_header}
+            \endfirsthead
+            \hline
+            {column_names_header}
+            \endhead
+            \hline
+            \endfoot
+            \hline
+            \endlastfoot
+            """) + "\n".join(rows) + textwrap.dedent(r"""
+            \end{longtable}
+            \end{document}
         """)
 
-    def write_single_file(self, output_path: str):
-        """Writes all entries into one LaTeX document."""
-        os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
+    def write_table(self, output_path: str, columns: list[str], column_widths: list[int] | None = None) -> None: 
+        """
+        Writes all entries stored by this writer into one LaTeX document at `output_path`/tex/benchmarks.tex
+
+        Parameters:
+            output_path (str): filepath to write to
+            columns (list[str]): subset of columns in the table to include- any columns not in `selected_columns` will not appear in the table
+            column_widths (list[int] or None, default=None): 
+                widths of each column in centimeters. If not None, length must be the same length as `selected_columns` and all indices must be positive
+        """
+
+        #Create rows of the table
         all_rows = []
-        for entry in self.entries:
-            all_rows.extend(self._entry_to_rows(entry))
+        for entry in self._entries:
+            all_rows.append(self._entry_to_row(entry, columns).replace('\n', ' '))
 
-        latex = self._generate_latex_doc("Benchmark Field Specification", all_rows)
+        #Convert rows into table
+        latex = self._generate_latex_doc(all_rows, columns, column_widths=column_widths)
 
-        with open(output_path, "w", encoding="utf-8") as f:
+        #Write table to file
+        os.makedirs(os.path.join(output_path, "tex"), exist_ok=True)
+        with open(os.path.join(output_path, "tex", "benchmarks.tex"), "w", encoding="utf-8") as f:
             f.write(latex)
 
+        #Write the bibtex
         self._write_bibtex(os.path.dirname(output_path))
 
-    def write_individual_entries(self, output_dir: str):
-        """Writes one LaTeX file per entry."""
-        os.makedirs(output_dir, exist_ok=True)
 
-        for i, entry in enumerate(self.entries):
-            rows = self._entry_to_rows(entry)
-            latex = self._generate_latex_doc(f"Benchmark Entry {i+1}", rows)
-            output_path = os.path.join(output_dir, f"entry_{i+1}.tex")
-            with open(output_path, "w", encoding="utf-8") as f:
+    def write_individual_entries(self, output_path: str, columns: list[str], column_widths: list[int] | None = None) -> None: 
+        """
+        Writes the entries stored by this writer into separate LaTeX documents. All are in the directory `output_path`/tex_pages
+
+        Parameters:
+            output_path (str): filepath to write to
+            columns (list[str]): subset of columns in the table to include- any columns not in `selected_columns` will not appear in the table
+            column_widths (list[int] or None, default=None): 
+                widths of each column in centimeters. If not None, length must be the same length as `selected_columns` and all indices must be positive
+        """
+
+        #Create rows of the table
+        all_rows = []
+        for entry in self._entries:
+            all_rows.append(self._entry_to_row(entry, columns).replace('\n', ' '))
+
+        #Write each row to a file
+        os.makedirs(os.path.join(output_path, "tex_pages"), exist_ok=True)
+        for i in range(len(all_rows)):
+            with open(os.path.join(output_path, "tex_pages", f"entry_{i+1}.tex"), "w") as f:
+                    
+                latex = self._generate_latex_doc([all_rows[i]], columns, column_widths=column_widths)
                 f.write(latex)
 
-        self._write_bibtex(output_dir)
+ 
 
     def _extract_cite_label(self, bib_entry: str) -> str:
         """
@@ -104,7 +219,7 @@ class YamlToLatexConverter:
         found_entries = set()
         found_names = set()
 
-        for record in self.entries:
+        for record in self._entries:
             record_cite_entries = record.get("cite", [])
             name = record.get("name", "<no name>")
 
@@ -120,7 +235,7 @@ class YamlToLatexConverter:
                 label = self._extract_cite_label(cite_entry.lower())
 
                 if label in found_labels:
-                    print(f"\033[91mERROR: Duplicate citation label \"{label}\" found in entry \"{name}\".\033[00m")
+                    print(f"{_RED}ERROR: Duplicate citation label \"{label}\" found in entry \"{name}\".{_DEFAULT_COLOR}")
                 elif cite_entry in found_entries and name in found_names:
                     pass  # Same citation reused
                 else:

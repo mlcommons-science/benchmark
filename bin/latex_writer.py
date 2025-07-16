@@ -11,6 +11,24 @@ _RED = "\033[91m"
 _DEFAULT_COLOR = "\033[00m"
 """ANSI escape code. Changes to printing in the default color"""
 
+LATEX_PREFIX = textwrap.dedent(rf"""
+\documentclass{{article}}
+
+\usepackage[margin=1in]{{geometry}}
+\usepackage{{hyperref}}
+\usepackage{{pdflscape}}
+\usepackage{{wasysym}}
+\usepackage{{longtable}}
+\usepackage[style=ieee, url=true]{{biblatex}}
+\addbibresource{{benchmarks.bib}}
+
+\begin{{document}}
+
+""")
+
+LATEX_POSTFIX = textwrap.dedent(rf"""
+\end{{document}}
+""")
 
 class LatexWriter:
     """Class to write formatted YAML contents to a LaTeX file"""
@@ -147,14 +165,13 @@ class LatexWriter:
             column_names_header += "\\textbf{{" + self._escape_latex(key) + "}} & "
         column_names_header = column_names_header[:-2]
         column_names_header += "\\\\\\\\ \\hline"
+        
+        table = textwrap.dedent(rf"""
 
-
-        return textwrap.dedent(rf"""
-            \documentclass{{article}}
-            \usepackage[margin=1in]{{geometry}}
-            \usepackage{{longtable}}
-            \begin{{document}}
             \section*{{{self._escape_latex(title)}}}
+
+            \begin{{landscape}}
+            {{\footnotesize
             \begin{{longtable}}{column_width_str}
             \hline
             {column_names_header}
@@ -168,9 +185,14 @@ class LatexWriter:
             \endlastfoot
             """) + "\n".join(rows) + textwrap.dedent(r"""
             \end{longtable}
-            \end{document}
+            }
+            \end{{landscape}}
         """)
 
+        content = LATEX_PREFIX + table + LATEX_POSTFIX
+
+        
+        return content
 
     def write_table(self, output_path: str, columns: list[str], column_widths: list[int] | None = None) -> None: 
         """

@@ -27,7 +27,25 @@ FULL_CITE_COLUMN = ("full_cite", "1cm", "Full BibTeX")
 #     ("cite", "1cm", "Citation"),
 #     ("ratings", "1cm", "Ratings"),
 # ]
-ALL_COLUMNS = ['date','name','domain','focus','keywords','task_types','metrics','models','cite']
+
+COLUMN_TUPLES = [
+    ("date", 1.5, "Date"),
+    ("name", 2.5, "Name"),
+    ("domain", 2, "Domain"),
+    ("focus", 2, "Focus"),
+    ("keywords", 2.5, "Keywords"),
+    ("task_types", 3, "Task Types"),
+    ("metrics", 2, "Metrics"),
+    ("models", 2, "Models"),
+    ("cite", 1, "Citation"),
+]
+COLUMN_NAMES = []
+COLUMN_WIDTHS = []
+COLUMN_TITLES = []
+for name, width, title in COLUMN_TUPLES:
+    COLUMN_NAMES.append(name)
+    COLUMN_WIDTHS.append(width)
+    COLUMN_TITLES.append(title)
 
 
 # def get_column_triples(selected: list[str]) -> list[tuple[str, str, str]]:
@@ -69,8 +87,7 @@ if __name__ == "__main__":
             parser.error(f"The file {file} does not exist")
 
     os.makedirs(args.outdir, exist_ok=True)
-    columns = args.columns if args.columns else ALL_COLUMNS # Fallback if ALL_COLUMNS not in scope
-    column_names = columns
+    columns = args.columns if args.columns else COLUMN_NAMES # Fallback if args.columns not in scope
 
     manager = YamlManager(args.files)
     entries = manager.get_table_formatted_dicts()
@@ -96,12 +113,11 @@ if __name__ == "__main__":
     if args.withurlcheck:
         manager.check_urls() # URL check
 
-
     if args.format == 'md':
         converter = MarkdownWriter(entries)
         if args.index:
-            converter.write_individual_entries(args.outdir, args.columns, column_names)
-        converter.write_table(args.outdir, args.columns)
+            converter.write_individual_entries(args.outdir, args.columns, COLUMN_TITLES)
+        converter.write_table(args.outdir, args.columns, COLUMN_TITLES)
 
     elif args.format == 'tex':
         converter = LatexWriter(entries)

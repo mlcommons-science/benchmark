@@ -68,15 +68,19 @@ class MarkdownWriter:
         return output.lower()
 
 
-    def write_table(self, output_path: str, column_names: list[str]) -> None:
+    def write_table(self, output_path: str, column_names: list[str], column_display_names: list[str] | None = None) -> None:
         """
         Writes all entries stored by this writer into one Markdown document at `output_path`/md/benchmarks.md
 
         Parameters:
             output_path (str): filepath to write to
-            columns (list[str]): subset of columns in the table to include- any columns not in `selected_columns` will not appear in the table
+            column_names (list[str]): subset of columns in the table to include- any columns not in `column_names` will not appear in the table
+            column_display_names (list[str] or None, default=None): titles of each column. If not None, must have the same length as `column_names`
         """
-        header = " | " + " | ".join(column_names) + " | " + "\n"
+        if column_display_names != None:
+            assert len(column_names)==len(column_display_names), "length of column names must equal the length of the column display names"
+
+        header = " | " + " | ".join(column_display_names if column_display_names else column_names) + " | " + "\n"
         divider = "| --- "*len(column_names) +  "|\n"
 
         #Create the contents string
@@ -141,7 +145,6 @@ class MarkdownWriter:
         columns = []
         for c in range(len(column_display_names)):
             columns.append((column_names[c], column_display_names[c]))
-        print(columns)
 
         os.makedirs(os.path.join(output_dir, "md_pages"), exist_ok=True)
         with open(os.path.join(output_dir, "md_pages", "index.md"), 'w', encoding='utf-8') as index_file:

@@ -4794,7 +4794,7 @@
   - valid: 'yes'
     description: Identifies if the benchmark is valid at the time of review.
     condition: required
-  - name: HDR ML Anomaly Challenge, Sea Level Rise
+  - name: HDR ML Anomaly Challenge- Sea Level Rise
     description: The name of the benchmark.
     condition: required
   - url: https://www.codabench.org/competitions/3223/
@@ -5066,7 +5066,7 @@
   - valid: 'yes'
     description: Identifies if the benchmark is valid at the time of review.
     condition: required
-  - name: 'GPQA: A Graduate Level Google Proof Question and Answer Benchmark'
+  - name: 'GPQA A Graduate Level Google Proof Question and Answer Benchmark'
     description: The name of the benchmark.
     condition: required
   - url: https://arxiv.org/abs/2311.12022

@@ -73,9 +73,9 @@ if __name__ == "__main__":
     manager = YamlManager(args.files)
     entries = manager.get_table_formatted_dicts()
 
+    #check filenames
     if not manager.check_filenames():
-        if input("Continue? (y/n) ").startswith('n'):
-            sys.exit(1)
+        sys.exit(1)
     
 
     if args.check:

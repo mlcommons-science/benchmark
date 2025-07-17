@@ -13,6 +13,27 @@ _DEFAULT_COLOR = "\033[00m"
 
 
 
+LATEX_PREFIX = textwrap.dedent(rf"""
+    \documentclass{{article}}
+
+    \usepackage[margin=1in]{{geometry}}
+    \usepackage{{hyperref}}
+    \usepackage{{pdflscape}}
+    \usepackage{{wasysym}}
+    \usepackage{{longtable}}
+    \usepackage[style=ieee, url=true]{{biblatex}}
+    \addbibresource{{benchmarks.bib}}
+
+    \begin{{document}}
+
+    """)
+'''Header and preamble for LaTeX documents'''
+
+LATEX_POSTFIX = textwrap.dedent(rf"""
+    \end{{document}}
+    """)
+'''Footer for LaTeX documents'''
+
 class LatexWriter:
     """Class to write formatted YAML contents to a LaTeX file"""
 
@@ -176,21 +197,6 @@ class LatexWriter:
             column_names_header += "{\\bf " + self._escape_latex(key) + "} & "
         column_names_header = column_names_header[:-2]
         column_names_header += "\\\\\\\\ \\hline"
-
-        LATEX_PREFIX = textwrap.dedent(rf"""
-            \documentclass{{article}}
-
-            \usepackage[margin=1in]{{geometry}}
-            \usepackage{{hyperref}}
-            \usepackage{{pdflscape}}
-            \usepackage{{wasysym}}
-            \usepackage{{longtable}}
-            \usepackage[style=ieee, url=true]{{biblatex}}
-            \addbibresource{{benchmarks.bib}}
-
-            \begin{{document}}
-
-            """)
         
 
         table = textwrap.dedent(rf"""
@@ -212,13 +218,9 @@ class LatexWriter:
             \end{longtable}
             }
             \end{landscape}
-
+            \printbibliography
         """)
 
-        LATEX_POSTFIX = textwrap.dedent(rf"""
-            \printbibliography
-            \end{{document}}
-            """)
     
         content = LATEX_PREFIX + table + LATEX_POSTFIX
 

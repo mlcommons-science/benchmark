@@ -80,6 +80,7 @@ class MarkdownWriter:
 
         #Create the contents string
         current_contents = ""
+        citations = []
         for entry in self.entries:
             
             for col in column_names:
@@ -87,11 +88,20 @@ class MarkdownWriter:
                 col_data = entry.get(col, '')
 
                 if col=="cite":
-                    current_contents += bibtex_to_text(col_data)
+                    #do footnotes
+                    if isinstance(col_data, list):
+                        #list: append all indices to the citations
+                        for col_index in col_data:
+                            citations.append(self._escape_md(col_index))
+                            current_contents += f'[^{len(citations)}]'
+                    else:
+                        #not a list: append to citations
+                        citations.append(self._escape_md(col_index))
+                        current_contents += f'[^{len(citations)}]'
+                        
+
                 #If list, append each entry in the list
                 elif isinstance(col_data, list):
-                    # for d in col_data:
-                    #     current_contents += self._escape_md(d) + ","
                     current_contents += ", ".join(map(self._escape_md, col_data))
                 #If not list, add to the list
                 else:
@@ -101,11 +111,16 @@ class MarkdownWriter:
 
             current_contents += '\n'
 
+        #Add all the citations
+        current_contents += '\n'
+        for i, citation in enumerate(citations):
+            current_contents += f"[^{i+1}]: {citation}\n"
 
+        #write to the file
         os.makedirs(os.path.join(output_path, "md"), exist_ok=True)
         with open(os.path.join(output_path, "md", "benchmarks.md"), "w", encoding='utf-8') as f:
             f.write(header + divider + current_contents)
-
+            
 
     def write_individual_entries(self, output_dir: str, column_names: list[str]) -> None:
         """

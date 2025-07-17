@@ -11,24 +11,7 @@ _RED = "\033[91m"
 _DEFAULT_COLOR = "\033[00m"
 """ANSI escape code. Changes to printing in the default color"""
 
-LATEX_PREFIX = textwrap.dedent(rf"""
-\documentclass{{article}}
 
-\usepackage[margin=1in]{{geometry}}
-\usepackage{{hyperref}}
-\usepackage{{pdflscape}}
-\usepackage{{wasysym}}
-\usepackage{{longtable}}
-\usepackage[style=ieee, url=true]{{biblatex}}
-\addbibresource{{benchmarks.bib}}
-
-\begin{{document}}
-
-""")
-
-LATEX_POSTFIX = textwrap.dedent(rf"""
-\end{{document}}
-""")
 
 class LatexWriter:
     """Class to write formatted YAML contents to a LaTeX file"""
@@ -89,6 +72,20 @@ class LatexWriter:
         )
     
     
+ 
+    def _extract_cite_label(self, bib_entry: str) -> str:
+        """
+        Extracts the citation label from a BibTeX entry like '@article{label,...}'
+        """
+        match = re.match(r"@\w+\{([^,]+),", bib_entry.strip())
+        return match.group(1) if match else "<unknown>"
+
+
+    def _extract_cite_url(self, cite_entry: str) -> str:
+        match = re.search(r'url\s*=\s*[{"]([^}"]+)[}"]', cite_entry)
+        return match.group(1) if match else ""
+
+    
     def _entry_to_row(self, row_dict: dict, columns: list[str]) -> str:
         """
         Returns a string containing `row_dict` converted to one row of the TeX table.
@@ -101,17 +98,31 @@ class LatexWriter:
         Returns:
             row of TeX table
         """
+
         row_contents = ""
+
+        #loop through row
         for key, value in row_dict.items():
+            #don't add "description" or "condition", or anything not in the selected columns
             if key in ("description", "condition") or (not key in columns):
                 continue
             
+            #format the field value
             field_value = (
                 self._escape_latex(value)
                 if not isinstance(value, list)
                 else ", ".join(map(self._escape_latex, value))
             )
 
+            #handle citations
+            if key == "cite":   
+                cite_keys = [self._extract_cite_label(c) for c in row_dict.get("cite", []) if c]
+                cite_urls = [self._extract_cite_url(c) for c in row_dict.get("cite", []) if c]
+                primary_url = cite_urls[0] if cite_urls else row_dict.get("url", "")
+                field_value = (f"\\cite{{{', '.join(cite_keys)}}}" if cite_keys else "") + (f" \\href{{{primary_url}}}{{$\\Rightarrow$ }}" if primary_url else "")
+
+
+            #add field to the row
             row_contents += f"{field_value} & "
         
         #Remove the last '& ' and add line end
@@ -162,14 +173,27 @@ class LatexWriter:
         for key, _ in self._entries[0].items():
             if (not key in selected_columns):
                 continue
-            column_names_header += "\\textbf{{" + self._escape_latex(key) + "}} & "
+            column_names_header += "{\\bf " + self._escape_latex(key) + "} & "
         column_names_header = column_names_header[:-2]
         column_names_header += "\\\\\\\\ \\hline"
+
+        LATEX_PREFIX = textwrap.dedent(rf"""
+            \documentclass{{article}}
+
+            \usepackage[margin=1in]{{geometry}}
+            \usepackage{{hyperref}}
+            \usepackage{{pdflscape}}
+            \usepackage{{wasysym}}
+            \usepackage{{longtable}}
+            \usepackage[style=ieee, url=true]{{biblatex}}
+            \addbibresource{{benchmarks.bib}}
+
+            \begin{{document}}
+
+            """)
         
+
         table = textwrap.dedent(rf"""
-
-            \section*{{{self._escape_latex(title)}}}
-
             \begin{{landscape}}
             {{\footnotesize
             \begin{{longtable}}{column_width_str}
@@ -180,19 +204,26 @@ class LatexWriter:
             {column_names_header}
             \endhead
             \hline
+            \multicolumn{{9}}{{r}}{{Continued on next page}} \\
             \endfoot
             \hline
             \endlastfoot
             """) + "\n".join(rows) + textwrap.dedent(r"""
             \end{longtable}
             }
-            \end{{landscape}}
+            \end{landscape}
+
         """)
 
+        LATEX_POSTFIX = textwrap.dedent(rf"""
+            \printbibliography
+            \end{{document}}
+            """)
+    
         content = LATEX_PREFIX + table + LATEX_POSTFIX
 
-        
         return content
+
 
     def write_table(self, output_path: str, columns: list[str], column_widths: list[int] | None = None) -> None: 
         """
@@ -219,7 +250,7 @@ class LatexWriter:
             f.write(latex)
 
         #Write the bibtex
-        self._write_bibtex(os.path.dirname(output_path))
+        self._write_bibtex(os.path.join(output_path, "tex"))
 
 
     def write_individual_entries(self, output_path: str, columns: list[str], column_widths: list[int] | None = None) -> None: 
@@ -247,21 +278,11 @@ class LatexWriter:
                 latex = self._generate_latex_doc([all_rows[i]], columns, column_widths=column_widths)
                 f.write(latex)
 
- 
-    @staticmethod
-    def _extract_cite_label(bib_entry: str) -> str:
-        """
-        Extracts the citation label from a BibTeX entry like '@article{label,...}'
-        """
-        match = re.match(r"@\w+\{([^,]+),", bib_entry.strip())
-        return match.group(1) if match else "<unknown>"
-
-
 
 
     def _write_bibtex(self, output_dir: str):
         """
-        Writes a BibTeX bibliography to output_dir/benchmarks.bib from 'cite' fields in entries.
+        Writes a BibTeX bibliography to `output_dir`/benchmarks.bib from 'cite' fields in the writer's entries.
         """
         os.makedirs(output_dir, exist_ok=True)
         bib_entries = []
@@ -271,7 +292,7 @@ class LatexWriter:
 
         for record in self._entries:
             record_cite_entries = record.get("cite", [])
-            name = record.get("name", "<no name>")
+            name = record.get("name", [])
 
             if isinstance(record_cite_entries, str):
                 record_cite_entries = [record_cite_entries]
@@ -293,8 +314,11 @@ class LatexWriter:
                     found_entries.add(cite_entry)
                     found_names.add(name)
                     bib_entries.append(cite_entry.strip())
-
+            
         bib_path = os.path.join(output_dir, "benchmarks.bib")
         with open(bib_path, 'w', encoding='utf-8') as bib_file:
+            bib_file.write("")
+        
+        with open(bib_path, "a", encoding='utf-8') as bib_file:
             for entry in bib_entries:
                 bib_file.write(entry + "\n\n")

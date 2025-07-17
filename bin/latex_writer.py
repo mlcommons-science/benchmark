@@ -1,7 +1,7 @@
 import os
 import re
 import textwrap
-
+from bib_writer import BibtexWriter  
 from pybtex.database import parse_string
 from pybtex.plugin import find_plugin
 
@@ -227,33 +227,74 @@ class LatexWriter:
         return content
 
 
-    def write_table(self, output_path: str, columns: list[str], column_widths: list[int] | None = None) -> None: 
+    def write_table(self, output_path: str, column_names: list[str], bib_writer: BibtexWriter) -> None:
         """
-        Writes all entries stored by this writer into one LaTeX document at `output_path`/tex/benchmarks.tex
+        Writes all entries stored by this writer into one Markdown document at `output_path`/md/benchmarks.md,
+        with BibTeX citations rendered as formatted footnotes.
 
         Parameters:
             output_path (str): filepath to write to
-            columns (list[str]): subset of columns in the table to include- any columns not in `selected_columns` will not appear in the table
-            column_widths (list[int] or None, default=None): 
-                widths of each column in centimeters. If not None, length must be the same length as `selected_columns` and all indices must be positive
+            column_names (list[str]): list of columns to include
+            bib_writer (BibtexWriter): instance of BibtexWriter holding bib entries
         """
+        header = " | " + " | ".join(column_names) + " |\n"
+        divider = "| --- " * len(column_names) + "|\n"
 
-        #Create rows of the table
-        all_rows = []
-        for entry in self._entries:
-            all_rows.append(self._entry_to_row(entry, columns).replace('\n', ' '))
+        os.makedirs(os.path.join(output_path, "md"), exist_ok=True)
+        filepath = os.path.join(output_path, "md", "benchmarks.md")
 
-        #Convert rows into table
-        latex = self._generate_latex_doc(all_rows, columns, column_widths=column_widths)
+        # Create a mapping: label -> formatted citation
+        label_to_citation = {}
+        style = find_plugin('pybtex.style.formatting', 'plain')()
+        for record in bib_writer.entries:
+            cites = record.get("cite", [])
+            if isinstance(cites, str):
+                cites = [cites]
+            for entry in cites:
+                if not entry.strip().startswith("@"):
+                    continue
+                try:
+                    bib_data = parse_string(entry, "bibtex")
+                    for e in bib_data.entries.values():
+                        formatted = style.format_entries([e])
+                        label_to_citation[list(bib_data.entries.keys())[0]] = next(formatted).text
+                except Exception as e:
+                    print(f"Warning: Failed to format citation for BibTeX: {e}")
 
-        #Write table to file
-        os.makedirs(os.path.join(output_path, "tex"), exist_ok=True)
-        with open(os.path.join(output_path, "tex", "benchmarks.tex"), "w", encoding="utf-8") as f:
-            f.write(latex)
+        contents = ""
+        footnotes = []
+        footnote_refs = {}
 
-        #Write the bibtex
-        self._write_bibtex(os.path.join(output_path, "tex"))
+        for entry in self.entries:
+            name = entry.get("name", "UNKNOWN")
+            cites = entry.get("cite", [])
+            if isinstance(cites, str):
+                cites = [cites]
 
+            for col in column_names:
+                value = entry.get(col, '')
+
+                if col == "cite":
+                    refs = []
+                    for cite in cites:
+                        label_match = bib_writer._extract_cite_label(cite)
+                        if label_match not in footnote_refs:
+                            footnote_refs[label_match] = len(footnotes) + 1
+                            footnotes.append(label_to_citation.get(label_match, f"(Unparseable citation: {label_match})"))
+                        refs.append(f"[^{footnote_refs[label_match]}]")
+                    contents += ", ".join(refs) + " | "
+                elif isinstance(value, list):
+                    contents += ", ".join(self._escape_md(v) for v in value) + " | "
+                else:
+                    contents += self._escape_md(str(value)) + " | "
+            contents += "\n"
+
+        contents += "\n"
+        for i, citation in enumerate(footnotes):
+            contents += f"[^{i+1}]: {citation}\n"
+
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write(header + divider + contents)
 
     def write_individual_entries(self, output_path: str, columns: list[str], column_widths: list[int] | None = None) -> None: 
         """
@@ -284,43 +325,8 @@ class LatexWriter:
 
     def _write_bibtex(self, output_dir: str):
         """
-        Writes a BibTeX bibliography to `output_dir`/benchmarks.bib from 'cite' fields in the writer's entries.
+        Uses BibtexWriter to write a BibTeX bibliography to `output_dir`/benchmarks.bib
+        based on 'cite' fields in the entries.
         """
-        os.makedirs(output_dir, exist_ok=True)
-        bib_entries = []
-        found_labels = set()
-        found_entries = set()
-        found_names = set()
-
-        for record in self._entries:
-            record_cite_entries = record.get("cite", [])
-            name = record.get("name", [])
-
-            if isinstance(record_cite_entries, str):
-                record_cite_entries = [record_cite_entries]
-            elif not isinstance(record_cite_entries, list):
-                continue
-
-            for cite_entry in record_cite_entries:
-                if not isinstance(cite_entry, str) or not cite_entry.strip().startswith("@"):
-                    continue
-
-                label = self._extract_cite_label(cite_entry.lower())
-
-                if label in found_labels:
-                    print(f"{_RED}ERROR: Duplicate citation label \"{label}\" found in entry \"{name}\".{_DEFAULT_COLOR}")
-                elif cite_entry in found_entries and name in found_names:
-                    pass  # Same citation reused
-                else:
-                    found_labels.add(label)
-                    found_entries.add(cite_entry)
-                    found_names.add(name)
-                    bib_entries.append(cite_entry.strip())
-            
-        bib_path = os.path.join(output_dir, "benchmarks.bib")
-        with open(bib_path, 'w', encoding='utf-8') as bib_file:
-            bib_file.write("")
-        
-        with open(bib_path, "a", encoding='utf-8') as bib_file:
-            for entry in bib_entries:
-                bib_file.write(entry + "\n\n")
+        bib_writer = BibtexWriter(self._entries)
+        bib_writer.write(output_dir)

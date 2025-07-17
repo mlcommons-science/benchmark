@@ -4,6 +4,7 @@ import sys
 from yaml_manager import YamlManager
 from md_writer import MarkdownWriter
 from latex_writer import LatexWriter
+from bib_writer import BibtexWriter
 
 # Optional: define MAX_AUTHOR_LIMIT and FULL_CITE_COLUMN if not imported
 MAX_AUTHOR_LIMIT = 9999
@@ -98,7 +99,9 @@ if __name__ == "__main__":
 
 
     if args.format == 'md':
+        bib_writer = BibtexWriter(entries)
         converter = MarkdownWriter(entries)
+
         if args.index:
             converter.write_individual_entries(args.outdir, args.columns, column_names)
         converter.write_table(args.outdir, args.columns)

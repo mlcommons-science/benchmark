@@ -1,6 +1,6 @@
 """
 Usage:
-  summary.py [--file=<path>] [--reason] [--graph=<fmt>] [--output=<dir>]
+  summary.py [--file=<path>] [--reason] [--graph=<fmt>] [--output=<dir>] [--columns=<n>] [--rows=<n>]
   summary.py (-h | --help)
 
 Options:
@@ -8,6 +8,8 @@ Options:
   --reason          Print rating reasons along with scores.
   --graph=<fmt>     Output radar charts in one of: pdf, jpeg, png, gif.
   --output=<dir>    Directory to save radar charts and LaTeX [default: content/summary].
+  --columns=<n>     Number of columns in radar chart grid [default: 3].
+  --rows=<n>        Number of rows in radar chart grid [default: 5].
   -h --help         Show this help message.
 """
 
@@ -25,9 +27,6 @@ class Evaluate:
         self.entries = []
 
     def read(self):
-        """
-        Loads entries using YamlManager.
-        """
         if not self.yaml_path:
             print("YAML path not provided.")
             return
@@ -42,9 +41,6 @@ class Evaluate:
             self.entries = []
 
     def print_ratings(self, show_reasons=False):
-        """
-        Prints ratings (and optionally reasons) for each entry.
-        """
         if not self.entries:
             print("No entries loaded. Did you call read()?") 
             return
@@ -73,9 +69,6 @@ class Evaluate:
                     print(f"Reason: {reason}\n")
 
     def plot_radar_charts(self, fmt, output_dir):
-        """
-        Generates and saves radar charts for each entry's ratings.
-        """
         if not self.entries:
             print("No entries loaded. Did you call read()?") 
             return
@@ -127,10 +120,37 @@ class Evaluate:
 
             print(f"Saved radar chart for '{name}' as '{filename}'.")
 
-    def generate_latex_summary(self, output_dir, show_reasons=False):
-        """
-        Generates a LaTeX file summarizing all radar chart PDFs with figure captions.
-        """
+    def generate_grid_pages(self, output_dir, columns=3, rows=5):
+        col_count = max(1, columns)
+        row_count = max(1, rows)
+        charts_per_page = col_count * row_count
+
+        figure_paths = []
+        for i, entry in enumerate(self.entries):
+            name = entry.get("name", f"Entry_{i+1}")
+            safe_name = "".join(c if c.isalnum() or c in (' ', '-', '_') else '_' for c in name).strip()
+            pdf_path = f"{safe_name}_radar.pdf"
+            figure_paths.append(pdf_path)
+
+        pages = []
+        for i in range(0, len(figure_paths), charts_per_page):
+            grid_latex = textwrap.dedent(r"""
+                \begin{figure}[ht!]
+                \centering
+            """)
+            page_paths = figure_paths[i:i + charts_per_page]
+            for j, path in enumerate(page_paths):
+                grid_latex += f"\\includegraphics[width={1/col_count-0.1:.4f}\\textwidth]{{{path}}}\n"
+                if (j + 1) % col_count == 0:
+                    grid_latex += r"\\[1ex]" + "\n"
+
+            grid_latex += f"\\caption{{Radar chart overview (page {i // charts_per_page + 1})}}\n"
+            grid_latex += r"\end{figure}" + "\n\n"
+            pages.append(grid_latex)
+
+        return "\n\\clearpage\n".join(pages)
+
+    def generate_latex_summary(self, output_dir, show_reasons=False, columns=3, rows=5):
         tex_path = os.path.join(output_dir, "summary.tex")
         figures = []
 
@@ -174,10 +194,12 @@ class Evaluate:
             \maketitle
         """)
 
+        grid_pages = self.generate_grid_pages(output_dir, columns=columns, rows=rows)
         footer = r"\end{document}"
 
         with open(tex_path, "w", encoding="utf-8") as f:
             f.write(header)
+            f.write(grid_pages)
             f.writelines(figures)
             f.write("\n" + footer)
 
@@ -190,6 +212,8 @@ if __name__ == "__main__":
     show_reasons = args["--reason"]
     graph_fmt = args["--graph"]
     output_dir = args["--output"] or "content/summary"
+    columns = int(args["--columns"] or 3)
+    rows = int(args["--rows"] or 5)
 
     evaluator = Evaluate(yaml_file)
     evaluator.read()
@@ -198,4 +222,4 @@ if __name__ == "__main__":
     if graph_fmt:
         evaluator.plot_radar_charts(graph_fmt, output_dir)
         if graph_fmt == "pdf":
-            evaluator.generate_latex_summary(output_dir, show_reasons=show_reasons)
+            evaluator.generate_latex_summary(output_dir, show_reasons=show_reasons, columns=columns, rows=rows)

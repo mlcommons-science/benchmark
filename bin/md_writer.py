@@ -38,6 +38,23 @@ class MarkdownWriter:
     def write_table(self, output_path: str, column_names: list[str]) -> None:
         header = " | " + " | ".join(column_names) + " | " + "\n"
         divider = "| --- " * len(column_names) + "|\n"
+
+    def write_table(self, output_path: str, column_names: list[str], column_display_names: list[str] | None = None) -> None:
+        """
+        Writes all entries stored by this writer into one Markdown document at `output_path`/md/benchmarks.md
+
+        Parameters:
+            output_path (str): filepath to write to
+            column_names (list[str]): subset of columns in the table to include- any columns not in `column_names` will not appear in the table
+            column_display_names (list[str] or None, default=None): titles of each column. If not None, must have the same length as `column_names`
+        """
+        if column_display_names != None:
+            assert len(column_names)==len(column_display_names), "length of column names must equal the length of the column display names"
+
+        header = " | " + " | ".join(column_display_names if column_display_names else column_names) + " | " + "\n"
+        divider = "| --- "*len(column_names) +  "|\n"
+
+        #Create the contents string
         current_contents = ""
         footnotes = []
 

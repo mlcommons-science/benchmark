@@ -5,6 +5,7 @@ from bib_writer import BibtexWriter
 from pybtex.database import parse_string
 from pybtex.plugin import find_plugin
 
+
 _RED = "\033[91m"
 """ANSI escape code. Changes to printing in red"""
 
@@ -33,6 +34,8 @@ LATEX_POSTFIX = textwrap.dedent(rf"""
     \end{{document}}
     """)
 '''Footer for LaTeX documents'''
+
+
 
 class LatexWriter:
     """Class to write formatted YAML contents to a LaTeX file"""
@@ -153,7 +156,7 @@ class LatexWriter:
         return row_contents
 
 
-    def _generate_latex_doc(self, rows: list[str], selected_columns: list[str], column_widths: list[int] | None = None, title: str = "Benchmarks") -> str:
+    def _generate_latex_doc(self, rows: list[str], selected_columns: list[str], column_widths: list[float | int]| None = None) -> str:
         """
         Returns a string representing a TeX table generated from `rows` and containing only `selected_columns`.
 
@@ -162,8 +165,7 @@ class LatexWriter:
         Parameters:
             rows (list[str]): rows of table. Each index must be a valid row in a TeX table
             selected_columns (list[str]): names of columns to include- any columns not in `selected_columns` will not appear in the table
-            column_widths (list[int] or None): widths of each column in centimeters. If not None, length must be the same length as `selected_columns` and all indices must be positive
-            title (str): title of the table. Default "Benchmarks".
+            column_widths (list[float] or None): widths of each column in centimeters. If not None, length must be the same length as `selected_columns` and all indices must be positive
         Returns:
             TeX table string to be written to a file
         """
@@ -184,7 +186,7 @@ class LatexWriter:
             #individually append all the column widths to the header
             for w in column_widths:
                 assert w>0, "all column widths must be positive"
-                column_width_str += "|p{" + str(w) + "cm}"
+                column_width_str += "|p{" + str(round(w, 5)) + "cm}"
 
         column_width_str += "|}"
 
@@ -296,16 +298,22 @@ class LatexWriter:
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(header + divider + contents)
 
-    def write_individual_entries(self, output_path: str, columns: list[str], column_widths: list[int] | None = None) -> None: 
+    def write_individual_entries(self, output_path: str, columns: list[str], column_widths: list[float | int] | None = None) -> None: 
         """
         Writes the entries stored by this writer into separate LaTeX documents. All are in the directory `output_path`/tex_pages
 
         Parameters:
             output_path (str): filepath to write to
-            columns (list[str]): subset of columns in the table to include- any columns not in `selected_columns` will not appear in the table
-            column_widths (list[int] or None, default=None): 
-                widths of each column in centimeters. If not None, length must be the same length as `selected_columns` and all indices must be positive
+            columns (list[str]): subset of columns in the table to include- any columns not in `columns` will not appear in the table
+            column_widths (list[float] or list[int] or None, default=None): 
+                widths of each column in centimeters (2cm columns if None). If not None, length must be the same length as `columns` and all indices must be positive
         """
+        if column_widths != None:
+            assert len(columns)==len(column_widths), "number of columns must equal the number of indices in the column widths"
+        if not column_widths==None:
+            for c in column_widths:
+                assert isinstance(c, float) or isinstance(c, int), "all indices in column widths must be floats"
+                assert c>0, "all indices in column widths must be positive"
 
         #Create rows of the table
         all_rows = []

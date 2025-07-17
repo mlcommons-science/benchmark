@@ -12,6 +12,15 @@ COLUMNS=date,name,domain,focus,keywords,task_types,metrics,models,cite
 all: content standalone pdf
 	echo TODO
 
+g:
+	python bin/test.py
+
+summary:
+	python bin/summary.py --graph=pdf
+	#cd content/summary; bibtool -s -i benchmarks.bib -o tmp.bib
+	cd content/summary; latexmk -pdf -silent summary.tex
+	open content/summary/summary.pdf 
+
 install:
 	pip install cloudmesh-common
 	pip install pybtex

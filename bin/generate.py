@@ -113,9 +113,8 @@ if __name__ == "__main__":
         
     if args.withurlcheck:
         manager.check_urls() # URL check
-
+    bib_writer = BibtexWriter(entries)
     if args.format == 'md':
-        bib_writer = BibtexWriter(entries)
         converter = MarkdownWriter(entries)
 
         if args.index:
@@ -126,4 +125,4 @@ if __name__ == "__main__":
         converter = LatexWriter(entries)
         if args.index:
             converter.write_individual_entries(args.outdir, args.columns)
-        converter.write_table(args.outdir, columns=args.columns)
+        converter.write_table(args.outdir, column_names=args.columns, bib_writer=bib_writer)

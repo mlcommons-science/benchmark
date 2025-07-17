@@ -267,7 +267,7 @@ class LatexWriter:
         footnotes = []
         footnote_refs = {}
 
-        for entry in self.entries:
+        for entry in self._entries:
             name = entry.get("name", "UNKNOWN")
             cites = entry.get("cite", [])
             if isinstance(cites, str):
@@ -286,9 +286,9 @@ class LatexWriter:
                         refs.append(f"[^{footnote_refs[label_match]}]")
                     contents += ", ".join(refs) + " | "
                 elif isinstance(value, list):
-                    contents += ", ".join(self._escape_md(v) for v in value) + " | "
+                    contents += ", ".join(self._escape_latex(v) for v in value) + " | "
                 else:
-                    contents += self._escape_md(str(value)) + " | "
+                    contents += self._escape_latex(str(value)) + " | "
             contents += "\n"
 
         contents += "\n"

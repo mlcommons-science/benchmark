@@ -9,29 +9,30 @@ from latex_writer import LatexWriter
 MAX_AUTHOR_LIMIT = 9999
 FULL_CITE_COLUMN = ("full_cite", "1cm", "Full BibTeX")
 
-ALL_COLUMNS = [
-    ("date", "1.5cm", "Date"),
-    ("expiration", "1.5cm", "Expiration"),
-    ("valid", "1.5cm", "Valid"),
-    ("name", "2.5cm", "Name"),
-    ("url", "2.5cm", "URL"),
-    ("domain", "2cm", "Domain"),
-    ("focus", "2cm", "Focus"),
-    ("keywords", "2.5cm", "Keywords"),
-    ("description", "4cm", "Description"),
-    ("task_types", "3cm", "Task Types"),
-    ("ai_capability_measured", "3cm", "AI Capability"),
-    ("metrics", "2cm", "Metrics"),
-    ("models", "2cm", "Models"),
-    ("notes", "3cm", "Notes"),
-    ("cite", "1cm", "Citation"),
-    ("ratings", "1cm", "Ratings"),
-]
+# ALL_COLUMNS = [
+#     ("date", "1.5cm", "Date"),
+#     ("expiration", "1.5cm", "Expiration"),
+#     ("valid", "1.5cm", "Valid"),
+#     ("name", "2.5cm", "Name"),
+#     ("url", "2.5cm", "URL"),
+#     ("domain", "2cm", "Domain"),
+#     ("focus", "2cm", "Focus"),
+#     ("keywords", "2.5cm", "Keywords"),
+#     ("description", "4cm", "Description"),
+#     ("task_types", "3cm", "Task Types"),
+#     ("ai_capability_measured", "3cm", "AI Capability"),
+#     ("metrics", "2cm", "Metrics"),
+#     ("models", "2cm", "Models"),
+#     ("notes", "3cm", "Notes"),
+#     ("cite", "1cm", "Citation"),
+#     ("ratings", "1cm", "Ratings"),
+# ]
+ALL_COLUMNS = ['date','name','domain','focus','keywords','task_types','metrics','models','cite']
 
 
-def get_column_triples(selected: list[str]) -> list[tuple[str, str, str]]:
-    selected_lower = [s.lower() for s in selected]
-    return [triple for triple in ALL_COLUMNS if triple[0] in selected_lower]
+# def get_column_triples(selected: list[str]) -> list[tuple[str, str, str]]:
+#     selected_lower = [s.lower() for s in selected]
+#     return [triple for triple in ALL_COLUMNS if triple[0] in selected_lower]
 
 
 if __name__ == "__main__":
@@ -68,7 +69,8 @@ if __name__ == "__main__":
             parser.error(f"The file {file} does not exist")
 
     os.makedirs(args.outdir, exist_ok=True)
-    columns = get_column_triples(args.columns) if args.columns else ALL_COLUMNS # Fallback if ALL_COLUMNS not in scope
+    columns = args.columns if args.columns else ALL_COLUMNS # Fallback if ALL_COLUMNS not in scope
+    column_names = columns
 
     manager = YamlManager(args.files)
     entries = manager.get_table_formatted_dicts()
@@ -87,8 +89,8 @@ if __name__ == "__main__":
             sys.exit(1)
 
 
-    if args.withcitation:
-        columns.append(FULL_CITE_COLUMN)
+    # if args.withcitation:
+    #     columns.append(['cite'])
     
         
     if args.withurlcheck:
@@ -98,7 +100,7 @@ if __name__ == "__main__":
     if args.format == 'md':
         converter = MarkdownWriter(entries)
         if args.index:
-            converter.write_individual_entries(args.outdir, args.columns)
+            converter.write_individual_entries(args.outdir, args.columns, column_names)
         converter.write_table(args.outdir, args.columns)
 
     elif args.format == 'tex':

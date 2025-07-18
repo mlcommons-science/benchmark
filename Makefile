@@ -6,7 +6,7 @@ FILES=source/benchmarks-addon-new.yaml#source/benchmarks.yaml
 SCRIPT=bin/generate.py
 
 #COLUMNS=date,name,domain,focus,keywords,task_types,metrics,models,cite
-COLUMNS=date,expiration,valid,name,url,domain,focus,keywords,description,task_types,ai_capability_measured,metrics,models,notes,cite,ratings
+COLUMNS=date,expiration,valid,name,url,domain,focus,keywords,summary,task_types,ai_capability_measured,metrics,models,notes,cite,ratings.specification.rating,ratings.specification.reason,ratings.dataset.rating,ratings.dataset.reason,ratings.metrics.rating,ratings.metrics.reason,ratings.reference_solution.rating,ratings.reference_solution.reason,ratings.documentation.rating,ratings.documentation.reason
 
 .PHONY: all content single tex pdf
 

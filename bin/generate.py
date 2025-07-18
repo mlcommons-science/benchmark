@@ -104,10 +104,6 @@ if __name__ == "__main__":
     if args.required:
         if not manager.check_required_fields():
             sys.exit(1)
-
-
-    # if args.withcitation:
-    #     columns.append(['cite'])
     
         
     if args.withurlcheck:
@@ -117,8 +113,8 @@ if __name__ == "__main__":
         converter = MarkdownWriter(entries)
 
         if args.index:
-            converter.write_individual_entries(args.outdir, args.columns, COLUMN_TITLES)
-        converter.write_table(args.outdir, args.columns, COLUMN_TITLES)
+            converter.write_individual_entries(args.outdir, args.columns)#, COLUMN_TITLES)
+        converter.write_table(args.outdir, args.columns)#, COLUMN_TITLES)
 
     elif args.format == 'tex':
         converter = LatexWriter(entries)

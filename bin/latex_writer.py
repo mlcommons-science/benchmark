@@ -3,6 +3,7 @@ import re
 import textwrap
 from pybtex.database import parse_string
 from pybtex.plugin import find_plugin
+from pylatexenc.latexencode import unicode_to_latex
 
 
 _RED = "\033[91m"
@@ -143,27 +144,16 @@ class LatexWriter:
 
     def _escape_latex(self, text: str) -> str:
         """
-        Returns `text`, where all TeX special characters are replaced with escape sequences.
+        Returns `text` converted to LaTeX-safe representation using pylatexenc.
 
         Parameters:
-            text (str): text to convert to LaTeX
+            text (str): Text to convert to LaTeX
         Returns:
             TeX-friendly version of `text`
         """
         if not isinstance(text, str):
             text = str(text)
-        return (
-            text.replace("\\", "\\textbackslash{}")
-                .replace("&", "\\&")
-                .replace("%", "\\%")
-                .replace("$", "\\$")
-                .replace("#", "\\#")
-                .replace("_", "\\_")
-                .replace("{", "\\{")
-                .replace("}", "\\}")
-                .replace("~", "\\textasciitilde{}")
-                .replace("^", "\\textasciicircum{}")
-        )
+        return unicode_to_latex(text, non_ascii_only=False)
     
     
  

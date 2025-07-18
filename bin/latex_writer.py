@@ -40,14 +40,34 @@ LATEX_POSTFIX = textwrap.dedent(rf"""
 
 
 class BibtexWriter:
+    """
+    Class to write a BibTeX citation to a file
+    """
+
     def __init__(self, entries: list[dict]):
+        """Creates a BibtexWriter with entries from a table"""
         self.entries = entries
 
     def _extract_cite_label(self, bib_entry: str) -> str:
+        """
+        Returns the citation label (i.e. @article, @misc) from `bib_entry`.
+
+        Parameters:
+            bib_entry (str): BibTeX citation
+        Returns:
+            label from the entry
+        """
         match = re.match(r"@\w+\{([^,]+),", bib_entry.strip())
         return match.group(1) if match else "<unknown>"
 
     def write(self, output_dir: str, filename: str = "benchmarks.bib") -> None:
+        """
+        Writes the writer's stored contents to `output_dir`/`filename`.
+
+        Parameters:
+            output_dir: output directory to write to
+            filename: filename to write to, placed inside of `output_dir`
+        """
         os.makedirs(output_dir, exist_ok=True)
         bib_entries = []
         found_labels = set()

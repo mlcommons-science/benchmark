@@ -9,24 +9,24 @@ from latex_writer import LatexWriter, BibtexWriter
 MAX_AUTHOR_LIMIT = 9999
 FULL_CITE_COLUMN = ("full_cite", "1cm", "Full BibTeX")
 
-# ALL_COLUMNS = [
-#     ("date", "1.5cm", "Date"),
-#     ("expiration", "1.5cm", "Expiration"),
-#     ("valid", "1.5cm", "Valid"),
-#     ("name", "2.5cm", "Name"),
-#     ("url", "2.5cm", "URL"),
-#     ("domain", "2cm", "Domain"),
-#     ("focus", "2cm", "Focus"),
-#     ("keywords", "2.5cm", "Keywords"),
-#     ("description", "4cm", "Description"),
-#     ("task_types", "3cm", "Task Types"),
-#     ("ai_capability_measured", "3cm", "AI Capability"),
-#     ("metrics", "2cm", "Metrics"),
-#     ("models", "2cm", "Models"),
-#     ("notes", "3cm", "Notes"),
-#     ("cite", "1cm", "Citation"),
-#     ("ratings", "1cm", "Ratings"),
-# ]
+ALL_COLUMNS = [
+    ("date", "1.5cm", "Date"),
+    ("expiration", "1.5cm", "Expiration"),
+    ("valid", "1.5cm", "Valid"),
+    ("name", "2.5cm", "Name"),
+    ("url", "2.5cm", "URL"),
+    ("domain", "2cm", "Domain"),
+    ("focus", "2cm", "Focus"),
+    ("keywords", "2.5cm", "Keywords"),
+    ("description", "4cm", "Description"),
+    ("task_types", "3cm", "Task Types"),
+    ("ai_capability_measured", "3cm", "AI Capability"),
+    ("metrics", "2cm", "Metrics"),
+    ("models", "2cm", "Models"),
+    ("notes", "3cm", "Notes"),
+    ("cite", "1cm", "Citation"),
+    ("ratings", "1cm", "Ratings"),
+]
 
 COLUMN_TUPLES = [
     ("date", 1.5, "Date"),
@@ -42,9 +42,9 @@ COLUMN_TUPLES = [
 COLUMN_NAMES = []
 COLUMN_WIDTHS = []
 COLUMN_TITLES = []
-for name, width, title in COLUMN_TUPLES:
+for name, width, title in ALL_COLUMNS:
     COLUMN_NAMES.append(name)
-    COLUMN_WIDTHS.append(width)
+    COLUMN_WIDTHS.append(float(width.strip().replace("cm", "")))
     COLUMN_TITLES.append(title)
 
 

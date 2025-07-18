@@ -27,15 +27,17 @@ class YamlManager(object):
     or as a list of dictionaries for table output.
     """
 
-    def __init__(self, yamls: str | list[str], overwriting_contents: bool = True, printing_syntax_errors: bool = True):
+    def __init__(self, yamls: str | list[str], 
+                 overwriting_contents: bool = True, printing_syntax_errors: bool = True):
         """
         Creates a new YamlManager in charge of the contents of `yamls`.
 
         Parameters:
             yamls (str or list[str]): one or more YAML filepaths to load from
+            overwriting_contents (bool, default=True): True if overwriting existing contents, False if appending to existing contents
+            printing_syntax_errors (bool, default=True): whether to print warnings to the console if a YAML syntax error is found
         """
         self._load_yamls(yamls, overwriting_contents=overwriting_contents, print_syntax_errors=printing_syntax_errors)
-
 
     # ---------------------------------------------------------------------------------------------------------
     # File Loading
@@ -118,7 +120,6 @@ class YamlManager(object):
     # ---------------------------------------------------------------------------------------------------------
     # Contents Presentation
     # ---------------------------------------------------------------------------------------------------------
-
 
     def get_dicts(self) -> list[dict]:
         """

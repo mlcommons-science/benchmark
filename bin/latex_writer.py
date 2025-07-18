@@ -48,7 +48,7 @@ class BibtexWriter:
         """Creates a BibtexWriter with entries from a table"""
         self.entries = entries
 
-    def _extract_cite_label(self, bib_entry: str) -> str:
+    def _get_citation_label(self, bib_entry: str) -> str:
         """
         Returns the citation label (i.e. @article, @misc) from `bib_entry`.
 
@@ -87,7 +87,7 @@ class BibtexWriter:
                 if not isinstance(cite_entry, str) or not cite_entry.strip().startswith("@"):
                     continue
 
-                label = self._extract_cite_label(cite_entry.lower())
+                label = self._get_citation_label(cite_entry.lower())
 
                 if label in found_labels:
                     print(f"{_RED}ERROR: Duplicate citation label \"{label}\" found in entry \"{name}\".{_DEFAULT_COLOR}")
@@ -230,7 +230,7 @@ class LatexWriter:
 
 
     def _generate_latex_doc(self, rows: list[str], selected_columns: list[str], 
-                            column_names: list[str], column_widths: list[float | int] | None = None) -> str:
+                            column_titles: list[str], column_widths: list[float | int] | None = None) -> str:
         """
         Returns a string representing a TeX table generated from `rows` and containing only `selected_columns`.
 
@@ -239,7 +239,7 @@ class LatexWriter:
         Parameters:
             rows (list[str]): rows of table. Each index must be a valid row in a TeX table
             selected_columns (list[str]): columns in raw dict to include- any columns not in `selected_columns` will not appear in the table
-            column_names (list[str]): names of columns to include. Must have the same length as `selected_columns`
+            column_titles (list[str]): names of columns to include. Must have the same length as `selected_columns`
             column_widths (list[float] or None): widths of each column in centimeters. If not None, length must be the same length as `selected_columns` and all indices must be positive
         Returns:
             TeX table string to be written to a file
@@ -248,7 +248,7 @@ class LatexWriter:
         assert isinstance(rows, list), "rows must be a list of strings"
         assert isinstance(selected_columns, list), "selected columns must be a list of strings"
         #enforce length preconditions
-        assert len(column_names)==len(selected_columns), f"length of selected columns ({len(selected_columns)}) must equal length of selected columns ({len(selected_columns)})"
+        assert len(column_titles)==len(selected_columns), f"length of selected columns ({len(selected_columns)}) must equal length of selected columns ({len(selected_columns)})"
         if column_widths != None:
             assert len(selected_columns)==len(column_widths), f"length of column widths ({len(column_widths)}) must equal length of selected columns ({len(selected_columns)})"
         
@@ -273,7 +273,7 @@ class LatexWriter:
         for key, _ in self._entries[0].items():
             if (not key in selected_columns):
                 continue
-            column_names_header += "{\\bf " + self._escape_latex(column_names[col_number]) + "} & "
+            column_names_header += "{\\bf " + self._escape_latex(column_titles[col_number]) + "} & "
             col_number += 1
 
         column_names_header = column_names_header[:-2]
@@ -317,7 +317,7 @@ class LatexWriter:
                 if col == "cite":
                     refs = []
                     for cite in cites:
-                        label_match = self._bib_writer._extract_cite_label(cite)
+                        label_match = self._bib_writer._get_citation_label(cite)
                         if label_match not in footnote_refs:
                             footnote_refs[label_match] = len(footnotes) + 1
                             footnotes.append(label_to_citation.get(label_match, f"(Unparseable citation: {label_match})"))
@@ -347,7 +347,7 @@ class LatexWriter:
             {column_names_header}
             \endhead
             \hline
-            \multicolumn{{9}}{{r}}{{Continued on next page}} \\
+            \multicolumn{{{len(selected_columns)}}}{{r}}{{Continued on next page}} \\
             \endfoot
             \hline
             \endlastfoot
@@ -366,7 +366,7 @@ class LatexWriter:
 
 
     def write_table(self, output_path: str, selected_columns: list[str], 
-                    column_names: list[str] | None = None, column_widths: list[float | int] | None = None) -> None:
+                    column_titles: list[str] | None = None, column_widths: list[float | int] | None = None) -> None:
         """
         Writes all entries stored by this writer into one Markdown document at `output_path`/tex/benchmarks.tex,
         with BibTeX citations rendered as formatted footnotes.
@@ -374,12 +374,12 @@ class LatexWriter:
         Parameters:
             output_path (str): filepath to write to
             selected_columns (list[str]): list of raw column names to include
-            column_names (list[str] or None, default=None): names of columns to include. If not None, must have the same length as `selected_columns`
+            column_titles (list[str] or None, default=None): names of columns to include. If not None, must have the same length as `selected_columns`
             column_widths (list[float | int] or None, default=None): widths of each column in centimeters (if None, columns are 2cm).  If not None, must have the same length as `selected_columns` and all indices must be positive
         """
         #enforce preconditions
-        if column_names != None:
-            assert len(column_names)==len(selected_columns), f"length of selected columns ({len(selected_columns)}) must equal length of selected columns ({len(selected_columns)})"
+        if column_titles != None:
+            assert len(column_titles)==len(selected_columns), f"length of selected columns ({len(selected_columns)}) must equal length of selected columns ({len(selected_columns)})"
         if column_widths != None:
             assert len(selected_columns)==len(column_widths), f"length of column widths ({len(column_widths)}) must equal length of selected columns ({len(selected_columns)})"
             for c in column_widths:
@@ -391,10 +391,10 @@ class LatexWriter:
             all_rows.append(self._entry_to_row(entry, selected_columns).replace('\n', ' '))
 
         #Create column names, if not provided
-        if not column_names:
+        if not column_titles:
             column_names_written = [col.strip().replace("_", " ").title() for col in selected_columns]
         else:
-            column_names_written = column_names
+            column_names_written = column_titles
 
         #Make string containing the document
         contents = self._generate_latex_doc(all_rows, selected_columns, column_names_written, column_widths=column_widths)
@@ -402,7 +402,7 @@ class LatexWriter:
         #Write it
         os.makedirs(os.path.join(output_path, "tex"), exist_ok=True)
         filepath = os.path.join(output_path, "tex", "benchmarks.tex")
-        with open(filepath, "x", encoding="utf-8") as f:
+        with open(filepath, "w+", encoding="utf-8") as f:
             f.write(contents)
         
         #Make bibtex
@@ -411,14 +411,14 @@ class LatexWriter:
 
 
     def write_individual_entries(self, output_path: str, selected_columns: list[str],
-                                 column_names: list[str] | None = None, column_widths: list[float | int] | None = None) -> None: 
+                                 column_titles: list[str] | None = None, column_widths: list[float | int] | None = None) -> None: 
         """
         Writes the entries stored by this writer into separate LaTeX documents. All are in the directory `output_path`/tex_pages
 
         Parameters:
             output_path (str): filepath to write to
             selected_columns (list[str]): subset of columns in the table to include- any columns not in `selected_columns` will not appear in the table
-            column_names (list[str] or None, default=None): names of columns to include. If not None, must have the same length as `selected_columns`
+            column_titles (list[str] or None, default=None): names of columns to include. If not None, must have the same length as `selected_columns`
             column_widths (list[float] or list[int] or None, default=None): 
                 widths of each column in centimeters (2cm columns if None). If not None, length must be the same length as `selected_columns` and all indices must be positive
         """
@@ -432,24 +432,28 @@ class LatexWriter:
                 assert c>0, "all indices in column widths must be positive"
 
 
-        #Create rows of the table
+        #Create rows of the table and get names
         all_rows = []
+        names = []
         for entry in self._entries:
             all_rows.append(self._entry_to_row(entry, selected_columns).replace('\n', ' '))
+            names.append(entry.get("name"))
+
 
         #Create column names if not given
-        if column_names:
-            written_col_names = column_names
+        if column_titles:
+            column_titles_used = column_titles
         else:
-            written_col_names = selected_columns
+            column_titles_used = selected_columns
 
         #Write each row to a file
         os.makedirs(os.path.join(output_path, "tex_pages"), exist_ok=True)
         for i in range(len(all_rows)):
 
-            with open(os.path.join(output_path, "tex_pages", f"entry_{i+1}.tex"), "w") as f:
+            with open(os.path.join(output_path, "tex_pages", self._sanitize_filename(names[i])+".tex" if names[i]!=None else f"entry_{i+1}.tex"), "w") as f:
                     
-                latex = self._generate_latex_doc([all_rows[i]], selected_columns, written_col_names, column_widths=column_widths)
+                latex = self._generate_latex_doc([all_rows[i]], selected_columns, column_titles_used, column_widths=column_widths)
+                f.write(f'% LaTeX table for "{names[i]}"')
                 f.write(latex)
 
 

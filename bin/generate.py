@@ -124,4 +124,4 @@ if __name__ == "__main__":
         converter = LatexWriter(entries)
         if args.index:
             converter.write_individual_entries(args.outdir, args.columns)
-        converter.write_table(args.outdir, args.columns, column_widths=COLUMN_WIDTHS)
+        converter.write_table(args.outdir, args.columns, column_titles=COLUMN_TITLES, column_widths=COLUMN_WIDTHS)

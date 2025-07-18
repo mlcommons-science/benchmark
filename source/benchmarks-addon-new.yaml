@@ -86,7 +86,7 @@
     condition: optional
   - cite:
     - |
-      @misc{duarte2022fastmlsciencebenchmarksaccelerating,
+      @misc{TESTCAPITAL_ANDCOLON_MUST_WORK:duarte2022fastmlsciencebenchmarksaccelerating,
       title={FastML Science Benchmarks: Accelerating Real-Time Scientific Edge Machine Learning}, 
       author={Javier Duarte and Nhan Tran and Ben Hawks and Christian Herwig and Jules Muhizi and Shvetank Prakash and Vijay Janapa Reddi},
       year={2022},

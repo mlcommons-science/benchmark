@@ -1,6 +1,5 @@
 import os
 import re
-import bibtexparser
 from pybtex.database import parse_string
 from pybtex.plugin import find_plugin
 
@@ -36,30 +35,34 @@ class MarkdownWriter:
         return output.lower()
 
 
-    def write_table(self, output_path: str, column_names: list[str], column_display_names: list[str] | None = None) -> None:
+    def write_table(self, output_path: str, column_names: list[str], column_titles: list[str] | None = None) -> None:
         """
         Writes all entries stored by this writer into one Markdown document at `output_path`/md/benchmarks.md
 
         Parameters:
             output_path (str): filepath to write to
             column_names (list[str]): subset of columns in the table to include- any columns not in `column_names` will not appear in the table
-            column_display_names (list[str] or None, default=None): titles of each column. If not None, must have the same length as `column_names`
+            column_titles (list[str] or None, default=None): titles of each column- if None, `column_names` will be the column names. If not None, must have the same length as `column_names`
         """
-        if column_display_names != None:
-            assert len(column_names)==len(column_display_names), "length of column names must equal the length of the column display names"
+        if column_titles != None:
+            assert len(column_names)==len(column_titles), "length of column names must equal the length of the column display names"
 
-        header = " | " + " | ".join(column_display_names if column_display_names else column_names) + " | " + "\n"
+        header = " | " + " | ".join(column_titles if column_titles else column_names) + " | " + "\n"
         divider = "| --- "*len(column_names) +  "|\n"
 
         #Create the contents string
         current_contents = ""
         footnotes = []
 
+        #Write each entry to the table
         for entry in self.entries:
             row = ""
+
+            #Write each cell to the table
             for col in column_names:
                 val = entry.get(col, '')
 
+                #handle citations
                 if col == "cite":
                     citations = val if isinstance(val, list) else [val]
                     citation_refs = []
@@ -68,8 +71,10 @@ class MarkdownWriter:
                         footnotes.append(self._escape_md(citation_text))
                         citation_refs.append(f"[^{len(footnotes)}]")
                     row += ", ".join(citation_refs)
+                
                 elif isinstance(val, list):
                     row += ", ".join(map(self._escape_md, val))
+
                 else:
                     row += self._escape_md(str(val))
 
@@ -85,12 +90,33 @@ class MarkdownWriter:
         with open(os.path.join(output_path, "md", "benchmarks.md"), "w", encoding="utf-8") as f:
             f.write(header + divider + current_contents)
 
-    def write_individual_entries(self, output_dir: str, column_names: list[str], column_display_names: list[str], author_trunc: int | None = None) -> None:
-        assert len(column_names) == len(column_display_names)
-        if author_trunc is not None:
-            assert author_trunc > 0
 
-        columns = list(zip(column_names, column_display_names))
+
+    def write_individual_entries(self, output_dir: str, column_names: list[str], column_titles: list[str] | None = None, author_trunc: int | None = None) -> None:
+        """
+        Writes all entries stored by this writer into individual Markdown documents at `output_dir`/md_tables.
+
+        Each file's name will be the name of the benchmark entry. If no name exists, the name is "entry_" + an arbitrary number.
+
+        An index file, "`output_dir`/md_tables/index.md", will also be written.
+
+        Parameters:
+            output_path (str): filepath to write to
+            column_names (list[str]): subset of columns in the table to include- any columns not in `column_names` will not appear in the table.
+            column_titles (list[str] or None, default=None): titles of each column- if None, `column_names` will be the column names. If not None, must have the same length as `column_names`
+            author_trunc (int or None, default=None): maximum number of authors to display (if None, displays all authors). If not None, must be a positive integer
+        """
+        if column_titles != None:
+            assert len(column_names) == len(column_titles), "length of column names must equal the length of the column display names"
+        if author_trunc is not None:
+            assert isinstance(author_trunc, int) and author_trunc>0, "author trunc must be a positive integer"
+
+        if column_titles:
+            used_column_display_names = column_titles
+        else:
+            used_column_display_names = [self._sanitize_filename(name) for name in column_names]
+
+        columns = list(zip(column_names, used_column_display_names))
         os.makedirs(os.path.join(output_dir, "md_pages"), exist_ok=True)
 
         with open(os.path.join(output_dir, "md_pages", "index.md"), 'w', encoding='utf-8') as index_file:
@@ -129,7 +155,3 @@ class MarkdownWriter:
                             f.write(f"**{col_display}**: {val_str}\n\n")
 
                 index_file.write(f"- [{entry_name}]({filename})\n")
-
-
-if __name__ == "__main__":
-    pass

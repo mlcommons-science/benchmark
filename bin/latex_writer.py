@@ -48,14 +48,14 @@ class BibtexWriter:
         """Creates a BibtexWriter with entries from a table"""
         self.entries = entries
 
-    def _get_citation_label(self, bib_entry: str) -> str:
+    def _get_citation_type(self, bib_entry: str) -> str:
         """
-        Returns the citation label (i.e. @article, @misc) from `bib_entry`.
+        Returns the citation type (i.e. @article, @misc) from `bib_entry`.
 
         Parameters:
             bib_entry (str): BibTeX citation
         Returns:
-            label from the entry
+            type from the entry
         """
         match = re.match(r"@\w+\{([^,]+),", bib_entry.strip())
         return match.group(1) if match else "<unknown>"
@@ -87,7 +87,7 @@ class BibtexWriter:
                 if not isinstance(cite_entry, str) or not cite_entry.strip().startswith("@"):
                     continue
 
-                label = self._get_citation_label(cite_entry.lower())
+                label = self._get_citation_type(cite_entry.lower())
 
                 if label in found_labels:
                     print(f"{_RED}ERROR: Duplicate citation label \"{label}\" found in entry \"{name}\".{_DEFAULT_COLOR}")
@@ -169,13 +169,26 @@ class LatexWriter:
  
     def _extract_cite_label(self, bib_entry: str) -> str:
         """
-        Extracts the citation label from a BibTeX entry like '@article{label,...}'
+        Returns the citation label from a BibTeX entry like '@article{label,...}'
+
+        Parameters:
+            bib_entry: BibTeX entry to extract label from
+        Returns:
+            label from the citation
         """
         match = re.match(r"@\w+\{([^,]+),", bib_entry.strip())
         return match.group(1) if match else "<unknown>"
 
 
     def _extract_cite_url(self, cite_entry: str) -> str:
+        """
+        Returns the URL from the given citation.
+        
+        Parameters:
+            cite_entry: BibTeX entry to extract URL from
+        Returns:
+            citation's URL
+        """
         match = re.search(r'url\s*=\s*[{"]([^}"]+)[}"]', cite_entry)
         return match.group(1) if match else ""
 
@@ -317,7 +330,7 @@ class LatexWriter:
                 if col == "cite":
                     refs = []
                     for cite in cites:
-                        label_match = self._bib_writer._get_citation_label(cite)
+                        label_match = self._bib_writer._get_citation_type(cite)
                         if label_match not in footnote_refs:
                             footnote_refs[label_match] = len(footnotes) + 1
                             footnotes.append(label_to_citation.get(label_match, f"(Unparseable citation: {label_match})"))
@@ -442,9 +455,9 @@ class LatexWriter:
 
         #Create column names if not given
         if column_titles:
-            column_titles_used = column_titles
+            written_col_names = column_titles
         else:
-            column_titles_used = selected_columns
+            written_col_names = selected_columns
 
         #Write each row to a file
         os.makedirs(os.path.join(output_path, "tex_pages"), exist_ok=True)
@@ -452,7 +465,7 @@ class LatexWriter:
 
             with open(os.path.join(output_path, "tex_pages", self._sanitize_filename(names[i])+".tex" if names[i]!=None else f"entry_{i+1}.tex"), "w") as f:
                     
-                latex = self._generate_latex_doc([all_rows[i]], selected_columns, column_titles_used, column_widths=column_widths)
+                latex = self._generate_latex_doc([all_rows[i]], selected_columns, written_col_names, column_widths=column_widths)
                 f.write(f'% LaTeX table for "{names[i]}"')
                 f.write(latex)
 

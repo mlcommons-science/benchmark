@@ -2444,22 +2444,15 @@
     condition: optional
   - cite:
     - |
-      @dataset{thea_aarrestad_2021_5046428,
-      author       = {Thea Aarrestad and
-                      Ekaterina Govorkova and
-                      Jennifer Ngadiuba and
-                      Ema Puljak and
-                      Maurizio Pierini and
-                      Kinga Anna Wozniak},
-      title        = {Unsupervised New Physics detection at 40 MHz:
-                      Training Dataset
-                      },
-      month        = jun,
-      year         = 2021,
-      publisher    = {Zenodo},
-      version      = {v2},
-      doi          = {10.5281/zenodo.5046428},
-      url          = {https://doi.org/10.5281/zenodo.5046428},
+      @misc{thea_aarrestad_2021_5046428,
+      author= {Thea Aarrestad and Ekaterina Govorkova and Jennifer Ngadiuba and Ema Puljak and Maurizio Pierini and Kinga Anna Wozniak},
+      title = {Unsupervised New Physics detection at 40 MHz: Training Dataset},
+      month = jun,
+      year = 2021,
+      publisher = {Zenodo},
+      version = {v2},
+      doi = {10.5281/zenodo.5046428},
+      url = {https://doi.org/10.5281/zenodo.5046428},
       }
     description: A list of bibtex citations. At least one must be provided.
     condition: '>=1'

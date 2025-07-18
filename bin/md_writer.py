@@ -35,9 +35,6 @@ class MarkdownWriter:
         output = output.strip().replace("(", "").replace(")", "").replace(" ", "_")
         return output.lower()
 
-    def write_table(self, output_path: str, column_names: list[str]) -> None:
-        header = " | " + " | ".join(column_names) + " | " + "\n"
-        divider = "| --- " * len(column_names) + "|\n"
 
     def write_table(self, output_path: str, column_names: list[str], column_display_names: list[str] | None = None) -> None:
         """

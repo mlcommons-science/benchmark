@@ -545,7 +545,7 @@
     condition: optional
   - cite:
       - |
-       @article{Odagiu_2024,
+       @article{odiagiu2024,
         title={Ultrafast jet classification at the HL-LHC},
         volume={5},
         ISSN={2632-2153},

@@ -3,7 +3,7 @@ import os
 import sys
 from yaml_manager import YamlManager
 from md_writer import MarkdownWriter
-from latex_writer import LatexWriter, BibtexWriter
+from latex_writer import LatexWriter
 
 
 ALL_COLUMNS = [

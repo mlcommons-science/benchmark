@@ -18,6 +18,9 @@ def bibtex_to_text(entry: str) -> str:
 
 
 class MarkdownWriter:
+    """
+    Class to write formatted YAML file contents in Markdown format
+    """
 
     def __init__(self, entries: list[dict]):
         self.entries = entries

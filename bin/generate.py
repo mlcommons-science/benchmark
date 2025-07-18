@@ -5,9 +5,6 @@ from yaml_manager import YamlManager
 from md_writer import MarkdownWriter
 from latex_writer import LatexWriter, BibtexWriter
 
-# Optional: define MAX_AUTHOR_LIMIT and FULL_CITE_COLUMN if not imported
-MAX_AUTHOR_LIMIT = 9999
-FULL_CITE_COLUMN = ("full_cite", "1cm", "Full BibTeX")
 
 ALL_COLUMNS = [
     ("date", "1.5cm", "Date"),
@@ -25,20 +22,18 @@ ALL_COLUMNS = [
     ("models", "2cm", "Models"),
     ("notes", "3cm", "Notes"),
     ("cite", "1cm", "Citation"),
-    ("ratings", "1cm", "Ratings"),
+    ("ratings.specification.rating", "1cm", "Specification Rating"),
+    ("ratings.specification.reason", "3cm", "Specification Reason"),
+    ("ratings.dataset.rating", "1cm", "Dataset Rating"),
+    ("ratings.dataset.reason", "3cm", "Dataset Reason"),
+    ("ratings.metrics.rating", "1cm", "Metrics Rating"),
+    ("ratings.metrics.reason", "3cm", "Metrics Reason"),
+    ("ratings.reference_solution.rating", "1cm", "Reference Solution Rating"),
+    ("ratings.reference_solution.reason", "3cm", "Reference Solution Reason"),
+    ("ratings.documentation.rating", "1cm", "Documentation Rating"),
+    ("ratings.documentation.reason", "3cm", "Documentation Reason"),
 ]
 
-COLUMN_TUPLES = [
-    ("date", 1.5, "Date"),
-    ("name", 2.5, "Name"),
-    ("domain", 2, "Domain"),
-    ("focus", 2, "Focus"),
-    ("keywords", 2.5, "Keywords"),
-    ("task_types", 3, "Task Types"),
-    ("metrics", 2, "Metrics"),
-    ("models", 2, "Models"),
-    ("cite", 1, "Citation"),
-]
 COLUMN_NAMES = []
 COLUMN_WIDTHS = []
 COLUMN_TITLES = []
@@ -46,11 +41,6 @@ for name, width, title in ALL_COLUMNS:
     COLUMN_NAMES.append(name)
     COLUMN_WIDTHS.append(float(width.strip().replace("cm", "")))
     COLUMN_TITLES.append(title)
-
-
-# def get_column_triples(selected: list[str]) -> list[tuple[str, str, str]]:
-#     selected_lower = [s.lower() for s in selected]
-#     return [triple for triple in ALL_COLUMNS if triple[0] in selected_lower]
 
 
 if __name__ == "__main__":
@@ -63,7 +53,7 @@ if __name__ == "__main__":
     parser.add_argument('--files', '-i', type=str, nargs='+', required=True, help='YAML file paths to process.')
     parser.add_argument('--format', '-f', type=str, choices=['md', 'tex'], required=True, help="Output file format: 'md' or 'tex'")
     parser.add_argument('--outdir', '-o', type=str, default='../content/', required=True, help="Output directory")
-    parser.add_argument('--authortruncation', type=int, default=MAX_AUTHOR_LIMIT, help="Truncate authors for index pages")
+    parser.add_argument('--authortruncation', type=int, default=9999, help="Truncate authors for index pages")
     parser.add_argument('--columns', type=lambda s: s.split(','), help="Subset of columns to include")
     parser.add_argument('--check', action='store_true', help="Conduct formatting checks on inputted YAML files. Does not produce an output file.")
     parser.add_argument('--index', action='store_true', help="Generate individual pages for each entry for the given format. If format is MD, generates an index.md file")
@@ -89,6 +79,10 @@ if __name__ == "__main__":
     os.makedirs(args.outdir, exist_ok=True)
     columns = args.columns if args.columns else COLUMN_NAMES # Fallback if args.columns not in scope
 
+    #Eliminate column names if precondition is broken
+    if len(COLUMN_TITLES) != len(columns):
+        COLUMN_TITLES = None
+
     manager = YamlManager(args.files)
     entries = manager.get_table_formatted_dicts()
 
@@ -113,8 +107,8 @@ if __name__ == "__main__":
         converter = MarkdownWriter(entries)
 
         if args.index:
-            converter.write_individual_entries(args.outdir, args.columns)#, COLUMN_TITLES)
-        converter.write_table(args.outdir, args.columns)#, COLUMN_TITLES)
+            converter.write_individual_entries(args.outdir, args.columns, COLUMN_TITLES)
+        converter.write_table(args.outdir, args.columns, COLUMN_TITLES)
 
     elif args.format == 'tex':
         converter = LatexWriter(entries)

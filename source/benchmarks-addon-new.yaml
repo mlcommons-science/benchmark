@@ -497,11 +497,10 @@
     - Interaction Networks
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: 'Demonstrates three ML models (MLP, Deep Sets, Interaction Networks) optimized for FPGA deployment with O(100
+  - summary: |
+      Demonstrates three ML models (MLP, Deep Sets, Interaction Networks) optimized for FPGA deployment with O(100
       ns) inference using quantized models and hls4ml, targeting real-time jet tagging in the L1 trigger environment at the
-      high-luminosity LHC. Data is available on Zenodo DOI:10.5281/zenodo.3602260. :contentReference[oaicite:1]{index=1}
-
-      '
+      high-luminosity LHC. Data is available on Zenodo DOI:10.5281/zenodo.3602260.
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -544,7 +543,22 @@
   - contact: Patrick Odagiu
     description: A contact person or organization for this benchmark.
     condition: optional
-  - cite: []
+  - cite:
+      - |
+       @article{Odagiu_2024,
+        title={Ultrafast jet classification at the HL-LHC},
+        volume={5},
+        ISSN={2632-2153},
+        url={http://dx.doi.org/10.1088/2632-2153/ad5f10},
+        DOI={10.1088/2632-2153/ad5f10},
+        number={3},
+        journal={Machine Learning: Science and Technology},
+        publisher={IOP Publishing},
+        author={Odagiu, Patrick and Que, Zhiqiang and Duarte, Javier and Haller, Johannes and Kasieczka, Gregor and Lobanov, Artur and Loncar, Vladimir and Luk, Wayne and Ngadiuba, Jennifer and Pierini, Maurizio and Rincke, Philipp and Seksaria, Arpita and Summers, Sioni and Sznajder, Andre and Tapper, Alexander and Årrestad, Thea K},
+        year={2024},
+        month=jul, pages={035017} 
+        }
+
     description: A list of bibtex citations. At least one must be provided.
     condition: '>=1'
   - dataset: Zenodo DOI:10.5281/zenodo.3602260 (constituent-level jets)
@@ -638,11 +652,9 @@
     - real-time
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: 'Exploration of real-time quench detection using unsupervised and RL approaches, combining multi-modal sensor
+  - summary: |
+      Exploration of real-time quench detection using unsupervised and RL approaches, combining multi-modal sensor
       data (BPM, power supply, acoustic), operating on kHz-MHz streams with anomaly detection and frequency-domain features.
-      :contentReference[oaicite:2]{index=2}
-
-      '
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -779,10 +791,9 @@
     - trigger
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: 'Applying real-time ML methods to time-series data from DUNE detectors, exploring trigger-level anomaly detection
+  - summary: |
+      Applying real-time ML methods to time-series data from DUNE detectors, exploring trigger-level anomaly detection
       and event selection with low latency constraints.
-
-      '
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -2550,7 +2561,7 @@
 
       to accelerate robust, privacy-preserving AI development for healthcare. MedPerf enables federated testing of clinical
 
-      models on diverse datasets, improving generalizability and equity while keeping data onsite :contentReference[oaicite:1]{index=1}.
+      models on diverse datasets, improving generalizability and equity while keeping data onsite.
 
       '
     description: An easy-to-understand description of the benchmark.
@@ -2589,7 +2600,7 @@
   - solutions: '2'
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: Open-source platform under Apache-2.0; used across 20+ institutions and hospitals :contentReference[oaicite:2]{index=2}.
+  - notes: Open-source platform under Apache-2.0; used across 20+ institutions and hospitals.
     description: Additional notes or context.
     condition: optional
   - contact: Alex Karargyris (MLCommons Medical AI)
@@ -2696,7 +2707,7 @@
   - summary: 'The Fast Calorimeter Simulation Challenge 2022 assessed 31 generative-model submissions (VAEs, GANs, Flows,
       Diffusion)
 
-      on four calorimeter shower datasets; benchmarking shower quality, generation speed, and model complexity :contentReference[oaicite:3]{index=3}.
+      on four calorimeter shower datasets; benchmarking shower quality, generation speed, and model complexity.
 
       '
     description: An easy-to-understand description of the benchmark.
@@ -2990,7 +3001,6 @@
   - summary: 'Codabench (successor to CodaLab) is a flexible, easy-to-use, reproducible API platform for hosting AI benchmarks
 
       and code-submission challenges. It supports custom scoring, inverted benchmarks, and scalable public or private queues
-      :contentReference[oaicite:1]{index=1}.
 
       '
     description: An easy-to-understand description of the benchmark.
@@ -3027,7 +3037,7 @@
   - solutions: 98 071
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: Hosts 51 public competitions, ~26 k users, 177 k submissions :contentReference[oaicite:2]{index=2}
+  - notes: Hosts 51 public competitions, ~26k users, 177k submissions
     description: Additional notes or context.
     condition: optional
   - contact: Isabelle Guyon (Université Paris-Saclay)
@@ -3129,7 +3139,7 @@
     condition: '>=1'
   - summary: 'Sabath is a metadata framework from the SBI-FAIR group (UTK, Argonne, Virginia) facilitating
 
-      FAIR-compliant benchmarking and surrogate execution logging across HPC systems :contentReference[oaicite:3]{index=3}.
+      FAIR-compliant benchmarking and surrogate execution logging across HPC systems
 
       '
     description: An easy-to-understand description of the benchmark.
@@ -3165,7 +3175,7 @@
   - solutions: N/A
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc. :contentReference[oaicite:4]{index=4}
+  - notes: Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc.
     description: Additional notes or context.
     condition: optional
   - contact: Piotr Luszczek (luszczek@utk.edu)
@@ -3267,7 +3277,7 @@
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
   - summary: 'PDEBench offers forward/inverse PDE tasks with large ready-to-use datasets and baselines (FNO, U-Net, PINN),
-      packaged via a unified API. It won the SimTech Best Paper Award 2023 :contentReference[oaicite:5]{index=5}.
+      packaged via a unified API. It won the SimTech Best Paper Award 2023.
 
       '
     description: An easy-to-understand description of the benchmark.
@@ -3307,7 +3317,7 @@
   - solutions: 'Yes'
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: Datasets hosted on DaRUS (DOI:10.18419/darus-2986); contact maintainers by email :contentReference[oaicite:6]{index=6}
+  - notes: Datasets hosted on DaRUS (DOI:10.18419/darus-2986); contact maintainers by email
     description: Additional notes or context.
     condition: optional
   - contact: Makoto Takamoto (makoto.takamoto@neclab.eu)
@@ -3415,7 +3425,7 @@
     condition: '>=1'
   - summary: 'A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains—from biology to astrophysical
       magnetohydrodynamic simulations—with unified API and metadata. Ideal for training surrogate and foundation models on
-      scientific data. :contentReference[oaicite:1]{index=1}
+      scientific data.
 
       '
     description: An easy-to-understand description of the benchmark.
@@ -3452,7 +3462,7 @@
   - solutions: '16'
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: 'Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. :contentReference[oaicite:2]{index=2}'
+  - notes: 'Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB.'
     description: Additional notes or context.
     condition: optional
   - contact: Wes Brewer
@@ -3556,7 +3566,6 @@
     condition: '>=1'
   - summary: 'A suite evaluating inference performance of LLMs (LLaMA, Mistral, Qwen) across diverse accelerators (NVIDIA,
       AMD, Intel, SambaNova) and frameworks (vLLM, DeepSpeed-MII, etc.), with an interactive dashboard and per-platform metrics.
-      :contentReference[oaicite:3]{index=3}
 
       '
     description: An easy-to-understand description of the benchmark.
@@ -3596,7 +3605,7 @@
   - solutions: ''
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: Licensed under BSD-3, maintained by Argonne; supports GPUs and accelerators. :contentReference[oaicite:4]{index=4}
+  - notes: Licensed under BSD-3, maintained by Argonne; supports GPUs and accelerators.
     description: Additional notes or context.
     condition: optional
   - contact: Krishna Teja Chitty-Venkata (Argonne LCF)
@@ -3704,7 +3713,7 @@
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
   - summary: 'A high-performance open-source serving framework combining efficient backend runtime (RadixAttention, batching,
-      quantization) and expressive frontend language, boosting LLM/VLM inference throughput up to ~3x over alternatives. :contentReference[oaicite:5]{index=5}
+      quantization) and expressive frontend language, boosting LLM/VLM inference throughput up to ~3x over alternatives.
 
       '
     description: An easy-to-understand description of the benchmark.
@@ -3743,7 +3752,7 @@
   - solutions: ''
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025. :contentReference[oaicite:6]{index=6}
+  - notes: Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025.
     description: Additional notes or context.
     condition: optional
   - contact: SGLang Team
@@ -3853,9 +3862,10 @@
     - quantization
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: "vLLM is a fast, high-throughput, memory-efficient inference and serving engine for large language models, \n\
-      featuring PagedAttention, continuous batching, and support for quantized and pipelined model execution. \nBenchmarks\
-      \ compare it to TensorRT-LLM, SGLang, and others. :contentReference[oaicite:1]{index=1}\n"
+  - summary:
+      vLLM is a fast, high-throughput, memory-efficient inference and serving engine for large language models,
+      featuring PagedAttention, continuous batching, and support for quantized and pipelined model execution. Benchmarks
+      compare it to TensorRT-LLM, SGLang, and others
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -4135,7 +4145,7 @@
   - summary: 'NeuralForecast offers scalable, user-friendly implementations of over 30 neural forecasting models (NBEATS,
       NHITS, TFT, DeepAR, etc.),
 
-      emphasizing quality, usability, interpretability, and performance. :contentReference[oaicite:3]{index=3}
+      emphasizing quality, usability, interpretability, and performance.
 
       '
     description: An easy-to-understand description of the benchmark.
@@ -4280,7 +4290,7 @@
 
       improved accuracy by ~25% and reduced compute by 50x compared to Transformer baselines,
 
-      using hierarchical interpolation and multi-rate sampling :contentReference[oaicite:1]{index=1}.
+      using hierarchical interpolation and multi-rate sampling
 
       '
     description: An easy-to-understand description of the benchmark.
@@ -4416,11 +4426,9 @@
     - reprogramming
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: 'Time-LLM uses reprogramming layers to adapt frozen LLMs for time series forecasting, treating
-
-      forecasting as a language task :contentReference[oaicite:2]{index=2}.
-
-      '
+  - summary: |
+      Time-LLM uses reprogramming layers to adapt frozen LLMs for time series forecasting, treating
+      forecasting as a language task.
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -4560,11 +4568,9 @@
     - generative model
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: 'TimeGPT is a transformer-based generative pretrained model on 100B+ time series data for
-
-      zero-shot forecasting and anomaly detection via API :contentReference[oaicite:3]{index=3}.
-
-      '
+  - summary: |
+      TimeGPT is a transformer-based generative pretrained model on 100B+ time series data for
+      zero-shot forecasting and anomaly detection via API.
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -4705,11 +4711,10 @@
     - time-series
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: 'A benchmark for detecting anomalous transient gravitational-wave signals, including “unknown-unknowns,” using
+  - summary: 
+      A benchmark for detecting anomalous transient gravitational-wave signals, including "unknown-unknowns," using
       preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments
-      from dual interferometers. :contentReference[oaicite:1]{index=1}
-
-      '
+      from dual interferometers.
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -4744,7 +4749,7 @@
   - solutions: '-'
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: NSF HDR A3D3 sponsored; prize pool and starter kit provided on Codabench. :contentReference[oaicite:2]{index=2}
+  - notes: NSF HDR A3D3 sponsored; prize pool and starter kit provided on Codabench.
     description: Additional notes or context.
     condition: optional
   - contact: HDR A3D3 Team
@@ -4850,10 +4855,9 @@
     - butterfly hybrids
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: 'Image-based challenge for detecting butterfly hybrids in microscopy-driven species data. Participants evaluate
-      models on Codabench using image segmentation/classification. :contentReference[oaicite:3]{index=3}
-
-      '
+  - summary: |
+     Image-based challenge for detecting butterfly hybrids in microscopy-driven species data. Participants evaluate
+      models on Codabench using image segmentation/classification.
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -4887,7 +4891,7 @@
   - solutions: '-'
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: Hybrid detection benchmarks hosted on Codabench. :contentReference[oaicite:4]{index=4}
+  - notes: Hybrid detection benchmarks hosted on Codabench.
     description: Additional notes or context.
     condition: optional
   - contact: Imageomics/HDR Team
@@ -4993,10 +4997,9 @@
     - remote sensing
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: 'A challenge combining North Atlantic sea-level time-series and satellite imagery to detect flooding anomalies.
-      Models submitted via Codabench. :contentReference[oaicite:5]{index=5}
-
-      '
+  - summary: |
+      A challenge combining North Atlantic sea-level time-series and satellite imagery to detect flooding anomalies.
+      Models submitted via Codabench.
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -5030,7 +5033,7 @@
   - solutions: '-'
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: Sponsored by NSF HDR; integrates sensor and satellite data. :contentReference[oaicite:6]{index=6}
+  - notes: Sponsored by NSF HDR; integrates sensor and satellite data.
     description: Additional notes or context.
     condition: optional
   - contact: HDR A3D3 Team
@@ -5172,7 +5175,7 @@
   - solutions: '-'
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization. :contentReference[oaicite:1]{index=1}
+  - notes: Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization.
     description: Additional notes or context.
     condition: optional
   - contact: Javier Campos / Giuseppe Di Guglielmo
@@ -5460,7 +5463,7 @@
   - solutions: ~696K images
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: Data processing code publicly available, covering five geological layers; curated with marine scientists :contentReference[oaicite:2]{index=2}.
+  - notes: Data processing code publicly available, covering five geological layers; curated with marine scientists
     description: Additional notes or context.
     condition: optional
   - contact: Kien X. Nguyen
@@ -5566,11 +5569,10 @@
     - generative models
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: 'SuperCon3D introduces 3D crystal structures with associated critical temperatures (Tc) and two deep-learning
+  - summary: |
+      SuperCon3D introduces 3D crystal structures with associated critical temperatures (Tc) and two deep-learning
       models: SODNet (equivariant graph model) and DiffCSP-SC (diffusion generator) designed to screen and synthesize high-Tc
-      candidates :contentReference[oaicite:3]{index=3}.
-
-      '
+      candidates.
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -5606,7 +5608,7 @@
   - solutions: '2'
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: Demonstrates advantage of combining ordered and disordered structural data in model design :contentReference[oaicite:4]{index=4}.
+  - notes: Demonstrates advantage of combining ordered and disordered structural data in model design
     description: Additional notes or context.
     condition: optional
   - contact: Zhong Zuo
@@ -5705,10 +5707,9 @@
     - scientific applications
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: 'GeSS provides 30 benchmark scenarios across particle physics, materials science, and biochemistry, evaluating
-      3 GDL backbones and 11 algorithms under covariate, concept, and conditional shifts, with varied OOD access :contentReference[oaicite:5]{index=5}.
-
-      '
+  - summary: |
+      GeSS provides 30 benchmark scenarios across particle physics, materials science, and biochemistry, evaluating
+      3 GDL backbones and 11 algorithms under covariate, concept, and conditional shifts, with varied OOD access
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -5746,7 +5747,7 @@
   - solutions: 30 settings x 11 algos
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: Includes no-OOD, unlabeled-OOD, and few-label scenarios :contentReference[oaicite:6]{index=6}.
+  - notes: Includes no-OOD, unlabeled-OOD, and few-label scenarios
     description: Additional notes or context.
     condition: optional
   - contact: Deyu Zou
@@ -5847,11 +5848,10 @@
     - SSL
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: 'The first large-scale benchmark (767K sounds across 9 conditions) for localizing rodent vocal calls using synchronized
+  - summary: |
+      The first large-scale benchmark (767K sounds across 9 conditions) for localizing rodent vocal calls using synchronized
       audio and video in standard lab environments, enabling systematic evaluation of sound-source localization algorithms
-      in bioacoustics :contentReference[oaicite:1]{index=1}.
-
-      '
+      in bioacoustics
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -5885,7 +5885,7 @@
   - solutions: 767,295 sounds
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: Dataset spans real, simulated, and mixed audio; supports benchmarking across data types :contentReference[oaicite:2]{index=2}.
+  - notes: Dataset spans real, simulated, and mixed audio; supports benchmarking across data types
     description: Additional notes or context.
     condition: optional
   - contact: Ralph Peterson
@@ -5989,11 +5989,9 @@
     - dataset
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: 'MassSpecGym curates the largest public MS/MS dataset with three standardized tasks—de novo structure generation,
+  - summary: |
+      MassSpecGym curates the largest public MS/MS dataset with three standardized tasks—de novo structure generation,
       molecule retrieval, and spectrum simulation—using challenging generalization splits to propel ML-driven molecule discovery
-      :contentReference[oaicite:3]{index=3}.
-
-      '
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -6031,7 +6029,7 @@
   - solutions: ~1M spectra
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks :contentReference[oaicite:4]{index=4}.
+  - notes: Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks
     description: Additional notes or context.
     condition: optional
   - contact: Roman Bushuiev
@@ -6167,7 +6165,7 @@
   - solutions: 4 tasks
     description: Obsolete, as results should capture this.
     condition: deprecated
-  - notes: Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models :contentReference[oaicite:6]{index=6}.
+  - notes: Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models
     description: Additional notes or context.
     condition: optional
   - contact: Yiheng Wang

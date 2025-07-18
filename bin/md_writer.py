@@ -12,11 +12,13 @@ def bibtex_to_text(entry: str) -> str:
         style = find_plugin('pybtex.style.formatting', 'plain')()
         formatted = next(style.format_entries(bib_data.entries.values()))
         return re.sub(r"<[^>]+>", " ", str(formatted.text)).strip()
+    
     except Exception as e:
         return f"Could not parse citation: {e}"
 
 
 class MarkdownWriter:
+
     def __init__(self, entries: list[dict]):
         self.entries = entries
 
@@ -32,7 +34,9 @@ class MarkdownWriter:
                 output += ch
         output = re.sub(r' {2,}', ' ', output)
         output = output.strip().replace("(", "").replace(")", "").replace(" ", "_")
+        output = output.replace("\n", " ")
         return output.lower()
+
 
 
     def write_table(self, output_path: str, column_names: list[str], column_titles: list[str] | None = None) -> None:
@@ -68,8 +72,11 @@ class MarkdownWriter:
                     citation_refs = []
                     for c in citations:
                         citation_text = bibtex_to_text(c)
-                        footnotes.append(self._escape_md(citation_text))
-                        citation_refs.append(f"[^{len(footnotes)}]")
+                        if citation_text.startswith("Could not parse citation:"):
+                            footnotes.append(None)
+                        else:
+                            footnotes.append(self._escape_md(citation_text))
+                            citation_refs.append(f"[^{len(footnotes)}]")
                     row += ", ".join(citation_refs)
                 
                 elif isinstance(val, list):
@@ -84,7 +91,7 @@ class MarkdownWriter:
 
         current_contents += "\n"
         for i, citation in enumerate(footnotes):
-            current_contents += f"[^{i + 1}]: {citation}\n"
+            current_contents += f"[^{i + 1}]: {citation}\n" if citation else ""
 
         os.makedirs(os.path.join(output_path, "md"), exist_ok=True)
         with open(os.path.join(output_path, "md", "benchmarks.md"), "w", encoding="utf-8") as f:

@@ -25,6 +25,8 @@ summary:
 install:
 	pip install cloudmesh-common
 	pip install pybtex
+	pip install pylatexenc
+
 
 content: md tex
 	echo DONE

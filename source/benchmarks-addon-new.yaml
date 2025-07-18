@@ -5326,7 +5326,7 @@
   - cite:
     - |
       @misc{rein2023gpqagraduatelevelgoogleproofqa,
-      title={GPQA: A Graduate-Level Google-Proof Q&A Benchmark}, 
+      title={GPQA: A Graduate-Level Google-Proof Q\&A Benchmark}, 
       author={David Rein and Betty Li Hou and Asa Cooper Stickland and Jackson Petty and Richard Yuanzhe Pang and Julien Dirani and Julian Michael and Samuel R. Bowman},
       year={2023},
       eprint={2311.12022},

@@ -158,6 +158,7 @@ class LatexWriter:
                 output += ch
 
         output = re.sub(r' {2,}', ' ', output) #Replace 2+ spaces with single space
+        # BUG: we do nat want _ but - as easier in latex
         output = output.strip().replace("(", "").replace(")", "").replace(" ", "_")
 
         return output.lower()

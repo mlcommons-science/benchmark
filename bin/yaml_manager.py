@@ -5,6 +5,7 @@ Contains a class for YAML file loading and formatting
 import yaml
 import re
 import requests
+from cloudmesh.common.console import Console
 
 
 _RED = "\033[91m"
@@ -70,7 +71,7 @@ class YamlManager(object):
 
         except yaml.YAMLError as e:
             if enable_error_messages:
-                print(f'{_RED}YAML syntax error in "{file_path}": \n{e}{_DEFAULT_COLOR}')
+                Console.error(f'YAML syntax error in "{file_path}": \n{e}')
             return []
 
 
@@ -258,7 +259,7 @@ class YamlManager(object):
             if (condition=="required" or parent_required) and value is None:
                 if printing_errors:
                     printed_parent_name = parent_name if parent_name=='<top level>' else f'"{parent_name}"'
-                    print(f'{_RED}Required field "{key}" in {printed_parent_name} not present{_DEFAULT_COLOR}')
+                    Console.error(f'Required field "{key}" in {printed_parent_name} not present')
                 valid_dict =  False
             
             #Do >=
@@ -267,12 +268,12 @@ class YamlManager(object):
                     required_length = int(condition[2:])
                 except ValueError:
                     if printing_errors:
-                        print(f'{_RED}Condition "{condition[2:]}" is not a number{_DEFAULT_COLOR}')
+                        Console.errror('Condition "{condition[2:]}" is not a number')
                     valid_dict = False
                 
                 if not isinstance(value, list) or len(value) < required_length:
                     if printing_errors:
-                        print(f'{_RED}Field "{key}" must be a list of length {required_length} or more{_DEFAULT_COLOR}')
+                        Console.errror('Field "{key}" must be a list of length {required_length} or more')
                     valid_dict =  False
 
             #Recurse on the dict
@@ -310,7 +311,7 @@ class YamlManager(object):
             #Check each column (type: dict) in each YAML dictionary stored
             for column in self._yaml_dicts[i]:
                 if not self._verify_entry(column, printing_errors=printing_errors):
-                    print(f'{_RED}in YAML entry {i+1}{_DEFAULT_COLOR}')
+                    Console.errror('in YAML entry {i+1}')
                     print()
                     valid = False
 
@@ -353,14 +354,14 @@ class YamlManager(object):
                 response = requests.get(url, timeout=10)
                 if response.status_code == 200:
                     if printing_status:
-                        print(f"{_GREEN}[OK] {url}{_DEFAULT_COLOR}")
+                        print(f"{_GREEN}[OK] {url}")
                 else:
                     if printing_status:
-                        print(f"{_RED}[ERROR {response.status_code}] {url}{_DEFAULT_COLOR}")
+                        print(f"{_RED}[ERROR {response.status_code}] {url}")
                     all_urls_valid = False
             except requests.RequestException as e:
                 if printing_status:
-                    print(f"{_RED}[FAIL] {url} - {e}{_DEFAULT_COLOR}")
+                    print(f"{_RED}[FAIL] {url} - {e}")
                 all_urls_valid = False
 
         return all_urls_valid
@@ -384,12 +385,12 @@ class YamlManager(object):
             name = entry.get("name", None)
             if not name:
                 if printing_errors:
-                    print(f"{_RED}ERROR: Entry {i + 1} is missing a 'name' field{_DEFAULT_COLOR}")
+                    Console.error(" Entry {i + 1} is missing a 'name' field")
                 filenames_ok = False
                 continue
             if not isinstance(name, str):
                 if printing_errors:
-                    print(f"{_RED}ERROR: Entry {i + 1} has a non-string 'name': {name}{_DEFAULT_COLOR}")
+                    Console.error(" Entry {i + 1} has a non-string 'name': {name}")
                 filenames_ok = False
                 continue
 
@@ -397,27 +398,27 @@ class YamlManager(object):
             for ch in name:
                 if not (32 <= ord(ch) <= 126):
                     if printing_errors:
-                        print(f"{_RED}ERROR: Non-ASCII character in name: {repr(ch)} in '{name}'{_DEFAULT_COLOR}")
+                        Console.error(" Non-ASCII character in name: {repr(ch)} in '{name}'")
                     filenames_ok = False
 
             if re.search(r' {2,}', name):
                 if printing_errors:
-                    print(f"{_RED}ERROR: Entry {i + 1} name has multiple consecutive spaces: '{name}'{_DEFAULT_COLOR}")
+                    Console.error(" Entry {i + 1} name has multiple consecutive spaces: '{name}'")
                 filenames_ok = False
 
             if name.strip() != name:
                 if printing_errors:
-                    print(f"{_RED}ERROR: Entry {i + 1} name has leading/trailing spaces: '{name}'{_DEFAULT_COLOR}")
+                    Console.error(" Entry {i + 1} name has leading/trailing spaces: '{name}'")
                 filenames_ok = False
 
             if re.search(r'[()]', name):
                 if printing_errors:
-                    print(f"{_RED}ERROR: Entry {i + 1} name contains parentheses: '{name}'{_DEFAULT_COLOR}")
+                    Console.error(" Entry {i + 1} name contains parentheses: '{name}'")
                 filenames_ok = False
 
             if not re.fullmatch(r'[\w\-. ]+', name):
                 if printing_errors:
-                    print(f"{_RED}ERROR: Entry {i + 1} name contains disallowed characters: '{name}'{_DEFAULT_COLOR}")
+                    Console.error(" Entry {i + 1} name contains disallowed characters: '{name}'")
                 filenames_ok = False
 
         return filenames_ok

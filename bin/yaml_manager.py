@@ -486,6 +486,60 @@ class YamlManager(object):
                 filenames_ok = False
 
         return filenames_ok
+    
+    def get_entries(self, attribute, value) -> dict:
+        """
+        Returns a list of entries where the attribute equals the value.
+        
+        Parameters:
+            attribute (str): name of the attribute to filter by
+            value (str): name of the entry to return
+        Returns:
+            dict: first entry with the given name, or None if not found
+        """
+        if not isinstance(self.data, list):
+            raise ValueError("get_entries: Data is not a list of dictionaries")
+        
+        entries = []
+
+        for entry in self.data:
+            if entry.get(attribute) == value:
+                entries.append(entry)
+        return
+    
+    def get_by_name(self, name: str) -> dict:
+        """
+        Returns the first entry with the given name.
+
+        Parameters:
+            name (str): name of the entry to return
+        Returns:
+            dict: first entry with the given name, or None if not found
+        """
+        for entry in self.data:
+            if entry.get("name") == name:
+                return entry
+        return None
+    
+    def get_citations(self):
+        """
+        Returns a list of all citations in the manager's YAML files.
+
+        Returns:
+            list: all citations in the manager's YAML files
+        """
+        citations = []
+        for entry in self.data:
+            print(entry)
+            cite = entry.get("cite")
+            name = entry.get("name")
+            if cite:
+                if isinstance(cite, list):
+                    citations.extend(cite)
+                else:
+                    citations.append(cite)
+                    Console.error(f"Entry '{name}' has a single citation, but it must be formulated as a list use a - in fornt of the multiline string.")
+        return citations
 
 
 if __name__ == '__main__':

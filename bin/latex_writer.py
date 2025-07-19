@@ -170,12 +170,24 @@ class BibtexWriter:
                 continue # Skip if 'cite' field is not a string or list
 
             for cite_entry_raw in record_cite_entries:
+
+
+                
                 if not isinstance(cite_entry_raw, str) or not cite_entry_raw.strip().startswith("@"):
                     Console.warning(f"Skipping malformed citation entry in '{name}': '{cite_entry_raw}'")
                     continue
 
                 cite_entry = cite_entry_raw.strip()
                 label = self._get_citation_label(cite_entry)
+
+                match = re.search(r'author\s*=\s*{(.+?)}', cite_entry_raw, re.DOTALL)
+                if match:
+                    authors_raw = match.group(1)
+                    authors = [a.strip() for a in authors_raw.split(" and ")]
+                    
+                    if "others" in authors:
+                        Console.error(f"Entry '{name}' contains a citation '{label}' that includes others'. Please use full author names.")   
+        
 
                 if has_capital_letter(label):
                     Console.error(f"Citation label \"{label}\" in entry \"{name}\" is capitalized. Labels should be lowercase.")

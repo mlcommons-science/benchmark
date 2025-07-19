@@ -110,10 +110,7 @@ class BibtexWriter:
                 if "\t" in label:
                     Console.error(f"Citation label \"{label}\" in entry \"{name}\" contains a tab character.")
                     fatal = True    
-
-
-                print ("LABEL:", label)
-
+                
                 if label in found_labels:
                     Console.error(f"Duplicate citation label \"{label}\" found in entry \"{name}\". Please ensure all labels are unique.")
                     fatal = True

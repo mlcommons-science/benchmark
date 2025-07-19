@@ -34,16 +34,16 @@ benchmark2 = manager.get_by_name("MyBenchmark2")
 print("Benchmark2 details:")
 pprint(benchmark2)
 
-print("\n--- Checking URLs ---")
-manager.check_urls()
+#print("\n--- Checking URLs ---")
+#manager.check_urls()
 
-# print("\n--- Checking Required Fields ---")
-# manager.check_required_fields()
+print("\n--- Checking Required Fields ---")
+manager.check_required_fields()
 
-# print("\n--- Checking Filenames (name validation) ---")
-# manager.check_filenames()
+print("\n--- Checking Filenames (name validation) ---")
+manager.check_filenames()
 
-# print("\n--- Getting Citations ---")
-# citations = manager.get_citations()
-# pprint(citations)
+print("\n--- Getting Citations ---")
+citations = manager.get_citations()
+pprint(citations)
 

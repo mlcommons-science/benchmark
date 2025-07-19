@@ -55,11 +55,6 @@ class YamlManager(object):
             self.load(yamls,
                               overwrite=overwriting_contents,
                               verbose=printing_syntax_errors)
-        # BUG Fix: self.data should refer to self._yaml_dicts, not be assigned its own copy.
-        # This is a getter/setter property now.
-        # self.data = self._yaml_dicts # This line is removed, replaced by @property below
-
-        # self.flat = self.get_table_formatted_dicts() # This is also a property now
 
     # Add this __iter__ method
     def __iter__(self):
@@ -537,68 +532,6 @@ class YamlManager(object):
 
         return valid
 
-    def deprecated_check_urls(self, printing_status: bool = True) -> bool:
-        """
-        Returns whether all the URLs in the manager's YAML files are valid.
-
-        Any field without subfields that ends with "url" is checked.
-        The "cite" field's URL is also checked.
-
-        Parameters:
-            printing_status (bool): whether to print statuses
-        Returns:
-            bool: True if all URLs are valid, False otherwise
-        """
-        urls = []
-
-        for entry in self.flat: # Use the flat property directly
-            for key, value in entry.items():
-                # Handle flat keys with 'url'
-                if key.lower().endswith('url'):
-                    if isinstance(value, str):
-                        urls.append(value)
-                # Handle BibTeX citation strings which might be directly in a 'cite' key,
-                # or if 'cite' key can contain a list of strings, each being a bibtex entry.
-                # Assuming 'cite' itself is a key in the flattened dict.
-                elif key == 'cite':
-                    if isinstance(value, str): # 'cite' field itself is a string with BibTeX
-                        urls.extend(re.findall(r'url\s*=\s*\{(.*?)\}', value))
-                    elif isinstance(value, list): # 'cite' field is a list of BibTeX strings
-                        for bib_string in value:
-                            if isinstance(bib_string, str):
-                                urls.extend(re.findall(r'url\s*=\s*\{(.*?)\}', bib_string))
-
-        pprint(urls)  # Debug print to see collected URLs
-        sys.exit
-
-        # Remove duplicates
-        unique_urls = list(set(urls))
-
-        # Check each URL
-        all_urls_valid = True
-        if printing_status:
-            Console.ok(f"Checking {len(unique_urls)} unique URLs...")
-
-        for url in unique_urls:
-            try:
-                # Add headers to mimic a browser, sometimes helps with basic rate limiting/blocking
-                headers = {'User-Agent': 'Mozilla/5.0'}
-                response = requests.get(url, timeout=10, headers=headers)
-                if response.status_code == 200:
-                    if printing_status:
-                        Console.ok(f"[OK] {url}")
-                else:
-                    if printing_status:
-                        Console.error(f"{response.status_code}: {url}")
-                    all_urls_valid = False
-            except requests.RequestException as e:
-                if printing_status:
-                    Console.error(f"{url} - {e}")
-                all_urls_valid = False
-
-        return all_urls_valid
-
-
     def check_filenames(self, printing_errors: bool = True) -> bool:
         """
         Returns whether a properly formatted "name" field exists in each loaded YAML file.
@@ -660,7 +593,8 @@ class YamlManager(object):
 
         return filenames_ok
 
-    def get_entries(self, attribute, value) -> list[dict]: # Changed return type to list[dict]
+
+    def get_entries(self, attribute, value) -> list[dict]: 
         """
         Returns a list of entries where the attribute equals the value.
 
@@ -705,7 +639,6 @@ class YamlManager(object):
         """
         citations = []
         for entry in self.data:
-            # print(entry) # Removed debug print
             cite = entry.get("cite")
             name = entry.get("name", "Unnamed Entry") # Provide a default for name if missing for error message
             if cite:

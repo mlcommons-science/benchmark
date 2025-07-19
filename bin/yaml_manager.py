@@ -1,23 +1,31 @@
 """
-Contains a class for YAML file loading and formatting
+Contains a class for YAML file loading and formatting.
+
+Example program from:
+
+from pprint import pprint
+from yaml_manager import YamlManager
+
+manager = YamlManager("source/benchmarks-addon-new.yaml")
+
+pprint(manager.data) # returens the raw list of dicts
+pprint(manager.flat) # returns the flattened dicts as a list such taht keys are . seperated instead of hirarchical
+
+This is some function that Reece and Anjay implemented i do not fully undesratnd, but is used to create flatt dicts. 
+I am not sure what this has to do with a table and what is internally done.
+
+I think this should be separated from flatten
+
+flat = manager.get_table_formatted_dicts()) 
+
+
 """
 
 import yaml
 import re
+import sys
 import requests
 from cloudmesh.common.console import Console
-
-
-_RED = "\033[91m"
-"""ANSI escape code. Changes to printing in red"""
-
-_GREEN = "\033[32m"
-"""ANSI escape code. Changes to printing in green"""
-
-_DEFAULT_COLOR = "\033[00m"
-"""ANSI escape code. Changes to printing in the default color"""
-
-#or: use colorama or cloudmesh
 
 class YamlManager(object):
     """
@@ -29,7 +37,8 @@ class YamlManager(object):
     """
 
     def __init__(self, yamls: str | list[str], 
-                 overwriting_contents: bool = True, printing_syntax_errors: bool = True):
+                 overwriting_contents: bool = True, 
+                 printing_syntax_errors: bool = True):
         """
         Creates a new YamlManager in charge of the contents of `yamls`.
 
@@ -38,7 +47,10 @@ class YamlManager(object):
             overwriting_contents (bool, default=True): True if overwriting existing contents, False if appending to existing contents
             printing_syntax_errors (bool, default=True): whether to print warnings to the console if a YAML syntax error is found
         """
-        self.load_yamls(yamls, overwriting_contents=overwriting_contents, print_syntax_errors=printing_syntax_errors)
+        self.data = self.load(yamls, 
+                              overwrite=overwriting_contents, 
+                              verbose=printing_syntax_errors)
+        self.flat = self.get_table_formatted_dicts()
 
     # ---------------------------------------------------------------------------------------------------------
     # File Loading
@@ -61,6 +73,8 @@ class YamlManager(object):
                 content = yaml.safe_load(f)
 
             if isinstance(content, dict):
+                Console.warning(f'YAML file "{file_path}" is not a list. Converting to list of dicts.')
+                sys.exit(1)
                 return [content]
 
             elif isinstance(content, list):
@@ -68,54 +82,100 @@ class YamlManager(object):
 
             else:
                 raise ValueError("Unsupported YAML format. Expected a dict or list of dicts.")
-
+        except FileNotFoundError:
+            if enable_error_messages:
+                Console.error(f"File not found: '{file_path}'")
+                sys.exit(1)
+                
         except yaml.YAMLError as e:
             if enable_error_messages:
                 Console.error(f'YAML syntax error in "{file_path}": \n{e}')
             return []
 
-
-    def load_multiple_yaml_files(self, file_paths: list[str], enable_error_messages: bool = True) -> list[dict]:
-        """
-        Returns a list of dictionaries representing the contents of a YAML file.
-
-        Parameters:
-            file_paths (list[str]): list of file paths to load from
-            enable_error_messages (bool): whether to print error messages to the console. Default True
-        Returns:
-            contents of given YAML files
-        """
-        records = []
-        for path in file_paths:
-            records += self.load_single_yaml_file(path, enable_error_messages)
-        return records
-
-
-    def load_yamls(self, file_paths: str | list[str], overwriting_contents: bool = True, print_syntax_errors: bool = True) -> None:
+    def load(self, 
+             file_paths: str | list[str], 
+             overwrite: bool = True, 
+             verbose: bool = True) -> list[dict]:
         """
         Loads the contents of `file_paths` into this YamlManager.
 
-        If `overwriting_prev` is True, any previous contents are overwritten upon load.
-
-        Raises a FileNotFoundError if an invalid filepath is given.
-        If a YAML file contains syntax errors, the file is **not loaded**.
+        If `overwrite_existing` is True, any previous contents are overwritten upon load.
+        If a YAML file contains syntax errors, that file is skipped.
+        Raises a FileNotFoundError if any specified file does not exist.
 
         Parameters:
-            file_paths (str or list[str]): filepath(s) to load from
-            overwriting_contents (bool, default=True): whether to overwrite the manager's existing contents.
-            print_syntax_errors (bool, default=True): whether to print error messages upon finding YAML syntax errors.
-        """
-        if isinstance(file_paths, str):
-            if overwriting_contents:
-                self._yaml_dicts =  self.load_multiple_yaml_files([file_paths], print_syntax_errors)
-            else:
-                self._yaml_dicts += self.load_multiple_yaml_files([file_paths], print_syntax_errors)
+            file_paths (str or list[str]): File path(s) to load from.
+            overwrite_existing (bool, default=True): Whether to overwrite the manager's existing contents.
+            print_syntax_errors (bool, default=True): Whether to print error messages for YAML syntax issues.
 
+        Returns:
+            list[dict]: The updated list of YAML dictionaries stored in the manager.
+        """
+        # Normalize file_paths to always be a list
+        paths_to_load = [file_paths] if isinstance(file_paths, str) else file_paths
+
+        newly_loaded_records = []
+        for path in paths_to_load:
+            # Each file's content (which is guaranteed to be a list) is extended
+            newly_loaded_records.extend(self.load_single_yaml_file(path, verbose))
+
+        if overwrite:
+            self._yaml_dicts = newly_loaded_records
         else:
-            if overwriting_contents:
-                self._yaml_dicts =  self.load_multiple_yaml_files(file_paths, print_syntax_errors)
-            else:
-                self._yaml_dicts += self.load_multiple_yaml_files(file_paths, print_syntax_errors)
+            self._yaml_dicts.extend(newly_loaded_records)
+
+        self.data = self._yaml_dicts  # Update the data attribute
+
+        # BUG: We should not use self._yaml_dicts, but self.data instead.
+        #      make self._yaml_dicts a local variable e.g. yaml_dicts
+        #      replace everywhere self._yaml_dicts with self.data
+        
+        return self._yaml_dicts
+
+
+
+    # def load_multiple_yaml_files(self, file_paths: list[str], enable_error_messages: bool = True) -> list[dict]:
+    #     """
+    #     Returns a list of dictionaries representing the contents of a YAML file.
+
+    #     Parameters:
+    #         file_paths (list[str]): list of file paths to load from
+    #         enable_error_messages (bool): whether to print error messages to the console. Default True
+    #     Returns:
+    #         contents of given YAML files
+    #     """
+    #     records = []
+    #     for path in file_paths:
+    #         records += self.load_single_yaml_file(path, enable_error_messages)
+    #     return records
+
+
+    # def load_yamls(self, file_paths: str | list[str], overwriting_contents: bool = True, print_syntax_errors: bool = True) -> None:
+    #     """
+    #     Loads the contents of `file_paths` into this YamlManager.
+
+    #     If `overwriting_prev` is True, any previous contents are overwritten upon load.
+
+    #     Raises a FileNotFoundError if an invalid filepath is given.
+    #     If a YAML file contains syntax errors, the file is **not loaded**.
+
+    #     Parameters:
+    #         file_paths (str or list[str]): filepath(s) to load from
+    #         overwriting_contents (bool, default=True): whether to overwrite the manager's existing contents.
+    #         print_syntax_errors (bool, default=True): whether to print error messages upon finding YAML syntax errors.
+    #     """
+    #     if isinstance(file_paths, str):
+    #         if overwriting_contents:
+    #             self._yaml_dicts =  self.load_multiple_yaml_files([file_paths], print_syntax_errors)
+    #         else:
+    #             self._yaml_dicts += self.load_multiple_yaml_files([file_paths], print_syntax_errors)
+
+    #     else:
+    #         if overwriting_contents:
+    #             self._yaml_dicts =  self.load_multiple_yaml_files(file_paths, print_syntax_errors)
+    #         else:
+    #             self._yaml_dicts += self.load_multiple_yaml_files(file_paths, print_syntax_errors)
+    #     return self._yaml_dicts
 
 
     # ---------------------------------------------------------------------------------------------------------
@@ -124,6 +184,9 @@ class YamlManager(object):
 
     def get_dicts(self) -> list[dict]:
         """
+
+        BUG: This function is deprecated and should be replaced with manager.data.
+
         Returns a list of the raw internal dictionaries read to by the manager. Not intended for writing to tables.
 
         DO NOT MODIFY THE OUTPUT OF THIS FUNCTION!
@@ -132,8 +195,9 @@ class YamlManager(object):
         Returns:
             list[dict]: manager's current file contents, as dictionaries
         """
-        return self._yaml_dicts
-
+        # return self._yaml_dicts
+        return self.data
+    
 
     def _flatten_dict(self, entry, parent_key='') -> list[dict]:
         """
@@ -354,14 +418,14 @@ class YamlManager(object):
                 response = requests.get(url, timeout=10)
                 if response.status_code == 200:
                     if printing_status:
-                        print(f"{_GREEN}[OK] {url}")
+                        Console.ok(f"[OK] {url}")
                 else:
                     if printing_status:
-                        print(f"{_RED}[ERROR {response.status_code}] {url}")
+                        Console.error(f"{response.status_code}: {url}")
                     all_urls_valid = False
             except requests.RequestException as e:
                 if printing_status:
-                    print(f"{_RED}[FAIL] {url} - {e}")
+                    Console.error(f"{url} - {e}")
                 all_urls_valid = False
 
         return all_urls_valid

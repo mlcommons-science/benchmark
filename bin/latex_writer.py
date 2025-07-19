@@ -1,18 +1,14 @@
 import os
 import re
+import sys
 import textwrap
 from pybtex.database import parse_string
 from pybtex.plugin import find_plugin
 from pylatexenc.latexencode import unicode_to_latex
+from pprint import pprint
+from cloudmesh.common.console import Console
 
-
-_RED = "\033[91m"
-"""ANSI escape code. Changes to printing in red"""
-
-_DEFAULT_COLOR = "\033[00m"
-"""ANSI escape code. Changes to printing in the default color"""
-
-
+# LaTex preamble and footer
 
 LATEX_PREFIX = textwrap.dedent(rf"""
     \documentclass{{article}}
@@ -28,17 +24,23 @@ LATEX_PREFIX = textwrap.dedent(rf"""
     \begin{{document}}
 
     """)
-'''Header and preamble for LaTeX documents'''
 
 LATEX_POSTFIX = textwrap.dedent(rf"""
     \end{{document}}
     """)
-'''Footer for LaTeX documents'''
 
+    
+def has_capital_letter(text_to_check):
+    """
+    Checks if the given text contains at least one capital letter.
 
+    Args:
+        text_to_check (str): The input text.
 
-
-
+    Returns:
+        bool: True if the text contains a capital letter, False otherwise.
+    """
+    return any(char.isupper() for char in text_to_check)
 
 class BibtexWriter:
     """
@@ -49,7 +51,7 @@ class BibtexWriter:
         """Creates a BibtexWriter with entries from a table"""
         self.entries = entries
 
-    def _get_citation_type(self, bib_entry: str) -> str:
+    def get_citation_label(self, bib_entry: str) -> str:
         """
         Returns the citation type (i.e. @article, @misc) from `bib_entry`.
 
@@ -59,8 +61,9 @@ class BibtexWriter:
             type from the entry
         """
         match = re.match(r"@\w+\{([^,]+),", bib_entry.strip())
-        return match.group(1) if match else "<unknown>"
-
+        result = match.group(1) if match else "<unknown>"
+        return result
+    
     def write(self, output_dir: str, filename: str = "benchmarks.bib") -> None:
         """
         Writes the writer's stored contents to `output_dir`/`filename`.
@@ -75,6 +78,8 @@ class BibtexWriter:
         found_entries = set()
         found_names = set()
 
+        fatal = False
+
         for record in self.entries:
             record_cite_entries = record.get("cite", [])
             name = record.get("name", "UNKNOWN")
@@ -87,11 +92,31 @@ class BibtexWriter:
             for cite_entry in record_cite_entries:
                 if not isinstance(cite_entry, str) or not cite_entry.strip().startswith("@"):
                     continue
+                
+                # 2. name of function is wrong you use type but it must be label or key
+                # 4. if error occurs, for any of the labels, program must be terminated
 
-                label = self._get_citation_type(cite_entry.lower())
+                #label = self._get_citation_type(cite_entry.lower())
+                label = self.get_citation_label(cite_entry)
+                if has_capital_letter(label):
+                    Console.error(f"Citation label \"{label}\" in entry \"{name}\" is capitalized.")    
+                    fatal = True
+                if " " in label:
+                    Console.error(f"Citation label \"{label}\" in entry \"{name}\" contains a space.")
+                    fatal = True
+                if "\n" in label:
+                    Console.error(f"Citation label \"{label}\" in entry \"{name}\" contains a newline character.")
+                    fatal = True    
+                if "\t" in label:
+                    Console.error(f"Citation label \"{label}\" in entry \"{name}\" contains a tab character.")
+                    fatal = True    
+
+
+                print ("LABEL:", label)
 
                 if label in found_labels:
-                    print(f"{_RED}ERROR: Duplicate citation label \"{label}\" found in entry \"{name}\".{_DEFAULT_COLOR}")
+                    Console.error(f"Duplicate citation label \"{label}\" found in entry \"{name}\". Please ensure all labels are unique.")
+                    fatal = True
                 elif cite_entry in found_entries and name in found_names:
                     continue
                 else:
@@ -99,12 +124,16 @@ class BibtexWriter:
                     found_entries.add(cite_entry)
                     found_names.add(name)
                     bib_entries.append(cite_entry.strip())
+        if fatal:
+            print()
+            Console.error(f"BibTeX entries contain errors. Please fix them.")
+            print()
+            sys.exit(1)
+            return
 
         bib_path = os.path.join(output_dir, filename)
         with open(bib_path, "w", encoding="utf-8") as f:
             f.write("\n\n".join(bib_entries))
-
-
 
 
 class LatexWriter:
@@ -320,7 +349,7 @@ class LatexWriter:
                 if col == "cite":
                     refs = []
                     for cite in cites:
-                        label_match = self._bib_writer._get_citation_type(cite)
+                        label_match = self._bib_writer.get_citation_label(cite)
                         if label_match not in footnote_refs:
                             footnote_refs[label_match] = len(footnotes) + 1
                             footnotes.append(label_to_citation.get(label_match, f"(Unparseable citation: {label_match})"))

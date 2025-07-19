@@ -1,12 +1,15 @@
 # makefile that will create all the content
 
-FILES=source/benchmarks-addon-new.yaml#source/benchmarks.yaml
+FILES=source/benchmarks-addon.yaml
+FILES=source/benchmarks.yaml source/benchmarks-addon.yaml
+
 # FILES=source/benchmark-entry-comment-gregor.yaml
 
 SCRIPT=bin/generate.py
 
-#COLUMNS=date,name,domain,focus,keywords,task_types,metrics,models,cite
-COLUMNS=date,expiration,valid,name,url,domain,focus,keywords,summary,task_types,ai_capability_measured,metrics,models,notes,cite,ratings.specification.rating,ratings.specification.reason,ratings.dataset.rating,ratings.dataset.reason,ratings.metrics.rating,ratings.metrics.reason,ratings.reference_solution.rating,ratings.reference_solution.reason,ratings.documentation.rating,ratings.documentation.reason
+COLUMNS=date,name,domain,focus,keywords,task_types,metrics,models,cite
+#COLUMNS=date,expired,valid,name,url,domain,focus,keywords,summary,task_types,ai_capability_measured,metrics,models,notes,cite,ratings.specification.rating,ratings.specification.reason,ratings.dataset.rating,ratings.dataset.reason,ratings.metrics.rating,ratings.metrics.reason,ratings.reference_solution.rating,ratings.reference_solution.reason,ratings.documentation.rating,ratings.documentation.reason
+#COLUMNS=date,name,url,domain,focus,keywords,summary,task_types,ai_capability_measured,metrics,models,notes,cite,ratings.specification.rating,ratings.specification.reason,ratings.dataset.rating,ratings.dataset.reason,ratings.metrics.rating,ratings.metrics.reason,ratings.reference_solution.rating,ratings.reference_solution.reason,ratings.documentation.rating,ratings.documentation.reason
 
 .PHONY: all content single tex pdf
 
@@ -17,7 +20,7 @@ g:
 	python bin/test.py
 
 summary:
-	python bin/summary.py --graph=pdf
+	python bin/summary-new.py --file source/benchmarks-addon.yaml --graph=pdf
 	#cd content/summary; bibtool -s -i benchmarks.bib -o tmp.bib
 	cd content/summary; latexmk -pdf -silent summary.tex
 	open content/summary/summary.pdf 

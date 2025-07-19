@@ -30,6 +30,14 @@ from pprint import pprint
 from requests.exceptions import RequestException, Timeout, ConnectionError, HTTPError, MissingSchema
 from collections import OrderedDict
 
+
+def clean_string(s):
+    # Replace spaces with underscores
+    s = s.replace(' ', '_')
+    # Remove all characters except a-z, A-Z, -, and _
+    s = re.sub(r'[^a-zA-Z\-_]', '', s)
+    return str(s)
+
 class YamlManager(object):
     """
     Loads, stores, and formats the contents of YAML files.
@@ -192,7 +200,16 @@ class YamlManager(object):
         # The internal storage is _yaml_dicts.
         # self.data = self._yaml_dicts # This line is removed.
 
+        found = []
+        for entry in self._yaml_dicts:
+            key = clean_string(entry.get("name", "unknown")).lower()
+            if key in found:
+                Console.error(f"Duplicate entry name found: {key}. Please ensure all entries have unique names.")
+            found.append(key)
+            entry["id"] = key
+
         return self._yaml_dicts # Or return self.data
+        
 
     # ---------------------------------------------------------------------------------------------------------
     # Contents Presentation

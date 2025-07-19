@@ -37,14 +37,14 @@ class YamlManager(object):
             overwriting_contents (bool, default=True): True if overwriting existing contents, False if appending to existing contents
             printing_syntax_errors (bool, default=True): whether to print warnings to the console if a YAML syntax error is found
         """
-        self._load_yamls(yamls, overwriting_contents=overwriting_contents, print_syntax_errors=printing_syntax_errors)
+        self.load_yamls(yamls, overwriting_contents=overwriting_contents, print_syntax_errors=printing_syntax_errors)
 
     # ---------------------------------------------------------------------------------------------------------
     # File Loading
     # ---------------------------------------------------------------------------------------------------------
 
 
-    def _load_single_yaml_file(self, file_path: str, enable_error_messages: bool = True) -> list[dict]:
+    def load_single_yaml_file(self, file_path: str, enable_error_messages: bool = True) -> list[dict]:
         """
         Loads a YAML file containing a flat list of field-level entries,
         and groups them into full benchmark entries using 'name' as the reset key.
@@ -74,7 +74,7 @@ class YamlManager(object):
             return []
 
 
-    def _load_multiple_yaml_files(self, file_paths: list[str], enable_error_messages: bool = True) -> list[dict]:
+    def load_multiple_yaml_files(self, file_paths: list[str], enable_error_messages: bool = True) -> list[dict]:
         """
         Returns a list of dictionaries representing the contents of a YAML file.
 
@@ -86,11 +86,11 @@ class YamlManager(object):
         """
         records = []
         for path in file_paths:
-            records += self._load_single_yaml_file(path, enable_error_messages)
+            records += self.load_single_yaml_file(path, enable_error_messages)
         return records
 
 
-    def _load_yamls(self, file_paths: str | list[str], overwriting_contents: bool = True, print_syntax_errors: bool = True) -> None:
+    def load_yamls(self, file_paths: str | list[str], overwriting_contents: bool = True, print_syntax_errors: bool = True) -> None:
         """
         Loads the contents of `file_paths` into this YamlManager.
 
@@ -106,15 +106,15 @@ class YamlManager(object):
         """
         if isinstance(file_paths, str):
             if overwriting_contents:
-                self._yaml_dicts =  self._load_multiple_yaml_files([file_paths], print_syntax_errors)
+                self._yaml_dicts =  self.load_multiple_yaml_files([file_paths], print_syntax_errors)
             else:
-                self._yaml_dicts += self._load_multiple_yaml_files([file_paths], print_syntax_errors)
+                self._yaml_dicts += self.load_multiple_yaml_files([file_paths], print_syntax_errors)
 
         else:
             if overwriting_contents:
-                self._yaml_dicts =  self._load_multiple_yaml_files(file_paths, print_syntax_errors)
+                self._yaml_dicts =  self.load_multiple_yaml_files(file_paths, print_syntax_errors)
             else:
-                self._yaml_dicts += self._load_multiple_yaml_files(file_paths, print_syntax_errors)
+                self._yaml_dicts += self.load_multiple_yaml_files(file_paths, print_syntax_errors)
 
 
     # ---------------------------------------------------------------------------------------------------------

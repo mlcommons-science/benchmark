@@ -485,7 +485,7 @@
   notes: Good
   cite:
     - |
-      @article{zhong2024spiqa,
+      @misc{zhong2024spiqa,
         title={SPIQA: Scientific Paper Image Question Answering},
         author={Zhong, Xiaoyan and Gao, Yijian and Gururangan, Suchin},
         year={2024},
@@ -530,7 +530,7 @@
   notes: Multilingual (English, Simplified and Traditional Chinese)
   cite:
     - |
-      @article{jin2020what,
+      @misc{jin2020what,
         title={What Disease Does This Patient Have? A Large-scale Open-domain Question Answering Dataset from Medical Exams},
         author={Jin, Di and Li, Ying and Zhang, Yichong and others},
         year={2020},
@@ -623,7 +623,7 @@
   notes: This is a model, not a benchmark
   cite:
     - |
-      @article{fang2023domain,
+      @misc{fang2023domain,
         title={Domain-Agnostic Molecular Generation with Chemical Feedback},
         author={Fang, Yin and Zhang, Ningyu and Chen, Zhuo and others},
         year={2023},

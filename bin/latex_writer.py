@@ -12,7 +12,8 @@ import bibtexparser
 
 # --- Constants ---
 
-LATEX_PREFIX = textwrap.dedent(r"""
+LATEX_PREFIX = textwrap.dedent(
+    r"""
     \documentclass{article}
     \usepackage[margin=1in]{geometry}
     \usepackage{hyperref}
@@ -23,12 +24,15 @@ LATEX_PREFIX = textwrap.dedent(r"""
     \usepackage[style=ieee, url=true]{biblatex}
     \addbibresource{benchmarks.bib}
     \begin{document}
-""")
+"""
+)
 
-LATEX_POSTFIX = textwrap.dedent(r"""
+LATEX_POSTFIX = textwrap.dedent(
+    r"""
     \printbibliography
     \end{document}
-""")
+"""
+)
 
 # Define all columns with their properties for clarity and consistency
 ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
@@ -53,29 +57,36 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
     "ratings.dataset.reason": {"width": "3cm", "label": "Dataset Reason"},
     "ratings.metrics.rating": {"width": "1cm", "label": "Metrics Rating"},
     "ratings.metrics.reason": {"width": "3cm", "label": "Metrics Reason"},
-    "ratings.reference_solution.rating": {"width": "1cm", "label": "Reference Solution Rating"},
-    "ratings.reference_solution.reason": {"width": "3cm", "label": "Reference Solution Reason"},
+    "ratings.reference_solution.rating": {
+        "width": "1cm",
+        "label": "Reference Solution Rating",
+    },
+    "ratings.reference_solution.reason": {
+        "width": "3cm",
+        "label": "Reference Solution Reason",
+    },
     "ratings.documentation.rating": {"width": "1cm", "label": "Documentation Rating"},
     "ratings.documentation.reason": {"width": "3cm", "label": "Documentation Reason"},
 }
 
 REQUIRED_FIELDS_BY_TYPE = {
-    'article': ['author', 'title', 'journal', 'year', 'doi'],
-    'book': ['author', 'title', 'publisher', 'year', 'doi'],  # OR editor
-    'booklet': ['title'],
-    'conference': ['author', 'title', 'booktitle', 'year'],
-    'inbook': ['author', 'title', 'chapter', 'publisher', 'year'],  # OR pages
-    'incollection': ['author', 'title', 'booktitle', 'publisher', 'year'],
-    'inproceedings': ['author', 'title', 'booktitle', 'year'],
-    'manual': ['title'],
-    'mastersthesis': ['author', 'title', 'school', 'year'],
-    'misc': ['title', 'url', 'year'],  
-    'phdthesis': ['author', 'title', 'school', 'year'],
-    'proceedings': ['title', 'year'],
-    'techreport': ['author', 'title', 'institution', 'year'],
-    'unpublished': ['author', 'title', 'note']
+    "article": ["author", "title", "journal", "year", "doi"],
+    "book": ["author", "title", "publisher", "year", "doi"],  # OR editor
+    "booklet": ["title"],
+    "conference": ["author", "title", "booktitle", "year"],
+    "inbook": ["author", "title", "chapter", "publisher", "year"],  # OR pages
+    "incollection": ["author", "title", "booktitle", "publisher", "year"],
+    "inproceedings": ["author", "title", "booktitle", "year"],
+    "manual": ["title"],
+    "mastersthesis": ["author", "title", "school", "year"],
+    "misc": ["title", "url", "year"],
+    "phdthesis": ["author", "title", "school", "year"],
+    "proceedings": ["title", "year"],
+    "techreport": ["author", "title", "institution", "year"],
+    "unpublished": ["author", "title", "note"],
 }
 # --- Utility Functions ---
+
 
 def has_capital_letter(text_to_check: str) -> bool:
     """
@@ -88,6 +99,7 @@ def has_capital_letter(text_to_check: str) -> bool:
         bool: True if the text contains a capital letter, False otherwise.
     """
     return any(char.isupper() for char in text_to_check)
+
 
 def escape_latex(text: Any) -> str:
     """
@@ -102,6 +114,7 @@ def escape_latex(text: Any) -> str:
         text = str(text)
     return unicode_to_latex(text, non_ascii_only=False)
 
+
 def sanitize_filename(name: str) -> str:
     """
     Returns a lowercased version of `name` suitable for a filename,
@@ -113,11 +126,11 @@ def sanitize_filename(name: str) -> str:
         Sanitized filename.
     """
     # Remove characters not typically allowed in filenames
-    output = re.sub(r'[^\w\s.-]', '', name)
+    output = re.sub(r"[^\w\s.-]", "", name)
     # Replace sequences of spaces with a single hyphen
-    output = re.sub(r'\s+', '-', output)
+    output = re.sub(r"\s+", "-", output)
     # Remove leading/trailing hyphens and convert to lowercase
-    output = output.strip('-').lower()
+    output = output.strip("-").lower()
     return output
 
 
@@ -125,29 +138,37 @@ def validate_bibtex_entries(bibtex_str):
     try:
         bib_database = bibtexparser.loads(bibtex_str)
         errors = []
-        
+
         for entry in bib_database.entries:
-            entry_type = entry.get('ENTRYTYPE', '').lower()
-            entry_id = entry.get('ID', '?')
+            entry_type = entry.get("ENTRYTYPE", "").lower()
+            entry_id = entry.get("ID", "?")
             required = REQUIRED_FIELDS_BY_TYPE.get(entry_type, [])
-            
+
             # Special case logic (e.g., book can have author OR editor)
-            if entry_type == 'book':
-                if not ('author' in entry or 'editor' in entry):
-                    errors.append(f"Entry '{entry_id}' (book) missing 'author' or 'editor'")
-                required = [f for f in required if f not in ('author')]  # skip checking 'author' below
-            
+            if entry_type == "book":
+                if not ("author" in entry or "editor" in entry):
+                    errors.append(
+                        f"Entry '{entry_id}' (book) missing 'author' or 'editor'"
+                    )
+                required = [
+                    f for f in required if f not in ("author")
+                ]  # skip checking 'author' below
+
             # Validate required fields
             for field in required:
                 if field not in entry:
-                    errors.append(f"Entry '{entry_id}' ({entry_type}) missing required field: {field}")
-        
+                    errors.append(
+                        f"Entry '{entry_id}' ({entry_type}) missing required field: {field}"
+                    )
+
         return (len(errors) == 0), errors
 
     except Exception as e:
         return False, [f"Parsing error: {e}"]
 
+
 # --- BibtexWriter Class ---
+
 
 class BibtexWriter:
     """
@@ -181,7 +202,7 @@ class BibtexWriter:
     def _extract_cite_url(cite_entry: str) -> str:
         """
         Extracts the URL from the given BibTeX citation entry.
-        
+
         Parameters:
             cite_entry (str): BibTeX entry to extract URL from.
         Returns:
@@ -211,12 +232,16 @@ class BibtexWriter:
             if isinstance(record_cite_entries, str):
                 record_cite_entries = [record_cite_entries]
             elif not isinstance(record_cite_entries, list):
-                continue # Skip if 'cite' field is not a string or list
+                continue  # Skip if 'cite' field is not a string or list
 
             for cite_entry_raw in record_cite_entries:
 
-                if not isinstance(cite_entry_raw, str) or not cite_entry_raw.strip().startswith("@"):
-                    Console.warning(f"Skipping malformed citation entry in '{name}': '{cite_entry_raw}'")
+                if not isinstance(
+                    cite_entry_raw, str
+                ) or not cite_entry_raw.strip().startswith("@"):
+                    Console.warning(
+                        f"Skipping malformed citation entry in '{name}': '{cite_entry_raw}'"
+                    )
                     continue
 
                 cite_entry = cite_entry_raw.strip()
@@ -227,26 +252,33 @@ class BibtexWriter:
                     Console.error(f"Invalid BibTeX entry in '{name}': {label}")
                     for error in errors:
                         Console.error(f"  - {error}")
-                    continue    
+                    continue
 
-                match = re.search(r'author\s*=\s*{(.+?)}', cite_entry_raw, re.DOTALL)
+                match = re.search(r"author\s*=\s*{(.+?)}", cite_entry_raw, re.DOTALL)
                 if match:
                     authors_raw = match.group(1)
                     authors = [a.strip() for a in authors_raw.split(" and ")]
-                    
+
                     if "others" in authors:
-                        Console.error(f"Entry '{name}' contains a citation '{label}' that includes others'. Please use full author names.")   
-        
+                        Console.error(
+                            f"Entry '{name}' contains a citation '{label}' that includes others'. Please use full author names."
+                        )
 
                 if has_capital_letter(label):
-                    Console.error(f"Citation label \"{label}\" in entry \"{name}\" is capitalized. Labels should be lowercase.")
+                    Console.error(
+                        f'Citation label "{label}" in entry "{name}" is capitalized. Labels should be lowercase.'
+                    )
                     fatal_errors = True
-                if re.search(r'[\s\n\t]', label):
-                    Console.error(f"Citation label \"{label}\" in entry \"{name}\" contains whitespace. Labels should not contain spaces, newlines, or tabs.")
+                if re.search(r"[\s\n\t]", label):
+                    Console.error(
+                        f'Citation label "{label}" in entry "{name}" contains whitespace. Labels should not contain spaces, newlines, or tabs.'
+                    )
                     fatal_errors = True
-                
+
                 if label in found_labels:
-                    Console.error(f"Duplicate citation label \"{label}\" found. All labels must be unique.")
+                    Console.error(
+                        f'Duplicate citation label "{label}" found. All labels must be unique.'
+                    )
                     fatal_errors = True
                 else:
                     found_labels.add(label)
@@ -268,7 +300,159 @@ class BibtexWriter:
             sys.exit(1)
 
 
-# --- LatexWriter Class ---
+# Latex writer for sections
+
+
+class SectionWriter:
+
+    def __init__(self, entries: List[Dict]):
+        """
+        Initializes the SectionWriter with a list of entries.
+
+        Args:
+            entries (List[Dict]): List of benchmark entries, where each entry is a dictionary.
+        """
+        self.entries = entries
+        self.files = []
+
+    def latex_entry_to_string(self, entry):
+        def latex_escape(text):
+            """Escape LaTeX special characters for LaTeX compatibility."""
+            replacements = {
+                "&": r"\&",
+                "%": r"\%",
+                "$": r"\$",
+                "#": r"\#",
+                "_": r"\_",
+                "{": r"\{",
+                "}": r"\}",
+                "~": r"\textasciitilde{}",
+                "^": r"\textasciicircum{}",
+                "\\": r"\textbackslash{}",
+            }
+            for key, val in replacements.items():
+                text = text.replace(key, val)
+            return text
+
+        def format_field(key, value, indent=0):
+            indent_str = "  " * indent
+            key_escaped = latex_escape(str(key))
+            if isinstance(value, dict):
+                lines = [
+                    f"{indent_str}\\item[{key_escaped}] \\begin{{description}}[style=nextline,leftmargin=1.5em]"
+                ]
+                for sub_key, sub_val in value.items():
+                    lines.append(format_field(sub_key, sub_val, indent + 1))
+                lines.append(f"{indent_str}\\end{{description}}")
+                return "\n".join(lines)
+            elif isinstance(value, list):
+                lines = [f"{indent_str}\\item[{key_escaped}]"]
+                for item in value:
+                    if isinstance(item, (dict, list)):
+                        lines.append(format_field("-", item, indent + 1))
+                    else:
+                        lines.append(f"{indent_str}  - {latex_escape(str(item))}")
+                return "\n".join(lines)
+            elif value is not None:
+                return f"{indent_str}\\item[{key_escaped}] {latex_escape(str(value))}"
+            else:
+                return ""
+
+        # Start with section and description paragraph
+        lines = [f"\\section{{{latex_escape(entry['name'])}}}"]
+        lines.append("")
+
+        if "description" in entry and entry["description"]:
+            lines.append(f"\\noindent {latex_escape(entry['description'])}\n")
+
+        # Use description environment for all fields except name/description/cite
+        lines.append("\\begin{description}[style=nextline,leftmargin=1.5em]")
+
+        skip_fields = {"name", "description", "cite"}
+        for key, value in entry.items():
+            if key not in skip_fields:
+                formatted = format_field(key, value, indent=1)
+                if formatted.strip():
+                    lines.append(formatted)
+
+        if "cite" in entry and entry["cite"]:
+            citations = []
+            # lines.append("\\textbf{Citation:}")
+            # for cite_entry in entry["cite"]:
+            #    lines.append(f"\\begin{{quote}}\\footnotesize {latex_escape(cite_entry)}\\end{{quote}}")
+
+            for cite_entry in entry["cite"]:
+                # get label from BibTeX entry
+                label = BibtexWriter._get_citation_label(cite_entry)
+                # print \cite{label} in LaTeX
+                citations.append(f"\\cite{{{label}}}")
+            lines.append(f"  \\item[Citations:] {', '.join(citations)}")
+
+        lines.append("\\end{description}")
+
+        return "\n".join(lines)
+
+    def input_all_sections(self, file="source/tex/sections.tex"):
+        """
+        Creates LaTeX sections for all entries and writes them to a file.
+
+        Args:
+            file (str): Path to the output LaTeX file.
+        """
+        names = []
+        for entry in self.entries:
+            # get id from entry
+            filename = entry["id"] + ".tex"
+            names.append(filename)
+
+        # create a result so that each name is in a newline embedded in \input{}
+        names = [f"\\input{{{name}}}" for name in names]
+        # join the names with newline
+        result = "\n".join(names)  # change so that each name is in \input{} command
+
+        # write the result to the file
+        os.makedirs(os.path.dirname(file), exist_ok=True)
+        # now write result  to the file
+
+        with open(file, "w", encoding="utf-8") as f:
+            f.write("\\section{Benchmark Details}\n\n")
+
+        with open(file, "a", encoding="utf-8") as f:
+            f.write(result)
+
+    def write_section(self, outdir="source/tex/section"):
+        """
+        Writes a section of the LaTeX document containing the specified entries.
+
+        Args:
+            output_path (str): Base directory for output.
+            section_name (str): Name of the section to write.
+            selected_columns (List[str]): List of column keys to include in this section.
+        """
+
+        for entry in self.entries:
+            if not isinstance(entry, dict):
+                Console.error(f"Invalid entry format: {entry}. Expected a dictionary.")
+                continue
+
+            # Print the LaTeX section for this entry
+            section = self.latex_entry_to_string(entry)
+
+            filename = entry["id"] + ".tex"
+            output_path = os.path.join(outdir, filename)
+
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+            try:
+                with open(output_path, "w", encoding="utf-8") as f:
+                    f.write(section)
+                Console.ok(f"Section written to '{output_path}'")
+            except Exception as e:
+                Console.error(f"Error writing section to '{output_path}': {e}")
+
+
+# --- LatexWriter Class (for tables) ---
+
 
 class LatexWriter:
     """Class to write formatted YAML contents to a LaTeX file."""
@@ -294,7 +478,6 @@ class LatexWriter:
             entry["_tex_filename"] = sanitize_filename(name) + ".tex"
             self._latex_filename_map[entry.get("id", name)] = entry["_tex_filename"]
 
-
     def _entry_to_row(self, row_dict: Dict, selected_columns: List[str]) -> str:
         """
         Returns a string containing `row_dict` converted to one row of the TeX table.
@@ -317,39 +500,54 @@ class LatexWriter:
 
             field_value = ""
             if value is None:
-                field_value = "" # Empty string for None values
+                field_value = ""  # Empty string for None values
             elif col_name == "cite":
-                cite_entries = value if isinstance(value, list) else [value] if isinstance(value, str) else []
-                cite_keys = [BibtexWriter._get_citation_label(c) for c in cite_entries if c and c.strip().startswith("@")]
+                cite_entries = (
+                    value
+                    if isinstance(value, list)
+                    else [value] if isinstance(value, str) else []
+                )
+                cite_keys = [
+                    BibtexWriter._get_citation_label(c)
+                    for c in cite_entries
+                    if c and c.strip().startswith("@")
+                ]
                 primary_url = row_dict.get("url", "")
-                
+
                 # Try to get URL from the first citation entry if available
                 if not primary_url and cite_entries:
                     first_cite_url = BibtexWriter._extract_cite_url(cite_entries[0])
                     if first_cite_url:
                         primary_url = first_cite_url
 
-
                 cite_text = f"\\cite{{{','.join(cite_keys)}}}" if cite_keys else ""
 
-                url_text = f"\\href{{{escape_latex(primary_url)}}}{{$\\Rightarrow$}}" if primary_url else ""
+                url_text = (
+                    f"\\href{{{escape_latex(primary_url)}}}{{$\\Rightarrow$}}"
+                    if primary_url
+                    else ""
+                )
                 field_value = f"{cite_text}{url_text}"
             elif col_name == "url":
-                field_value = f"\\href{{{escape_latex(value)}}}{{link}}" if value else ""
+                field_value = (
+                    f"\\href{{{escape_latex(value)}}}{{link}}" if value else ""
+                )
             elif isinstance(value, list):
                 field_value = ", ".join(escape_latex(item) for item in value)
             else:
                 field_value = escape_latex(value)
-            
+
             row_contents_list.append(field_value)
-        
+
         return " & ".join(row_contents_list) + r" \\ \hline"
 
-
-    def _generate_latex_table_content(self, rows: List[str], 
-                                      selected_columns: List[str], 
-                                      column_titles: List[str], 
-                                      column_widths: List[Union[float, int]] | None = None) -> str:
+    def _generate_latex_table_content(
+        self,
+        rows: List[str],
+        selected_columns: List[str],
+        column_titles: List[str],
+        column_widths: List[Union[float, int]] | None = None,
+    ) -> str:
         """
         Generates the core LaTeX table environment content (excluding document preamble/postfix).
 
@@ -369,7 +567,9 @@ class LatexWriter:
         else:
             for w in column_widths:
                 if not isinstance(w, (int, float)) or w <= 0:
-                    Console.error(f"Invalid column width: {w}. Widths must be positive numbers.")
+                    Console.error(
+                        f"Invalid column width: {w}. Widths must be positive numbers."
+                    )
                     sys.exit(1)
                 column_width_str += f"|p{{{round(w, 5)}cm}}"
         column_width_str += "|}"
@@ -381,7 +581,9 @@ class LatexWriter:
         column_names_header = " & ".join(column_names_header_parts) + r" \\ \hline"
 
         # Constructing the table content
-        table_content = textwrap.dedent(rf"""
+        table_content = (
+            textwrap.dedent(
+                rf"""
             \begin{{longtable}}{column_width_str}
             \hline
             {column_names_header}
@@ -394,16 +596,24 @@ class LatexWriter:
             \endfoot
             \hline
             \endlastfoot
-        """) + "\n".join(rows) + textwrap.dedent(r"""
+        """
+            )
+            + "\n".join(rows)
+            + textwrap.dedent(
+                r"""
             \end{longtable}
-        """)
+        """
+            )
+        )
         return table_content
 
-    def write_table(self, 
-                    output_path: str, 
-                    selected_columns_keys: List[str], 
-                    column_titles: List[str] | None = None, 
-                    column_widths: List[Union[float, int]] | None = None) -> None:
+    def write_table(
+        self,
+        output_path: str,
+        selected_columns_keys: List[str],
+        column_titles: List[str] | None = None,
+        column_widths: List[Union[float, int]] | None = None,
+    ) -> None:
         """
         Writes all entries stored by this writer into one LaTeX document at
         `output_path`/tex/benchmarks.tex. Also generates the BibTeX file.
@@ -417,38 +627,56 @@ class LatexWriter:
                                                              If None, defaults to 2cm per column.
         """
         if not selected_columns_keys:
-            Console.warning("No columns selected for the table. Skipping table generation.")
+            Console.warning(
+                "No columns selected for the table. Skipping table generation."
+            )
             return
 
         # Validate and prepare column information
         if column_titles:
             if len(column_titles) != len(selected_columns_keys):
-                Console.error(f"Mismatch: {len(selected_columns_keys)} columns selected, but {len(column_titles)} titles provided.")
+                Console.error(
+                    f"Mismatch: {len(selected_columns_keys)} columns selected, but {len(column_titles)} titles provided."
+                )
                 sys.exit(1)
         else:
-            column_titles = [ALL_COLUMNS.get(key, {"label": key.replace('_', ' ').title()})["label"] for key in selected_columns_keys]
+            column_titles = [
+                ALL_COLUMNS.get(key, {"label": key.replace("_", " ").title()})["label"]
+                for key in selected_columns_keys
+            ]
 
         if column_widths:
             if len(column_widths) != len(selected_columns_keys):
-                Console.error(f"Mismatch: {len(selected_columns_keys)} columns selected, but {len(column_widths)} widths provided.")
+                Console.error(
+                    f"Mismatch: {len(selected_columns_keys)} columns selected, but {len(column_widths)} widths provided."
+                )
                 sys.exit(1)
 
         # Generate rows
-        all_rows = [self._entry_to_row(entry, selected_columns_keys) for entry in self._entries]
+        all_rows = [
+            self._entry_to_row(entry, selected_columns_keys) for entry in self._entries
+        ]
 
         # Generate the main LaTeX table content
         table_latex = self._generate_latex_table_content(
             all_rows, selected_columns_keys, column_titles, column_widths
         )
-        
+
         # Assemble the full LaTeX document
-        full_latex_doc = LATEX_PREFIX + r"\begin{landscape}" + r"\footnotesize" + table_latex + r"\end{landscape}" + LATEX_POSTFIX
+        full_latex_doc = (
+            LATEX_PREFIX
+            + r"\begin{landscape}"
+            + r"\footnotesize"
+            + table_latex
+            + r"\end{landscape}"
+            + LATEX_POSTFIX
+        )
 
         # Ensure output directory exists and write the file
         tex_output_dir = os.path.join(output_path, "tex")
         os.makedirs(tex_output_dir, exist_ok=True)
         filepath = os.path.join(tex_output_dir, "benchmarks.tex")
-        
+
         try:
             with open(filepath, "w", encoding="utf-8") as f:
                 f.write(full_latex_doc)
@@ -456,15 +684,17 @@ class LatexWriter:
         except IOError as e:
             Console.error(f"Error writing main LaTeX table to {filepath}: {e}")
             sys.exit(1)
-        
+
         # Write BibTeX file
         self._bib_writer.write(tex_output_dir)
 
-    def write_individual_entries(self, 
-                                 output_path: str, 
-                                 selected_columns_keys: List[str],
-                                 column_titles: List[str] | None = None, 
-                                 column_widths: List[Union[float, int]] | None = None) -> None: 
+    def write_individual_entries(
+        self,
+        output_path: str,
+        selected_columns_keys: List[str],
+        column_titles: List[str] | None = None,
+        column_widths: List[Union[float, int]] | None = None,
+    ) -> None:
         """
         Writes each entry stored by this writer into a separate LaTeX document.
         All individual documents are placed in `output_path`/tex_pages.
@@ -478,28 +708,39 @@ class LatexWriter:
                                                              If None, defaults to 2cm per column.
         """
         if not selected_columns_keys:
-            Console.warning("No columns selected for individual entries. Skipping generation.")
+            Console.warning(
+                "No columns selected for individual entries. Skipping generation."
+            )
             return
 
         # Validate and prepare column information
         if column_titles:
             if len(column_titles) != len(selected_columns_keys):
-                Console.error(f"Mismatch: {len(selected_columns_keys)} columns selected, but {len(column_titles)} titles provided for individual entries.")
+                Console.error(
+                    f"Mismatch: {len(selected_columns_keys)} columns selected, but {len(column_titles)} titles provided for individual entries."
+                )
                 sys.exit(1)
         else:
-            column_titles = [ALL_COLUMNS.get(key, {"label": key.replace('_', ' ').title()})["label"] for key in selected_columns_keys]
+            column_titles = [
+                ALL_COLUMNS.get(key, {"label": key.replace("_", " ").title()})["label"]
+                for key in selected_columns_keys
+            ]
 
         if column_widths:
             if len(column_widths) != len(selected_columns_keys):
-                Console.error(f"Mismatch: {len(selected_columns_keys)} columns selected, but {len(column_widths)} widths provided for individual entries.")
+                Console.error(
+                    f"Mismatch: {len(selected_columns_keys)} columns selected, but {len(column_widths)} widths provided for individual entries."
+                )
                 sys.exit(1)
 
         # Ensure output directory exists
         tex_pages_output_dir = os.path.join(output_path, "tex_pages")
         os.makedirs(tex_pages_output_dir, exist_ok=True)
-        
+
         # Write BibTeX file for individual pages too, as they might reference it
-        self._bib_writer.write(os.path.join(output_path, "tex")) # Use the same bib dir as main table
+        self._bib_writer.write(
+            os.path.join(output_path, "tex")
+        )  # Use the same bib dir as main table
 
         for i, entry in enumerate(self._entries):
             # Generate row for the current entry
@@ -509,7 +750,7 @@ class LatexWriter:
             table_latex = self._generate_latex_table_content(
                 [single_row], selected_columns_keys, column_titles, column_widths
             )
-            
+
             # Assemble the full LaTeX document for this entry
             full_latex_doc = LATEX_PREFIX + table_latex + LATEX_POSTFIX
 
@@ -520,9 +761,13 @@ class LatexWriter:
 
             try:
                 with open(filepath, "w", encoding="utf-8") as f:
-                    f.write(f"% LaTeX table for \"{entry_name}\"\n")
+                    f.write(f'% LaTeX table for "{entry_name}"\n')
                     f.write(full_latex_doc)
-                Console.ok(f"Successfully wrote individual LaTeX page for '{entry_name}' to: {filepath}")
+                Console.ok(
+                    f"Successfully wrote individual LaTeX page for '{entry_name}' to: {filepath}"
+                )
             except IOError as e:
-                Console.error(f"Error writing individual LaTeX page for '{entry_name}' to {filepath}: {e}")
+                Console.error(
+                    f"Error writing individual LaTeX page for '{entry_name}' to {filepath}: {e}"
+                )
                 # Continue processing other entries, but log the error

@@ -3,7 +3,7 @@ import os
 import sys
 from yaml_manager import YamlManager
 from md_writer import MarkdownWriter
-from latex_writer import LatexWriter
+from latex_writer import LatexWriter, SectionWriter
 
 
 ALL_COLUMNS = [
@@ -54,22 +54,77 @@ if __name__ == "__main__":
     All files in the output directory are under the output."""
 
     parser = argparse.ArgumentParser(description=script_help)
-    parser.add_argument('--files', '-i', type=str, nargs='+', required=True, help='YAML file paths to process.')
-    parser.add_argument('--format', '-f', type=str, choices=['md', 'tex'], required=True, help="Output file format: 'md' or 'tex'")
-    parser.add_argument('--outdir', '-o', type=str, default='../content/', required=True, help="Output directory")
-    parser.add_argument('--authortruncation', type=int, default=9999, help="Truncate authors for index pages")
-    parser.add_argument('--columns', type=lambda s: s.split(','), help="Subset of columns to include")
-    parser.add_argument('--check', action='store_true', help="Conduct formatting checks on inputted YAML files. Does not produce an output file.")
-    parser.add_argument('--index', action='store_true', help="Generate individual pages for each entry for the given format. If format is MD, generates an index.md file")
-    parser.add_argument('--noratings', action='store_true', help="Removes rating columns from the output file")
-    parser.add_argument('--required', action='store_true', help="Makes all the columns required that are listed in the --columns command")
-    parser.add_argument('--standalone', '-s', action='store_true', help="Include full LaTeX document preamble.")
-    parser.add_argument('--withcitation', action='store_true', help="Include a row for BibTeX citations. Works only with Markdown format")
-    parser.add_argument('--withurlcheck', action='store_true', help="Checks if url exists or not")
+    parser.add_argument(
+        "--files",
+        "-i",
+        type=str,
+        nargs="+",
+        required=True,
+        help="YAML file paths to process.",
+    )
+    parser.add_argument(
+        "--format",
+        "-f",
+        type=str,
+        choices=["md", "tex"],
+        required=True,
+        help="Output file format: 'md' or 'tex'",
+    )
+    parser.add_argument(
+        "--outdir",
+        "-o",
+        type=str,
+        default="../content/",
+        required=True,
+        help="Output directory",
+    )
+    parser.add_argument(
+        "--authortruncation",
+        type=int,
+        default=9999,
+        help="Truncate authors for index pages",
+    )
+    parser.add_argument(
+        "--columns", type=lambda s: s.split(","), help="Subset of columns to include"
+    )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="Conduct formatting checks on inputted YAML files. Does not produce an output file.",
+    )
+    parser.add_argument(
+        "--index",
+        action="store_true",
+        help="Generate individual pages for each entry for the given format. If format is MD, generates an index.md file",
+    )
+    parser.add_argument(
+        "--noratings",
+        action="store_true",
+        help="Removes rating columns from the output file",
+    )
+    parser.add_argument(
+        "--required",
+        action="store_true",
+        help="Makes all the columns required that are listed in the --columns command",
+    )
+    parser.add_argument(
+        "--standalone",
+        "-s",
+        action="store_true",
+        help="Include full LaTeX document preamble.",
+    )
+    parser.add_argument(
+        "--withcitation",
+        action="store_true",
+        help="Include a row for BibTeX citations. Works only with Markdown format",
+    )
+    parser.add_argument(
+        "--withurlcheck", action="store_true", help="Checks if url exists or not"
+    )
 
     args = parser.parse_args()
 
-    if args.standalone and args.format != 'tex':
+    if args.standalone and args.format != "tex":
         parser.error("--standalone is only valid with --format tex")
     if args.withcitation and args.format != "md":
         parser.error("--withcitation is only valid with --format md")
@@ -81,9 +136,11 @@ if __name__ == "__main__":
             parser.error(f"The file {file} does not exist")
 
     os.makedirs(args.outdir, exist_ok=True)
-    columns = args.columns if args.columns else COLUMN_NAMES # Fallback if args.columns not in scope
+    columns = (
+        args.columns if args.columns else COLUMN_NAMES
+    )  # Fallback if args.columns not in scope
 
-    #Eliminate column names if precondition is broken
+    # Eliminate column names if precondition is broken
     if len(COLUMN_TITLES) != len(columns):
         COLUMN_TITLES = None
 
@@ -94,7 +151,6 @@ if __name__ == "__main__":
     # #check filenames
     # if not manager.check_filenames():
     #    sys.exit(1)
-    
 
     if args.check:
         check_passed = manager.check_required_fields()
@@ -103,22 +159,25 @@ if __name__ == "__main__":
     if args.required:
         if not manager.check_required_fields():
             sys.exit(1)
-    
-        
-    if args.withurlcheck:
-        manager.check_urls() # URL check
 
-    if args.format == 'md':
+    if args.withurlcheck:
+        manager.check_urls()  # URL check
+
+    if args.format == "md":
         converter = MarkdownWriter(entries)
 
         if args.index:
             converter.write_individual_entries(args.outdir, args.columns, COLUMN_TITLES)
         converter.write_table(args.outdir, args.columns, COLUMN_TITLES)
 
-    elif args.format == 'tex':
+    elif args.format == "tex":
         converter = LatexWriter(entries)
         if args.index:
             converter.write_individual_entries(args.outdir, args.columns)
-        converter.write_table(args.outdir, 
-                              args.columns)
-#                              columns=ALL_COLUMNS)
+        converter.write_table(args.outdir, args.columns)
+
+        # #                      columns=ALL_COLUMNS)
+
+        converter = SectionWriter(entries)
+        converter.write_section(outdir="content/tex/sections")
+        converter.input_all_sections(file="content/tex/sections.tex")

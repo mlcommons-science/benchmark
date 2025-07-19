@@ -65,3 +65,6 @@ debug: tex pdf view
 
 check:
 	python ${SCRIPT} --files ${FILES} --check --outdir foo --format=tex 
+
+log:
+	open -a Aquamacs content/tex/benchmarks.log

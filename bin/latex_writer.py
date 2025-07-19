@@ -15,6 +15,7 @@ LATEX_PREFIX = textwrap.dedent(r"""
     \documentclass{article}
     \usepackage[margin=1in]{geometry}
     \usepackage{hyperref}
+    \usepackage{amsmath}
     \usepackage{pdflscape}
     \usepackage{wasysym}
     \usepackage{longtable}

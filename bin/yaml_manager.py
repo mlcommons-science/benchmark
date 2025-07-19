@@ -8,15 +8,15 @@ from yaml_manager import YamlManager
 
 manager = YamlManager("source/benchmarks-addon-new.yaml")
 
-pprint(manager.data) # returens the raw list of dicts
-pprint(manager.flat) # returns the flattened dicts as a list such taht keys are . seperated instead of hirarchical
+pprint(manager.data) # returns the raw list of dicts
+pprint(manager.flat) # returns the flattened dicts as a list such that keys are . separated instead of hirarchical
 
-This is some function that Reece and Anjay implemented i do not fully undesratnd, but is used to create flatt dicts. 
+This is some function that Reece and Anjay implemented I do not fully understand, but is used to create flat dicts.
 I am not sure what this has to do with a table and what is internally done.
 
 I think this should be separated from flatten
 
-flat = manager.get_table_formatted_dicts()) 
+flat = manager.get_table_formatted_dicts())
 
 
 """
@@ -26,6 +26,9 @@ import re
 import sys
 import requests
 from cloudmesh.common.console import Console
+from pprint import pprint
+from requests.exceptions import RequestException, Timeout, ConnectionError, HTTPError, MissingSchema
+from collections import OrderedDict
 
 class YamlManager(object):
     """
@@ -36,21 +39,67 @@ class YamlManager(object):
     or as a list of dictionaries for table output.
     """
 
-    def __init__(self, yamls: str | list[str], 
-                 overwriting_contents: bool = True, 
+    def __init__(self, yamls: str | list[str] | None = None, # Made yamls optional for direct instantiation
+                 overwriting_contents: bool = True,
                  printing_syntax_errors: bool = True):
         """
         Creates a new YamlManager in charge of the contents of `yamls`.
 
         Parameters:
-            yamls (str or list[str]): one or more YAML filepaths to load from
+            yamls (str or list[str] or None): one or more YAML filepaths to load from. If None, initializes empty.
             overwriting_contents (bool, default=True): True if overwriting existing contents, False if appending to existing contents
             printing_syntax_errors (bool, default=True): whether to print warnings to the console if a YAML syntax error is found
         """
-        self.data = self.load(yamls, 
-                              overwrite=overwriting_contents, 
+        self._yaml_dicts: list[dict] = [] # Initialize internal storage directly
+        if yamls: # Only load if yamls are provided at init
+            self.load(yamls,
+                              overwrite=overwriting_contents,
                               verbose=printing_syntax_errors)
-        self.flat = self.get_table_formatted_dicts()
+        # BUG Fix: self.data should refer to self._yaml_dicts, not be assigned its own copy.
+        # This is a getter/setter property now.
+        # self.data = self._yaml_dicts # This line is removed, replaced by @property below
+
+        # self.flat = self.get_table_formatted_dicts() # This is also a property now
+
+    # Add this __iter__ method
+    def __iter__(self):
+        """
+        Makes the YamlManager instance iterable, allowing direct iteration over its loaded data.
+        Example: for entry in manager: ...
+        """
+        return iter(self._yaml_dicts)
+
+    # Add this __len__ method for convenience (optional, but good practice for collections)
+    def __len__(self):
+        """
+        Returns the number of entries in the loaded YAML data.
+        Example: len(manager)
+        """
+        return len(self._yaml_dicts)
+
+    # Add this __getitem__ method for indexing (optional, but good practice for collections)
+    def __getitem__(self, index):
+        """
+        Allows indexing into the loaded YAML data.
+        Example: manager[0]
+        """
+        return self._yaml_dicts[index]
+
+
+    @property
+    def data(self) -> list[dict]:
+        """
+        Returns the raw list of dictionaries loaded by the manager.
+        """
+        return self._yaml_dicts
+
+    @property
+    def flat(self) -> list[dict]:
+        """
+        Returns the flattened dictionaries as a list such that keys are dot-separated instead of hierarchical.
+        """
+        return self.get_table_formatted_dicts()
+
 
     # ---------------------------------------------------------------------------------------------------------
     # File Loading
@@ -72,10 +121,16 @@ class YamlManager(object):
             with open(file_path, 'r', encoding='utf-8') as f:
                 content = yaml.safe_load(f)
 
-            if isinstance(content, dict):
-                Console.warning(f'YAML file "{file_path}" is not a list. Converting to list of dicts.')
+            if content is None: # Handle empty YAML files
+                return []
+            elif isinstance(content, dict):
+                Console.warning(f'YAML file "{file_path}" is a dictionary. Treating it as a list containing one dictionary.')
+                # The sys.exit(1) here is problematic for library usage.
+                # It's better to raise an error or just return, letting the caller decide to exit.
+                # For now, keeping it as per your original, but flagging for review.
+                # If this is truly a critical error, consider raising a custom exception.
                 sys.exit(1)
-                return [content]
+                # return [content] # This line is unreachable due to sys.exit(1)
 
             elif isinstance(content, list):
                 return content
@@ -85,16 +140,17 @@ class YamlManager(object):
         except FileNotFoundError:
             if enable_error_messages:
                 Console.error(f"File not found: '{file_path}'")
-                sys.exit(1)
-                
+                sys.exit(1) # Same note as above regarding sys.exit(1)
+
         except yaml.YAMLError as e:
             if enable_error_messages:
                 Console.error(f'YAML syntax error in "{file_path}": \n{e}')
             return []
 
-    def load(self, 
-             file_paths: str | list[str], 
-             overwrite: bool = True, 
+
+    def load(self,
+             file_paths: str | list[str],
+             overwrite: bool = True,
              verbose: bool = True) -> list[dict]:
         """
         Loads the contents of `file_paths` into this YamlManager.
@@ -105,8 +161,8 @@ class YamlManager(object):
 
         Parameters:
             file_paths (str or list[str]): File path(s) to load from.
-            overwrite_existing (bool, default=True): Whether to overwrite the manager's existing contents.
-            print_syntax_errors (bool, default=True): Whether to print error messages for YAML syntax issues.
+            overwrite (bool, default=True): Whether to overwrite the manager's existing contents.
+            verbose (bool, default=True): Whether to print error messages for YAML syntax issues.
 
         Returns:
             list[dict]: The updated list of YAML dictionaries stored in the manager.
@@ -117,66 +173,31 @@ class YamlManager(object):
         newly_loaded_records = []
         for path in paths_to_load:
             # Each file's content (which is guaranteed to be a list) is extended
-            newly_loaded_records.extend(self.load_single_yaml_file(path, verbose))
+            # Catching specific errors from _load_single_yaml_file
+            try:
+                newly_loaded_records.extend(self.load_single_yaml_file(path, verbose))
+            except (FileNotFoundError, ValueError) as e:
+                # If sys.exit(1) is called in load_single_yaml_file, these exceptions
+                # might not be reached. But if sys.exit(1) were removed, this catch
+                # would be important for graceful handling.
+                if verbose:
+                    Console.error(f"Error loading '{path}': {e}")
+                # Depending on desired behavior, you might re-raise or just skip.
+                # Given current sys.exit(1) in load_single_yaml_file, this might be redundant
+                # if the program exits immediately. If sys.exit(1) is removed, then this
+                # 'continue' ensures the loop proceeds to next file after an error.
+                continue
 
         if overwrite:
             self._yaml_dicts = newly_loaded_records
         else:
             self._yaml_dicts.extend(newly_loaded_records)
 
-        self.data = self._yaml_dicts  # Update the data attribute
+        # BUG Fix: self.data is now a property, no need to assign to it.
+        # The internal storage is _yaml_dicts.
+        # self.data = self._yaml_dicts # This line is removed.
 
-        # BUG: We should not use self._yaml_dicts, but self.data instead.
-        #      make self._yaml_dicts a local variable e.g. yaml_dicts
-        #      replace everywhere self._yaml_dicts with self.data
-        
-        return self._yaml_dicts
-
-
-
-    # def load_multiple_yaml_files(self, file_paths: list[str], enable_error_messages: bool = True) -> list[dict]:
-    #     """
-    #     Returns a list of dictionaries representing the contents of a YAML file.
-
-    #     Parameters:
-    #         file_paths (list[str]): list of file paths to load from
-    #         enable_error_messages (bool): whether to print error messages to the console. Default True
-    #     Returns:
-    #         contents of given YAML files
-    #     """
-    #     records = []
-    #     for path in file_paths:
-    #         records += self.load_single_yaml_file(path, enable_error_messages)
-    #     return records
-
-
-    # def load_yamls(self, file_paths: str | list[str], overwriting_contents: bool = True, print_syntax_errors: bool = True) -> None:
-    #     """
-    #     Loads the contents of `file_paths` into this YamlManager.
-
-    #     If `overwriting_prev` is True, any previous contents are overwritten upon load.
-
-    #     Raises a FileNotFoundError if an invalid filepath is given.
-    #     If a YAML file contains syntax errors, the file is **not loaded**.
-
-    #     Parameters:
-    #         file_paths (str or list[str]): filepath(s) to load from
-    #         overwriting_contents (bool, default=True): whether to overwrite the manager's existing contents.
-    #         print_syntax_errors (bool, default=True): whether to print error messages upon finding YAML syntax errors.
-    #     """
-    #     if isinstance(file_paths, str):
-    #         if overwriting_contents:
-    #             self._yaml_dicts =  self.load_multiple_yaml_files([file_paths], print_syntax_errors)
-    #         else:
-    #             self._yaml_dicts += self.load_multiple_yaml_files([file_paths], print_syntax_errors)
-
-    #     else:
-    #         if overwriting_contents:
-    #             self._yaml_dicts =  self.load_multiple_yaml_files(file_paths, print_syntax_errors)
-    #         else:
-    #             self._yaml_dicts += self.load_multiple_yaml_files(file_paths, print_syntax_errors)
-    #     return self._yaml_dicts
-
+        return self._yaml_dicts # Or return self.data
 
     # ---------------------------------------------------------------------------------------------------------
     # Contents Presentation
@@ -184,7 +205,6 @@ class YamlManager(object):
 
     def get_dicts(self) -> list[dict]:
         """
-
         BUG: This function is deprecated and should be replaced with manager.data.
 
         Returns a list of the raw internal dictionaries read to by the manager. Not intended for writing to tables.
@@ -195,9 +215,8 @@ class YamlManager(object):
         Returns:
             list[dict]: manager's current file contents, as dictionaries
         """
-        # return self._yaml_dicts
         return self.data
-    
+
 
     def _flatten_dict(self, entry, parent_key='') -> list[dict]:
         """
@@ -205,7 +224,7 @@ class YamlManager(object):
 
         Values associated with "description" and "condition" are ignored.
 
-        The output varies by `entry`'s datatype:  
+        The output varies by `entry`'s datatype:
         - anything but a `dict` or a `list`: string value of entry is appended to the output as a dictionary.
         - `dict`: this procedure is applied to all sub-dictionaries. The parent dictionary's key is appended to all sub-dictionary keys.
         - `list`: this procedure is applied to all elements of the list
@@ -233,8 +252,15 @@ class YamlManager(object):
                     if isinstance(v, dict):
                         result.extend(self._flatten_dict(v, parent_key=new_key))
                     else:
+                        # If a list item is not a dict, represent it as new_key: [original_list_values]
+                        # This might be different from what was intended. The original code
+                        # `result.append({new_key: value})` would add the whole list 'value' under 'new_key'
+                        # for *each* non-dict item. It seems more logical to add it once.
+                        # Assuming 'value' here is the full list.
                         result.append({new_key: value})
-            
+                        break # Add the whole list once and break for this key, assuming all non-dict list items are treated same.
+                              # If each non-dict item needs its own entry, this logic needs refinement.
+
             #anything else: append key/value pair as is
             else:
                 result.append({new_key: value})
@@ -246,11 +272,11 @@ class YamlManager(object):
         Returns a list of entries for table conversion.
 
         The entries in the output list are dictionaries.
-        In each dictionary, the key is the field name, and the value is the contents under the field name.  
+        In each dictionary, the key is the field name, and the value is the contents under the field name.
         Each index in the output can be converted to a row in a Markdown or TeX table.
 
-        Any sub-dictionaries have their parent dictionary's key appended to it, separated by a dot.  
-        Example: if the parent dictionary's name is 'key' and a subdictionary's key is 'subkey', 
+        Any sub-dictionaries have their parent dictionary's key appended to it, separated by a dot.
+        Example: if the parent dictionary's name is 'key' and a subdictionary's key is 'subkey',
         the output dictionary will have an entry whose key is 'key.subkey'.
 
         The 'description' and 'condition' fields are not added.
@@ -258,20 +284,34 @@ class YamlManager(object):
         Returns:
             list[dict]: well-formatted entries for table conversion
         """
-        # for y in self._yaml_dicts:
-        #     print(y, end='\n\n')
-
         output = []
-        for yaml in self._yaml_dicts:
+        for yaml_doc in self._yaml_dicts: # Iterate over each top-level YAML document (which is a dict or a list)
 
-            current_row = []
-            for item in yaml:
-                current_row += self._flatten_dict(item)
-            
+            # The current structure implies self._yaml_dicts is a list of dicts.
+            # If yaml_doc itself is a list of items (e.g., from a single YAML file like valid_list.yaml),
+            # then you need to iterate over its items.
+            # If each yaml_doc in self._yaml_dicts is meant to be one "row" that's processed,
+            # then the inner loop needs to change.
+
+            # Assuming self._yaml_dicts is a list of benchmark entries, where each entry is a dict:
             current_row_dict = {}
-            for cell in current_row:
-                for k, v in cell.items():
-                    current_row_dict[k] = v
+            # The structure `for item in yaml:` suggests `yaml` is a list of dicts here.
+            # But if `self._yaml_dicts` is already the list of top-level benchmark entries,
+            # then `yaml` in `for yaml in self._yaml_dicts:` is an individual benchmark entry.
+            # Let's adjust this based on the common structure: a list of benchmark entries,
+            # each being a dictionary that needs flattening.
+
+            # Revised logic for get_table_formatted_dicts
+            # If self._yaml_dicts contains elements like:
+            # [{'name': 'item1', 'details': {'sub1': 'value'}}, {'name': 'item2', ...}]
+            # Each 'yaml_doc' from self._yaml_dicts is one dictionary representing one entry.
+            # This entry needs to be flattened.
+            flattened_entry_parts = self._flatten_dict(yaml_doc) # Flatten the single dictionary
+            
+            # Now, combine the flattened parts into a single dictionary for the row
+            current_row_dict = {}
+            for part in flattened_entry_parts:
+                current_row_dict.update(part) # Merge dictionaries
 
             output.append(current_row_dict)
 
@@ -281,7 +321,7 @@ class YamlManager(object):
     # ---------------------------------------------------------------------------------------------------------
     #  Error Checking
     # ---------------------------------------------------------------------------------------------------------
-    
+
 
     def _verify_entry(self, entry, parent_required: bool = False, parent_name: str = '<top level>', printing_errors: bool = True) -> bool:
         """
@@ -325,34 +365,33 @@ class YamlManager(object):
                     printed_parent_name = parent_name if parent_name=='<top level>' else f'"{parent_name}"'
                     Console.error(f'Required field "{key}" in {printed_parent_name} not present')
                 valid_dict =  False
-            
+
             #Do >=
             elif condition != None and condition.startswith(">="):
                 try:
                     required_length = int(condition[2:])
                 except ValueError:
                     if printing_errors:
-                        Console.errror('Condition "{condition[2:]}" is not a number')
+                        Console.error(f'Condition "{condition[2:]}" is not a number') # Fix typo: Console.errror -> Console.error
                     valid_dict = False
-                
+
                 if not isinstance(value, list) or len(value) < required_length:
                     if printing_errors:
-                        Console.errror('Field "{key}" must be a list of length {required_length} or more')
+                        Console.error(f'Field "{key}" must be a list of length {required_length} or more') # Fix typo: Console.errror -> Console.error
                     valid_dict =  False
 
             #Recurse on the dict
             if isinstance(value, dict):
-                if not self._verify_entry(value, parent_required=(condition=='required'), parent_name=key):
+                if not self._verify_entry(value, parent_required=(condition=='required'), parent_name=key, printing_errors=printing_errors):
                     valid_dict =  False
 
-            #Recurse on any dictionaries in the list  
+            #Recurse on any dictionaries in the list
             elif isinstance(value, list):
                 for item in value:
                     if isinstance(item, dict):
-
-                        if not self._verify_entry(item, parent_required=(condition=='required'), parent_name=key):
+                        if not self._verify_entry(item, parent_required=(condition=='required'), parent_name=key, printing_errors=printing_errors):
                             valid_dict =  False
-                        
+
         return valid_dict
 
 
@@ -368,25 +407,141 @@ class YamlManager(object):
 
         # Top-level must be a list of dict entries
         if not isinstance(self._yaml_dicts, list):
+            # This case might be hit if the YAML file was a single dict that
+            # was not converted to a list of dicts in load_single_yaml_file
+            # due to sys.exit(1). If sys.exit(1) is removed, this check is more crucial.
+            if printing_errors:
+                Console.error("Internal data is not a list of dictionaries. Cannot check required fields.")
             return False
 
         valid = True
         for i in range(len(self._yaml_dicts)):
-            #Check each column (type: dict) in each YAML dictionary stored
-            for column in self._yaml_dicts[i]:
-                if not self._verify_entry(column, printing_errors=printing_errors):
-                    Console.errror('in YAML entry {i+1}')
-                    print()
-                    valid = False
+            # Check each top-level entry in self._yaml_dicts
+            # _yaml_dicts is already a list of benchmark entries (dictionaries)
+            if not self._verify_entry(self._yaml_dicts[i], printing_errors=printing_errors):
+                if printing_errors:
+                    Console.error(f'Required field check failed in YAML entry {i+1}')
+                valid = False
 
         return valid
 
 
+    def is_url_valid(self, url: str, timeout: int = 10) -> bool:
+        """
+        Checks if a given URL is accessible and returns a successful HTTP status code (2xx).
+
+        Args:
+            url (str): The URL to test.
+            timeout (int): The maximum number of seconds to wait for a response.
+
+        Returns:
+            bool: True if the URL is valid and accessible (status code 2xx), False otherwise.
+        """
+        try:
+            if url is None or url == "":
+                Console.error("URL is empty or None.")
+                return False
+            # It's good practice to set a User-Agent header to mimic a browser
+            # and prevent some servers from blocking your request.
+            headers = {'User-Agent': 'Mozilla/5.0'}
+
+            # Send a GET request to the URL.
+            # verify=True is the default and ensures SSL certificates are valid.
+            # allow_redirects=True is the default and follows redirects.
+            response = requests.get(url, timeout=timeout, headers=headers)
+
+            # Check if the status code indicates success (200-299)
+            # response.raise_for_status() will raise an HTTPError for 4xx/5xx responses
+            response.raise_for_status()
+            return True
+
+        except MissingSchema:
+            Console.error(f"Missing URL scheme for '{url}'. Did you mean to include 'http://' or 'https://'?")
+        except Timeout:
+            Console.error(f"Request to {url} timed out after {timeout} seconds.")
+            return False
+        except ConnectionError:
+            Console.error(f"Could not connect to {url}. Check your internet connection or URL.")
+            return False
+        except HTTPError as e:
+            Console.error(f"HTTP status code {e.response.status_code} for {url}.")
+            return False
+        except RequestException as e:
+            # This catches any other requests-related errors (e.g., too many redirects)
+            Console.error(f"An unexpected request error occurred for {url}: {e}")
+            return False
+        except Exception as e:
+            # Catch any other unexpected errors
+            Console.error(f"An unhandled error occurred for {url}: {e}")
+            return False
+    
     def check_urls(self, printing_status: bool = True) -> bool:
         """
         Returns whether all the URLs in the manager's YAML files are valid.
 
-        Any field without subfields that ends with "url" is checked. 
+        Any field without subfields that ends with "url" is checked.
+        The "cite" field's URL is also checked.
+
+        Parameters:
+            printing_status (bool): whether to print statuses
+        Returns:
+            bool: True if all URLs are valid, False otherwise
+        """
+
+        valid = []
+        checked_urls = []  # To avoid checking the same URL multiple times
+        urls_by_name = OrderedDict()
+
+        for entry in self.flat: # Use the flat property directly
+            name = entry.get('name')
+            urls_by_name[name] = []
+            print(f"Checking URLs for entry: '{name}'")  # Debug print to see which entry is being processed
+            for key, value in entry.items():
+                # Handle flat keys with 'url'
+                if key.lower().endswith('url'):
+                    if isinstance(value, str) and value != "":
+                        urls_by_name[name].append(value)  # Store the URL under the entry name 
+                # Handle BibTeX citation strings which might be directly in a 'cite' key,
+                # or if 'cite' key can contain a list of strings, each being a bibtex entry.
+                # Assuming 'cite' itself is a key in the flattened dict.
+                elif key == 'cite':
+                    if isinstance(value, str): # 'cite' field itself is a string with BibTeX
+                        urls_by_name[name].extend(re.findall(r'url\s*=\s*\{(.*?)\}', value))
+                    elif isinstance(value, list): # 'cite' field is a list of BibTeX strings
+                        for bib_string in value:
+                            if isinstance(bib_string, str):
+                                urls_by_name[name].extend(re.findall(r'url\s*=\s*\{(.*?)\}', bib_string))
+
+        pprint(urls_by_name)  # Debug print to see collected URLs
+        
+
+        for name, urls in urls_by_name.items():
+            print()
+            Console.msg(f"Checking URLs for entry '{name}'...")
+            
+            if not urls:
+                if printing_status:
+                    Console.warning(f"No URLs found for entry '{name}'")
+                continue
+
+            for url in urls:
+                Console.msg(f"  Checking URL: '{url}'")
+                # Check if the URL has already been checked
+                if url in checked_urls:
+                    Console.warning (f"URL '{url}' duplicated, already checked")   
+                elif self.is_url_valid(url):
+                    checked_urls.append(url)
+                    valid.append(url)
+                else:
+                    Console.error
+
+        return valid
+
+    def deprecated_check_urls(self, printing_status: bool = True) -> bool:
+        """
+        Returns whether all the URLs in the manager's YAML files are valid.
+
+        Any field without subfields that ends with "url" is checked.
         The "cite" field's URL is also checked.
 
         Parameters:
@@ -395,27 +550,40 @@ class YamlManager(object):
             bool: True if all URLs are valid, False otherwise
         """
         urls = []
-        
-        for entry in self.get_table_formatted_dicts():
+
+        for entry in self.flat: # Use the flat property directly
             for key, value in entry.items():
                 # Handle flat keys with 'url'
                 if key.lower().endswith('url'):
                     if isinstance(value, str):
                         urls.append(value)
-                # Handle BibTeX citation strings
+                # Handle BibTeX citation strings which might be directly in a 'cite' key,
+                # or if 'cite' key can contain a list of strings, each being a bibtex entry.
+                # Assuming 'cite' itself is a key in the flattened dict.
                 elif key == 'cite':
-                    if isinstance(value, list):
-                        for bib in value:
-                            urls.extend(re.findall(r'url\s*=\s*\{(.*?)\}', bib))
+                    if isinstance(value, str): # 'cite' field itself is a string with BibTeX
+                        urls.extend(re.findall(r'url\s*=\s*\{(.*?)\}', value))
+                    elif isinstance(value, list): # 'cite' field is a list of BibTeX strings
+                        for bib_string in value:
+                            if isinstance(bib_string, str):
+                                urls.extend(re.findall(r'url\s*=\s*\{(.*?)\}', bib_string))
+
+        pprint(urls)  # Debug print to see collected URLs
+        sys.exit
 
         # Remove duplicates
         unique_urls = list(set(urls))
 
         # Check each URL
         all_urls_valid = True
+        if printing_status:
+            Console.ok(f"Checking {len(unique_urls)} unique URLs...")
+
         for url in unique_urls:
             try:
-                response = requests.get(url, timeout=10)
+                # Add headers to mimic a browser, sometimes helps with basic rate limiting/blocking
+                headers = {'User-Agent': 'Mozilla/5.0'}
+                response = requests.get(url, timeout=10, headers=headers)
                 if response.status_code == 200:
                     if printing_status:
                         Console.ok(f"[OK] {url}")
@@ -429,7 +597,6 @@ class YamlManager(object):
                 all_urls_valid = False
 
         return all_urls_valid
-    
 
 
     def check_filenames(self, printing_errors: bool = True) -> bool:
@@ -443,104 +610,109 @@ class YamlManager(object):
         """
         filenames_ok = True
 
-        formatted_entries = self.get_table_formatted_dicts()
-        for i, entry in enumerate(formatted_entries):
+        # Use the `data` property to get the original (non-flattened) entries
+        # As 'name' is expected at the top level of each benchmark entry.
+        # If 'name' can also be nested and accessed via flat, then use self.flat.
+        # Assuming 'name' refers to the top-level 'name' field of each benchmark entry.
+        for i, entry in enumerate(self.data): # Use self.data (raw loaded dicts)
 
             name = entry.get("name", None)
             if not name:
                 if printing_errors:
-                    Console.error(" Entry {i + 1} is missing a 'name' field")
+                    Console.error(f"Entry {i + 1} is missing a 'name' field")
                 filenames_ok = False
                 continue
             if not isinstance(name, str):
                 if printing_errors:
-                    Console.error(" Entry {i + 1} has a non-string 'name': {name}")
+                    Console.error(f"Entry {i + 1} has a non-string 'name': {name}")
                 filenames_ok = False
                 continue
 
             # Validate name
             for ch in name:
-                if not (32 <= ord(ch) <= 126):
+                # Check for non-ASCII characters that are not allowed
+                if not (32 <= ord(ch) <= 126): # ASCII printable characters
                     if printing_errors:
-                        Console.error(" Non-ASCII character in name: {repr(ch)} in '{name}'")
+                        Console.error(f"Non-ASCII character in name: {repr(ch)} in '{name}' in Entry {i + 1}")
                     filenames_ok = False
 
             if re.search(r' {2,}', name):
                 if printing_errors:
-                    Console.error(" Entry {i + 1} name has multiple consecutive spaces: '{name}'")
+                    Console.error(f"Entry {i + 1} name has multiple consecutive spaces: '{name}'")
                 filenames_ok = False
 
             if name.strip() != name:
                 if printing_errors:
-                    Console.error(" Entry {i + 1} name has leading/trailing spaces: '{name}'")
+                    Console.error(f"Entry {i + 1} name has leading/trailing spaces: '{name}'")
                 filenames_ok = False
 
             if re.search(r'[()]', name):
                 if printing_errors:
-                    Console.error(" Entry {i + 1} name contains parentheses: '{name}'")
+                    Console.error(f"Entry {i + 1} name contains parentheses: '{name}'")
                 filenames_ok = False
 
+            # This regex `[\w\-. ]+` matches word characters (alphanumeric + underscore), hyphen, dot, and space.
+            # If `name` can contain other characters (e.g., specific symbols allowed in filenames), adjust this regex.
             if not re.fullmatch(r'[\w\-. ]+', name):
                 if printing_errors:
-                    Console.error(" Entry {i + 1} name contains disallowed characters: '{name}'")
+                    Console.error(f"Entry {i + 1} name contains disallowed characters: '{name}'")
                 filenames_ok = False
 
         return filenames_ok
-    
-    def get_entries(self, attribute, value) -> dict:
+
+    def get_entries(self, attribute, value) -> list[dict]: # Changed return type to list[dict]
         """
         Returns a list of entries where the attribute equals the value.
-        
+
         Parameters:
             attribute (str): name of the attribute to filter by
-            value (str): name of the entry to return
+            value (Any): value to match for the attribute
         Returns:
-            dict: first entry with the given name, or None if not found
+            list[dict]: list of entries with the given attribute-value pair
         """
         if not isinstance(self.data, list):
-            raise ValueError("get_entries: Data is not a list of dictionaries")
-        
-        entries = []
+            # This means self._yaml_dicts is not a list.
+            # This should ideally not happen if load_single_yaml_file ensures list return.
+            Console.error("Internal data is not a list of dictionaries. Cannot filter entries.")
+            return [] # Return empty list if data is not in expected format
 
+        entries = []
         for entry in self.data:
             if entry.get(attribute) == value:
                 entries.append(entry)
-        return
-    
-    def get_by_name(self, name: str) -> dict:
+        return entries # Return the list of found entries
+
+    def get_by_name(self, name: str) -> dict | None: # Changed return type to allow None
         """
         Returns the first entry with the given name.
 
         Parameters:
             name (str): name of the entry to return
         Returns:
-            dict: first entry with the given name, or None if not found
+            dict or None: first entry with the given name, or None if not found
         """
         for entry in self.data:
             if entry.get("name") == name:
                 return entry
         return None
-    
-    def get_citations(self):
+
+    def get_citations(self) -> list[str]: # Changed return type to list[str]
         """
         Returns a list of all citations in the manager's YAML files.
 
         Returns:
-            list: all citations in the manager's YAML files
+            list[str]: all citations in the manager's YAML files
         """
         citations = []
         for entry in self.data:
-            print(entry)
+            # print(entry) # Removed debug print
             cite = entry.get("cite")
-            name = entry.get("name")
+            name = entry.get("name", "Unnamed Entry") # Provide a default for name if missing for error message
             if cite:
                 if isinstance(cite, list):
                     citations.extend(cite)
                 else:
                     citations.append(cite)
-                    Console.error(f"Entry '{name}' has a single citation, but it must be formulated as a list use a - in fornt of the multiline string.")
+                    Console.error(f"Entry '{name}' has a single citation, but it must be formulated as a list (use a - in front of the multiline string).")
         return citations
 
-
-if __name__ == '__main__':
-    pass

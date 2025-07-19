@@ -269,7 +269,7 @@ class LatexWriter:
                         primary_url = first_cite_url
 
 
-                cite_text = f"\\cite{{{', '.join(cite_keys)}}}" if cite_keys else ""
+                cite_text = f"\\cite{{{','.join(cite_keys)}}}" if cite_keys else ""
 
                 print("ZZZ", cite_text)
 

@@ -2,35 +2,64 @@ import os
 import re
 import sys
 import textwrap
+from typing import List, Dict, Union, Any
+
 from pybtex.database import parse_string
 from pybtex.plugin import find_plugin
 from pylatexenc.latexencode import unicode_to_latex
-from pprint import pprint
 from cloudmesh.common.console import Console
 
-# LaTex preamble and footer
+# --- Constants ---
 
-LATEX_PREFIX = textwrap.dedent(rf"""
-    \documentclass{{article}}
+LATEX_PREFIX = textwrap.dedent(r"""
+    \documentclass{article}
+    \usepackage[margin=1in]{geometry}
+    \usepackage{hyperref}
+    \usepackage{pdflscape}
+    \usepackage{wasysym}
+    \usepackage{longtable}
+    \usepackage[style=ieee, url=true]{biblatex}
+    \addbibresource{benchmarks.bib}
+    \begin{document}
+""")
 
-    \usepackage[margin=1in]{{geometry}}
-    \usepackage{{hyperref}}
-    \usepackage{{pdflscape}}
-    \usepackage{{wasysym}}
-    \usepackage{{longtable}}
-    \usepackage[style=ieee, url=true]{{biblatex}}
-    \addbibresource{{benchmarks.bib}}
+LATEX_POSTFIX = textwrap.dedent(r"""
+    \printbibliography
+    \end{document}
+""")
 
-    \begin{{document}}
+# Define all columns with their properties for clarity and consistency
+ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
+    "date": {"width": "1.5cm", "label": "Date"},
+    "expired": {"width": "1cm", "label": "Expired"},
+    "valid": {"width": "0.7cm", "label": "Valid"},
+    "name": {"width": "2.5cm", "label": "Name"},
+    "url": {"width": "0.7cm", "label": "URL"},
+    "domain": {"width": "2cm", "label": "Domain"},
+    "focus": {"width": "2cm", "label": "Focus"},
+    "keywords": {"width": "2.5cm", "label": "Keywords"},
+    "description": {"width": "4cm", "label": "Description"},
+    "task_types": {"width": "3cm", "label": "Task Types"},
+    "ai_capability_measured": {"width": "3cm", "label": "AI Capability"},
+    "metrics": {"width": "2cm", "label": "Metrics"},
+    "models": {"width": "2cm", "label": "Models"},
+    "notes": {"width": "3cm", "label": "Notes"},
+    "cite": {"width": "1cm", "label": "Citation"},
+    "ratings.specification.rating": {"width": "1cm", "label": "Specification Rating"},
+    "ratings.specification.reason": {"width": "3cm", "label": "Specification Reason"},
+    "ratings.dataset.rating": {"width": "1cm", "label": "Dataset Rating"},
+    "ratings.dataset.reason": {"width": "3cm", "label": "Dataset Reason"},
+    "ratings.metrics.rating": {"width": "1cm", "label": "Metrics Rating"},
+    "ratings.metrics.reason": {"width": "3cm", "label": "Metrics Reason"},
+    "ratings.reference_solution.rating": {"width": "1cm", "label": "Reference Solution Rating"},
+    "ratings.reference_solution.reason": {"width": "3cm", "label": "Reference Solution Reason"},
+    "ratings.documentation.rating": {"width": "1cm", "label": "Documentation Rating"},
+    "ratings.documentation.reason": {"width": "3cm", "label": "Documentation Reason"},
+}
 
-    """)
+# --- Utility Functions ---
 
-LATEX_POSTFIX = textwrap.dedent(rf"""
-    \end{{document}}
-    """)
-
-    
-def has_capital_letter(text_to_check):
+def has_capital_letter(text_to_check: str) -> bool:
     """
     Checks if the given text contains at least one capital letter.
 
@@ -42,334 +71,257 @@ def has_capital_letter(text_to_check):
     """
     return any(char.isupper() for char in text_to_check)
 
+def escape_latex(text: Any) -> str:
+    """
+    Returns `text` converted to LaTeX-safe representation using pylatexenc.
+
+    Parameters:
+        text (Any): Text to convert to LaTeX. Can be non-string.
+    Returns:
+        TeX-friendly version of `text`.
+    """
+    if not isinstance(text, str):
+        text = str(text)
+    return unicode_to_latex(text, non_ascii_only=False)
+
+def sanitize_filename(name: str) -> str:
+    """
+    Returns a lowercased version of `name` suitable for a filename,
+    replacing spaces with hyphens and removing invalid characters.
+
+    Parameters:
+        name (str): filename to sanitize.
+    Returns:
+        Sanitized filename.
+    """
+    # Remove characters not typically allowed in filenames
+    output = re.sub(r'[^\w\s.-]', '', name)
+    # Replace sequences of spaces with a single hyphen
+    output = re.sub(r'\s+', '-', output)
+    # Remove leading/trailing hyphens and convert to lowercase
+    output = output.strip('-').lower()
+    return output
+
+# --- BibtexWriter Class ---
+
 class BibtexWriter:
     """
-    Class to write a BibTeX citation to a file
+    Class to write BibTeX citations to a file.
     """
 
-    def __init__(self, entries: list[dict]):
-        """Creates a BibtexWriter with entries from a table"""
+    def __init__(self, entries: List[Dict]):
+        """
+        Creates a BibtexWriter with entries from a table.
+
+        Args:
+            entries (List[Dict]): A list of dictionaries, each representing a benchmark entry.
+        """
         self.entries = entries
 
-    def get_citation_label(self, bib_entry: str) -> str:
+    @staticmethod
+    def _get_citation_label(bib_entry: str) -> str:
         """
-        Returns the citation type (i.e. @article, @misc) from `bib_entry`.
+        Extracts the citation label from a BibTeX entry string.
 
-        Parameters:
-            bib_entry (str): BibTeX citation
+        Args:
+            bib_entry (str): BibTeX citation string (e.g., "@article{label, ...}").
+
         Returns:
-            type from the entry
-        """
-        match = re.match(r"@\w+\{([^,]+),", bib_entry.strip())
-        result = match.group(1) if match else "<unknown>"
-        return result
-    
-    def write(self, output_dir: str, filename: str = "benchmarks.bib") -> None:
-        """
-        Writes the writer's stored contents to `output_dir`/`filename`.
-
-        Parameters:
-            output_dir: output directory to write to
-            filename: filename to write to, placed inside of `output_dir`
-        """
-        os.makedirs(output_dir, exist_ok=True)
-        bib_entries = []
-        found_labels = set()
-        found_entries = set()
-        found_names = set()
-
-        fatal = False
-
-        for record in self.entries:
-            record_cite_entries = record.get("cite", [])
-            name = record.get("name", "UNKNOWN")
-
-            if isinstance(record_cite_entries, str):
-                record_cite_entries = [record_cite_entries]
-            elif not isinstance(record_cite_entries, list):
-                continue
-
-            for cite_entry in record_cite_entries:
-                if not isinstance(cite_entry, str) or not cite_entry.strip().startswith("@"):
-                    continue
-                # Check for citation label validity
-                label = self.get_citation_label(cite_entry)
-                if has_capital_letter(label):
-                    Console.error(f"Citation label \"{label}\" in entry \"{name}\" is capitalized.")    
-                    fatal = True
-                if " " in label:
-                    Console.error(f"Citation label \"{label}\" in entry \"{name}\" contains a space.")
-                    fatal = True
-                if "\n" in label:
-                    Console.error(f"Citation label \"{label}\" in entry \"{name}\" contains a newline character.")
-                    fatal = True    
-                if "\t" in label:
-                    Console.error(f"Citation label \"{label}\" in entry \"{name}\" contains a tab character.")
-                    fatal = True    
-                
-                if label in found_labels:
-                    Console.error(f"Duplicate citation label \"{label}\" found in entry \"{name}\". Please ensure all labels are unique.")
-                    fatal = True
-                elif cite_entry in found_entries and name in found_names:
-                    continue
-                else:
-                    found_labels.add(label)
-                    found_entries.add(cite_entry)
-                    found_names.add(name)
-                    bib_entries.append(cite_entry.strip())
-        if fatal:
-            print()
-            Console.error(f"BibTeX entries contain errors. Please fix them.")
-            print()
-            sys.exit(1)
-            return
-
-        bib_path = os.path.join(output_dir, filename)
-        with open(bib_path, "w", encoding="utf-8") as f:
-            f.write("\n\n".join(bib_entries))
-
-
-class LatexWriter:
-    """Class to write formatted YAML contents to a LaTeX file"""
-
-    def __init__(self, entries: list[dict]):
-        """
-        Creates a new converter that writes `entries` to LaTeX files.
-
-        Parameters:
-            entries (list[dict]): list of benchmark entries, where each entry is a list of {key: value} dictionaries
-        """
-        self._entries = entries
-        self._bib_writer = BibtexWriter(entries)
-
-
-    def sanitize_filename(self, name: str) -> str:
-        """
-        Returns a lowercased version of `name` without whitespace and leading/trailing spaces.
-
-        Parameters:
-            name (str): filename to sanitize
-        Returns:
-            sanitized filename
-        """
-        output = ""
-        for ch in name:
-            if 32<=ord(ch)<=126:
-                output += ch
-
-        output = re.sub(r' {2,}', ' ', output) #Replace 2+ spaces with single space
-        # BUG: we do nat want _ but - as easier in latex
-        output = output.strip().replace("(", "").replace(")", "").replace(" ", "_")
-        output = output.tower()
-    
-        return output
-    
-
-
-
-    def escape_latex(self, text: str) -> str:
-        """
-        Returns `text` converted to LaTeX-safe representation using pylatexenc.
-
-        Parameters:
-            text (str): Text to convert to LaTeX
-        Returns:
-            TeX-friendly version of `text`
-        """
-        if not isinstance(text, str):
-            text = str(text)
-        return unicode_to_latex(text, non_ascii_only=False)
-    
-    
- 
-    def extract_cite_label(self, bib_entry: str) -> str:
-        """
-        Returns the citation label from a BibTeX entry like '@article{label,...}'
-
-        Parameters:
-            bib_entry: BibTeX entry to extract label from
-        Returns:
-            label from the citation
+            str: The extracted citation label, or "<unknown>" if not found.
         """
         match = re.match(r"@\w+\{([^,]+),", bib_entry.strip())
         return match.group(1) if match else "<unknown>"
 
-
-    def _extract_cite_url(self, cite_entry: str) -> str:
+    @staticmethod
+    def _extract_cite_url(cite_entry: str) -> str:
         """
-        Returns the URL from the given citation.
+        Extracts the URL from the given BibTeX citation entry.
         
         Parameters:
-            cite_entry: BibTeX entry to extract URL from
+            cite_entry (str): BibTeX entry to extract URL from.
         Returns:
-            citation's URL
+            str: Citation's URL, or an empty string if not found.
         """
         match = re.search(r'url\s*=\s*[{"]([^}"]+)[}"]', cite_entry)
         return match.group(1) if match else ""
 
-    
-    def entry_to_row(self, row_dict: dict, columns: list[str]) -> str:
+    def write(self, output_dir: str, filename: str = "benchmarks.bib") -> None:
+        """
+        Writes the writer's stored contents to `output_dir`/`filename`.
+        Validates BibTeX entries before writing.
+
+        Parameters:
+            output_dir (str): Output directory to write to.
+            filename (str): Filename to write to, placed inside of `output_dir`.
+        """
+        os.makedirs(output_dir, exist_ok=True)
+        bib_entries_to_write = []
+        found_labels = set()
+        fatal_errors = False
+
+        for record in self.entries:
+            record_cite_entries = record.get("cite", [])
+            name = record.get("name", record.get("id", "UNKNOWN_ENTRY"))
+
+            if isinstance(record_cite_entries, str):
+                record_cite_entries = [record_cite_entries]
+            elif not isinstance(record_cite_entries, list):
+                continue # Skip if 'cite' field is not a string or list
+
+            for cite_entry_raw in record_cite_entries:
+                if not isinstance(cite_entry_raw, str) or not cite_entry_raw.strip().startswith("@"):
+                    Console.warning(f"Skipping malformed citation entry in '{name}': '{cite_entry_raw}'")
+                    continue
+
+                cite_entry = cite_entry_raw.strip()
+                label = self._get_citation_label(cite_entry)
+
+                if has_capital_letter(label):
+                    Console.error(f"Citation label \"{label}\" in entry \"{name}\" is capitalized. Labels should be lowercase.")
+                    fatal_errors = True
+                if re.search(r'[\s\n\t]', label):
+                    Console.error(f"Citation label \"{label}\" in entry \"{name}\" contains whitespace. Labels should not contain spaces, newlines, or tabs.")
+                    fatal_errors = True
+                
+                if label in found_labels:
+                    Console.error(f"Duplicate citation label \"{label}\" found. All labels must be unique.")
+                    fatal_errors = True
+                else:
+                    found_labels.add(label)
+                    bib_entries_to_write.append(cite_entry)
+
+        if fatal_errors:
+            print()
+            Console.error("BibTeX entries contain errors. Please fix them to proceed.")
+            print()
+            sys.exit(1)
+
+        bib_path = os.path.join(output_dir, filename)
+        try:
+            with open(bib_path, "w", encoding="utf-8") as f:
+                f.write("\n\n".join(bib_entries_to_write))
+            Console.ok(f"Successfully wrote BibTeX file to: {bib_path}")
+        except IOError as e:
+            Console.error(f"Error writing BibTeX file to {bib_path}: {e}")
+            sys.exit(1)
+
+
+# --- LatexWriter Class ---
+
+class LatexWriter:
+    """Class to write formatted YAML contents to a LaTeX file."""
+
+    def __init__(self, entries: List[Dict]):
+        """
+        Creates a new converter that writes `entries` to LaTeX files.
+
+        Parameters:
+            entries (List[Dict]): List of benchmark entries, where each entry is a dictionary.
+        """
+        self._entries = entries
+        self._bib_writer = BibtexWriter(entries)
+        self._latex_filename_map: Dict[str, str] = {}
+        self._create_latex_filenames()
+
+    def _create_latex_filenames(self) -> None:
+        """
+        Generates a LaTeX filename for each entry and stores it internally.
+        """
+        for entry in self._entries:
+            name = entry.get("id", entry.get("name", "unknown"))
+            entry["_tex_filename"] = sanitize_filename(name) + ".tex"
+            self._latex_filename_map[entry.get("id", name)] = entry["_tex_filename"]
+
+
+    def _entry_to_row(self, row_dict: Dict, selected_columns: List[str]) -> str:
         """
         Returns a string containing `row_dict` converted to one row of the TeX table.
-
         This function handles one row at a time.
 
-        Each entry in the row is separated by ' & '. The row ends with "\\\\ \\hline". There is no newline!
+        Each entry in the row is separated by ' & '. The row ends with "\\\\ \\hline".
+        There is no newline at the very end of the string.
 
         Parameters:
-            row_dict (dict): dictionary representing the row contents, whose keys are column names and associated values are contents of the column
-            columns (list[str]): list of column names to include
+            row_dict (Dict): Dictionary representing the row contents, whose keys are column names
+                             and associated values are contents of the column.
+            selected_columns (List[str]): List of column names to include in this row.
         Returns:
-            row of TeX table
+            str: A single row of the TeX table.
         """
+        row_contents_list = []
 
-        row_contents = ""
+        for col_name in selected_columns:
+            value = row_dict.get(col_name)
 
-        #loop through row
-        for key, value in row_dict.items():
-            #don't add "description" or "condition", or anything not in the selected columns
-            if key in ("description", "condition") or (not key in columns):
-                continue
+            field_value = ""
+            if value is None:
+                field_value = "" # Empty string for None values
+            elif col_name == "cite":
+                cite_entries = value if isinstance(value, list) else [value] if isinstance(value, str) else []
+                cite_keys = [BibtexWriter._get_citation_label(c) for c in cite_entries if c and c.strip().startswith("@")]
+                primary_url = row_dict.get("url", "")
+                
+                # Try to get URL from the first citation entry if available
+                if not primary_url and cite_entries:
+                    first_cite_url = BibtexWriter._extract_cite_url(cite_entries[0])
+                    if first_cite_url:
+                        primary_url = first_cite_url
+
+
+                cite_text = f"\\cite{{{', '.join(cite_keys)}}}" if cite_keys else ""
+
+                print("ZZZ", cite_text)
+
+                url_text = f"\\href{{{escape_latex(primary_url)}}}{{$\\Rightarrow$}}" if primary_url else ""
+                field_value = f"{cite_text}{url_text}"
+            elif col_name == "url":
+                field_value = f"\\href{{{escape_latex(value)}}}{{link}}" if value else ""
+            elif isinstance(value, list):
+                field_value = ", ".join(escape_latex(item) for item in value)
+            else:
+                field_value = escape_latex(value)
             
-            #format the field value
-            field_value = (
-                self.escape_latex(value)
-                if not isinstance(value, list)
-                else ", ".join(map(self.escape_latex, value))
-            )
-
-            #handle citations
-            if key == "cite":   
-                cite_keys = [self.extract_cite_label(c) for c in row_dict.get("cite", []) if c]
-                cite_urls = [self._extract_cite_url(c) for c in row_dict.get("cite", []) if c]
-                primary_url = cite_urls[0] if cite_urls else row_dict.get("url", "")
-                field_value = (f"\\cite{{{', '.join(cite_keys)}}}" if cite_keys else "") + (f" \\href{{{primary_url}}}{{$\\Rightarrow$ }}" if primary_url else "")
-
-            if key == "url":
-                # If the URL is present, format it as a hyperlink
-                field_value = f"\\href{{{value}}}{{link}}" if value else ""  
-
-            #add field to the row
-            row_contents += f"{field_value} & "
+            row_contents_list.append(field_value)
         
-        #Remove the last '& ' and add line end
-        row_contents = row_contents[:-2]
-        row_contents += "\\\\ \\hline"
-        
-        return row_contents
+        return " & ".join(row_contents_list) + r" \\ \hline"
 
 
-
-    def _generate_latex_doc(self, rows: list[str], selected_columns: list[str], 
-                            column_titles: list[str], column_widths: list[float | int] | None = None) -> str:
+    def _generate_latex_table_content(self, rows: List[str], 
+                                      selected_columns: List[str], 
+                                      column_titles: List[str], 
+                                      column_widths: List[Union[float, int]] | None = None) -> str:
         """
-        Returns a string representing a TeX table generated from `rows` and containing only `selected_columns`.
-
-        Uses 2cm column widths for all columns if `column_widths` is None.
+        Generates the core LaTeX table environment content (excluding document preamble/postfix).
 
         Parameters:
-            rows (list[str]): rows of table. Each index must be a valid row in a TeX table
-            selected_columns (list[str]): columns in raw dict to include- any columns not in `selected_columns` will not appear in the table
-            column_titles (list[str]): names of columns to include. Must have the same length as `selected_columns`
-            column_widths (list[float] or None): widths of each column in centimeters. If not None, length must be the same length as `selected_columns` and all indices must be positive
+            rows (List[str]): Formatted table rows, each ending with `\\ \\hline`.
+            selected_columns (List[str]): List of column names (keys in `ALL_COLUMNS`) to include.
+            column_titles (List[str]): Display titles for the selected columns.
+            column_widths (List[Union[float, int]] | None): Widths for each column in cm.
+                                                             If None, defaults to 2cm per column.
         Returns:
-            TeX table string to be written to a file
+            str: LaTeX code for the table environment.
         """
-        #enforce type preconditions
-        assert isinstance(rows, list), "rows must be a list of strings"
-        assert isinstance(selected_columns, list), "selected columns must be a list of strings"
-        #enforce length preconditions
-        assert len(column_titles)==len(selected_columns), f"length of selected columns ({len(selected_columns)}) must equal length of selected columns ({len(selected_columns)})"
-        if column_widths != None:
-            assert len(selected_columns)==len(column_widths), f"length of column widths ({len(column_widths)}) must equal length of selected columns ({len(selected_columns)})"
-        
-        #Column length header
-        column_width_str = "{"
-
-        if column_widths==None:
-            #append 2cm column widths
-            column_width_str += ("|p{2cm}" * len(selected_columns))
+        # Column width string for LaTeX longtable environment
+        column_width_str = "{|"
+        if column_widths is None:
+            column_width_str += "|".join([f"p{{2cm}}" for _ in selected_columns])
         else:
-            #individually append all the column widths to the header
             for w in column_widths:
-                assert w>0, "all column widths must be positive"
-                column_width_str += "|p{" + str(round(w, 5)) + "cm}"
-
+                if not isinstance(w, (int, float)) or w <= 0:
+                    Console.error(f"Invalid column width: {w}. Widths must be positive numbers.")
+                    sys.exit(1)
+                column_width_str += f"|p{{{round(w, 5)}cm}}"
         column_width_str += "|}"
 
+        # Column names header for LaTeX table
+        column_names_header_parts = []
+        for title in column_titles:
+            column_names_header_parts.append(f"\\textbf{{{escape_latex(title)}}}")
+        column_names_header = " & ".join(column_names_header_parts) + r" \\ \hline"
 
-        #Column names
-        column_names_header = ""
-        col_number = 0
-        for key, _ in self._entries[0].items():
-            if (not key in selected_columns):
-                continue
-            column_names_header += "{\\bf " + self.escape_latex(column_titles[col_number]) + "} & "
-            col_number += 1
-
-        column_names_header = column_names_header[:-2]
-        column_names_header += "\\\\\\\\ \\hline"
-
-
-        # Create a mapping: label -> formatted citation
-        label_to_citation = {}
-        style = find_plugin('pybtex.style.formatting', 'plain')()
-        for record in self._bib_writer.entries:
-            cites = record.get("cite", [])
-            if isinstance(cites, str):
-                cites = [cites]
-            for entry in cites:
-                if not entry.strip().startswith("@"):
-                    continue
-                try:
-                    bib_data = parse_string(entry, "bibtex")
-                    for e in bib_data.entries.values():
-                        formatted = style.format_entries([e])
-                        label_to_citation[list(bib_data.entries.keys())[0]] = next(formatted).text
-                except Exception as e:
-                    print(f"Warning: Failed to format citation for BibTeX: {e}")
-
-        contents = ""
-        footnotes = []
-        footnote_refs = {}
-
-        #Put each entry in the contents
-        for entry in self._entries:
-
-            #convert citations to list
-            cites = entry.get("cite", [])
-            if isinstance(cites, str):
-                cites = [cites]
-
-            for col in selected_columns:
-                value = entry.get(col, '')
-
-                #handle citations
-                if col == "cite":
-                    refs = []
-                    for cite in cites:
-                        label_match = self._bib_writer.get_citation_label(cite)
-                        if label_match not in footnote_refs:
-                            footnote_refs[label_match] = len(footnotes) + 1
-                            footnotes.append(label_to_citation.get(label_match, f"(Unparseable citation: {label_match})"))
-                        refs.append(f"[^{footnote_refs[label_match]}]")
-                    joined_refs = self.escape_latex(", ".join(refs))
-                    contents += joined_refs
-
-                elif isinstance(value, list):
-                    contents += ", ".join(self.escape_latex(v) for v in value)
-                else:
-                    contents += self.escape_latex(str(value))
-
-                contents += " & "
-
-            contents = contents[:-2]
-            contents += "\n"
-
-        
-        table = textwrap.dedent(rf"""
-            \begin{{landscape}}
-            {{\footnotesize
+        # Constructing the table content
+        table_content = textwrap.dedent(rf"""
             \begin{{longtable}}{column_width_str}
             \hline
             {column_names_header}
@@ -382,121 +334,135 @@ class LatexWriter:
             \endfoot
             \hline
             \endlastfoot
-            """) + "\n".join(rows) + textwrap.dedent(r"""
+        """) + "\n".join(rows) + textwrap.dedent(r"""
             \end{longtable}
-            }
-            \end{landscape}
-            \printbibliography
         """)
+        return table_content
 
-    
-        content = LATEX_PREFIX + table + LATEX_POSTFIX
-
-        return content
-
-
-
-    def write_table(self, output_path: str, selected_columns: list[str], 
-                    column_titles: list[str] | None = None, column_widths: list[float | int] | None = None) -> None:
+    def write_table(self, 
+                    output_path: str, 
+                    selected_columns_keys: List[str], 
+                    column_titles: List[str] | None = None, 
+                    column_widths: List[Union[float, int]] | None = None) -> None:
         """
-        Writes all entries stored by this writer into one Markdown document at `output_path`/tex/benchmarks.tex,
-        with BibTeX citations rendered as formatted footnotes.
+        Writes all entries stored by this writer into one LaTeX document at
+        `output_path`/tex/benchmarks.tex. Also generates the BibTeX file.
 
         Parameters:
-            output_path (str): filepath to write to
-            selected_columns (list[str]): list of raw column names to include
-            column_titles (list[str] or None, default=None): names of columns to include. If not None, must have the same length as `selected_columns`
-            column_widths (list[float | int] or None, default=None): widths of each column in centimeters (if None, columns are 2cm).  If not None, must have the same length as `selected_columns` and all indices must be positive
+            output_path (str): Base directory for output.
+            selected_columns_keys (List[str]): List of column keys (from ALL_COLUMNS) to include.
+            column_titles (List[str] | None): Optional display titles for the columns.
+                                              If None, titles are derived from `ALL_COLUMNS`.
+            column_widths (List[Union[float, int]] | None): Optional widths for each column in cm.
+                                                             If None, defaults to 2cm per column.
         """
-        #enforce preconditions
-        if column_titles != None:
-            assert len(column_titles)==len(selected_columns), f"length of selected columns ({len(selected_columns)}) must equal length of selected columns ({len(selected_columns)})"
-        if column_widths != None:
-            assert len(selected_columns)==len(column_widths), f"length of column widths ({len(column_widths)}) must equal length of selected columns ({len(selected_columns)})"
-            for c in column_widths:
-                assert (type(c)==int or type(c)==float) and c>0, "all indices in column widths must be positive numbers"
+        if not selected_columns_keys:
+            Console.warning("No columns selected for the table. Skipping table generation.")
+            return
 
-        #Create rows of the table
-        all_rows = []
-        for entry in self._entries:
-
-            print (entry)
-            print()
-
-            all_rows.append(self.entry_to_row(entry, selected_columns).replace('\n', ' '))
-
-        #Create column names, if not provided
-        if not column_titles:
-            column_names_written = [col.strip().replace("_", " ").title() for col in selected_columns]
-        else:
-            column_names_written = column_titles
-
-        #Make string containing the document
-        contents = self._generate_latex_doc(all_rows, selected_columns, column_names_written, column_widths=column_widths)
-
-        #Write it
-        os.makedirs(os.path.join(output_path, "tex"), exist_ok=True)
-        filepath = os.path.join(output_path, "tex", "benchmarks.tex")
-        with open(filepath, "w+", encoding="utf-8") as f:
-            f.write(contents)
-        
-        #Make bibtex
-        self._write_bibtex(output_path)
-
-
-
-    def write_individual_entries(self, output_path: str, selected_columns: list[str],
-                                 column_titles: list[str] | None = None, column_widths: list[float | int] | None = None) -> None: 
-        """
-        Writes the entries stored by this writer into separate LaTeX documents. All are in the directory `output_path`/tex_pages
-
-        Parameters:
-            output_path (str): filepath to write to
-            selected_columns (list[str]): subset of columns in the table to include- any columns not in `selected_columns` will not appear in the table
-            column_titles (list[str] or None, default=None): names of columns to include. If not None, must have the same length as `selected_columns`
-            column_widths (list[float] or list[int] or None, default=None): 
-                widths of each column in centimeters (2cm columns if None). If not None, length must be the same length as `selected_columns` and all indices must be positive
-        """
-        #enforce preconditions
-        if column_widths != None:
-            assert len(selected_columns)==len(column_widths), "number of columns must equal the number of indices in the column widths"
-        if not column_widths==None:
-            assert len(selected_columns)==len(column_widths), f"length of column widths ({len(column_widths)}) must equal length of selected columns ({len(selected_columns)})"
-            for c in column_widths:
-                assert isinstance(c, float) or isinstance(c, int), "all indices in column widths must be floats or ints"
-                assert c>0, "all indices in column widths must be positive"
-
-
-        #Create rows of the table and get names
-        all_rows = []
-        names = []
-        for entry in self._entries:
-            all_rows.append(self.entry_to_row(entry, selected_columns).replace('\n', ' '))
-            names.append(entry.get("name"))
-
-
-        #Create column names if not given
+        # Validate and prepare column information
         if column_titles:
-            written_col_names = column_titles
+            if len(column_titles) != len(selected_columns_keys):
+                Console.error(f"Mismatch: {len(selected_columns_keys)} columns selected, but {len(column_titles)} titles provided.")
+                sys.exit(1)
         else:
-            written_col_names = selected_columns
+            column_titles = [ALL_COLUMNS.get(key, {"label": key.replace('_', ' ').title()})["label"] for key in selected_columns_keys]
 
-        #Write each row to a file
-        os.makedirs(os.path.join(output_path, "tex_pages"), exist_ok=True)
-        for i in range(len(all_rows)):
+        if column_widths:
+            if len(column_widths) != len(selected_columns_keys):
+                Console.error(f"Mismatch: {len(selected_columns_keys)} columns selected, but {len(column_widths)} widths provided.")
+                sys.exit(1)
 
-            with open(os.path.join(output_path, "tex_pages", self.sanitize_filename(names[i])+".tex" if names[i]!=None else f"entry_{i+1}.tex"), "w") as f:
-                    
-                latex = self._generate_latex_doc([all_rows[i]], selected_columns, written_col_names, column_widths=column_widths)
-                f.write(f'% LaTeX table for "{names[i]}"')
-                f.write(latex)
+        # Generate rows
+        all_rows = [self._entry_to_row(entry, selected_columns_keys) for entry in self._entries]
 
+        # Generate the main LaTeX table content
+        table_latex = self._generate_latex_table_content(
+            all_rows, selected_columns_keys, column_titles, column_widths
+        )
+        
+        # Assemble the full LaTeX document
+        full_latex_doc = LATEX_PREFIX + r"\begin{landscape}" + r"\footnotesize" + table_latex + r"\end{landscape}" + LATEX_POSTFIX
 
+        # Ensure output directory exists and write the file
+        tex_output_dir = os.path.join(output_path, "tex")
+        os.makedirs(tex_output_dir, exist_ok=True)
+        filepath = os.path.join(tex_output_dir, "benchmarks.tex")
+        
+        try:
+            with open(filepath, "w", encoding="utf-8") as f:
+                f.write(full_latex_doc)
+            Console.ok(f"Successfully wrote main LaTeX table to: {filepath}")
+        except IOError as e:
+            Console.error(f"Error writing main LaTeX table to {filepath}: {e}")
+            sys.exit(1)
+        
+        # Write BibTeX file
+        self._bib_writer.write(tex_output_dir)
 
-    def _write_bibtex(self, output_dir: str):
+    def write_individual_entries(self, 
+                                 output_path: str, 
+                                 selected_columns_keys: List[str],
+                                 column_titles: List[str] | None = None, 
+                                 column_widths: List[Union[float, int]] | None = None) -> None: 
         """
-        Uses BibtexWriter to write a BibTeX bibliography to `output_dir`/tex/benchmarks.bib
-        based on 'cite' fields in the LatexWriter's entries.
-        """
-        self._bib_writer.write(os.path.join(output_dir, "tex"))
+        Writes each entry stored by this writer into a separate LaTeX document.
+        All individual documents are placed in `output_path`/tex_pages.
 
+        Parameters:
+            output_path (str): Base directory for output.
+            selected_columns_keys (List[str]): List of column keys (from ALL_COLUMNS) to include.
+            column_titles (List[str] | None): Optional display titles for the columns.
+                                              If None, titles are derived from `ALL_COLUMNS`.
+            column_widths (List[Union[float, int]] | None): Optional widths for each column in cm.
+                                                             If None, defaults to 2cm per column.
+        """
+        if not selected_columns_keys:
+            Console.warning("No columns selected for individual entries. Skipping generation.")
+            return
+
+        # Validate and prepare column information
+        if column_titles:
+            if len(column_titles) != len(selected_columns_keys):
+                Console.error(f"Mismatch: {len(selected_columns_keys)} columns selected, but {len(column_titles)} titles provided for individual entries.")
+                sys.exit(1)
+        else:
+            column_titles = [ALL_COLUMNS.get(key, {"label": key.replace('_', ' ').title()})["label"] for key in selected_columns_keys]
+
+        if column_widths:
+            if len(column_widths) != len(selected_columns_keys):
+                Console.error(f"Mismatch: {len(selected_columns_keys)} columns selected, but {len(column_widths)} widths provided for individual entries.")
+                sys.exit(1)
+
+        # Ensure output directory exists
+        tex_pages_output_dir = os.path.join(output_path, "tex_pages")
+        os.makedirs(tex_pages_output_dir, exist_ok=True)
+        
+        # Write BibTeX file for individual pages too, as they might reference it
+        self._bib_writer.write(os.path.join(output_path, "tex")) # Use the same bib dir as main table
+
+        for i, entry in enumerate(self._entries):
+            # Generate row for the current entry
+            single_row = self._entry_to_row(entry, selected_columns_keys)
+
+            # Generate LaTeX content for this single-row table
+            table_latex = self._generate_latex_table_content(
+                [single_row], selected_columns_keys, column_titles, column_widths
+            )
+            
+            # Assemble the full LaTeX document for this entry
+            full_latex_doc = LATEX_PREFIX + table_latex + LATEX_POSTFIX
+
+            # Determine filename
+            entry_name = entry.get("name", entry.get("id", f"entry_{i+1}"))
+            filename = sanitize_filename(entry_name) + ".tex"
+            filepath = os.path.join(tex_pages_output_dir, filename)
+
+            try:
+                with open(filepath, "w", encoding="utf-8") as f:
+                    f.write(f"% LaTeX table for \"{entry_name}\"\n")
+                    f.write(full_latex_doc)
+                Console.ok(f"Successfully wrote individual LaTeX page for '{entry_name}' to: {filepath}")
+            except IOError as e:
+                Console.error(f"Error writing individual LaTeX page for '{entry_name}' to {filepath}: {e}")
+                # Continue processing other entries, but log the error

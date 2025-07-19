@@ -37,13 +37,10 @@
     - QKeras
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: 'This benchmark evaluates ML models for real-time classification of
-
+  - summary: |
+      This benchmark evaluates ML models for real-time classification of
       particle jets using high-level features derived from simulated LHC data. It
-
       includes both full-precision \nand quantized models optimized for FPGA deployment.
-
-      '
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -189,13 +186,10 @@
     - irregular sampling
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: 'This benchmark addresses lossy compression of irregularly sampled
-
+  - summary: |
+      This benchmark addresses lossy compression of irregularly sampled
       sensor data from \nparticle detectors using real-time autoencoder architectures,
-
       targeting latency-critical \napplications in physics experiments.
-
-      '
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -1531,11 +1525,9 @@
     - image processing
     description: List of keywords relevant for the benchmark.
     condition: '>=1'
-  - summary: 'Proposes ML methods for real-time analysis of 4D scanning transmission electron microscopy
-
+  - summary: |
+      Proposes ML methods for real-time analysis of 4D scanning transmission electron microscopy
       datasets; framework details in progress.
-
-      '
     description: An easy-to-understand description of the benchmark.
     condition: required
   - licensing: TODO
@@ -1578,8 +1570,7 @@
     condition: optional
   - cite:
     - | 
-      @inproceedings{
-      qin2023extremely,
+      @inproceedings{qin2023extremely,
       title={Extremely Noisy 4D-TEM Strain Mapping Using Cycle Consistent Spatial Transforming Autoencoders},
       author={Shuyu Qin and Joshua Agar and Nhan Tran},
       booktitle={AI for Accelerated Materials Design - NeurIPS 2023 Workshop},

@@ -92,11 +92,7 @@ class BibtexWriter:
             for cite_entry in record_cite_entries:
                 if not isinstance(cite_entry, str) or not cite_entry.strip().startswith("@"):
                     continue
-                
-                # 2. name of function is wrong you use type but it must be label or key
-                # 4. if error occurs, for any of the labels, program must be terminated
-
-                #label = self._get_citation_type(cite_entry.lower())
+                # Check for citation label validity
                 label = self.get_citation_label(cite_entry)
                 if has_capital_letter(label):
                     Console.error(f"Citation label \"{label}\" in entry \"{name}\" is capitalized.")    

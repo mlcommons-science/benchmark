@@ -37,7 +37,7 @@
     email: null
   cite:
   - |-
-    @article{hawks2022fastml,
+    @misc{hawks2022fastml,
       title={Fast Machine Learning for Science: Benchmarks and Dataset},
       author={Hawks, Ben and Tran, Nhan and others},
       year={2022},
@@ -121,7 +121,7 @@
     email: null
   cite:
   - |-
-    @article{hawks2022fastml2,
+    @misc{hawks2022fastml2,
       title={Fast Machine Learning for Science: Benchmarks and Dataset},
       author={Hawks, Ben and Tran, Nhan and others},
       year={2022},
@@ -200,14 +200,14 @@
     email: null
   cite:
   - |-
-    @article{hawks2022fastml3,
+    @misc{hawks2022fastml3,
       title={Fast Machine Learning for Science: Benchmarks and Dataset},
       author={Hawks, Ben and Tran, Nhan and others},
       year={2022},
       url={https://arxiv.org/abs/2207.07958}
     }
   - |-
-    @article{wang2021booster,
+    @misc{wang2021booster,
       title={BOOSTR: A Dataset for Accelerator Control Systems},
       author={Wang, Qizhi and others},
       year={2021},
@@ -507,9 +507,9 @@
     email: null
   cite:
   - |-
-    @article{kvapil2025intelligent,
+    @misc{kvapil2025intelligent,
       title={Intelligent experiments through real-time AI: Fast Data Processing and Autonomous Detector Control for sPHENIX and future EIC detectors},
-      author={Kvapil, Jakub and Borca-Tasciuc, Giorgian and ... Tran, Nhan and others},
+      author={Kvapil, Jakub and Borca-Tasciuc, Giorgian and Tran, Nhan, and others},
       year={2025},
       url={https://arxiv.org/abs/2501.04845}
     }
@@ -592,7 +592,7 @@
     email: null
   cite:
   - |-
-    @article{weitz2025nacph,
+    @misc{weitz2025nacph,
       title={Neural Architecture Codesign for Fast Physics Applications},
       author={Weitz, Jason and Demler, Dmitri and McDermott, Luke and Tran, Nhan and Duarte, Javier},
       year={2025},
@@ -672,9 +672,9 @@
     email: null
   cite:
   - |-
-    @article{parpillon2024smartpixels,
+    @misc{parpillon2024smartpixels,
       title={Smart Pixels: In-pixel AI for on-sensor data filtering},
-      author={Parpillon, Benjamin and ... and Tran, Nhan},
+      author={Parpillon, Benjamin and Tran, Nhan},
       year={2024},
       url={https://arxiv.org/abs/2406.14860}
     }
@@ -749,9 +749,9 @@
     email: null
   cite:
   - |-
-    @article{xiao2020braggnn,
+    @misc{xiao2020braggnn,
       title={BraggNN: Fast X-ray Bragg peak analysis using deep learning},
-      author={Xiao, Yu and ...},
+      author={Xiao, Yu and ERROR},
       year={2020},
       url={https://arxiv.org/abs/2008.08198}
     }
@@ -827,7 +827,7 @@
     email: null
   cite:
   - |-
-    @inproceedings{anonymous2023_4dstem,
+    @misc{2023_4dstem,
       title={4D-STEM: Real-Time ML for Electron Microscopy},
       author={Anonymous},
       year={2023},
@@ -902,7 +902,7 @@
     email: null
   cite:
   - |-
-    @article{smith2023insitu,
+    @misc{smith2023insitu,
       title={In-Situ High-Speed Computer Vision for Plasma Diagnostics},
       author={Smith, John and Doe, Jane},
       year={2023},
@@ -984,7 +984,7 @@
     email: null
   cite:
   - |-
-    @inproceedings{gao2020aibench,
+    @misc{gao2020aibench,
       title={AIBench: An Industry Standard Internet Service AI Benchmark Suite},
       author={Gao, Wanling and Zhan, Jianfeng and others},
       year={2020},
@@ -1066,7 +1066,7 @@
     email: null
   cite:
   - |-
-    @article{gao2018bigdatabench,
+    @misc{gao2018bigdatabench,
       title={BigDataBench: A Scalable and Unified Big Data and AI Benchmark Suite},
       author={Gao, Wanling and Zhan, Jianfeng and others},
       year={2018},
@@ -1149,7 +1149,7 @@
     email: null
   cite:
   - |-
-    @inproceedings{farrell2021mlperf,
+    @misc{farrell2021mlperf,
       title={MLPerf HPC: A Holistic Benchmark Suite for Scientific Machine Learning on HPC Systems},
       author={Farrell, Steven and Emani, Murali and others},
       year={2021},
@@ -1489,7 +1489,7 @@
     email: null
   cite:
   - |-
-    @article{krause2024calochallenge,
+    @misc{krause2024calochallenge,
       title={CaloChallenge 2022: A Community Challenge for Fast Calorimeter Simulation},
       author={Krause, Claudius and Nachman, Benjamin and others},
       year={2024},
@@ -2059,7 +2059,7 @@
     email: null
   cite:
   - |-
-    @article{zheng2023sglang,
+    @misc{zheng2023sglang,
       title={SGLang: Efficient Execution of Structured Language Model Programs},
       author={Zheng, Lianmin and Yin, Liangsheng and others},
       year={2023},
@@ -2467,7 +2467,7 @@
     email: null
   cite:
   - |-
-    @article{jin2023time,
+    @misc{jin2023time,
       title={Time‑LLM: Time Series Forecasting by Reprogramming Large Language Models},
       author={Jin, Ming and Wang, Shiyu and others},
       journal={arXiv preprint arXiv:2310.01728},
@@ -2548,7 +2548,7 @@
     email: null
   cite:
   - |-
-    @article{garza2023timegpt,
+    @misc{garza2023timegpt,
       title={TimeGPT‑1: A Foundation Model for Time Series},
       author={Garza, Azul and Challu, Cristian and others},
       year={2023},
@@ -2625,7 +2625,7 @@
     email: null
   cite:
   - |-
-    @article{campolongo2025hdranomaly2,
+    @misc{campolongo2025hdranomaly2,
       title={Building Machine Learning Challenges for Anomaly Detection in Science},
       author={Campolongo, Elizabeth G. and others},
       year={2025},
@@ -2701,7 +2701,7 @@
     email: null
   cite:
   - |-
-    @article{campolongo2025hdranomaly,
+    @misc{campolongo2025hdranomaly,
       title={Building Machine Learning Challenges for Anomaly Detection in Science},
       author={Campolongo, Elizabeth G. and others},
       year={2025},
@@ -2778,7 +2778,7 @@
     email: null
   cite:
   - |-
-    @article{campolongo2025hdranomaly3,
+    @misc{campolongo2025hdranomaly3,
       title={Building Machine Learning Challenges for Anomaly Detection in Science},
       author={Campolongo, Elizabeth G. and others},
       year={2025},
@@ -2854,7 +2854,7 @@
     email: null
   cite:
   - |-
-    @article{diguglielmo2025endtoend,
+    @misc{diguglielmo2025endtoend,
       title={End-to-end workflow for machine learning-based qubit readout with QICK and hls4ml},
       author={Di Guglielmo, Giuseppe and Campos, Javier and others},
       year={2025},
@@ -2932,7 +2932,7 @@
     email: null
   cite:
   - |-
-    @article{rein2023gpqa,
+    @misc{rein2023gpqa,
       title={GPQA: A Graduate-Level Google-Proof Q and A Benchmark},
       author={Rein, David and Hou, Betty Li and Stickland, Asa Cooper and others},
       year={2023},
@@ -3014,7 +3014,7 @@
     email: null
   cite:
   - |-
-    @article{nguyen2024seafloorai,
+    @misc{nguyen2024seafloorai,
       title={SeafloorAI: A Large-scale Vision‑Language Dataset for Seafloor Geological Survey},
       author={Nguyen, Kien X. and Qiao, Fengchun and others},
       year={2024},
@@ -3095,7 +3095,7 @@
     email: null
   cite:
   - |-
-    @article{zhuang2024supercon3d,
+    @misc{zhuang2024supercon3d,
       title={SuperCon3D: Learning Superconductivity from Ordered and Disordered Material Structures},
       author={Zuo, Zhong and others},
       year={2024},
@@ -3175,7 +3175,7 @@
     email: null
   cite:
   - |-
-    @article{zou2024gess,
+    @misc{zou2024gess,
       title={GeSS: Benchmarking Geometric Deep Learning under Scientific Applications with Distribution Shifts},
       author={Zou, Deyu and Liu, Shikun and others},
       year={2024},
@@ -3251,7 +3251,7 @@
     email: null
   cite:
   - |-
-    @article{peterson2024vcl,
+    @misc{peterson2024vcl,
       title={Vocal Call Locator Benchmark for localizing rodent vocalizations},
       author={Peterson, Ralph and Tanelus, Aramis and others},
       year={2024},
@@ -3332,7 +3332,7 @@
     email: null
   cite:
   - |-
-    @article{bushuiev2024massspecgym,
+    @misc{bushuiev2024massspecgym,
       title={MassSpecGym: A benchmark for the discovery and identification of molecules},
       author={Bushuiev, Roman and Bushuiev, Anton and others},
       year={2024},
@@ -3409,7 +3409,7 @@
     email: null
   cite:
   - |-
-    @article{wang2024urbandatalayer,
+    @misc{wang2024urbandatalayer,
       title={UrbanDataLayer: A unified data pipeline for urban science},
       author={Wang, Yiheng and Wang, Tianyu and others},
       year={2024},
@@ -3488,7 +3488,7 @@
     email: null
   cite:
   - |-
-    @article{liu2024delta2dft,
+    @misc{liu2024delta2dft,
       title={Delta Squared‑DFT: Machine‑Learning Corrected Density Functional Theory for Reaction Energetics},
       author={Liu, Wei and Chen, Rong and others},
       year={2024},
@@ -3569,7 +3569,7 @@
     email: null
   cite:
   - |-
-    @article{patel2024llmcropsci,
+    @misc{patel2024llmcropsci,
       title={Large Language Models for Crop Science: Benchmarking Domain Reasoning and QA},
       author={Patel, Deepak and Zhao, Lan and others},
       year={2024},
@@ -3649,7 +3649,7 @@
     email: null
   cite:
   - |-
-    @article{zhong2024spiqa_llm,
+    @misc{zhong2024spiqa_llm,
       title={SPIQA‑LLM: Evaluating LLM Adapters on Scientific Figure QA},
       author={Zhong, Xiaoyan and Gao, Yijian and others},
       year={2024},

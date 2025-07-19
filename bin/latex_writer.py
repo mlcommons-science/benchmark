@@ -8,6 +8,7 @@ from pybtex.database import parse_string
 from pybtex.plugin import find_plugin
 from pylatexenc.latexencode import unicode_to_latex
 from cloudmesh.common.console import Console
+import bibtexparser
 
 # --- Constants ---
 
@@ -58,6 +59,22 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
     "ratings.documentation.reason": {"width": "3cm", "label": "Documentation Reason"},
 }
 
+REQUIRED_FIELDS_BY_TYPE = {
+    'article': ['author', 'title', 'journal', 'year', 'doi'],
+    'book': ['author', 'title', 'publisher', 'year', 'doi'],  # OR editor
+    'booklet': ['title'],
+    'conference': ['author', 'title', 'booktitle', 'year'],
+    'inbook': ['author', 'title', 'chapter', 'publisher', 'year'],  # OR pages
+    'incollection': ['author', 'title', 'booktitle', 'publisher', 'year'],
+    'inproceedings': ['author', 'title', 'booktitle', 'year'],
+    'manual': ['title'],
+    'mastersthesis': ['author', 'title', 'school', 'year'],
+    'misc': ['title', 'url', 'year'],  
+    'phdthesis': ['author', 'title', 'school', 'year'],
+    'proceedings': ['title', 'year'],
+    'techreport': ['author', 'title', 'institution', 'year'],
+    'unpublished': ['author', 'title', 'note']
+}
 # --- Utility Functions ---
 
 def has_capital_letter(text_to_check: str) -> bool:
@@ -102,6 +119,33 @@ def sanitize_filename(name: str) -> str:
     # Remove leading/trailing hyphens and convert to lowercase
     output = output.strip('-').lower()
     return output
+
+
+def validate_bibtex_entries(bibtex_str):
+    try:
+        bib_database = bibtexparser.loads(bibtex_str)
+        errors = []
+        
+        for entry in bib_database.entries:
+            entry_type = entry.get('ENTRYTYPE', '').lower()
+            entry_id = entry.get('ID', '?')
+            required = REQUIRED_FIELDS_BY_TYPE.get(entry_type, [])
+            
+            # Special case logic (e.g., book can have author OR editor)
+            if entry_type == 'book':
+                if not ('author' in entry or 'editor' in entry):
+                    errors.append(f"Entry '{entry_id}' (book) missing 'author' or 'editor'")
+                required = [f for f in required if f not in ('author')]  # skip checking 'author' below
+            
+            # Validate required fields
+            for field in required:
+                if field not in entry:
+                    errors.append(f"Entry '{entry_id}' ({entry_type}) missing required field: {field}")
+        
+        return (len(errors) == 0), errors
+
+    except Exception as e:
+        return False, [f"Parsing error: {e}"]
 
 # --- BibtexWriter Class ---
 
@@ -171,14 +215,19 @@ class BibtexWriter:
 
             for cite_entry_raw in record_cite_entries:
 
-
-                
                 if not isinstance(cite_entry_raw, str) or not cite_entry_raw.strip().startswith("@"):
                     Console.warning(f"Skipping malformed citation entry in '{name}': '{cite_entry_raw}'")
                     continue
 
                 cite_entry = cite_entry_raw.strip()
                 label = self._get_citation_label(cite_entry)
+
+                valid, errors = validate_bibtex_entries(cite_entry)
+                if not valid:
+                    Console.error(f"Invalid BibTeX entry in '{name}': {label}")
+                    for error in errors:
+                        Console.error(f"  - {error}")
+                    continue    
 
                 match = re.search(r'author\s*=\s*{(.+?)}', cite_entry_raw, re.DOTALL)
                 if match:
@@ -282,8 +331,6 @@ class LatexWriter:
 
 
                 cite_text = f"\\cite{{{','.join(cite_keys)}}}" if cite_keys else ""
-
-                print("ZZZ", cite_text)
 
                 url_text = f"\\href{{{escape_latex(primary_url)}}}{{$\\Rightarrow$}}" if primary_url else ""
                 field_value = f"{cite_text}{url_text}"

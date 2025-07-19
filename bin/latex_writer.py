@@ -143,7 +143,7 @@ class LatexWriter:
         self._bib_writer = BibtexWriter(entries)
 
 
-    def _sanitize_filename(self, name: str) -> str:
+    def sanitize_filename(self, name: str) -> str:
         """
         Returns a lowercased version of `name` without whitespace and leading/trailing spaces.
 
@@ -160,12 +160,14 @@ class LatexWriter:
         output = re.sub(r' {2,}', ' ', output) #Replace 2+ spaces with single space
         # BUG: we do nat want _ but - as easier in latex
         output = output.strip().replace("(", "").replace(")", "").replace(" ", "_")
+        output = output.tower()
+    
+        return output
+    
 
-        return output.lower()
 
 
-
-    def _escape_latex(self, text: str) -> str:
+    def escape_latex(self, text: str) -> str:
         """
         Returns `text` converted to LaTeX-safe representation using pylatexenc.
 
@@ -180,7 +182,7 @@ class LatexWriter:
     
     
  
-    def _extract_cite_label(self, bib_entry: str) -> str:
+    def extract_cite_label(self, bib_entry: str) -> str:
         """
         Returns the citation label from a BibTeX entry like '@article{label,...}'
 
@@ -206,7 +208,7 @@ class LatexWriter:
         return match.group(1) if match else ""
 
     
-    def _entry_to_row(self, row_dict: dict, columns: list[str]) -> str:
+    def entry_to_row(self, row_dict: dict, columns: list[str]) -> str:
         """
         Returns a string containing `row_dict` converted to one row of the TeX table.
 
@@ -231,18 +233,21 @@ class LatexWriter:
             
             #format the field value
             field_value = (
-                self._escape_latex(value)
+                self.escape_latex(value)
                 if not isinstance(value, list)
-                else ", ".join(map(self._escape_latex, value))
+                else ", ".join(map(self.escape_latex, value))
             )
 
             #handle citations
             if key == "cite":   
-                cite_keys = [self._extract_cite_label(c) for c in row_dict.get("cite", []) if c]
+                cite_keys = [self.extract_cite_label(c) for c in row_dict.get("cite", []) if c]
                 cite_urls = [self._extract_cite_url(c) for c in row_dict.get("cite", []) if c]
                 primary_url = cite_urls[0] if cite_urls else row_dict.get("url", "")
                 field_value = (f"\\cite{{{', '.join(cite_keys)}}}" if cite_keys else "") + (f" \\href{{{primary_url}}}{{$\\Rightarrow$ }}" if primary_url else "")
 
+            if key == "url":
+                # If the URL is present, format it as a hyperlink
+                field_value = f"\\href{{{value}}}{{link}}" if value else ""  
 
             #add field to the row
             row_contents += f"{field_value} & "
@@ -299,7 +304,7 @@ class LatexWriter:
         for key, _ in self._entries[0].items():
             if (not key in selected_columns):
                 continue
-            column_names_header += "{\\bf " + self._escape_latex(column_titles[col_number]) + "} & "
+            column_names_header += "{\\bf " + self.escape_latex(column_titles[col_number]) + "} & "
             col_number += 1
 
         column_names_header = column_names_header[:-2]
@@ -348,13 +353,13 @@ class LatexWriter:
                             footnote_refs[label_match] = len(footnotes) + 1
                             footnotes.append(label_to_citation.get(label_match, f"(Unparseable citation: {label_match})"))
                         refs.append(f"[^{footnote_refs[label_match]}]")
-                    joined_refs = self._escape_latex(", ".join(refs))
+                    joined_refs = self.escape_latex(", ".join(refs))
                     contents += joined_refs
 
                 elif isinstance(value, list):
-                    contents += ", ".join(self._escape_latex(v) for v in value)
+                    contents += ", ".join(self.escape_latex(v) for v in value)
                 else:
-                    contents += self._escape_latex(str(value))
+                    contents += self.escape_latex(str(value))
 
                 contents += " & "
 
@@ -414,7 +419,11 @@ class LatexWriter:
         #Create rows of the table
         all_rows = []
         for entry in self._entries:
-            all_rows.append(self._entry_to_row(entry, selected_columns).replace('\n', ' '))
+
+            print (entry)
+            print()
+
+            all_rows.append(self.entry_to_row(entry, selected_columns).replace('\n', ' '))
 
         #Create column names, if not provided
         if not column_titles:
@@ -462,7 +471,7 @@ class LatexWriter:
         all_rows = []
         names = []
         for entry in self._entries:
-            all_rows.append(self._entry_to_row(entry, selected_columns).replace('\n', ' '))
+            all_rows.append(self.entry_to_row(entry, selected_columns).replace('\n', ' '))
             names.append(entry.get("name"))
 
 
@@ -476,7 +485,7 @@ class LatexWriter:
         os.makedirs(os.path.join(output_path, "tex_pages"), exist_ok=True)
         for i in range(len(all_rows)):
 
-            with open(os.path.join(output_path, "tex_pages", self._sanitize_filename(names[i])+".tex" if names[i]!=None else f"entry_{i+1}.tex"), "w") as f:
+            with open(os.path.join(output_path, "tex_pages", self.sanitize_filename(names[i])+".tex" if names[i]!=None else f"entry_{i+1}.tex"), "w") as f:
                     
                 latex = self._generate_latex_doc([all_rows[i]], selected_columns, written_col_names, column_widths=column_widths)
                 f.write(f'% LaTeX table for "{names[i]}"')

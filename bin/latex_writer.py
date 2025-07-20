@@ -35,6 +35,9 @@ LATEX_POSTFIX = textwrap.dedent(
 """
 )
 
+TABLEFONT = r"\footnotesize"
+# TABLEFONT = r"\tiny"
+
 DESCRIPTION_STYLE = "[labelwidth=5em, labelsep=1em, leftmargin=*, align=left, itemsep=0.3em, parsep=0em]"
 
 # Define all columns with their properties for clarity and consistency
@@ -448,7 +451,7 @@ class SectionWriter:
 
         lines.append("\\end{description}")
         lines.append("\\clearpage")
-        
+
         # if a line in lines contains "\_tex\_filename" remove that line
         lines = [line for line in lines if "\\_tex\\_filename" not in line] 
 
@@ -717,7 +720,7 @@ class LatexWriter:
         full_latex_doc = textwrap.dedent(
             rf"""
             \begin{{landscape}}
-            \footnotesize
+            {{TABELFONT}}
             {table_latex}
             \end{{landscape}}
         """

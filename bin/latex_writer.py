@@ -15,6 +15,7 @@ import bibtexparser
 LATEX_PREFIX = textwrap.dedent(
     r"""
     \documentclass{article}
+    \usepackage{enumitem}
     \usepackage[margin=1in]{geometry}
     \usepackage{hyperref}
     \usepackage{amsmath}
@@ -33,6 +34,8 @@ LATEX_POSTFIX = textwrap.dedent(
     \end{document}
 """
 )
+
+DESCRIPTION_STYLE = "[labelwidth=5em, labelsep=1em, leftmargin=*, align=left, itemsep=0.3em, parsep=0em]"
 
 # Define all columns with their properties for clarity and consistency
 ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
@@ -327,7 +330,7 @@ class DocumentWriter:
     Class to write LaTeX documents with sections for each entry.
     """
 
-    def __init__(self, filenames):
+    def __init__(self, files=None, filename="content/tex/benchmarks.tex"):
         """
         Initializes the DocumentWriter with a list of entries.
 
@@ -339,13 +342,15 @@ class DocumentWriter:
         content = []
         # add LaTeX preamble to content
         content.append(LATEX_PREFIX)
-        for filename in self.filenames:
-            # add filename to content with \input{filename}
-            content.append(f"\\input{{{filename}}}")
+        for file in files:
+            # add filename to content with \input{file}
+            content.append(f"\\input{{{file}}}")
         # add Latex Postfix to content
         content.append(LATEX_POSTFIX)
 
-        print(content)
+        content = "\n".join(content)
+
+        write_to_file(content, filename=filename)
 
 
 class SectionWriter:
@@ -373,7 +378,7 @@ class SectionWriter:
                 "}": r"\}",
                 "~": r"\textasciitilde{}",
                 "^": r"\textasciicircum{}",
-                "\\": r"\textbackslash{}",
+                # "\\": r"\textbackslash{}",
             }
             for key, val in replacements.items():
                 text = text.replace(key, val)
@@ -384,14 +389,14 @@ class SectionWriter:
             key_escaped = latex_escape(str(key))
             if isinstance(value, dict):
                 lines = [
-                    f"{indent_str}\\item[{key_escaped}] \\begin{{description}}[style=nextline,leftmargin=1.5em]"
+                    f"{indent_str}\\item[{key_escaped}] \\begin{{description}}{DESCRIPTION_STYLE}"
                 ]
                 for sub_key, sub_val in value.items():
                     lines.append(format_field(sub_key, sub_val, indent + 1))
                 lines.append(f"{indent_str}\\end{{description}}")
                 return "\n".join(lines)
             elif isinstance(value, list):
-                lines = [f"{indent_str}\\item[{key_escaped}]"]
+                lines = [f"{indent_str}\\item[{key_escaped}:]"]
                 for item in value:
                     if isinstance(item, (dict, list)):
                         lines.append(format_field("-", item, indent + 1))
@@ -399,7 +404,7 @@ class SectionWriter:
                         lines.append(f"{indent_str}  - {latex_escape(str(item))}")
                 return "\n".join(lines)
             elif value is not None:
-                return f"{indent_str}\\item[{key_escaped}] {latex_escape(str(value))}"
+                return f"{indent_str}\\item[{key_escaped}:] {latex_escape(str(value))}"
             else:
                 return ""
 
@@ -411,14 +416,22 @@ class SectionWriter:
             lines.append(f"\\noindent {latex_escape(entry['description'])}\n")
 
         # Use description environment for all fields except name/description/cite
-        lines.append("\\begin{description}[style=nextline,leftmargin=1.5em]")
+        lines.append(f"\\begin{{description}}{DESCRIPTION_STYLE}")
 
         skip_fields = {"name", "description", "cite"}
         for key, value in entry.items():
             if key not in skip_fields:
-                formatted = format_field(key, value, indent=1)
-                if formatted.strip():
-                    lines.append(formatted)
+                if "url" in key:
+                    # Special handling for URL
+                    if value:
+                        lines.append(
+                            f"  \\item[{key}:] "
+                            f"\\href{{{latex_escape(value)}}}{{{latex_escape(value)}}}"
+                        )
+                else:
+                    formatted = format_field(key, value, indent=1)
+                    if formatted.strip():
+                        lines.append(formatted)
 
         if "cite" in entry and entry["cite"]:
             citations = []
@@ -434,6 +447,10 @@ class SectionWriter:
             lines.append(f"  \\item[Citations:] {', '.join(citations)}")
 
         lines.append("\\end{description}")
+        lines.append("\\clearpage")
+        
+        # if a line in lines contains "\_tex\_filename" remove that line
+        lines = [line for line in lines if "\\_tex\\_filename" not in line] 
 
         return "\n".join(lines)
 
@@ -453,7 +470,7 @@ class SectionWriter:
             names.append(filename)
 
         # create a result so that each name is in a newline embedded in \input{}
-        names = [f"\\input{{{name}}}" for name in names]
+        names = [f"\\input{{sections/{name}}}" for name in names]
         # join the names with newline
         for name in names:
             content.append(name)

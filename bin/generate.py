@@ -3,7 +3,7 @@ import os
 import sys
 from yaml_manager import YamlManager
 from md_writer import MarkdownWriter
-from latex_writer import LatexWriter, SectionWriter
+from latex_writer import LatexWriter, SectionWriter, DocumentWriter
 
 
 ALL_COLUMNS = [
@@ -181,3 +181,8 @@ if __name__ == "__main__":
         converter = SectionWriter(entries)
         converter.write_section(outdir="content/tex/sections")
         converter.input_all_sections(file="content/tex/sections.tex")
+
+        document = DocumentWriter(
+            files=["table.tex", "sections.tex"],
+            filename="content/tex/benchmarks.tex",
+        )

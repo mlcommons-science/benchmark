@@ -1,7 +1,7 @@
 # makefile that will create all the content
 
 FILES=source/benchmarks-addon.yaml
-FILES=source/benchmarks.yaml source/benchmarks-addon.yaml
+# FILES=source/benchmarks.yaml source/benchmarks-addon.yaml
 
 # FILES=source/benchmark-entry-comment-gregor.yaml
 

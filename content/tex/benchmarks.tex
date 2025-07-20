@@ -1,15 +1,7 @@
 
-\documentclass{article}
-\usepackage[margin=1in]{geometry}
-\usepackage{hyperref}
-\usepackage{amsmath}
-\usepackage{pdflscape}
-\usepackage{wasysym}
-\usepackage{longtable}
-\usepackage[style=ieee, url=true]{biblatex}
-\addbibresource{benchmarks.bib}
-\begin{document}
-\begin{landscape}\footnotesize
+        \begin{landscape}
+        \footnotesize
+
 \begin{longtable}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
 \hline
 \textbf{Date} & \textbf{Name} & \textbf{Domain} & \textbf{Focus} & \textbf{Keywords} & \textbf{Task Types} & \textbf{Metrics} & \textbf{Models} & \textbf{Citation} \\ \hline
@@ -94,6 +86,5 @@ ongoing & Papers With Code (SOTA Platform) & General ML; All domains & Open plat
 2024-12-13 & LLMs for Crop Science & Agricultural Science; NLP & Evaluating LLMs on crop trait QA and textual inference tasks with domain-specific prompts & crop science, prompt engineering, domain adaptation, question answering & Question Answering, Inference & Accuracy, F1 score & GPT-4, LLaMA-2\nobreakdash-13B, T5\nobreakdash-XXL & \cite{patel2024llmcropsci}\href{https://neurips.cc/virtual/2024/poster/97570}{$\Rightarrow$} \\ \hline
 2024-12-13 & SPIQA (LLM) & Multimodal Scientific QA; Computer Vision & Evaluating LLMs on image-based scientific paper figure QA tasks (LLM Adapter performance) & multimodal QA, scientific figures, image+text, chain-of-thought prompting & Multimodal QA & Accuracy, F1 score & LLaVA, MiniGPT\nobreakdash-4, Owl\nobreakdash-LLM adapter variants & \cite{zhong2024spiqa_llm}\href{https://neurips.cc/virtual/2024/poster/97575}{$\Rightarrow$} \\ \hline
 \end{longtable}
-\end{landscape}
-\printbibliography
-\end{document}
+
+        \end{landscape}

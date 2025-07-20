@@ -167,6 +167,27 @@ def validate_bibtex_entries(bibtex_str):
         return False, [f"Parsing error: {e}"]
 
 
+def write_to_file(content, filename="content/tex/table.tex"):
+    """
+    Writes the given content to a file based on the path used in filename.
+
+    Parameters:
+        content (str): The LaTeX content to write.
+        filename (str): Pathe and name of the  (default is 'content/tex/table.tex').
+    """
+    try:
+        output_dir = os.path.dirname(filename)
+        os.makedirs(output_dir, exist_ok=True)
+
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        Console.ok(f"Successfully wrote content to: {filename}")
+
+    except Exception as e:
+        Console.error(f"Error writing content to {filename}: {e}")
+
+
 # --- BibtexWriter Class ---
 
 
@@ -291,16 +312,40 @@ class BibtexWriter:
             sys.exit(1)
 
         bib_path = os.path.join(output_dir, filename)
-        try:
-            with open(bib_path, "w", encoding="utf-8") as f:
-                f.write("\n\n".join(bib_entries_to_write))
-            Console.ok(f"Successfully wrote BibTeX file to: {bib_path}")
-        except IOError as e:
-            Console.error(f"Error writing BibTeX file to {bib_path}: {e}")
-            sys.exit(1)
+        content = "\n\n".join(bib_entries_to_write)
+
+        print(bib_path)
+
+        write_to_file(content, filename=bib_path)
 
 
 # Latex writer for sections
+
+
+class DocumentWriter:
+    """
+    Class to write LaTeX documents with sections for each entry.
+    """
+
+    def __init__(self, filenames):
+        """
+        Initializes the DocumentWriter with a list of entries.
+
+        Args:
+            entries (List[Dict]): List of benchmark entries, where each entry is a dictionary.
+        """
+        self.files = files
+
+        content = []
+        # add LaTeX preamble to content
+        content.append(LATEX_PREFIX)
+        for filename in self.filenames:
+            # add filename to content with \input{filename}
+            content.append(f"\\input{{{filename}}}")
+        # add Latex Postfix to content
+        content.append(LATEX_POSTFIX)
+
+        print(content)
 
 
 class SectionWriter:
@@ -399,6 +444,8 @@ class SectionWriter:
         Args:
             file (str): Path to the output LaTeX file.
         """
+        content = ["\\section{Benchmark Details}\n"]
+
         names = []
         for entry in self.entries:
             # get id from entry
@@ -408,17 +455,10 @@ class SectionWriter:
         # create a result so that each name is in a newline embedded in \input{}
         names = [f"\\input{{{name}}}" for name in names]
         # join the names with newline
-        result = "\n".join(names)  # change so that each name is in \input{} command
+        for name in names:
+            content.append(name)
 
-        # write the result to the file
-        os.makedirs(os.path.dirname(file), exist_ok=True)
-        # now write result  to the file
-
-        with open(file, "w", encoding="utf-8") as f:
-            f.write("\\section{Benchmark Details}\n\n")
-
-        with open(file, "a", encoding="utf-8") as f:
-            f.write(result)
+        write_to_file(content="\n".join(content), filename=file)
 
     def write_section(self, outdir="source/tex/section"):
         """
@@ -441,14 +481,9 @@ class SectionWriter:
             filename = entry["id"] + ".tex"
             output_path = os.path.join(outdir, filename)
 
-            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+            content = section
 
-            try:
-                with open(output_path, "w", encoding="utf-8") as f:
-                    f.write(section)
-                Console.ok(f"Section written to '{output_path}'")
-            except Exception as e:
-                Console.error(f"Error writing section to '{output_path}': {e}")
+            write_to_file(content=content, filename=output_path)
 
 
 # --- LatexWriter Class (for tables) ---
@@ -662,20 +697,19 @@ class LatexWriter:
             all_rows, selected_columns_keys, column_titles, column_widths
         )
 
-        # Assemble the full LaTeX document
-        full_latex_doc = (
-            LATEX_PREFIX
-            + r"\begin{landscape}"
-            + r"\footnotesize"
-            + table_latex
-            + r"\end{landscape}"
-            + LATEX_POSTFIX
+        full_latex_doc = textwrap.dedent(
+            rf"""
+            \begin{{landscape}}
+            \footnotesize
+            {table_latex}
+            \end{{landscape}}
+        """
         )
 
         # Ensure output directory exists and write the file
         tex_output_dir = os.path.join(output_path, "tex")
         os.makedirs(tex_output_dir, exist_ok=True)
-        filepath = os.path.join(tex_output_dir, "benchmarks.tex")
+        filepath = os.path.join(tex_output_dir, "table.tex")
 
         try:
             with open(filepath, "w", encoding="utf-8") as f:

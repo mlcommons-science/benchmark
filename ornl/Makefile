@@ -35,8 +35,9 @@ pdf: tex
 	cd content/tex; latexmk -pdf -silent benchmarks.tex
 
 clean:
-	cd content/tex && latexmk -C
 	rm -rf content/md/benchmarks.*
+	rm -rf content/tex/*
+	cd content/tex && latexmk -C
 
 
 view:

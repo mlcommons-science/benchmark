@@ -51,11 +51,10 @@ pdf: tex
 	cd content/tex; latexmk -pdf -silent benchmarks.tex
 
 clean:
-	cd content/tex && latexmk -C
-	# Remove existing benchmark files if they exist
 	rm -f content/md/benchmarks.md
 	rm -rf content/md_pages
-	rm -rf content/tex_pages
+	rm -rf content/tex
+	cd content/tex && latexmk -C
 
 
 view:

@@ -1,10 +1,8 @@
-# makefile that will create all the content
-
 FILES=source/benchmarks.yaml
 
 COLUMNS=date,name,domain,focus,keyword,task_types,metrics,models,cite
 
-.PHONY: all content single tex pdf
+.PHONY: all content single tex pdf clean view debug standalone pdf2
 
 all: content standalone pdf
 	echo TODO
@@ -35,9 +33,16 @@ pdf: tex
 	cd content/tex; latexmk -pdf -silent benchmarks.tex
 
 clean:
-	rm -rf content/md/benchmarks.*
-	rm -rf content/tex/*
-	cd content/tex && latexmk -C
+	echo "HHHH"
+	#rm -rf content/md/benchmarks.*
+	#rm -rf content/tex/*
+	# cd content/tex && latexmk -C
+
+remove:
+	echo "HHHH"
+	#rm -rf content/md/benchmarks.*
+	#rm -rf content/tex/*
+	# cd content/tex && latexmk -C
 
 
 view:

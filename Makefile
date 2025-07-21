@@ -40,10 +40,10 @@ content: md tex
 	echo DONE
 
 md:
-	python ${SCRIPT} --files ${FILES}  --format=md --out=./content --index --columns ${COLUMNS}
+	python ${SCRIPT} --files=${FILES}  --format=md --outdir=./content --index --columns ${COLUMNS}
 
 tex:
-	python ${SCRIPT} --files ${FILES} --format=tex --out=./content --standalone --columns=${COLUMNS}
+	python ${SCRIPT} --files=${FILES} --format=tex --outdir=./content --standalone --columns=${COLUMNS}
 	cd content/tex; bibtool -s -i benchmarks.bib -o tmp.bib
 	cd content/tex; mv tmp.bib benchmarks.bib
 

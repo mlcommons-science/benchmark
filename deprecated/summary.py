@@ -1,10 +1,10 @@
 """
 Usage:
-  summary.py [--file=<path>...] [--reason] [--graph=<fmt>] [--output=<dir>] [--columns=<n>] [--rows=<n>]
+  summary.py [--file=<path>] [--reason] [--graph=<fmt>] [--output=<dir>] [--columns=<n>] [--rows=<n>]
   summary.py (-h | --help)
 
 Options:
-  --file=<path>...  Paths to the YAML files to evaluate [default: source/benchmarks-addon-new.yaml].
+  --file=<path>     Path to the YAML file to evaluate [default: source/benchmarks-addon-new.yaml].
   --reason          Print rating reasons along with scores.
   --graph=<fmt>     Output radar charts in one of: pdf, jpeg, png, gif.
   --output=<dir>    Directory to save radar charts and LaTeX [default: content/summary].
@@ -23,36 +23,27 @@ from yaml_manager import YamlManager
 
 
 class Evaluate:
-    def __init__(self, yaml_paths=None):
-        # Ensure yaml_paths is always a list
-        self.yaml_paths = yaml_paths if isinstance(yaml_paths, list) else [yaml_paths]
+    def __init__(self, yaml_path=None):
+        self.yaml_path = yaml_path
         self.entries = []
 
     def read(self):
-        if not self.yaml_paths:
-            print("YAML paths not provided.")
+        if not self.yaml_path:
+            print("YAML path not provided.")
             return
 
-        all_entries = []
-        for yaml_path in self.yaml_paths:
-            if not yaml_path:
-                continue
-            try:
-                manager = YamlManager(yaml_path)
-                file_entries = manager.get_table_formatted_dicts()
-                if not isinstance(file_entries, list):
-                    raise ValueError(f"YamlManager for {yaml_path} did not return a list of entries.")
-                all_entries.extend(file_entries)
-                print(f"Successfully read {len(file_entries)} entries from {yaml_path}")
-            except Exception as e:
-                print(f"Error reading YAML file {yaml_path} via YamlManager: {e}")
-        self.entries = all_entries
-        if not self.entries:
-            print("No entries were loaded from any of the provided YAML files.")
+        try:
+            manager = YamlManager(self.yaml_path)
+            self.entries = manager.get_table_formatted_dicts()
+            if not isinstance(self.entries, list):
+                raise ValueError("YamlManager did not return a list of entries.")
+        except Exception as e:
+            print(f"Error reading YAML via YamlManager: {e}")
+            self.entries = []
 
     def print_ratings(self, show_reasons=False):
         if not self.entries:
-            print("No entries loaded. Did you call read()?")
+            print("No entries loaded. Did you call read()?") 
             return
 
         for i, entry in enumerate(self.entries):
@@ -80,7 +71,7 @@ class Evaluate:
 
     def plot_radar_charts(self, fmt, output_dir, font_size=18):
       if not self.entries:
-          print("No entries loaded. Did you call read()?")
+          print("No entries loaded. Did you call read()?") 
           return
 
       valid_formats = {"pdf", "jpeg", "png", "gif"}
@@ -90,7 +81,7 @@ class Evaluate:
           return
 
       os.makedirs(output_dir, exist_ok=True)
-
+ 
       for i, entry in enumerate(self.entries):
           name = entry.get('name', f'Entry_{i+1}')
           ratings = {}
@@ -130,8 +121,9 @@ class Evaluate:
           plt.close(fig)
 
           print(f"Saved radar chart for '{name}' as '{filename}'.")
-
-
+ 
+                    
+ 
     def generate_grid_pages(self, output_dir, columns=3, rows=5):
         col_count = max(1, columns)
         row_count = max(1, rows)
@@ -141,7 +133,6 @@ class Evaluate:
         for i, entry in enumerate(self.entries):
             name = entry.get("name", f"Entry_{i+1}")
             safe_name = "".join(c if c.isalnum() or c in (' ', '-', '_') else '_' for c in name).strip()
-            # Assuming PDF charts are generated for LaTeX inclusion
             pdf_path = f"{safe_name}_radar.pdf"
             figure_paths.append(pdf_path)
 
@@ -153,10 +144,9 @@ class Evaluate:
             """)
             page_paths = figure_paths[i:i + charts_per_page]
             for j, path in enumerate(page_paths):
-                # Adjust width to account for spacing between images
                 grid_latex += f"\\includegraphics[width={1/col_count-0.01:.4f}\\textwidth]{{{path}}}\n"
                 if (j + 1) % col_count == 0:
-                    grid_latex += r"\\[1ex]" + "\n" # Add a small vertical space after each row
+                    grid_latex += r"\\[1ex]" + "\n"
 
             grid_latex += f"\\caption{{Radar chart overview (page {i // charts_per_page + 1})}}\n"
             grid_latex += r"\end{figure}" + "\n\n"
@@ -190,7 +180,7 @@ class Evaluate:
                         except Exception:
                             continue
                 if reasons:
-                    caption += " --- " + "; ".join(reasons)
+                    caption += " — " + "; ".join(reasons)
 
             # Extract citations and keys
             entry_cites = entry.get("cite", [])
@@ -202,7 +192,7 @@ class Evaluate:
                 if match:
                     key = match.group(1)
                 else:
-                    key = f"entry{i+1}" # Fallback key
+                    key = f"entry{i+1}"
                 cite_keys.append(key)
                 bib_entries.append(cite_block.strip())
 
@@ -251,36 +241,26 @@ class Evaluate:
 
         print(f"LaTeX summary written to '{tex_path}'")
 
-        # Write unique BibTeX entries
-        unique_bib_entries = sorted(list(set(bib_entries)))
         with open(bib_path, "w", encoding="utf-8") as bib_file:
-            bib_file.write("\n\n".join(unique_bib_entries) + "\n")
+            bib_file.write("\n\n".join(bib_entries) + "\n")
         print(f"BibTeX citations written to '{bib_path}'")
-
-        # Attempt to clean bibliography using bibtool
-        try:
-            os.system(f"bibtool -i {bib_path} -o {bib_path}_clean")
-            os.system(f"mv {bib_path}_clean {bib_path}") # Use mv for better atomicity than cp and then rm
-            print(f"Cleaned BibTeX file using bibtool.")
-        except Exception as e:
-            print(f"Warning: Could not clean BibTeX file with bibtool. Ensure bibtool is installed and in your PATH. Error: {e}")
-
+        os.system(f"bibtool -i {bib_path} -o {bib_path}_clean")
+        os.system(f"cp {bib_path}_clean {bib_path}")
 
 if __name__ == "__main__":
     args = docopt(__doc__)
-    # docopt with ... will return a list, even if only one item
-    yaml_files = args["--file"]
+    yaml_file = args["--file"]
     show_reasons = args["--reason"]
     graph_fmt = args["--graph"]
-    output_dir = args["--output"]
-    columns = int(args["--columns"])
-    rows = int(args["--rows"])
+    output_dir = args["--output"] or "content/summary"
+    columns = int(args["--columns"] or 3)
+    rows = int(args["--rows"] or 5)
 
-    evaluator = Evaluate(yaml_files)
+    evaluator = Evaluate(yaml_file)
     evaluator.read()
     evaluator.print_ratings(show_reasons=show_reasons)
 
     if graph_fmt:
         evaluator.plot_radar_charts(graph_fmt, output_dir)
-        if graph_fmt == "pdf": # LaTeX generation only makes sense with PDF charts
+        if graph_fmt == "pdf":
             evaluator.generate_latex_summary(output_dir, show_reasons=show_reasons, columns=columns, rows=rows)

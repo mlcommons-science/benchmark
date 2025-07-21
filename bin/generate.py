@@ -146,7 +146,7 @@ if __name__ == "__main__":
         COLUMN_TITLES = None
 
     manager = YamlManager(args.files)
-    entries = manager.get_table_formatted_dicts()
+    entries = manager.get_flat_dicts()
 
     # this is a bug. an id is used to convert the name to a unique id and that is checked with the yaml reader
     # #check filenames

@@ -30,6 +30,9 @@ LATEX_PREFIX = textwrap.dedent(
     \usepackage{longtable}
     \usepackage[style=ieee, url=true]{biblatex}
     \addbibresource{benchmarks.bib}
+    \usepackage{graphicx}
+    \graphicspath{{images/}}
+    
     \begin{document}
 """
 )
@@ -445,7 +448,7 @@ class GenerateLatex:
 
         # Start with section and description paragraph
         lines = [f"\\section{{{latex_escape(entry['name'])}}}"]
-        lines.append("")
+        lines.append("{{\\footnotesize")
 
         if "description" in entry and entry["description"]:
             lines.append(f"\\noindent {latex_escape(entry['description'])}\n")
@@ -486,7 +489,7 @@ class GenerateLatex:
 
                 id = entry.get("id", "unknown")
                 name = entry.get("name", f"unknown_{id}")
-                image = f"images/{id}_radar.pdf"
+                image = f"{id}_radar.pdf"
 
                 # radar_block = textwrap.dedent(
                 #     f"""
@@ -503,6 +506,7 @@ class GenerateLatex:
         # Close the description environmentif
 
         lines.append("\\end{description}")
+        lines.append("}}")
 
         lines.append("\\clearpage")
 

@@ -8,8 +8,7 @@ import os
 import sys
 from yaml_manager import YamlManager
 from md_writer import MarkdownWriter
-from latex_writer import LatexWriter, SectionWriter, DocumentWriter
-
+from generate_latex import GenerateLatex
 
 ALL_COLUMNS = [
     ("date", "1.5cm", "Date"),
@@ -173,18 +172,23 @@ if __name__ == "__main__":
         converter.write_table(args.outdir, args.columns, COLUMN_TITLES)
 
     elif args.format == "tex":
-        converter = LatexWriter(entries)
-        if args.index:
-            converter.write_individual_entries(args.outdir, args.columns)
-        converter.write_table(args.outdir, args.columns)
+        converter = GenerateLatex(entries)
 
-        # #                      columns=ALL_COLUMNS)
+        #if args.index:
+        #    converter.write_individual_entries(args.outdir, args.columns)
+        print("Generating LaTeX table...")
+        converter.generate_table()
+        print("Generating LaTeX BibTeX..."  )
+        converter.generate_bibtex()
+        print("Generating section document...")
+        converter.generate_section()
+        #converter.generate_section(outdir="content/tex/sections")
+        #converter.input_all_sections(file="content/tex/sections.tex")
 
-        converter = SectionWriter(entries)
-        converter.write_section(outdir="content/tex/sections")
-        converter.input_all_sections(file="content/tex/sections.tex")
+        print("Generating document..." )
+        converter.generate_document()
 
-        document = DocumentWriter(
-            files=["table.tex", "sections.tex"],
-            filename="content/tex/benchmarks.tex",
-        )
+        # document = DocumentWriter(
+        #     files=["table.tex", "sections.tex"],
+        #     filename="content/tex/benchmarks.tex",
+        # )

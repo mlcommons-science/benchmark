@@ -486,7 +486,7 @@ class GenerateLatex:
 
                 id = entry.get("id", "unknown")
                 name = entry.get("name", f"unknown_{id}")
-                image = f"../summary/images/{id}_radar.pdf"
+                image = f"images/{id}_radar.pdf"
 
                 # radar_block = textwrap.dedent(
                 #     f"""

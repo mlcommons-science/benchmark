@@ -241,7 +241,7 @@ class GenerateLatex:
         self.entries = entries
         self.files = []
         # mkdir /content/tex/section
-        os.makedirs("content/tex/section", exist_ok=True)  
+        os.makedirs("content/tex/section", exist_ok=True)
 
         """
         Generates a LaTeX filename for each entry and stores it internally.
@@ -384,7 +384,6 @@ class GenerateLatex:
             entries (List[Dict]): List of benchmark entries, where each entry is a dictionary.
         """
 
-        print ("AAA")
         content = []
         # add LaTeX preamble to content
         content.append(LATEX_PREFIX)
@@ -397,7 +396,6 @@ class GenerateLatex:
 
         content = "\n".join(content)
 
-        print ("BBB", filename)
         write_to_file(content, filename=filename)
 
     # ########################################################
@@ -626,8 +624,6 @@ class GenerateLatex:
 
             tex_width = "\textheight"
 
-
-
             width = []
             names = []
             total_width = 0
@@ -641,12 +637,11 @@ class GenerateLatex:
             # sys.exit(1)
 
             for col in range(len(width)):
-                w = float(width[col]) / total_width # with two decimal places
+                w = float(width[col]) / total_width  # with two decimal places
                 w = f"{w:.2f}"
 
-                width[col] = f"{w}\\textwidth" 
+                width[col] = f"{w}\\textwidth"
 
-    
             formated_names = [f"\\textbf{{{escape_latex(name)}}}" for name in names]
             formated_names_str = " & ".join(formated_names) + r" "
             formated_width = "{|" + "|".join([f"p{{{x}}}" for x in width]) + "|}"

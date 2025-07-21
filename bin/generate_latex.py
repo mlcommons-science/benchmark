@@ -240,6 +240,8 @@ class GenerateLatex:
         """
         self.entries = entries
         self.files = []
+        # mkdir /content/tex/section
+        os.makedirs("content/tex/section", exist_ok=True)  
 
         """
         Generates a LaTeX filename for each entry and stores it internally.
@@ -382,17 +384,20 @@ class GenerateLatex:
             entries (List[Dict]): List of benchmark entries, where each entry is a dictionary.
         """
 
+        print ("AAA")
         content = []
         # add LaTeX preamble to content
         content.append(LATEX_PREFIX)
         for entry in self.entries:
-            filename = entry.get("id", "unknown.tex") + ".tex"
-            content.append(f"\\input{{{filename}}}")
+            name = entry.get("id", entry.get("name", "unknown"))
+            entry_filename = self.get_section_filename(name)
+            content.append(f"\\input{{{entry_filename}}}")
         # add Latex Postfix to content
         content.append(LATEX_POSTFIX)
 
         content = "\n".join(content)
 
+        print ("BBB", filename)
         write_to_file(content, filename=filename)
 
     # ########################################################
@@ -400,7 +405,7 @@ class GenerateLatex:
     # ########################################################
 
     @staticmethod
-    def get_section_filename(name: str, location="content/tex/section/") -> str:
+    def get_section_filename(name: str, location="section/") -> str:
         return location + name + ".tex"
 
     def latex_entry_to_string(self, entry):
@@ -508,14 +513,14 @@ class GenerateLatex:
             names.append(filename)
 
         # create a result so that each name is in a newline embedded in \input{}
-        names = [f"\\input{{sections/{name}}}" for name in names]
+        names = [f"\\input{{section/{name}}}" for name in names]
         # join the names with newline
         for name in names:
             content.append(name)
 
         write_to_file(content="\n".join(content), filename=file)
 
-    def generate_section(self, outdir="source/tex/section"):
+    def generate_section(self, outdir="content/tex/section"):
         """
         Writes a section of the LaTeX document containing the specified entries.
 

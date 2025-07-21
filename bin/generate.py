@@ -179,11 +179,16 @@ if __name__ == "__main__":
 
         #if args.index:
         #    converter.write_individual_entries(args.outdir, args.columns)
+        print("Generating LaTeX table...")
         converter.generate_table()
+        print("Generating LaTeX BibTeX..."  )
         converter.generate_bibtex()
+        print("Generating section document...")
         converter.generate_section()
         #converter.generate_section(outdir="content/tex/sections")
         #converter.input_all_sections(file="content/tex/sections.tex")
+
+        print("Generating document..." )
         converter.generate_document()
 
         # document = DocumentWriter(

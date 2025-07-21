@@ -1,3 +1,7 @@
+#
+# please do not modify this file 
+# it is maintained bt gregor
+#
 import os
 import re
 import sys

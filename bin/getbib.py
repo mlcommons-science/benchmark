@@ -20,8 +20,7 @@ Options:
   -h --help        Show this help message.
 
 Note:
-    - The ieee is not working well for multiple results, it will return the first result.
-
+    - The function to fetch from ieee is not working properly.
 """
 
 from docopt import docopt

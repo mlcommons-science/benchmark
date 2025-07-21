@@ -28,6 +28,13 @@ class Evaluate:
         self.yaml_paths = yaml_paths if isinstance(yaml_paths, list) else [yaml_paths]
         self.entries = []
 
+    def get_filename(self, entry, directory, fmt):
+        if directory is None:
+            directory = "."
+        id = entry.get("id", "unkown")
+        name = f"{directory}/{id}_radar.{fmt}"
+        return name
+
     def read(self):
         if not self.yaml_paths:
             print("YAML paths not provided.")
@@ -124,15 +131,14 @@ class Evaluate:
           ax.set_yticklabels([])
           ax.set_title(f"{name}", y=1.08, fontsize=font_size + 2)
 
-          safe_name = "".join(c if c.isalnum() or c in (' ', '-', '_') else '_' for c in name).strip()
-          filename = os.path.join(output_dir, f"{safe_name}_radar.{fmt}")
+          filename = self.get_filename(entry, output_dir, fmt)
           plt.savefig(filename, bbox_inches='tight')
           plt.close(fig)
 
           print(f"Saved radar chart for '{name}' as '{filename}'.")
 
 
-    def generate_grid_pages(self, output_dir, columns=3, rows=5):
+    def generate_grid_pages(self, output_dir, columns=3, rows=5, fmt="pdf"):
         col_count = max(1, columns)
         row_count = max(1, rows)
         charts_per_page = col_count * row_count
@@ -140,10 +146,10 @@ class Evaluate:
         figure_paths = []
         for i, entry in enumerate(self.entries):
             name = entry.get("name", f"Entry_{i+1}")
-            safe_name = "".join(c if c.isalnum() or c in (' ', '-', '_') else '_' for c in name).strip()
-            # Assuming PDF charts are generated for LaTeX inclusion
-            pdf_path = f"{safe_name}_radar.pdf"
-            figure_paths.append(pdf_path)
+            
+            filename = self.get_filename (entry, None, fmt)
+            
+            figure_paths.append(filename)
 
         pages = []
         for i in range(0, len(figure_paths), charts_per_page):
@@ -171,10 +177,8 @@ class Evaluate:
         bib_entries = []
 
         for i, entry in enumerate(self.entries):
-            name = entry.get("name", f"Entry_{i+1}")
-            safe_name = "".join(c if c.isalnum() or c in (' ', '-', '_') else '_' for c in name).strip()
-            pdf_path = f"{safe_name}_radar.pdf"
-            caption = name
+            name = caption = entry.get("name", f"Entry_{i+1}")
+            filename = self.get_filename(entry, None, "pdf")
             cite_keys = []
 
             # Include rating reasons in caption if requested
@@ -212,7 +216,7 @@ class Evaluate:
             figure_block = textwrap.dedent(f"""
                 \\begin{{figure}}[h!]
                   \\centering
-                  \\includegraphics[width=0.7\\textwidth]{{{pdf_path}}}
+                  \\includegraphics[width=0.7\\textwidth]{{{filename}}}
                   \\caption{{{caption}}}
                 \\end{{figure}}
             """)

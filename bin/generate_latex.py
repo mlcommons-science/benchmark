@@ -387,6 +387,20 @@ class GenerateLatex:
         content = []
         # add LaTeX preamble to content
         content.append(LATEX_PREFIX)
+
+
+        content.append("")
+        content.append("\\section{Benchmark Overview Table}\n")
+        
+
+        # add table
+        content.append("\\input{table.tex}\n")
+
+        #Add sections
+
+        content.append("")
+        content.append("\\section{Benchmark Details}\n")
+        
         for entry in self.entries:
             name = entry.get("id", entry.get("name", "unknown"))
             entry_filename = self.get_section_filename(name)

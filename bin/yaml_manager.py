@@ -16,7 +16,7 @@ I am not sure what this has to do with a table and what is internally done.
 
 I think this should be separated from flatten
 
-flat = manager.get_table_formatted_dicts())
+flat = manager.get_flat_dicts())
 
 
 """
@@ -101,7 +101,7 @@ class YamlManager(object):
         """
         Returns the flattened dictionaries as a list such that keys are dot-separated instead of hierarchical.
         """
-        return self.get_table_formatted_dicts()
+        return self.get_flat_dicts()
 
 
     # ---------------------------------------------------------------------------------------------------------
@@ -279,7 +279,7 @@ class YamlManager(object):
         return result
 
 
-    def get_table_formatted_dicts(self) -> list[dict]:
+    def get_flat_dicts(self) -> list[dict]:
         """
         Returns a list of entries for table conversion.
 
@@ -313,7 +313,7 @@ class YamlManager(object):
             # Let's adjust this based on the common structure: a list of benchmark entries,
             # each being a dictionary that needs flattening.
 
-            # Revised logic for get_table_formatted_dicts
+            # Revised logic for get_flat_dicts
             # If self._yaml_dicts contains elements like:
             # [{'name': 'item1', 'details': {'sub1': 'value'}}, {'name': 'item2', ...}]
             # Each 'yaml_doc' from self._yaml_dicts is one dictionary representing one entry.

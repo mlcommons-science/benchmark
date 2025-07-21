@@ -86,6 +86,7 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
 }
 
 DEFAULT_COLUMNS = [
+    "ratings",
     "date",
     # "expired",
     # "valid",
@@ -101,7 +102,6 @@ DEFAULT_COLUMNS = [
     "models",
     "notes",
     "cite",
-    "ratings",
 ]
 
 REQUIRED_FIELDS_BY_TYPE = {
@@ -233,7 +233,6 @@ class GenerateLatex:
         """
         for entry in self.entries:
             name = entry.get("id", entry.get("name", "unknown"))
-            entry["_tex_filename"] = name + ".tex"
 
     # #####################################################
     # MANAGE BIBTEX
@@ -567,16 +566,32 @@ class GenerateLatex:
     # TABLE WRITER
     # ########################################################
 
-    def entry_to_row(self, row_dict: Dict, selected_columns: List[str]) -> str:
-        row_contents_list = []
+    def entry_to_table_row(self, entry, columns=DEFAULT_COLUMNS) -> str:
+        row = []
 
-        for col_name in selected_columns:
-            value = row_dict.get(col_name)
+        for column in columns:
+            print("CCCCC", "JJJJ", column, columns, entry)
 
-            field_value = ""
+            value = entry.get(column)
+
+            content = ""
             if value is None:
-                field_value = ""  # Empty string for None values
-            elif col_name == "cite":
+                content = ""  # Empty string for None values
+
+            elif column == "ratings":
+                print("CCCCC", entry)
+                # id = entry.get("id", "unknown")
+                # image = f"{id}_radar.pdf"
+
+                # print("CCCCC", "RRRRR", id, image)
+
+                # content = f"\\includegraphics[width=0.2\\textwidth]{{{image}}}"
+
+                # print ("CCCCC", "RRRRR", id)
+
+                content = "TBD"
+
+            elif column == "cite":
                 cite_entries = (
                     value
                     if isinstance(value, list)
@@ -587,11 +602,11 @@ class GenerateLatex:
                     for c in cite_entries
                     if c and c.strip().startswith("@")
                 ]
-                primary_url = row_dict.get("url", "")
+                primary_url = entry.get("url", "")
 
                 # Try to get URL from the first citation entry if available
                 if not primary_url and cite_entries:
-                    first_cite_url = BibtexWriter._extract_cite_url(cite_entries[0])
+                    first_cite_url = self.extract_cite_url(cite_entries[0])
                     if first_cite_url:
                         primary_url = first_cite_url
 
@@ -602,35 +617,26 @@ class GenerateLatex:
                     if primary_url
                     else ""
                 )
-                field_value = f"{cite_text}{url_text}"
-            elif col_name == "url":
-                field_value = (
-                    f"\\href{{{escape_latex(value)}}}{{link}}" if value else ""
-                )
+                content = f"{cite_text}{url_text}"
+            elif column == "url":
+                content = f"\\href{{{escape_latex(value)}}}{{link}}" if value else ""
             elif isinstance(value, list):
-                field_value = ", ".join(escape_latex(item) for item in value)
+                content = ", ".join(escape_latex(item) for item in value)
             else:
-                field_value = escape_latex(value)
+                content = escape_latex(value)
 
-            row_contents_list.append(field_value)
+            print("CCCCC", column, content)
+            row.append(content)
 
-        return " & ".join(row_contents_list) + r" \\ \hline"
+        result = " & ".join(row) + r" \\ \hline"
+
+        Console.error(result)
+
+        return result
 
     def generate_table(
         self, filename="content/tex/table.tex", columns=DEFAULT_COLUMNS
     ) -> str:
-        """
-        Generates the core LaTeX table environment content (excluding document preamble/postfix).
-
-        Parameters:
-            rows (List[str]): Formatted table rows, each ending with `\\ \\hline`.
-            selected_columns (List[str]): List of column names (keys in `ALL_COLUMNS`) to include.
-            column_titles (List[str]): Display titles for the selected columns.
-            column_widths (List[Union[float, int]] | None): Widths for each column in cm.
-                                                             If None, defaults to 2cm per column.
-        Returns:
-            str: LaTeX code for the table environment.
-        """
 
         # check if columns are valid
         for col in columns:
@@ -676,7 +682,7 @@ class GenerateLatex:
         # Generate the table rows
         rows = []
         for entry in self.entries:
-            row = self.entry_to_row(entry, columns)
+            row = self.entry_to_table_row(entry, columns)
             if row.strip():
                 rows.append(row)
         all_rows = "\n".join(rows)

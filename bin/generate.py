@@ -114,15 +114,18 @@ if __name__ == "__main__":
     elif format_type == "tex":
         converter = GenerateLatex(entries)
 
-        print("generate radar charts..")
+        converter.generate_radar_chart_grid()
+
+
+        Console.info("generate radar charts..")
         converter.generate_radar_charts(fmt="pdf")
         converter.generate_radar_charts(fmt="png")
 
-        print("Generating LaTeX table...")
+        Console.info("Generating LaTeX table...")
         converter.generate_table()
-        print("Generating LaTeX BibTeX...")
+        Console.info("Generating LaTeX BibTeX...")
         converter.generate_bibtex()
-        print("Generating section document...")
+        Console.info("Generating section document...")
         converter.generate_section()
-        print("Generating document...")
+        Console.info("Generating document...")
         converter.generate_document()

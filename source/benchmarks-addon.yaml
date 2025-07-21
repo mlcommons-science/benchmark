@@ -37,7 +37,7 @@
     email: null
   cite:
   - |-
-    @misc{duarte2022fastmlsciencebenchmarksaccelerating,
+    @misc{duarte2022fastml,
       archiveprefix = {arXiv},
       author        = {Javier Duarte and Nhan Tran and Ben Hawks and Christian Herwig and Jules Muhizi and Shvetank Prakash and Vijay Janapa Reddi},
       eprint        = {2207.07958},
@@ -126,7 +126,7 @@
   - |-
     @misc{duarte2022fastmlsciencebenchmarksaccelerating,
       archiveprefix = {arXiv},
-      author        = {Javier Duarte and Nhan Tran and Ben Hawks and Christian Herwig and Jules Muhizi and Shvetank Prakash and Vijay Janapa Reddi},
+      author        = {Javier Duarte and Nhan Tran and Ben Hawks and Christian Herwig and Jules Muhizi and Shvetank Prakash and Reddi, Vijay Janapa},
       eprint        = {2207.07958},
       primaryclass  = {cs.LG},
       title         = {FastML Science Benchmarks: Accelerating Real-Time Scientific Edge Machine Learning},
@@ -1665,20 +1665,20 @@
   cite:
   - |-
     @InProceedings{pmlr-v37-blum15,
-      title = 	 {The Ladder: A Reliable Leaderboard for Machine Learning Competitions},
-      author = 	 {Blum, Avrim and Hardt, Moritz},
-      booktitle = 	 {Proceedings of the 32nd International Conference on Machine Learning},
-      pages = 	 {1006--1014},
-      year = 	 {2015},
-      editor = 	 {Bach, Francis and Blei, David},
-      volume = 	 {37},
-      series = 	 {Proceedings of Machine Learning Research},
-      address = 	 {Lille, France},
-      month = 	 {07--09 Jul},
+      title =    {The Ladder: A Reliable Leaderboard for Machine Learning Competitions},
+      author =   {Blum, Avrim and Hardt, Moritz},
+      booktitle =        {Proceedings of the 32nd International Conference on Machine Learning},
+      pages =    {1006--1014},
+      year =     {2015},
+      editor =   {Bach, Francis and Blei, David},
+      volume =   {37},
+      series =   {Proceedings of Machine Learning Research},
+      address =          {Lille, France},
+      month =    {07--09 Jul},
       publisher =    {PMLR},
-      pdf = 	 {http://proceedings.mlr.press/v37/blum15.pdf},
-      url = 	 {https://proceedings.mlr.press/v37/blum15.html},
-      abstract = 	 {The organizer of a machine learning competition faces the problem of maintaining an accurate leaderboard that faithfully represents the quality of the best submission of each competing team. What makes this estimation problem particularly challenging is its sequential and adaptive nature. As participants are allowed to repeatedly evaluate their submissions on the leaderboard, they may begin to overfit to the holdout data that supports the leaderboard. Few theoretical results give actionable advice on how to design a reliable leaderboard. Existing approaches therefore often resort to poorly understood heuristics such as limiting the bit precision of answers and the rate of re-submission. In this work, we introduce a notion of leaderboard accuracy tailored to the format of a competition. We introduce a natural algorithm called the Ladder and demonstrate that it simultaneously supports strong theoretical guarantees in a fully adaptive model of estimation, withstands practical adversarial attacks, and achieves high utility on real submission files from a Kaggle competition. Notably, we are able to sidestep a powerful recent hardness result for adaptive risk estimation that rules out algorithms such as ours under a seemingly very similar notion of accuracy. On a practical note, we provide a completely parameter-free variant of our algorithm that can be deployed in a real competition with no tuning required whatsoever.}
+      pdf =      {http://proceedings.mlr.press/v37/blum15.pdf},
+      url =      {https://proceedings.mlr.press/v37/blum15.html},
+      abstract =         {The organizer of a machine learning competition faces the problem of maintaining an accurate leaderboard that faithfully represents the quality of the best submission of each competing team. What makes this estimation problem particularly challenging is its sequential and adaptive nature. As participants are allowed to repeatedly evaluate their submissions on the leaderboard, they may begin to overfit to the holdout data that supports the leaderboard. Few theoretical results give actionable advice on how to design a reliable leaderboard. Existing approaches therefore often resort to poorly understood heuristics such as limiting the bit precision of answers and the rate of re-submission. In this work, we introduce a notion of leaderboard accuracy tailored to the format of a competition. We introduce a natural algorithm called the Ladder and demonstrate that it simultaneously supports strong theoretical guarantees in a fully adaptive model of estimation, withstands practical adversarial attacks, and achieves high utility on real submission files from a Kaggle competition. Notably, we are able to sidestep a powerful recent hardness result for adaptive risk estimation that rules out algorithms such as ours under a seemingly very similar notion of accuracy. On a practical note, we provide a completely parameter-free variant of our algorithm that can be deployed in a real competition with no tuning required whatsoever.}
     }
   dataset: []
   results:
@@ -1753,7 +1753,7 @@
     email: null
   cite:
   - |-
-    @article{Xu_2022,
+    @article{xu-2022,
       author    = {Xu, Zhen and Escalera, Sergio and Pavão, Adrien and Richard, Magali and Tu, Wei-Wei and Yao, Quanming and Zhao, Huan and Guyon, Isabelle},
       doi       = {10.1016/j.patter.2022.100543},
       issn      = {2666-3899},
@@ -2001,7 +2001,7 @@
     email: null
   cite:
   - |-
-    @inproceedings{NEURIPS2024_4f9a5acd,
+    @inproceedings{neurips2024_4f9a5acd,
       author = {Ohana, Ruben and McCabe, Michael and Meyer, Lucas and Morel, Rudy and Agocs, Fruzsina J. and Beneitez, Miguel and Berger, Marsha and Burkhart, Blakesley and Dalziel, Stuart B. and Fielding, Drummond B. and Fortunato, Daniel and Goldberg, Jared A. and Hirashima, Keiya and Jiang, Yan-Fei and Kerswell, Rich R. and Maddu, Suryanarayana and Miller, Jonah and Mukhopadhyay, Payel and Nixon, Stefan S. and Shen, Jeff and Watteaux, Romain and Blancard, Bruno R\'{e}galdo-Saint and Rozet, Fran\c{c}ois and Parker, Liam H. and Cranmer, Miles and Ho, Shirley},
       booktitle = {Advances in Neural Information Processing Systems},
       editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
@@ -3169,7 +3169,7 @@
     email: null
   cite:
   - |-
-    @misc{nguyen2024seafloorailargescalevisionlanguagedataset,
+    @misc{nguyen2024seafloor,
       archiveprefix = {arXiv},
       author        = {Kien X. Nguyen and Fengchun Qiao and Arthur Trembanis and Xi Peng},
       eprint        = {2411.00172},
@@ -3252,7 +3252,7 @@
     email: null
   cite:
   - |-
-    @inproceedings{NEURIPS2024_c4e3b55e,
+    @inproceedings{neurips2024_c4e3b55e,
       author = {Chen, Pin and Peng, Luoxuan and Jiao, Rui and Mo, Qing and Wang, Zhen and Huang, Wenbing and Liu, Yang and Lu, Yutong},
       booktitle = {Advances in Neural Information Processing Systems},
       editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
@@ -3337,7 +3337,7 @@
     email: null
   cite:
   - |-
-    @inproceedings{NEURIPS2024_a8063075,
+    @inproceedings{neurips2024_a8063075,
       author = {Zou, Deyu and Liu, Shikun and Miao, Siqi and Fung, Victor and Chang, Shiyu and Li, Pan},
       booktitle = {Advances in Neural Information Processing Systems},
       editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
@@ -3418,7 +3418,7 @@
     email: null
   cite:
   - |-
-    @inproceedings{NEURIPS2024_c00d37d6,
+    @inproceedings{neurips2024_c00d37d6,
       author = {Peterson, Ralph E and Tanelus, Aramis and Ick, Christopher and Mimica, Bartul and Francis, Niegil and Ivan, Violet J and Choudhri, Aman and Falkner, Annegret L and Murthy, Mala and Schneider, David M and Sanes, Dan H and Williams, Alex H},
       booktitle = {Advances in Neural Information Processing Systems},
       editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
@@ -3503,7 +3503,7 @@
     email: null
   cite:
   - |-
-    @inproceedings{NEURIPS2024_c6c31413,
+    @inproceedings{neurips2024_c6c31413,
       author = {Bushuiev, Roman and Bushuiev, Anton and de Jonge, Niek F. and Young, Adamo and Kretschmer, Fleming and Samusevich, Raman and Heirman, Janne and Wang, Fei and Zhang, Luke and D\"{u}hrkop, Kai and Ludwig, Marcus and Haupt, Nils A. and Kalia, Apurva and Brungs, Corinna and Schmid, Robin and Greiner, Russell and Wang, Bo and Wishart, David S. and Liu, Li-Ping and Rousu, Juho and Bittremieux, Wout and Rost, Hannes and Mak, Tytus D. and Hassoun, Soha and Huber, Florian and van der Hooft, Justin J.J. and Stravs, Michael A. and B\"{o}cker, Sebastian and Sivic, Josef and Pluskal, Tom\'{a}\v{s}},
       booktitle = {Advances in Neural Information Processing Systems},
       editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
@@ -3584,7 +3584,7 @@
     email: null
   cite:
   - |-
-    @inproceedings{NEURIPS2024_0db7f135,
+    @inproceedings{neurips2024_0db7f135,
       author = {Wang, Yiheng and Wang, Tianyu and Zhang, Yuying and Zhang, Hongji and Zheng, Haoyu and Zheng, Guanjie and Kong, Linghe},
       booktitle = {Advances in Neural Information Processing Systems},
       editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},

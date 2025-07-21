@@ -17,7 +17,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-
 VERBOSE = True
 
 # --- Constants ---
@@ -35,7 +34,6 @@ LATEX_PREFIX = textwrap.dedent(
     \usepackage[style=ieee, url=true]{biblatex}
     \addbibresource{benchmarks.bib} 
     \usepackage{caption}
-    \usepackage[numbers]{natbib}
     \usepackage{url}
     \usepackage{graphicx}
     \graphicspath{{images/}}
@@ -272,7 +270,7 @@ class GenerateLatex:
         match = re.search(r'url\s*=\s*[{"]([^}"]+)[}"]', cite_entry)
         return match.group(1) if match else ""
 
-    def generate_bibtex(self, filename: str = "content/tex/benchmarks.bib") -> None:
+    def generate_bibtex(self, filename="content/tex/benchmarks.bib") -> None:
         """
         Writes the bibtex file into the filename
 
@@ -346,20 +344,21 @@ class GenerateLatex:
                     found_labels.add(label)
                     bib_entries.append(cite_entry)
 
-        if fatal_errors:
-            print()
-            Console.error("BibTeX entries contain errors. Please fix them to proceed.")
-            print()
-            sys.exit(1)
+        # if fatal_errors:
+        #     print()
+        #     Console.error("BibTeX entries contain errors. Please fix them to proceed.")
+        #     print()
+        #     sys.exit(1)
 
         content = "\n\n".join(bib_entries)
 
-        if VERBOSE:
-            print("\n--- Generated BibTeX Entries ---")
-            print(content)
-            print("\n--- End of BibTeX Entries ---")
+        # if VERBOSE:
+        #     print("\n--- Generated BibTeX Entries ---")
+        #     print(content)
+        #     print("\n--- End of BibTeX Entries ---")
 
-        print(filename)
+        if VERBOSE:
+            Console.ok(f"Generated BibTeX file {filename}")
 
         write_to_file(content, filename=filename)
 
@@ -367,10 +366,10 @@ class GenerateLatex:
     # RADAR CHART GENERATION
     # #####################################################
 
-        
-    def generate_radar_charts(self, fmt="pdf", output_dir="content/tex/images", font_size=18):
+    def generate_radar_charts(
+        self, fmt="pdf", output_dir="content/tex/images", font_size=18
+    ):
 
-        
         valid_formats = {"pdf", "jpeg", "png", "gif"}
         fmt = fmt.lower()
         if fmt not in valid_formats:
@@ -381,14 +380,13 @@ class GenerateLatex:
 
         os.makedirs(output_dir, exist_ok=True)
 
-
         for entry in self.entries:
 
             name = entry.get("name", f"unkown")
             id = entry.get("id", f"unkown")
             ratings = {}
 
-            # Console.info(f"Generating radar chart for '{name}' ({id})...")  
+            # Console.info(f"Generating radar chart for '{name}' ({id})...")
 
             for key, value in entry.items():
                 if key.startswith("ratings.") and key.endswith(".rating"):
@@ -426,7 +424,19 @@ class GenerateLatex:
             Console.ok(f"Saved radar chart for '{name}' as '{filename}'.")
 
 
-    def generate_radar_chart_grid(self, output_dir="content/tex", columns=3, rows=5, fmt="pdf"):
+    def get_radar_filename(self, entry, directory="content/tex/images", fmt="pdf"):
+        if directory is None:
+            directory = "."
+        id = entry.get("id", "unkown")
+        name = f"{directory}/{id}_radar.{fmt}"
+        return name
+    
+    def generate_radar_chart_grid(self, 
+        filename="content/tex/radar_grid.tex", 
+        columns=5, 
+        rows=5, 
+        fmt="pdf"
+    ):
         col_count = max(1, columns)
         row_count = max(1, rows)
         charts_per_page = col_count * row_count
@@ -435,9 +445,9 @@ class GenerateLatex:
         for i, entry in enumerate(self.entries):
             name = entry.get("name", f"Entry_{i+1}")
 
-            filename = self.get_filename(entry, directory="images", fmt=fmt)
+            chart_filename = self.get_radar_filename(entry, directory="images", fmt=fmt)
 
-            figure_paths.append(filename)
+            figure_paths.append(chart_filename)
 
         pages = []
         for i in range(0, len(figure_paths), charts_per_page):
@@ -462,7 +472,12 @@ class GenerateLatex:
             grid_latex += r"\end{figure}" + "\n\n"
             pages.append(grid_latex)
 
-        return "\n\\clearpage\n".join(pages)
+            content = "\n\\clearpage\n".join(pages)
+
+        write_to_file(content, filename=filename)
+        Console.ok(f"Generated radar chart grid in '{filename}'.")  
+
+        return content
 
     # def generate_radar_chart_summary(self, output_dir="content/tex", show_reasons=False, columns=3, rows=5):
     #     tex_path = os.path.join(output_dir, "summary.tex")
@@ -535,7 +550,6 @@ class GenerateLatex:
 
     #     grid_pages = self.generate_grid_pages(output_dir, columns=columns, rows=rows)
 
-
     #     os.makedirs(output_dir, exist_ok=True)
     #     with open(tex_path, "w", encoding="utf-8") as f:
     #         f.write(header)
@@ -585,16 +599,29 @@ class GenerateLatex:
 
         # add table
         content.append("\\input{table.tex}\n")
+        content.append("\\clearpage\n")
 
-        # Add sections
+        # content.append("")
+        # content.append("\\section{Radar Chart Table}\n")
 
-        content.append("")
-        content.append("\\section{Benchmark Details}\n")
+        # # add table
+        # content.append("\\input{radar_grid.tex}\n")
+        # content.append("\\clearpage\n")
 
-        for entry in self.entries:
-            name = entry.get("id", entry.get("name", "unknown"))
-            entry_filename = self.get_section_filename(name)
-            content.append(f"\\input{{{entry_filename}}}")
+        # # Add sections
+
+        # content.append("")
+        # content.append("\\section{Benchmark Details}\n")
+
+        # for entry in self.entries:
+        #     name = entry.get("id", entry.get("name", "unknown"))
+        #     entry_filename = self.get_section_filename(name)
+        #     content.append(f"\\input{{{entry_filename}}}")
+
+        # content.append("\\clearpage\n")
+
+
+
         # add Latex Postfix to content
         content.append(LATEX_POSTFIX)
 
@@ -919,8 +946,9 @@ class GenerateLatex:
             + all_rows
             + textwrap.dedent(
                 r"""
-                }}
                 \end{longtable}
+                }
+         
                 \end{landscape}
                 """
             )

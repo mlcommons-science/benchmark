@@ -134,7 +134,11 @@ class MarkdownWriter:
 
             for i, entry in enumerate(self.entries):
                 entry_name = entry.get("name", f"entry_{i}")
-                filename = self._sanitize_filename(entry_name) + ".md"
+
+                #Get ID: if not, use placeholder
+                id = self._sanitize_filename(entry.get("id", ""))
+                filename = f"{id}.md" if len(id)>0 else f"entry_{i}.md"
+
                 filepath = os.path.join(output_dir, "md_pages", filename)
 
                 with open(filepath, 'w', encoding='utf-8') as f:

@@ -29,7 +29,11 @@ install:
 	pip install cloudmesh-common
 	pip install pybtex
 	pip install pylatexenc
-
+	pip install bibtexparser
+	pip install docopt
+	pip install bs4
+	pip install numpy
+	pip install matplotlib
 
 content: md tex
 	echo DONE

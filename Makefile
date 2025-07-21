@@ -23,8 +23,8 @@ summary:
 	python bin/summary.py --file source/benchmarks-addon.yaml --graph=pdf
 	python bin/summary.py --file source/benchmarks-addon.yaml --graph=png
 	#cd content/summary; bibtool -s -i benchmarks.bib -o tmp.bib
-	cd content/summary; latexmk -pdf -silent summary.tex
-	open content/summary/summary.pdf 
+	cd content/tex; latexmk -pdf -silent summary.tex
+	open content/tex/summary.pdf 
 
 install:
 	pip install cloudmesh-common

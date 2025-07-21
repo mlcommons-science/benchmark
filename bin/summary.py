@@ -7,7 +7,7 @@ Options:
   --file=<path>...  Paths to the YAML files to evaluate [default: source/benchmarks-addon-new.yaml].
   --reason          Print rating reasons along with scores.
   --graph=<fmt>     Output radar charts in one of: pdf, jpeg, png, gif.
-  --output=<dir>    Directory to save radar charts and LaTeX [default: content/summary].
+  --output=<dir>    Directory to save radar charts and LaTeX [default: content/tex].
   --columns=<n>     Number of columns in radar chart grid [default: 4].
   --rows=<n>        Number of rows in radar chart grid [default: 5].
   -h --help         Show this help message.
@@ -27,9 +27,9 @@ class Evaluate:
         # Ensure yaml_paths is always a list
         self.yaml_paths = yaml_paths if isinstance(yaml_paths, list) else [yaml_paths]
         self.entries = []
-        os.makedirs("content/summary/images", exist_ok=True)
+        os.makedirs("content/tex/images", exist_ok=True)
 
-    def get_filename(self, entry, directory="content/summary/images", fmt="pdf"):
+    def get_filename(self, entry, directory="content/tex/images", fmt="pdf"):
         if directory is None:
             directory = "."
         id = entry.get("id", "unkown")
@@ -90,7 +90,7 @@ class Evaluate:
                     reason = data.get("reason", "N/A")
                     print(f"Reason: {reason}\n")
 
-    def plot_radar_charts(self, fmt, output_dir="content/summary/images", font_size=18):
+    def plot_radar_charts(self, fmt, output_dir="content/tex/images", font_size=18):
         if not self.entries:
             print("No entries loaded. Did you call read()?")
             return

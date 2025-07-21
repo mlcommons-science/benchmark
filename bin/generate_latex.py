@@ -63,7 +63,7 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
     "models": {"width": 2, "label": "Models"},
     "notes": {"width": 3, "label": "Notes"},
     "cite": {"width": 1, "label": "Citation"},
-    "ratings": {"width": 3, "label": "Citation"},
+    "ratings": {"width": 3, "label": "Ratings"},
     "ratings.specification.rating": {"width": 1, "label": "Specification Rating"},
     "ratings.specification.reason": {"width": 3, "label": "Specification Reason"},
     "ratings.dataset.rating": {"width": 1, "label": "Dataset Rating"},
@@ -98,6 +98,7 @@ DEFAULT_COLUMNS = [
     "models",
     "notes",
     "cite",
+    "ratings",
 ]
 
 REQUIRED_FIELDS_BY_TYPE = {
@@ -144,25 +145,6 @@ def escape_latex(text: Any) -> str:
     if not isinstance(text, str):
         text = str(text)
     return unicode_to_latex(text, non_ascii_only=False)
-
-
-def sanitize_filename(name: str) -> str:
-    """
-    Returns a lowercased version of `name` suitable for a filename,
-    replacing spaces with hyphens and removing invalid characters.
-
-    Parameters:
-        name (str): filename to sanitize.
-    Returns:
-        Sanitized filename.
-    """
-    # Remove characters not typically allowed in filenames
-    output = re.sub(r"[^\w\s.-]", "", name)
-    # Replace sequences of spaces with a single hyphen
-    output = re.sub(r"\s+", "-", output)
-    # Remove leading/trailing hyphens and convert to lowercase
-    output = output.strip("-").lower()
-    return output
 
 
 def validate_bibtex_entries(bibtex_str):
@@ -388,19 +370,17 @@ class GenerateLatex:
         # add LaTeX preamble to content
         content.append(LATEX_PREFIX)
 
-
         content.append("")
         content.append("\\section{Benchmark Overview Table}\n")
-        
 
         # add table
         content.append("\\input{table.tex}\n")
 
-        #Add sections
+        # Add sections
 
         content.append("")
         content.append("\\section{Benchmark Details}\n")
-        
+
         for entry in self.entries:
             name = entry.get("id", entry.get("name", "unknown"))
             entry_filename = self.get_section_filename(name)
@@ -501,7 +481,29 @@ class GenerateLatex:
                 citations.append(f"\\cite{{{label}}}")
             lines.append(f"  \\item[Citations:] {', '.join(citations)}")
 
+            if "ratings" in DEFAULT_COLUMNS:
+                lines.append(f"  \\item[Ratings:]")
+
+                id = entry.get("id", "unknown")
+                name = entry.get("name", f"unknown_{id}")
+                image = f"../summary/images/{id}_radar.pdf"
+
+                # radar_block = textwrap.dedent(
+                #     f"""
+                #     # \\begin{{figure}}[h!]
+                #     #  \\centering
+                #     \\includegraphics[width=0.7\\textwidth]{{{image}}}
+                #     #  \\caption{{{name}}}
+                #     # \end{{figure}}
+                #     """
+
+                radar_block = f"\\includegraphics[width=0.2\\textwidth]{{{image}}}"
+                lines.append(radar_block)
+
+        # Close the description environmentif
+
         lines.append("\\end{description}")
+
         lines.append("\\clearpage")
 
         # if a line in lines contains "\_tex\_filename" remove that line

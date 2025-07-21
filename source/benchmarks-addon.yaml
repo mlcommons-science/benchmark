@@ -1488,9 +1488,8 @@
   - |-
     @article{karargyris2023federated,
       author = {Karargyris, Alexandros and Umeton, Renato and Sheller, Micah J. and Aristizabal, Alejandro and George, Johnu and Wuest, Anna and Pati, Sarthak and Kassem, Hasan and Zenk, Maximilian and Baid, Ujjwal and Narayana Moorthy, Prakash and Chowdhury, Alexander and Guo, Junyi and Nalawade, Sahil and Rosenthal, Jacob and Kanter, David and Xenochristou, Maria and Beutel, Daniel J. and Chung, Verena and Bergquist, Timothy and Eddy, James and Abid, Abubakar and Tunstall, Lewis and Sanseviero, Omar and Dimitriadis, Dimitrios and Qian, Yiming and Xu, Xinxing and Liu, Yong and Goh, Rick Siow Mong and Bala, Srini and Bittorf, Victor and Puchala, Sreekar Reddy and Ricciuti, Biagio and Samineni, Soujanya and Sengupta, Eshna and Chaudhari, Akshay and Coleman, Cody and Desinghu, Bala and Diamos, Gregory and Dutta, Debo and Feddema, Diane and Fursin, Grigori and Huang, Xinyuan and Kashyap, Satyananda and Lane, Nicholas and Mallick, Indranil and Mascagni, Pietro and Mehta, Virendra and Moraes, Cassiano Ferro and Natarajan, Vivek and Nikolov, Nikola and Padoy, Nicolas and Pekhimenko, Gennady and Reddi, Vijay Janapa and Reina, G. Anthony and Ribalta, Pablo and Singh, Abhishek and Thiagarajan, Jayaraman J. and Albrecht, Jacob and Wolf, Thomas and Miller, Geralyn and Fu, Huazhu and Shah, Prashant and Xu, Daguang and Yadav, Poonam and Talby, David and Awad, Mark M. and Howard, Jeremy P. and Rosenthal, Michael and Marchionni, Luigi and Loda, Massimo and Johnson, Jason M. and Bakas, Spyridon and Mattson, Peter and FeTS Consortium and BraTS-2020 Consortium and AI4SafeChole Consortium},
-      date = {2023/07/01},
+      month = jul,
       doi = {10.1038/s42256-023-00652-2},
-      isbn = {2522-5839},
       journal = {Nature Machine Intelligence},
       number = {7},
       pages = {799--810},
@@ -1674,7 +1673,7 @@
       volume =   {37},
       series =   {Proceedings of Machine Learning Research},
       address =          {Lille, France},
-      month =    {07--09 Jul},
+      month =    jul,
       publisher =    {PMLR},
       pdf =      {http://proceedings.mlr.press/v37/blum15.pdf},
       url =      {https://proceedings.mlr.press/v37/blum15.html},
@@ -1758,7 +1757,7 @@
       doi       = {10.1016/j.patter.2022.100543},
       issn      = {2666-3899},
       journal   = {Patterns},
-      month     = {July},
+      month     = jul,
       number    = {7},
       pages     = {100543},
       publisher = {Elsevier BV},
@@ -2268,7 +2267,6 @@
       author = {Kwon, Woosuk and Li, Zhuohan and Zhuang, Siyuan and Sheng, Ying and Zheng, Lianmin and Yu, Cody Hao and Gonzalez, Joseph and Zhang, Hao and Stoica, Ion},
       title = {Efficient Memory Management for Large Language Model Serving with PagedAttention},
       year = {2023},
-      isbn = {9798400702297},
       publisher = {Association for Computing Machinery},
       address = {New York, NY, USA},
       url = {https://doi.org/10.1145/3600006.3613165},
@@ -3145,7 +3143,7 @@
   - segmentation
   - QA
   description: |-
-    A first-of-its-kind dataset covering 17,300 km² of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs—designed for both vision and language-based ML models in marine science :contentReference[oaicite:1]{index=1}.
+    A first-of-its-kind dataset covering 17,300 sq.km of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs—designed for both vision and language-based ML models in marine science :contentReference[oaicite:1]{index=1}.
   task_types:
   - Image segmentation
   - Vision-language QA
@@ -3171,11 +3169,11 @@
   - |-
     @misc{nguyen2024seafloor,
       archiveprefix = {arXiv},
-      author        = {Kien X. Nguyen and Fengchun Qiao and Arthur Trembanis and Xi Peng},
-      eprint        = {2411.00172},
-      primaryclass  = {cs.CV},
-      title         = {SeafloorAI: A Large-scale Vision-Language Dataset for Seafloor Geological Survey},
-      url           = {https://arxiv.org/abs/2411.00172},
+      author = {Kien X. Nguyen and Fengchun Qiao and Arthur Trembanis and Xi Peng},
+      eprint = {2411.00172},
+      primaryclass = {cs.CV},
+      title = {SeafloorAI: A Large-scale Vision-Language Dataset for Seafloor Geological Survey},
+      url = {https://arxiv.org/abs/2411.00172}
     }
   dataset:
   - name: Sonar imagery + annotations

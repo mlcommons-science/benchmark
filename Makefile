@@ -45,8 +45,12 @@ md:
 tex:
 	python ${SCRIPT} --files=${FILES} --format=tex --outdir=./content --standalone --columns=${COLUMNS}
 	cd content/tex; bibtool -s -i benchmarks.bib -o tmp.bib
+	sleep 1
 	cd content/tex; mv tmp.bib benchmarks.bib
 
+t:
+	python ${SCRIPT} --files=${FILES} --format=tex --outdir=./content --standalone --columns=${COLUMNS}
+	cd content/tex; latexmk -pdf -silent benchmarks.tex
 
 standalone:
 	python ${SCRIPT} --files=${FILES} --format=tex --standalone --out-dir ./content

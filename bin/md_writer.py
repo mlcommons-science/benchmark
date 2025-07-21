@@ -184,7 +184,7 @@ class MarkdownWriter:
                             category = col_name.split('.')[1]
 
                             if not category in written_rating_categories:
-                                f.write(f"{category.title()}:\n\n")
+                                f.write(f"{category.replace("_", " ").title()}:\n\n")
                                 written_rating_categories.append(category)
 
                             val_str = str(val).replace("\n", " ").replace("['", "").replace("']", "")
@@ -201,5 +201,7 @@ class MarkdownWriter:
 
                             f.write(f"**{col_display}**: {val_str}\n\n")
 
+                    #write the image
+                    f.write(f"**Radar Plot:**\n ![{id.replace("_", " ").title()} radar plot](content/summary/{id}.png)")
 
                 index_file.write(f"- [{entry_name}]({filename})\n")

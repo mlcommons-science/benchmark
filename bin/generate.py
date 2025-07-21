@@ -38,9 +38,6 @@ ALL_COLUMNS = [
     ("ratings.documentation.reason", "3cm", "Documentation Reason"),
 ]
 
-# BUG: THESE ARE BUGGY DATA STRUCTURES NOT RECOMMENDED TO BE USED. ALL_COLUMNS SHOULD BE USED INSTEAD
-# ALSO TE REMOVAL OF cm is questionable
-
 
 COLUMN_NAMES = []
 COLUMN_WIDTHS = []
@@ -168,7 +165,7 @@ if __name__ == "__main__":
         manager.check_urls()  # URL check
 
     if args.format == "md":
-        converter = MarkdownWriter(entries)
+        converter = MarkdownWriter(entries, raw_entries=manager.data)
 
         if args.index:
             converter.write_individual_entries(args.outdir, args.columns, COLUMN_TITLES)

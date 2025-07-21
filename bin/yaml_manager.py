@@ -635,10 +635,10 @@ class YamlManager(object):
 
     def get_by_name(self, name: str) -> dict | None: # Changed return type to allow None
         """
-        Returns the first entry with the given name.
+        Returns the first benchmark entry with the given name.
 
         Parameters:
-            name (str): name of the entry to return
+            name (str): name of the entry to return, listed in the "name" field
         Returns:
             dict or None: first entry with the given name, or None if not found
         """

@@ -22,8 +22,9 @@ class MarkdownWriter:
     Class to write formatted YAML file contents in Markdown format
     """
 
-    def __init__(self, entries: list[dict]):
+    def __init__(self, entries: list[dict], raw_entries: list[dict] | None = None):
         self.entries = entries
+        self.raw_entries = raw_entries
 
     def _escape_md(self, text) -> str:
         if not isinstance(text, str):
@@ -122,9 +123,9 @@ class MarkdownWriter:
             assert isinstance(author_trunc, int) and author_trunc>0, "author trunc must be a positive integer"
 
         if column_titles:
-            used_column_display_names = column_titles
+            used_column_display_names = [self._escape_md(name).replace(".", ", ").replace("_", " ").title() for name in column_names]
         else:
-            used_column_display_names = [self._sanitize_filename(name) for name in column_names]
+            used_column_display_names = [self._sanitize_filename(name).replace(".", ", ").replace("_", " ").title() for name in column_names]
 
         columns = list(zip(column_names, used_column_display_names))
         os.makedirs(os.path.join(output_dir, "md_pages"), exist_ok=True)
@@ -133,9 +134,12 @@ class MarkdownWriter:
             index_file.write("# Index of Benchmarks\n\n")
 
             for i, entry in enumerate(self.entries):
-                entry_name = entry.get("name", f"entry_{i}")
+                ratings_header_written = False
+                written_rating_categories = []
 
-                #Get ID: if not, use placeholder
+                entry_name = entry.get("name", f"Entry {i}")
+
+                #Get ID. If no ID, use placeholder
                 id = self._sanitize_filename(entry.get("id", ""))
                 filename = f"{id}.md" if len(id)>0 else f"entry_{i}.md"
 
@@ -162,10 +166,40 @@ class MarkdownWriter:
                                 for raw_line in bibtex.strip().splitlines():
                                     f.write(f"      {raw_line}\n")
                             f.write("\n")
+
+                        elif col_name.startswith("ratings"):
+                            if not ratings_header_written:
+                                f.write("**Ratings:**\n\n")
+                                ratings_header_written = True
+                            
+                            # ###########
+                            # #Flat writing here
+                            # val_str = str(val).replace("\n", " ").replace("['", "").replace("']", "")
+                            # val_str = val_str.replace("', '", ", ").replace("','", ", ").replace("[]", "")
+                            # val_str = val_str.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
+                            # f.write(f"- **{col_display[9:]}:** {val_str}\n\n")
+
+                            ###########
+                            #Hierarchical writing here (will break if the raw rating dictionary is changed)
+                            category = col_name.split('.')[1]
+
+                            if not category in written_rating_categories:
+                                f.write(f"{category.title()}:\n\n")
+                                written_rating_categories.append(category)
+
+                            val_str = str(val).replace("\n", " ").replace("['", "").replace("']", "")
+                            val_str = val_str.replace("', '", ", ").replace("','", ", ").replace("[]", "")
+                            val_str = val_str.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
+
+                            f.write(f"  - **{col_name.split('.')[2].replace('_', ' ').title()}:** {val_str}\n\n")
+                            ###########
+                        
                         else:
                             val_str = str(val).replace("\n", " ").replace("['", "").replace("']", "")
                             val_str = val_str.replace("', '", ", ").replace("','", ", ").replace("[]", "")
                             val_str = val_str.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
+
                             f.write(f"**{col_display}**: {val_str}\n\n")
+
 
                 index_file.write(f"- [{entry_name}]({filename})\n")

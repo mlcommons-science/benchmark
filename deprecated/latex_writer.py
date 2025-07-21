@@ -1,5 +1,5 @@
 #
-# please do not modify this file 
+# please do not modify this file
 # it is maintained bt gregor
 #
 import os
@@ -61,6 +61,7 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
     "models": {"width": "2cm", "label": "Models"},
     "notes": {"width": "3cm", "label": "Notes"},
     "cite": {"width": "1cm", "label": "Citation"},
+    "ratings": {"width": "3cm", "label": "Citation"},
     "ratings.specification.rating": {"width": "1cm", "label": "Specification Rating"},
     "ratings.specification.reason": {"width": "3cm", "label": "Specification Reason"},
     "ratings.dataset.rating": {"width": "1cm", "label": "Dataset Rating"},
@@ -457,7 +458,7 @@ class SectionWriter:
         lines.append("\\clearpage")
 
         # if a line in lines contains "\_tex\_filename" remove that line
-        lines = [line for line in lines if "\\_tex\\_filename" not in line] 
+        lines = [line for line in lines if "\\_tex\\_filename" not in line]
 
         return "\n".join(lines)
 
@@ -516,7 +517,7 @@ class SectionWriter:
 class LatexWriter:
     """Class to write formatted YAML contents to a LaTeX file."""
 
-    def __init__(self, entries: List[Dict]):
+    def __init__(self, entries: List[Dict], ratings: bool = True):
         """
         Creates a new converter that writes `entries` to LaTeX files.
 
@@ -666,6 +667,7 @@ class LatexWriter:
         )
         return table_content
 
+
     def write_table(
         self,
         output_path: str,
@@ -724,8 +726,9 @@ class LatexWriter:
         full_latex_doc = textwrap.dedent(
             rf"""
             \begin{{landscape}}
-            {{TABELFONT}}
+            {{{TABLEFONT}
             {table_latex}
+            }}
             \end{{landscape}}
         """
         )

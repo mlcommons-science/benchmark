@@ -41,8 +41,8 @@ LATEX_POSTFIX = textwrap.dedent(
 """
 )
 
-# TABLEFONT = r"\footnotesize"
-TABLEFONT = r"\tiny"
+TABLEFONT = r"\footnotesize"
+# TABLEFONT = r"\tiny"
 
 DESCRIPTION_STYLE = "[labelwidth=5em, labelsep=1em, leftmargin=*, align=left, itemsep=0.3em, parsep=0em]"
 
@@ -641,17 +641,11 @@ class GenerateLatex:
 
                 width[col] = f"{w}\\textwidth" 
 
-            print ("FORMATED WIDTH: ", width)  
-        
-        
-
+    
             formated_names = [f"\\textbf{{{escape_latex(name)}}}" for name in names]
             formated_names_str = " & ".join(formated_names) + r" "
             formated_width = "{|" + "|".join([f"p{{{x}}}" for x in width]) + "|}"
 
-            print("FORMATED NAMES: ", formated_names_str)
-            print("FORMATED WIDTH: ", formated_width)   
-             
             return formated_width, formated_names_str
 
         column_widths, column_names = generate_column_format()

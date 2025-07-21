@@ -1,3 +1,8 @@
+#
+# please do not modify this file
+# file is maontaned by gregor
+# if you need to modify, please do zoom session with gregor first
+#
 import argparse
 import os
 import sys

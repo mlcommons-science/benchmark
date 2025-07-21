@@ -44,7 +44,6 @@ if __name__ == "__main__":
     author_trunc = int(args["--authortruncation"])
     columns = args["--columns"] or ALL_COLUMNS.keys
 
-
     files = files.split(",") if files else None
     columns = columns.split(",") if columns else None
 
@@ -57,10 +56,6 @@ if __name__ == "__main__":
         Console.info(f"Author Truncation: {author_trunc}")
         Console.info(f"Columns: {columns}")
 
-
-
-    
-    
     if args["--standalone"] and format_type != "tex":
         print("Error: --standalone is only valid with --format=tex")
         sys.exit(1)
@@ -118,6 +113,10 @@ if __name__ == "__main__":
 
     elif format_type == "tex":
         converter = GenerateLatex(entries)
+
+        print("generate radar charts..")
+        converter.generate_radar_charts(fmt="pdf")
+        converter.generate_radar_charts(fmt="png")
 
         print("Generating LaTeX table...")
         converter.generate_table()

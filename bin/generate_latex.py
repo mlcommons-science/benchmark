@@ -13,6 +13,10 @@ from pybtex.plugin import find_plugin
 from pylatexenc.latexencode import unicode_to_latex
 from cloudmesh.common.console import Console
 import bibtexparser
+import numpy as np
+import matplotlib.pyplot as plt
+
+
 
 VERBOSE = True
 
@@ -21,15 +25,18 @@ VERBOSE = True
 LATEX_PREFIX = textwrap.dedent(
     r"""
     \documentclass{article}
+    \usepackage{fullpage}
     \usepackage{enumitem}
-    \usepackage[margin=1in]{geometry}
     \usepackage{hyperref}
     \usepackage{amsmath}
     \usepackage{pdflscape}
     \usepackage{wasysym}
     \usepackage{longtable}
     \usepackage[style=ieee, url=true]{biblatex}
-    \addbibresource{benchmarks.bib}
+    \addbibresource{benchmarks.bib} 
+    \usepackage{caption}
+    \usepackage[numbers]{natbib}
+    \usepackage{url}
     \usepackage{graphicx}
     \graphicspath{{images/}}
     
@@ -355,6 +362,207 @@ class GenerateLatex:
         print(filename)
 
         write_to_file(content, filename=filename)
+
+    # #####################################################
+    # RADAR CHART GENERATION
+    # #####################################################
+
+        
+    def generate_radar_charts(self, fmt="pdf", output_dir="content/tex/images", font_size=18):
+
+        
+        valid_formats = {"pdf", "jpeg", "png", "gif"}
+        fmt = fmt.lower()
+        if fmt not in valid_formats:
+            print(
+                f"Unsupported format '{fmt}'. Supported formats: {', '.join(valid_formats)}"
+            )
+            return
+
+        os.makedirs(output_dir, exist_ok=True)
+
+
+        for entry in self.entries:
+
+            name = entry.get("name", f"unkown")
+            id = entry.get("id", f"unkown")
+            ratings = {}
+
+            # Console.info(f"Generating radar chart for '{name}' ({id})...")  
+
+            for key, value in entry.items():
+                if key.startswith("ratings.") and key.endswith(".rating"):
+                    parts = key.split(".")
+                    if len(parts) == 3:
+                        rating_type = parts[1]
+                        try:
+                            ratings[rating_type] = float(value)
+                        except (TypeError, ValueError):
+                            ratings[rating_type] = 0.0
+
+            if not ratings:
+                print(f"No ratings found for '{name}', skipping radar chart.")
+                continue
+
+            labels = list(ratings.keys())
+            values = list(ratings.values())
+            values += values[:1]
+            angles = np.linspace(0, 2 * np.pi, len(labels), endpoint=False).tolist()
+            angles += angles[:1]
+
+            fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))
+            ax.plot(angles, values, color="tab:blue", linewidth=2)
+            ax.fill(angles, values, color="tab:blue", alpha=0.25)
+
+            ax.set_xticks(angles[:-1])
+            ax.set_xticklabels(labels, fontsize=font_size)
+            ax.set_yticklabels([])
+            ax.set_title(f"{name}", y=1.08, fontsize=font_size + 2)
+
+            filename = f"{output_dir}/{id}_radar.{fmt}"
+            plt.savefig(filename, bbox_inches="tight")
+            plt.close(fig)
+
+            Console.ok(f"Saved radar chart for '{name}' as '{filename}'.")
+
+
+    def generate_radar_chart_grid(self, output_dir="content/tex", columns=3, rows=5, fmt="pdf"):
+        col_count = max(1, columns)
+        row_count = max(1, rows)
+        charts_per_page = col_count * row_count
+
+        figure_paths = []
+        for i, entry in enumerate(self.entries):
+            name = entry.get("name", f"Entry_{i+1}")
+
+            filename = self.get_filename(entry, directory="images", fmt=fmt)
+
+            figure_paths.append(filename)
+
+        pages = []
+        for i in range(0, len(figure_paths), charts_per_page):
+            grid_latex = textwrap.dedent(
+                r"""
+                \begin{figure}[ht!]
+                \centering
+            """
+            )
+            page_paths = figure_paths[i : i + charts_per_page]
+            for j, path in enumerate(page_paths):
+                # Adjust width to account for spacing between images
+                grid_latex += f"\\includegraphics[width={1/col_count-0.01:.4f}\\textwidth]{{{path}}}\n"
+                if (j + 1) % col_count == 0:
+                    grid_latex += (
+                        r"\\[1ex]" + "\n"
+                    )  # Add a small vertical space after each row
+
+            grid_latex += (
+                f"\\caption{{Radar chart overview (page {i // charts_per_page + 1})}}\n"
+            )
+            grid_latex += r"\end{figure}" + "\n\n"
+            pages.append(grid_latex)
+
+        return "\n\\clearpage\n".join(pages)
+
+    # def generate_radar_chart_summary(self, output_dir="content/tex", show_reasons=False, columns=3, rows=5):
+    #     tex_path = os.path.join(output_dir, "summary.tex")
+    #     bib_path = os.path.join(output_dir, "summary.bib")
+    #     figures = []
+    #     bib_entries = []
+
+    #     for i, entry in enumerate(self.entries):
+    #         name = caption = entry.get("name", f"Entry_{i+1}")
+    #         filename = self.get_filename(entry, directory="images", fmt="pdf")
+    #         cite_keys = []
+
+    #         # Include rating reasons in caption if requested
+    #         if show_reasons:
+    #             reasons = []
+    #             for key, value in entry.items():
+    #                 if key.startswith("ratings.") and key.endswith(".reason"):
+    #                     try:
+    #                         parts = key.split(".")
+    #                         rating_type = parts[1]
+    #                         reason = value.strip()
+    #                         reasons.append(f"{rating_type.capitalize()}: {reason}")
+    #                     except Exception:
+    #                         continue
+    #             if reasons:
+    #                 caption += " --- " + "; ".join(reasons)
+
+    #         # Extract citations and keys
+    #         entry_cites = entry.get("cite", [])
+    #         if not isinstance(entry_cites, list):
+    #             entry_cites = [entry_cites]
+
+    #         for cite_block in entry_cites:
+    #             match = re.search(r"@\w+\{([^,]+),", cite_block)
+    #             if match:
+    #                 key = match.group(1)
+    #             else:
+    #                 key = f"entry{i+1}"  # Fallback key
+    #             cite_keys.append(key)
+    #             bib_entries.append(cite_block.strip())
+
+    #         if cite_keys:
+    #             caption += f" \\cite{{{', '.join(cite_keys)}}}"
+
+    #         figure_block = textwrap.dedent(
+    #             f"""
+    #             \\begin{{figure}}[h!]
+    #               \\centering
+    #               \\includegraphics[width=0.7\\textwidth]{{{filename}}}
+    #               \\caption{{{caption}}}
+    #             \\end{{figure}}
+    #         """
+    #         )
+    #         figures.append(figure_block)
+
+    #     header = textwrap.dedent(
+    #         r"""
+    #         \documentclass{article}
+    #         \usepackage{fullpage}
+    #         \usepackage{graphicx}
+    #         \usepackage{caption}
+    #         \usepackage[numbers]{natbib}
+    #         \usepackage{url}
+    #         \title{Radar Chart Summary}
+    #         \date{}
+    #         \begin{document}
+    #         \maketitle
+    #     """
+    #     )
+
+    #     grid_pages = self.generate_grid_pages(output_dir, columns=columns, rows=rows)
+
+
+    #     os.makedirs(output_dir, exist_ok=True)
+    #     with open(tex_path, "w", encoding="utf-8") as f:
+    #         f.write(header)
+    #         f.write(grid_pages)
+    #         f.writelines(figures)
+    #         f.write(bibliography)
+    #         f.write("\n" + footer)
+
+    #     print(f"Write Radar chart summary to '{tex_path}'")
+
+    #     # # Write unique BibTeX entries
+    #     # unique_bib_entries = sorted(list(set(bib_entries)))
+    #     # with open(bib_path, "w", encoding="utf-8") as bib_file:
+    #     #     bib_file.write("\n\n".join(unique_bib_entries) + "\n")
+    #     # print(f"BibTeX citations written to '{bib_path}'")
+
+    #     # # Attempt to clean bibliography using bibtool
+    #     # try:
+    #     #     os.system(f"bibtool -i {bib_path} -o {bib_path}_clean")
+    #     #     os.system(
+    #     #         f"mv {bib_path}_clean {bib_path}"
+    #     #     )  # Use mv for better atomicity than cp and then rm
+    #     #     print(f"Cleaned BibTeX file using bibtool.")
+    #     # except Exception as e:
+    #     #     print(
+    #     #         f"Warning: Could not clean BibTeX file with bibtool. Ensure bibtool is installed and in your PATH. Error: {e}"
+    #     #     )
 
     # #####################################################
     # TEX MAIN DOCUMENT WRITER

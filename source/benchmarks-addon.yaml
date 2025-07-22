@@ -366,7 +366,7 @@
   ai_capability_measured:
   - Real-time anomaly detection with multi-modal sensors
   metrics:
-  - ROC‑AUC
+  - ROC-AUC
   - Detection latency
   models:
   - Autoencoder
@@ -840,7 +840,7 @@
   last_updated: 2023-12
   expired: unkown
   valid: 'yes'
-  name: 4D‑STEM
+  name: 4D-STEM
   url: "https://openreview.net/pdf?id=7yt3N0o0W9"
   domain: Material Science
   focus: Real-time ML for scanning transmission electron microscopy
@@ -1286,7 +1286,7 @@
   type: Framework
   ml_task: NA
   notes: |-
-    Joint national-lab effort under Apache‑2.0 license.
+    Joint national-lab effort under Apache-2.0 license.
   contact:
     name: MLCommons Science Working Group
     email: unkown
@@ -1480,7 +1480,7 @@
   type: Platform
   ml_task: NA
   notes: |-
-    Open-source platform under Apache‑2.0; used across 20+ institutions and hospitals :contentReference[oaicite:2]{index=2}.
+    Open-source platform under Apache-2.0; used across 20+ institutions and hospitals :contentReference[oaicite:2]{index=2}.
   contact:
     name: Alex Karargyris (MLCommons Medical AI)
     email: unkown
@@ -1728,8 +1728,8 @@
   - competitions
   - meta-benchmark
   description: |-
-    Codabench (successor to CodaLab) is a flexible, easy‑to‑use, reproducible API platform for hosting AI benchmarks
-    and code‑submission challenges. It supports custom scoring, inverted benchmarks, and scalable public or private queues :contentReference[oaicite:1]{index=1}.
+    Codabench (successor to CodaLab) is a flexible, easy-to-use, reproducible API platform for hosting AI benchmarks
+    and code-submission challenges. It supports custom scoring, inverted benchmarks, and scalable public or private queues :contentReference[oaicite:1]{index=1}.
   task_types:
   - Multiple
   ai_capability_measured:
@@ -1748,7 +1748,7 @@
   notes: |-
     Hosts 51 public competitions, ~26 k users, 177 k submissions :contentReference[oaicite:2]{index=2}
   contact:
-    name: Isabelle Guyon (Université Paris‑Saclay)
+    name: Isabelle Guyon (Université Paris-Saclay)
     email: unkown
   cite:
   - |-
@@ -1988,7 +1988,7 @@
   - Domain breadth
   models:
   - FNO baselines
-  - U‑Net baselines
+  - U-Net baselines
   ml_motif:
   - Foundation model, Surrogate
   type: Dataset
@@ -2063,7 +2063,7 @@
   - accelerator
   - throughput
   description: |-
-    A suite evaluating inference performance of LLMs (LLaMA, Mistral, Qwen) across diverse accelerators (NVIDIA, AMD, Intel, SambaNova) and frameworks (vLLM, DeepSpeed‑MII, etc.), with an interactive dashboard and per-platform metrics. :contentReference[oaicite:3]{index=3}
+    A suite evaluating inference performance of LLMs (LLaMA, Mistral, Qwen) across diverse accelerators (NVIDIA, AMD, Intel, SambaNova) and frameworks (vLLM, DeepSpeed-MII, etc.), with an interactive dashboard and per-platform metrics. :contentReference[oaicite:3]{index=3}
   task_types:
   - Inference Benchmarking
   ai_capability_measured:
@@ -2075,16 +2075,16 @@
   - Latency
   - Framework-hardware mix performance
   models:
-  - LLaMA-2‑7B
-  - LLaMA-2‑70B
-  - Mistral‑7B
-  - Qwen‑7B
+  - LLaMA-2-7B
+  - LLaMA-2-70B
+  - Mistral-7B
+  - Qwen-7B
   ml_motif:
   - HPC/inference
   type: Dataset
   ml_task: Inference Benchmarking
   notes: |-
-    Licensed under BSD‑3, maintained by Argonne; supports GPUs and accelerators. :contentReference[oaicite:4]{index=4}
+    Licensed under BSD-3, maintained by Argonne; supports GPUs and accelerators. :contentReference[oaicite:4]{index=4}
   contact:
     name: Krishna Teja Chitty-Venkata (Argonne LCF)
     email: unkown
@@ -2576,7 +2576,7 @@
   - time-series
   - reprogramming
   description: |-
-    Time‑LLM uses reprogramming layers to adapt frozen LLMs for time series forecasting, treating
+    Time-LLM uses reprogramming layers to adapt frozen LLMs for time series forecasting, treating
     forecasting as a language task :contentReference[oaicite:2]{index=2}.
   task_types:
   - Time-series forecasting
@@ -2587,7 +2587,7 @@
   - RMSE
   - MAPE
   models:
-  - Time‑LLM
+  - Time-LLM
   ml_motif:
   - Time-series
   type: Platform
@@ -2741,13 +2741,13 @@
   - astrophysics
   - time-series
   description: |-
-    A benchmark for detecting anomalous transient gravitational-wave signals, including “unknown-unknowns," using preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments from dual interferometers. :contentReference[oaicite:1]{index=1}
+    A benchmark for detecting anomalous transient gravitational-wave signals, including "unknown-unknowns," using preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments from dual interferometers. :contentReference[oaicite:1]{index=1}
   task_types:
   - Anomaly detection
   ai_capability_measured:
   - Novel event detection in physical signals
   metrics:
-  - ROC‑AUC
+  - ROC-AUC
   - Precision/Recall
   models:
   - Deep latent CNNs
@@ -2907,7 +2907,7 @@
   ai_capability_measured:
   - Detection of environmental anomalies
   metrics:
-  - ROC‑AUC
+  - ROC-AUC
   - Precision/Recall
   models:
   - CNNs, RNNs, Transformers
@@ -2997,7 +2997,7 @@
   notes: |-
     Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization. :contentReference[oaicite:1]{index=1}
   contact:
-    name: Javier Campos / Giuseppe Di Guglielmo
+    name: Javier Campos, Giuseppe Di Guglielmo
     email: unkown
   cite:
   - |-
@@ -3061,7 +3061,7 @@
   - expert reasoning
   - science QA
   description: |-
-    Contains 448 challenging questions written by domain experts, with expert accuracy at 65% (74% discounting clear errors) and non-experts reaching just 34%. GPT‑4 baseline scores ~39%-designed for scalable oversight evaluation. :contentReference[oaicite:2]{index=2}
+    Contains 448 challenging questions written by domain experts, with expert accuracy at 65% (74% discounting clear errors) and non-experts reaching just 34%. GPT-4 baseline scores ~39%-designed for scalable oversight evaluation. :contentReference[oaicite:2]{index=2}
   task_types:
   - Multiple choice
   ai_capability_measured:
@@ -3070,13 +3070,13 @@
   metrics:
   - Accuracy
   models:
-  - GPT‑4 baseline
+  - GPT-4 baseline
   ml_motif:
   - Multiple choice
   type: Benchmark
   ml_task: Multiple choice
   notes: |-
-    “Google-proof"; supports oversight research.
+    Google-proof, supports oversight research.
   contact:
     name: David Rein (NYU)
     email: unkown
@@ -3220,14 +3220,14 @@
   url: https://neurips.cc/virtual/2024/poster/97553
   domain: Materials Science; Superconductivity
   focus: |-
-    Dataset and models for predicting and generating high‑Tc superconductors using 3D crystal structures
+    Dataset and models for predicting and generating high-Tc superconductors using 3D crystal structures
   keywords:
   - superconductivity
   - crystal structures
   - equivariant GNN
   - generative models
   description: |-
-    SuperCon3D introduces 3D crystal structures with associated critical temperatures (Tc) and two deep-learning models: SODNet (equivariant graph model) and DiffCSP‑SC (diffusion generator) designed to screen and synthesize high‑Tc candidates :contentReference[oaicite:3]{index=3}.
+    SuperCon3D introduces 3D crystal structures with associated critical temperatures (Tc) and two deep-learning models: SODNet (equivariant graph model) and DiffCSP-SC (diffusion generator) designed to screen and synthesize high-Tc candidates :contentReference[oaicite:3]{index=3}.
   task_types:
   - Regression (Tc prediction)
   - Generative modeling
@@ -3239,7 +3239,7 @@
   - Validity of generated structures
   models:
   - SODNet
-  - DiffCSP‑SC
+  - DiffCSP-SC
   ml_motif:
   - Materials Modeling
   type: Dataset + Models
@@ -3457,7 +3457,7 @@
     reference_solution:
       rating: 9.0
       reason: |-
-        Multiple baselines (11 algorithms × 3 backbones) evaluated; setup supports reproducible comparison.
+        Multiple baselines (11 algorithms x 3 backbones) evaluated; setup supports reproducible comparison.
     documentation:
       rating: 2.0
       reason: |-
@@ -3632,18 +3632,18 @@
   last_updated: 2024-12
   expired: unkown
   valid: 'yes'
-  name: Delta Squared‑DFT
+  name: Delta Squared-DFT
   url: https://neurips.cc/virtual/2024/poster/97788
   domain: Computational Chemistry; Materials Science
   focus: |-
     Benchmarking machine-learning corrections to DFT using Delta Squared-trained models for reaction energies
   keywords:
   - density functional theory
-  - Delta Squared‑ML correction
+  - Delta Squared-ML correction
   - reaction energetics
   - quantum chemistry
   description: |-
-    Introduces the Delta Squared‑ML paradigm-using ML corrections to DFT to predict reaction energies with accuracy comparable to CCSD(T), while training on small CC datasets. Evaluated across 10 reaction datasets covering organic and organometallic transformations.
+    Introduces the Delta Squared-ML paradigm-using ML corrections to DFT to predict reaction energies with accuracy comparable to CCSD(T), while training on small CC datasets. Evaluated across 10 reaction datasets covering organic and organometallic transformations.
   task_types:
   - Regression
   ai_capability_measured:
@@ -3653,7 +3653,7 @@
   - Mean Absolute Error (eV)
   - Energy ranking accuracy
   models:
-  - Delta Squared‑ML correction networks
+  - Delta Squared-ML correction networks
   - Kernel ridge regression
   ml_motif:
   - Scientific ML
@@ -3736,8 +3736,8 @@
   - F1 score
   models:
   - GPT-4
-  - LLaMA-2‑13B
-  - T5‑XXL
+  - LLaMA-2-13B
+  - T5-XXL
   ml_motif:
   - NLP
   type: Dataset
@@ -3818,8 +3818,8 @@
   - F1 score
   models:
   - LLaVA
-  - MiniGPT‑4
-  - Owl‑LLM adapter variants
+  - MiniGPT-4
+  - Owl-LLM adapter variants
   ml_motif:
   - Multimodal QA
   type: Benchmark

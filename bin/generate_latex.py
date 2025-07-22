@@ -38,7 +38,15 @@ LATEX_PREFIX = textwrap.dedent(
     \usepackage{graphicx}
     \graphicspath{{images/}}
     
+
+    \tolerance=10000
+    \hfuzz=100pt
+    \emergencystretch=3em
+    \hbadness=10000
+    
+    
     \begin{document}
+    \sloppy
 """
 )
 
@@ -92,20 +100,20 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
 
 DEFAULT_COLUMNS = [
     "ratings",
-    "date",
+    #"date",
     # "expired",
     # "valid",
     "name",
-    # "url",
+    "url",
     "domain",
-    "focus",
+    #"focus",
     "keywords",
     # "description",
-    "task_types",
-    "ai_capability_measured",
-    "metrics",
-    "models",
-    "notes",
+    #"task_types",
+    #"ai_capability_measured",
+    #"metrics",
+    #"models",
+    #"notes",
     "cite",
 ]
 
@@ -930,11 +938,10 @@ class GenerateLatex:
                 {{{TABLEFONT}
                 \begin{{longtable}}{column_widths}
                 \hline
-                {column_names}
-                \hline
+                {column_names} \\ \hline
                 \endfirsthead
                 \hline
-                {column_names}
+                {column_names} \\ \hline
                 \endhead
                 \hline
                 \multicolumn{{{len(columns)}}}{{r}}{{Continued on next page}} \\

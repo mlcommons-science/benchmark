@@ -50,7 +50,7 @@ tex:
 
 t:
 	python ${SCRIPT} --files=${FILES} --format=tex --outdir=./content --standalone --columns=${COLUMNS}
-	cd content/tex; latexmk -pdf -silent benchmarks.tex
+	cd content/tex; latexmk -pdf benchmarks.tex
 
 standalone:
 	python ${SCRIPT} --files=${FILES} --format=tex --standalone --out-dir ./content

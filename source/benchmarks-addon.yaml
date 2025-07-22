@@ -1,6 +1,6 @@
 - date: '2024-05-01'
   last_updated: 2024-05
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Jet Classification
   url: https://github.com/fastmachinelearning/fastml-science/tree/main/jet-classify
@@ -34,7 +34,7 @@
     Includes both float and quantized models using QKeras
   contact:
     name: Jules Muhizi
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{duarte2022fastml,
@@ -86,7 +86,7 @@
         Clear paper, GitHub repo, and integration with HuggingFace Datasets; full reproducibility requires manually connecting models to dataset.
 - date: '2024-05-01'
   last_updated: 2024-05
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Irregular Sensor Data Compression
   url: |-
@@ -121,7 +121,7 @@
     Based on synthetic but realistic physics sensor data
   contact:
     name: Ben Hawks, Nhan Tran
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{duarte2022fastmlsciencebenchmarksaccelerating,
@@ -171,7 +171,7 @@
         GitHub contains baseline code, data loaders, and references, but setup for deployment (e.g., FPGA pipeline) requires familiarity with the tooling.
 - date: '2024-05-01'
   last_updated: 2024-05
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Beam Control
   url: https://github.com/fastmachinelearning/fastml-science/tree/main/beam-control
@@ -203,7 +203,7 @@
     Environment defined, baseline RL implementation is in progress
   contact:
     name: Ben Hawks, Nhan Tran
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{duarte2022fastmlsciencebenchmarksaccelerating,
@@ -261,7 +261,7 @@
         GitHub repo contains core components, but more structured setup instructions and pretrained weights would improve usability.
 - date: '2024-07-08'
   last_updated: 2024-07
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Ultrafast jet classification at the HL-LHC
   url: https://arxiv.org/pdf/2402.01876
@@ -295,7 +295,7 @@
     Uses quantization-aware training; hardware synthesis evaluated via hls4ml
   contact:
     name: Patrick Odagiu
-    email: null
+    email: unkown
   cite: 
   - |-
     @misc{odagiu2024ultrafastjetclassificationfpgas,
@@ -346,7 +346,7 @@
         GitHub has a defined structure but is incomplete; setup and execution instructions for training/evaluation are not fully established.
 - date: '2024-10-15'
   last_updated: 2024-10
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Quench detection
   url: |-
@@ -379,7 +379,7 @@
     Precursor detection in progress; multi-modal and dynamic weighting methods
   contact:
     name: Maira Khan
-    email: null
+    email: unkown
   cite: []
   dataset:
   - name: BPM and power supply data from BNL
@@ -419,7 +419,7 @@
         Paper and code (via hls4ml) are sufficient, but a centralized, standalone repo for reproducing all models would enhance accessibility.
 - date: '2024-10-15'
   last_updated: 2024-10
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: DUNE
   url: |-
@@ -452,7 +452,7 @@
     Prototype models demonstrated on SONIC platform
   contact:
     name: Andrew J. Morgan
-    email: null
+    email: unkown
   cite: 
   - |-
     @misc{abud2021deepundergroundneutrinoexperiment,
@@ -502,7 +502,7 @@
         Slides and GDocs outline results; implementation is in progress with limited setup/code release.
 - date: '2025-01-08'
   last_updated: 2025-01
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Intelligent experiments through real-time AI
   url: https://arxiv.org/pdf/2501.04845
@@ -537,7 +537,7 @@
     Achieved ~97.4% accuracy for beauty decay triggers; sub-10 µs latency on Alveo U280; hit-based FPGA design via hls4ml and FlowGNN.
   contact:
     name: Jakub Kvapil (lanl.gov)
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{kvapil2025intelligentexperimentsrealtimeai,
@@ -587,7 +587,7 @@
         Slides and some internal documentation exist, but no full pipeline or public GitHub repo yet.
 - date: '2025-01-09'
   last_updated: 2025-01
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Neural Architecture Codesign for Fast Physics Applications
   url: https://arxiv.org/abs/2501.05515
@@ -625,7 +625,7 @@
     Demonstrated two case studies (materials science, HEP); pipeline and code open-sourced.
   contact:
     name: Jason Weitz (UCSD), Nhan Tran (FNAL)
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{weitz2025neuralarchitecturecodesignfast,
@@ -674,7 +674,7 @@
         Paper is detailed and tool usage (FlowGNN, hls4ml) is described, but repo release and dataset access remain in progress.
 - date: '2024-06-24'
   last_updated: 2024-06
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Smart Pixels for LHC
   url: https://arxiv.org/abs/2406.14860
@@ -708,7 +708,7 @@
     Prototype in CMOS 28 nm; proof-of-concept for Phase III pixel upgrades.
   contact:
     name: Lindsey Gray; Jennet Dickinson
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{parpillon2024smartpixelsinpixelai,
@@ -757,7 +757,7 @@
         NAC pipeline, hls4ml usage, and results are discussed; code (e.g., nac-opt) referenced, but replication requires stitching together toolchain and data.
 - date: '2023-10-03'
   last_updated: 2023-10
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: HEDM (BraggNN)
   url: https://arxiv.org/abs/2008.08198
@@ -788,7 +788,7 @@
     Enables real-time HEDM workflows; basis for NAC case study.
   contact:
     name: Jason Weitz (UCSD)
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{liu2021braggnnfastxraybragg,
@@ -837,10 +837,10 @@
         Paper is clear; Zenodo asset is referenced, but additional GitHub or setup repo would improve reproducibility.
 - date: '2023-12-03'
   last_updated: 2023-12
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: 4D‑STEM
-  url: https://openreview.net/pdf?id=7yt3N0o0W9
+  url: "https://openreview.net/pdf?id=7yt3N0o0W9"
   domain: Material Science
   focus: Real-time ML for scanning transmission electron microscopy
   keywords:
@@ -869,12 +869,11 @@
     In-progress; model design under development.
   contact:
     name: —
-    email: null
+    email: unkown
   cite:
   - |-
-    @inproceedings{
-      qin2023extremely,
-      title={Extremely Noisy 4D-{TEM} Strain Mapping Using Cycle Consistent Spatial Transforming Autoencoders},
+    @inproceedings{qin2023extremely,
+      title={Extremely Noisy 4D-TEM Strain Mapping Using Cycle Consistent Spatial Transforming Autoencoders},
       author={Shuyu Qin and Joshua Agar and Nhan Tran},
       booktitle={AI for Accelerated Materials Design - NeurIPS 2023 Workshop},
       year={2023},
@@ -917,7 +916,7 @@
         Paper and codebase are available and usable, though not fully turnkey.
 - date: '2023-12-05'
   last_updated: 2023-12
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: In-Situ High-Speed Computer Vision
   url: https://arxiv.org/abs/2312.00128
@@ -946,7 +945,7 @@
     Embedded/deployment details in progress.
   contact:
     name: —
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{wei2024lowlatencyopticalbasedmode,
@@ -997,7 +996,7 @@
         OpenReview paper and Gemini doc give some insight, but no working code, environment, or example.
 - date: '2020-01-01'
   last_updated: 2020-01
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: BenchCouncil AIBench
   url: https://www.benchcouncil.org/AIBench/
@@ -1032,7 +1031,7 @@
     Covers scenario-distilling, micro, component, and end-to-end benchmarks.
   contact:
     name: Wanling Gao (BenchCouncil)
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{gao2019aibenchindustrystandardinternet,
@@ -1050,7 +1049,7 @@
     url: |-
       https://docs.google.com/document/d/1scxhARd4vzEaWpVfwKPF_nTSxv4DirlQqcGlSG0yzJc/edit?usp=sharing
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1081,7 +1080,7 @@
         Paper and Gemini doc exist, but full setup instructions and tools are still in progress.
 - date: '2020-01-01'
   last_updated: 2020-01
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: BenchCouncil BigDataBench
   url: https://www.benchcouncil.org/BigDataBench/
@@ -1117,7 +1116,7 @@
     Built on eight data motifs; provides Hadoop, Spark, Flink, MPI implementations.
   contact:
     name: Jianfeng Zhan (BenchCouncil)
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{gao2018bigdatabenchscalableunifiedbig,
@@ -1167,7 +1166,7 @@
         Central documentation exists, with detailed component breakdowns; environment setup across platforms (e.g., hardware variations) can require manual adjustment.
 - date: '2021-10-20'
   last_updated: 2021-10
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: MLPerf HPC
   url: https://github.com/mlcommons/hpc
@@ -1203,7 +1202,7 @@
     Shared framework with MLCommons Science; reference implementations included.
   contact:
     name: Steven Farrell (MLCommons)
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{farrell2021mlperfhpcholisticbenchmark,
@@ -1220,7 +1219,7 @@
   - name: Gemini LLM Deep Research
     url: See MLCommons Science entry below
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1251,7 +1250,7 @@
         Strong documentation with examples and task specifications; centralized support exists, but task-specific tuning may require domain expertise.
 - date: '2023-06-01'
   last_updated: 2023-06
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: MLCommons Science
   url: https://github.com/mlcommons/science
@@ -1289,7 +1288,7 @@
     Joint national-lab effort under Apache‑2.0 license.
   contact:
     name: MLCommons Science Working Group
-    email: null
+    email: unkown
   cite:
   - |-
     @InProceedings{10.1007/978-3-031-23220-6_4,
@@ -1327,7 +1326,7 @@
     url: |-
       https://docs.google.com/document/d/1UuDwy7ATzyYBqVDmvjQpxHt33FKws6hjcP8FFD1m1GI/edit?usp=chatgpt.com
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1358,7 +1357,7 @@
         GitHub repo and papers provide detailed instructions; reproducibility supported across multiple institutions.
 - date: '2021-07-05'
   last_updated: 2021-07
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: LHC New Physics Dataset
   url: https://arxiv.org/pdf/2107.02157
@@ -1392,7 +1391,7 @@
     Includes electron/muon-filtered background and black-box signal benchmarks; 1M events per black box.
   contact:
     name: Ema Puljak (ema.puljak@cern.ch)
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{https://doi.org/10.5281/zenodo.5046389,
@@ -1412,7 +1411,7 @@
     url: |-
       https://docs.google.com/document/d/1BnX67GfTQxHbDuUsH-MuHIl1uKxCIjrXHSoxvIaB72g/edit?usp=sharing
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1443,7 +1442,7 @@
         Publicly available papers and datasets with descriptions, but no unified README or training setup.
 - date: '2023-07-17'
   last_updated: 2023-07
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: MLCommons Medical AI
   url: https://github.com/mlcommons/medical
@@ -1483,7 +1482,7 @@
     Open-source platform under Apache‑2.0; used across 20+ institutions and hospitals :contentReference[oaicite:2]{index=2}.
   contact:
     name: Alex Karargyris (MLCommons Medical AI)
-    email: null
+    email: unkown
   cite:
   - |-
     @article{karargyris2023federated,
@@ -1506,7 +1505,7 @@
     url: |-
       https://docs.google.com/document/d/17dgw85X7wVRUt-ylrQsNOYTWrN15lE9bx0BxA-vcPhM/edit?usp=sharing
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1537,7 +1536,7 @@
         Well-documented, open-sourced, and maintained with examples; strong community support and reproducibility focus.
 - date: '2024-10-28'
   last_updated: 2024-10
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: CaloChallenge 2022
   url: http://arxiv.org/abs/2410.21611
@@ -1575,7 +1574,7 @@
     The most comprehensive survey to date on ML-based calorimeter simulation; 31 submissions over different dataset sizes.
   contact:
     name: Claudius Krause (CaloChallenge Lead)
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{krause2024calochallenge2022communitychallenge,
@@ -1595,7 +1594,7 @@
     url: |-
       https://docs.google.com/document/d/1JBH3WTDp2jpSt_utc1p5Dv3-MBX4xY-NVzzfXCd9xhA/edit?usp=sharing
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1626,7 +1625,7 @@
         Paper and data documentation are clear, and the dataset is widely reused. Setup requires some manual effort to reproduce full pipelines.
 - date: ongoing
   last_updated: 2025-06
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Papers With Code (SOTA Platform)
   url: https://paperswithcode.com/sota
@@ -1660,7 +1659,7 @@
     Community-driven open platform; automatic data extraction and versioning.
   contact:
     name: Papers With Code Team
-    email: null
+    email: unkown
   cite:
   - |-
     @InProceedings{pmlr-v37-blum15,
@@ -1685,7 +1684,7 @@
     url: |-
       https://docs.google.com/document/d/1pbn_K20t6Kr0zxdUSAL68ChruOu6B_x5sZbp-dcrG_g/edit?usp=sharing
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1716,7 +1715,7 @@
         Excellent documentation across MedPerf, GaNDLF, and COFE; reproducibility handled via containerized flows and task templates.
 - date: '2022-01-01'
   last_updated: 2025-03
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Codabench
   url: https://www.codabench.org/
@@ -1749,7 +1748,7 @@
     Hosts 51 public competitions, ~26 k users, 177 k submissions :contentReference[oaicite:2]{index=2}
   contact:
     name: Isabelle Guyon (Université Paris‑Saclay)
-    email: null
+    email: unkown
   cite:
   - |-
     @article{xu-2022,
@@ -1772,7 +1771,7 @@
     url: |-
       https://docs.google.com/document/d/1sIwNDCs01s790DApVt5leiG8UaBDFVINA4bOixZ1CUw/edit?usp=sharing
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1803,7 +1802,7 @@
         Paper, leaderboard, and Gemini doc are comprehensive; unified repo or launchable baseline kit would push this to a 10.
 - date: '2021-09-27'
   last_updated: 2023-07
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Sabath (SBI-FAIR)
   url: https://sbi-fair.github.io/docs/software/sabath/
@@ -1835,7 +1834,7 @@
     Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc. :contentReference[oaicite:4]{index=4}
   contact:
     name: Piotr Luszczek (luszczek@utk.edu)
-    email: null
+    email: unkown
   cite:
   - |-
     @techreport{luszczek2021sabath,
@@ -1850,7 +1849,7 @@
   - name: Gemini LLM Deep Research
     url: (none)
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: N/A
@@ -1881,7 +1880,7 @@
         GitHub repo includes code and instructions, but lacks full tutorials or walkthroughs.
 - date: '2022-10-13'
   last_updated: 2025-05
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: PDEBench
   url: https://github.com/pdebench/PDEBench
@@ -1916,7 +1915,7 @@
     Datasets hosted on DaRUS (DOI:10.18419/darus-2986); contact maintainers by email :contentReference[oaicite:6]{index=6}
   contact:
     name: Makoto Takamoto (makoto.takamoto@neclab.eu)
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{takamoto2024pdebenchextensivebenchmarkscientific,
@@ -1934,7 +1933,7 @@
     url: |-
       https://docs.google.com/document/d/1MvXdFub0PxUDtB49wqli6mmSCdLErv2nLdOJUtMylOo/edit?usp=sharing
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1965,7 +1964,7 @@
         Well-organized GitHub with examples, dataset loading scripts, and training configs.
 - date: '2024-12-03'
   last_updated: 2025-06
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: The Well
   url: https://polymathic-ai.org/the_well/
@@ -1997,7 +1996,7 @@
     Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. :contentReference[oaicite:2]{index=2}
   contact:
     name: Wes Brewer
-    email: null
+    email: unkown
   cite:
   - |-
     @inproceedings{neurips2024_4f9a5acd,
@@ -2019,7 +2018,7 @@
     url: |-
       https://docs.google.com/document/d/1axQvD_aY9O71A2nxWaoFvsfE8HvZ4TmwDoZ4cQQwW58/edit?usp=sharing
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2050,7 +2049,7 @@
         Paper gives use cases, but code and data are not yet public.
 - date: '2024-10-31'
   last_updated: 2024-11
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: LLM-Inference-Bench
   url: https://github.com/argonne-lcf/LLM-Inference-Bench
@@ -2087,7 +2086,7 @@
     Licensed under BSD‑3, maintained by Argonne; supports GPUs and accelerators. :contentReference[oaicite:4]{index=4}
   contact:
     name: Krishna Teja Chitty-Venkata (Argonne LCF)
-    email: null
+    email: unkown
   cite:
   - |-
     @INPROCEEDINGS{10820566,
@@ -2107,7 +2106,7 @@
     url: |-
       https://docs.google.com/document/d/1I3UvByGn4KaruQC1pi6XcfoAOzt4iiA61S0nR9ovC94/edit?usp=sharing
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2138,7 +2137,7 @@
         Clean GitHub with usage, dataset links, and tutorial notebooks.
 - date: '2023-12-12'
   last_updated: 2025-06
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: SGLang Framework
   url: https://github.com/sgl-project/sglang/tree/main/benchmark
@@ -2173,7 +2172,7 @@
     Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025. :contentReference[oaicite:6]{index=6}
   contact:
     name: SGLang Team
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{zheng2024sglangefficientexecutionstructured,
@@ -2192,7 +2191,7 @@
   - name: Gemini LLM Deep Research
     url: (none)
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2223,7 +2222,7 @@
         Site and GitHub offer a unified API, metadata standards, and dataset loading tools; NeurIPS paper adds detailed design context.
 - date: '2023-09-12'
   last_updated: 2025-06
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: vLLM Inference and Serving Engine
   url: https://github.com/vllm-project/vllm/tree/main/benchmarks
@@ -2260,7 +2259,7 @@
     Incubated by LF AI and Data; achieves up to 24× throughput over HuggingFace Transformers :contentReference[oaicite:2]{index=2}
   contact:
     name: Woosuk Kwon (vLLM Team)
-    email: null
+    email: unkown
   cite:
   - |-
     @inproceedings{10.1145/3600006.3613165,
@@ -2284,7 +2283,7 @@
     url: |-
       https://docs.google.com/document/d/1nPZyRZEZHciGXYNJShR9FCJbre7ImJLKf2MG6g4-3gQ/edit?usp=sharing
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2315,7 +2314,7 @@
         GitHub contains clear instructions, platform details, and framework comparisons.
 - date: '2022-06-22'
   last_updated: 2025-01
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: vLLM Performance Dashboard
   url: https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/
@@ -2350,7 +2349,7 @@
     Built using ObservableHQ; integrates live data from vLLM benchmarks.
   contact:
     name: Simon Mo
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{mo2024vllm_dashboard,
@@ -2364,7 +2363,7 @@
   - name: Gemini LLM Deep Research
     url: (none)
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2395,7 +2394,7 @@
         High-quality usage guides, examples, and performance tuning docs.
 - date: '2022-04-01'
   last_updated: 2025-06
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Nixtla NeuralForecast
   url: https://github.com/Nixtla/neuralforecast
@@ -2433,7 +2432,7 @@
     AutoModel supports hyperparameter tuning and distributed execution via Ray and Optuna. Fi­rst official NHITS implementation. :contentReference[oaicite:4]{index=4}
   contact:
     name: Kin G. Olivares (Nixtla)
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{olivares2022library_neuralforecast,
@@ -2449,7 +2448,7 @@
     url: |-
       https://docs.google.com/document/d/1VzhaUubIm-SHK7cfKWyoi8GtykpCuOH2qPM-k_g8bKU/edit?usp=sharing
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2480,7 +2479,7 @@
         Excellent GitHub docs, CLI/API usage, and deployment walkthroughs.
 - date: '2023-06-01'
   last_updated: 2025-06
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Nixtla Neural Forecast NHITS
   url: https://github.com/Nixtla/neuralforecast
@@ -2513,7 +2512,7 @@
     Official implementation in NeuralForecast, included since its AAAI 2023 release.
   contact:
     name: Kin G. Olivares (Nixtla)
-    email: null
+    email: unkown
   cite:
   - |-
    @inproceedings{challu2023nhits,
@@ -2533,7 +2532,7 @@
     url: |-
       https://docs.google.com/document/d/15Hm5ekGu99aQWsdtiUIwX6JMoaoFpRbIhDylrWqSoHY/edit?usp=sharing
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2564,7 +2563,7 @@
         Observable notebooks are intuitive; customization instructions are minimal but UI is self-explanatory.
 - date: '2023-10-03'
   last_updated: 2025-06
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Nixtla Neural Forecast TimeLLM
   url: https://github.com/Nixtla/neuralforecast
@@ -2596,7 +2595,7 @@
     Fully open-source; transforms forecasting using LLM text reconstruction.
   contact:
     name: Ming Jin (Nixtla)
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{jin2024timellmtimeseriesforecasting,
@@ -2616,7 +2615,7 @@
     url: |-
       https://docs.google.com/document/d/1xXGzRt-qhUFTvnBGQi2IbcoBdYyo-ZrAn3IOkswd3fw/edit?usp=sharing
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2647,7 +2646,7 @@
         GitHub readme with installation and example usage; lacks API or extensive tutorials.
 - date: '2023-10-05'
   last_updated: 2025-06
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Nixtla Neural Forecast TimeGPT
   url: https://github.com/Nixtla/neuralforecast
@@ -2680,7 +2679,7 @@
     Offered via Nixtla API and Azure Studio; enterprise-grade support available.
   contact:
     name: Azul Garza (Nixtla)
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{garza2024timegpt1,
@@ -2698,7 +2697,7 @@
     url: |-
       https://docs.google.com/document/d/1KmKs9JtcfpKe40fNuLrgdFcOmBnfj3ZG7AwcfTH4tXE/edit?usp=sharing
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2729,7 +2728,7 @@
         GitHub readme with installation and example usage; lacks API or extensive tutorials.
 - date: '2025-03-03'
   last_updated: 2025-03
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: HDR ML Anomaly Challenge (Gravitational Waves)
   url: https://www.codabench.org/competitions/2626/
@@ -2760,7 +2759,7 @@
     NSF HDR A3D3 sponsored; prize pool and starter kit provided on Codabench. :contentReference[oaicite:2]{index=2}
   contact:
     name: HDR A3D3 Team
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{campolongo2025buildingmachinelearningchallenges,
@@ -2777,7 +2776,7 @@
   - name: Gemini LLM Deep Research
     url: https://www.codabench.org/competitions/2626/
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2808,7 +2807,7 @@
         Model and architecture overview present, though usability guide is slightly lighter than others.
 - date: '2025-03-03'
   last_updated: 2025-03
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: HDR ML Anomaly Challenge (Butterfly)
   url: https://www.codabench.org/competitions/3764/
@@ -2839,7 +2838,7 @@
     Hybrid detection benchmarks hosted on Codabench. :contentReference[oaicite:4]{index=4}
   contact:
     name: Imageomics/HDR Team
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{campolongo2025buildingmachinelearningchallenges,
@@ -2856,7 +2855,7 @@
   - name: Gemini LLM Deep Research
     url: https://www.codabench.org/competitions/3764/
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2887,7 +2886,7 @@
         Challenge site includes overview and metrics, but limited in walkthrough or examples.
 - date: '2025-03-03'
   last_updated: 2025-03
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: HDR ML Anomaly Challenge (Sea Level Rise)
   url: https://www.codabench.org/competitions/3223/
@@ -2919,7 +2918,7 @@
     Sponsored by NSF HDR; integrates sensor and satellite data. :contentReference[oaicite:6]{index=6}
   contact:
     name: HDR A3D3 Team
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{campolongo2025buildingmachinelearningchallenges,
@@ -2936,7 +2935,7 @@
   - name: Gemini LLM Deep Research
     url: https://www.codabench.org/competitions/3223/
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2967,7 +2966,7 @@
         Codabench page, GitHub starter kit, and related papers provide strong guidance.
 - date: '2025-01-24'
   last_updated: 2025-02
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Single Qubit Readout on QICK System
   url: https://github.com/fastmachinelearning/ml-quantum-readout
@@ -2998,7 +2997,7 @@
     Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization. :contentReference[oaicite:1]{index=1}
   contact:
     name: Javier Campos / Giuseppe Di Guglielmo
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{diguglielmo2025endtoendworkflowmachinelearningbased,
@@ -3017,7 +3016,7 @@
   - name: Gemini LLM Deep Research
     url: (none)
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3048,7 +3047,7 @@
         Codabench task page describes dataset and evaluation method but lacks full API/docs.
 - date: '2023-11-20'
   last_updated: 2023-11
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: 'GPQA: A Graduate-Level Google-Proof Question and Answer Benchmark'
   url: https://arxiv.org/abs/2311.12022
@@ -3079,7 +3078,7 @@
     “Google-proof”; supports oversight research.
   contact:
     name: David Rein (NYU)
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{rein2023gpqagraduatelevelgoogleproofqa,
@@ -3087,7 +3086,7 @@
       author        = {David Rein and Betty Li Hou and Asa Cooper Stickland and Jackson Petty and Richard Yuanzhe Pang and Julien Dirani and Julian Michael and Samuel R. Bowman},
       eprint        = {2311.12022},
       primaryclass  = {cs.AI},
-      title         = {GPQA: A Graduate-Level Google-Proof Q&A Benchmark},
+      title         = {GPQA: A Graduate-Level Google-Proof Q and A Benchmark},
       url           = {https://arxiv.org/abs/2311.12022},
       year          = {2023}
     }
@@ -3098,7 +3097,7 @@
   - name: Gemini LLM Deep Research
     url: (none)
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3129,10 +3128,10 @@
         Moderate Codabench documentation with climate context; lacks pipeline-level walkthrough.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: SeafloorAI
-  url: https://neurips.cc/virtual/2024/poster/97432
+  url: "https://neurips.cc/virtual/2024/poster/97432"
   domain: Marine Science; Vision-Language
   focus: |-
     Large-scale vision-language dataset for seafloor mapping and geological classification
@@ -3164,7 +3163,7 @@
     Data processing code publicly available, covering five geological layers; curated with marine scientists :contentReference[oaicite:2]{index=2}.
   contact:
     name: Kien X. Nguyen
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{nguyen2024seafloor,
@@ -3180,9 +3179,9 @@
     url: ~15 TB
   results:
   - name: Gemini LLM Deep Research
-    url: null
+    url: unkown
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3213,7 +3212,7 @@
         Good setup instructions, but no interactive visualization or starter notebook.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: SuperCon3D
   url: https://neurips.cc/virtual/2024/poster/97553
@@ -3247,7 +3246,7 @@
     Demonstrates advantage of combining ordered and disordered structural data in model design :contentReference[oaicite:4]{index=4}.
   contact:
     name: Zhong Zuo
-    email: null
+    email: unkown
   cite:
   - |-
     @inproceedings{neurips2024_c4e3b55e,
@@ -3264,9 +3263,9 @@
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: null
+    url: unkown
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3297,7 +3296,7 @@
         Paper + GitHub metadata and processing details are comprehensive, though full dataset is not yet available.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: GeSS
   url: https://neurips.cc/virtual/2024/poster/97816
@@ -3332,7 +3331,7 @@
     Includes no-OOD, unlabeled-OOD, and few-label scenarios :contentReference[oaicite:6]{index=6}.
   contact:
     name: Deyu Zou
-    email: null
+    email: unkown
   cite:
   - |-
     @inproceedings{neurips2024_a8063075,
@@ -3349,9 +3348,9 @@
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: null
+    url: unkown
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3382,7 +3381,7 @@
         Paper and poster explain design choices well; software availability confirms reproducibility but limited external documentation.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Vocal Call Locator (VCL)
   url: https://neurips.cc/virtual/2024/poster/97470
@@ -3413,7 +3412,7 @@
     Dataset spans real, simulated, and mixed audio; supports benchmarking across data types :contentReference[oaicite:2]{index=2}.
   contact:
     name: Ralph Peterson
-    email: null
+    email: unkown
   cite:
   - |-
     @inproceedings{neurips2024_c00d37d6,
@@ -3430,9 +3429,9 @@
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: null
+    url: unkown
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3463,7 +3462,7 @@
         Paper, poster, and source code provide thorough access to methodology and implementation. Setup instructions and accompanying code not present.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: MassSpecGym
   url: https://neurips.cc/virtual/2024/poster/97823
@@ -3498,7 +3497,7 @@
     Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks :contentReference[oaicite:4]{index=4}.
   contact:
     name: Roman Bushuiev
-    email: null
+    email: unkown
   cite:
   - |-
     @inproceedings{neurips2024_c6c31413,
@@ -3515,9 +3514,9 @@
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: null
+    url: unkown
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3548,7 +3547,7 @@
         Poster and paper outline benchmark intent and setup; repo expected but not confirmed in dataset card.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Urban Data Layer (UDL)
   url: https://neurips.cc/virtual/2024/poster/97837
@@ -3579,7 +3578,7 @@
     Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models :contentReference[oaicite:6]{index=6}.
   contact:
     name: Yiheng Wang
-    email: null
+    email: unkown
   cite:
   - |-
     @inproceedings{neurips2024_0db7f135,
@@ -3596,9 +3595,9 @@
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: null
+    url: unkown
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3629,7 +3628,7 @@
         GitHub repo and poster provide code and reproducibility guidance.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: Delta Squared‑DFT
   url: https://neurips.cc/virtual/2024/poster/97788
@@ -3662,7 +3661,7 @@
     Demonstrates CC-level accuracy with ~1% of high-level data. Benchmarks publicly included for reproducibility.
   contact:
     name: Wei Liu
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{khrabrov2024nabla2dftuniversalquantumchemistry,
@@ -3677,9 +3676,9 @@
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: null
+    url: unkown
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3710,7 +3709,7 @@
         Source code supports pipeline reuse, but formal evaluation splits may vary.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: LLMs for Crop Science
   url: https://neurips.cc/virtual/2024/poster/97570
@@ -3745,7 +3744,7 @@
     Includes examples with retrieval-augmented and chain-of-thought prompt templates; supports few-shot adaptation.
   contact:
     name: Deepak Patel
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{shen2024exploringuserretrievalintegration,
@@ -3760,9 +3759,9 @@
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: null
+    url: unkown
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3793,7 +3792,7 @@
         Public benchmarks and clear reproducibility via datasets and model code.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: null
+  expired: unkown
   valid: 'yes'
   name: SPIQA (LLM)
   url: https://neurips.cc/virtual/2024/poster/97575
@@ -3827,7 +3826,7 @@
     Companion to SPIQA main benchmark; compares adapter strategies using same images and QA pairs.
   contact:
     name: Xiaoyan Zhong
-    email: null
+    email: unkown
   cite:
   - |-
     @misc{pramanick2025spiqadatasetmultimodalquestion,
@@ -3842,9 +3841,9 @@
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: null
+    url: unkown
   - name: ChatGPT LLM
-    url: null
+    url: unkown
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'

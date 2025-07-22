@@ -455,14 +455,7 @@
   - Accuracy
   models: []
   notes: Good
-  cite:
-  - |-
-    @misc{curie2024,
-      title={Scientific Reasoning Benchmarks from the CURIE Dataset},
-      author={TODO: Add authors},
-      year={2024},
-      url={https://arxiv.org/abs/2404.02029}
-    }
+  cite: []
   ratings:
     specification:
       rating: 0
@@ -1002,7 +995,7 @@
   cite:
   - |-
     @article{choudhary2024jarvis,
-      title = {{JARVIS-Leaderboard}: a large scale benchmark of materials design methods},
+      title = {JARVIS-Leaderboard: a large scale benchmark of materials design methods},
     author = {Choudhary, Kamal and Wines, Daniel and Li, Kangming and Garrity, Kevin F. and Gupta, Vishu and Romero, Aldo H. and Krogel, Jaron T. and Saritas, Kayahan and Fuhr, Addis and Ganesh, Panchapakesan and Kent, Paul R. C. and Yan, Keqiang and Lin, Yuchao and Ji, Shuiwang and Blaiszik, Ben and Reiser, Patrick and Friederich, Pascal and Agrawal, Ankit and Tiwary, Pratyush and Beyerle, Eric and Minch, Peter and Rhone, Trevor D. and Takeuchi, Ichiro and Wexler, Robert B. and Mannodi-Kanakkithodi, Arun and Ertekin, Elif and Mishra, Avanish and Mathew, Nithin and Wood, Mitchell and Rohskopf, Andrew D. and Hattrick-Simpers, Jason and Wang, Shih-Han and Achenie, Luke E. K. and Xin, Hongliang and Williams, Maureen and Biacchi, Adam J. and Tavazza, Francesca},
       journal = {npj Computational Materials},
       volume = {10},

@@ -1292,7 +1292,7 @@
     email: unkown
   cite:
   - |-
-    @InProceedings{10.1007/978-3-031-23220-6_4,
+    @inproceedings{10.1007/978-3-031-23220-6_4,
       author="Thiyagalingam, Jeyan
       and von Laszewski, Gregor
       and Yin, Junqi
@@ -2223,7 +2223,7 @@
         Site and GitHub offer a unified API, metadata standards, and dataset loading tools; NeurIPS paper adds detailed design context.
 - date: '2023-09-12'
   last_updated: 2025-06
-  expired: unkown
+  expired: unknown
   valid: 'yes'
   name: vLLM Inference and Serving Engine
   url: https://github.com/vllm-project/vllm/tree/main/benchmarks
@@ -2237,8 +2237,8 @@
   - quantization
   description: |
     vLLM is a fast, high-throughput, memory-efficient inference and serving engine for large
-    language models, \nfeaturing PagedAttention, continuous batching, and support for quantized and
-    pipelined model execution. \nBenchmarks compare it to TensorRT-LLM, SGLang, and others.
+    language models, featuring PagedAttention, continuous batching, and support for quantized and
+    pipelined model execution. Benchmarks compare it to TensorRT-LLM, SGLang, and others.
   task_types:
   - Inference Benchmarking
   ai_capability_measured:
@@ -2277,7 +2277,7 @@
       pages = {611-626},
       numpages = {16},
       location = {Koblenz, Germany},
-      series = {SOSP '23}
+      series = {SOSP 2023}
     }
   dataset: []
   results:
@@ -2441,7 +2441,7 @@
       author={Kin G. Olivares and Cristian Challú and Federico Garza and Max Mergenthaler Canseco and Artur Dubrawski},
       title = {NeuralForecast: User friendly state-of-the-art neural forecasting models.},
       year={2022},
-      howpublished={{PyCon} Salt Lake City, Utah, US 2022},
+      howpublished={PyCon Salt Lake City, Utah, US 2022},
       url={https://github.com/Nixtla/neuralforecast}
     }
   dataset: []
@@ -3668,7 +3668,7 @@
   cite:
   - |-
     @misc{khrabrov2024nabla2dftuniversalquantumchemistry,
-      title={$\nabla^2$DFT: A Universal Quantum Chemistry Dataset of Drug-Like Molecules and a Benchmark for Neural Network Potentials}, 
+      title={Delta Squared DFT: A Universal Quantum Chemistry Dataset of Drug-Like Molecules and a Benchmark for Neural Network Potentials}, 
       author={Kuzma Khrabrov and Anton Ber and Artem Tsypin and Konstantin Ushenin and Egor Rumiantsev and Alexander Telepov and Dmitry Protasov and Ilya Shenbin and Anton Alekseev and Mikhail Shirokikh and Sergey Nikolenko and Elena Tutubalina and Artur Kadurin},
       year={2024},
       eprint={2406.14347},

@@ -79,7 +79,7 @@ log:
 	open -a Aquamacs content/tex/benchmarks.log
 
 publish:
-	mkdir -p publish
-	cp -r content/md/* publish/
-	cp source/index.md publish/index.md
-	cp content/tex/benchmarks.pdf publish/benchmarks.pdf
+	mkdir -p public
+	cp -r content/md/* public/
+	cp source/index.md public/index.md
+	cp content/tex/benchmarks.pdf public/benchmarks.pdf

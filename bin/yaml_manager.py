@@ -53,7 +53,7 @@ def find_unicode_chars(filename=None):
         '®': '(R)', # Registered symbol
         '™': '(TM)', # Trademark symbol
         '–': '-',  # En dash
-        '—': '--', # Em dash
+        '—': '-', # Em dash
         '…': '...', # Ellipsis
         '„': '"', # German/East European double low quotation mark
         '”': '"', # Right double quotation mark
@@ -65,7 +65,7 @@ def find_unicode_chars(filename=None):
         'П': 'P', 'р': 'p', 'и': 'i', 'в': 'v', 'е': 'e', 'т': 't', # Partial for "Привет"
         '!': '!', # Example: if you wanted to specifically suggest for common punctuation
     }
-
+    found = set()
     try:
         with codecs.open(filename, 'r', encoding='utf-8', errors='strict') as f:
             for line_num, line in enumerate(f, 1):
@@ -73,6 +73,7 @@ def find_unicode_chars(filename=None):
                 for col_num, char in enumerate(line, 1):
                     # Check if the character is a specific Unicode character we want to handle
                     if char in UNICODE_TO_ASCII_MAP:
+                        found.add(char)
                         if not line_content_printed:
                             print(79 * "-")
                             Console.error(f"Specific Unicode character(s) found on line {line_num}:")
@@ -87,6 +88,7 @@ def find_unicode_chars(filename=None):
                         try:
                             char.encode('ascii')
                         except UnicodeEncodeError:
+                            found.add(char)
                             if not line_content_printed:
                                 Console.info(f"\nNon-ASCII Unicode character(s) found on line {line_num}:")
                                 Console.info(f"  Content: '{line.strip()}'")
@@ -97,6 +99,15 @@ def find_unicode_chars(filename=None):
         Console.error(f"Error: File '{filename}' not found.")
     except Exception as e:
         Console.error(f"An unexpected error occurred: {e}")
+
+    print ("#" * 79)
+    print("# Summary of found characters:")
+    print ("#" * 79)
+    for c in found:
+        if c not in UNICODE_TO_ASCII_MAP:
+            Console.warning(f"Found character '{c}' (U+{ord(c):04X}) not in the mapping. No alternative suggested.")
+        else:
+            Console.info(f"Found character '{c}' (U+{ord(c):04X}) with suggested alternative '{UNICODE_TO_ASCII_MAP[c]}'.") 
 
 # --- Example Usage ---
 if __name__ == "__main__":

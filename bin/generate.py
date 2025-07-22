@@ -46,15 +46,6 @@ if __name__ == "__main__":
     files = files.split(",") if files else None
     columns = columns.split(",") if columns else None
 
-    Console.ok("OOOOOO")
-
-    if VERBOSE:
-        Console.info(f"Format: {format_type}")
-        Console.info(f"Output Directory: {output_dir}")
-        Console.info(f"Files: {files}")
-        Console.info(f"Author Truncation: {author_trunc}")
-        Console.info(f"Columns: {columns}")
-
     if args["--standalone"] and format_type != "tex":
         print("Error: --standalone is only valid with --format=tex")
         sys.exit(1)

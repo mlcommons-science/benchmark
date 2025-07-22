@@ -869,7 +869,7 @@
   notes: |-
     In-progress; model design under development.
   contact:
-    name: —
+    name: -
     email: unkown
   cite:
   - |-
@@ -945,7 +945,7 @@
   notes: |-
     Embedded/deployment details in progress.
   contact:
-    name: —
+    name: -
     email: unkown
   cite:
   - |-
@@ -1008,7 +1008,7 @@
   - AI systems
   - application-level evaluation
   description: |-
-    AIBench is a comprehensive benchmark suite that evaluates AI workloads at different levels (micro, component, application) across hardware systems—covering image generation, object detection, translation, recommendation, video prediction, etc.
+    AIBench is a comprehensive benchmark suite that evaluates AI workloads at different levels (micro, component, application) across hardware systems-covering image generation, object detection, translation, recommendation, video prediction, etc.
   task_types:
   - Training
   - Inference
@@ -1977,7 +1977,7 @@
   - physics simulations
   - spatiotemporal dynamics
   description: |-
-    A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains—from biology to astrophysical magnetohydrodynamic simulations—with unified API and metadata. Ideal for training surrogate and foundation models on scientific data. :contentReference[oaicite:1]{index=1}
+    A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains-from biology to astrophysical magnetohydrodynamic simulations-with unified API and metadata. Ideal for training surrogate and foundation models on scientific data. :contentReference[oaicite:1]{index=1}
   task_types:
   - Supervised Learning
   ai_capability_measured:
@@ -3061,7 +3061,7 @@
   - expert reasoning
   - science QA
   description: |-
-    Contains 448 challenging questions written by domain experts, with expert accuracy at 65% (74% discounting clear errors) and non-experts reaching just 34%. GPT‑4 baseline scores ~39%—designed for scalable oversight evaluation. :contentReference[oaicite:2]{index=2}
+    Contains 448 challenging questions written by domain experts, with expert accuracy at 65% (74% discounting clear errors) and non-experts reaching just 34%. GPT‑4 baseline scores ~39%-designed for scalable oversight evaluation. :contentReference[oaicite:2]{index=2}
   task_types:
   - Multiple choice
   ai_capability_measured:
@@ -3143,7 +3143,7 @@
   - segmentation
   - QA
   description: |-
-    A first-of-its-kind dataset covering 17,300 sq.km of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs—designed for both vision and language-based ML models in marine science :contentReference[oaicite:1]{index=1}.
+    A first-of-its-kind dataset covering 17,300 sq.km of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs-designed for both vision and language-based ML models in marine science :contentReference[oaicite:1]{index=1}.
   task_types:
   - Image segmentation
   - Vision-language QA
@@ -3477,7 +3477,7 @@
   - retrieval
   - dataset
   description: |-
-    MassSpecGym curates the largest public MS/MS dataset with three standardized tasks—de novo structure generation, molecule retrieval, and spectrum simulation—using challenging generalization splits to propel ML-driven molecule discovery :contentReference[oaicite:3]{index=3}.
+    MassSpecGym curates the largest public MS/MS dataset with three standardized tasks-de novo structure generation, molecule retrieval, and spectrum simulation-using challenging generalization splits to propel ML-driven molecule discovery :contentReference[oaicite:3]{index=3}.
   task_types:
   - De novo generation
   - Retrieval
@@ -3643,7 +3643,7 @@
   - reaction energetics
   - quantum chemistry
   description: |-
-    Introduces the Delta Squared‑ML paradigm—using ML corrections to DFT to predict reaction energies with accuracy comparable to CCSD(T), while training on small CC datasets. Evaluated across 10 reaction datasets covering organic and organometallic transformations.
+    Introduces the Delta Squared‑ML paradigm-using ML corrections to DFT to predict reaction energies with accuracy comparable to CCSD(T), while training on small CC datasets. Evaluated across 10 reaction datasets covering organic and organometallic transformations.
   task_types:
   - Regression
   ai_capability_measured:

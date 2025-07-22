@@ -80,7 +80,9 @@ log:
 
 publish:
 	mkdir -p docs/tex/images
-	cp -r content/md/* docs/
+	mkdir -p docs/md
+	
+	cp -r content/md/* docs/md
 	cp source/index.md docs/index.md
 	cp content/tex/benchmarks.pdf docs/benchmarks.pdf
 	cp content/tex/images/* docs/tex/images

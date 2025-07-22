@@ -408,7 +408,7 @@ class GenerateLatex:
                             ratings[rating_type] = 0.0
 
             if not ratings:
-                print(f"No ratings found for '{name}', skipping radar chart.")
+                Console.error(f"No ratings found for '{name}', skipping radar chart.")
                 continue
 
             labels = list(ratings.keys())
@@ -618,7 +618,7 @@ class GenerateLatex:
             for cite_entry in entry["cite"]:
                 # get label from BibTeX entry
                 label = self.get_citation_label(cite_entry)
-                # print \cite{label} in LaTeX
+
                 citations.append(f"\\cite{{{label}}}")
             lines.append(f"  \\item[Citations:] {', '.join(citations)}")
 
@@ -720,10 +720,6 @@ class GenerateLatex:
     def entry_to_table_row(self, entry, columns=DEFAULT_COLUMNS) -> str:
         row = []
 
-        print ("columns", columns)
-        
-
-
         for col in columns:
             content = ""
 
@@ -769,8 +765,6 @@ class GenerateLatex:
 
         result = " & ".join(row) + r" \\ \hline"
 
-        Console.error(result)
-
         return result
 
     def generate_table(
@@ -798,9 +792,7 @@ class GenerateLatex:
                     width.append(ALL_COLUMNS[col]["width"])
                     names.append(ALL_COLUMNS[col]["label"])
             # normalize the width to fit into the tex_width
-            print("TOTAL WIDTH: ", total_width)
            
-
             for col in range(len(width)):
                 w = float(width[col]) / total_width  # with two decimal places
                 w = f"{w:.2f}"
@@ -814,10 +806,7 @@ class GenerateLatex:
             return formated_width, formated_names_str
 
         column_widths, column_names = generate_column_format()
-        if VERBOSE:
-            Console.msg("FORMATED WIDTH: " + column_widths)
-            Console.msg("FORMATED NAMES: " + column_names)
-
+        
         # Generate the table rows
         rows = []
         for entry in self.entries:
@@ -857,9 +846,9 @@ class GenerateLatex:
             )
         )
 
-        if VERBOSE:
-            Console.msg("Generated LaTeX table content:")
-            print(table_content)
+        # if VERBOSE:
+        #     Console.msg("Generated LaTeX table content:")
+        #     print(table_content)
 
         write_to_file(content=table_content, filename=filename)
 

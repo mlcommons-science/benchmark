@@ -2430,7 +2430,7 @@
   type: Platform
   ml_task: Forecasting
   notes: |-
-    AutoModel supports hyperparameter tuning and distributed execution via Ray and Optuna. Fi­rst official NHITS implementation. contentReference oaicite:4 ndex=4
+    AutoModel supports hyperparameter tuning and distributed execution via Ray and Optuna. First official NHITS implementation. contentReference oaicite:4 ndex=4
   contact:
     name: Kin G. Olivares (Nixtla)
     email: unkown

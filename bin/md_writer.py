@@ -32,24 +32,6 @@ def val_to_str(val) -> str:
     return val_str
 
 
-
-# def create_images_symlink(link_name="images", target="../../tex/images"):
-#     """
-#     Creates a symbolic link named `link_name` pointing to `target`.
-
-#     Parameters:
-#         link_name (str): The name of the symbolic link to create.
-#         target (str): The relative or absolute path the link should point to.
-#     """
-#     try:
-#         if os.path.islink(link_name) or os.path.exists(link_name):
-#             os.remove(link_name)
-#         os.symlink(target, link_name)
-#         print(f"Created symlink '{link_name}' → '{target}'")
-#     except Exception as e:
-#         print(f"Failed to create symlink '{link_name}': {e}")
-
-
 class MarkdownWriter:
     """
     Class to write formatted YAML file contents in Markdown format
@@ -58,8 +40,7 @@ class MarkdownWriter:
     def __init__(self, entries: list[dict], raw_entries: list[dict] | None = None):
         self.entries = entries
         self.raw_entries = raw_entries
-        # create_images_symlink()
-
+       
     def _escape_md(self, text) -> str:
         if not isinstance(text, str):
             text = str(text)

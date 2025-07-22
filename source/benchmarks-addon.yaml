@@ -2741,7 +2741,7 @@
   - astrophysics
   - time-series
   description: |-
-    A benchmark for detecting anomalous transient gravitational-wave signals, including “unknown-unknowns,” using preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments from dual interferometers. :contentReference[oaicite:1]{index=1}
+    A benchmark for detecting anomalous transient gravitational-wave signals, including “unknown-unknowns," using preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments from dual interferometers. :contentReference[oaicite:1]{index=1}
   task_types:
   - Anomaly detection
   ai_capability_measured:
@@ -3076,7 +3076,7 @@
   type: Benchmark
   ml_task: Multiple choice
   notes: |-
-    “Google-proof”; supports oversight research.
+    “Google-proof"; supports oversight research.
   contact:
     name: David Rein (NYU)
     email: unkown

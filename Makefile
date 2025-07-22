@@ -83,3 +83,4 @@ publish:
 	cp -r content/md/* docs/
 	cp source/index.md docs/index.md
 	cp content/tex/benchmarks.pdf docs/benchmarks.pdf
+	touch docs/.nojekyll

@@ -25,4 +25,4 @@ The documents ara all generated automatically, so please do not edit them direct
 
 * <https://github.com/mlcommons-science/benchmark/tree/main/source>
 
-To contribute please create pull requests.
+

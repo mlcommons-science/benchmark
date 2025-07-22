@@ -769,8 +769,9 @@
   - peak finding
   - HEDM
   description: |-
-    Uses BraggNN, a deep neural network, for rapid Bragg peak localization in high-energy diffraction microscopy,
-    achieving ~13x speedup compared to Voigt-based methods while maintaining sub-pixel accuracy.
+    Uses BraggNN, a deep neural network, for rapid Bragg peak localization in 
+    high-energy diffraction microscopy, achieving about 13x speedup compared 
+    to Voigt-based methods while maintaining sub-pixel accuracy.
   task_types:
   - Peak detection
   ai_capability_measured:
@@ -869,7 +870,7 @@
   notes: |-
     In-progress; model design under development.
   contact:
-    name: -
+    name: unkown
     email: unkown
   cite:
   - |-
@@ -945,7 +946,7 @@
   notes: |-
     Embedded/deployment details in progress.
   contact:
-    name: -
+    name: unkown
     email: unkown
   cite:
   - |-

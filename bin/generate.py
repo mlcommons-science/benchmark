@@ -9,7 +9,6 @@ Options:
   --authortruncation=N        Truncate authors for index pages [default: 9999].
   --columns=<cols>            Subset of columns to include, comma-separated.
   --check                     Conduct formatting checks only.
-  --index                     Generate individual pages and (for md) index.md.
   --noratings                 Removes rating columns from output.
   --required                  Requires all specified columns to exist.
   --standalone                Include full LaTeX document preamble (tex only).
@@ -90,32 +89,15 @@ if __name__ == "__main__":
         manager.check_urls()
 
     if format_type == "md":
-        # Setup columns if not provided
-        column_names, column_widths, column_titles = [], [], []
-        for name, props in ALL_COLUMNS.items():
-            column_names.append(name)
-            width = (
-                float(props["width"])
-                if isinstance(props["width"], (int, float, str))
-                else 1.0
-            )
-            column_widths.append(width)
-            column_titles.append(props["label"])
-
-        columns = columns if columns else column_names
-        if len(column_titles) != len(columns):
-            column_titles = None
 
         converter = MarkdownWriter(entries, raw_entries=manager.data)
-        if args["--index"]:
-            converter.write_individual_entries(output_dir, columns, column_titles)
-        converter.write_table(output_dir, columns, column_titles)
-
+        converter.write_table(columns=columns)
+        converter.write_individual_entries(columns=columns)
+        
     elif format_type == "tex":
         converter = GenerateLatex(entries)
 
         converter.generate_radar_chart_grid()
-
 
         Console.info("generate radar charts..")
         converter.generate_radar_charts(fmt="pdf")

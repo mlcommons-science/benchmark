@@ -13,9 +13,9 @@ COLUMNS=date,name,domain,focus,keywords,task_types,metrics,models,cite,ratings.s
 
 .PHONY: all content single tex pdf publish
 
-all: content standalone pdf
-	echo TODO
-
+all: pdf md publish
+	echo "If you see no errors it is finished."
+	
 g:
 	python bin/test.py
 

@@ -28,7 +28,7 @@
 **Citation**:
 
 
-- Kin G. Olivares, Cristian Challú, Federico Garza, Max Mergenthaler Canseco, and Artur Dubrawski. NeuralForecast: user friendly state-of-the-art neural forecasting models. PyCon Salt Lake City, Utah, US 2022, 2022. URL: https://github.com/Nixtla/neuralforecast.
+- Kin G. Olivares, Cristian Challú, Federico Garza, Max Mergenthaler Canseco, and Artur Dubrawski. Neuralforecast: user friendly state-of-the-art neural forecasting models. PyCon Salt Lake City, Utah, US 2022, 2022. URL: https://github.com/Nixtla/neuralforecast.
 
   - bibtex: |
 
@@ -36,11 +36,11 @@
 
         author={Kin G. Olivares and Cristian Challú and Federico Garza and Max Mergenthaler Canseco and Artur Dubrawski},
 
-        title = {{NeuralForecast}: User friendly state-of-the-art neural forecasting models.},
+        title = {NeuralForecast: User friendly state-of-the-art neural forecasting models.},
 
         year={2022},
 
-        howpublished={{PyCon} Salt Lake City, Utah, US 2022},
+        howpublished={PyCon Salt Lake City, Utah, US 2022},
 
         url={https://github.com/Nixtla/neuralforecast}
 

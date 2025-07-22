@@ -2409,7 +2409,7 @@
   - usability
   description: |-
     NeuralForecast offers scalable, user-friendly implementations of over 30 neural forecasting models (NBEATS, NHITS, TFT, DeepAR, etc.),
-    emphasizing quality, usability, interpretability, and performance. :contentReference[oaicite:3]{index=3}
+    emphasizing quality, usability, interpretability, and performance.
   task_types:
   - Time-series forecasting
   ai_capability_measured:
@@ -2438,9 +2438,9 @@
   - |-
     @misc{olivares2022library_neuralforecast,
       author={Kin G. Olivares and Cristian Challú and Federico Garza and Max Mergenthaler Canseco and Artur Dubrawski},
-      title = {{NeuralForecast}: User friendly state-of-the-art neural forecasting models.},
+      title = {NeuralForecast: User friendly state-of-the-art neural forecasting models.},
       year={2022},
-      howpublished={{PyCon} Salt Lake City, Utah, US 2022},
+      howpublished={PyCon Salt Lake City, Utah, US 2022},
       url={https://github.com/Nixtla/neuralforecast}
     }
   dataset: []

@@ -233,7 +233,7 @@
   - category theory
   description: |-
     FrontierMath is a benchmark of hundreds of expert-vetted mathematics problems spanning
-    number theory, real analysis, algebraic geometry, and category theory, measuring LLMs’ 
+    number theory, real analysis, algebraic geometry, and category theory, measuring LLMs
     ability to solve problems requiring deep abstract reasoning.
   task_types:
   - Problem solving
@@ -439,8 +439,8 @@
   - information extraction
   - multimodal
   description: |-
-    CURIE is a benchmark of 580 problems across six scientific disciplines—materials
-    science, quantum computing, biology, chemistry, climate science, and astrophysics—
+    CURIE is a benchmark of 580 problems across six scientific disciplines-materials
+    science, quantum computing, biology, chemistry, climate science, and astrophysics-
     designed to evaluate LLMs on long-context understanding, reasoning, and information 
     extraction in realistic scientific workflows.
   task_types:
@@ -683,7 +683,7 @@
     specification:
       rating: 9
       reason: |-
-        Task clearly defined—cell type annotation and biological QA; input/output formats are well-described; system constraints are not deeply quantified.
+        Task clearly defined-cell type annotation and biological QA; input/output formats are well-described; system constraints are not deeply quantified.
     dataset:
       rating: 8
       reason: |-

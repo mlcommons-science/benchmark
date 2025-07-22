@@ -182,9 +182,10 @@
   - beam stabilization
   - control systems
   - simulation
-  description: "Beam Control explores real-time reinforcement learning strategies for maintaining \nstable\
-    \ beam trajectories in particle accelerators. The benchmark is based on the \nBOOSTR environment for\
-    \ accelerator simulation."
+  description: |-
+    Beam Control explores real-time reinforcement learning strategies for maintaining stable
+    beam trajectories in particle accelerators. The benchmark is based on the BOOSTR environment for
+    accelerator simulation
   task_types:
   - Control
   ai_capability_measured:
@@ -274,7 +275,7 @@
   - Deep Sets
   - Interaction Networks
   description: |-
-    Demonstrates three ML models (MLP, Deep Sets, Interaction Networks) optimized for FPGA deployment with O(100 ns) inference using quantized models and hls4ml, targeting real-time jet tagging in the L1 trigger environment at the high-luminosity LHC. Data is available on Zenodo DOI:10.5281/zenodo.3602260. :contentReference[oaicite:1]{index=1}
+    Demonstrates three ML models (MLP, Deep Sets, Interaction Networks) optimized for FPGA deployment with O(100 ns) inference using quantized models and hls4ml, targeting real-time jet tagging in the L1 trigger environment at the high-luminosity LHC. Data is available on Zenodo DOI:10.5281/zenodo.3602260.
   task_types:
   - Classification
   ai_capability_measured:
@@ -359,14 +360,14 @@
   - anomaly detection
   - real-time
   description: |-
-    Exploration of real-time quench detection using unsupervised and RL approaches, combining multi-modal sensor data (BPM, power supply, acoustic), operating on kHz-MHz streams with anomaly detection and frequency-domain features. :contentReference[oaicite:2]{index=2}
+    Exploration of real-time quench detection using unsupervised and RL approaches, combining multi-modal sensor data (BPM, power supply, acoustic), operating on kHz-MHz streams with anomaly detection and frequency-domain features.
   task_types:
   - Anomaly detection
   - Quench localization
   ai_capability_measured:
   - Real-time anomaly detection with multi-modal sensors
   metrics:
-  - ROC‑AUC
+  - ROC-AUC
   - Detection latency
   models:
   - Autoencoder
@@ -603,7 +604,7 @@
   description: |-
     Introduces a two-stage neural architecture codesign (NAC) pipeline combining global and local search,
     quantization-aware training, and pruning to design efficient models for fast Bragg peak finding and
-    jet classification, synthesized for FPGA deployment with hls4ml. Achieves >30× reduction in BOPs
+    jet classification, synthesized for FPGA deployment with hls4ml. Achieves >30x reduction in BOPs
     and sub-100 ns inference latency on FPGA.
   task_types:
   - Classification
@@ -686,7 +687,7 @@
   - data reduction
   - trigger
   description: |-
-    Presents a 256×256-pixel ROIC in 28 nm CMOS with embedded 2-layer NN for cluster filtering
+    Presents a 256x256-pixel ROIC in 28 nm CMOS with embedded 2-layer NN for cluster filtering
     at 25 ns, achieving 54-75% data reduction while maintaining noise and latency constraints. Prototype
     consumes ~300 µW/pixel and operates in combinatorial digital logic.
   task_types:
@@ -770,7 +771,7 @@
   - HEDM
   description: |-
     Uses BraggNN, a deep neural network, for rapid Bragg peak localization in high-energy diffraction microscopy,
-    achieving ~13× speedup compared to Voigt-based methods while maintaining sub-pixel accuracy.
+    achieving ~13x speedup compared to Voigt-based methods while maintaining sub-pixel accuracy.
   task_types:
   - Peak detection
   ai_capability_measured:
@@ -788,7 +789,7 @@
     Enables real-time HEDM workflows; basis for NAC case study.
   contact:
     name: Jason Weitz (UCSD)
-    email: unkown
+    email: unknown
   cite:
   - |-
     @misc{liu2021braggnnfastxraybragg,
@@ -818,7 +819,7 @@
     specification:
       rating: 10.0
       reason: |-
-        Fully specified: describes task (data filtering/classification), system design (on-sensor inference), latency (25 ns), and power constraints.
+        Fully specified: describes task (data filtering/classification), system design (on-sensor inference), latency (25 ns), and power constraints.
     dataset:
       rating: 8.0
       reason: |-
@@ -839,7 +840,7 @@
   last_updated: 2023-12
   expired: unkown
   valid: 'yes'
-  name: 4D‑STEM
+  name: 4D-STEM
   url: "https://openreview.net/pdf?id=7yt3N0o0W9"
   domain: Material Science
   focus: Real-time ML for scanning transmission electron microscopy
@@ -868,7 +869,7 @@
   notes: |-
     In-progress; model design under development.
   contact:
-    name: —
+    name: _
     email: unkown
   cite:
   - |-
@@ -944,7 +945,7 @@
   notes: |-
     Embedded/deployment details in progress.
   contact:
-    name: —
+    name: _
     email: unkown
   cite:
   - |-
@@ -1007,7 +1008,7 @@
   - AI systems
   - application-level evaluation
   description: |-
-    AIBench is a comprehensive benchmark suite that evaluates AI workloads at different levels (micro, component, application) across hardware systems—covering image generation, object detection, translation, recommendation, video prediction, etc.
+    AIBench is a comprehensive benchmark suite that evaluates AI workloads at different levels (micro, component, application) across hardware systems_covering image generation, object detection, translation, recommendation, video prediction, etc.
   task_types:
   - Training
   - Inference
@@ -1178,7 +1179,7 @@
   - inference
   - scientific ML
   description: |-
-    MLPerf HPC introduces scientific model benchmarks (e.g., CosmoFlow, DeepCAM) aimed at large-scale HPC evaluation with >10× performance scaling through system-level optimizations.
+    MLPerf HPC introduces scientific model benchmarks (e.g., CosmoFlow, DeepCAM) aimed at large-scale HPC evaluation with >10x performance scaling through system-level optimizations.
   task_types:
   - Training
   - Inference
@@ -1285,7 +1286,7 @@
   type: Framework
   ml_task: NA
   notes: |-
-    Joint national-lab effort under Apache‑2.0 license.
+    Joint national-lab effort under Apache-2.0 license.
   contact:
     name: MLCommons Science Working Group
     email: unkown
@@ -1311,7 +1312,7 @@
       and Bienz, Amanda
       and Luszczek, Piotr
       and Baboulin, Marc",
-      title="AI Benchmarking for Science: Efforts from the MLCommons Science Working Group",
+      title="AI Benchmarking for Science: Efforts from the MLCommons Science Working Group",
       booktitle="High Performance Computing. ISC High Performance 2022 International Workshops",
       year="2022",
       publisher="Springer International Publishing",
@@ -1457,8 +1458,8 @@
   - healthcare benchmarks
   description: |-
     The MLCommons Medical AI working group develops benchmarks, best practices, and platforms (MedPerf, GaNDLF, COFE)
-    to accelerate robust, privacy‐preserving AI development for healthcare. MedPerf enables federated testing of clinical
-    models on diverse datasets, improving generalizability and equity while keeping data onsite :contentReference[oaicite:1]{index=1}.
+    to accelerate robust, privacy-preserving AI development for healthcare. MedPerf enables federated testing of clinical
+    models on diverse datasets, improving generalizability and equity while keeping data onsite
   task_types:
   - Federated evaluation
   - Model validation
@@ -1479,7 +1480,7 @@
   type: Platform
   ml_task: NA
   notes: |-
-    Open-source platform under Apache‑2.0; used across 20+ institutions and hospitals :contentReference[oaicite:2]{index=2}.
+    Open-source platform under Apache-2.0; used across 20+ institutions and hospitals
   contact:
     name: Alex Karargyris (MLCommons Medical AI)
     email: unkown
@@ -1549,8 +1550,8 @@
   - LHC
   - fast simulation
   description: |-
-    The Fast Calorimeter Simulation Challenge 2022 assessed 31 generative‐model submissions (VAEs, GANs, Flows, Diffusion)
-    on four calorimeter shower datasets; benchmarking shower quality, generation speed, and model complexity :contentReference[oaicite:3]{index=3}.
+    The Fast Calorimeter Simulation Challenge 2022 assessed 31 generative-model submissions (VAEs, GANs, Flows, Diffusion)
+    on four calorimeter shower datasets; benchmarking shower quality, generation speed, and model complexity
   task_types:
   - Surrogate modeling
   ai_capability_measured:
@@ -1727,8 +1728,8 @@
   - competitions
   - meta-benchmark
   description: |-
-    Codabench (successor to CodaLab) is a flexible, easy‑to‑use, reproducible API platform for hosting AI benchmarks
-    and code‑submission challenges. It supports custom scoring, inverted benchmarks, and scalable public or private queues :contentReference[oaicite:1]{index=1}.
+    Codabench (successor to CodaLab) is a flexible, easy-to-use, reproducible API platform for hosting AI benchmarks
+    and code-submission challenges. It supports custom scoring, inverted benchmarks, and scalable public or private queues
   task_types:
   - Multiple
   ai_capability_measured:
@@ -1745,9 +1746,9 @@
   type: Platform
   ml_task: Multiple
   notes: |-
-    Hosts 51 public competitions, ~26 k users, 177 k submissions :contentReference[oaicite:2]{index=2}
+    Hosts 51 public competitions, ~26 k users, 177 k submissions
   contact:
-    name: Isabelle Guyon (Université Paris‑Saclay)
+    name: Isabelle Guyon (Université Paris-Saclay)
     email: unkown
   cite:
   - |-
@@ -1815,7 +1816,7 @@
   - surrogate modeling
   description: |-
     Sabath is a metadata framework from the SBI-FAIR group (UTK, Argonne, Virginia) facilitating
-    FAIR-compliant benchmarking and surrogate execution logging across HPC systems :contentReference[oaicite:3]{index=3}.
+    FAIR-compliant benchmarking and surrogate execution logging across HPC systems
   task_types:
   - Systems benchmarking
   ai_capability_measured:
@@ -1831,7 +1832,7 @@
   type: Platform
   ml_task: NA
   notes: |-
-    Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc. :contentReference[oaicite:4]{index=4}
+    Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc.
   contact:
     name: Piotr Luszczek (luszczek@utk.edu)
     email: unkown
@@ -1893,7 +1894,7 @@
   - surrogate modeling
   - NeurIPS
   description: |-
-    PDEBench offers forward/inverse PDE tasks with large ready-to-use datasets and baselines (FNO, U-Net, PINN), packaged via a unified API. It won the SimTech Best Paper Award 2023 :contentReference[oaicite:5]{index=5}.
+    PDEBench offers forward/inverse PDE tasks with large ready-to-use datasets and baselines (FNO, U-Net, PINN), packaged via a unified API. It won the SimTech Best Paper Award 2023 
   task_types:
   - Supervised Learning
   ai_capability_measured:
@@ -1912,7 +1913,7 @@
   type: Framework
   ml_task: Supervised Learning
   notes: |-
-    Datasets hosted on DaRUS (DOI:10.18419/darus-2986); contact maintainers by email :contentReference[oaicite:6]{index=6}
+    Datasets hosted on DaRUS (DOI:10.18419/darus-2986); contact maintainers by email
   contact:
     name: Makoto Takamoto (makoto.takamoto@neclab.eu)
     email: unkown
@@ -1976,7 +1977,7 @@
   - physics simulations
   - spatiotemporal dynamics
   description: |-
-    A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains—from biology to astrophysical magnetohydrodynamic simulations—with unified API and metadata. Ideal for training surrogate and foundation models on scientific data. :contentReference[oaicite:1]{index=1}
+    A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains_from biology to astrophysical magnetohydrodynamic simulations_with unified API and metadata. Ideal for training surrogate and foundation models on scientific data.
   task_types:
   - Supervised Learning
   ai_capability_measured:
@@ -1987,13 +1988,13 @@
   - Domain breadth
   models:
   - FNO baselines
-  - U‑Net baselines
+  - U-Net baselines
   ml_motif:
   - Foundation model, Surrogate
   type: Dataset
   ml_task: Supervised Learning
   notes: |-
-    Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. :contentReference[oaicite:2]{index=2}
+    Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB.
   contact:
     name: Wes Brewer
     email: unkown
@@ -2062,7 +2063,7 @@
   - accelerator
   - throughput
   description: |-
-    A suite evaluating inference performance of LLMs (LLaMA, Mistral, Qwen) across diverse accelerators (NVIDIA, AMD, Intel, SambaNova) and frameworks (vLLM, DeepSpeed‑MII, etc.), with an interactive dashboard and per-platform metrics. :contentReference[oaicite:3]{index=3}
+    A suite evaluating inference performance of LLMs (LLaMA, Mistral, Qwen) across diverse accelerators (NVIDIA, AMD, Intel, SambaNova) and frameworks (vLLM, DeepSpeed-MII, etc.), with an interactive dashboard and per-platform metrics.
   task_types:
   - Inference Benchmarking
   ai_capability_measured:
@@ -2074,16 +2075,16 @@
   - Latency
   - Framework-hardware mix performance
   models:
-  - LLaMA-2‑7B
-  - LLaMA-2‑70B
-  - Mistral‑7B
-  - Qwen‑7B
+  - LLaMA-2-7B
+  - LLaMA-2-70B
+  - Mistral-7B
+  - Qwen-7B
   ml_motif:
   - HPC/inference
   type: Dataset
   ml_task: Inference Benchmarking
   notes: |-
-    Licensed under BSD‑3, maintained by Argonne; supports GPUs and accelerators. :contentReference[oaicite:4]{index=4}
+    Licensed under BSD-3, maintained by Argonne; supports GPUs and accelerators.
   contact:
     name: Krishna Teja Chitty-Venkata (Argonne LCF)
     email: unkown
@@ -2150,7 +2151,7 @@
   - performance
   - JSON decoding
   description: |-
-    A high-performance open-source serving framework combining efficient backend runtime (RadixAttention, batching, quantization) and expressive frontend language, boosting LLM/VLM inference throughput up to ~3x over alternatives. :contentReference[oaicite:5]{index=5}
+    A high-performance open-source serving framework combining efficient backend runtime (RadixAttention, batching, quantization) and expressive frontend language, boosting LLM/VLM inference throughput up to ~3x over alternatives.
   task_types:
   - Model serving framework
   ai_capability_measured:
@@ -2169,7 +2170,7 @@
   type: Framework
   ml_task: Model serving
   notes: |-
-    Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025. :contentReference[oaicite:6]{index=6}
+    Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025.
   contact:
     name: SGLang Team
     email: unkown
@@ -2234,9 +2235,10 @@
   - CUDA graph
   - streaming API
   - quantization
-  description: "vLLM is a fast, high-throughput, memory-efficient inference and serving engine for large\
-    \ language models, \nfeaturing PagedAttention, continuous batching, and support for quantized and\
-    \ pipelined model execution. \nBenchmarks compare it to TensorRT-LLM, SGLang, and others. :contentReference[oaicite:1]{index=1}"
+  description: |
+    vLLM is a fast, high-throughput, memory-efficient inference and serving engine for large
+    language models, \nfeaturing PagedAttention, continuous batching, and support for quantized and
+    pipelined model execution. \nBenchmarks compare it to TensorRT-LLM, SGLang, and others.
   task_types:
   - Inference Benchmarking
   ai_capability_measured:
@@ -2256,7 +2258,7 @@
   type: Framework
   ml_task: Inference
   notes: |-
-    Incubated by LF AI and Data; achieves up to 24× throughput over HuggingFace Transformers :contentReference[oaicite:2]{index=2}
+    Incubated by LF AI and Data; achieves up to 24x throughput over HuggingFace Transformers
   contact:
     name: Woosuk Kwon (vLLM Team)
     email: unkown
@@ -2272,7 +2274,7 @@
       doi = {10.1145/3600006.3613165},
       abstract = {High throughput serving of large language models (LLMs) requires batching sufficiently many requests at a time. However, existing systems struggle because the key-value cache (KV cache) memory for each request is huge and grows and shrinks dynamically. When managed inefficiently, this memory can be significantly wasted by fragmentation and redundant duplication, limiting the batch size. To address this problem, we propose PagedAttention, an attention algorithm inspired by the classical virtual memory and paging techniques in operating systems. On top of it, we build vLLM, an LLM serving system that achieves (1) near-zero waste in KV cache memory and (2) flexible sharing of KV cache within and across requests to further reduce memory usage. Our evaluations show that vLLM improves the throughput of popular LLMs by 2--4\texttimes{} with the same level of latency compared to the state-of-the-art systems, such as FasterTransformer and Orca. The improvement is more pronounced with longer sequences, larger models, and more complex decoding algorithms. vLLM's source code is publicly available at https://github.com/vllm-project/vllm.},
       booktitle = {Proceedings of the 29th Symposium on Operating Systems Principles},
-      pages = {611–626},
+      pages = {611-626},
       numpages = {16},
       location = {Koblenz, Germany},
       series = {SOSP '23}
@@ -2408,7 +2410,7 @@
   - usability
   description: |-
     NeuralForecast offers scalable, user-friendly implementations of over 30 neural forecasting models (NBEATS, NHITS, TFT, DeepAR, etc.),
-    emphasizing quality, usability, interpretability, and performance. :contentReference[oaicite:3]{index=3}
+    emphasizing quality, usability, interpretability, and performance.
   task_types:
   - Time-series forecasting
   ai_capability_measured:
@@ -2429,7 +2431,7 @@
   type: Platform
   ml_task: Forecasting
   notes: |-
-    AutoModel supports hyperparameter tuning and distributed execution via Ray and Optuna. Fi­rst official NHITS implementation. :contentReference[oaicite:4]{index=4}
+    AutoModel supports hyperparameter tuning and distributed execution via Ray and Optuna. First official NHITS implementation. 
   contact:
     name: Kin G. Olivares (Nixtla)
     email: unkown
@@ -2437,7 +2439,7 @@
   - |-
     @misc{olivares2022library_neuralforecast,
       author={Kin G. Olivares and Cristian Challú and Federico Garza and Max Mergenthaler Canseco and Artur Dubrawski},
-      title = {{NeuralForecast}: User friendly state-of-the-art neural forecasting models.},
+      title = {NeuralForecast: User friendly state-of-the-art neural forecasting models.},
       year={2022},
       howpublished={{PyCon} Salt Lake City, Utah, US 2022},
       url={https://github.com/Nixtla/neuralforecast}
@@ -2493,7 +2495,7 @@
   description: |-
     NHITS (Neural Hierarchical Interpolation for Time Series) is a state-of-the-art model that
     improved accuracy by ~25% and reduced compute by 50x compared to Transformer baselines,
-    using hierarchical interpolation and multi-rate sampling :contentReference[oaicite:1]{index=1}.
+    using hierarchical interpolation and multi-rate sampling
   task_types:
   - Time-series forecasting
   ai_capability_measured:
@@ -2575,8 +2577,8 @@
   - time-series
   - reprogramming
   description: |-
-    Time‑LLM uses reprogramming layers to adapt frozen LLMs for time series forecasting, treating
-    forecasting as a language task :contentReference[oaicite:2]{index=2}.
+    Time-LLM uses reprogramming layers to adapt frozen LLMs for time series forecasting, treating
+    forecasting as a language task
   task_types:
   - Time-series forecasting
   ai_capability_measured:
@@ -2586,7 +2588,7 @@
   - RMSE
   - MAPE
   models:
-  - Time‑LLM
+  - Time-LLM
   ml_motif:
   - Time-series
   type: Platform
@@ -2659,7 +2661,7 @@
   - generative model
   description: |-
     TimeGPT is a transformer-based generative pretrained model on 100B+ time series data for
-    zero-shot forecasting and anomaly detection via API :contentReference[oaicite:3]{index=3}.
+    zero-shot forecasting and anomaly detection via API
   task_types:
   - Time-series forecasting
   - Anomaly detection
@@ -2740,13 +2742,13 @@
   - astrophysics
   - time-series
   description: |-
-    A benchmark for detecting anomalous transient gravitational-wave signals, including “unknown-unknowns,” using preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments from dual interferometers. :contentReference[oaicite:1]{index=1}
+    A benchmark for detecting anomalous transient gravitational-wave signals, including unknown-unknowns, using preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments from dual interferometers.
   task_types:
   - Anomaly detection
   ai_capability_measured:
   - Novel event detection in physical signals
   metrics:
-  - ROC‑AUC
+  - ROC-AUC
   - Precision/Recall
   models:
   - Deep latent CNNs
@@ -2756,7 +2758,7 @@
   type: Dataset
   ml_task: Anomaly detection
   notes: |-
-    NSF HDR A3D3 sponsored; prize pool and starter kit provided on Codabench. :contentReference[oaicite:2]{index=2}
+    NSF HDR A3D3 sponsored; prize pool and starter kit provided on Codabench.
   contact:
     name: HDR A3D3 Team
     email: unkown
@@ -2820,7 +2822,7 @@
   - genomics
   - butterfly hybrids
   description: |-
-    Image-based challenge for detecting butterfly hybrids in microscopy-driven species data. Participants evaluate models on Codabench using image segmentation/classification. :contentReference[oaicite:3]{index=3}
+    Image-based challenge for detecting butterfly hybrids in microscopy-driven species data. Participants evaluate models on Codabench using image segmentation/classification.
   task_types:
   - Anomaly detection
   ai_capability_measured:
@@ -2835,7 +2837,7 @@
   type: Dataset
   ml_task: Anomaly detection
   notes: |-
-    Hybrid detection benchmarks hosted on Codabench. :contentReference[oaicite:4]{index=4}
+    Hybrid detection benchmarks hosted on Codabench
   contact:
     name: Imageomics/HDR Team
     email: unkown
@@ -2900,13 +2902,13 @@
   - time-series
   - remote sensing
   description: |-
-    A challenge combining North Atlantic sea-level time-series and satellite imagery to detect flooding anomalies. Models submitted via Codabench. :contentReference[oaicite:5]{index=5}
+    A challenge combining North Atlantic sea-level time-series and satellite imagery to detect flooding anomalies. Models submitted via Codabench.
   task_types:
   - Anomaly detection
   ai_capability_measured:
   - Detection of environmental anomalies
   metrics:
-  - ROC‑AUC
+  - ROC-AUC
   - Precision/Recall
   models:
   - CNNs, RNNs, Transformers
@@ -2915,7 +2917,7 @@
   type: Dataset
   ml_task: Anomaly detection
   notes: |-
-    Sponsored by NSF HDR; integrates sensor and satellite data. :contentReference[oaicite:6]{index=6}
+    Sponsored by NSF HDR; integrates sensor and satellite data.
   contact:
     name: HDR A3D3 Team
     email: unkown
@@ -2978,7 +2980,7 @@
   - FPGA
   - QICK
   description: |-
-    Implements real-time ML models for single-qubit readout on the Quantum Instrumentation Control Kit (QICK), using hls4ml to deploy quantized neural networks on RFSoC FPGAs. Offers high-fidelity, low-latency quantum state discrimination. :contentReference[oaicite:0]{index=0}
+    Implements real-time ML models for single-qubit readout on the Quantum Instrumentation Control Kit (QICK), using hls4ml to deploy quantized neural networks on RFSoC FPGAs. Offers high-fidelity, low-latency quantum state discrimination.
   task_types:
   - Classification
   ai_capability_measured:
@@ -2994,9 +2996,9 @@
   type: Benchmark
   ml_task: Supervised Learning
   notes: |-
-    Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization. :contentReference[oaicite:1]{index=1}
+    Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization.
   contact:
-    name: Javier Campos / Giuseppe Di Guglielmo
+    name: Javier Campos / Giuseppe Di Guglielmo
     email: unkown
   cite:
   - |-
@@ -3060,7 +3062,7 @@
   - expert reasoning
   - science QA
   description: |-
-    Contains 448 challenging questions written by domain experts, with expert accuracy at 65% (74% discounting clear errors) and non-experts reaching just 34%. GPT‑4 baseline scores ~39%—designed for scalable oversight evaluation. :contentReference[oaicite:2]{index=2}
+    Contains 448 challenging questions written by domain experts, with expert accuracy at 65% (74% discounting clear errors) and non-experts reaching just 34%. GPT-4 baseline scores ~39%_designed for scalable oversight evaluation.
   task_types:
   - Multiple choice
   ai_capability_measured:
@@ -3069,13 +3071,13 @@
   metrics:
   - Accuracy
   models:
-  - GPT‑4 baseline
+  - GPT-4 baseline
   ml_motif:
   - Multiple choice
   type: Benchmark
   ml_task: Multiple choice
   notes: |-
-    “Google-proof”; supports oversight research.
+    Google-proof; supports oversight research.
   contact:
     name: David Rein (NYU)
     email: unkown
@@ -3142,7 +3144,7 @@
   - segmentation
   - QA
   description: |-
-    A first-of-its-kind dataset covering 17,300 sq.km of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs—designed for both vision and language-based ML models in marine science :contentReference[oaicite:1]{index=1}.
+    A first-of-its-kind dataset covering 17,300 sq.km of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs_designed for both vision and language-based ML models in marine science
   task_types:
   - Image segmentation
   - Vision-language QA
@@ -3160,7 +3162,7 @@
   type: Dataset
   ml_task: Segmentation, QA
   notes: |-
-    Data processing code publicly available, covering five geological layers; curated with marine scientists :contentReference[oaicite:2]{index=2}.
+    Data processing code publicly available, covering five geological layers; curated with marine scientists
   contact:
     name: Kien X. Nguyen
     email: unkown
@@ -3219,14 +3221,14 @@
   url: https://neurips.cc/virtual/2024/poster/97553
   domain: Materials Science; Superconductivity
   focus: |-
-    Dataset and models for predicting and generating high‑Tc superconductors using 3D crystal structures
+    Dataset and models for predicting and generating high-Tc superconductors using 3D crystal structures
   keywords:
   - superconductivity
   - crystal structures
   - equivariant GNN
   - generative models
   description: |-
-    SuperCon3D introduces 3D crystal structures with associated critical temperatures (Tc) and two deep-learning models: SODNet (equivariant graph model) and DiffCSP‑SC (diffusion generator) designed to screen and synthesize high‑Tc candidates :contentReference[oaicite:3]{index=3}.
+    SuperCon3D introduces 3D crystal structures with associated critical temperatures (Tc) and two deep-learning models: SODNet (equivariant graph model) and DiffCSP-SC (diffusion generator) designed to screen and synthesize high-Tc candidates
   task_types:
   - Regression (Tc prediction)
   - Generative modeling
@@ -3238,13 +3240,13 @@
   - Validity of generated structures
   models:
   - SODNet
-  - DiffCSP‑SC
+  - DiffCSP-SC
   ml_motif:
   - Materials Modeling
   type: Dataset + Models
   ml_task: Regression, Generation
   notes: |-
-    Demonstrates advantage of combining ordered and disordered structural data in model design :contentReference[oaicite:4]{index=4}.
+    Demonstrates advantage of combining ordered and disordered structural data in model design
   contact:
     name: Zhong Zuo
     email: unkown
@@ -3310,7 +3312,7 @@
   - OOD robustness
   - scientific applications
   description: |-
-    GeSS provides 30 benchmark scenarios across particle physics, materials science, and biochemistry, evaluating 3 GDL backbones and 11 algorithms under covariate, concept, and conditional shifts, with varied OOD access :contentReference[oaicite:5]{index=5}.
+    GeSS provides 30 benchmark scenarios across particle physics, materials science, and biochemistry, evaluating 3 GDL backbones and 11 algorithms under covariate, concept, and conditional shifts, with varied OOD access
   task_types:
   - Classification
   - Regression
@@ -3329,7 +3331,7 @@
   type: Benchmark
   ml_task: Classification, Regression
   notes: |-
-    Includes no-OOD, unlabeled-OOD, and few-label scenarios :contentReference[oaicite:6]{index=6}.
+    Includes no-OOD, unlabeled-OOD, and few-label scenarios
   contact:
     name: Deyu Zou
     email: unkown
@@ -3395,7 +3397,7 @@
   - time-series
   - SSL
   description: |-
-    The first large-scale benchmark (767K sounds across 9 conditions) for localizing rodent vocal calls using synchronized audio and video in standard lab environments, enabling systematic evaluation of sound-source localization algorithms in bioacoustics :contentReference[oaicite:1]{index=1}.
+    The first large-scale benchmark (767K sounds across 9 conditions) for localizing rodent vocal calls using synchronized audio and video in standard lab environments, enabling systematic evaluation of sound-source localization algorithms in bioacoustics
   task_types:
   - Sound source localization
   ai_capability_measured:
@@ -3410,7 +3412,7 @@
   type: Dataset
   ml_task: Anomaly detection / localization
   notes: |-
-    Dataset spans real, simulated, and mixed audio; supports benchmarking across data types :contentReference[oaicite:2]{index=2}.
+    Dataset spans real, simulated, and mixed audio; supports benchmarking across data types
   contact:
     name: Ralph Peterson
     email: unkown
@@ -3476,7 +3478,7 @@
   - retrieval
   - dataset
   description: |-
-    MassSpecGym curates the largest public MS/MS dataset with three standardized tasks—de novo structure generation, molecule retrieval, and spectrum simulation—using challenging generalization splits to propel ML-driven molecule discovery :contentReference[oaicite:3]{index=3}.
+    MassSpecGym curates the largest public MS/MS dataset with three standardized tasks_de novo structure generation, molecule retrieval, and spectrum simulation_using challenging generalization splits to propel ML-driven molecule discovery
   task_types:
   - De novo generation
   - Retrieval
@@ -3495,7 +3497,7 @@
   type: Dataset + Benchmark
   ml_task: Generation, retrieval, simulation
   notes: |-
-    Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks :contentReference[oaicite:4]{index=4}.
+    Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks
   contact:
     name: Roman Bushuiev
     email: unkown
@@ -3560,7 +3562,7 @@
   - multi-modal
   - benchmark
   description: |-
-    UrbanDataLayer standardizes heterogeneous urban data formats and provides pipelines for tasks like air quality prediction and land-use classification, enabling the rapid creation of multi-modal urban benchmarks :contentReference[oaicite:5]{index=5}.
+    UrbanDataLayer standardizes heterogeneous urban data formats and provides pipelines for tasks like air quality prediction and land-use classification, enabling the rapid creation of multi-modal urban benchmarks
   task_types:
   - Prediction
   - Classification
@@ -3576,7 +3578,7 @@
   type: Framework
   ml_task: Prediction, classification
   notes: |-
-    Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models :contentReference[oaicite:6]{index=6}.
+    Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models
   contact:
     name: Yiheng Wang
     email: unkown
@@ -3642,7 +3644,7 @@
   - reaction energetics
   - quantum chemistry
   description: |-
-    Introduces the Delta Squared ML paradigm—using ML corrections to DFT to predict reaction energies with accuracy comparable to CCSD(T), while training on small CC datasets. Evaluated across 10 reaction datasets covering organic and organometallic transformations.
+    Introduces the Delta Squared ML paradigm_using ML corrections to DFT to predict reaction energies with accuracy comparable to CCSD(T), while training on small CC datasets. Evaluated across 10 reaction datasets covering organic and organometallic transformations.
   task_types:
   - Regression
   ai_capability_measured:
@@ -3735,8 +3737,8 @@
   - F1 score
   models:
   - GPT-4
-  - LLaMA-2‑13B
-  - T5‑XXL
+  - LLaMA-2-13B
+  - T5-XXL
   ml_motif:
   - NLP
   type: Dataset
@@ -3786,7 +3788,7 @@
     reference_solution:
       rating: 8.0
       reason: |-
-        Includes both Δ²‑ML and KRR baselines.
+        Includes both delta-squared ML and KRR baselines.
     documentation:
       rating: 9.0
       reason: |-
@@ -3817,8 +3819,8 @@
   - F1 score
   models:
   - LLaVA
-  - MiniGPT‑4
-  - Owl‑LLM adapter variants
+  - MiniGPT-4
+  - Owl-LLM adapter variants
   ml_motif:
   - Multimodal QA
   type: Benchmark

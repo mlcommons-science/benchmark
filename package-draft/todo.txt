@@ -1,0 +1,21 @@
+reorganize
+
+mlcommon-benchmark/
+├── mlcommon_benchmark/
+│   ├── __init__.py
+│   ├── generate.py
+│   ├── latex_writer.py
+│   ├── md_writer.py
+│   └── yaml_manager.py
+├── README.md
+├── setup.py
+├── pyproject.toml
+├── LICENSE
+└── MANIFEST.in
+
+
+
+add
+
+mlcommon_benchmark/__init__.py
+

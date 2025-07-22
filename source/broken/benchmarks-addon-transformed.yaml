@@ -1,6 +1,6 @@
 - date: '2024-05-01'
   last_updated: 2024-05
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Jet Classification
   url: https://github.com/fastmachinelearning/fastml-science/tree/main/jet-classify
@@ -34,17 +34,14 @@
     Includes both float and quantized models using QKeras
   contact:
     name: Jules Muhizi
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{duarte2022fastml,
-      archiveprefix = {arXiv},
-      author        = {Javier Duarte and Nhan Tran and Ben Hawks and Christian Herwig and Jules Muhizi and Shvetank Prakash and Vijay Janapa Reddi},
-      eprint        = {2207.07958},
-      primaryclass  = {cs.LG},
-      title         = {FastML Science Benchmarks: Accelerating Real-Time Scientific Edge Machine Learning},
-      url           = {https://arxiv.org/abs/2207.07958},
-      year          = {2022}
+    @article{hawks2022fastml,
+      title={Fast Machine Learning for Science: Benchmarks and Dataset},
+      author={Hawks, Ben and Tran, Nhan and others},
+      year={2022},
+      url={https://arxiv.org/abs/2207.07958}
     }
   dataset:
   - name: 'OpenML: hls4ml_lhc_jets_hlf'
@@ -63,7 +60,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -86,7 +83,7 @@
         Clear paper, GitHub repo, and integration with HuggingFace Datasets; full reproducibility requires manually connecting models to dataset.
 - date: '2024-05-01'
   last_updated: 2024-05
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Irregular Sensor Data Compression
   url: |-
@@ -121,17 +118,14 @@
     Based on synthetic but realistic physics sensor data
   contact:
     name: Ben Hawks, Nhan Tran
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{duarte2022fastmlsciencebenchmarksaccelerating,
-      archiveprefix = {arXiv},
-      author        = {Javier Duarte and Nhan Tran and Ben Hawks and Christian Herwig and Jules Muhizi and Shvetank Prakash and Reddi, Vijay Janapa},
-      eprint        = {2207.07958},
-      primaryclass  = {cs.LG},
-      title         = {FastML Science Benchmarks: Accelerating Real-Time Scientific Edge Machine Learning},
-      url           = {https://arxiv.org/abs/2207.07958},
-      year          = {2022}
+    @article{hawks2022fastml2,
+      title={Fast Machine Learning for Science: Benchmarks and Dataset},
+      author={Hawks, Ben and Tran, Nhan and others},
+      year={2022},
+      url={https://arxiv.org/abs/2207.07958}
     }
   dataset:
   - name: Custom synthetic irregular sensor dataset
@@ -148,7 +142,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 8.0
       reason: |-
@@ -171,7 +165,7 @@
         GitHub contains baseline code, data loaders, and references, but setup for deployment (e.g., FPGA pipeline) requires familiarity with the tooling.
 - date: '2024-05-01'
   last_updated: 2024-05
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Beam Control
   url: https://github.com/fastmachinelearning/fastml-science/tree/main/beam-control
@@ -203,27 +197,21 @@
     Environment defined, baseline RL implementation is in progress
   contact:
     name: Ben Hawks, Nhan Tran
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{duarte2022fastmlsciencebenchmarksaccelerating,
-      archiveprefix = {arXiv},
-      author        = {Javier Duarte and Nhan Tran and Ben Hawks and Christian Herwig and Jules Muhizi and Shvetank Prakash and Vijay Janapa Reddi},
-      eprint        = {2207.07958},
-      primaryclass  = {cs.LG},
-      title         = {FastML Science Benchmarks: Accelerating Real-Time Scientific Edge Machine Learning},
-      url           = {https://arxiv.org/abs/2207.07958},
-      year          = {2022}
+    @article{hawks2022fastml3,
+      title={Fast Machine Learning for Science: Benchmarks and Dataset},
+      author={Hawks, Ben and Tran, Nhan and others},
+      year={2022},
+      url={https://arxiv.org/abs/2207.07958}
     }
   - |-
-    @misc{kafkes2021boostrdatasetacceleratorcontrol,
-      archiveprefix = {arXiv},
-      author        = {Diana Kafkes and Jason St. John},
-      eprint        = {2101.08359},
-      primaryclass  = {physics.acc-ph},
-      title         = {BOOSTR: A Dataset for Accelerator Control Systems},
-      url           = {https://arxiv.org/abs/2101.08359},
-      year          = {2021}
+    @article{wang2021booster,
+      title={BOOSTR: A Dataset for Accelerator Control Systems},
+      author={Wang, Qizhi and others},
+      year={2021},
+      url={https://arxiv.org/abs/2101.08359}
     }
   dataset: []
   results:
@@ -238,7 +226,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -261,7 +249,7 @@
         GitHub repo contains core components, but more structured setup instructions and pretrained weights would improve usability.
 - date: '2024-07-08'
   last_updated: 2024-07
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Ultrafast jet classification at the HL-LHC
   url: https://arxiv.org/pdf/2402.01876
@@ -295,19 +283,8 @@
     Uses quantization-aware training; hardware synthesis evaluated via hls4ml
   contact:
     name: Patrick Odagiu
-    email: unkown
-  cite: 
-  - |-
-    @misc{odagiu2024ultrafastjetclassificationfpgas,
-      archiveprefix = {arXiv},
-      author        = {Patrick Odagiu and Zhiqiang Que and Javier Duarte and Johannes Haller and Gregor Kasieczka and Artur Lobanov and Vladimir Loncar and Wayne Luk and Jennifer Ngadiuba and Maurizio Pierini and Philipp Rincke and Arpita Seksaria and Sioni Summers and Andre Sznajder and Alexander Tapper and Thea K. Aarrestad},
-      doi           = {https://doi.org/10.1088/2632-2153/ad5f10},
-      eprint        = {2402.01876},
-      primaryclass  = {hep-ex},
-      title         = {Ultrafast jet classification on FPGAs for the HL-LHC},
-      url           = {https://arxiv.org/abs/2402.01876},
-      year          = {2024}
-    }
+    email: null
+  cite: []
   dataset:
   - name: Zenodo DOI:10.5281/zenodo.3602260
     url: constituent-level jets
@@ -323,7 +300,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 8.0
       reason: |-
@@ -346,7 +323,7 @@
         GitHub has a defined structure but is incomplete; setup and execution instructions for training/evaluation are not fully established.
 - date: '2024-10-15'
   last_updated: 2024-10
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Quench detection
   url: |-
@@ -379,7 +356,7 @@
     Precursor detection in progress; multi-modal and dynamic weighting methods
   contact:
     name: Maira Khan
-    email: unkown
+    email: null
   cite: []
   dataset:
   - name: BPM and power supply data from BNL
@@ -396,7 +373,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 10.0
       reason: |-
@@ -419,7 +396,7 @@
         Paper and code (via hls4ml) are sufficient, but a centralized, standalone repo for reproducing all models would enhance accessibility.
 - date: '2024-10-15'
   last_updated: 2024-10
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: DUNE
   url: |-
@@ -452,18 +429,8 @@
     Prototype models demonstrated on SONIC platform
   contact:
     name: Andrew J. Morgan
-    email: unkown
-  cite: 
-  - |-
-    @misc{abud2021deep,
-      title={Deep Underground Neutrino Experiment (DUNE) Near Detector Conceptual Design Report}, 
-      author={A. Abed Abud and B. Abi and R. Acciarri and M. A. Acero and G. Adamov and D. Adams and M. Adinolfi and A. Aduszkiewicz and Z. Ahmad and J. Ahmed and T. Alion and S. Alonso Monsalve and M. Alrashed and C. Alt and A. Alton and P. Amedo and J. Anderson and C. Andreopoulos and M. P. Andrews and F. Andrianala and S. Andringa and N. Anfimov and A. Ankowski and M. Antonova and S. Antusch and A. Aranda-Fernandez and A. Ariga and L. O. Arnold and M. A. Arroyave and J. Asaadi and A. Aurisano and V. Aushev and D. Autiero and M. Ayala-Torres and F. Azfar and H. Back and J. J. Back and C. Backhouse and P. Baesso and I. Bagaturia and L. Bagby and S. Balasubramanian and P. Baldi and B. Baller and B. Bambah and F. Barao and G. Barenboim and G. J. Barker and W. Barkhouse and C. Barnes and G. Barr and J. Barranco Monarca and N. Barros and J. L. Barrow and A. Basharina-Freshville and A. Bashyal and V. Basque and E. Belchior and J. B. R. Battat and F. Battisti and F. Bay and J. L. Bazo Alba and J. F. Beacom and E. Bechetoille and B. Behera and L. Bellantoni and G. Bellettini and V. Bellini and O. Beltramello and D. Belver and N. Benekos and F. Bento Neves and S. Berkman and P. Bernardini and R. M. Berner and H. Berns and S. Bertolucci and M. Betancourt and A. Betancur Rodríguez and M. Bhattacharjee and S. Bhuller and B. Bhuyan and S. Biagi and J. Bian and M. Biassoni and K. Biery and B. Bilki and M. Bishai and A. Bitadze and A. Blake and F. D. M. Blaszczyk and G. C. Blazey and E. Blucher and J. Boissevain and S. Bolognesi and T. Bolton and L. Bomben and M. Bonesini and M. Bongrand and F. Bonini and A. Booth and C. Booth and S. Bordoni and A. Borkum and T. Boschi and N. Bostan and P. Bour and C. Bourgeois and S. B. Boyd and D. Boyden and J. Bracinik and D. Braga and D. Brailsford and A. Brandt and J. Bremer and C. Brew and E. Brianne and S. J. Brice and C. Brizzolari and C. Bromberg and G. Brooijmans and J. Brooke and A. Bross and G. Brunetti and M. Brunetti and N. Buchanan and H. Budd and D. Caiulo and P. Calafiura and J. Calcutt and M. Calin and S. Calvez and E. Calvo and A. Caminata and M. Campanelli and K. Cankocak and D. Caratelli and G. Carini and B. Carlus and P. Carniti and I. Caro Terrazas and H. Carranza and T. Carroll and J. F. Castaño Forero and A. Castillo and C. Castromonte and E. Catano-Mur and C. Cattadori and F. Cavalier and F. Cavanna and S. Centro and G. Cerati and A. Cervelli and A. Cervera Villanueva and M. Chalifour and A. Chappell and E. Chardonnet and N. Charitonidis and A. Chatterjee and S. Chattopadhyay and H. Chen and M. Chen and Y. Chen and Z. Chen and D. Cherdack and C. Chi and S. Childress and A. Chiriacescu and G. Chisnall and K. Cho and S. Choate and D. Chokheli and S. Choubey and A. Christensen and D. Christian and G. Christodoulou and A. Chukanov and E. Church and P. Clarke and T. E. Coan and A. G. Cocco and J. A. B. Coelho and E. Conley and R. Conley and J. M. Conrad and M. Convery and S. Copello and L. Corwin and L. Cremaldi and L. Cremonesi and J. I. Crespo-Anadón and E. Cristaldo and R. Cross and A. Cudd and C. Cuesta and Y. Cui and D. Cussans and M. Dabrowski and O. Dalager and H. da Motta and L. Da Silva Peres and C. David and Q. David and G. S. Davies and S. Davini and J. Dawson and K. De and R. M. De Almeida and P. Debbins and I. De Bonis and M. P. Decowski and A. de Gouvêa and P. C. De Holanda and I. L. De Icaza Astiz and A. Deisting and P. De Jong and A. Delbart and D. Delepine and M. Delgado and A. Dell'Acqua and P. De Lurgio and J. R. T. de Mello Neto and D. M. DeMuth and S. Dennis and C. Densham and G. W. Deptuch and A. De Roeck and V. De Romeri and G. De Souza and R. Dharmapalan and F. Diaz and J. S. Díaz and S. Di Domizio and L. Di Giulio and P. Ding and L. Di Noto and C. Distefano and R. Diurba and M. Diwan and Z. Djurcic and N. Dokania and S. Dolan and M. J. Dolinski and L. Domine and D. Douglas and D. Douillet and G. Drake and F. Drielsma and D. Duchesneau and K. Duffy and P. Dunne and T. Durkin and H. Duyang and O. Dvornikov and D. A. Dwyer and A. S. Dyshkant and M. Eads and A. Earle and D. Edmunds and J. Eisch and L. Emberger and S. Emery and A. Ereditato and C. O. Escobar and G. Eurin and J. J. Evans and E. Ewart and A. C. Ezeribe and K. Fahey and A. Falcone and C. Farnese and Y. Farzan and J. Felix and M. Fernandes Carneiro da Silva and E. Fernandez-Martinez and P. Fernandez Menendez and F. Ferraro and L. Fields and F. Filthaut and A. Fiorentini and R. S. Fitzpatrick and W. Flanagan and B. Fleming and R. Flight and D. V. Forero and J. Fowler and W. Fox and J. Franc and K. Francis and D. Franco and J. Freeman and J. Freestone and J. Fried and A. Friedland and S. Fuess and I. Furic and A. P. Furmanski and A. Gago and H. Gallagher and A. Gallas and A. Gallego-Ros and N. Gallice and V. Galymov and E. Gamberini and T. Gamble and R. Gandhi and R. Gandrajula and F. Gao and S. Gao and D. Garcia-Gamez and M. Á García-Peris and S. Gardiner and D. Gastler and G. Ge and B. Gelli and A. Gendotti and S. Gent and Z. Ghorbani-Moghaddam and D. Gibin and I. Gil-Botella and S. Gilligan and C. Girerd and A. K. Giri and D. Gnani and O. Gogota and M. Gold and S. Gollapinni and K. Gollwitzer and R. A. Gomes and L. V. Gomez Bermeo and L. S. Gomez Fajardo and F. Gonnella and J. A. Gonzalez-Cuevas and D. Gonzalez-Diaz and M. Gonzalez-Lopez and M. C. Goodman and O. Goodwin and S. Goswami and C. Gotti and E. Goudzovski and C. Grace and M. Graham and R. Gran and E. Granados and P. Granger and A. Grant and C. Grant and D. Gratieri and P. Green and L. Greenler and J. Greer and W. C. Griffith and M. Groh and J. Grudzinski and K. Grzelak and W. Gu and V. Guarino and R. Guenette and E. Guerard and A. Guglielmi and B. Guo and K. K. Guthikonda and R. Gutierrez and P. Guzowski and M. M. Guzzo and S. Gwon and A. Habig and H. Hadavand and R. Haenni and A. Hahn and J. Haiston and P. Hamacher-Baumann and T. Hamernik and P. Hamilton and J. Han and D. A. Harris and J. Hartnell and J. Harton and T. Hasegawa and C. Hasnip and R. Hatcher and K. W. Hatfield and A. Hatzikoutelis and C. Hayes and E. Hazen and A. Heavey and K. M. Heeger and J. Heise and K. Hennessy and S. Henry and M. A. Hernandez Morquecho and K. Herner and L. Hertel and V Hewes and A. Higuera and T. Hill and S. J. Hillier and A. Himmel and J. Hoff and C. Hohl and A. Holin and E. Hoppe and G. A. Horton-Smith and M. Hostert and A. Hourlier and B. Howard and R. Howell and J. Huang and J. Huang and J. Hugon and G. Iles and N. Ilic and A. M. Iliescu and R. Illingworth and A. Ioannisian and L. Isenhower and R. Itay and A. Izmaylov and S. Jackson and V. Jain and E. James and B. Jargowsky and F. Jediny and D. Jena and Y. S. Jeong and C. Jesús-Valls and X. Ji and L. Jiang and S. Jiménez and A. Jipa and R. Johnson and B. Jones and S. B. Jones and M. Judah and C. K. Jung and T. Junk and Y. Jwa and M. Kabirnezhad and A. Kaboth and I. Kadenko and I. Kakorin and F. Kamiya and N. Kaneshige and G. Karagiorgi and G. Karaman and A. Karcher and M. Karolak and Y. Karyotakis and S. Kasai and S. P. Kasetti and L. Kashur and N. Kazaryan and E. Kearns and P. Keener and K. J. Kelly and E. Kemp and O. Kemularia and W. Ketchum and S. H. Kettell and M. Khabibullin and A. Khotjantsev and A. Khvedelidze and D. Kim and B. King and B. Kirby and M. Kirby and J. Klein and K. Koehler and L. W. Koerner and S. Kohn and P. P. Koller and L. Kolupaeva and M. Kordosky and T. Kosc and U. Kose and V. A. Kostelecký and K. Kothekar and F. Krennrich and I. Kreslo and Y. Kudenko and V. A. Kudryavtsev and S. Kulagin and J. Kumar and P. Kumar and P. Kunze and N. Kurita and C. Kuruppu and V. Kus and T. Kutter and A. Lambert and B. Land and K. Lande and C. E. Lane and K. Lang and T. Langford and J. Larkin and P. Lasorak and D. Last and C. Lastoria and A. Laundrie and A. Lawrence and I. Lazanu and R. LaZur and T. Le and S. Leardini and J. Learned and P. LeBrun and T. LeCompte and G. Lehmann Miotto and R. Lehnert and M. A. Leigui de Oliveira and M. Leitner and L. Li and S. W. Li and T. Li and Y. Li and H. Liao and C. S. Lin and Q. Lin and S. Lin and A. Lister and B. R. Littlejohn and J. Liu and S. Lockwitz and T. Loew and M. Lokajicek and I. Lomidze and K. Long and K. Loo and D. Lorca and T. Lord and J. M. LoSecco and W. C. Louis and X. -G. Lu and K. B. Luk and X. Luo and N. Lurkin and T. Lux and V. P. Luzio and D. MacFarlane and A. A. Machado and P. Machado and C. T. Macias and J. R. Macier and A. Maddalena and A. Madera and P. Madigan and S. Magill and K. Mahn and A. Maio and A. Major and J. A. Maloney and G. Mandrioli and R. C. Mandujano and J. Maneira and L. Manenti and S. Manly and A. Mann and K. Manolopoulos and M. Manrique Plata and V. N. Manyam and L. Manzanillas and M. Marchan and A. Marchionni and W. Marciano and D. Marfatia and C. Mariani and J. Maricic and R. Marie and F. Marinho and A. D. Marino and D. Marsden and M. Marshak and C. M. Marshall and J. Marshall and J. Marteau and J. Martin-Albo and N. Martinez and D. A. Martinez Caicedo and S. Martynenko and K. Mason and A. Mastbaum and M. Masud and S. Matsuno and J. Matthews and C. Mauger and N. Mauri and K. Mavrokoridis and I. Mawby and R. Mazza and A. Mazzacane and E. Mazzucato and T. McAskill and E. McCluskey and N. McConkey and K. S. McFarland and C. McGrew and A. McNab and A. Mefodiev and P. Mehta and P. Melas and O. Mena and S. Menary and H. Mendez and D. P. Méndez and A. Menegolli and G. Meng and M. D. Messier and W. Metcalf and T. Mettler and M. Mewes and H. Meyer and T. Miao and G. Michna and T. Miedema and J. Migenda and V. Mikola and R. Milincic and W. Miller and J. Mills and C. Milne and O. Mineev and O. G. Miranda and S. Miryala and C. S. Mishra and S. R. Mishra and A. Mislivec and D. Mladenov and I. Mocioiu and K. Moffat and N. Moggi and R. Mohanta and T. A. Mohayai and N. Mokhov and J. Molina and L. Molina Bueno and A. Montanari and C. Montanari and D. Montanari and L. M. Montano Zetina and J. Moon and M. Mooney and A. F. Moor and D. Moreno and C. Morris and C. Mossey and E. Motuk and C. A. Moura and J. Mousseau and W. Mu and L. Mualem and J. Mueller and M. Muether and S. Mufson and F. Muheim and A. Muir and M. Mulhearn and D. Munford and H. Muramatsu and S. Murphy and J. Musser and J. Nachtman and S. Nagu and M. Nalbandyan and R. Nandakumar and D. Naples and S. Narita and D. Navas-Nicolás and A. Navrer-Agasson and N. Nayak and M. Nebot-Guinot and K. Negishi and J. K. Nelson and J. Nesbit and M. Nessi and D. Newbold and M. Newcomer and D. Newhart and H. Newton and R. Nichol and F. Nicolas-Arnaldos and E. Niner and K. Nishimura and A. Norman and A. Norrick and R. Northrop and P. Novella and J. A. Nowak and M. Oberling and J. P. Ochoa-Ricoux and A. Olivares Del Campo and A. Olivier and A. Olshevskiy and Y. Onel and Y. Onishchuk and J. Ott and L. Pagani and S. Pakvasa and G. Palacio and O. Palamara and S. Palestini and J. M. Paley and M. Pallavicini and C. Palomares and J. L. Palomino-Gallo and E. Pantic and V. Paolone and V. Papadimitriou and R. Papaleo and A. Papanestis and S. Paramesvaran and S. Parke and Z. Parsa and M. Parvu and S. Pascoli and L. Pasqualini and J. Pasternak and J. Pater and C. Patrick and L. Patrizii and R. B. Patterson and S. J. Patton and T. Patzak and A. Paudel and B. Paulos and L. Paulucci and Z. Pavlovic and G. Pawloski and D. Payne and V. Pec and S. J. M. Peeters and E. Pennacchio and A. Penzo and O. L. G. Peres and J. Perry and D. Pershey and G. Pessina and G. Petrillo and C. Petta and R. Petti and F. Piastra and L. Pickering and F. Pietropaolo and R. Plunkett and R. Poling and X. Pons and N. Poonthottathil and S. Pordes and J. Porter and M. Potekhin and R. Potenza and B. V. K. S. Potukuchi and J. Pozimski and M. Pozzato and S. Prakash and T. Prakash and S. Prince and D. Pugnere and X. Qian and M. C. Queiroga Bazetto and J. L. Raaf and V. Radeka and J. Rademacker and B. Radics and A. Rafique and E. Raguzin and M. Rai and M. Rajaoalisoa and I. Rakhno and A. Rakotonandrasana and L. Rakotondravohitra and Y. A. Ramachers and R. Rameika and M. A. Ramirez Delgado and B. Ramson and A. Rappoldi and G. Raselli and P. Ratoff and S. Raut and R. F. Razakamiandra and J. S. Real and B. Rebel and M. Reggiani-Guzzo and T. Rehak and J. Reichenbacher and S. D. Reitzner and H. Rejeb Sfar and A. Renshaw and S. Rescia and F. Resnati and A. Reynolds and C. Riccio and G. Riccobene and L. C. J. Rice and J. Ricol and A. Rigamonti and Y. Rigaut and D. Rivera and L. Rochester and M. Roda and P. Rodrigues and M. J. Rodriguez Alonso and E. Rodriguez Bonilla and J. Rodriguez Rondon and S. Rosauro-Alcaraz and M. Rosenberg and P. Rosier and B. Roskovec and M. Rossella and J. Rout and P. Roy and S. Roy and A. Rubbia and C. Rubbia and F. C. Rubio and B. Russell and D. Ruterbories and R. Saakyan and S. Sacerdoti and T. Safford and R. Sahay and N. Sahu and P. Sala and N. Samios and O. Samoylov and M. C. Sanchez and D. A. Sanders and D. Sankey and S. Santana and M. Santos-Maldonado and N. Saoulidou and P. Sapienza and C. Sarasty and I. Sarcevic and G. Savage and V. Savinov and A. Scaramelli and A. Scarff and A. Scarpelli and T. Schaffer and H. Schellman and P. Schlabach and D. Schmitz and K. Scholberg and A. Schukraft and E. Segreto and J. Sensenig and I. Seong and A. Sergi and D. Sgalaberna and M. H. Shaevitz and S. Shafaq and M. Shamma and R. Sharankova and H. R. Sharma and R. Sharma and R. Kumar and T. Shaw and C. Shepherd-Themistocleous and S. Shin and D. Shooltz and R. Shrock and L. Simard and F. Simon and N. Simos and J. Sinclair and G. Sinev and J. Singh and J. Singh and V. Singh and R. Sipos and F. W. Sippach and G. Sirri and A. Sitraka and K. Siyeon and K. Skarpaas VIII and A. Smith and E. Smith and P. Smith and J. Smolik and M. Smy and E. L. Snider and P. Snopok and M. Soares Nunes and H. Sobel and M. Soderberg and C. J. Solano Salinas and S. Söldner-Rembold and N. Solomey and V. Solovov and W. E. Sondheim and M. Sorel and J. Soto-Oton and A. Sousa and K. Soustruznik and F. Spagliardi and M. Spanu and J. Spitz and N. J. C. Spooner and K. Spurgeon and R. Staley and M. Stancari and L. Stanco and R. Stanley and R. Stein and H. M. Steiner and J. Stewart and B. Stillwell and J. Stock and F. Stocker and T. Stokes and M. Strait and T. Strauss and S. Striganov and A. Stuart and J. G. Suarez and H. Sullivan and D. Summers and A. Surdo and V. Susic and L. Suter and C. M. Sutera and R. Svoboda and B. Szczerbinska and A. M. Szelc and R. Talaga and H. A. Tanaka and B. Tapia Oregui and A. Tapper and S. Tariq and E. Tatar and R. Tayloe and A. M. Teklu and M. Tenti and K. Terao and C. A. Ternes and F. Terranova and G. Testera and A. Thea and J. L. Thompson and C. Thorn and S. C. Timm and J. Todd and A. Tonazzo and D. Torbunov and M. Torti and M. Tortola and F. Tortorici and D. Totani and M. Toups and C. Touramanis and J. Trevor and S. Trilov and W. H. Trzaska and Y. T. Tsai and Z. Tsamalaidze and K. V. Tsang and N. Tsverava and S. Tufanli and C. Tull and E. Tyley and M. Tzanov and M. A. Uchida and J. Urheim and T. Usher and S. Uzunyan and M. R. Vagins and P. Vahle and G. A. Valdiviesso and E. Valencia and Z. Vallari and J. W. F. Valle and S. Vallecorsa and R. Van Berg and R. G. Van de Water and F. Varanini and D. Vargas and G. Varner and J. Vasel and S. Vasina and G. Vasseur and N. Vaughan and K. Vaziri and S. Ventura and A. Verdugo and S. Vergani and M. A. Vermeulen and M. Verzocchi and M. Vicenzi and H. Vieira de Souza and C. Vignoli and C. Vilela and B. Viren and T. Vrba and T. Wachala and A. V. Waldron and M. Wallbank and H. Wang and J. Wang and M. H. L. S. Wang and Y. Wang and Y. Wang and K. Warburton and D. Warner and M. Wascko and D. Waters and A. Watson and P. Weatherly and A. Weber and M. Weber and H. Wei and A. Weinstein and D. Wenman and M. Wetstein and A. White and L. H. Whitehead and D. Whittington and M. J. Wilking and C. Wilkinson and Z. Williams and F. Wilson and R. J. Wilson and J. Wolcott and T. Wongjirad and A. Wood and K. Wood and E. Worcester and M. Worcester and C. Wret and W. Wu and W. Wu and Y. Xiao and E. Yandel and G. Yang and K. Yang and S. Yang and T. Yang and A. Yankelevich and N. Yershov and K. Yonehara and T. Young and B. Yu and H. Yu and J. Yu and W. Yuan and R. Zaki and J. Zalesak and L. Zambelli and B. Zamorano and A. Zani and L. Zazueta and G. Zeit and G. P. Zeller and J. Zennamo and K. Zeug and C. Zhang and M. Zhao and E. Zhivun and G. Zhu and P. Zilberman and E. D. Zimmerman and M. Zito and S. Zucchelli and J. Zuklin and V. Zutshi and R. Zwaska},
-      year={2021},
-      eprint={2103.13910},
-      archivePrefix={arXiv},
-      primaryClass={physics.ins-det},
-      url={https://arxiv.org/abs/2103.13910}, 
-    }
+    email: null
+  cite: []
   dataset:
   - name: DUNE SONIC data
     url: via internal FNAL systems
@@ -479,7 +446,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 8.0
       reason: |-
@@ -502,7 +469,7 @@
         Slides and GDocs outline results; implementation is in progress with limited setup/code release.
 - date: '2025-01-08'
   last_updated: 2025-01
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Intelligent experiments through real-time AI
   url: https://arxiv.org/pdf/2501.04845
@@ -537,17 +504,14 @@
     Achieved ~97.4% accuracy for beauty decay triggers; sub-10 µs latency on Alveo U280; hit-based FPGA design via hls4ml and FlowGNN.
   contact:
     name: Jakub Kvapil (lanl.gov)
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{kvapil2025intelligentexperimentsrealtimeai,
-      archiveprefix={arXiv},
-      author={J. Kvapil and G. Borca-Tasciuc and H. Bossi and K. Chen and Y. Chen and Y. Corrales Morales and H. Da Costa and C. Da Silva and C. Dean and J. Durham and S. Fu and C. Hao and P. Harris and O. Hen and H. Jheng and Y. Lee and P. Li and X. Li and Y. Lin and M. X. Liu and V. Loncar and J. P. Mitrevski and A. Olvera and M. L. Purschke and J. S. Renck and G. Roland and J. Schambach and Z. Shi and N. Tran and N. Wuerfel and B. Xu and D. Yu and H. Zhang},
-      eprint={2501.04845},
-      primaryclass={physics.ins-det},
+    @article{kvapil2025intelligent,
       title={Intelligent experiments through real-time AI: Fast Data Processing and Autonomous Detector Control for sPHENIX and future EIC detectors},
-      url={https://arxiv.org/abs/2501.04845},
-      year={2025}
+      author={Kvapil, Jakub and Borca-Tasciuc, Giorgian and ... Tran, Nhan and others},
+      year={2025},
+      url={https://arxiv.org/abs/2501.04845}
     }
   dataset:
   - name: Internal simulated tracking data
@@ -564,7 +528,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 8.0
       reason: |-
@@ -587,7 +551,7 @@
         Slides and some internal documentation exist, but no full pipeline or public GitHub repo yet.
 - date: '2025-01-09'
   last_updated: 2025-01
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Neural Architecture Codesign for Fast Physics Applications
   url: https://arxiv.org/abs/2501.05515
@@ -625,17 +589,14 @@
     Demonstrated two case studies (materials science, HEP); pipeline and code open-sourced.
   contact:
     name: Jason Weitz (UCSD), Nhan Tran (FNAL)
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{weitz2025neuralarchitecturecodesignfast,
-      archiveprefix={arXiv},
-      author={Jason Weitz and Dmitri Demler and Luke McDermott and Nhan Tran and Javier Duarte},
-      eprint={2501.05515},
-      primaryclass={cs.LG},
+    @article{weitz2025nacph,
       title={Neural Architecture Codesign for Fast Physics Applications},
-      url={https://arxiv.org/abs/2501.05515},
-      year={2025}
+      author={Weitz, Jason and Demler, Dmitri and McDermott, Luke and Tran, Nhan and Duarte, Javier},
+      year={2025},
+      url={https://arxiv.org/abs/2501.05515}
     }
   dataset: []
   results:
@@ -651,7 +612,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 10.0
       reason: |-
@@ -674,7 +635,7 @@
         Paper is detailed and tool usage (FlowGNN, hls4ml) is described, but repo release and dataset access remain in progress.
 - date: '2024-06-24'
   last_updated: 2024-06
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Smart Pixels for LHC
   url: https://arxiv.org/abs/2406.14860
@@ -708,17 +669,14 @@
     Prototype in CMOS 28 nm; proof-of-concept for Phase III pixel upgrades.
   contact:
     name: Lindsey Gray; Jennet Dickinson
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{parpillon2024smartpixelsinpixelai,
-      archiveprefix = {arXiv},
-      author        = {Benjamin Parpillon and Chinar Syal and Jieun Yoo and Jennet Dickinson and Morris Swartz and Giuseppe Di Guglielmo and Alice Bean and Douglas Berry and Manuel Blanco Valentin and Karri DiPetrillo and Anthony Badea and Lindsey Gray and Petar Maksimovic and Corrinne Mills and Mark S. Neubauer and Gauri Pradhan and Nhan Tran and Dahai Wen and Farah Fahim},
-      eprint        = {2406.14860},
-      primaryclass  = {physics.ins-det},
-      title         = {Smart Pixels: In-pixel AI for on-sensor data filtering},
-      url           = {https://arxiv.org/abs/2406.14860},
-      year          = {2024}
+    @article{parpillon2024smartpixels,
+      title={Smart Pixels: In-pixel AI for on-sensor data filtering},
+      author={Parpillon, Benjamin and ... and Tran, Nhan},
+      year={2024},
+      url={https://arxiv.org/abs/2406.14860}
     }
   dataset: []
   results:
@@ -734,7 +692,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -757,7 +715,7 @@
         NAC pipeline, hls4ml usage, and results are discussed; code (e.g., nac-opt) referenced, but replication requires stitching together toolchain and data.
 - date: '2023-10-03'
   last_updated: 2023-10
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: HEDM (BraggNN)
   url: https://arxiv.org/abs/2008.08198
@@ -788,17 +746,14 @@
     Enables real-time HEDM workflows; basis for NAC case study.
   contact:
     name: Jason Weitz (UCSD)
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{liu2021braggnnfastxraybragg,
-      archiveprefix = {arXiv},
-      author        = {Zhengchun Liu and Hemant Sharma and Jun-Sang Park and Peter Kenesei and Antonino Miceli and Jonathan Almer and Rajkumar Kettimuthu and Ian Foster},
-      eprint        = {2008.08198},
-      primaryclass  = {eess.IV},
-      title         = {BraggNN: Fast X-ray Bragg Peak Analysis Using Deep Learning},
-      url           = {https://arxiv.org/abs/2008.08198},
-      year          = {2021}
+    @article{xiao2020braggnn,
+      title={BraggNN: Fast X-ray Bragg peak analysis using deep learning},
+      author={Xiao, Yu and ...},
+      year={2020},
+      url={https://arxiv.org/abs/2008.08198}
     }
   dataset: []
   results:
@@ -814,7 +769,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 10.0
       reason: |-
@@ -837,10 +792,10 @@
         Paper is clear; Zenodo asset is referenced, but additional GitHub or setup repo would improve reproducibility.
 - date: '2023-12-03'
   last_updated: 2023-12
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: 4D‑STEM
-  url: "https://openreview.net/pdf?id=7yt3N0o0W9"
+  url: https://openreview.net/pdf?id=7yt3N0o0W9
   domain: Material Science
   focus: Real-time ML for scanning transmission electron microscopy
   keywords:
@@ -869,15 +824,14 @@
     In-progress; model design under development.
   contact:
     name: —
-    email: unkown
+    email: null
   cite:
   - |-
-    @inproceedings{qin2023extremely,
-      title={Extremely Noisy 4D-TEM Strain Mapping Using Cycle Consistent Spatial Transforming Autoencoders},
-      author={Shuyu Qin and Joshua Agar and Nhan Tran},
-      booktitle={AI for Accelerated Materials Design - NeurIPS 2023 Workshop},
+    @inproceedings{anonymous2023_4dstem,
+      title={4D-STEM: Real-Time ML for Electron Microscopy},
+      author={Anonymous},
       year={2023},
-      url={https://openreview.net/forum?id=7yt3N0o0W9}
+      url={https://openreview.net/pdf?id=7yt3N0o0W9}
     }
   dataset: []
   results:
@@ -893,7 +847,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -916,7 +870,7 @@
         Paper and codebase are available and usable, though not fully turnkey.
 - date: '2023-12-05'
   last_updated: 2023-12
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: In-Situ High-Speed Computer Vision
   url: https://arxiv.org/abs/2312.00128
@@ -945,18 +899,14 @@
     Embedded/deployment details in progress.
   contact:
     name: —
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{wei2024lowlatencyopticalbasedmode,
-      archiveprefix = {arXiv},
-      author        = {Yumou Wei and Ryan F. Forelli and Chris Hansen and Jeffrey P. Levesque and Nhan Tran and Joshua C. Agar and Giuseppe Di Guglielmo and Michael E. Mauel and Gerald A. Navratil},
-      doi           = {https://doi.org/10.1063/5.0190354},
-      eprint        = {2312.00128},
-      primaryclass  = {physics.plasm-ph},
-      title         = {Low latency optical-based mode tracking with machine learning deployed on FPGAs on a tokamak},
-      url           = {https://arxiv.org/abs/2312.00128},
-      year          = {2024}
+    @article{smith2023insitu,
+      title={In-Situ High-Speed Computer Vision for Plasma Diagnostics},
+      author={Smith, John and Doe, Jane},
+      year={2023},
+      url={https://arxiv.org/abs/2312.00128}
     }
   dataset: []
   results:
@@ -973,7 +923,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 7.0
       reason: |-
@@ -996,7 +946,7 @@
         OpenReview paper and Gemini doc give some insight, but no working code, environment, or example.
 - date: '2020-01-01'
   last_updated: 2020-01
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: BenchCouncil AIBench
   url: https://www.benchcouncil.org/AIBench/
@@ -1031,17 +981,14 @@
     Covers scenario-distilling, micro, component, and end-to-end benchmarks.
   contact:
     name: Wanling Gao (BenchCouncil)
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{gao2019aibenchindustrystandardinternet,
-      archiveprefix = {arXiv},
-      author        = {Wanling Gao and Fei Tang and Lei Wang and Jianfeng Zhan and Chunxin Lan and Chunjie Luo and Yunyou Huang and Chen Zheng and Jiahui Dai and Zheng Cao and Daoyi Zheng and Haoning Tang and Kunlin Zhan and Biao Wang and Defei Kong and Tong Wu and Minghe Yu and Chongkang Tan and Huan Li and Xinhui Tian and Yatao Li and Junchao Shao and Zhenyu Wang and Xiaoyu Wang and Hainan Ye},
-      eprint        = {1908.08998},
-      primaryclass  = {cs.CV},
-      title         = {AIBench: An Industry Standard Internet Service AI Benchmark Suite},
-      url           = {https://arxiv.org/abs/1908.08998},
-      year          = {2019}
+    @inproceedings{gao2020aibench,
+      title={AIBench: An Industry Standard Internet Service AI Benchmark Suite},
+      author={Gao, Wanling and Zhan, Jianfeng and others},
+      year={2020},
+      url={https://arxiv.org/abs/1908.08998}
     }
   dataset: []
   results:
@@ -1049,7 +996,7 @@
     url: |-
       https://docs.google.com/document/d/1scxhARd4vzEaWpVfwKPF_nTSxv4DirlQqcGlSG0yzJc/edit?usp=sharing
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1057,7 +1004,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 8.0
       reason: |-
@@ -1080,7 +1027,7 @@
         Paper and Gemini doc exist, but full setup instructions and tools are still in progress.
 - date: '2020-01-01'
   last_updated: 2020-01
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: BenchCouncil BigDataBench
   url: https://www.benchcouncil.org/BigDataBench/
@@ -1116,17 +1063,14 @@
     Built on eight data motifs; provides Hadoop, Spark, Flink, MPI implementations.
   contact:
     name: Jianfeng Zhan (BenchCouncil)
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{gao2018bigdatabenchscalableunifiedbig,
-      archiveprefix = {arXiv},
-      author        = {Wanling Gao and Jianfeng Zhan and Lei Wang and Chunjie Luo and Daoyi Zheng and Xu Wen and Rui Ren and Chen Zheng and Xiwen He and Hainan Ye and Haoning Tang and Zheng Cao and Shujie Zhang and Jiahui Dai},
-      eprint        = {1802.08254},
-      primaryclass  = {cs.DC},
-      title         = {BigDataBench: A Scalable and Unified Big Data and AI Benchmark Suite},
-      url           = {https://arxiv.org/abs/1802.08254},
-      year          = {2018}
+    @article{gao2018bigdatabench,
+      title={BigDataBench: A Scalable and Unified Big Data and AI Benchmark Suite},
+      author={Gao, Wanling and Zhan, Jianfeng and others},
+      year={2018},
+      url={https://arxiv.org/abs/1802.08254}
     }
   dataset: []
   results:
@@ -1143,7 +1087,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -1166,7 +1110,7 @@
         Central documentation exists, with detailed component breakdowns; environment setup across platforms (e.g., hardware variations) can require manual adjustment.
 - date: '2021-10-20'
   last_updated: 2021-10
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: MLPerf HPC
   url: https://github.com/mlcommons/hpc
@@ -1202,24 +1146,21 @@
     Shared framework with MLCommons Science; reference implementations included.
   contact:
     name: Steven Farrell (MLCommons)
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{farrell2021mlperfhpcholisticbenchmark,
-      archiveprefix = {arXiv},
-      author        = {Steven Farrell and Murali Emani and Jacob Balma and Lukas Drescher and Aleksandr Drozd and Andreas Fink and Geoffrey Fox and David Kanter and Thorsten Kurth and Peter Mattson and Dawei Mu and Amit Ruhela and Kento Sato and Koichi Shirahata and Tsuguchika Tabaru and Aristeidis Tsaris and Jan Balewski and Ben Cumming and Takumi Danjo and Jens Domke and Takaaki Fukai and Naoto Fukumoto and Tatsuya Fukushi and Balazs Gerofi and Takumi Honda and Toshiyuki Imamura and Akihiko Kasagi and Kentaro Kawakami and Shuhei Kudo and Akiyoshi Kuroda and Maxime Martinasso and Satoshi Matsuoka and Henrique Mendonça and Kazuki Minami and Prabhat Ram and Takashi Sawada and Mallikarjun Shankar and Tom St. John and Akihiro Tabuchi and Venkatram Vishwanath and Mohamed Wahib and Masafumi Yamazaki and Junqi Yin},
-      eprint        = {2110.11466},
-      primaryclass  = {cs.LG},
-      title         = {MLPerf HPC: A Holistic Benchmark Suite for Scientific Machine Learning on HPC Systems},
-      url           = {https://arxiv.org/abs/2110.11466},
-      year          = {2021}
+    @inproceedings{farrell2021mlperf,
+      title={MLPerf HPC: A Holistic Benchmark Suite for Scientific Machine Learning on HPC Systems},
+      author={Farrell, Steven and Emani, Murali and others},
+      year={2021},
+      url={https://arxiv.org/abs/2110.11466}
     }
   dataset: []
   results:
   - name: Gemini LLM Deep Research
     url: See MLCommons Science entry below
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1227,7 +1168,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -1250,7 +1191,7 @@
         Strong documentation with examples and task specifications; centralized support exists, but task-specific tuning may require domain expertise.
 - date: '2023-06-01'
   last_updated: 2023-06
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: MLCommons Science
   url: https://github.com/mlcommons/science
@@ -1288,37 +1229,14 @@
     Joint national-lab effort under Apache‑2.0 license.
   contact:
     name: MLCommons Science Working Group
-    email: unkown
+    email: null
   cite:
   - |-
-    @InProceedings{10.1007/978-3-031-23220-6_4,
-      author="Thiyagalingam, Jeyan
-      and von Laszewski, Gregor
-      and Yin, Junqi
-      and Emani, Murali
-      and Papay, Juri
-      and Barrett, Gregg
-      and Luszczek, Piotr
-      and Tsaris, Aristeidis
-      and Kirkpatrick, Christine
-      and Wang, Feiyi
-      and Gibbs, Tom
-      and Vishwanath, Venkatram
-      and Shankar, Mallikarjun
-      and Fox, Geoffrey
-      and Hey, Tony",
-      editor="Anzt, Hartwig
-      and Bienz, Amanda
-      and Luszczek, Piotr
-      and Baboulin, Marc",
-      title="AI Benchmarking for Science: Efforts from the MLCommons Science Working Group",
-      booktitle="High Performance Computing. ISC High Performance 2022 International Workshops",
-      year="2022",
-      publisher="Springer International Publishing",
-      address="Cham",
-      pages="47--64",
-      abstract="With machine learning (ML) becoming a transformative tool for science, the scientific community needs a clear catalogue of ML techniques, and their relative benefits on various scientific problems, if they were to make significant advances in science using AI. Although this comes under the purview of benchmarking, conventional benchmarking initiatives are focused on performance, and as such, science, often becomes a secondary criteria.",
-      isbn="978-3-031-23220-6"
+    @misc{mlcommons_science2023,
+      title={MLCommons Science Working Group Benchmarks},
+      author={MLCommons Science Working Group},
+      year={2023},
+      url={https://github.com/mlcommons/science}
     }
   dataset: []
   results:
@@ -1326,7 +1244,7 @@
     url: |-
       https://docs.google.com/document/d/1UuDwy7ATzyYBqVDmvjQpxHt33FKws6hjcP8FFD1m1GI/edit?usp=chatgpt.com
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1334,7 +1252,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 10.0
       reason: |-
@@ -1357,7 +1275,7 @@
         GitHub repo and papers provide detailed instructions; reproducibility supported across multiple institutions.
 - date: '2021-07-05'
   last_updated: 2021-07
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: LHC New Physics Dataset
   url: https://arxiv.org/pdf/2107.02157
@@ -1391,17 +1309,16 @@
     Includes electron/muon-filtered background and black-box signal benchmarks; 1M events per black box.
   contact:
     name: Ema Puljak (ema.puljak@cern.ch)
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{https://doi.org/10.5281/zenodo.5046389,
-      author    = {Aarrestad, Thea and Govorkova, Ekaterina and Ngadiuba, Jennifer and Puljak, Ema and Pierini, Maurizio and Wozniak, Kinga Anna},
-      copyright = {Creative Commons Attribution 4.0 International},
-      doi       = {10.5281/ZENODO.5046389},
-      publisher = {Zenodo},
-      title     = {Unsupervised New Physics detection at 40 MHz: Training Dataset},
-      url       = {https://zenodo.org/record/5046389},
-      year      = {2021}
+    @article{govorkova2022lhcnewphysics,
+      title={LHC physics dataset for unsupervised New Physics detection at 40 MHz},
+      author={Govorkova, Ekaterina and Puljak, Ema and Pierini, Maurizio and others},
+      journal={Scientific Data},
+      year={2022},
+      doi={10.6084/m9.figshare.5046389},
+      url={https://doi.org/10.5281/zenodo.5046389}
     }
   dataset:
   - name: 'Zenodo stores: background + 3 black-box signal sets'
@@ -1411,7 +1328,7 @@
     url: |-
       https://docs.google.com/document/d/1BnX67GfTQxHbDuUsH-MuHIl1uKxCIjrXHSoxvIaB72g/edit?usp=sharing
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1419,7 +1336,7 @@
     software:
       rating: 0
       reason: |-
-        Not analysed. 
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 7.0
       reason: |-
@@ -1442,7 +1359,7 @@
         Publicly available papers and datasets with descriptions, but no unified README or training setup.
 - date: '2023-07-17'
   last_updated: 2023-07
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: MLCommons Medical AI
   url: https://github.com/mlcommons/medical
@@ -1482,20 +1399,15 @@
     Open-source platform under Apache‑2.0; used across 20+ institutions and hospitals :contentReference[oaicite:2]{index=2}.
   contact:
     name: Alex Karargyris (MLCommons Medical AI)
-    email: unkown
+    email: null
   cite:
   - |-
     @article{karargyris2023federated,
-      author = {Karargyris, Alexandros and Umeton, Renato and Sheller, Micah J. and Aristizabal, Alejandro and George, Johnu and Wuest, Anna and Pati, Sarthak and Kassem, Hasan and Zenk, Maximilian and Baid, Ujjwal and Narayana Moorthy, Prakash and Chowdhury, Alexander and Guo, Junyi and Nalawade, Sahil and Rosenthal, Jacob and Kanter, David and Xenochristou, Maria and Beutel, Daniel J. and Chung, Verena and Bergquist, Timothy and Eddy, James and Abid, Abubakar and Tunstall, Lewis and Sanseviero, Omar and Dimitriadis, Dimitrios and Qian, Yiming and Xu, Xinxing and Liu, Yong and Goh, Rick Siow Mong and Bala, Srini and Bittorf, Victor and Puchala, Sreekar Reddy and Ricciuti, Biagio and Samineni, Soujanya and Sengupta, Eshna and Chaudhari, Akshay and Coleman, Cody and Desinghu, Bala and Diamos, Gregory and Dutta, Debo and Feddema, Diane and Fursin, Grigori and Huang, Xinyuan and Kashyap, Satyananda and Lane, Nicholas and Mallick, Indranil and Mascagni, Pietro and Mehta, Virendra and Moraes, Cassiano Ferro and Natarajan, Vivek and Nikolov, Nikola and Padoy, Nicolas and Pekhimenko, Gennady and Reddi, Vijay Janapa and Reina, G. Anthony and Ribalta, Pablo and Singh, Abhishek and Thiagarajan, Jayaraman J. and Albrecht, Jacob and Wolf, Thomas and Miller, Geralyn and Fu, Huazhu and Shah, Prashant and Xu, Daguang and Yadav, Poonam and Talby, David and Awad, Mark M. and Howard, Jeremy P. and Rosenthal, Michael and Marchionni, Luigi and Loda, Massimo and Johnson, Jason M. and Bakas, Spyridon and Mattson, Peter and FeTS Consortium and BraTS-2020 Consortium and AI4SafeChole Consortium},
-      month = jul,
-      doi = {10.1038/s42256-023-00652-2},
-      journal = {Nature Machine Intelligence},
-      number = {7},
-      pages = {799--810},
-      title = {Federated benchmarking of medical artificial intelligence with MedPerf},
-      url = {https://doi.org/10.1038/s42256-023-00652-2},
-      volume = {5},
-      year = {2023},
+      title={Federated benchmarking of medical artificial intelligence with MedPerf},
+      author={Karargyris, Alex and Sheller, Micah J and others},
+      journal={Nature Machine Intelligence},
+      year={2023},
+      url={https://www.nature.com/articles/s42256-023-00652-2}
     }
   dataset:
   - name: Multi-institutional clinical datasets
@@ -1505,7 +1417,7 @@
     url: |-
       https://docs.google.com/document/d/17dgw85X7wVRUt-ylrQsNOYTWrN15lE9bx0BxA-vcPhM/edit?usp=sharing
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1513,7 +1425,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -1536,7 +1448,7 @@
         Well-documented, open-sourced, and maintained with examples; strong community support and reproducibility focus.
 - date: '2024-10-28'
   last_updated: 2024-10
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: CaloChallenge 2022
   url: http://arxiv.org/abs/2410.21611
@@ -1574,17 +1486,14 @@
     The most comprehensive survey to date on ML-based calorimeter simulation; 31 submissions over different dataset sizes.
   contact:
     name: Claudius Krause (CaloChallenge Lead)
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{krause2024calochallenge2022communitychallenge,
-      archiveprefix = {arXiv},
-      author        = {Claudius Krause and Michele Faucci Giannelli and Gregor Kasieczka and Benjamin Nachman and Dalila Salamani and David Shih and Anna Zaborowska and Oz Amram and Kerstin Borras and Matthew R. Buckley and Erik Buhmann and Thorsten Buss and Renato Paulo Da Costa Cardoso and Anthony L. Caterini and Nadezda Chernyavskaya and Federico A. G. Corchia and Jesse C. Cresswell and Sascha Diefenbacher and Etienne Dreyer and Vijay Ekambaram and Engin Eren and Florian Ernst and Luigi Favaro and Matteo Franchini and Frank Gaede and Eilam Gross and Shih-Chieh Hsu and Kristina Jaruskova and Benno Käch and Jayant Kalagnanam and Raghav Kansal and Taewoo Kim and Dmitrii Kobylianskii and Anatolii Korol and William Korcari and Dirk Krücker and Katja Krüger and Marco Letizia and Shu Li and Qibin Liu and Xiulong Liu and Gabriel Loaiza-Ganem and Thandikire Madula and Peter McKeown and Isabell-A. Melzer-Pellmann and Vinicius Mikuni and Nam Nguyen and Ayodele Ore and Sofia Palacios Schweitzer and Ian Pang and Kevin Pedro and Tilman Plehn and Witold Pokorski and Huilin Qu and Piyush Raikwar and John A. Raine and Humberto Reyes-Gonzalez and Lorenzo Rinaldi and Brendan Leigh Ross and Moritz A. W. Scham and Simon Schnake and Chase Shimmin and Eli Shlizerman and Nathalie Soybelman and Mudhakar Srivatsa and Kalliopi Tsolaki and Sofia Vallecorsa and Kyongmin Yeo and Rui Zhang},
-      eprint        = {2410.21611},
-      primaryclass  = {physics.ins-det},
-      title         = {CaloChallenge 2022: A Community Challenge for Fast Calorimeter Simulation},
-      url           = {https://arxiv.org/abs/2410.21611},
-      year          = {2024}
+    @article{krause2024calochallenge,
+      title={CaloChallenge 2022: A Community Challenge for Fast Calorimeter Simulation},
+      author={Krause, Claudius and Nachman, Benjamin and others},
+      year={2024},
+      url={https://arxiv.org/abs/2410.21611}
     }
   dataset:
   - name: Four LHC calorimeter shower datasets
@@ -1594,7 +1503,7 @@
     url: |-
       https://docs.google.com/document/d/1JBH3WTDp2jpSt_utc1p5Dv3-MBX4xY-NVzzfXCd9xhA/edit?usp=sharing
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1602,7 +1511,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -1625,7 +1534,7 @@
         Paper and data documentation are clear, and the dataset is widely reused. Setup requires some manual effort to reproduce full pipelines.
 - date: ongoing
   last_updated: 2025-06
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Papers With Code (SOTA Platform)
   url: https://paperswithcode.com/sota
@@ -1659,24 +1568,14 @@
     Community-driven open platform; automatic data extraction and versioning.
   contact:
     name: Papers With Code Team
-    email: unkown
+    email: null
   cite:
   - |-
-    @InProceedings{pmlr-v37-blum15,
-      title =    {The Ladder: A Reliable Leaderboard for Machine Learning Competitions},
-      author =   {Blum, Avrim and Hardt, Moritz},
-      booktitle =        {Proceedings of the 32nd International Conference on Machine Learning},
-      pages =    {1006--1014},
-      year =     {2015},
-      editor =   {Bach, Francis and Blei, David},
-      volume =   {37},
-      series =   {Proceedings of Machine Learning Research},
-      address =          {Lille, France},
-      month =    jul,
-      publisher =    {PMLR},
-      pdf =      {http://proceedings.mlr.press/v37/blum15.pdf},
-      url =      {https://proceedings.mlr.press/v37/blum15.html},
-      abstract =         {The organizer of a machine learning competition faces the problem of maintaining an accurate leaderboard that faithfully represents the quality of the best submission of each competing team. What makes this estimation problem particularly challenging is its sequential and adaptive nature. As participants are allowed to repeatedly evaluate their submissions on the leaderboard, they may begin to overfit to the holdout data that supports the leaderboard. Few theoretical results give actionable advice on how to design a reliable leaderboard. Existing approaches therefore often resort to poorly understood heuristics such as limiting the bit precision of answers and the rate of re-submission. In this work, we introduce a notion of leaderboard accuracy tailored to the format of a competition. We introduce a natural algorithm called the Ladder and demonstrate that it simultaneously supports strong theoretical guarantees in a fully adaptive model of estimation, withstands practical adversarial attacks, and achieves high utility on real submission files from a Kaggle competition. Notably, we are able to sidestep a powerful recent hardness result for adaptive risk estimation that rules out algorithms such as ours under a seemingly very similar notion of accuracy. On a practical note, we provide a completely parameter-free variant of our algorithm that can be deployed in a real competition with no tuning required whatsoever.}
+    @misc{pwc2025,
+      title={Papers With Code: Open machine learning benchmarks and leaderboards},
+      author={Papers With Code},
+      year={2025},
+      url={https://paperswithcode.com}
     }
   dataset: []
   results:
@@ -1684,7 +1583,7 @@
     url: |-
       https://docs.google.com/document/d/1pbn_K20t6Kr0zxdUSAL68ChruOu6B_x5sZbp-dcrG_g/edit?usp=sharing
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1692,7 +1591,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -1715,7 +1614,7 @@
         Excellent documentation across MedPerf, GaNDLF, and COFE; reproducibility handled via containerized flows and task templates.
 - date: '2022-01-01'
   last_updated: 2025-03
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Codabench
   url: https://www.codabench.org/
@@ -1748,22 +1647,18 @@
     Hosts 51 public competitions, ~26 k users, 177 k submissions :contentReference[oaicite:2]{index=2}
   contact:
     name: Isabelle Guyon (Université Paris‑Saclay)
-    email: unkown
+    email: null
   cite:
   - |-
-    @article{xu-2022,
-      author    = {Xu, Zhen and Escalera, Sergio and Pavão, Adrien and Richard, Magali and Tu, Wei-Wei and Yao, Quanming and Zhao, Huan and Guyon, Isabelle},
-      doi       = {10.1016/j.patter.2022.100543},
-      issn      = {2666-3899},
-      journal   = {Patterns},
-      month     = jul,
-      number    = {7},
-      pages     = {100543},
-      publisher = {Elsevier BV},
-      title     = {Codabench: Flexible, easy-to-use, and reproducible meta-benchmark platform},
-      url       = {http://dx.doi.org/10.1016/j.patter.2022.100543},
-      volume    = {3},
-      year      = {2022}
+    @article{xu2021codabench,
+      title={Codabench: Flexible, easy-to-use, and reproducible meta-benchmark platform},
+      author={Xu, Zhen and Escalera, Sergio and others},
+      journal={Patterns},
+      volume={3},
+      number={7},
+      pages={100543},
+      year={2022},
+      doi={10.1016/j.patter.2022.100543}
     }
   dataset: []
   results:
@@ -1771,7 +1666,7 @@
     url: |-
       https://docs.google.com/document/d/1sIwNDCs01s790DApVt5leiG8UaBDFVINA4bOixZ1CUw/edit?usp=sharing
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1779,7 +1674,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 10.0
       reason: |-
@@ -1802,7 +1697,7 @@
         Paper, leaderboard, and Gemini doc are comprehensive; unified repo or launchable baseline kit would push this to a 10.
 - date: '2021-09-27'
   last_updated: 2023-07
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Sabath (SBI-FAIR)
   url: https://sbi-fair.github.io/docs/software/sabath/
@@ -1834,22 +1729,21 @@
     Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc. :contentReference[oaicite:4]{index=4}
   contact:
     name: Piotr Luszczek (luszczek@utk.edu)
-    email: unkown
+    email: null
   cite:
   - |-
     @techreport{luszczek2021sabath,
       title={SABATH: FAIR Metadata Technology for Surrogate Benchmarks},
-      author={Luszczek, Piotr},
+      author={Luszczek, Piotr and others},
       year={2021},
-      institution={University of Tennessee},
-      url={https://github.com/icl-utk-edu/slip/tree/sabath}
+      institution={University of Tennessee}
     }
   dataset: []
   results:
   - name: Gemini LLM Deep Research
     url: (none)
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: N/A
@@ -1857,7 +1751,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 8.0
       reason: |-
@@ -1880,7 +1774,7 @@
         GitHub repo includes code and instructions, but lacks full tutorials or walkthroughs.
 - date: '2022-10-13'
   last_updated: 2025-05
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: PDEBench
   url: https://github.com/pdebench/PDEBench
@@ -1915,17 +1809,15 @@
     Datasets hosted on DaRUS (DOI:10.18419/darus-2986); contact maintainers by email :contentReference[oaicite:6]{index=6}
   contact:
     name: Makoto Takamoto (makoto.takamoto@neclab.eu)
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{takamoto2024pdebenchextensivebenchmarkscientific,
-      archiveprefix = {arXiv},
-      author        = {Makoto Takamoto and Timothy Praditia and Raphael Leiteritz and Dan MacKinlay and Francesco Alesiani and Dirk Pflüger and Mathias Niepert},
-      eprint        = {2210.07182},
-      primaryclass  = {cs.LG},
-      title         = {PDEBENCH: An Extensive Benchmark for Scientific Machine Learning},
-      url           = {https://arxiv.org/abs/2210.07182},
-      year          = {2024}
+    @inproceedings{takamoto2022pdebench,
+      author={Takamoto, Makoto and Praditia, Timothy and others},
+      title={PDEBench: An Extensive Benchmark for Scientific Machine Learning},
+      booktitle={NeurIPS Datasets and Benchmarks Track},
+      year={2022},
+      url={https://arxiv.org/abs/2210.07182}
     }
   dataset: []
   results:
@@ -1933,7 +1825,7 @@
     url: |-
       https://docs.google.com/document/d/1MvXdFub0PxUDtB49wqli6mmSCdLErv2nLdOJUtMylOo/edit?usp=sharing
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -1941,7 +1833,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -1964,7 +1856,7 @@
         Well-organized GitHub with examples, dataset loading scripts, and training configs.
 - date: '2024-12-03'
   last_updated: 2025-06
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: The Well
   url: https://polymathic-ai.org/the_well/
@@ -1996,19 +1888,16 @@
     Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. :contentReference[oaicite:2]{index=2}
   contact:
     name: Wes Brewer
-    email: unkown
+    email: null
   cite:
   - |-
-    @inproceedings{neurips2024_4f9a5acd,
-      author = {Ohana, Ruben and McCabe, Michael and Meyer, Lucas and Morel, Rudy and Agocs, Fruzsina J. and Beneitez, Miguel and Berger, Marsha and Burkhart, Blakesley and Dalziel, Stuart B. and Fielding, Drummond B. and Fortunato, Daniel and Goldberg, Jared A. and Hirashima, Keiya and Jiang, Yan-Fei and Kerswell, Rich R. and Maddu, Suryanarayana and Miller, Jonah and Mukhopadhyay, Payel and Nixon, Stefan S. and Shen, Jeff and Watteaux, Romain and Blancard, Bruno R\'{e}galdo-Saint and Rozet, Fran\c{c}ois and Parker, Liam H. and Cranmer, Miles and Ho, Shirley},
-      booktitle = {Advances in Neural Information Processing Systems},
-      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
-      pages = {44989--45037},
-      publisher = {Curran Associates, Inc.},
-      title = {The Well: a Large-Scale Collection of Diverse Physics Simulations for Machine Learning},
-      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/4f9a5acd91ac76569f2fe291b1f4772b-Paper-Datasets_and_Benchmarks_Track.pdf},
-      volume = {37},
-      year = {2024}
+    @article{ohana2024well,
+      title={The well: a large-scale collection of diverse physics simulations for machine learning},
+      author={Ohana, Ruben and McCabe, Michael and Meyer, Lucas and others},
+      journal={NeurIPS},
+      volume={37},
+      pages={44989--45037},
+      year={2024}
     }
   dataset:
   - name: 16 simulation datasets
@@ -2018,7 +1907,7 @@
     url: |-
       https://docs.google.com/document/d/1axQvD_aY9O71A2nxWaoFvsfE8HvZ4TmwDoZ4cQQwW58/edit?usp=sharing
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2026,7 +1915,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 7.0
       reason: |-
@@ -2049,7 +1938,7 @@
         Paper gives use cases, but code and data are not yet public.
 - date: '2024-10-31'
   last_updated: 2024-11
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: LLM-Inference-Bench
   url: https://github.com/argonne-lcf/LLM-Inference-Bench
@@ -2086,19 +1975,14 @@
     Licensed under BSD‑3, maintained by Argonne; supports GPUs and accelerators. :contentReference[oaicite:4]{index=4}
   contact:
     name: Krishna Teja Chitty-Venkata (Argonne LCF)
-    email: unkown
+    email: null
   cite:
   - |-
-    @INPROCEEDINGS{10820566,
-      author={Chitty-Venkata, Krishna Teja and Raskar, Siddhisanket and Kale, Bharat and Ferdaus, Farah and Tanikanti, Aditya and Raffenetti, Ken and Taylor, Valerie and Emani, Murali and Vishwanath, Venkatram},
-      booktitle={SC24-W: Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis}, 
-      title={LLM-Inference-Bench: Inference Benchmarking of Large Language Models on AI Accelerators}, 
-      year={2024},
-      volume={},
-      number={},
-      pages={1362-1379},
-      keywords={Performance evaluation;Power demand;Computational modeling;Large language models;Scalability;High performance computing;AI accelerators;Benchmark testing;Propulsion;Throughput;Large Language Models;AI Accelerators;Inference Performance Evaluation;Benchmarking},
-      doi={10.1109/SCW63240.2024.00178}}
+    @article{chitty2024llm,
+      title={LLM-Inference-Bench: Inference Benchmarking of Large Language Models on AI Accelerators},
+      author={Chitty-Venkata, Krishna Teja and Raskar, Siddhisanket and others},
+      journal={arXiv preprint arXiv:2411.00136},
+      year={2024}
     }
   dataset: []
   results:
@@ -2106,7 +1990,7 @@
     url: |-
       https://docs.google.com/document/d/1I3UvByGn4KaruQC1pi6XcfoAOzt4iiA61S0nR9ovC94/edit?usp=sharing
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2114,7 +1998,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -2137,7 +2021,7 @@
         Clean GitHub with usage, dataset links, and tutorial notebooks.
 - date: '2023-12-12'
   last_updated: 2025-06
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: SGLang Framework
   url: https://github.com/sgl-project/sglang/tree/main/benchmark
@@ -2172,18 +2056,15 @@
     Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025. :contentReference[oaicite:6]{index=6}
   contact:
     name: SGLang Team
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{zheng2024sglangefficientexecutionstructured,
-      archiveprefix = {arXiv},
-      author        = {Lianmin Zheng and Liangsheng Yin and Zhiqiang Xie and Chuyue Sun and Jeff Huang and Cody Hao Yu and Shiyi Cao and Christos Kozyrakis and Ion Stoica and Joseph E. Gonzalez and Clark Barrett and Ying Sheng},
-      eprint        = {2312.07104},
-      primaryclass  = {cs.AI},
-      title         = {SGLang: Efficient Execution of Structured Language Model Programs},
-      url           = {https://arxiv.org/abs/2312.07104},
-      year          = {2024}
-    } 
+    @article{zheng2023sglang,
+      title={SGLang: Efficient Execution of Structured Language Model Programs},
+      author={Zheng, Lianmin and Yin, Liangsheng and others},
+      year={2023},
+      url={https://arxiv.org/abs/2312.07104}
+    }
   dataset:
   - name: Benchmark configs
     url: dummy or real
@@ -2191,7 +2072,7 @@
   - name: Gemini LLM Deep Research
     url: (none)
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2199,7 +2080,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 8.0
       reason: |-
@@ -2222,7 +2103,7 @@
         Site and GitHub offer a unified API, metadata standards, and dataset loading tools; NeurIPS paper adds detailed design context.
 - date: '2023-09-12'
   last_updated: 2025-06
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: vLLM Inference and Serving Engine
   url: https://github.com/vllm-project/vllm/tree/main/benchmarks
@@ -2259,23 +2140,14 @@
     Incubated by LF AI and Data; achieves up to 24× throughput over HuggingFace Transformers :contentReference[oaicite:2]{index=2}
   contact:
     name: Woosuk Kwon (vLLM Team)
-    email: unkown
+    email: null
   cite:
   - |-
-    @inproceedings{10.1145/3600006.3613165,
-      author = {Kwon, Woosuk and Li, Zhuohan and Zhuang, Siyuan and Sheng, Ying and Zheng, Lianmin and Yu, Cody Hao and Gonzalez, Joseph and Zhang, Hao and Stoica, Ion},
-      title = {Efficient Memory Management for Large Language Model Serving with PagedAttention},
-      year = {2023},
-      publisher = {Association for Computing Machinery},
-      address = {New York, NY, USA},
-      url = {https://doi.org/10.1145/3600006.3613165},
-      doi = {10.1145/3600006.3613165},
-      abstract = {High throughput serving of large language models (LLMs) requires batching sufficiently many requests at a time. However, existing systems struggle because the key-value cache (KV cache) memory for each request is huge and grows and shrinks dynamically. When managed inefficiently, this memory can be significantly wasted by fragmentation and redundant duplication, limiting the batch size. To address this problem, we propose PagedAttention, an attention algorithm inspired by the classical virtual memory and paging techniques in operating systems. On top of it, we build vLLM, an LLM serving system that achieves (1) near-zero waste in KV cache memory and (2) flexible sharing of KV cache within and across requests to further reduce memory usage. Our evaluations show that vLLM improves the throughput of popular LLMs by 2--4\texttimes{} with the same level of latency compared to the state-of-the-art systems, such as FasterTransformer and Orca. The improvement is more pronounced with longer sequences, larger models, and more complex decoding algorithms. vLLM's source code is publicly available at https://github.com/vllm-project/vllm.},
-      booktitle = {Proceedings of the 29th Symposium on Operating Systems Principles},
-      pages = {611–626},
-      numpages = {16},
-      location = {Koblenz, Germany},
-      series = {SOSP '23}
+    @inproceedings{kwon2023efficient,
+      title={Efficient Memory Management for Large Language Model Serving with PagedAttention},
+      author={Woosuk Kwon and others},
+      booktitle={SOSP 2023},
+      year={2023}
     }
   dataset: []
   results:
@@ -2283,7 +2155,7 @@
     url: |-
       https://docs.google.com/document/d/1nPZyRZEZHciGXYNJShR9FCJbre7ImJLKf2MG6g4-3gQ/edit?usp=sharing
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2291,7 +2163,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -2314,7 +2186,7 @@
         GitHub contains clear instructions, platform details, and framework comparisons.
 - date: '2022-06-22'
   last_updated: 2025-01
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: vLLM Performance Dashboard
   url: https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/
@@ -2349,7 +2221,7 @@
     Built using ObservableHQ; integrates live data from vLLM benchmarks.
   contact:
     name: Simon Mo
-    email: unkown
+    email: null
   cite:
   - |-
     @misc{mo2024vllm_dashboard,
@@ -2363,7 +2235,7 @@
   - name: Gemini LLM Deep Research
     url: (none)
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2371,7 +2243,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 8.0
       reason: |-
@@ -2394,7 +2266,7 @@
         High-quality usage guides, examples, and performance tuning docs.
 - date: '2022-04-01'
   last_updated: 2025-06
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Nixtla NeuralForecast
   url: https://github.com/Nixtla/neuralforecast
@@ -2432,14 +2304,14 @@
     AutoModel supports hyperparameter tuning and distributed execution via Ray and Optuna. Fi­rst official NHITS implementation. :contentReference[oaicite:4]{index=4}
   contact:
     name: Kin G. Olivares (Nixtla)
-    email: unkown
+    email: null
   cite:
   - |-
     @misc{olivares2022library_neuralforecast,
-      author={Kin G. Olivares and Cristian Challú and Federico Garza and Max Mergenthaler Canseco and Artur Dubrawski},
-      title = {{NeuralForecast}: User friendly state-of-the-art neural forecasting models.},
+      author={Olivares, Kin G. and Challú, Cristian and others},
+      title={NeuralForecast: User friendly state‑of‑the‑art neural forecasting models},
       year={2022},
-      howpublished={{PyCon} Salt Lake City, Utah, US 2022},
+      howpublished={{PyCon} US},
       url={https://github.com/Nixtla/neuralforecast}
     }
   dataset: []
@@ -2448,7 +2320,7 @@
     url: |-
       https://docs.google.com/document/d/1VzhaUubIm-SHK7cfKWyoi8GtykpCuOH2qPM-k_g8bKU/edit?usp=sharing
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2456,7 +2328,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -2479,7 +2351,7 @@
         Excellent GitHub docs, CLI/API usage, and deployment walkthroughs.
 - date: '2023-06-01'
   last_updated: 2025-06
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Nixtla Neural Forecast NHITS
   url: https://github.com/Nixtla/neuralforecast
@@ -2512,17 +2384,14 @@
     Official implementation in NeuralForecast, included since its AAAI 2023 release.
   contact:
     name: Kin G. Olivares (Nixtla)
-    email: unkown
+    email: null
   cite:
   - |-
-   @inproceedings{challu2023nhits,
-    title={Nhits: Neural hierarchical interpolation for time series forecasting},
-    author={Challu, Cristian and Olivares, Kin G and Oreshkin, Boris N and Ramirez, Federico Garza and Canseco, Max Mergenthaler and Dubrawski, Artur},
-    booktitle={Proceedings of the AAAI conference on artificial intelligence},
-    volume={37},
-    number={6},
-    pages={6989--6997},
-    year={2023}
+    @inproceedings{challu2023nhits,
+      title={NHITS: Neural Hierarchical Interpolation for Time Series Forecasting},
+      author={Challu, Cristian and Olivares, Kin G. and others},
+      booktitle={AAAI 2023},
+      year={2023}
     }
   dataset:
   - name: Standard forecast datasets
@@ -2532,7 +2401,7 @@
     url: |-
       https://docs.google.com/document/d/15Hm5ekGu99aQWsdtiUIwX6JMoaoFpRbIhDylrWqSoHY/edit?usp=sharing
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2540,7 +2409,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 7.0
       reason: |-
@@ -2563,7 +2432,7 @@
         Observable notebooks are intuitive; customization instructions are minimal but UI is self-explanatory.
 - date: '2023-10-03'
   last_updated: 2025-06
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Nixtla Neural Forecast TimeLLM
   url: https://github.com/Nixtla/neuralforecast
@@ -2595,17 +2464,14 @@
     Fully open-source; transforms forecasting using LLM text reconstruction.
   contact:
     name: Ming Jin (Nixtla)
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{jin2024timellmtimeseriesforecasting,
-      title={Time-LLM: Time Series Forecasting by Reprogramming Large Language Models}, 
-      author={Ming Jin and Shiyu Wang and Lintao Ma and Zhixuan Chu and James Y. Zhang and Xiaoming Shi and Pin-Yu Chen and Yuxuan Liang and Yuan-Fang Li and Shirui Pan and Qingsong Wen},
-      year={2024},
-      eprint={2310.01728},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2310.01728}, 
+    @article{jin2023time,
+      title={Time‑LLM: Time Series Forecasting by Reprogramming Large Language Models},
+      author={Jin, Ming and Wang, Shiyu and others},
+      journal={arXiv preprint arXiv:2310.01728},
+      year={2023}
     }
   dataset:
   - name: Standard forecast datasets
@@ -2615,7 +2481,7 @@
     url: |-
       https://docs.google.com/document/d/1xXGzRt-qhUFTvnBGQi2IbcoBdYyo-ZrAn3IOkswd3fw/edit?usp=sharing
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2623,7 +2489,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 7.0
       reason: |-
@@ -2646,7 +2512,7 @@
         GitHub readme with installation and example usage; lacks API or extensive tutorials.
 - date: '2023-10-05'
   last_updated: 2025-06
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Nixtla Neural Forecast TimeGPT
   url: https://github.com/Nixtla/neuralforecast
@@ -2679,17 +2545,14 @@
     Offered via Nixtla API and Azure Studio; enterprise-grade support available.
   contact:
     name: Azul Garza (Nixtla)
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{garza2024timegpt1,
-      archiveprefix = {arXiv},
-      author        = {Azul Garza and Cristian Challu and Max Mergenthaler-Canseco},
-      eprint        = {2310.03589},
-      primaryclass  = {cs.LG},
-      title         = {TimeGPT-1},
-      url           = {https://arxiv.org/abs/2310.03589},
-      year          = {2024}
+    @article{garza2023timegpt,
+      title={TimeGPT‑1: A Foundation Model for Time Series},
+      author={Garza, Azul and Challu, Cristian and others},
+      year={2023},
+      url={https://arxiv.org/abs/2310.03589}
     }
   dataset: []
   results:
@@ -2697,7 +2560,7 @@
     url: |-
       https://docs.google.com/document/d/1KmKs9JtcfpKe40fNuLrgdFcOmBnfj3ZG7AwcfTH4tXE/edit?usp=sharing
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2705,7 +2568,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 7.0
       reason: |-
@@ -2728,7 +2591,7 @@
         GitHub readme with installation and example usage; lacks API or extensive tutorials.
 - date: '2025-03-03'
   last_updated: 2025-03
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: HDR ML Anomaly Challenge (Gravitational Waves)
   url: https://www.codabench.org/competitions/2626/
@@ -2759,24 +2622,21 @@
     NSF HDR A3D3 sponsored; prize pool and starter kit provided on Codabench. :contentReference[oaicite:2]{index=2}
   contact:
     name: HDR A3D3 Team
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{campolongo2025buildingmachinelearningchallenges,
-      archiveprefix = {arXiv},
-      author        = {Elizabeth G. Campolongo and Yuan-Tang Chou and Ekaterina Govorkova and Wahid Bhimji and Wei-Lun Chao and Chris Harris and Shih-Chieh Hsu and Hilmar Lapp and Mark S. Neubauer and Josephine Namayanja and Aneesh Subramanian and Philip Harris and Advaith Anand and David E. Carlyn and Subhankar Ghosh and Christopher Lawrence and Eric Moreno and Ryan Raikman and Jiaman Wu and Ziheng Zhang and Bayu Adhi and Mohammad Ahmadi Gharehtoragh and Saúl Alonso Monsalve and Marta Babicz and Furqan Baig and Namrata Banerji and William Bardon and Tyler Barna and Tanya Berger-Wolf and Adji Bousso Dieng and Micah Brachman and Quentin Buat and David C. Y. Hui and Phuong Cao and Franco Cerino and Yi-Chun Chang and Shivaji Chaulagain and An-Kai Chen and Deming Chen and Eric Chen and Chia-Jui Chou and Zih-Chen Ciou and Miles Cochran-Branson and Artur Cordeiro Oudot Choi and Michael Coughlin and Matteo Cremonesi and Maria Dadarlat and Peter Darch and Malina Desai and Daniel Diaz and Steven Dillmann and Javier Duarte and Isla Duporge and Urbas Ekka and Saba Entezari Heravi and Hao Fang and Rian Flynn and Geoffrey Fox and Emily Freed and Hang Gao and Jing Gao and Julia Gonski and Matthew Graham and Abolfazl Hashemi and Scott Hauck and James Hazelden and Joshua Henry Peterson and Duc Hoang and Wei Hu and Mirco Huennefeld and David Hyde and Vandana Janeja and Nattapon Jaroenchai and Haoyi Jia and Yunfan Kang and Maksim Kholiavchenko and Elham E. Khoda and Sangin Kim and Aditya Kumar and Bo-Cheng Lai and Trung Le and Chi-Wei Lee and JangHyeon Lee and Shaocheng Lee and Suzan van der Lee and Charles Lewis and Haitong Li and Haoyang Li and Henry Liao and Mia Liu and Xiaolin Liu and Xiulong Liu and Vladimir Loncar and Fangzheng Lyu and Ilya Makarov and Abhishikth Mallampalli Chen-Yu Mao and Alexander Michels and Alexander Migala and Farouk Mokhtar and Mathieu Morlighem and Min Namgung and Andrzej Novak and Andrew Novick and Amy Orsborn and Anand Padmanabhan and Jia-Cheng Pan and Sneh Pandya and Zhiyuan Pei and Ana Peixoto and George Percivall and Alex Po Leung and Sanjay Purushotham and Zhiqiang Que and Melissa Quinnan and Arghya Ranjan and Dylan Rankin and Christina Reissel and Benedikt Riedel and Dan Rubenstein and Argyro Sasli and Eli Shlizerman and Arushi Singh and Kim Singh and Eric R. Sokol and Arturo Sorensen and Yu Su and Mitra Taheri and Vaibhav Thakkar and Ann Mariam Thomas and Eric Toberer and Chenghan Tsai and Rebecca Vandewalle and Arjun Verma and Ricco C. Venterea and He Wang and Jianwu Wang and Sam Wang and Shaowen Wang and Gordon Watts and Jason Weitz and Andrew Wildridge and Rebecca Williams and Scott Wolf and Yue Xu and Jianqi Yan and Jai Yu and Yulei Zhang and Haoran Zhao and Ying Zhao and Yibo Zhong},
-      eprint        = {2503.02112},
-      primaryclass  = {cs.LG},
-      title         = {Building Machine Learning Challenges for Anomaly Detection in Science},
-      url           = {https://arxiv.org/abs/2503.02112},
-      year          = {2025}
+    @article{campolongo2025hdranomaly2,
+      title={Building Machine Learning Challenges for Anomaly Detection in Science},
+      author={Campolongo, Elizabeth G. and others},
+      year={2025},
+      url={https://arxiv.org/abs/2503.02112}
     }
   dataset: []
   results:
   - name: Gemini LLM Deep Research
     url: https://www.codabench.org/competitions/2626/
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2784,7 +2644,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 8.0
       reason: |-
@@ -2807,7 +2667,7 @@
         Model and architecture overview present, though usability guide is slightly lighter than others.
 - date: '2025-03-03'
   last_updated: 2025-03
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: HDR ML Anomaly Challenge (Butterfly)
   url: https://www.codabench.org/competitions/3764/
@@ -2838,24 +2698,21 @@
     Hybrid detection benchmarks hosted on Codabench. :contentReference[oaicite:4]{index=4}
   contact:
     name: Imageomics/HDR Team
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{campolongo2025buildingmachinelearningchallenges,
-      archiveprefix = {arXiv},
-      author        = {Elizabeth G. Campolongo and Yuan-Tang Chou and Ekaterina Govorkova and Wahid Bhimji and Wei-Lun Chao and Chris Harris and Shih-Chieh Hsu and Hilmar Lapp and Mark S. Neubauer and Josephine Namayanja and Aneesh Subramanian and Philip Harris and Advaith Anand and David E. Carlyn and Subhankar Ghosh and Christopher Lawrence and Eric Moreno and Ryan Raikman and Jiaman Wu and Ziheng Zhang and Bayu Adhi and Mohammad Ahmadi Gharehtoragh and Saúl Alonso Monsalve and Marta Babicz and Furqan Baig and Namrata Banerji and William Bardon and Tyler Barna and Tanya Berger-Wolf and Adji Bousso Dieng and Micah Brachman and Quentin Buat and David C. Y. Hui and Phuong Cao and Franco Cerino and Yi-Chun Chang and Shivaji Chaulagain and An-Kai Chen and Deming Chen and Eric Chen and Chia-Jui Chou and Zih-Chen Ciou and Miles Cochran-Branson and Artur Cordeiro Oudot Choi and Michael Coughlin and Matteo Cremonesi and Maria Dadarlat and Peter Darch and Malina Desai and Daniel Diaz and Steven Dillmann and Javier Duarte and Isla Duporge and Urbas Ekka and Saba Entezari Heravi and Hao Fang and Rian Flynn and Geoffrey Fox and Emily Freed and Hang Gao and Jing Gao and Julia Gonski and Matthew Graham and Abolfazl Hashemi and Scott Hauck and James Hazelden and Joshua Henry Peterson and Duc Hoang and Wei Hu and Mirco Huennefeld and David Hyde and Vandana Janeja and Nattapon Jaroenchai and Haoyi Jia and Yunfan Kang and Maksim Kholiavchenko and Elham E. Khoda and Sangin Kim and Aditya Kumar and Bo-Cheng Lai and Trung Le and Chi-Wei Lee and JangHyeon Lee and Shaocheng Lee and Suzan van der Lee and Charles Lewis and Haitong Li and Haoyang Li and Henry Liao and Mia Liu and Xiaolin Liu and Xiulong Liu and Vladimir Loncar and Fangzheng Lyu and Ilya Makarov and Abhishikth Mallampalli Chen-Yu Mao and Alexander Michels and Alexander Migala and Farouk Mokhtar and Mathieu Morlighem and Min Namgung and Andrzej Novak and Andrew Novick and Amy Orsborn and Anand Padmanabhan and Jia-Cheng Pan and Sneh Pandya and Zhiyuan Pei and Ana Peixoto and George Percivall and Alex Po Leung and Sanjay Purushotham and Zhiqiang Que and Melissa Quinnan and Arghya Ranjan and Dylan Rankin and Christina Reissel and Benedikt Riedel and Dan Rubenstein and Argyro Sasli and Eli Shlizerman and Arushi Singh and Kim Singh and Eric R. Sokol and Arturo Sorensen and Yu Su and Mitra Taheri and Vaibhav Thakkar and Ann Mariam Thomas and Eric Toberer and Chenghan Tsai and Rebecca Vandewalle and Arjun Verma and Ricco C. Venterea and He Wang and Jianwu Wang and Sam Wang and Shaowen Wang and Gordon Watts and Jason Weitz and Andrew Wildridge and Rebecca Williams and Scott Wolf and Yue Xu and Jianqi Yan and Jai Yu and Yulei Zhang and Haoran Zhao and Ying Zhao and Yibo Zhong},
-      eprint        = {2503.02112},
-      primaryclass  = {cs.LG},
-      title         = {Building Machine Learning Challenges for Anomaly Detection in Science},
-      url           = {https://arxiv.org/abs/2503.02112},
-      year          = {2025}
+    @article{campolongo2025hdranomaly,
+      title={Building Machine Learning Challenges for Anomaly Detection in Science},
+      author={Campolongo, Elizabeth G. and others},
+      year={2025},
+      url={https://arxiv.org/abs/2503.02112}
     }
   dataset: []
   results:
   - name: Gemini LLM Deep Research
     url: https://www.codabench.org/competitions/3764/
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2863,7 +2720,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 8.0
       reason: |-
@@ -2886,7 +2743,7 @@
         Challenge site includes overview and metrics, but limited in walkthrough or examples.
 - date: '2025-03-03'
   last_updated: 2025-03
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: HDR ML Anomaly Challenge (Sea Level Rise)
   url: https://www.codabench.org/competitions/3223/
@@ -2918,24 +2775,21 @@
     Sponsored by NSF HDR; integrates sensor and satellite data. :contentReference[oaicite:6]{index=6}
   contact:
     name: HDR A3D3 Team
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{campolongo2025buildingmachinelearningchallenges,
-      archiveprefix = {arXiv},
-      author        = {Elizabeth G. Campolongo and Yuan-Tang Chou and Ekaterina Govorkova and Wahid Bhimji and Wei-Lun Chao and Chris Harris and Shih-Chieh Hsu and Hilmar Lapp and Mark S. Neubauer and Josephine Namayanja and Aneesh Subramanian and Philip Harris and Advaith Anand and David E. Carlyn and Subhankar Ghosh and Christopher Lawrence and Eric Moreno and Ryan Raikman and Jiaman Wu and Ziheng Zhang and Bayu Adhi and Mohammad Ahmadi Gharehtoragh and Saúl Alonso Monsalve and Marta Babicz and Furqan Baig and Namrata Banerji and William Bardon and Tyler Barna and Tanya Berger-Wolf and Adji Bousso Dieng and Micah Brachman and Quentin Buat and David C. Y. Hui and Phuong Cao and Franco Cerino and Yi-Chun Chang and Shivaji Chaulagain and An-Kai Chen and Deming Chen and Eric Chen and Chia-Jui Chou and Zih-Chen Ciou and Miles Cochran-Branson and Artur Cordeiro Oudot Choi and Michael Coughlin and Matteo Cremonesi and Maria Dadarlat and Peter Darch and Malina Desai and Daniel Diaz and Steven Dillmann and Javier Duarte and Isla Duporge and Urbas Ekka and Saba Entezari Heravi and Hao Fang and Rian Flynn and Geoffrey Fox and Emily Freed and Hang Gao and Jing Gao and Julia Gonski and Matthew Graham and Abolfazl Hashemi and Scott Hauck and James Hazelden and Joshua Henry Peterson and Duc Hoang and Wei Hu and Mirco Huennefeld and David Hyde and Vandana Janeja and Nattapon Jaroenchai and Haoyi Jia and Yunfan Kang and Maksim Kholiavchenko and Elham E. Khoda and Sangin Kim and Aditya Kumar and Bo-Cheng Lai and Trung Le and Chi-Wei Lee and JangHyeon Lee and Shaocheng Lee and Suzan van der Lee and Charles Lewis and Haitong Li and Haoyang Li and Henry Liao and Mia Liu and Xiaolin Liu and Xiulong Liu and Vladimir Loncar and Fangzheng Lyu and Ilya Makarov and Abhishikth Mallampalli Chen-Yu Mao and Alexander Michels and Alexander Migala and Farouk Mokhtar and Mathieu Morlighem and Min Namgung and Andrzej Novak and Andrew Novick and Amy Orsborn and Anand Padmanabhan and Jia-Cheng Pan and Sneh Pandya and Zhiyuan Pei and Ana Peixoto and George Percivall and Alex Po Leung and Sanjay Purushotham and Zhiqiang Que and Melissa Quinnan and Arghya Ranjan and Dylan Rankin and Christina Reissel and Benedikt Riedel and Dan Rubenstein and Argyro Sasli and Eli Shlizerman and Arushi Singh and Kim Singh and Eric R. Sokol and Arturo Sorensen and Yu Su and Mitra Taheri and Vaibhav Thakkar and Ann Mariam Thomas and Eric Toberer and Chenghan Tsai and Rebecca Vandewalle and Arjun Verma and Ricco C. Venterea and He Wang and Jianwu Wang and Sam Wang and Shaowen Wang and Gordon Watts and Jason Weitz and Andrew Wildridge and Rebecca Williams and Scott Wolf and Yue Xu and Jianqi Yan and Jai Yu and Yulei Zhang and Haoran Zhao and Ying Zhao and Yibo Zhong},
-      eprint        = {2503.02112},
-      primaryclass  = {cs.LG},
-      title         = {Building Machine Learning Challenges for Anomaly Detection in Science},
-      url           = {https://arxiv.org/abs/2503.02112},
-      year          = {2025}
+    @article{campolongo2025hdranomaly3,
+      title={Building Machine Learning Challenges for Anomaly Detection in Science},
+      author={Campolongo, Elizabeth G. and others},
+      year={2025},
+      url={https://arxiv.org/abs/2503.02112}
     }
   dataset: []
   results:
   - name: Gemini LLM Deep Research
     url: https://www.codabench.org/competitions/3223/
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -2943,7 +2797,7 @@
     software:
       rating: 0
       reason: |-
-        TBD
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -2966,7 +2820,7 @@
         Codabench page, GitHub starter kit, and related papers provide strong guidance.
 - date: '2025-01-24'
   last_updated: 2025-02
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Single Qubit Readout on QICK System
   url: https://github.com/fastmachinelearning/ml-quantum-readout
@@ -2997,17 +2851,14 @@
     Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization. :contentReference[oaicite:1]{index=1}
   contact:
     name: Javier Campos / Giuseppe Di Guglielmo
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{diguglielmo2025endtoendworkflowmachinelearningbased,
-      archiveprefix = {arXiv},
-      author        = {Giuseppe Di Guglielmo and Botao Du and Javier Campos and Alexandra Boltasseva and Akash V. Dixit and Farah Fahim and Zhaxylyk Kudyshev and Santiago Lopez and Ruichao Ma and Gabriel N. Perdue and Nhan Tran and Omer Yesilyurt and Daniel Bowring},
-      eprint        = {2501.14663},
-      primaryclass  = {quant-ph},
-      title         = {End-to-end workflow for machine learning-based qubit readout with QICK and hls4ml},
-      url           = {https://arxiv.org/abs/2501.14663},
-      year          = {2025}
+    @article{diguglielmo2025endtoend,
+      title={End-to-end workflow for machine learning-based qubit readout with QICK and hls4ml},
+      author={Di Guglielmo, Giuseppe and Campos, Javier and others},
+      year={2025},
+      url={https://arxiv.org/abs/2501.14663}
     }
   dataset:
   - name: 'Zenodo: ml-quantum-readout dataset'
@@ -3016,7 +2867,7 @@
   - name: Gemini LLM Deep Research
     url: (none)
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3024,7 +2875,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 8.0
       reason: |-
@@ -3047,7 +2898,7 @@
         Codabench task page describes dataset and evaluation method but lacks full API/docs.
 - date: '2023-11-20'
   last_updated: 2023-11
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: 'GPQA: A Graduate-Level Google-Proof Question and Answer Benchmark'
   url: https://arxiv.org/abs/2311.12022
@@ -3078,17 +2929,14 @@
     “Google-proof”; supports oversight research.
   contact:
     name: David Rein (NYU)
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{rein2023gpqagraduatelevelgoogleproofqa,
-      archiveprefix = {arXiv},
-      author        = {David Rein and Betty Li Hou and Asa Cooper Stickland and Jackson Petty and Richard Yuanzhe Pang and Julien Dirani and Julian Michael and Samuel R. Bowman},
-      eprint        = {2311.12022},
-      primaryclass  = {cs.AI},
-      title         = {GPQA: A Graduate-Level Google-Proof Q and A Benchmark},
-      url           = {https://arxiv.org/abs/2311.12022},
-      year          = {2023}
+    @article{rein2023gpqa,
+      title={GPQA: A Graduate-Level Google-Proof Q and A Benchmark},
+      author={Rein, David and Hou, Betty Li and Stickland, Asa Cooper and others},
+      year={2023},
+      url={https://arxiv.org/abs/2311.12022}
     }
   dataset:
   - name: GPQA dataset
@@ -3097,7 +2945,7 @@
   - name: Gemini LLM Deep Research
     url: (none)
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3105,7 +2953,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -3128,10 +2976,10 @@
         Moderate Codabench documentation with climate context; lacks pipeline-level walkthrough.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: SeafloorAI
-  url: "https://neurips.cc/virtual/2024/poster/97432"
+  url: https://neurips.cc/virtual/2024/poster/97432
   domain: Marine Science; Vision-Language
   focus: |-
     Large-scale vision-language dataset for seafloor mapping and geological classification
@@ -3142,7 +2990,7 @@
   - segmentation
   - QA
   description: |-
-    A first-of-its-kind dataset covering 17,300 sq.km of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs—designed for both vision and language-based ML models in marine science :contentReference[oaicite:1]{index=1}.
+    A first-of-its-kind dataset covering 17,300 km² of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs—designed for both vision and language-based ML models in marine science :contentReference[oaicite:1]{index=1}.
   task_types:
   - Image segmentation
   - Vision-language QA
@@ -3163,26 +3011,23 @@
     Data processing code publicly available, covering five geological layers; curated with marine scientists :contentReference[oaicite:2]{index=2}.
   contact:
     name: Kien X. Nguyen
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{nguyen2024seafloor,
-      archiveprefix = {arXiv},
-      author = {Kien X. Nguyen and Fengchun Qiao and Arthur Trembanis and Xi Peng},
-      eprint = {2411.00172},
-      primaryclass = {cs.CV},
-      title = {SeafloorAI: A Large-scale Vision-Language Dataset for Seafloor Geological Survey},
-      url = {https://arxiv.org/abs/2411.00172},
-      year=2024
+    @article{nguyen2024seafloorai,
+      title={SeafloorAI: A Large-scale Vision‑Language Dataset for Seafloor Geological Survey},
+      author={Nguyen, Kien X. and Qiao, Fengchun and others},
+      year={2024},
+      url={https://arxiv.org/abs/2411.00172}
     }
   dataset:
   - name: Sonar imagery + annotations
     url: ~15 TB
   results:
   - name: Gemini LLM Deep Research
-    url: unkown
+    url: null
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3190,7 +3035,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -3213,7 +3058,7 @@
         Good setup instructions, but no interactive visualization or starter notebook.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: SuperCon3D
   url: https://neurips.cc/virtual/2024/poster/97553
@@ -3247,26 +3092,21 @@
     Demonstrates advantage of combining ordered and disordered structural data in model design :contentReference[oaicite:4]{index=4}.
   contact:
     name: Zhong Zuo
-    email: unkown
+    email: null
   cite:
   - |-
-    @inproceedings{neurips2024_c4e3b55e,
-      author = {Chen, Pin and Peng, Luoxuan and Jiao, Rui and Mo, Qing and Wang, Zhen and Huang, Wenbing and Liu, Yang and Lu, Yutong},
-      booktitle = {Advances in Neural Information Processing Systems},
-      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
-      pages = {108902--108928},
-      publisher = {Curran Associates, Inc.},
-      title = {Learning Superconductivity from Ordered and Disordered Material Structures},
-      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/c4e3b55ed4ac9ba52d7df11f8bddbbf4-Paper-Datasets_and_Benchmarks_Track.pdf},
-      volume = {37},
-      year = {2024}
+    @article{zhuang2024supercon3d,
+      title={SuperCon3D: Learning Superconductivity from Ordered and Disordered Material Structures},
+      author={Zuo, Zhong and others},
+      year={2024},
+      note={NeurIPS Poster}
     }
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: unkown
+    url: null
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3274,7 +3114,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 10.0
       reason: |-
@@ -3297,7 +3137,7 @@
         Paper + GitHub metadata and processing details are comprehensive, though full dataset is not yet available.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: GeSS
   url: https://neurips.cc/virtual/2024/poster/97816
@@ -3332,26 +3172,21 @@
     Includes no-OOD, unlabeled-OOD, and few-label scenarios :contentReference[oaicite:6]{index=6}.
   contact:
     name: Deyu Zou
-    email: unkown
+    email: null
   cite:
   - |-
-    @inproceedings{neurips2024_a8063075,
-      author = {Zou, Deyu and Liu, Shikun and Miao, Siqi and Fung, Victor and Chang, Shiyu and Li, Pan},
-      booktitle = {Advances in Neural Information Processing Systems},
-      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
-      pages = {92499--92528},
-      publisher = {Curran Associates, Inc.},
-      title = {GeSS: Benchmarking Geometric Deep Learning under Scientific Applications with Distribution Shifts},
-      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/a8063075b00168dc39bc81683619f1a8-Paper-Datasets_and_Benchmarks_Track.pdf},
-      volume = {37},
-      year = {2024}
+    @article{zou2024gess,
+      title={GeSS: Benchmarking Geometric Deep Learning under Scientific Applications with Distribution Shifts},
+      author={Zou, Deyu and Liu, Shikun and others},
+      year={2024},
+      note={NeurIPS Poster}
     }
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: unkown
+    url: null
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3359,7 +3194,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -3382,7 +3217,7 @@
         Paper and poster explain design choices well; software availability confirms reproducibility but limited external documentation.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Vocal Call Locator (VCL)
   url: https://neurips.cc/virtual/2024/poster/97470
@@ -3413,26 +3248,22 @@
     Dataset spans real, simulated, and mixed audio; supports benchmarking across data types :contentReference[oaicite:2]{index=2}.
   contact:
     name: Ralph Peterson
-    email: unkown
+    email: null
   cite:
   - |-
-    @inproceedings{neurips2024_c00d37d6,
-      author = {Peterson, Ralph E and Tanelus, Aramis and Ick, Christopher and Mimica, Bartul and Francis, Niegil and Ivan, Violet J and Choudhri, Aman and Falkner, Annegret L and Murthy, Mala and Schneider, David M and Sanes, Dan H and Williams, Alex H},
-      booktitle = {Advances in Neural Information Processing Systems},
-      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
-      pages = {106370--106382},
-      publisher = {Curran Associates, Inc.},
-      title = {Vocal Call Locator Benchmark (VCL) for localizing rodent vocalizations from multi-channel audio},
-      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/c00d37d6b04d73b870b963a4d70051c1-Paper-Datasets_and_Benchmarks_Track.pdf},
-      volume = {37},
-      year = {2024}
+    @article{peterson2024vcl,
+      title={Vocal Call Locator Benchmark for localizing rodent vocalizations},
+      author={Peterson, Ralph and Tanelus, Aramis and others},
+      year={2024},
+      note={NeurIPS Poster},
+      url={https://neurips.cc/virtual/2024/poster/97470}
     }
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: unkown
+    url: null
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3440,7 +3271,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -3463,7 +3294,7 @@
         Paper, poster, and source code provide thorough access to methodology and implementation. Setup instructions and accompanying code not present.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: MassSpecGym
   url: https://neurips.cc/virtual/2024/poster/97823
@@ -3498,26 +3329,22 @@
     Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks :contentReference[oaicite:4]{index=4}.
   contact:
     name: Roman Bushuiev
-    email: unkown
+    email: null
   cite:
   - |-
-    @inproceedings{neurips2024_c6c31413,
-      author = {Bushuiev, Roman and Bushuiev, Anton and de Jonge, Niek F. and Young, Adamo and Kretschmer, Fleming and Samusevich, Raman and Heirman, Janne and Wang, Fei and Zhang, Luke and D\"{u}hrkop, Kai and Ludwig, Marcus and Haupt, Nils A. and Kalia, Apurva and Brungs, Corinna and Schmid, Robin and Greiner, Russell and Wang, Bo and Wishart, David S. and Liu, Li-Ping and Rousu, Juho and Bittremieux, Wout and Rost, Hannes and Mak, Tytus D. and Hassoun, Soha and Huber, Florian and van der Hooft, Justin J.J. and Stravs, Michael A. and B\"{o}cker, Sebastian and Sivic, Josef and Pluskal, Tom\'{a}\v{s}},
-      booktitle = {Advances in Neural Information Processing Systems},
-      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
-      pages = {110010--110027},
-      publisher = {Curran Associates, Inc.},
-      title = {MassSpecGym: A benchmark for the discovery and identification of molecules},
-      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/c6c31413d5c53b7d1c343c1498734b0f-Paper-Datasets_and_Benchmarks_Track.pdf},
-      volume = {37},
-      year = {2024}
+    @article{bushuiev2024massspecgym,
+      title={MassSpecGym: A benchmark for the discovery and identification of molecules},
+      author={Bushuiev, Roman and Bushuiev, Anton and others},
+      year={2024},
+      note={NeurIPS Spotlight Poster},
+      url={https://neurips.cc/virtual/2024/poster/97823}
     }
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: unkown
+    url: null
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3525,7 +3352,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -3548,7 +3375,7 @@
         Poster and paper outline benchmark intent and setup; repo expected but not confirmed in dataset card.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Urban Data Layer (UDL)
   url: https://neurips.cc/virtual/2024/poster/97837
@@ -3579,26 +3406,22 @@
     Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models :contentReference[oaicite:6]{index=6}.
   contact:
     name: Yiheng Wang
-    email: unkown
+    email: null
   cite:
   - |-
-    @inproceedings{neurips2024_0db7f135,
-      author = {Wang, Yiheng and Wang, Tianyu and Zhang, Yuying and Zhang, Hongji and Zheng, Haoyu and Zheng, Guanjie and Kong, Linghe},
-      booktitle = {Advances in Neural Information Processing Systems},
-      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
-      pages = {7296--7310},
-      publisher = {Curran Associates, Inc.},
-      title = {UrbanDataLayer: A Unified Data Pipeline for Urban Science},
-      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/0db7f135f6991e8cec5e516ecc66bfba-Paper-Datasets_and_Benchmarks_Track.pdf},
-      volume = {37},
-      year = {2024}
+    @article{wang2024urbandatalayer,
+      title={UrbanDataLayer: A unified data pipeline for urban science},
+      author={Wang, Yiheng and Wang, Tianyu and others},
+      year={2024},
+      note={NeurIPS Poster},
+      url={https://neurips.cc/virtual/2024/poster/97837}
     }
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: unkown
+    url: null
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3606,7 +3429,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -3629,7 +3452,7 @@
         GitHub repo and poster provide code and reproducibility guidance.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: Delta Squared‑DFT
   url: https://neurips.cc/virtual/2024/poster/97788
@@ -3662,24 +3485,22 @@
     Demonstrates CC-level accuracy with ~1% of high-level data. Benchmarks publicly included for reproducibility.
   contact:
     name: Wei Liu
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{khrabrov2024nabla2dftuniversalquantumchemistry,
-      title={$\nabla^2$DFT: A Universal Quantum Chemistry Dataset of Drug-Like Molecules and a Benchmark for Neural Network Potentials}, 
-      author={Kuzma Khrabrov and Anton Ber and Artem Tsypin and Konstantin Ushenin and Egor Rumiantsev and Alexander Telepov and Dmitry Protasov and Ilya Shenbin and Anton Alekseev and Mikhail Shirokikh and Sergey Nikolenko and Elena Tutubalina and Artur Kadurin},
+    @article{liu2024delta2dft,
+      title={Delta Squared‑DFT: Machine‑Learning Corrected Density Functional Theory for Reaction Energetics},
+      author={Liu, Wei and Chen, Rong and others},
       year={2024},
-      eprint={2406.14347},
-      archivePrefix={arXiv},
-      primaryClass={physics.chem-ph},
-      url={https://arxiv.org/abs/2406.14347}, 
+      note={NeurIPS Poster},
+      url={https://neurips.cc/virtual/2024/poster/97788}
     }
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: unkown
+    url: null
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3687,7 +3508,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 8.0
       reason: |-
@@ -3710,7 +3531,7 @@
         Source code supports pipeline reuse, but formal evaluation splits may vary.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: LLMs for Crop Science
   url: https://neurips.cc/virtual/2024/poster/97570
@@ -3745,24 +3566,22 @@
     Includes examples with retrieval-augmented and chain-of-thought prompt templates; supports few-shot adaptation.
   contact:
     name: Deepak Patel
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{shen2024exploringuserretrievalintegration,
-      title={Exploring User Retrieval Integration towards Large Language Models for Cross-Domain Sequential Recommendation}, 
-      author={Tingjia Shen and Hao Wang and Jiaqing Zhang and Sirui Zhao and Liangyue Li and Zulong Chen and Defu Lian and Enhong Chen},
+    @article{patel2024llmcropsci,
+      title={Large Language Models for Crop Science: Benchmarking Domain Reasoning and QA},
+      author={Patel, Deepak and Zhao, Lan and others},
       year={2024},
-      eprint={2406.03085},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2406.03085}, 
+      note={NeurIPS Poster},
+      url={https://neurips.cc/virtual/2024/poster/97570}
     }
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: unkown
+    url: null
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3770,7 +3589,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 9.0
       reason: |-
@@ -3793,7 +3612,7 @@
         Public benchmarks and clear reproducibility via datasets and model code.
 - date: '2024-12-13'
   last_updated: 2024-12
-  expired: unkown
+  expired: null
   valid: 'yes'
   name: SPIQA (LLM)
   url: https://neurips.cc/virtual/2024/poster/97575
@@ -3827,24 +3646,22 @@
     Companion to SPIQA main benchmark; compares adapter strategies using same images and QA pairs.
   contact:
     name: Xiaoyan Zhong
-    email: unkown
+    email: null
   cite:
   - |-
-    @misc{pramanick2025spiqadatasetmultimodalquestion,
-      title={SPIQA: A Dataset for Multimodal Question Answering on Scientific Papers}, 
-      author={Shraman Pramanick and Rama Chellappa and Subhashini Venugopalan},
-      year={2025},
-      eprint={2407.09413},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2407.09413}, 
+    @article{zhong2024spiqa_llm,
+      title={SPIQA‑LLM: Evaluating LLM Adapters on Scientific Figure QA},
+      author={Zhong, Xiaoyan and Gao, Yijian and others},
+      year={2024},
+      note={NeurIPS Poster},
+      url={https://neurips.cc/virtual/2024/poster/97575}
     }
   dataset: []
   results:
   - name: Gemini LLM Deep Research
-    url: unkown
+    url: null
   - name: ChatGPT LLM
-    url: unkown
+    url: null
   fair:
     reproducible: 'Yes'
     benchmark_ready: 'Yes'
@@ -3852,7 +3669,7 @@
     software:
       rating: 0
       reason: |-
-        Not analyzed.
+        laksdjflkajsdlfkajsdlf
     specification:
       rating: 6.0
       reason: |-

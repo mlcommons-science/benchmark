@@ -42,7 +42,7 @@ content: md tex
 	echo DONE
 
 md:
-	python ${SCRIPT} --files=${FILES}  --format=md --outdir=./content --index --columns ${COLUMNS}
+	python ${SCRIPT} --files=${FILES}  --format=md --outdir=./content --columns ${COLUMNS}
 
 tex:
 	python ${SCRIPT} --files=${FILES} --format=tex --outdir=./content --standalone --columns=${COLUMNS}

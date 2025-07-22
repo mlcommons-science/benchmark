@@ -206,7 +206,7 @@
     email: unkown
   cite:
   - |-
-    @misc{duarte2022fastmlsciencebenchmarksaccelerating,
+    @misc{duarte2022fastmlsciencebenchmarksaccelerating2,
       archiveprefix = {arXiv},
       author        = {Javier Duarte and Nhan Tran and Ben Hawks and Christian Herwig and Jules Muhizi and Shvetank Prakash and Vijay Janapa Reddi},
       eprint        = {2207.07958},
@@ -818,8 +818,7 @@
     specification:
       rating: 10.0
       reason: |-
-        Fully specified: describes task (data filtering/classification, system design (on-sensor inference), 
-        latency (25 ns), and power constraints.
+        Fully specified: describes task (data filtering/classification), system design (on-sensor inference), latency (25 ns), and power constraints.
     dataset:
       rating: 8.0
       reason: |-
@@ -2409,7 +2408,7 @@
   - usability
   description: |-
     NeuralForecast offers scalable, user-friendly implementations of over 30 neural forecasting models (NBEATS, NHITS, TFT, DeepAR, etc.),
-    emphasizing quality, usability, interpretability, and performance.
+    emphasizing quality, usability, interpretability, and performance. :contentReference[oaicite:3]{index=3}
   task_types:
   - Time-series forecasting
   ai_capability_measured:
@@ -2438,9 +2437,9 @@
   - |-
     @misc{olivares2022library_neuralforecast,
       author={Kin G. Olivares and Cristian Challú and Federico Garza and Max Mergenthaler Canseco and Artur Dubrawski},
-      title = {NeuralForecast: User friendly state-of-the-art neural forecasting models.},
+      title = {{NeuralForecast}: User friendly state-of-the-art neural forecasting models.},
       year={2022},
-      howpublished={PyCon Salt Lake City, Utah, US 2022},
+      howpublished={{PyCon} Salt Lake City, Utah, US 2022},
       url={https://github.com/Nixtla/neuralforecast}
     }
   dataset: []
@@ -2842,7 +2841,7 @@
     email: unkown
   cite:
   - |-
-    @misc{campolongo2025buildingmachinelearningchallenges,
+    @misc{campolongo2025buildingmachinelearningchallenges2,
       archiveprefix = {arXiv},
       author        = {Elizabeth G. Campolongo and Yuan-Tang Chou and Ekaterina Govorkova and Wahid Bhimji and Wei-Lun Chao and Chris Harris and Shih-Chieh Hsu and Hilmar Lapp and Mark S. Neubauer and Josephine Namayanja and Aneesh Subramanian and Philip Harris and Advaith Anand and David E. Carlyn and Subhankar Ghosh and Christopher Lawrence and Eric Moreno and Ryan Raikman and Jiaman Wu and Ziheng Zhang and Bayu Adhi and Mohammad Ahmadi Gharehtoragh and Saúl Alonso Monsalve and Marta Babicz and Furqan Baig and Namrata Banerji and William Bardon and Tyler Barna and Tanya Berger-Wolf and Adji Bousso Dieng and Micah Brachman and Quentin Buat and David C. Y. Hui and Phuong Cao and Franco Cerino and Yi-Chun Chang and Shivaji Chaulagain and An-Kai Chen and Deming Chen and Eric Chen and Chia-Jui Chou and Zih-Chen Ciou and Miles Cochran-Branson and Artur Cordeiro Oudot Choi and Michael Coughlin and Matteo Cremonesi and Maria Dadarlat and Peter Darch and Malina Desai and Daniel Diaz and Steven Dillmann and Javier Duarte and Isla Duporge and Urbas Ekka and Saba Entezari Heravi and Hao Fang and Rian Flynn and Geoffrey Fox and Emily Freed and Hang Gao and Jing Gao and Julia Gonski and Matthew Graham and Abolfazl Hashemi and Scott Hauck and James Hazelden and Joshua Henry Peterson and Duc Hoang and Wei Hu and Mirco Huennefeld and David Hyde and Vandana Janeja and Nattapon Jaroenchai and Haoyi Jia and Yunfan Kang and Maksim Kholiavchenko and Elham E. Khoda and Sangin Kim and Aditya Kumar and Bo-Cheng Lai and Trung Le and Chi-Wei Lee and JangHyeon Lee and Shaocheng Lee and Suzan van der Lee and Charles Lewis and Haitong Li and Haoyang Li and Henry Liao and Mia Liu and Xiaolin Liu and Xiulong Liu and Vladimir Loncar and Fangzheng Lyu and Ilya Makarov and Abhishikth Mallampalli Chen-Yu Mao and Alexander Michels and Alexander Migala and Farouk Mokhtar and Mathieu Morlighem and Min Namgung and Andrzej Novak and Andrew Novick and Amy Orsborn and Anand Padmanabhan and Jia-Cheng Pan and Sneh Pandya and Zhiyuan Pei and Ana Peixoto and George Percivall and Alex Po Leung and Sanjay Purushotham and Zhiqiang Que and Melissa Quinnan and Arghya Ranjan and Dylan Rankin and Christina Reissel and Benedikt Riedel and Dan Rubenstein and Argyro Sasli and Eli Shlizerman and Arushi Singh and Kim Singh and Eric R. Sokol and Arturo Sorensen and Yu Su and Mitra Taheri and Vaibhav Thakkar and Ann Mariam Thomas and Eric Toberer and Chenghan Tsai and Rebecca Vandewalle and Arjun Verma and Ricco C. Venterea and He Wang and Jianwu Wang and Sam Wang and Shaowen Wang and Gordon Watts and Jason Weitz and Andrew Wildridge and Rebecca Williams and Scott Wolf and Yue Xu and Jianqi Yan and Jai Yu and Yulei Zhang and Haoran Zhao and Ying Zhao and Yibo Zhong},
       eprint        = {2503.02112},
@@ -2922,7 +2921,7 @@
     email: unkown
   cite:
   - |-
-    @misc{campolongo2025buildingmachinelearningchallenges,
+    @misc{campolongo2025buildingmachinelearningchallenges3,
       archiveprefix = {arXiv},
       author        = {Elizabeth G. Campolongo and Yuan-Tang Chou and Ekaterina Govorkova and Wahid Bhimji and Wei-Lun Chao and Chris Harris and Shih-Chieh Hsu and Hilmar Lapp and Mark S. Neubauer and Josephine Namayanja and Aneesh Subramanian and Philip Harris and Advaith Anand and David E. Carlyn and Subhankar Ghosh and Christopher Lawrence and Eric Moreno and Ryan Raikman and Jiaman Wu and Ziheng Zhang and Bayu Adhi and Mohammad Ahmadi Gharehtoragh and Saúl Alonso Monsalve and Marta Babicz and Furqan Baig and Namrata Banerji and William Bardon and Tyler Barna and Tanya Berger-Wolf and Adji Bousso Dieng and Micah Brachman and Quentin Buat and David C. Y. Hui and Phuong Cao and Franco Cerino and Yi-Chun Chang and Shivaji Chaulagain and An-Kai Chen and Deming Chen and Eric Chen and Chia-Jui Chou and Zih-Chen Ciou and Miles Cochran-Branson and Artur Cordeiro Oudot Choi and Michael Coughlin and Matteo Cremonesi and Maria Dadarlat and Peter Darch and Malina Desai and Daniel Diaz and Steven Dillmann and Javier Duarte and Isla Duporge and Urbas Ekka and Saba Entezari Heravi and Hao Fang and Rian Flynn and Geoffrey Fox and Emily Freed and Hang Gao and Jing Gao and Julia Gonski and Matthew Graham and Abolfazl Hashemi and Scott Hauck and James Hazelden and Joshua Henry Peterson and Duc Hoang and Wei Hu and Mirco Huennefeld and David Hyde and Vandana Janeja and Nattapon Jaroenchai and Haoyi Jia and Yunfan Kang and Maksim Kholiavchenko and Elham E. Khoda and Sangin Kim and Aditya Kumar and Bo-Cheng Lai and Trung Le and Chi-Wei Lee and JangHyeon Lee and Shaocheng Lee and Suzan van der Lee and Charles Lewis and Haitong Li and Haoyang Li and Henry Liao and Mia Liu and Xiaolin Liu and Xiulong Liu and Vladimir Loncar and Fangzheng Lyu and Ilya Makarov and Abhishikth Mallampalli Chen-Yu Mao and Alexander Michels and Alexander Migala and Farouk Mokhtar and Mathieu Morlighem and Min Namgung and Andrzej Novak and Andrew Novick and Amy Orsborn and Anand Padmanabhan and Jia-Cheng Pan and Sneh Pandya and Zhiyuan Pei and Ana Peixoto and George Percivall and Alex Po Leung and Sanjay Purushotham and Zhiqiang Que and Melissa Quinnan and Arghya Ranjan and Dylan Rankin and Christina Reissel and Benedikt Riedel and Dan Rubenstein and Argyro Sasli and Eli Shlizerman and Arushi Singh and Kim Singh and Eric R. Sokol and Arturo Sorensen and Yu Su and Mitra Taheri and Vaibhav Thakkar and Ann Mariam Thomas and Eric Toberer and Chenghan Tsai and Rebecca Vandewalle and Arjun Verma and Ricco C. Venterea and He Wang and Jianwu Wang and Sam Wang and Shaowen Wang and Gordon Watts and Jason Weitz and Andrew Wildridge and Rebecca Williams and Scott Wolf and Yue Xu and Jianqi Yan and Jai Yu and Yulei Zhang and Haoran Zhao and Ying Zhao and Yibo Zhong},
       eprint        = {2503.02112},
@@ -3082,7 +3081,7 @@
     email: unkown
   cite:
   - |-
-    @misc{rein2023gpqagraduatelevelgoogleproofqa,
+    @misc{rein2023gpqagraduatelevelgoogleproofqa2,
       archiveprefix = {arXiv},
       author        = {David Rein and Betty Li Hou and Asa Cooper Stickland and Jackson Petty and Richard Yuanzhe Pang and Julien Dirani and Julian Michael and Samuel R. Bowman},
       eprint        = {2311.12022},
@@ -3457,7 +3456,7 @@
     reference_solution:
       rating: 9.0
       reason: |-
-        Multiple baselines (11 algorithms × 3 backbones) evaluated; setup supports reproducible comparison.
+        Multiple baselines (11 algorithms x 3 backbones) evaluated; setup supports reproducible comparison.
     documentation:
       rating: 2.0
       reason: |-
@@ -3632,18 +3631,18 @@
   last_updated: 2024-12
   expired: unkown
   valid: 'yes'
-  name: Delta Squared‑DFT
+  name: Delta Squared DFT
   url: https://neurips.cc/virtual/2024/poster/97788
   domain: Computational Chemistry; Materials Science
   focus: |-
     Benchmarking machine-learning corrections to DFT using Delta Squared-trained models for reaction energies
   keywords:
   - density functional theory
-  - Delta Squared‑ML correction
+  - Delta Squared ML correction
   - reaction energetics
   - quantum chemistry
   description: |-
-    Introduces the Delta Squared‑ML paradigm—using ML corrections to DFT to predict reaction energies with accuracy comparable to CCSD(T), while training on small CC datasets. Evaluated across 10 reaction datasets covering organic and organometallic transformations.
+    Introduces the Delta Squared ML paradigm—using ML corrections to DFT to predict reaction energies with accuracy comparable to CCSD(T), while training on small CC datasets. Evaluated across 10 reaction datasets covering organic and organometallic transformations.
   task_types:
   - Regression
   ai_capability_measured:
@@ -3653,7 +3652,7 @@
   - Mean Absolute Error (eV)
   - Energy ranking accuracy
   models:
-  - Delta Squared‑ML correction networks
+  - Delta Squared ML correction networks
   - Kernel ridge regression
   ml_motif:
   - Scientific ML
@@ -3787,7 +3786,7 @@
     reference_solution:
       rating: 8.0
       reason: |-
-        Includes both Delta^2 and KRR baselines.
+        Includes both Δ²‑ML and KRR baselines.
     documentation:
       rating: 9.0
       reason: |-

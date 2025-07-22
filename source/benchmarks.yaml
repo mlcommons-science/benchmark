@@ -29,12 +29,14 @@
   notes: Good
   cite:
   - |-
-    @article{hendrycks2021measuring,
-      title={Measuring Massive Multitask Language Understanding},
-      author={Hendrycks, Dan and Burns, Collin and Kadavath, Saurav},
-      journal={arXiv preprint arXiv:2009.03300},
+    @misc{hendrycks2021measuringmassivemultitasklanguage,
+      title={Measuring Massive Multitask Language Understanding}, 
+      author={Dan Hendrycks and Collin Burns and Steven Basart and Andy Zou and Mantas Mazeika and Dawn Song and Jacob Steinhardt},
       year={2021},
-      url={https://arxiv.org/abs/2009.03300}
+      eprint={2009.03300},
+      archivePrefix={arXiv},
+      primaryClass={cs.CY},
+      url={https://arxiv.org/abs/2009.03300}, 
     }
   ratings:
     specification:

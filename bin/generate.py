@@ -1,6 +1,8 @@
 """
 Usage:
   generate.py --files=file1,file2 --format=<fmt> --outdir=<dir> [--authortruncation=N] [--columns=col1,col2] [--check] [--index] [--noratings] [--required] [--standalone] [--withcitation] [--withurlcheck]
+  generate.py --check_log
+
 
 Options:
   --files=<file>...           YAML file paths to process (one or more) [default: source/benchmark-addon.yaml].
@@ -14,6 +16,7 @@ Options:
   --standalone                Include full LaTeX document preamble (tex only).
   --withcitation              Add a citation row (md only).
   --withurlcheck              Check if URLs exist.
+  --check_log                     Check the latex log file by removing unneded content
 
 Notes:
   - --standalone is only valid with --format=tex
@@ -29,6 +32,8 @@ from yaml_manager import YamlManager
 from md_writer import MarkdownWriter
 from generate_latex import GenerateLatex, ALL_COLUMNS
 from cloudmesh.common.console import Console
+from check_log import print_latex_log
+from cloudmesh.common.console  import Console
 
 VERBOSE = True
 if VERBOSE:
@@ -37,11 +42,17 @@ if VERBOSE:
 if __name__ == "__main__":
     args = docopt(__doc__)
 
+    check_log = args["--check_log"]
+    if check_log:
+        print_latex_log(filename="content/tex/benchmarks.log")
+        sys.exit(0)
+
     format_type = args["--format"] or "tex"
     output_dir = args["--outdir"] or "./content/"
     files = args["--files"] or ["source/benchmark-addon.yaml"]
     author_trunc = int(args["--authortruncation"])
     columns = args["--columns"] or ALL_COLUMNS.keys
+    
 
     files = files.split(",") if files else None
     columns = columns.split(",") if columns else None
@@ -84,7 +95,7 @@ if __name__ == "__main__":
         converter = MarkdownWriter(entries, raw_entries=manager.data)
         converter.write_table(columns=columns)
         converter.write_individual_entries(columns=columns)
-        
+
     elif format_type == "tex":
         converter = GenerateLatex(entries)
 

@@ -40,6 +40,14 @@ LATEX_PREFIX = textwrap.dedent(
     \graphicspath{{images/}}
     
 
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \usepackage{textcomp}
+    \usepackage{amssymb}
+    \usepackage{eurosym} 
+    \usepackage{pifont} 
+    \DeclareUnicodeCharacter{0394}{\Delta}
+
     \tolerance=10000
     \hfuzz=100pt
     \emergencystretch=3em
@@ -105,7 +113,7 @@ DEFAULT_COLUMNS = [
     # "expired",
     # "valid",
     "name",
-    "url",
+    # "url",
     "domain",
     "focus",
     "keywords",
@@ -134,6 +142,8 @@ REQUIRED_FIELDS_BY_TYPE = {
     "techreport": ["author", "title", "institution", "year"],
     "unpublished": ["author", "title", "note"],
 }
+
+
 # --- Utility Functions ---
 
 
@@ -706,7 +716,7 @@ class GenerateLatex:
     # ########################################################
 
     def get_url_ref(self, entry):
-        
+
         url = entry.get("url", "")
         if url in [None, "None", "", "unkown", "Unkown"]:
             url = None
@@ -728,9 +738,9 @@ class GenerateLatex:
             if col is not "ratings":
                 value = entry.get(col)
                 if value is None:
-                   content = ""  # Empty string for None values
-                   continue
-    
+                    content = ""  # Empty string for None values
+                    continue
+
             if col == "ratings":
                 id = entry.get("id", "unknown")
                 image = f"{id}_radar.pdf"
@@ -748,9 +758,9 @@ class GenerateLatex:
                     for c in cite_entries
                     if c and c.strip().startswith("@")
                 ]
-                
+
                 cite_text = f"\\cite{{{','.join(cite_keys)}}}" if cite_keys else ""
-    
+
                 content = f"{cite_text}{url_txt}"
             elif col == "url":
 
@@ -792,7 +802,7 @@ class GenerateLatex:
                     width.append(ALL_COLUMNS[col]["width"])
                     names.append(ALL_COLUMNS[col]["label"])
             # normalize the width to fit into the tex_width
-           
+
             for col in range(len(width)):
                 w = float(width[col]) / total_width  # with two decimal places
                 w = f"{w:.2f}"
@@ -806,7 +816,7 @@ class GenerateLatex:
             return formated_width, formated_names_str
 
         column_widths, column_names = generate_column_format()
-        
+
         # Generate the table rows
         rows = []
         for entry in self.entries:

@@ -818,7 +818,8 @@
     specification:
       rating: 10.0
       reason: |-
-        Fully specified: describes task (data filtering/classification), system design (on-sensor inference), latency (25 ns), and power constraints.
+        Fully specified: describes task (data filtering/classification, system design (on-sensor inference), 
+        latency (25 ns), and power constraints.
     dataset:
       rating: 8.0
       reason: |-
@@ -3786,7 +3787,7 @@
     reference_solution:
       rating: 8.0
       reason: |-
-        Includes both Δ²‑ML and KRR baselines.
+        Includes both Delta^2 and KRR baselines.
     documentation:
       rating: 9.0
       reason: |-

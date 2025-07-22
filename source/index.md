@@ -16,8 +16,8 @@ Program:
 
 The collection is available as
 
-* Markdown documents at the following [link](markdown.md)
-* List of benchmarks [link](benchmarks/markdown.md)
+* Markdown documents at the following [link](benchmarks.md)
+* List of benchmarks [link](benchmarks/index.md)
 
 * PDF document at [link](benchmarks.pdf)
 

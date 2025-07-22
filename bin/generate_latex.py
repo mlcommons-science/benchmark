@@ -25,6 +25,7 @@ LATEX_PREFIX = textwrap.dedent(
     r"""
     \documentclass{article}
     \usepackage{fullpage}
+    \usepackage{makecell}
     \usepackage{enumitem}
     \usepackage{hyperref}
     \usepackage{amsmath}
@@ -100,20 +101,20 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
 
 DEFAULT_COLUMNS = [
     "ratings",
-    #"date",
+    # "date",
     # "expired",
     # "valid",
     "name",
     "url",
     "domain",
-    #"focus",
+    "focus",
     "keywords",
     # "description",
-    #"task_types",
-    #"ai_capability_measured",
-    #"metrics",
-    #"models",
-    #"notes",
+    "task_types",
+    "ai_capability_measured",
+    "metrics",
+    "models",
+    # "notes",
     "cite",
 ]
 
@@ -431,19 +432,15 @@ class GenerateLatex:
 
             Console.ok(f"Saved radar chart for '{name}' as '{filename}'.")
 
-
     def get_radar_filename(self, entry, directory="content/tex/images", fmt="pdf"):
         if directory is None:
             directory = "."
         id = entry.get("id", "unkown")
         name = f"{directory}/{id}_radar.{fmt}"
         return name
-    
-    def generate_radar_chart_grid(self, 
-        filename="content/tex/radar_grid.tex", 
-        columns=5, 
-        rows=5, 
-        fmt="pdf"
+
+    def generate_radar_chart_grid(
+        self, filename="content/tex/radar_grid.tex", columns=5, rows=5, fmt="pdf"
     ):
         col_count = max(1, columns)
         row_count = max(1, rows)
@@ -483,108 +480,9 @@ class GenerateLatex:
             content = "\n\\clearpage\n".join(pages)
 
         write_to_file(content, filename=filename)
-        Console.ok(f"Generated radar chart grid in '{filename}'.")  
+        Console.ok(f"Generated radar chart grid in '{filename}'.")
 
         return content
-
-    # def generate_radar_chart_summary(self, output_dir="content/tex", show_reasons=False, columns=3, rows=5):
-    #     tex_path = os.path.join(output_dir, "summary.tex")
-    #     bib_path = os.path.join(output_dir, "summary.bib")
-    #     figures = []
-    #     bib_entries = []
-
-    #     for i, entry in enumerate(self.entries):
-    #         name = caption = entry.get("name", f"Entry_{i+1}")
-    #         filename = self.get_filename(entry, directory="images", fmt="pdf")
-    #         cite_keys = []
-
-    #         # Include rating reasons in caption if requested
-    #         if show_reasons:
-    #             reasons = []
-    #             for key, value in entry.items():
-    #                 if key.startswith("ratings.") and key.endswith(".reason"):
-    #                     try:
-    #                         parts = key.split(".")
-    #                         rating_type = parts[1]
-    #                         reason = value.strip()
-    #                         reasons.append(f"{rating_type.capitalize()}: {reason}")
-    #                     except Exception:
-    #                         continue
-    #             if reasons:
-    #                 caption += " --- " + "; ".join(reasons)
-
-    #         # Extract citations and keys
-    #         entry_cites = entry.get("cite", [])
-    #         if not isinstance(entry_cites, list):
-    #             entry_cites = [entry_cites]
-
-    #         for cite_block in entry_cites:
-    #             match = re.search(r"@\w+\{([^,]+),", cite_block)
-    #             if match:
-    #                 key = match.group(1)
-    #             else:
-    #                 key = f"entry{i+1}"  # Fallback key
-    #             cite_keys.append(key)
-    #             bib_entries.append(cite_block.strip())
-
-    #         if cite_keys:
-    #             caption += f" \\cite{{{', '.join(cite_keys)}}}"
-
-    #         figure_block = textwrap.dedent(
-    #             f"""
-    #             \\begin{{figure}}[h!]
-    #               \\centering
-    #               \\includegraphics[width=0.7\\textwidth]{{{filename}}}
-    #               \\caption{{{caption}}}
-    #             \\end{{figure}}
-    #         """
-    #         )
-    #         figures.append(figure_block)
-
-    #     header = textwrap.dedent(
-    #         r"""
-    #         \documentclass{article}
-    #         \usepackage{fullpage}
-    #         \usepackage{graphicx}
-    #         \usepackage{caption}
-    #         \usepackage[numbers]{natbib}
-    #         \usepackage{url}
-    #         \title{Radar Chart Summary}
-    #         \date{}
-    #         \begin{document}
-    #         \maketitle
-    #     """
-    #     )
-
-    #     grid_pages = self.generate_grid_pages(output_dir, columns=columns, rows=rows)
-
-    #     os.makedirs(output_dir, exist_ok=True)
-    #     with open(tex_path, "w", encoding="utf-8") as f:
-    #         f.write(header)
-    #         f.write(grid_pages)
-    #         f.writelines(figures)
-    #         f.write(bibliography)
-    #         f.write("\n" + footer)
-
-    #     print(f"Write Radar chart summary to '{tex_path}'")
-
-    #     # # Write unique BibTeX entries
-    #     # unique_bib_entries = sorted(list(set(bib_entries)))
-    #     # with open(bib_path, "w", encoding="utf-8") as bib_file:
-    #     #     bib_file.write("\n\n".join(unique_bib_entries) + "\n")
-    #     # print(f"BibTeX citations written to '{bib_path}'")
-
-    #     # # Attempt to clean bibliography using bibtool
-    #     # try:
-    #     #     os.system(f"bibtool -i {bib_path} -o {bib_path}_clean")
-    #     #     os.system(
-    #     #         f"mv {bib_path}_clean {bib_path}"
-    #     #     )  # Use mv for better atomicity than cp and then rm
-    #     #     print(f"Cleaned BibTeX file using bibtool.")
-    #     # except Exception as e:
-    #     #     print(
-    #     #         f"Warning: Could not clean BibTeX file with bibtool. Ensure bibtool is installed and in your PATH. Error: {e}"
-    #     #     )
 
     # #####################################################
     # TEX MAIN DOCUMENT WRITER
@@ -609,26 +507,24 @@ class GenerateLatex:
         content.append("\\input{table.tex}\n")
         content.append("\\clearpage\n")
 
-        # content.append("")
-        # content.append("\\section{Radar Chart Table}\n")
+        content.append("")
+        content.append("\\section{Radar Chart Table}\n")
 
-        # # add table
-        # content.append("\\input{radar_grid.tex}\n")
-        # content.append("\\clearpage\n")
+        # add table
+        content.append("\\input{radar_grid.tex}\n")
+        content.append("\\clearpage\n")
 
-        # # Add sections
+        # Add sections
 
-        # content.append("")
-        # content.append("\\section{Benchmark Details}\n")
+        content.append("")
+        content.append("\\section{Benchmark Details}\n")
 
-        # for entry in self.entries:
-        #     name = entry.get("id", entry.get("name", "unknown"))
-        #     entry_filename = self.get_section_filename(name)
-        #     content.append(f"\\input{{{entry_filename}}}")
+        for entry in self.entries:
+            name = entry.get("id", entry.get("name", "unknown"))
+            entry_filename = self.get_section_filename(name)
+            content.append(f"\\input{{{entry_filename}}}")
 
-        # content.append("\\clearpage\n")
-
-
+        content.append("\\clearpage\n")
 
         # add Latex Postfix to content
         content.append(LATEX_POSTFIX)
@@ -809,32 +705,43 @@ class GenerateLatex:
     # TABLE WRITER
     # ########################################################
 
+    def get_url_ref(self, entry):
+        
+        url = entry.get("url", "")
+        if url in [None, "None", "", "unkown", "Unkown"]:
+            url = None
+
+        if url is not None:
+            url = f"\\href{{{escape_latex(url)}}}{{$\\Rightarrow$}}"
+        else:
+            url = ""
+        return url
+
     def entry_to_table_row(self, entry, columns=DEFAULT_COLUMNS) -> str:
         row = []
 
-        for column in columns:
-            print("CCCCC", "JJJJ", column, columns, entry)
+        print ("columns", columns)
+        
 
-            value = entry.get(column)
 
+        for col in columns:
             content = ""
-            if value is None:
-                content = ""  # Empty string for None values
 
-            elif column == "ratings":
-                print("CCCCC", entry)
-                # id = entry.get("id", "unknown")
-                # image = f"{id}_radar.pdf"
+            url_txt = self.get_url_ref(entry)
 
-                # print("CCCCC", "RRRRR", id, image)
+            if col is not "ratings":
+                value = entry.get(col)
+                if value is None:
+                   content = ""  # Empty string for None values
+                   continue
+    
+            if col == "ratings":
+                id = entry.get("id", "unknown")
+                image = f"{id}_radar.pdf"
 
-                # content = f"\\includegraphics[width=0.2\\textwidth]{{{image}}}"
+                content = f"\\includegraphics[width=0.15\\textwidth]{{{image}}}"
 
-                # print ("CCCCC", "RRRRR", id)
-
-                content = "TBD"
-
-            elif column == "cite":
+            elif col == "cite":
                 cite_entries = (
                     value
                     if isinstance(value, list)
@@ -845,30 +752,19 @@ class GenerateLatex:
                     for c in cite_entries
                     if c and c.strip().startswith("@")
                 ]
-                primary_url = entry.get("url", "")
-
-                # Try to get URL from the first citation entry if available
-                if not primary_url and cite_entries:
-                    first_cite_url = self.extract_cite_url(cite_entries[0])
-                    if first_cite_url:
-                        primary_url = first_cite_url
-
+                
                 cite_text = f"\\cite{{{','.join(cite_keys)}}}" if cite_keys else ""
+    
+                content = f"{cite_text}{url_txt}"
+            elif col == "url":
 
-                url_text = (
-                    f"\\href{{{escape_latex(primary_url)}}}{{$\\Rightarrow$}}"
-                    if primary_url
-                    else ""
-                )
-                content = f"{cite_text}{url_text}"
-            elif column == "url":
-                content = f"\\href{{{escape_latex(value)}}}{{link}}" if value else ""
+                content = url_txt
+
             elif isinstance(value, list):
                 content = ", ".join(escape_latex(item) for item in value)
             else:
                 content = escape_latex(value)
 
-            print("CCCCC", column, content)
             row.append(content)
 
         result = " & ".join(row) + r" \\ \hline"
@@ -903,7 +799,7 @@ class GenerateLatex:
                     names.append(ALL_COLUMNS[col]["label"])
             # normalize the width to fit into the tex_width
             print("TOTAL WIDTH: ", total_width)
-            # sys.exit(1)
+           
 
             for col in range(len(width)):
                 w = float(width[col]) / total_width  # with two decimal places

@@ -515,7 +515,7 @@
   - real-time inference
   - detector control
   description: |-
-    Resaerch and Development demonstrator for real-time processing of high-rate tracking data from the sPHENIX detector (RHIC) and future EIC systems. Uses GNNs with hls4ml for FPGA-based trigger generation to identify rare events (heavy flavor, DIS electrons) within 10 µs latency. Demonstrated improved accuracy and latency on Alveo/FELIX platforms.
+    Resaerch and Development demonstrator for real-time processing of high-rate tracking data from the sPHENIX detector (RHIC) and future EIC systems. Uses GNNs with hls4ml for FPGA-based trigger generation to identify rare events (heavy flavor, DIS electrons) within 10 micros latency. Demonstrated improved accuracy and latency on Alveo/FELIX platforms.
   task_types:
   - Trigger classification
   - Detector control
@@ -524,7 +524,7 @@
   - Low-latency GNN inference on FPGA
   metrics:
   - Accuracy (charm and beauty detection)
-  - Latency (µs)
+  - Latency (micros)
   - Resource utilization (LUT/FF/BRAM/DSP)
   models:
   - Bipartite Graph Network with Set Transformers (BGN-ST)
@@ -534,7 +534,7 @@
   type: Model
   ml_task: Supervised Learning
   notes: |-
-    Achieved ~97.4% accuracy for beauty decay triggers; sub-10 µs latency on Alveo U280; hit-based FPGA design via hls4ml and FlowGNN.
+    Achieved ~97.4% accuracy for beauty decay triggers; sub-10 micros latency on Alveo U280; hit-based FPGA design via hls4ml and FlowGNN.
   contact:
     name: Jakub Kvapil (lanl.gov)
     email: unkown
@@ -655,7 +655,7 @@
     specification:
       rating: 10.0
       reason: |-
-        Task is clearly defined (triggering on rare events with sub-10 µs latency); architecture, constraints, and system context (FPGA, Alveo) are well detailed.
+        Task is clearly defined (triggering on rare events with sub-10 micros latency); architecture, constraints, and system context (FPGA, Alveo) are well detailed.
     dataset:
       rating: 7.0
       reason: |-
@@ -688,7 +688,7 @@
   description: |-
     Presents a 256x256-pixel ROIC in 28 nm CMOS with embedded 2-layer NN for cluster filtering
     at 25 ns, achieving 54-75% data reduction while maintaining noise and latency constraints. Prototype
-    consumes ~300 µW/pixel and operates in combinatorial digital logic.
+    consumes ~300 microW/pixel and operates in combinatorial digital logic.
   task_types:
   - Image Classification
   - Data filtering

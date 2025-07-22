@@ -1,0 +1,54 @@
+\section{Quench detection}
+{{\footnotesize
+\begin{description}[labelwidth=5em, labelsep=1em, leftmargin=*, align=left, itemsep=0.3em, parsep=0em]
+  \item[date:] 2024-10-15
+  \item[last\_updated:] 2024-10
+  \item[expired:] unkown
+  \item[valid:] yes
+  \item[url:] \href{https://indico.cern.ch/event/1387540/contributions/6153618/attachments/2948441/5182077/fast\_ml\_magnets\_2024\_final.pdf}{https://indico.cern.ch/event/1387540/contributions/6153618/attachments/2948441/5182077/fast\_ml\_magnets\_2024\_final.pdf}
+  \item[domain:] Accelerators and Magnets
+  \item[focus:] Real-time detection of superconducting magnet quenches using ML
+  \item[keywords:]
+    - quench detection
+    - autoencoder
+    - anomaly detection
+    - real-time
+  \item[task\_types:]
+    - Anomaly detection
+    - Quench localization
+  \item[ai\_capability\_measured:]
+    - Real-time anomaly detection with multi-modal sensors
+  \item[metrics:]
+    - ROC‑AUC
+    - Detection latency
+  \item[models:]
+    - Autoencoder
+    - RL agents (in development)
+  \item[ml\_motif:]
+    - Real-time, RL
+  \item[type:] Benchmark
+  \item[ml\_task:] Reinforcement + Unsupervised Learning
+  \item[notes:] Precursor detection in progress; multi-modal and dynamic weighting methods
+  \item[contact.name:] Maira Khan
+  \item[contact.email:] unkown
+  \item[dataset.name:] BPM and power supply data from BNL
+  \item[dataset.url:] \href{HDF5 preprocessed}{HDF5 preprocessed}
+  \item[results.name:] ChatGPT LLM
+  \item[fair.reproducible:] in progress
+  \item[fair.benchmark\_ready:] False
+  \item[ratings.software.rating:] 0
+  \item[ratings.software.reason:] Not analyzed. 
+  \item[ratings.specification.rating:] 10.0
+  \item[ratings.specification.reason:] Real-time jet origin classification under FPGA constraints is clearly defined, with explicit latency targets (\textasciitilde{}100 ns) and I/O formats.
+  \item[ratings.dataset.rating:] 9.0
+  \item[ratings.dataset.reason:] Data available on Zenodo with DOI, includes constituent-level jets; accessible and well-documented, though not deeply versioned with full FAIR metadata.
+  \item[ratings.metrics.rating:] 10.0
+  \item[ratings.metrics.reason:] Accuracy, latency, and hardware resource usage (LUTs, DSPs) are rigorously measured and aligned with real-time goals.
+  \item[ratings.reference\_solution.rating:] 9.0
+  \item[ratings.reference\_solution.reason:] Includes models (MLP, Deep Sets, Interaction Networks) with quantization-aware training and synthesis results via hls4ml; reproducible but tightly coupled with specific toolchains.
+  \item[ratings.documentation.rating:] 8.0
+  \item[ratings.documentation.reason:] Paper and code (via hls4ml) are sufficient, but a centralized, standalone repo for reproducing all models would enhance accessibility.
+  \item[id:] quench\_detection
+\end{description}
+}}
+\clearpage

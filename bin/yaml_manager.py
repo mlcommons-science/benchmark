@@ -29,7 +29,100 @@ from cloudmesh.common.console import Console
 from pprint import pprint
 from requests.exceptions import RequestException, Timeout, ConnectionError, HTTPError, MissingSchema
 from collections import OrderedDict
+import codecs
 
+def find_unicode_chars(filename=None):
+    """
+    Checks a file for specific non-ASCII Unicode characters, prints their
+    location, and suggests ASCII alternatives.
+    """
+    # Define a dictionary mapping Unicode characters to their suggested ASCII alternatives
+    # You can expand this dictionary with more mappings as needed.
+    UNICODE_TO_ASCII_MAP = {
+        'ä': 'ae', 'ö': 'oe', 'ü': 'ue', # German umlauts
+        'é': 'e', 'è': 'e', 'ê': 'e', 'ë': 'e', # French accents
+        'ç': 'c', # French/Portuguese cedilla
+        'ñ': 'n', # Spanish enye
+        'á': 'a', 'à': 'a', 'â': 'a', 'ã': 'a', # Portuguese/Spanish/French accents
+        'í': 'i', 'ì': 'i', 'î': 'i', # Various accents
+        'ó': 'o', 'ò': 'o', 'ô': 'o', 'õ': 'o', # Various accents
+        'ú': 'u', 'ù': 'u', 'û': 'u', # Various accents
+        'æ': 'ae', 'ø': 'oe', 'å': 'aa', # Nordic characters
+        'ß': 'ss', # German sharp s
+        '©': '(c)', # Copyright symbol
+        '®': '(R)', # Registered symbol
+        '™': '(TM)', # Trademark symbol
+        '–': '-',  # En dash
+        '—': '--', # Em dash
+        '…': '...', # Ellipsis
+        '„': '"', # German/East European double low quotation mark
+        '”': '"', # Right double quotation mark
+        '“': '"', # Left double quotation mark
+        '’': "'", # Right single quotation mark (apostrophe)
+        '‘': "'", # Left single quotation mark
+        # Add more mappings as needed
+        # Example for Cyrillic (note: not all Cyrillic have simple 1-to-1 ASCII transliterations)
+        'П': 'P', 'р': 'p', 'и': 'i', 'в': 'v', 'е': 'e', 'т': 't', # Partial for "Привет"
+        '!': '!', # Example: if you wanted to specifically suggest for common punctuation
+    }
+
+    try:
+        with codecs.open(filename, 'r', encoding='utf-8', errors='strict') as f:
+            for line_num, line in enumerate(f, 1):
+                line_content_printed = False
+                for col_num, char in enumerate(line, 1):
+                    # Check if the character is a specific Unicode character we want to handle
+                    if char in UNICODE_TO_ASCII_MAP:
+                        if not line_content_printed:
+                            print(79 * "-")
+                            Console.error(f"Specific Unicode character(s) found on line {line_num}:")
+                            Console.info(f"  Content: '{line.strip()}'")
+                            line_content_printed = True
+                        
+                        suggested_alternative = UNICODE_TO_ASCII_MAP[char]
+                        Console.info(f"    - Found '{char}' (U+{ord(char):04X}) at column {col_num}. Suggest alternative: '{suggested_alternative}'")
+                    else:
+                        # Optionally, you can also check for *any* non-ASCII character here
+                        # if you want to report characters not in your specific map.
+                        try:
+                            char.encode('ascii')
+                        except UnicodeEncodeError:
+                            if not line_content_printed:
+                                Console.info(f"\nNon-ASCII Unicode character(s) found on line {line_num}:")
+                                Console.info(f"  Content: '{line.strip()}'")
+                                line_content_printed = True
+                            Console.info(f"    - Found '{char}' (U+{ord(char):04X}) at column {col_num}. No specific alternative suggested.")
+
+    except FileNotFoundError:
+        Console.error(f"Error: File '{filename}' not found.")
+    except Exception as e:
+        Console.error(f"An unexpected error occurred: {e}")
+
+# --- Example Usage ---
+if __name__ == "__main__":
+    # Create a dummy file with various unicode characters
+    with open("example_with_alternatives.txt", "w", encoding="utf-8") as f:
+        f.write("This line has umlauts: äöü.\n")
+        f.write("And French accents: éàç.\n")
+        f.write("A Spanish ñ and Nordic øåæ.\n")
+        f.write("Copyright © and trademark ™ symbols.\n")
+        f.write("Dashes: – and — and ellipsis …\n")
+        f.write("Quotes: “Hello world!” and single ‘quote’.\n")
+        f.write("Russian: Привет!\n") # Some Cyrillic
+        f.write("Line with a character not in map: ♪ (music note)\n")
+        f.write("Final line.\n")
+
+    print("Checking 'example_with_alternatives.txt' for specific Unicode alternatives:")
+    unicode_alternatives("example_with_alternatives.txt")
+    print("\n" + "="*50 + "\n")
+
+    # Test with a file that has no problematic unicodes
+    with open("example_ascii_only.txt", "w", encoding="utf-8") as f:
+        f.write("This is an ASCII only file.\n")
+        f.write("No special characters here.\n")
+
+    print("Checking 'example_ascii_only.txt':")
+    unicode_alternatives("example_ascii_only.txt")
 
 def clean_string(s):
     # Replace spaces with underscores

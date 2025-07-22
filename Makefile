@@ -3,6 +3,8 @@
 FILES=source/benchmarks-addon.yaml
 # FILES=source/benchmarks.yaml source/benchmarks-addon.yaml
 
+CHECK_FILES=source/benchmarks.yaml,source/benchmarks-addon.yaml 
+
 # FILES=source/benchmark-entry-comment-gregor.yaml
 
 SCRIPT=bin/generate.py
@@ -73,7 +75,7 @@ view:
 debug: tex pdf view
 
 check:
-	python ${SCRIPT} --files ${FILES} --check --outdir foo --format=tex 
+	python ${SCRIPT} --files ${CHECK_FILES} --check 
 
 log:
 	open -a Aquamacs content/tex/benchmarks.log

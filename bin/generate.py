@@ -1,6 +1,7 @@
 """
 Usage:
-  generate.py --files=file1,file2 --format=<fmt> --outdir=<dir> [--authortruncation=N] [--columns=col1,col2] [--check] [--index] [--noratings] [--required] [--standalone] [--withcitation] [--withurlcheck]
+  generate.py --files=file1,file2 --check
+  generate.py --files=file1,file2 --format=<fmt> --outdir=<dir> [--authortruncation=N] [--columns=col1,col2] [--check] [--noratings] [--required] [--standalone] [--withcitation] [--withurlcheck]
   generate.py --check_log
 
 
@@ -34,6 +35,7 @@ from generate_latex import GenerateLatex, ALL_COLUMNS
 from cloudmesh.common.console import Console
 from check_log import print_latex_log
 from cloudmesh.common.console  import Console
+from yaml_manager import find_unicode_chars
 
 VERBOSE = True
 if VERBOSE:
@@ -49,14 +51,21 @@ if __name__ == "__main__":
 
     format_type = args["--format"] or "tex"
     output_dir = args["--outdir"] or "./content/"
-    files = args["--files"] or ["source/benchmark-addon.yaml"]
+     
     author_trunc = int(args["--authortruncation"])
-    columns = args["--columns"] or ALL_COLUMNS.keys
     
+    files = args["--files"]
+    if files is None:
+        files = ["source/benchmark-addon.yaml"]
+    else:
+        files = files.split(",") 
 
-    files = files.split(",") if files else None
-    columns = columns.split(",") if columns else None
-
+    columns = args["--columns"] 
+    if columns is None:
+        columns = ALL_COLUMNS.keys() 
+    else:
+        columns = columns.split(",")     
+    
     if args["--standalone"] and format_type != "tex":
         print("Error: --standalone is only valid with --format=tex")
         sys.exit(1)
@@ -80,6 +89,14 @@ if __name__ == "__main__":
     entries = manager.get_flat_dicts()
 
     if args["--check"]:
+
+        print ("HHHH")
+        for file in files:
+            if not os.path.exists(file):
+                print(f"Error: file not found: {file}")
+                sys.exit(1)
+            Console.info("Checking YAML files for formatting issues...")
+            find_unicode_chars(filename=file)
         manager.check_required_fields()
         sys.exit(0)
 

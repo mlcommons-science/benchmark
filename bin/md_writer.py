@@ -78,7 +78,7 @@ class MarkdownWriter:
         return content
 
     def write_table(
-        self, filename="content/md/benchmark.md", columns=DEFAULT_COLUMNS
+        self, filename="content/md/benchmarks.md", columns=DEFAULT_COLUMNS
     ) -> None:
 
         col_labels = []

@@ -477,9 +477,10 @@
     documentation:
       rating: 0
       reason: This is an AI model, not a benchmark
+
 - date: '2023-01-26'
   expired:
-  valid: 'yes'
+  valid: 'no'
   name: FEABench (Finite Element Analysis Benchmark)
   url: https://github.com/alleninstitute/feabench
   domain: Computational Engineering
@@ -489,9 +490,7 @@
   - simulation
   - PDE
   description: |-
-    FEABench is a suite evaluating finite element analysis tools on standardized 
-    PDE-based simulation tasks with complex geometries and boundary conditions, 
-    measuring both accuracy and runtime performance.
+    Does not exist
   task_types:
   - Simulation
   - Performance evaluation
@@ -502,15 +501,9 @@
   models:
   - FEniCS
   - deal.II
-  notes: Good
+  notes: Google search for "FEABench" gave https://arxiv.org/abs/2503.06680, which relates to coding instead of math
   cite:
-  - |-
-    @misc{allen2023feabench,
-      title={FEABench: A Finite Element Analysis Benchmark},
-      author={Allen Institute},
-      year={2023},
-      url={https://github.com/alleninstitute/feabench}
-    }
+  - []
   ratings:
     specification:
       rating: 0
@@ -527,6 +520,7 @@
     documentation:
       rating: 0
       reason: Using the link results in a 404 Not Found error
+
 - date: '2024-07-12'
   expired:
   valid: 'yes'
@@ -972,6 +966,7 @@
       rating: 9
       reason: |-
         Code, data loaders, usage instructions, and leaderboard available; minor setup effort may still be required for full reproduction.
+
 - date: '2023-06-20'
   expired:
   valid: 'yes'

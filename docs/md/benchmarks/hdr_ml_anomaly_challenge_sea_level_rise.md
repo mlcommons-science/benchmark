@@ -19,7 +19,7 @@
 **Task Types**: Anomaly detection
 
 
-**Metrics**: ROC‑AUC, Precision/Recall
+**Metrics**: ROC-AUC, Precision/Recall
 
 
 **Models**: CNNs, RNNs, Transformers

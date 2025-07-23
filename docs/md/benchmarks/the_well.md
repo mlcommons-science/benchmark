@@ -22,7 +22,7 @@
 **Metrics**: Dataset size, Domain breadth
 
 
-**Models**: FNO baselines, U‑Net baselines
+**Models**: FNO baselines, U-Net baselines
 
 
 **Citation**:

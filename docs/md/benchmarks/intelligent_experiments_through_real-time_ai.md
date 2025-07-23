@@ -19,7 +19,7 @@
 **Task Types**: Trigger classification, Detector control, Real-time inference
 
 
-**Metrics**: Accuracy  charm and beauty detection , Latency  µs , Resource utilization  LUT/FF/BRAM/DSP 
+**Metrics**: Accuracy  charm and beauty detection , Latency  micros , Resource utilization  LUT/FF/BRAM/DSP 
 
 
 **Models**: Bipartite Graph Network with Set Transformers  BGN-ST , GarNet  edge-classifier 

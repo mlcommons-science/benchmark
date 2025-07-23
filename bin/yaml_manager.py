@@ -27,9 +27,20 @@ import sys
 import requests
 from cloudmesh.common.console import Console
 from pprint import pprint
-from requests.exceptions import RequestException, Timeout, ConnectionError, HTTPError, MissingSchema
+from requests.exceptions import (
+    RequestException,
+    Timeout,
+    ConnectionError,
+    HTTPError,
+    MissingSchema,
+    InvalidSchema,
+    InvalidURL,
+    TooManyRedirects,
+    SSLError,
+)
 from collections import OrderedDict
 import codecs
+
 
 def find_unicode_chars(filename=None):
     """
@@ -39,35 +50,57 @@ def find_unicode_chars(filename=None):
     # Define a dictionary mapping Unicode characters to their suggested ASCII alternatives
     # You can expand this dictionary with more mappings as needed.
     UNICODE_TO_ASCII_MAP = {
-        'ä': 'ae', 'ö': 'oe', 'ü': 'ue', # German umlauts
-        'é': 'e', 'è': 'e', 'ê': 'e', 'ë': 'e', # French accents
-        'ç': 'c', # French/Portuguese cedilla
-        'ñ': 'n', # Spanish enye
-        'á': 'a', 'à': 'a', 'â': 'a', 'ã': 'a', # Portuguese/Spanish/French accents
-        'í': 'i', 'ì': 'i', 'î': 'i', # Various accents
-        'ó': 'o', 'ò': 'o', 'ô': 'o', 'õ': 'o', # Various accents
-        'ú': 'u', 'ù': 'u', 'û': 'u', # Various accents
-        'æ': 'ae', 'ø': 'oe', 'å': 'aa', # Nordic characters
-        'ß': 'ss', # German sharp s
-        '©': '(c)', # Copyright symbol
-        '®': '(R)', # Registered symbol
-        '™': '(TM)', # Trademark symbol
-        '–': '-',  # En dash
-        '—': '-', # Em dash
-        '…': '...', # Ellipsis
-        '„': '"', # German/East European double low quotation mark
-        '”': '"', # Right double quotation mark
-        '“': '"', # Left double quotation mark
-        '’': "'", # Right single quotation mark (apostrophe)
-        '‘': "'", # Left single quotation mark
+        "ä": "ae",
+        "ö": "oe",
+        "ü": "ue",  # German umlauts
+        "é": "e",
+        "è": "e",
+        "ê": "e",
+        "ë": "e",  # French accents
+        "ç": "c",  # French/Portuguese cedilla
+        "ñ": "n",  # Spanish enye
+        "á": "a",
+        "à": "a",
+        "â": "a",
+        "ã": "a",  # Portuguese/Spanish/French accents
+        "í": "i",
+        "ì": "i",
+        "î": "i",  # Various accents
+        "ó": "o",
+        "ò": "o",
+        "ô": "o",
+        "õ": "o",  # Various accents
+        "ú": "u",
+        "ù": "u",
+        "û": "u",  # Various accents
+        "æ": "ae",
+        "ø": "oe",
+        "å": "aa",  # Nordic characters
+        "ß": "ss",  # German sharp s
+        "©": "(c)",  # Copyright symbol
+        "®": "(R)",  # Registered symbol
+        "™": "(TM)",  # Trademark symbol
+        "–": "-",  # En dash
+        "—": "-",  # Em dash
+        "…": "...",  # Ellipsis
+        "„": '"',  # German/East European double low quotation mark
+        "”": '"',  # Right double quotation mark
+        "“": '"',  # Left double quotation mark
+        "’": "'",  # Right single quotation mark (apostrophe)
+        "‘": "'",  # Left single quotation mark
         # Add more mappings as needed
         # Example for Cyrillic (note: not all Cyrillic have simple 1-to-1 ASCII transliterations)
-        'П': 'P', 'р': 'p', 'и': 'i', 'в': 'v', 'е': 'e', 'т': 't', # Partial for "Привет"
-        '!': '!', # Example: if you wanted to specifically suggest for common punctuation
+        "П": "P",
+        "р": "p",
+        "и": "i",
+        "в": "v",
+        "е": "e",
+        "т": "t",  # Partial for "Привет"
+        "!": "!",  # Example: if you wanted to specifically suggest for common punctuation
     }
     found = set()
     try:
-        with codecs.open(filename, 'r', encoding='utf-8', errors='strict') as f:
+        with codecs.open(filename, "r", encoding="utf-8", errors="strict") as f:
             for line_num, line in enumerate(f, 1):
                 line_content_printed = False
                 for col_num, char in enumerate(line, 1):
@@ -76,38 +109,51 @@ def find_unicode_chars(filename=None):
                         found.add(char)
                         if not line_content_printed:
                             print(79 * "-")
-                            Console.error(f"Specific Unicode character(s) found on line {line_num}:")
+                            Console.error(
+                                f"Specific Unicode character(s) found on line {line_num}:"
+                            )
                             Console.info(f"  Content: '{line.strip()}'")
                             line_content_printed = True
-                        
+
                         suggested_alternative = UNICODE_TO_ASCII_MAP[char]
-                        Console.info(f"    - Found '{char}' (U+{ord(char):04X}) at column {col_num}. Suggest alternative: '{suggested_alternative}'")
+                        Console.info(
+                            f"    - Found '{char}' (U+{ord(char):04X}) at column {col_num}. Suggest alternative: '{suggested_alternative}'"
+                        )
                     else:
                         # Optionally, you can also check for *any* non-ASCII character here
                         # if you want to report characters not in your specific map.
                         try:
-                            char.encode('ascii')
+                            char.encode("ascii")
                         except UnicodeEncodeError:
                             found.add(char)
                             if not line_content_printed:
-                                Console.info(f"\nNon-ASCII Unicode character(s) found on line {line_num}:")
+                                Console.info(
+                                    f"\nNon-ASCII Unicode character(s) found on line {line_num}:"
+                                )
                                 Console.info(f"  Content: '{line.strip()}'")
                                 line_content_printed = True
-                            Console.info(f"    - Found '{char}' (U+{ord(char):04X}) at column {col_num}. No specific alternative suggested.")
+                            Console.info(
+                                f"    - Found '{char}' (U+{ord(char):04X}) at column {col_num}. No specific alternative suggested."
+                            )
 
     except FileNotFoundError:
         Console.error(f"Error: File '{filename}' not found.")
     except Exception as e:
         Console.error(f"An unexpected error occurred: {e}")
 
-    print ("#" * 79)
+    print("#" * 79)
     print("# Summary of found characters:")
-    print ("#" * 79)
+    print("#" * 79)
     for c in found:
         if c not in UNICODE_TO_ASCII_MAP:
-            Console.warning(f"Found character '{c}' (U+{ord(c):04X}) not in the mapping. No alternative suggested.")
+            Console.warning(
+                f"Found character '{c}' (U+{ord(c):04X}) not in the mapping. No alternative suggested."
+            )
         else:
-            Console.info(f"Found character '{c}' (U+{ord(c):04X}) with suggested alternative '{UNICODE_TO_ASCII_MAP[c]}'.") 
+            Console.info(
+                f"Found character '{c}' (U+{ord(c):04X}) with suggested alternative '{UNICODE_TO_ASCII_MAP[c]}'."
+            )
+
 
 # --- Example Usage ---
 if __name__ == "__main__":
@@ -119,13 +165,13 @@ if __name__ == "__main__":
         f.write("Copyright © and trademark ™ symbols.\n")
         f.write("Dashes: – and — and ellipsis …\n")
         f.write("Quotes: “Hello world!” and single ‘quote’.\n")
-        f.write("Russian: Привет!\n") # Some Cyrillic
+        f.write("Russian: Привет!\n")  # Some Cyrillic
         f.write("Line with a character not in map: ♪ (music note)\n")
         f.write("Final line.\n")
 
     print("Checking 'example_with_alternatives.txt' for specific Unicode alternatives:")
     unicode_alternatives("example_with_alternatives.txt")
-    print("\n" + "="*50 + "\n")
+    print("\n" + "=" * 50 + "\n")
 
     # Test with a file that has no problematic unicodes
     with open("example_ascii_only.txt", "w", encoding="utf-8") as f:
@@ -135,12 +181,14 @@ if __name__ == "__main__":
     print("Checking 'example_ascii_only.txt':")
     unicode_alternatives("example_ascii_only.txt")
 
+
 def clean_string(s):
     # Replace spaces with underscores
-    s = s.replace(' ', '_')
+    s = s.replace(" ", "_")
     # Remove all characters except a-z, A-Z, -, and _
-    s = re.sub(r'[^a-zA-Z\-_]', '', s)
+    s = re.sub(r"[^a-zA-Z\-_]", "", s)
     return str(s)
+
 
 class YamlManager(object):
     """
@@ -151,9 +199,14 @@ class YamlManager(object):
     or as a list of dictionaries for table output.
     """
 
-    def __init__(self, yamls: str | list[str] | None = None, # Made yamls optional for direct instantiation
-                 overwriting_contents: bool = True,
-                 printing_syntax_errors: bool = True):
+    def __init__(
+        self,
+        yamls: (
+            str | list[str] | None
+        ) = None,  # Made yamls optional for direct instantiation
+        overwriting_contents: bool = True,
+        printing_syntax_errors: bool = True,
+    ):
         """
         Creates a new YamlManager in charge of the contents of `yamls`.
 
@@ -162,11 +215,11 @@ class YamlManager(object):
             overwriting_contents (bool, default=True): True if overwriting existing contents, False if appending to existing contents
             printing_syntax_errors (bool, default=True): whether to print warnings to the console if a YAML syntax error is found
         """
-        self._yaml_dicts: list[dict] = [] # Initialize internal storage directly
-        if yamls: # Only load if yamls are provided at init
-            self.load(yamls,
-                              overwrite=overwriting_contents,
-                              verbose=printing_syntax_errors)
+        self._yaml_dicts: list[dict] = []  # Initialize internal storage directly
+        if yamls:  # Only load if yamls are provided at init
+            self.load(
+                yamls, overwrite=overwriting_contents, verbose=printing_syntax_errors
+            )
 
     # Add this __iter__ method
     def __iter__(self):
@@ -192,7 +245,6 @@ class YamlManager(object):
         """
         return self._yaml_dicts[index]
 
-
     @property
     def data(self) -> list[dict]:
         """
@@ -207,13 +259,13 @@ class YamlManager(object):
         """
         return self.get_flat_dicts()
 
-
     # ---------------------------------------------------------------------------------------------------------
     # File Loading
     # ---------------------------------------------------------------------------------------------------------
 
-
-    def load_single_yaml_file(self, file_path: str, enable_error_messages: bool = True) -> list[dict]:
+    def load_single_yaml_file(
+        self, file_path: str, enable_error_messages: bool = True
+    ) -> list[dict]:
         """
         Loads a YAML file containing a flat list of field-level entries,
         and groups them into full benchmark entries using 'name' as the reset key.
@@ -225,13 +277,15 @@ class YamlManager(object):
             list of benchmark entries for the YAML file
         """
         try:
-            with open(file_path, 'r', encoding='utf-8') as f:
+            with open(file_path, "r", encoding="utf-8") as f:
                 content = yaml.safe_load(f)
 
-            if content is None: # Handle empty YAML files
+            if content is None:  # Handle empty YAML files
                 return []
             elif isinstance(content, dict):
-                Console.warning(f'YAML file "{file_path}" is a dictionary. Treating it as a list containing one dictionary.')
+                Console.warning(
+                    f'YAML file "{file_path}" is a dictionary. Treating it as a list containing one dictionary.'
+                )
                 # The sys.exit(1) here is problematic for library usage.
                 # It's better to raise an error or just return, letting the caller decide to exit.
                 # For now, keeping it as per your original, but flagging for review.
@@ -243,22 +297,22 @@ class YamlManager(object):
                 return content
 
             else:
-                raise ValueError("Unsupported YAML format. Expected a dict or list of dicts.")
+                raise ValueError(
+                    "Unsupported YAML format. Expected a dict or list of dicts."
+                )
         except FileNotFoundError:
             if enable_error_messages:
                 Console.error(f"File not found: '{file_path}'")
-                sys.exit(1) # Same note as above regarding sys.exit(1)
+                sys.exit(1)  # Same note as above regarding sys.exit(1)
 
         except yaml.YAMLError as e:
             if enable_error_messages:
                 Console.error(f'YAML syntax error in "{file_path}": \n{e}')
             return []
 
-
-    def load(self,
-             file_paths: str | list[str],
-             overwrite: bool = True,
-             verbose: bool = True) -> list[dict]:
+    def load(
+        self, file_paths: str | list[str], overwrite: bool = True, verbose: bool = True
+    ) -> list[dict]:
         """
         Loads the contents of `file_paths` into this YamlManager.
 
@@ -308,12 +362,13 @@ class YamlManager(object):
         for entry in self._yaml_dicts:
             key = clean_string(entry.get("name", "unknown")).lower()
             if key in found:
-                Console.error(f"Duplicate entry name found: {key}. Please ensure all entries have unique names.")
+                Console.error(
+                    f"Duplicate entry name found: {key}. Please ensure all entries have unique names."
+                )
             found.append(key)
             entry["id"] = key
 
-        return self._yaml_dicts # Or return self.data
-        
+        return self._yaml_dicts  # Or return self.data
 
     # ---------------------------------------------------------------------------------------------------------
     # Contents Presentation
@@ -333,8 +388,7 @@ class YamlManager(object):
         """
         return self.data
 
-
-    def _flatten_dict(self, entry, parent_key='') -> list[dict]:
+    def _flatten_dict(self, entry, parent_key="") -> list[dict]:
         """
         Turns `entry` into a list of dictionaries easily convertable into a table.
 
@@ -354,15 +408,15 @@ class YamlManager(object):
 
         result = []
         for key, value in entry.items():
-            if key in ['description', 'condition']:
+            if key in ["description", "condition"]:
                 continue
             new_key = f"{parent_key}.{key}" if parent_key else key
 
-            #dict: use same procedure
+            # dict: use same procedure
             if isinstance(value, dict):
                 result.extend(self._flatten_dict(value, parent_key=new_key))
 
-            #list: use procedure on each index, if it's a dict. Otherwise, add key/value pair
+            # list: use procedure on each index, if it's a dict. Otherwise, add key/value pair
             elif isinstance(value, list):
                 for v in value:
                     if isinstance(v, dict):
@@ -374,14 +428,13 @@ class YamlManager(object):
                         # for *each* non-dict item. It seems more logical to add it once.
                         # Assuming 'value' here is the full list.
                         result.append({new_key: value})
-                        break # Add the whole list once and break for this key, assuming all non-dict list items are treated same.
-                              # If each non-dict item needs its own entry, this logic needs refinement.
+                        break  # Add the whole list once and break for this key, assuming all non-dict list items are treated same.
+                        # If each non-dict item needs its own entry, this logic needs refinement.
 
-            #anything else: append key/value pair as is
+            # anything else: append key/value pair as is
             else:
                 result.append({new_key: value})
         return result
-
 
     def get_flat_dicts(self) -> list[dict]:
         """
@@ -401,7 +454,11 @@ class YamlManager(object):
             list[dict]: well-formatted entries for table conversion
         """
         output = []
-        for yaml_doc in self._yaml_dicts: # Iterate over each top-level YAML document (which is a dict or a list)
+        for (
+            yaml_doc
+        ) in (
+            self._yaml_dicts
+        ):  # Iterate over each top-level YAML document (which is a dict or a list)
 
             # The current structure implies self._yaml_dicts is a list of dicts.
             # If yaml_doc itself is a list of items (e.g., from a single YAML file like valid_list.yaml),
@@ -422,24 +479,30 @@ class YamlManager(object):
             # [{'name': 'item1', 'details': {'sub1': 'value'}}, {'name': 'item2', ...}]
             # Each 'yaml_doc' from self._yaml_dicts is one dictionary representing one entry.
             # This entry needs to be flattened.
-            flattened_entry_parts = self._flatten_dict(yaml_doc) # Flatten the single dictionary
-            
+            flattened_entry_parts = self._flatten_dict(
+                yaml_doc
+            )  # Flatten the single dictionary
+
             # Now, combine the flattened parts into a single dictionary for the row
             current_row_dict = {}
             for part in flattened_entry_parts:
-                current_row_dict.update(part) # Merge dictionaries
+                current_row_dict.update(part)  # Merge dictionaries
 
             output.append(current_row_dict)
 
         return output
 
-
     # ---------------------------------------------------------------------------------------------------------
     #  Error Checking
     # ---------------------------------------------------------------------------------------------------------
 
-
-    def _verify_entry(self, entry, parent_required: bool = False, parent_name: str = '<top level>', printing_errors: bool = True) -> bool:
+    def _verify_entry(
+        self,
+        entry,
+        parent_required: bool = False,
+        parent_name: str = "<top level>",
+        printing_errors: bool = True,
+    ) -> bool:
         """
         Returns True if `entry` is not a dict, or `entry` contains all required fields.
 
@@ -458,8 +521,7 @@ class YamlManager(object):
         """
 
         if not isinstance(entry, dict):
-            return True #Ignore non-dicts
-
+            return True  # Ignore non-dicts
 
         valid_dict = True
 
@@ -476,40 +538,59 @@ class YamlManager(object):
             # print()
 
             # If condition is "required" or the parent dict is checked, field must be present
-            if (condition=="required" or parent_required) and value is None:
+            if (condition == "required" or parent_required) and value is None:
                 if printing_errors:
-                    printed_parent_name = parent_name if parent_name=='<top level>' else f'"{parent_name}"'
-                    Console.error(f'Required field "{key}" in {printed_parent_name} not present')
-                valid_dict =  False
+                    printed_parent_name = (
+                        parent_name
+                        if parent_name == "<top level>"
+                        else f'"{parent_name}"'
+                    )
+                    Console.error(
+                        f'Required field "{key}" in {printed_parent_name} not present'
+                    )
+                valid_dict = False
 
-            #Do >=
+            # Do >=
             elif condition != None and condition.startswith(">="):
                 try:
                     required_length = int(condition[2:])
                 except ValueError:
                     if printing_errors:
-                        Console.error(f'Condition "{condition[2:]}" is not a number') # Fix typo: Console.errror -> Console.error
+                        Console.error(
+                            f'Condition "{condition[2:]}" is not a number'
+                        )  # Fix typo: Console.errror -> Console.error
                     valid_dict = False
 
                 if not isinstance(value, list) or len(value) < required_length:
                     if printing_errors:
-                        Console.error(f'Field "{key}" must be a list of length {required_length} or more') # Fix typo: Console.errror -> Console.error
-                    valid_dict =  False
+                        Console.error(
+                            f'Field "{key}" must be a list of length {required_length} or more'
+                        )  # Fix typo: Console.errror -> Console.error
+                    valid_dict = False
 
-            #Recurse on the dict
+            # Recurse on the dict
             if isinstance(value, dict):
-                if not self._verify_entry(value, parent_required=(condition=='required'), parent_name=key, printing_errors=printing_errors):
-                    valid_dict =  False
+                if not self._verify_entry(
+                    value,
+                    parent_required=(condition == "required"),
+                    parent_name=key,
+                    printing_errors=printing_errors,
+                ):
+                    valid_dict = False
 
-            #Recurse on any dictionaries in the list
+            # Recurse on any dictionaries in the list
             elif isinstance(value, list):
                 for item in value:
                     if isinstance(item, dict):
-                        if not self._verify_entry(item, parent_required=(condition=='required'), parent_name=key, printing_errors=printing_errors):
-                            valid_dict =  False
+                        if not self._verify_entry(
+                            item,
+                            parent_required=(condition == "required"),
+                            parent_name=key,
+                            printing_errors=printing_errors,
+                        ):
+                            valid_dict = False
 
         return valid_dict
-
 
     def check_required_fields(self, printing_errors: bool = True) -> bool:
         """
@@ -527,70 +608,114 @@ class YamlManager(object):
             # was not converted to a list of dicts in load_single_yaml_file
             # due to sys.exit(1). If sys.exit(1) is removed, this check is more crucial.
             if printing_errors:
-                Console.error("Internal data is not a list of dictionaries. Cannot check required fields.")
+                Console.error(
+                    "Internal data is not a list of dictionaries. Cannot check required fields."
+                )
             return False
 
         valid = True
         for i in range(len(self._yaml_dicts)):
             # Check each top-level entry in self._yaml_dicts
             # _yaml_dicts is already a list of benchmark entries (dictionaries)
-            if not self._verify_entry(self._yaml_dicts[i], printing_errors=printing_errors):
+            if not self._verify_entry(
+                self._yaml_dicts[i], printing_errors=printing_errors
+            ):
                 if printing_errors:
-                    Console.error(f'Required field check failed in YAML entry {i+1}')
+                    Console.error(f"Required field check failed in YAML entry {i+1}")
                 valid = False
 
         return valid
 
 
-    def is_url_valid(self, url: str, timeout: int = 10) -> bool:
+    #############################################################################################
+    # URL Checking
+    #############################################################################################
+
+    def explain_http_error(self, code, url=None, with_url: bool = False) -> str:
+        http_errors = {
+            400: "Bad Request – The server couldn't understand the request due to invalid syntax.",
+            401: "Unauthorized – Authentication is required and has failed or has not yet been provided.",
+            403: "Forbidden – The server understood the request but refuses to authorize it.",
+            404: "Not Found – The requested resource could not be found on the server.",
+            405: "Method Not Allowed – The request method is known by the server but is not supported by the target resource.",
+            408: "Request Timeout – The server timed out waiting for the request.",
+            429: "Too Many Requests – The user has sent too many requests in a given amount of time (rate limiting).",
+            500: "Internal Server Error – The server has encountered a situation it doesn't know how to handle.",
+            502: "Bad Gateway – The server received an invalid response from the upstream server.",
+            503: "Service Unavailable – The server is not ready to handle the request (often due to maintenance or overload).",
+            504: "Gateway Timeout – The server didn’t get a response in time from the upstream server.",
+        }
+
+        explanation = http_errors.get(
+            code, "Unknown error code – not a standard HTTP error."
+        )
+
+        if url and not with_url:
+            return f"{explanation}: {code} at {url}"
+        else:
+            return f"{explanation}"
+
+    def is_url_valid(self, url: str, timeout: int = 10) -> (bool, str, int | None): # Modified to return (bool, explanation, status_code)
         """
         Checks if a given URL is accessible and returns a successful HTTP status code (2xx).
-
-        Args:
-            url (str): The URL to test.
-            timeout (int): The maximum number of seconds to wait for a response.
-
-        Returns:
-            bool: True if the URL is valid and accessible (status code 2xx), False otherwise.
+        Returns a tuple: (True if valid, False otherwise), an explanation string, and the HTTP status code (or None if no HTTP error).
         """
         try:
             if url is None or url == "":
-                Console.error("URL is empty or None.")
-                return False
-            # It's good practice to set a User-Agent header to mimic a browser
-            # and prevent some servers from blocking your request.
-            headers = {'User-Agent': 'Mozilla/5.0'}
-
-            # Send a GET request to the URL.
-            # verify=True is the default and ensures SSL certificates are valid.
-            # allow_redirects=True is the default and follows redirects.
+                error_msg = "URL is empty or None."
+                Console.error(error_msg)
+                return False, error_msg, None
+            
+            headers = {"User-Agent": "Mozilla/5.0"}
             response = requests.get(url, timeout=timeout, headers=headers)
-
-            # Check if the status code indicates success (200-299)
-            # response.raise_for_status() will raise an HTTPError for 4xx/5xx responses
+            status_code = response.status_code
+            
             response.raise_for_status()
-            return True
+            return True, "Valid URL", status_code
 
-        except MissingSchema:
-            Console.error(f"Missing URL scheme for '{url}'. Did you mean to include 'http://' or 'https://'?")
-        except Timeout:
-            Console.error(f"Request to {url} timed out after {timeout} seconds.")
-            return False
-        except ConnectionError:
-            Console.error(f"Could not connect to {url}. Check your internet connection or URL.")
-            return False
-        except HTTPError as e:
-            Console.error(f"HTTP status code {e.response.status_code} for {url}.")
-            return False
-        except RequestException as e:
-            # This catches any other requests-related errors (e.g., too many redirects)
-            Console.error(f"An unexpected request error occurred for {url}: {e}")
-            return False
+        except requests.exceptions.MissingSchema:
+            error_msg = f"Missing scheme in URL '{url}'. Did you mean to include 'http://' or 'https://'?"
+            Console.error(error_msg)
+            return False, error_msg, None
+        except requests.exceptions.InvalidSchema:
+            error_msg = f"Invalid URL scheme in '{url}'. Only HTTP and HTTPS are supported."
+            Console.error(error_msg)
+            return False, error_msg, None
+        except requests.exceptions.InvalidURL:
+            error_msg = f"Invalid URL format: '{url}'. Please check the structure."
+            Console.error(error_msg)
+            return False, error_msg, None
+        except requests.exceptions.SSLError as e:
+            error_msg = f"SSL error while accessing '{url}': {e}"
+            Console.error(error_msg)
+            return False, error_msg, None
+        except requests.exceptions.Timeout:
+            error_msg = f"Request to '{url}' timed out after {timeout} seconds."
+            Console.error(error_msg)
+            return False, error_msg, None
+        except requests.exceptions.ConnectionError:
+            error_msg = f"Could not connect to '{url}'. Check your internet connection or the URL."
+            Console.error(error_msg)
+            return False, error_msg, None
+        except requests.exceptions.TooManyRedirects:
+            error_msg = f"Too many redirects while trying to access '{url}'."
+            Console.error(error_msg)
+            return False, error_msg, None
+        except requests.exceptions.HTTPError as e:
+            status_code = e.response.status_code
+            explanation = self.explain_http_error(status_code, url)
+            error_msg = f"HTTP Error {status_code} for '{url}'. {explanation}"
+            Console.error(error_msg)
+            return False, explanation, status_code # Return the explanation and status code
+        except requests.exceptions.RequestException as e:
+            error_msg = f"A request error occurred for '{url}': {e}"
+            Console.error(error_msg)
+            return False, error_msg, None
         except Exception as e:
-            # Catch any other unexpected errors
-            Console.error(f"An unhandled error occurred for {url}: {e}")
-            return False
-    
+            error_msg = f"An unexpected error occurred for '{url}': {e}"
+            Console.error(error_msg)
+            return False, error_msg, None
+
     def check_urls(self, printing_status: bool = True) -> bool:
         """
         Returns whether all the URLs in the manager's YAML files are valid.
@@ -604,54 +729,117 @@ class YamlManager(object):
             bool: True if all URLs are valid, False otherwise
         """
 
+        issues = []
         valid = []
-        checked_urls = []  # To avoid checking the same URL multiple times
+        checked_urls = {}  # To avoid checking the same URL multiple times, store URL and its validity
         urls_by_name = OrderedDict()
 
-        for entry in self.flat: # Use the flat property directly
-            name = entry.get('name')
-            urls_by_name[name] = []
-            print(f"Checking URLs for entry: '{name}'")  # Debug print to see which entry is being processed
+        def error(name, url, message, status_code=None): # Modified to accept status_code
+            """
+            Helper function to log issues with URLs.
+            """
+            i = {"name": name, "url": url, "message": message, "status_code": status_code} # Store status_code
+            issues.append(i)
+
+        for entry in self.flat:  # Use the flat property directly
+            name = entry.get("name")
+            if name not in urls_by_name:
+                urls_by_name[name] = []
+            print(
+                f"Checking URLs for entry: '{name}'"
+            )  # Debug print to see which entry is being processed
             for key, value in entry.items():
                 # Handle flat keys with 'url'
-                if key.lower().endswith('url'):
+                if key.lower().endswith("url"):
                     if isinstance(value, str) and value != "":
-                        urls_by_name[name].append(value)  # Store the URL under the entry name 
+                        urls_by_name[name].append(
+                            value
+                        )  # Store the URL under the entry name
                 # Handle BibTeX citation strings which might be directly in a 'cite' key,
                 # or if 'cite' key can contain a list of strings, each being a bibtex entry.
                 # Assuming 'cite' itself is a key in the flattened dict.
-                elif key == 'cite':
-                    if isinstance(value, str): # 'cite' field itself is a string with BibTeX
-                        urls_by_name[name].extend(re.findall(r'url\s*=\s*\{(.*?)\}', value))
-                    elif isinstance(value, list): # 'cite' field is a list of BibTeX strings
+                elif key == "cite":
+                    if isinstance(
+                        value, str
+                    ):  # 'cite' field itself is a string with BibTeX
+                        urls_by_name[name].extend(
+                            re.findall(r"url\s*=\s*\{(.*?)\}", value)
+                        )
+                    elif isinstance(
+                        value, list
+                    ):  # 'cite' field is a list of BibTeX strings
                         for bib_string in value:
                             if isinstance(bib_string, str):
-                                urls_by_name[name].extend(re.findall(r'url\s*=\s*\{(.*?)\}', bib_string))
+                                urls_by_name[name].extend(
+                                    re.findall(r"url\s*=\s*\{(.*?)\}", bib_string)
+                                )
 
         pprint(urls_by_name)  # Debug print to see collected URLs
-        
 
         for name, urls in urls_by_name.items():
             print()
             Console.msg(f"Checking URLs for entry '{name}'...")
-            
+
             if not urls:
                 if printing_status:
-                    Console.warning(f"No URLs found for entry '{name}'")
+                    msg = f"No URLs found for entry '{name}'"
+                    Console.warning(msg)
+                    error(name, None, msg)
                 continue
 
             for url in urls:
                 Console.msg(f"  Checking URL: '{url}'")
                 # Check if the URL has already been checked
                 if url in checked_urls:
-                    Console.warning (f"URL '{url}' duplicated, already checked")   
-                elif self.is_url_valid(url):
-                    checked_urls.append(url)
+                    if checked_urls[url]["is_valid"]:
+                        Console.warning(f"URL '{url}' duplicated, already checked and is valid.")
+                    else:
+                        Console.warning(f"URL '{url}' duplicated, already checked and found to be invalid: {checked_urls[url]['explanation']}")
+                    continue # Skip re-checking if already processed
+
+                is_valid, explanation, status_code = self.is_url_valid(url) # Capture status_code
+                checked_urls[url] = {"is_valid": is_valid, "explanation": explanation, "status_code": status_code} # Store status_code
+
+                if is_valid:
                     valid.append(url)
                 else:
-                    Console.error
+                    msg = f"Invalid URL: '{url}' for entry '{name}' - {explanation}" # Include explanation here
+                    Console.error(msg)
+                    error(name, url, explanation, status_code) # Pass the status_code to the error function
 
-        return valid
+        print("\n", "#" * 79)
+        print("# Summary of URL check errors")
+        print("#", "#" * 79)
+
+        all_urls_valid = not issues
+
+        if all_urls_valid:
+            Console.msg("All URLs checked are valid.")
+        else:
+            for issue in issues:
+                error_detail = ""
+                if issue['status_code']:
+                    # Use explain_http_error to get the detailed message for the summary
+                    error_detail = self.explain_http_error(issue['status_code'], issue['url'])
+                else:
+                    error_detail = issue['message'] # For non-HTTP errors, use the stored message
+
+                Console.error(
+                    f"Entry '{issue['name']}' has an issue with URL '{issue['url']}'"
+                    f"{f' (Status: {issue["status_code"]})' if issue['status_code'] else ''}: {error_detail}"
+                )
+            print()
+            count = len(issues)
+            Console.info(f"At least {count} URLs had issues.")
+            print("#" * 79)
+            Console.info("The sumary does not include duplicated URL errors, only unique issues.")
+            Console.info("The summary does not unclude all malformed URLS")
+            
+        return all_urls_valid
+
+    #############################################################################################
+    # FILENAME Checking
+    #############################################################################################
 
     def check_filenames(self, printing_errors: bool = True) -> bool:
         """
@@ -668,7 +856,7 @@ class YamlManager(object):
         # As 'name' is expected at the top level of each benchmark entry.
         # If 'name' can also be nested and accessed via flat, then use self.flat.
         # Assuming 'name' refers to the top-level 'name' field of each benchmark entry.
-        for i, entry in enumerate(self.data): # Use self.data (raw loaded dicts)
+        for i, entry in enumerate(self.data):  # Use self.data (raw loaded dicts)
 
             name = entry.get("name", None)
             if not name:
@@ -685,37 +873,44 @@ class YamlManager(object):
             # Validate name
             for ch in name:
                 # Check for non-ASCII characters that are not allowed
-                if not (32 <= ord(ch) <= 126): # ASCII printable characters
+                if not (32 <= ord(ch) <= 126):  # ASCII printable characters
                     if printing_errors:
-                        Console.error(f"Non-ASCII character in name: {repr(ch)} in '{name}' in Entry {i + 1}")
+                        Console.error(
+                            f"Non-ASCII character in name: {repr(ch)} in '{name}' in Entry {i + 1}"
+                        )
                     filenames_ok = False
 
-            if re.search(r' {2,}', name):
+            if re.search(r" {2,}", name):
                 if printing_errors:
-                    Console.error(f"Entry {i + 1} name has multiple consecutive spaces: '{name}'")
+                    Console.error(
+                        f"Entry {i + 1} name has multiple consecutive spaces: '{name}'"
+                    )
                 filenames_ok = False
 
             if name.strip() != name:
                 if printing_errors:
-                    Console.error(f"Entry {i + 1} name has leading/trailing spaces: '{name}'")
+                    Console.error(
+                        f"Entry {i + 1} name has leading/trailing spaces: '{name}'"
+                    )
                 filenames_ok = False
 
-            if re.search(r'[()]', name):
+            if re.search(r"[()]", name):
                 if printing_errors:
                     Console.error(f"Entry {i + 1} name contains parentheses: '{name}'")
                 filenames_ok = False
 
             # This regex `[\w\-. ]+` matches word characters (alphanumeric + underscore), hyphen, dot, and space.
             # If `name` can contain other characters (e.g., specific symbols allowed in filenames), adjust this regex.
-            if not re.fullmatch(r'[\w\-. ]+', name):
+            if not re.fullmatch(r"[\w\-. ]+", name):
                 if printing_errors:
-                    Console.error(f"Entry {i + 1} name contains disallowed characters: '{name}'")
+                    Console.error(
+                        f"Entry {i + 1} name contains disallowed characters: '{name}'"
+                    )
                 filenames_ok = False
 
         return filenames_ok
 
-
-    def get_entries(self, attribute, value) -> list[dict]: 
+    def get_entries(self, attribute, value) -> list[dict]:
         """
         Returns a list of entries where the attribute equals the value.
 
@@ -728,16 +923,20 @@ class YamlManager(object):
         if not isinstance(self.data, list):
             # This means self._yaml_dicts is not a list.
             # This should ideally not happen if load_single_yaml_file ensures list return.
-            Console.error("Internal data is not a list of dictionaries. Cannot filter entries.")
-            return [] # Return empty list if data is not in expected format
+            Console.error(
+                "Internal data is not a list of dictionaries. Cannot filter entries."
+            )
+            return []  # Return empty list if data is not in expected format
 
         entries = []
         for entry in self.data:
             if entry.get(attribute) == value:
                 entries.append(entry)
-        return entries # Return the list of found entries
+        return entries  # Return the list of found entries
 
-    def get_by_name(self, name: str) -> dict | None: # Changed return type to allow None
+    def get_by_name(
+        self, name: str
+    ) -> dict | None:  # Changed return type to allow None
         """
         Returns the first benchmark entry with the given name.
 
@@ -751,7 +950,7 @@ class YamlManager(object):
                 return entry
         return None
 
-    def get_citations(self) -> list[str]: # Changed return type to list[str]
+    def get_citations(self) -> list[str]:  # Changed return type to list[str]
         """
         Returns a list of all citations in the manager's YAML files.
 
@@ -761,12 +960,15 @@ class YamlManager(object):
         citations = []
         for entry in self.data:
             cite = entry.get("cite")
-            name = entry.get("name", "Unnamed Entry") # Provide a default for name if missing for error message
+            name = entry.get(
+                "name", "Unnamed Entry"
+            )  # Provide a default for name if missing for error message
             if cite:
                 if isinstance(cite, list):
                     citations.extend(cite)
                 else:
                     citations.append(cite)
-                    Console.error(f"Entry '{name}' has a single citation, but it must be formulated as a list (use a - in front of the multiline string).")
+                    Console.error(
+                        f"Entry '{name}' has a single citation, but it must be formulated as a list (use a - in front of the multiline string)."
+                    )
         return citations
-

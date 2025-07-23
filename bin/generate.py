@@ -1,7 +1,8 @@
 """
 Usage:
   generate.py --files=file1,file2 --check
-  generate.py --files=file1,file2 --format=<fmt> --outdir=<dir> [--authortruncation=N] [--columns=col1,col2] [--check] [--noratings] [--required] [--standalone] [--withcitation] [--withurlcheck]
+  generate.py --files=file1,file2 --urlcheck [--url=<URL>]
+  generate.py --files=file1,file2 --format=<fmt> --outdir=<dir> [--authortruncation=N] [--columns=col1,col2] [--check] [--noratings] [--required] [--standalone] [--withcitation] [--urlcheck]
   generate.py --check_log
 
 
@@ -16,8 +17,9 @@ Options:
   --required                  Requires all specified columns to exist.
   --standalone                Include full LaTeX document preamble (tex only).
   --withcitation              Add a citation row (md only).
-  --withurlcheck              Check if URLs exist.
-  --check_log                     Check the latex log file by removing unneded content
+  --urlcheck                  Check if URLs exist.
+  --check_log                 Check the latex log file by removing unneded content
+  --url=<URL>                 URL to check for validity (used with --urlcheck).
 
 Notes:
   - --standalone is only valid with --format=tex
@@ -34,7 +36,7 @@ from md_writer import MarkdownWriter
 from generate_latex import GenerateLatex, ALL_COLUMNS
 from cloudmesh.common.console import Console
 from check_log import print_latex_log
-from cloudmesh.common.console  import Console
+from cloudmesh.common.console import Console
 from yaml_manager import find_unicode_chars
 
 VERBOSE = True
@@ -51,21 +53,21 @@ if __name__ == "__main__":
 
     format_type = args["--format"] or "tex"
     output_dir = args["--outdir"] or "./content/"
-     
+
     author_trunc = int(args["--authortruncation"])
-    
+
     files = args["--files"]
     if files is None:
         files = ["source/benchmark-addon.yaml"]
     else:
-        files = files.split(",") 
+        files = files.split(",")
 
-    columns = args["--columns"] 
+    columns = args["--columns"]
     if columns is None:
-        columns = ALL_COLUMNS.keys() 
+        columns = ALL_COLUMNS.keys()
     else:
-        columns = columns.split(",")     
-    
+        columns = columns.split(",")
+
     if args["--standalone"] and format_type != "tex":
         print("Error: --standalone is only valid with --format=tex")
         sys.exit(1)
@@ -90,22 +92,33 @@ if __name__ == "__main__":
 
     if args["--check"]:
 
-        print ("HHHH")
         for file in files:
             if not os.path.exists(file):
                 print(f"Error: file not found: {file}")
                 sys.exit(1)
             Console.info("Checking YAML files for formatting issues...")
             find_unicode_chars(filename=file)
+
         manager.check_required_fields()
         sys.exit(0)
 
     if args["--required"]:
         if not manager.check_required_fields():
-            sys.exit(1)
+            sys.exit(0)
 
-    if args["--withurlcheck"]:
-        manager.check_urls()
+    if args["--urlcheck"]:
+
+        if args["--url"]:
+            url = args["--url"]
+            if not manager.is_url_valid(url):
+                Console.error(f"URL {url} is not valid.")
+                sys.exit(1)
+            Console.ok(f"URL {url} is valid.")
+            sys.exit(0)
+        else:
+            Console.info("Checking URLs ...")
+            manager.check_urls()
+            sys.exit(0)
 
     if format_type == "md":
 

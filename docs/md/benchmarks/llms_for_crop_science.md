@@ -22,7 +22,7 @@
 **Metrics**: Accuracy, F1 score
 
 
-**Models**: GPT-4, LLaMA-2‑13B, T5‑XXL
+**Models**: GPT-4, LLaMA-2-13B, T5-XXL
 
 
 **Citation**:

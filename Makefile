@@ -37,6 +37,7 @@ install:
 	pip install bs4
 	pip install numpy
 	pip install matplotlib
+	pip install selenium
 
 content: md tex
 	echo DONE
@@ -76,6 +77,15 @@ debug: tex pdf view
 
 check:
 	python ${SCRIPT} --files ${CHECK_FILES} --check 
+
+
+urlcheck:
+	python ${SCRIPT} --files ${CHECK_FILES} --urlcheck 
+
+u:
+	python ${SCRIPT} --files ${CHECK_FILES} --urlcheck --url=https://pubs.acs.org/doi/10.1021/acscatal.2c05426
+
+
 
 log:
 	open -a Aquamacs content/tex/benchmarks.log

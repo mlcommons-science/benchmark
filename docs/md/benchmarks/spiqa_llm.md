@@ -22,7 +22,7 @@
 **Metrics**: Accuracy, F1 score
 
 
-**Models**: LLaVA, MiniGPT‑4, Owl‑LLM adapter variants
+**Models**: LLaVA, MiniGPT-4, Owl-LLM adapter variants
 
 
 **Citation**:

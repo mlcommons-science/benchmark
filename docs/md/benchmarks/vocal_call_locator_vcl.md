@@ -92,7 +92,7 @@ Reference Solution:
   - **Rating:** 9.0
 
 
-  - **Reason:** Multiple baselines  11 algorithms × 3 backbones  evaluated; setup supports reproducible comparison.
+  - **Reason:** Multiple baselines  11 algorithms x 3 backbones  evaluated; setup supports reproducible comparison.
 
 
 Documentation:

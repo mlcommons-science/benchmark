@@ -22,7 +22,7 @@
 **Metrics**: RMSE, MAPE
 
 
-**Models**: Time‑LLM
+**Models**: Time-LLM
 
 
 **Citation**:

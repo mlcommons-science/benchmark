@@ -21,7 +21,7 @@
 
 - [HEDM (BraggNN)](hedm_braggnn.md)
 
-- [4D‑STEM](dstem.md)
+- [4D-STEM](d-stem.md)
 
 - [In-Situ High-Speed Computer Vision](in-situ_high-speed_computer_vision.md)
 
@@ -87,7 +87,7 @@
 
 - [Urban Data Layer (UDL)](urban_data_layer_udl.md)
 
-- [Delta Squared‑DFT](delta_squareddft.md)
+- [Delta Squared-DFT](delta_squared-dft.md)
 
 - [LLMs for Crop Science](llms_for_crop_science.md)
 

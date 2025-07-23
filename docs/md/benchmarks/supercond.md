@@ -10,7 +10,7 @@
 **Domain**: Materials Science; Superconductivity
 
 
-**Focus**: Dataset and models for predicting and generating high‑Tc superconductors using 3D crystal structures
+**Focus**: Dataset and models for predicting and generating high-Tc superconductors using 3D crystal structures
 
 
 **Keywords**: superconductivity, crystal structures, equivariant GNN, generative models
@@ -22,7 +22,7 @@
 **Metrics**: MAE  Tc , Validity of generated structures
 
 
-**Models**: SODNet, DiffCSP‑SC
+**Models**: SODNet, DiffCSP-SC
 
 
 **Citation**:

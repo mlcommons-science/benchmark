@@ -22,7 +22,7 @@
 **Metrics**: Accuracy
 
 
-**Models**: GPT‑4 baseline
+**Models**: GPT-4 baseline
 
 
 **Citation**:

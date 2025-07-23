@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 10.0
 
 
-  - **Reason:** Task is clearly defined  triggering on rare events with sub-10 µs latency ; architecture, constraints, and system context  FPGA, Alveo  are well detailed.
+  - **Reason:** Task is clearly defined  triggering on rare events with sub-10 micros latency ; architecture, constraints, and system context  FPGA, Alveo  are well detailed.
 
 
 Dataset:

@@ -19,7 +19,7 @@
 **Task Types**: Anomaly detection, Quench localization
 
 
-**Metrics**: ROC‑AUC, Detection latency
+**Metrics**: ROC-AUC, Detection latency
 
 
 **Models**: Autoencoder, RL agents  in development 

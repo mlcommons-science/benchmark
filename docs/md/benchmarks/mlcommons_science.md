@@ -72,7 +72,7 @@
 
         and Baboulin, Marc",
 
-        title="AI Benchmarking for Science: Efforts from the MLCommons Science Working Group",
+        title="AI Benchmarking for Science: Efforts from the MLCommons Science Working Group",
 
         booktitle="High Performance Computing. ISC High Performance 2022 International Workshops",
 

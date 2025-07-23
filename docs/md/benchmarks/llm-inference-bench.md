@@ -22,7 +22,7 @@
 **Metrics**: Token throughput  tok/s , Latency, Framework-hardware mix performance
 
 
-**Models**: LLaMA-2‑7B, LLaMA-2‑70B, Mistral‑7B, Qwen‑7B
+**Models**: LLaMA-2-7B, LLaMA-2-70B, Mistral-7B, Qwen-7B
 
 
 **Citation**:

@@ -26,22 +26,28 @@ Notes:
   - --withcitation is only valid with --format=md
   - Author truncation must be a positive integer
 """
-
 import os
 import sys
+import logging
 from docopt import docopt
 from typing import Union, Dict
 from yaml_manager import YamlManager
 from md_writer import MarkdownWriter
 from generate_latex import GenerateLatex, ALL_COLUMNS
-from cloudmesh.common.console import Console
 from check_log import print_latex_log
-from cloudmesh.common.console import Console
 from yaml_manager import find_unicode_chars
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
+logger = logging.getLogger(__name__)
 
 VERBOSE = True
 if VERBOSE:
-    Console.ok("Starting the generation process...")
+    logger.info("Starting the generation process...")
 
 if __name__ == "__main__":
     args = docopt(__doc__)
@@ -69,20 +75,20 @@ if __name__ == "__main__":
         columns = columns.split(",")
 
     if args["--standalone"] and format_type != "tex":
-        print("Error: --standalone is only valid with --format=tex")
+        logger.error("--standalone is only valid with --format=tex")
         sys.exit(1)
 
     if args["--withcitation"] and format_type != "md":
-        print("Error: --withcitation is only valid with --format=md")
+        logger.error("--withcitation is only valid with --format=md")
         sys.exit(1)
 
     if author_trunc <= 0:
-        print("Error: --authortruncation must be a positive integer")
+        logger.error("--authortruncation must be a positive integer")
         sys.exit(1)
 
     for file in files:
         if not os.path.exists(file):
-            print(f"Error: file not found: {file}")
+            logger.error(f"File not found: {file}")
             sys.exit(1)
 
     os.makedirs(output_dir, exist_ok=True)
@@ -94,9 +100,9 @@ if __name__ == "__main__":
 
         for file in files:
             if not os.path.exists(file):
-                print(f"Error: file not found: {file}")
+                logger.error(f"File not found: {file}")
                 sys.exit(1)
-            Console.info("Checking YAML files for formatting issues...")
+            logger.info("Checking YAML files for formatting issues...")
             find_unicode_chars(filename=file)
 
         manager.check_required_fields()
@@ -111,12 +117,12 @@ if __name__ == "__main__":
         if args["--url"]:
             url = args["--url"]
             if not manager.is_url_valid(url):
-                Console.error(f"URL {url} is not valid.")
+                logger.error(f"URL {url} is not valid.")
                 sys.exit(1)
-            Console.ok(f"URL {url} is valid.")
+            logger.info(f"URL {url} is valid.")
             sys.exit(0)
         else:
-            Console.info("Checking URLs ...")
+            logger.info("Checking URLs ...")
             manager.check_urls()
             sys.exit(0)
 
@@ -131,15 +137,15 @@ if __name__ == "__main__":
 
         converter.generate_radar_chart_grid()
 
-        Console.info("generate radar charts..")
+        logger.info("Generating radar charts...")
         converter.generate_radar_charts(fmt="pdf")
         converter.generate_radar_charts(fmt="png")
 
-        Console.info("Generating LaTeX table...")
+        logger.info("Generating LaTeX table...")
         converter.generate_table()
-        Console.info("Generating LaTeX BibTeX...")
+        logger.info("Generating LaTeX BibTeX...")
         converter.generate_bibtex()
-        Console.info("Generating section document...")
+        logger.info("Generating section document...")
         converter.generate_section()
-        Console.info("Generating document...")
+        logger.info("Generating document...")
         converter.generate_document()

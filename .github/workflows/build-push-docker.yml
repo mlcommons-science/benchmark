@@ -3,11 +3,11 @@ name: Docker Build, Sign and Push
 on:
   push:
     paths:
-      - '.github/build-push-docker.yml'
+      - '.github/workflows/build-push-docker.yml'
       - 'docker/**'
   pull_request:
     paths:
-      - '.github/build-push-docker.yml'
+      - '.github/workflows/build-push-docker.yml'
       - 'docker/**'
 
 env:

@@ -39,19 +39,19 @@
   ratings:
     specification:
       rating: 6
-      reason: TO DO
+      reason: TODO
     dataset:
       rating: 6.5
-      reason: TO DO
+      reason: TODO
     metrics:
       rating: 10
-      reason: TO DO
+      reason: TODO
     reference_solution:
       rating: 0
-      reason: TO DO
+      reason: TODO
     documentation:
       rating: 6
-      reason: TO DO
+      reason: TODO
 - date: '2023-11-20'
   expired:
   valid: 'yes'
@@ -150,7 +150,7 @@
     dataset:
       rating: 10
       reason: |-
-        Data accessible, offers instructions on how to download the data via CLI tools
+        Data accessible, offers instructions on how TODOwnload the data via CLI tools
     metrics:
       rating: 10
       reason: |-
@@ -162,7 +162,7 @@
     documentation:
       rating: 4
       reason: |-
-        There are easy ways to download the dataset. Documentation quantity and clarity depends on authors of tested models
+        There are easy ways TODOwnload the dataset. Documentation quantity and clarity depends on authors of tested models
 - date: '2025-01-24'
   expired:
   valid: 'yes'
@@ -413,7 +413,7 @@
     dataset:
       rating: 9.9
       reason: |-
-        Problems and solutions are easily downloaded. Could not find a way to download the data
+        Problems and solutions are easily downloaded. Could not find a way TODOwnload the data
     metrics:
       rating: 2
       reason: |-
@@ -423,7 +423,7 @@
       reason: Not given
     documentation:
       rating: 0.5
-      reason: Not given. Implicit instructions to download dataset.
+      reason: Not given. Implicit instructions TODOwnload dataset.
 - date: '2024-04-02'
   expired:
   valid: 'yes'

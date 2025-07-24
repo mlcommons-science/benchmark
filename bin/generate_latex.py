@@ -6,21 +6,27 @@ import os
 import re
 import sys
 import textwrap
+import logging
 from typing import List, Dict, Union, Any
 
 from pybtex.database import parse_string
 from pybtex.plugin import find_plugin
 from pylatexenc.latexencode import unicode_to_latex
-from cloudmesh.common.console import Console
 import bibtexparser
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
+logger = logging.getLogger(__name__)
 
 VERBOSE = True
 
 # --- Constants ---
-
 LATEX_PREFIX = textwrap.dedent(
     r"""
     \documentclass{article}
@@ -38,7 +44,7 @@ LATEX_PREFIX = textwrap.dedent(
     \usepackage{url}
     \usepackage{graphicx}
     \graphicspath{{images/}}
-    
+
 
     \usepackage[utf8]{inputenc}
     \usepackage[T1]{fontenc}
@@ -52,8 +58,8 @@ LATEX_PREFIX = textwrap.dedent(
     \hfuzz=100pt
     \emergencystretch=3em
     \hbadness=10000
-    
-    
+
+
     \begin{document}
     \sloppy
 """
@@ -67,11 +73,8 @@ LATEX_POSTFIX = textwrap.dedent(
 )
 
 TABLEFONT = r"\footnotesize"
-# TABLEFONT = r"\tiny"
-
 DESCRIPTION_STYLE = "[labelwidth=5em, labelsep=1em, leftmargin=*, align=left, itemsep=0.3em, parsep=0em]"
 
-# Define all columns with their properties for clarity and consistency
 ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
     "date": {"width": 1.5, "label": "Date"},
     "expired": {"width": 1, "label": "Expired"},
@@ -109,20 +112,14 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
 
 DEFAULT_COLUMNS = [
     "ratings",
-    # "date",
-    # "expired",
-    # "valid",
     "name",
-    # "url",
     "domain",
     "focus",
     "keywords",
-    # "description",
     "task_types",
     "ai_capability_measured",
     "metrics",
     "models",
-    # "notes",
     "cite",
 ]
 
@@ -145,30 +142,11 @@ REQUIRED_FIELDS_BY_TYPE = {
 
 
 # --- Utility Functions ---
-
-
 def has_capital_letter(text_to_check: str) -> bool:
-    """
-    Checks if the given text contains at least one capital letter.
-
-    Args:
-        text_to_check (str): The input text.
-
-    Returns:
-        bool: True if the text contains a capital letter, False otherwise.
-    """
     return any(char.isupper() for char in text_to_check)
 
 
 def escape_latex(text: Any) -> str:
-    """
-    Returns `text` converted to LaTeX-safe representation using pylatexenc.
-
-    Parameters:
-        text (Any): Text to convert to LaTeX. Can be non-string.
-    Returns:
-        TeX-friendly version of `text`.
-    """
     if not isinstance(text, str):
         text = str(text)
     return unicode_to_latex(text, non_ascii_only=False)
@@ -184,7 +162,6 @@ def validate_bibtex_entries(bibtex_str):
             entry_id = entry.get("ID", "?")
             required = REQUIRED_FIELDS_BY_TYPE.get(entry_type, [])
 
-            # Special case logic (e.g., book can have author OR editor)
             if entry_type == "book":
                 if not ("author" in entry or "editor" in entry):
                     errors.append(
@@ -192,9 +169,8 @@ def validate_bibtex_entries(bibtex_str):
                     )
                 required = [
                     f for f in required if f not in ("author")
-                ]  # skip checking 'author' below
+                ]
 
-            # Validate required fields
             for field in required:
                 if field not in entry:
                     errors.append(
@@ -208,13 +184,6 @@ def validate_bibtex_entries(bibtex_str):
 
 
 def write_to_file(content, filename="content/tex/table.tex"):
-    """
-    Writes the given content to a file based on the path used in filename.
-
-    Parameters:
-        content (str): The LaTeX content to write.
-        filename (str): Pathe and name of the  (default is 'content/tex/table.tex').
-    """
     try:
         output_dir = os.path.dirname(filename)
         os.makedirs(output_dir, exist_ok=True)
@@ -222,10 +191,10 @@ def write_to_file(content, filename="content/tex/table.tex"):
         with open(filename, "w", encoding="utf-8") as f:
             f.write(content)
 
-        Console.ok(f"Successfully wrote content to: {filename}")
+        logger.info(f"Successfully wrote content to: {filename}")
 
     except Exception as e:
-        Console.error(f"Error writing content to {filename}: {e}")
+        logger.error(f"Error writing content to {filename}: {e}")
 
 
 class GenerateLatex:
@@ -308,7 +277,7 @@ class GenerateLatex:
             if isinstance(cite_entries, str):
                 cite_entries = [cite_entries]
             elif not isinstance(cite_entries, list):
-                Console.error(
+                logger.error(
                     f"Skipping entry '{name}' with invalid 'cite' field: {cite_entries}"
                 )
                 continue
@@ -318,7 +287,7 @@ class GenerateLatex:
                 if not isinstance(
                     cite_entry_raw, str
                 ) or not cite_entry_raw.strip().startswith("@"):
-                    Console.warning(
+                    logger.warning(
                         f"Skipping malformed citation entry in '{name}': '{cite_entry_raw}'"
                     )
                     continue
@@ -328,9 +297,9 @@ class GenerateLatex:
 
                 valid, errors = validate_bibtex_entries(cite_entry)
                 if not valid:
-                    Console.error(f"Invalid BibTeX entry in '{name}': {label}")
+                    logger.error(f"Invalid BibTeX entry in '{name}': {label}")
                     for error in errors:
-                        Console.error(f"  - {error}")
+                        logger.error(f"  - {error}")
                     continue
 
                 match = re.search(r"author\s*=\s*{(.+?)}", cite_entry_raw, re.DOTALL)
@@ -339,23 +308,23 @@ class GenerateLatex:
                     authors = [a.strip() for a in authors_raw.split(" and ")]
 
                     if "others" in authors:
-                        Console.error(
+                        logger.error(
                             f"Entry '{name}' contains a citation '{label}' that includes others'. Please use full author names."
                         )
 
                 if has_capital_letter(label):
-                    Console.error(
+                    logger.error(
                         f'Citation label "{label}" in entry "{name}" is capitalized. Labels should be lowercase.'
                     )
                     fatal_errors = True
                 if re.search(r"[\s\n\t]", label):
-                    Console.error(
+                    logger.error(
                         f'Citation label "{label}" in entry "{name}" contains whitespace. Labels should not contain spaces, newlines, or tabs.'
                     )
                     fatal_errors = True
 
                 if label in found_labels:
-                    Console.error(
+                    logger.error(
                         f'Duplicate citation label "{label}" found. All labels must be unique.'
                     )
                     fatal_errors = True
@@ -365,7 +334,7 @@ class GenerateLatex:
 
         # if fatal_errors:
         #     print()
-        #     Console.error("BibTeX entries contain errors. Please fix them to proceed.")
+        #     logger.error("BibTeX entries contain errors. Please fix them to proceed.")
         #     print()
         #     sys.exit(1)
 
@@ -377,7 +346,7 @@ class GenerateLatex:
         #     print("\n--- End of BibTeX Entries ---")
 
         if VERBOSE:
-            Console.ok(f"Generated BibTeX file {filename}")
+            logger.info(f"Generated BibTeX file {filename}")
 
         write_to_file(content, filename=filename)
 
@@ -418,7 +387,7 @@ class GenerateLatex:
                             ratings[rating_type] = 0.0
 
             if not ratings:
-                Console.error(f"No ratings found for '{name}', skipping radar chart.")
+                logger.error(f"No ratings found for '{name}', skipping radar chart.")
                 continue
 
             labels = list(ratings.keys())
@@ -440,7 +409,7 @@ class GenerateLatex:
             plt.savefig(filename, bbox_inches="tight")
             plt.close(fig)
 
-            Console.ok(f"Saved radar chart for '{name}' as '{filename}'.")
+            logger.info(f"Saved radar chart for '{name}' as '{filename}'.")
 
     def get_radar_filename(self, entry, directory="content/tex/images", fmt="pdf"):
         if directory is None:
@@ -490,7 +459,7 @@ class GenerateLatex:
             content = "\n\\clearpage\n".join(pages)
 
         write_to_file(content, filename=filename)
-        Console.ok(f"Generated radar chart grid in '{filename}'.")
+        logger.info(f"Generated radar chart grid in '{filename}'.")
 
         return content
 
@@ -698,7 +667,7 @@ class GenerateLatex:
 
         for entry in self.entries:
             if not isinstance(entry, dict):
-                Console.error(f"Invalid entry format: {entry}. Expected a dictionary.")
+                logger.error(f"Invalid entry format: {entry}. Expected a dictionary.")
                 continue
 
             # Print the LaTeX section for this entry
@@ -784,7 +753,7 @@ class GenerateLatex:
         # check if columns are valid
         for col in columns:
             if col not in ALL_COLUMNS:
-                Console.error(f"Invalid column name: {col}.")
+                logger.error(f"Invalid column name: {col}.")
                 sys.exit(1)
 
         # Generate the table header and column format

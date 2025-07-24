@@ -1,11 +1,20 @@
+from typing import Union
 import os
 import re
+import sys
+import logging
 from pybtex.database import parse_string
 from pybtex.plugin import find_plugin
 from generate_latex import write_to_file
 from generate_latex import ALL_COLUMNS, DEFAULT_COLUMNS
-from cloudmesh.common.console import Console
-import sys
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
+logger = logging.getLogger(__name__)
 
 
 def bibtex_to_text(entry: str) -> str:
@@ -37,10 +46,10 @@ class MarkdownWriter:
     Class to write formatted YAML file contents in Markdown format
     """
 
-    def __init__(self, entries: list[dict], raw_entries: list[dict] | None = None):
+    def __init__(self, entries: list[dict], raw_entries: Union[list[dict], None] = None):
         self.entries = entries
         self.raw_entries = raw_entries
-       
+
     def _escape_md(self, text) -> str:
         if not isinstance(text, str):
             text = str(text)
@@ -58,21 +67,21 @@ class MarkdownWriter:
 
     def colunm_label(self, col):
         if col not in ALL_COLUMNS:
-            Console.error(f"Column '{col}' is not a valid column name.")
+            logger.error(f"Column '{col}' is not a valid column name.")
             sys.exit(1)
         content = ALL_COLUMNS[col]["label"]
         return content
 
     def colunm_width(self, col):
         if col not in ALL_COLUMNS:
-            Console.error(f"Column '{col}' is not a valid column name.")
+            logger.error(f"Column '{col}' is not a valid column name.")
             sys.exit(1)
         content = float(ALL_COLUMNS[col]["width"])
         return content
 
     def column_width_str(self, col):
         if col not in ALL_COLUMNS:
-            Console.error(f"Column '{col}' is not a valid column name.")
+            logger.error(f"Column '{col}' is not a valid column name.")
             sys.exit(1)
         content = "-" * int(self.colunm_width(col) * 10.0)
         return content
@@ -143,7 +152,7 @@ class MarkdownWriter:
         self,
         output_dir="content/md/benchmarks",
         columns=DEFAULT_COLUMNS,
-        author_trunc: int | None = None,
+        author_trunc: Union[int, None] = None,
     ) -> None:
         """
         Writes all entries stored by this writer into individual Markdown documents at `output_dir`/md_tables.
@@ -205,19 +214,12 @@ class MarkdownWriter:
                         lines.append("**Ratings:**\n\n")
                         ratings_header_written = True
 
-                    # ###########
-                    # #Flat writing here
-                    # val_str = str(val).replace("\n", " ").replace("['", "").replace("']", "")
-                    # val_str = val_str.replace("', '", ", ").replace("','", ", ").replace("[]", "")
-                    # val_str = val_str.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
-                    # f.write(f"- **{col_display[9:]}:** {val_str}\n\n")
-
                     ###########
                     # Hierarchical writing here (will break if the raw rating dictionary is changed)
                     category = col.split(".")[1]
 
                     if not category in written_rating_categories:
-                        lines.append(f"{category.replace("_", " ").title()}:\n\n")
+                        lines.append(f"{category.replace('_', ' ').title()}:\n\n")
                         written_rating_categories.append(category)
 
                     val_str = val_to_str(val)
@@ -235,7 +237,7 @@ class MarkdownWriter:
             # write the image
             image_location = f"../../tex/images/{id}_radar.png"
             lines.append(
-                f"**Radar Plot:**\n ![{id.replace("_", " ").title()} radar plot]({image_location})"
+                f"**Radar Plot:**\n ![{id.replace('_', ' ').title()} radar plot]({image_location})"
             )
 
             index.append(f"- [{name}]({link})\n")

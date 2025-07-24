@@ -25,8 +25,9 @@ import yaml
 import re
 import sys
 import requests
-from cloudmesh.common.console import Console
+import logging
 from pprint import pprint
+from typing import Union
 from requests.exceptions import (
     RequestException,
     Timeout,
@@ -41,6 +42,13 @@ from requests.exceptions import (
 from collections import OrderedDict
 import codecs
 
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
+logger = logging.getLogger(__name__)
 
 def find_unicode_chars(filename=None):
     """
@@ -109,14 +117,14 @@ def find_unicode_chars(filename=None):
                         found.add(char)
                         if not line_content_printed:
                             print(79 * "-")
-                            Console.error(
+                            logger.error(
                                 f"Specific Unicode character(s) found on line {line_num}:"
                             )
-                            Console.info(f"  Content: '{line.strip()}'")
+                            logger.info(f"  Content: '{line.strip()}'")
                             line_content_printed = True
 
                         suggested_alternative = UNICODE_TO_ASCII_MAP[char]
-                        Console.info(
+                        logger.info(
                             f"    - Found '{char}' (U+{ord(char):04X}) at column {col_num}. Suggest alternative: '{suggested_alternative}'"
                         )
                     else:
@@ -127,30 +135,30 @@ def find_unicode_chars(filename=None):
                         except UnicodeEncodeError:
                             found.add(char)
                             if not line_content_printed:
-                                Console.info(
+                                logger.info(
                                     f"\nNon-ASCII Unicode character(s) found on line {line_num}:"
                                 )
-                                Console.info(f"  Content: '{line.strip()}'")
+                                logger.info(f"  Content: '{line.strip()}'")
                                 line_content_printed = True
-                            Console.info(
+                            logger.info(
                                 f"    - Found '{char}' (U+{ord(char):04X}) at column {col_num}. No specific alternative suggested."
                             )
 
     except FileNotFoundError:
-        Console.error(f"Error: File '{filename}' not found.")
+        logger.error(f"Error: File '{filename}' not found.")
     except Exception as e:
-        Console.error(f"An unexpected error occurred: {e}")
+        logger.error(f"An unexpected error occurred: {e}")
 
     print("#" * 79)
     print("# Summary of found characters:")
     print("#" * 79)
     for c in found:
         if c not in UNICODE_TO_ASCII_MAP:
-            Console.warning(
+            logger.warning(
                 f"Found character '{c}' (U+{ord(c):04X}) not in the mapping. No alternative suggested."
             )
         else:
-            Console.info(
+            logger.info(
                 f"Found character '{c}' (U+{ord(c):04X}) with suggested alternative '{UNICODE_TO_ASCII_MAP[c]}'."
             )
 
@@ -170,7 +178,7 @@ if __name__ == "__main__":
         f.write("Final line.\n")
 
     print("Checking 'example_with_alternatives.txt' for specific Unicode alternatives:")
-    unicode_alternatives("example_with_alternatives.txt")
+    find_unicode_chars("example_with_alternatives.txt")
     print("\n" + "=" * 50 + "\n")
 
     # Test with a file that has no problematic unicodes
@@ -179,7 +187,7 @@ if __name__ == "__main__":
         f.write("No special characters here.\n")
 
     print("Checking 'example_ascii_only.txt':")
-    unicode_alternatives("example_ascii_only.txt")
+    find_unicode_chars("example_ascii_only.txt")
 
 
 def clean_string(s):
@@ -202,7 +210,7 @@ class YamlManager(object):
     def __init__(
         self,
         yamls: (
-            str | list[str] | None
+            Union[str, list[str], None]
         ) = None,  # Made yamls optional for direct instantiation
         overwriting_contents: bool = True,
         printing_syntax_errors: bool = True,
@@ -283,7 +291,7 @@ class YamlManager(object):
             if content is None:  # Handle empty YAML files
                 return []
             elif isinstance(content, dict):
-                Console.warning(
+                logger.warning(
                     f'YAML file "{file_path}" is a dictionary. Treating it as a list containing one dictionary.'
                 )
                 # The sys.exit(1) here is problematic for library usage.
@@ -302,16 +310,16 @@ class YamlManager(object):
                 )
         except FileNotFoundError:
             if enable_error_messages:
-                Console.error(f"File not found: '{file_path}'")
+                logger.error(f"File not found: '{file_path}'")
                 sys.exit(1)  # Same note as above regarding sys.exit(1)
 
         except yaml.YAMLError as e:
             if enable_error_messages:
-                Console.error(f'YAML syntax error in "{file_path}": \n{e}')
+                logger.error(f'YAML syntax error in "{file_path}": \n{e}')
             return []
 
     def load(
-        self, file_paths: str | list[str], overwrite: bool = True, verbose: bool = True
+        self, file_paths: Union[str , list[str]], overwrite: bool = True, verbose: bool = True
     ) -> list[dict]:
         """
         Loads the contents of `file_paths` into this YamlManager.
@@ -342,7 +350,7 @@ class YamlManager(object):
                 # might not be reached. But if sys.exit(1) were removed, this catch
                 # would be important for graceful handling.
                 if verbose:
-                    Console.error(f"Error loading '{path}': {e}")
+                    logger.error(f"Error loading '{path}': {e}")
                 # Depending on desired behavior, you might re-raise or just skip.
                 # Given current sys.exit(1) in load_single_yaml_file, this might be redundant
                 # if the program exits immediately. If sys.exit(1) is removed, then this
@@ -362,7 +370,7 @@ class YamlManager(object):
         for entry in self._yaml_dicts:
             key = clean_string(entry.get("name", "unknown")).lower()
             if key in found:
-                Console.error(
+                logger.error(
                     f"Duplicate entry name found: {key}. Please ensure all entries have unique names."
                 )
             found.append(key)
@@ -545,7 +553,7 @@ class YamlManager(object):
                         if parent_name == "<top level>"
                         else f'"{parent_name}"'
                     )
-                    Console.error(
+                    logger.error(
                         f'Required field "{key}" in {printed_parent_name} not present'
                     )
                 valid_dict = False
@@ -556,16 +564,16 @@ class YamlManager(object):
                     required_length = int(condition[2:])
                 except ValueError:
                     if printing_errors:
-                        Console.error(
+                        logger.error(
                             f'Condition "{condition[2:]}" is not a number'
-                        )  # Fix typo: Console.errror -> Console.error
+                        )  # Fix typo: logger.errror -> logger.error
                     valid_dict = False
 
                 if not isinstance(value, list) or len(value) < required_length:
                     if printing_errors:
-                        Console.error(
+                        logger.error(
                             f'Field "{key}" must be a list of length {required_length} or more'
-                        )  # Fix typo: Console.errror -> Console.error
+                        )  # Fix typo: logger.errror -> logger.error
                     valid_dict = False
 
             # Recurse on the dict
@@ -608,7 +616,7 @@ class YamlManager(object):
             # was not converted to a list of dicts in load_single_yaml_file
             # due to sys.exit(1). If sys.exit(1) is removed, this check is more crucial.
             if printing_errors:
-                Console.error(
+                logger.error(
                     "Internal data is not a list of dictionaries. Cannot check required fields."
                 )
             return False
@@ -621,7 +629,7 @@ class YamlManager(object):
                 self._yaml_dicts[i], printing_errors=printing_errors
             ):
                 if printing_errors:
-                    Console.error(f"Required field check failed in YAML entry {i+1}")
+                    logger.error(f"Required field check failed in YAML entry {i+1}")
                 valid = False
 
         return valid
@@ -655,7 +663,7 @@ class YamlManager(object):
         else:
             return f"{explanation}"
 
-    def is_url_valid(self, url: str, timeout: int = 10) -> (bool, str, int | None): # Modified to return (bool, explanation, status_code)
+    def is_url_valid(self, url: str, timeout: int = 10) -> (bool, str, Union[int , None]): # Modified to return (bool, explanation, status_code)
         """
         Checks if a given URL is accessible and returns a successful HTTP status code (2xx).
         Returns a tuple: (True if valid, False otherwise), an explanation string, and the HTTP status code (or None if no HTTP error).
@@ -663,7 +671,7 @@ class YamlManager(object):
         try:
             if url is None or url == "":
                 error_msg = "URL is empty or None."
-                Console.error(error_msg)
+                logger.error(error_msg)
                 return False, error_msg, None
             
             headers = {"User-Agent": "Mozilla/5.0"}
@@ -675,45 +683,45 @@ class YamlManager(object):
 
         except requests.exceptions.MissingSchema:
             error_msg = f"Missing scheme in URL '{url}'. Did you mean to include 'http://' or 'https://'?"
-            Console.error(error_msg)
+            logger.error(error_msg)
             return False, error_msg, None
         except requests.exceptions.InvalidSchema:
             error_msg = f"Invalid URL scheme in '{url}'. Only HTTP and HTTPS are supported."
-            Console.error(error_msg)
+            logger.error(error_msg)
             return False, error_msg, None
         except requests.exceptions.InvalidURL:
             error_msg = f"Invalid URL format: '{url}'. Please check the structure."
-            Console.error(error_msg)
+            logger.error(error_msg)
             return False, error_msg, None
         except requests.exceptions.SSLError as e:
             error_msg = f"SSL error while accessing '{url}': {e}"
-            Console.error(error_msg)
+            logger.error(error_msg)
             return False, error_msg, None
         except requests.exceptions.Timeout:
             error_msg = f"Request to '{url}' timed out after {timeout} seconds."
-            Console.error(error_msg)
+            logger.error(error_msg)
             return False, error_msg, None
         except requests.exceptions.ConnectionError:
             error_msg = f"Could not connect to '{url}'. Check your internet connection or the URL."
-            Console.error(error_msg)
+            logger.error(error_msg)
             return False, error_msg, None
         except requests.exceptions.TooManyRedirects:
             error_msg = f"Too many redirects while trying to access '{url}'."
-            Console.error(error_msg)
+            logger.error(error_msg)
             return False, error_msg, None
         except requests.exceptions.HTTPError as e:
             status_code = e.response.status_code
             explanation = self.explain_http_error(status_code, url)
             error_msg = f"HTTP Error {status_code} for '{url}'. {explanation}"
-            Console.error(error_msg)
+            logger.error(error_msg)
             return False, explanation, status_code # Return the explanation and status code
         except requests.exceptions.RequestException as e:
             error_msg = f"A request error occurred for '{url}': {e}"
-            Console.error(error_msg)
+            logger.error(error_msg)
             return False, error_msg, None
         except Exception as e:
             error_msg = f"An unexpected error occurred for '{url}': {e}"
-            Console.error(error_msg)
+            logger.error(error_msg)
             return False, error_msg, None
 
     def check_urls(self, printing_status: bool = True) -> bool:
@@ -778,23 +786,23 @@ class YamlManager(object):
 
         for name, urls in urls_by_name.items():
             print()
-            Console.msg(f"Checking URLs for entry '{name}'...")
+            logger.msg(f"Checking URLs for entry '{name}'...")
 
             if not urls:
                 if printing_status:
                     msg = f"No URLs found for entry '{name}'"
-                    Console.warning(msg)
+                    logger.warning(msg)
                     error(name, None, msg)
                 continue
 
             for url in urls:
-                Console.msg(f"  Checking URL: '{url}'")
+                logger.msg(f"  Checking URL: '{url}'")
                 # Check if the URL has already been checked
                 if url in checked_urls:
                     if checked_urls[url]["is_valid"]:
-                        Console.warning(f"URL '{url}' duplicated, already checked and is valid.")
+                        logger.warning(f"URL '{url}' duplicated, already checked and is valid.")
                     else:
-                        Console.warning(f"URL '{url}' duplicated, already checked and found to be invalid: {checked_urls[url]['explanation']}")
+                        logger.warning(f"URL '{url}' duplicated, already checked and found to be invalid: {checked_urls[url]['explanation']}")
                     continue # Skip re-checking if already processed
 
                 is_valid, explanation, status_code = self.is_url_valid(url) # Capture status_code
@@ -804,7 +812,7 @@ class YamlManager(object):
                     valid.append(url)
                 else:
                     msg = f"Invalid URL: '{url}' for entry '{name}' - {explanation}" # Include explanation here
-                    Console.error(msg)
+                    logger.error(msg)
                     error(name, url, explanation, status_code) # Pass the status_code to the error function
 
         print("\n", "#" * 79)
@@ -814,7 +822,7 @@ class YamlManager(object):
         all_urls_valid = not issues
 
         if all_urls_valid:
-            Console.msg("All URLs checked are valid.")
+            logger.msg("All URLs checked are valid.")
         else:
             for issue in issues:
                 error_detail = ""
@@ -823,17 +831,17 @@ class YamlManager(object):
                     error_detail = self.explain_http_error(issue['status_code'], issue['url'])
                 else:
                     error_detail = issue['message'] # For non-HTTP errors, use the stored message
-
-                Console.error(
+                issue_status_code = issue['status_code']
+                logger.error(
                     f"Entry '{issue['name']}' has an issue with URL '{issue['url']}'"
-                    f"{f' (Status: {issue["status_code"]})' if issue['status_code'] else ''}: {error_detail}"
+                    f"{f' (Status: {issue_status_code})' if issue['status_code'] else ''}: {error_detail}"
                 )
             print()
             count = len(issues)
-            Console.info(f"At least {count} URLs had issues.")
+            logger.info(f"At least {count} URLs had issues.")
             print("#" * 79)
-            Console.info("The sumary does not include duplicated URL errors, only unique issues.")
-            Console.info("The summary does not unclude all malformed URLS")
+            logger.info("The sumary does not include duplicated URL errors, only unique issues.")
+            logger.info("The summary does not unclude all malformed URLS")
             
         return all_urls_valid
 
@@ -861,12 +869,12 @@ class YamlManager(object):
             name = entry.get("name", None)
             if not name:
                 if printing_errors:
-                    Console.error(f"Entry {i + 1} is missing a 'name' field")
+                    logger.error(f"Entry {i + 1} is missing a 'name' field")
                 filenames_ok = False
                 continue
             if not isinstance(name, str):
                 if printing_errors:
-                    Console.error(f"Entry {i + 1} has a non-string 'name': {name}")
+                    logger.error(f"Entry {i + 1} has a non-string 'name': {name}")
                 filenames_ok = False
                 continue
 
@@ -875,35 +883,35 @@ class YamlManager(object):
                 # Check for non-ASCII characters that are not allowed
                 if not (32 <= ord(ch) <= 126):  # ASCII printable characters
                     if printing_errors:
-                        Console.error(
+                        logger.error(
                             f"Non-ASCII character in name: {repr(ch)} in '{name}' in Entry {i + 1}"
                         )
                     filenames_ok = False
 
             if re.search(r" {2,}", name):
                 if printing_errors:
-                    Console.error(
+                    logger.error(
                         f"Entry {i + 1} name has multiple consecutive spaces: '{name}'"
                     )
                 filenames_ok = False
 
             if name.strip() != name:
                 if printing_errors:
-                    Console.error(
+                    logger.error(
                         f"Entry {i + 1} name has leading/trailing spaces: '{name}'"
                     )
                 filenames_ok = False
 
             if re.search(r"[()]", name):
                 if printing_errors:
-                    Console.error(f"Entry {i + 1} name contains parentheses: '{name}'")
+                    logger.error(f"Entry {i + 1} name contains parentheses: '{name}'")
                 filenames_ok = False
 
             # This regex `[\w\-. ]+` matches word characters (alphanumeric + underscore), hyphen, dot, and space.
             # If `name` can contain other characters (e.g., specific symbols allowed in filenames), adjust this regex.
             if not re.fullmatch(r"[\w\-. ]+", name):
                 if printing_errors:
-                    Console.error(
+                    logger.error(
                         f"Entry {i + 1} name contains disallowed characters: '{name}'"
                     )
                 filenames_ok = False
@@ -923,7 +931,7 @@ class YamlManager(object):
         if not isinstance(self.data, list):
             # This means self._yaml_dicts is not a list.
             # This should ideally not happen if load_single_yaml_file ensures list return.
-            Console.error(
+            logger.error(
                 "Internal data is not a list of dictionaries. Cannot filter entries."
             )
             return []  # Return empty list if data is not in expected format
@@ -936,7 +944,7 @@ class YamlManager(object):
 
     def get_by_name(
         self, name: str
-    ) -> dict | None:  # Changed return type to allow None
+    ) -> Union[dict, None]:  # Changed return type to allow None
         """
         Returns the first benchmark entry with the given name.
 
@@ -968,7 +976,7 @@ class YamlManager(object):
                     citations.extend(cite)
                 else:
                     citations.append(cite)
-                    Console.error(
+                    logger.error(
                         f"Entry '{name}' has a single citation, but it must be formulated as a list (use a - in front of the multiline string)."
                     )
         return citations

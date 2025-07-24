@@ -44,7 +44,7 @@ RUN conda-pack -n mlcommons-benchmark -o /tmp/env.tar && \
 
 RUN /venv/bin/conda-unpack
 
-FROM texlive/texlive:latest AS runtime
+FROM texlive/texlive:latest AS deploy
 LABEL authors="bhawks"
 # Copy the conda environment from the build stage
 COPY --from=build /venv /venv

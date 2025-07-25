@@ -1,0 +1,9 @@
+	cloudmesh-common
+	pybtex
+	pylatexenc
+	bibtexparser
+	docopt
+	bs4
+	numpy
+	matplotlib
+	selenium

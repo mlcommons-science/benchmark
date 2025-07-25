@@ -63,7 +63,7 @@ Specification:
   - **Rating:** 7.0
 
 
-  - **Reason:** General task defined  real-time microscopy inference , but no standardized I/O format, latency constraint, or complete problem framing yet.
+  - **Reason:** General task defined  real-time microscopy inference , but no standardized I/O format, latency constraint, or complete problem framing yet. 
 
 
 Dataset:
@@ -72,7 +72,7 @@ Dataset:
   - **Rating:** 0.0
 
 
-  - **Reason:** Dataset not provided or described in any formal way.
+  - **Reason:** Dataset not provided or described in any formal way. 
 
 
 Metrics:
@@ -81,7 +81,7 @@ Metrics:
   - **Rating:** 6.0
 
 
-  - **Reason:** Mentions throughput and accuracy, but metrics are not formally defined or benchmarked.
+  - **Reason:** Mentions throughput and accuracy, but metrics are not formally defined or benchmarked. 
 
 
 Reference Solution:
@@ -90,7 +90,7 @@ Reference Solution:
   - **Rating:** 2.0
 
 
-  - **Reason:** Prototype CNNs described; no baseline or implementation released.
+  - **Reason:** Prototype CNNs described; no baseline or implementation released. 
 
 
 Documentation:
@@ -99,7 +99,7 @@ Documentation:
   - **Rating:** 5.0
 
 
-  - **Reason:** OpenReview paper and Gemini doc give some insight, but no working code, environment, or example.
+  - **Reason:** OpenReview paper and Gemini doc give some insight, but no working code, environment, or example. 
 
 
 **Radar Plot:**

@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 7.0
 
 
-  - **Reason:** Describes forecasting with LLMs, but less formal on input/output or task framing.
+  - **Reason:** Describes forecasting with LLMs, but less formal on input/output or task framing. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 6.0
 
 
-  - **Reason:** Uses open time series datasets, but lacks a consolidated data release or splits.
+  - **Reason:** Uses open time series datasets, but lacks a consolidated data release or splits. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 7.0
 
 
-  - **Reason:** Reports metrics like MASE and SMAPE, standard in forecasting.
+  - **Reason:** Reports metrics like MASE and SMAPE, standard in forecasting. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 6.0
 
 
-  - **Reason:** Provides TimeLLM with open source, but no other baselines included.
+  - **Reason:** Provides TimeLLM with open source, but no other baselines included. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 6.0
 
 
-  - **Reason:** GitHub readme with installation and example usage; lacks API or extensive tutorials.
+  - **Reason:** GitHub readme with installation and example usage; lacks API or extensive tutorials. 
 
 
 **Radar Plot:**

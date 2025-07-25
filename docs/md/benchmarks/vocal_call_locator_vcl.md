@@ -65,7 +65,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Clear benchmark scenarios across GDL tasks under multiple real-world shift settings; OOD settings precisely categorized.
+  - **Reason:** Clear benchmark scenarios across GDL tasks under multiple real-world shift settings; OOD settings precisely categorized. 
 
 
 Dataset:
@@ -74,7 +74,7 @@ Dataset:
   - **Rating:** 8.0
 
 
-  - **Reason:** Scientific graph datasets provided in multiple shift regimes; standardized splits across domains. Exact format of data not specified.
+  - **Reason:** Scientific graph datasets provided in multiple shift regimes; standardized splits across domains. Exact format of data not specified. 
 
 
 Metrics:
@@ -83,7 +83,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** Includes base metrics  accuracy, RMSE  plus OOD delta robustness for evaluation under shifts.
+  - **Reason:** Includes base metrics  accuracy, RMSE  plus OOD delta robustness for evaluation under shifts. 
 
 
 Reference Solution:
@@ -92,7 +92,7 @@ Reference Solution:
   - **Rating:** 9.0
 
 
-  - **Reason:** Multiple baselines  11 algorithms x 3 backbones  evaluated; setup supports reproducible comparison.
+  - **Reason:** Multiple baselines  11 algorithms x 3 backbones  evaluated; setup supports reproducible comparison. 
 
 
 Documentation:
@@ -101,7 +101,7 @@ Documentation:
   - **Rating:** 2.0
 
 
-  - **Reason:** Paper, poster, and source code provide thorough access to methodology and implementation. Setup instructions and accompanying code not present.
+  - **Reason:** Paper, poster, and source code provide thorough access to methodology and implementation. Setup instructions and accompanying code not present. 
 
 
 **Radar Plot:**

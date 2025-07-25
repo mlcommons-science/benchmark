@@ -55,7 +55,7 @@ Specification:
   - **Rating:** 8.0
 
 
-  - **Reason:** Framed as a model-serving tool rather than a benchmark, but includes benchmark configurations and real model tasks.
+  - **Reason:** Framed as a model-serving tool rather than a benchmark, but includes benchmark configurations and real model tasks. 
 
 
 Dataset:
@@ -64,7 +64,7 @@ Dataset:
   - **Rating:** 6.0
 
 
-  - **Reason:** Mostly uses dummy configs or external model endpoints for evaluation; not designed around a formal dataset.
+  - **Reason:** Mostly uses dummy configs or external model endpoints for evaluation; not designed around a formal dataset. 
 
 
 Metrics:
@@ -73,7 +73,7 @@ Metrics:
   - **Rating:** 8.0
 
 
-  - **Reason:** Well-defined serving metrics: tokens/sec, time-to-first-token, and gain over baselines.
+  - **Reason:** Well-defined serving metrics: tokens/sec, time-to-first-token, and gain over baselines. 
 
 
 Reference Solution:
@@ -82,7 +82,7 @@ Reference Solution:
   - **Rating:** 9.0
 
 
-  - **Reason:** Core framework includes full reproducible serving benchmarks and code; multiple deployment case studies.
+  - **Reason:** Core framework includes full reproducible serving benchmarks and code; multiple deployment case studies. 
 
 
 Documentation:
@@ -91,7 +91,7 @@ Documentation:
   - **Rating:** 9.0
 
 
-  - **Reason:** High-quality usage guides, examples, and performance tuning docs.
+  - **Reason:** High-quality usage guides, examples, and performance tuning docs. 
 
 
 **Radar Plot:**

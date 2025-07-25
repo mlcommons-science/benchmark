@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 7.0
 
 
-  - **Reason:** Primarily a visualization frontend; underlying benchmark definitions come from vLLM project.
+  - **Reason:** Primarily a visualization frontend; underlying benchmark definitions come from vLLM project. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 6.0
 
 
-  - **Reason:** No traditional dataset; displays live or logged benchmark metrics.
+  - **Reason:** No traditional dataset; displays live or logged benchmark metrics. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** Live throughput, memory, latency, and TTFT displayed interactively; highly informative for performance analysis.
+  - **Reason:** Live throughput, memory, latency, and TTFT displayed interactively; highly informative for performance analysis. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 7.0
 
 
-  - **Reason:** Dashboard built on vLLM benchmarks but not itself a complete experiment package.
+  - **Reason:** Dashboard built on vLLM benchmarks but not itself a complete experiment package. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** Observable notebooks are intuitive; customization instructions are minimal but UI is self-explanatory.
+  - **Reason:** Observable notebooks are intuitive; customization instructions are minimal but UI is self-explanatory. 
 
 
 **Radar Plot:**

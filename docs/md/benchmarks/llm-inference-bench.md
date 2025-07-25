@@ -65,7 +65,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** PDE tasks  forward/inverse  and I/O structures are clearly specified with detailed PDE context and constraints.
+  - **Reason:** PDE tasks  forward/inverse  and I/O structures are clearly specified with detailed PDE context and constraints. 
 
 
 Dataset:
@@ -74,7 +74,7 @@ Dataset:
   - **Rating:** 10.0
 
 
-  - **Reason:** Hosted via DaRUS with a DOI, well-documented, versioned, and FAIR-compliant.
+  - **Reason:** Hosted via DaRUS with a DOI, well-documented, versioned, and FAIR-compliant. 
 
 
 Metrics:
@@ -83,7 +83,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** Uses RMSE variants and Fourier-based errors.
+  - **Reason:** Uses RMSE variants and Fourier-based errors. 
 
 
 Reference Solution:
@@ -92,7 +92,7 @@ Reference Solution:
   - **Rating:** 10.0
 
 
-  - **Reason:** Baselines  FNO, U-Net, PINN  implemented and ready-to-run; strong community adoption.
+  - **Reason:** Baselines  FNO, U-Net, PINN  implemented and ready-to-run; strong community adoption. 
 
 
 Documentation:
@@ -101,7 +101,7 @@ Documentation:
   - **Rating:** 9.0
 
 
-  - **Reason:** Clean GitHub with usage, dataset links, and tutorial notebooks.
+  - **Reason:** Clean GitHub with usage, dataset links, and tutorial notebooks. 
 
 
 **Radar Plot:**

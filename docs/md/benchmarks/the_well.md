@@ -65,7 +65,7 @@ Specification:
   - **Rating:** 7.0
 
 
-  - **Reason:** Explores LLM understanding of mental health scenarios; framing is creative but loosely defined.
+  - **Reason:** Explores LLM understanding of mental health scenarios; framing is creative but loosely defined. 
 
 
 Dataset:
@@ -74,7 +74,7 @@ Dataset:
   - **Rating:** 6.0
 
 
-  - **Reason:** Dataset is described in concept but not released; privacy limits public access though synthetic proxies are referenced.
+  - **Reason:** Dataset is described in concept but not released; privacy limits public access though synthetic proxies are referenced. 
 
 
 Metrics:
@@ -83,7 +83,7 @@ Metrics:
   - **Rating:** 7.0
 
 
-  - **Reason:** Uses manual annotation and quality scores, but lacks standardized automatic metrics.
+  - **Reason:** Uses manual annotation and quality scores, but lacks standardized automatic metrics. 
 
 
 Reference Solution:
@@ -92,7 +92,7 @@ Reference Solution:
   - **Rating:** 6.0
 
 
-  - **Reason:** Provides few-shot prompt examples and human rating calibration details.
+  - **Reason:** Provides few-shot prompt examples and human rating calibration details. 
 
 
 Documentation:
@@ -101,7 +101,7 @@ Documentation:
   - **Rating:** 5.0
 
 
-  - **Reason:** Paper gives use cases, but code and data are not yet public.
+  - **Reason:** Paper gives use cases, but code and data are not yet public. 
 
 
 **Radar Plot:**

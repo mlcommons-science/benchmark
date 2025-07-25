@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Focused on structured/unstructured data pipelines; clearly defined tasks spanning analytics to AI; some scenarios lack hardware constraint modeling.
+  - **Reason:** Focused on structured/unstructured data pipelines; clearly defined tasks spanning analytics to AI; some scenarios lack hardware constraint modeling. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 9.0
 
 
-  - **Reason:** Built from 13 real-world sources; structured for realistic big data scenarios; partially FAIR-compliant with documented data motifs.
+  - **Reason:** Built from 13 real-world sources; structured for realistic big data scenarios; partially FAIR-compliant with documented data motifs. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** Covers data throughput, latency, and accuracy; quantitative and benchmark-ready.
+  - **Reason:** Covers data throughput, latency, and accuracy; quantitative and benchmark-ready. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 8.0
 
 
-  - **Reason:** Many pipeline and model examples provided using Hadoop/Spark/Flink; setup effort varies by task and platform.
+  - **Reason:** Many pipeline and model examples provided using Hadoop/Spark/Flink; setup effort varies by task and platform. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** Strong documentation with examples and task specifications; centralized support exists, but task-specific tuning may require domain expertise.
+  - **Reason:** Strong documentation with examples and task specifications; centralized support exists, but task-specific tuning may require domain expertise. 
 
 
 **Radar Plot:**

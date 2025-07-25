@@ -65,7 +65,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Well-defined problem  Tc prediction, generation  with strong scientific motivation  high-Tc materials , but no formal hardware constraints.
+  - **Reason:** Well-defined problem  Tc prediction, generation  with strong scientific motivation  high-Tc materials , but no formal hardware constraints. 
 
 
 Dataset:
@@ -74,7 +74,7 @@ Dataset:
   - **Rating:** 9.0
 
 
-  - **Reason:** Includes curated 3D crystal structures and Tc data; readily downloadable and used in paper models.
+  - **Reason:** Includes curated 3D crystal structures and Tc data; readily downloadable and used in paper models. 
 
 
 Metrics:
@@ -83,7 +83,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** MAE and structural validity used, well-established in materials modeling.
+  - **Reason:** MAE and structural validity used, well-established in materials modeling. 
 
 
 Reference Solution:
@@ -92,7 +92,7 @@ Reference Solution:
   - **Rating:** 8.0
 
 
-  - **Reason:** Provides two reference models  SODNet, DiffCSP-SC  with results. Code likely available post-conference.
+  - **Reason:** Provides two reference models  SODNet, DiffCSP-SC  with results. Code likely available post-conference. 
 
 
 Documentation:
@@ -101,7 +101,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** Paper and poster explain design choices well; software availability confirms reproducibility but limited external documentation.
+  - **Reason:** Paper and poster explain design choices well; software availability confirms reproducibility but limited external documentation. 
 
 
 **Radar Plot:**

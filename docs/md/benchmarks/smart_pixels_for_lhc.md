@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Task  automated neural architecture search for real-time physics  is well formulated with clear latency, model compression, and deployment goals.
+  - **Reason:** Task  automated neural architecture search for real-time physics  is well formulated with clear latency, model compression, and deployment goals. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 6.0
 
 
-  - **Reason:** Internal Bragg and jet datasets used; not publicly hosted or FAIR-compliant, though mentioned in the paper.
+  - **Reason:** Internal Bragg and jet datasets used; not publicly hosted or FAIR-compliant, though mentioned in the paper. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 10.0
 
 
-  - **Reason:** BOP reduction, latency, and accuracy are all quantitatively evaluated.
+  - **Reason:** BOP reduction, latency, and accuracy are all quantitatively evaluated. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 8.0
 
 
-  - **Reason:** NAC-generated models for Bragg peak and jet classification are described, but pipeline requires integration of several tools and is not fully packaged.
+  - **Reason:** NAC-generated models for Bragg peak and jet classification are described, but pipeline requires integration of several tools and is not fully packaged. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 7.0
 
 
-  - **Reason:** NAC pipeline, hls4ml usage, and results are discussed; code  e.g., nac-opt  referenced, but replication requires stitching together toolchain and data.
+  - **Reason:** NAC pipeline, hls4ml usage, and results are discussed; code  e.g., nac-opt  referenced, but replication requires stitching together toolchain and data. 
 
 
 **Radar Plot:**

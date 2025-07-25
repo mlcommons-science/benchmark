@@ -65,7 +65,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Three tasks  de novo generation, retrieval, simulation  are clearly defined for MS/MS molecule discovery.
+  - **Reason:** Three tasks  de novo generation, retrieval, simulation  are clearly defined for MS/MS molecule discovery. 
 
 
 Dataset:
@@ -74,7 +74,7 @@ Dataset:
   - **Rating:** 10.0
 
 
-  - **Reason:** Over 1 million spectra with structure annotations; dataset is open-source and well-documented.
+  - **Reason:** Over 1 million spectra with structure annotations; dataset is open-source and well-documented. 
 
 
 Metrics:
@@ -83,7 +83,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** Task-appropriate metrics  structure accuracy, precision, MSE  are specified and used consistently.
+  - **Reason:** Task-appropriate metrics  structure accuracy, precision, MSE  are specified and used consistently. 
 
 
 Reference Solution:
@@ -92,7 +92,7 @@ Reference Solution:
   - **Rating:** 8.0
 
 
-  - **Reason:** Baseline models are available  graph-based and retrieval , though not exhaustive.
+  - **Reason:** Baseline models are available  graph-based and retrieval , though not exhaustive. 
 
 
 Documentation:
@@ -101,7 +101,7 @@ Documentation:
   - **Rating:** 9.0
 
 
-  - **Reason:** GitHub repo and poster provide code and reproducibility guidance.
+  - **Reason:** GitHub repo and poster provide code and reproducibility guidance. 
 
 
 **Radar Plot:**

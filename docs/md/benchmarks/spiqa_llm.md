@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 6.0
 
 
-  - **Reason:** Task of QA over scientific figures is interesting but not fully formalized in input/output terms.
+  - **Reason:** Task of QA over scientific figures is interesting but not fully formalized in input/output terms. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 6.0
 
 
-  - **Reason:** Uses SPIQA dataset with ~10 adapters; figures and questions are included, but not fully open.
+  - **Reason:** Uses SPIQA dataset with ~10 adapters; figures and questions are included, but not fully open. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 7.0
 
 
-  - **Reason:** Reports accuracy and F1; fair but no visual reasoning-specific metric.
+  - **Reason:** Reports accuracy and F1; fair but no visual reasoning-specific metric. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 6.0
 
 
-  - **Reason:** 10 LLM adapter baselines; results included.
+  - **Reason:** 10 LLM adapter baselines; results included. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 5.0
 
 
-  - **Reason:** Poster paper and limited documentation; no reproducibility instructions.
+  - **Reason:** Poster paper and limited documentation; no reproducibility instructions. 
 
 
 **Radar Plot:**

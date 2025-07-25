@@ -65,7 +65,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Focused on sound source localization for rodent vocalizations in lab settings; well-scoped.
+  - **Reason:** Focused on sound source localization for rodent vocalizations in lab settings; well-scoped. 
 
 
 Dataset:
@@ -74,7 +74,7 @@ Dataset:
   - **Rating:** 9.5
 
 
-  - **Reason:** 767000 annotated audio segments across diverse conditions. Minor deduction for no train/test/valid split.
+  - **Reason:** 767000 annotated audio segments across diverse conditions. Minor deduction for no train/test/valid split. 
 
 
 Metrics:
@@ -83,7 +83,7 @@ Metrics:
   - **Rating:** 9.5
 
 
-  - **Reason:** Localization error, precision/recall used
+  - **Reason:** Localization error, precision/recall used 
 
 
 Reference Solution:
@@ -92,7 +92,7 @@ Reference Solution:
   - **Rating:** 7.0
 
 
-  - **Reason:** CNN-based baselines referenced but unclear whether pretrained models or training code are available.
+  - **Reason:** CNN-based baselines referenced but unclear whether pretrained models or training code are available. 
 
 
 Documentation:
@@ -101,7 +101,7 @@ Documentation:
   - **Rating:** 2.0
 
 
-  - **Reason:** Poster and paper outline benchmark intent and setup; repo expected but not confirmed in dataset card.
+  - **Reason:** Poster and paper outline benchmark intent and setup; repo expected but not confirmed in dataset card. 
 
 
 **Radar Plot:**

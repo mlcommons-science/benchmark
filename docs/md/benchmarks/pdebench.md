@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Clearly defined PDE-solving tasks with well-specified constraints and solution formats.
+  - **Reason:** Clearly defined PDE-solving tasks with well-specified constraints and solution formats. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 9.0
 
 
-  - **Reason:** Includes synthetic and real-world PDE datasets with detailed format descriptions.
+  - **Reason:** Includes synthetic and real-world PDE datasets with detailed format descriptions. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 8.0
 
 
-  - **Reason:** Uses L2 error and other norms relevant to PDE solutions.
+  - **Reason:** Uses L2 error and other norms relevant to PDE solutions. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 7.0
 
 
-  - **Reason:** Includes baseline solvers and trained models across multiple PDE tasks.
+  - **Reason:** Includes baseline solvers and trained models across multiple PDE tasks. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** Well-organized GitHub with examples, dataset loading scripts, and training configs.
+  - **Reason:** Well-organized GitHub with examples, dataset loading scripts, and training configs. 
 
 
 **Radar Plot:**

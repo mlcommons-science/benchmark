@@ -73,7 +73,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Benchmarks hardware performance of LLM inference across multiple platforms with well-defined input/output and platform constraints.
+  - **Reason:** Benchmarks hardware performance of LLM inference across multiple platforms with well-defined input/output and platform constraints. 
 
 
 Dataset:
@@ -82,7 +82,7 @@ Dataset:
   - **Rating:** 7.0
 
 
-  - **Reason:** Uses structured log files and configs instead of conventional datasets; suitable for inference benchmarking.
+  - **Reason:** Uses structured log files and configs instead of conventional datasets; suitable for inference benchmarking. 
 
 
 Metrics:
@@ -91,7 +91,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** Clear throughput, latency, and utilization metrics; platform comparison dashboard enhances evaluation.
+  - **Reason:** Clear throughput, latency, and utilization metrics; platform comparison dashboard enhances evaluation. 
 
 
 Reference Solution:
@@ -100,7 +100,7 @@ Reference Solution:
   - **Rating:** 8.0
 
 
-  - **Reason:** Includes reproducible scripts and example runs; models like LLaMA and Mistral are referenced with platform-specific configs.
+  - **Reason:** Includes reproducible scripts and example runs; models like LLaMA and Mistral are referenced with platform-specific configs. 
 
 
 Documentation:
@@ -109,7 +109,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** GitHub contains clear instructions, platform details, and framework comparisons.
+  - **Reason:** GitHub contains clear instructions, platform details, and framework comparisons. 
 
 
 **Radar Plot:**

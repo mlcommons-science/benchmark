@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 8.0
 
 
-  - **Reason:** Task of detecting rare anomalies in butterfly physics is well-described with physics motivation.
+  - **Reason:** Task of detecting rare anomalies in butterfly physics is well-described with physics motivation. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 7.0
 
 
-  - **Reason:** Real detector data with injected anomalies is available, but requires NDA for full access.
+  - **Reason:** Real detector data with injected anomalies is available, but requires NDA for full access. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 7.0
 
 
-  - **Reason:** Uses ROC, F1, and anomaly precision, standard in challenge evaluations.
+  - **Reason:** Uses ROC, F1, and anomaly precision, standard in challenge evaluations. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 4.0
 
 
-  - **Reason:** Partial baselines described, but no codebase or reproducible runs.
+  - **Reason:** Partial baselines described, but no codebase or reproducible runs. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 6.0
 
 
-  - **Reason:** Challenge site includes overview and metrics, but limited in walkthrough or examples.
+  - **Reason:** Challenge site includes overview and metrics, but limited in walkthrough or examples. 
 
 
 **Radar Plot:**

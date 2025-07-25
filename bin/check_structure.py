@@ -3,11 +3,13 @@ import os
 import sys  # Import sys to handle command-line arguments
 from cloudmesh.common.util import banner
 
+
 def green(text: str) -> str:
     """
     Returns the input text formatted in green color for terminal output.
     """
     return f"\033[92m{text}\033[0m"
+
 
 def red(text: str) -> str:
     """
@@ -15,8 +17,32 @@ def red(text: str) -> str:
     """
     return f"\033[91m{text}\033[0m"
 
+
+def purple(text: str) -> str:
+    """
+    Returns the input text formatted in purple color for terminal output.
+    """
+    return f"\033[95m{text}\033[0m"
+
+
+WARNING = purple("WARNING")
 OK = green("OK")
 RED = red("ERROR")
+
+TODO = [
+    "None",
+    "none",
+    "TODO",
+    "unkown",
+    "UNKOWN",
+    "N/A",
+    "na",
+    "n/a",
+    "null",
+    "NULL",
+    "None",
+]
+
 
 def fill_string(s: str, target_length: int) -> str:
     """
@@ -177,6 +203,13 @@ def validate_yaml_entries(data_filepath=None, structure_filepath=None) -> bool:
                 actual_value = entry[key]
                 actual_type = type(actual_value)
 
+                if actual_value in TODO:
+                    issues_found.append(
+                        f"{WARNING} Key '{key}': Value is marked as TODO or N/A, which may need to be changed."
+                    )
+                    entry_is_current_valid = False
+                
+
                 if expected_type != actual_type:
                     issues_found.append(
                         f"{RED} Key '{key}': Expected type '{expected_type.__name__}', but found '{actual_type.__name__}' for value '{actual_value}'."
@@ -219,17 +252,15 @@ if __name__ == "__main__":
     benchmark_addon = "source/benchmarks-addon.yaml"
     benchmarks = "source/benchmarks.yaml"
 
-        
     banner(f"Running validation using '{benchmarks}")
-    
+
     is_valid = validate_yaml_entries(benchmarks)
 
     print(f"\nFinal Validation Result for '{benchmarks}': {is_valid}")
 
-    banner(f"# Running validation using '{benchmarks} with '{benchmark_addon}' as structure")
-   
+    banner(
+        f"# Running validation using '{benchmarks} with '{benchmark_addon}' as structure"
+    )
 
     is_valid = validate_yaml_entries(benchmarks, benchmark_addon)
     print(f"\nFinal Validation Result for '{benchmarks}': {is_valid}")
-
-    

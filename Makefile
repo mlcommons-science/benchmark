@@ -99,3 +99,8 @@ publish:
 	cp content/tex/benchmarks.pdf docs/benchmarks.pdf
 	cp content/tex/images/* docs/tex/images
 
+structure:
+	python ${SCRIPT} --files=source/benchmarks.yaml --check_structure 
+	python ${SCRIPT} --files=source/benchmarks.yaml --check_structure --structure=source/benchmarks-addon.yaml
+	python ${SCRIPT} --files=source/benchmarks-addon.yaml --check_structure 
+	

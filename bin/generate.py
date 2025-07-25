@@ -1,9 +1,11 @@
 """
 Usage:
+  generate.py --files=file1,file2 --check_structure [--structure=<file>]
   generate.py --files=file1,file2 --check
-  generate.py --files=file1,file2 --urlcheck [--url=<URL>]
+  generate.py --files=file1,file2 --check_url [--url=<URL>]
   generate.py --files=file1,file2 --format=<fmt> --outdir=<dir> [--authortruncation=N] [--columns=col1,col2] [--check] [--noratings] [--required] [--standalone] [--withcitation] [--urlcheck]
   generate.py --check_log
+
 
 
 Options:
@@ -17,15 +19,25 @@ Options:
   --required                  Requires all specified columns to exist.
   --standalone                Include full LaTeX document preamble (tex only).
   --withcitation              Add a citation row (md only).
-  --urlcheck                  Check if URLs exist.
+  --check_url                 Check if URLs exist.
   --check_log                 Check the latex log file by removing unneded content
   --url=<URL>                 URL to check for validity (used with --urlcheck).
+  --structure=<file>          Path to a structure file for validation [default: None].
+  --check_structure           Check if YAML entries conform to a reference structure. If no structure file
+                              is provided the first element of the first file is used.
 
 Notes:
   - --standalone is only valid with --format=tex
   - --withcitation is only valid with --format=md
   - Author truncation must be a positive integer
-"""
+
+Examples:
+  python bin/generate.py --files=source/benchmarks.yaml --check_structure
+    Checks the structure of the yaml files against the first entry of the first file.
+
+  python bin/generate.py --files=source/benchmarks.yaml --check_structure --structure=source/benchmarks-addon.yaml
+    Checks the structure of the yaml files against the first element in ths structure file.
+  """
 
 import os
 import sys
@@ -38,6 +50,8 @@ from cloudmesh.common.console import Console
 from check_log import print_latex_log
 from cloudmesh.common.console import Console
 from yaml_manager import find_unicode_chars
+from check_structure import validate_yaml_entries
+from pprint import pprint
 
 VERBOSE = True
 if VERBOSE:
@@ -45,6 +59,8 @@ if VERBOSE:
 
 if __name__ == "__main__":
     args = docopt(__doc__)
+
+    pprint(args)
 
     check_log = args["--check_log"]
     if check_log:
@@ -101,6 +117,22 @@ if __name__ == "__main__":
 
         manager.check_required_fields()
         sys.exit(0)
+
+    if args["--check_structure"]:
+        files = args["--files"].split(",")
+
+        if args["--structure"] == "None":  # If a structure file is provided
+            structure_file = files[0]
+        else:
+            structure_file = args["--structure"]
+        
+        for file in files:
+            if not os.path.exists(file):
+                print(f"Error: file not found: {file}")
+                sys.exit(1)
+            validate_yaml_entries(data_filepath=file, structure_filepath=structure_file)
+        sys.exit(0)
+
 
     if args["--required"]:
         if not manager.check_required_fields():

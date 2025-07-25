@@ -1,7 +1,7 @@
 - date: "2020-09-07"
   version: "TODO"
   last_updated: "2020-09-07"
-  expired:
+  expired: 
   valid: "yes"
   valid_date: "TODO"
   name: "MMLU (Massive Multitask Language Understanding)"
@@ -713,7 +713,8 @@
   - "Long-context understanding and scientific reasoning"
   metrics:
   - "Accuracy"
-  models: []
+  models: 
+   - "unkown"
   ml_motif:
   - "TODO"
   type: "Benchmark"
@@ -1794,7 +1795,8 @@
   - "Zero-shot land-use classification"
   metrics:
   - "Accuracy"
-  models: []
+  models: 
+  - "unko"
   ml_motif:
   - "TODO"
   type: "Benchmark"

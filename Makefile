@@ -29,15 +29,7 @@ summary:
 	open content/tex/summary.pdf 
 
 install:
-	pip install cloudmesh-common
-	pip install pybtex
-	pip install pylatexenc
-	pip install bibtexparser
-	pip install docopt
-	pip install bs4
-	pip install numpy
-	pip install matplotlib
-	pip install selenium
+	pip install -r requirements.txt
 
 content: md tex
 	echo DONE

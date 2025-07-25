@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Clear anomaly detection objective framed for physical signal discovery  LIGO/Virgo .
+  - **Reason:** Clear anomaly detection objective framed for physical signal discovery  LIGO/Virgo . 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 10.0
 
 
-  - **Reason:** Preprocessed waveform data from dual interferometers, public and well-structured.
+  - **Reason:** Preprocessed waveform data from dual interferometers, public and well-structured. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** ROC-AUC, Precision/Recall, and confusion-based metrics are standardized.
+  - **Reason:** ROC-AUC, Precision/Recall, and confusion-based metrics are standardized. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 1.0
 
 
-  - **Reason:** No starter model or baseline code linked
+  - **Reason:** No starter model or baseline code linked 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 9.0
 
 
-  - **Reason:** Codabench page, GitHub starter kit, and related papers provide strong guidance.
+  - **Reason:** Codabench page, GitHub starter kit, and related papers provide strong guidance. 
 
 
 **Radar Plot:**

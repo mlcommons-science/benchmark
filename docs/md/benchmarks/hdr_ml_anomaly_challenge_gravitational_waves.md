@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 8.0
 
 
-  - **Reason:** Novel approach treating forecasting as text generation is explained; framing is less conventional.
+  - **Reason:** Novel approach treating forecasting as text generation is explained; framing is less conventional. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 9.0
 
 
-  - **Reason:** Compatible with standard forecasting datasets  e.g., M4, electricity .
+  - **Reason:** Compatible with standard forecasting datasets  e.g., M4, electricity . 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 8.0
 
 
-  - **Reason:** RMSE and MAPE are included, but less emphasis on interpretability or time-series domain constraints.
+  - **Reason:** RMSE and MAPE are included, but less emphasis on interpretability or time-series domain constraints. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 9.0
 
 
-  - **Reason:** Open-source with reprogramming layers, LLM interface scripts provided.
+  - **Reason:** Open-source with reprogramming layers, LLM interface scripts provided. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** Model and architecture overview present, though usability guide is slightly lighter than others.
+  - **Reason:** Model and architecture overview present, though usability guide is slightly lighter than others. 
 
 
 **Radar Plot:**

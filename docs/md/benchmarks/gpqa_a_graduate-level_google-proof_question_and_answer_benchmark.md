@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Clear dual-modality task  image + time-series ; environmental focus is well described.
+  - **Reason:** Clear dual-modality task  image + time-series ; environmental focus is well described. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 9.0
 
 
-  - **Reason:** Time-series and satellite imagery data provided; sensor info and collection intervals are explained.
+  - **Reason:** Time-series and satellite imagery data provided; sensor info and collection intervals are explained. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** ROC-AUC, Precision/Recall are appropriate and robust.
+  - **Reason:** ROC-AUC, Precision/Recall are appropriate and robust. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 1.0
 
 
-  - **Reason:** No starter model or baseline code linked
+  - **Reason:** No starter model or baseline code linked 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 6.5
 
 
-  - **Reason:** Moderate Codabench documentation with climate context; lacks pipeline-level walkthrough.
+  - **Reason:** Moderate Codabench documentation with climate context; lacks pipeline-level walkthrough. 
 
 
 **Radar Plot:**

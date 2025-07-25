@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 10.0
 
 
-  - **Reason:** Fully specified: describes task  data filtering/classification, system design  on-sensor inference ,  latency  25 ns , and power constraints.
+  - **Reason:** Fully specified: describes task  data filtering/classification, system design  on-sensor inference ,  latency  25 ns , and power constraints. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 8.0
 
 
-  - **Reason:** In-pixel charge cluster data used, but dataset release info is minimal; FAIR metadata/versioning limited.
+  - **Reason:** In-pixel charge cluster data used, but dataset release info is minimal; FAIR metadata/versioning limited. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** Data rejection rate and power per pixel are clearly defined and directly tied to hardware goals.
+  - **Reason:** Data rejection rate and power per pixel are clearly defined and directly tied to hardware goals. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 9.0
 
 
-  - **Reason:** 2-layer NN implementation is evaluated in hardware; reproducible via hls4ml flow with results in paper.
+  - **Reason:** 2-layer NN implementation is evaluated in hardware; reproducible via hls4ml flow with results in paper. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** Paper is clear; Zenodo asset is referenced, but additional GitHub or setup repo would improve reproducibility.
+  - **Reason:** Paper is clear; Zenodo asset is referenced, but additional GitHub or setup repo would improve reproducibility. 
 
 
 **Radar Plot:**

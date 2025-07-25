@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 8.0
 
 
-  - **Reason:** Task  plasma diagnostic classification  and real-time deployment described; system specs  FPS targets  implied but not fully quantified.
+  - **Reason:** Task  plasma diagnostic classification  and real-time deployment described; system specs  FPS targets  implied but not fully quantified. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 6.0
 
 
-  - **Reason:** Dataset is sensor stream-based but not shared or FAIR-documented.
+  - **Reason:** Dataset is sensor stream-based but not shared or FAIR-documented. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 8.0
 
 
-  - **Reason:** FPS and classification accuracy reported and relevant.
+  - **Reason:** FPS and classification accuracy reported and relevant. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 7.0
 
 
-  - **Reason:** CNN model described and evaluated, but public implementation and benchmarks are not available yet.
+  - **Reason:** CNN model described and evaluated, but public implementation and benchmarks are not available yet. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 6.0
 
 
-  - **Reason:** Paper and Gemini doc exist, but full setup instructions and tools are still in progress.
+  - **Reason:** Paper and Gemini doc exist, but full setup instructions and tools are still in progress. 
 
 
 **Radar Plot:**

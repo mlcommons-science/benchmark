@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 8.0
 
 
-  - **Reason:** Classification is clearly defined for real-time inference on simulated LHC jets. Input features  HLFs  are documented, though exact latency or resource constraints are not numerically specified.
+  - **Reason:** Classification is clearly defined for real-time inference on simulated LHC jets. Input features  HLFs  are documented, though exact latency or resource constraints are not numerically specified. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 9.0
 
 
-  - **Reason:** Two datasets  OpenML and Zenodo  are public, well-formatted, and documented; FAIR principles are followed, though richer metadata would raise confidence to a 10.
+  - **Reason:** Two datasets  OpenML and Zenodo  are public, well-formatted, and documented; FAIR principles are followed, though richer metadata would raise confidence to a 10. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** AUC and Accuracy are standard, quantitative, and well-aligned with goals of jet tagging and inference efficiency.
+  - **Reason:** AUC and Accuracy are standard, quantitative, and well-aligned with goals of jet tagging and inference efficiency. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 8.0
 
 
-  - **Reason:** Float and quantized Keras/QKeras models are provided with results. Reproducibility is good, though full automation and documentation could be improved.
+  - **Reason:** Float and quantized Keras/QKeras models are provided with results. Reproducibility is good, though full automation and documentation could be improved. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** GitHub contains baseline code, data loaders, and references, but setup for deployment  e.g., FPGA pipeline  requires familiarity with the tooling.
+  - **Reason:** GitHub contains baseline code, data loaders, and references, but setup for deployment  e.g., FPGA pipeline  requires familiarity with the tooling. 
 
 
 **Radar Plot:**

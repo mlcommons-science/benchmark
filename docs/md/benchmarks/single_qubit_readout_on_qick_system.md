@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 8.0
 
 
-  - **Reason:** Task clearly framed around detecting hybrid species via images, but exact labeling methods and hybrid definitions may need elaboration.
+  - **Reason:** Task clearly framed around detecting hybrid species via images, but exact labeling methods and hybrid definitions may need elaboration. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 8.0
 
 
-  - **Reason:** Dataset hosted on Codabench; appears structured but details on image sourcing and labeling pipeline are limited.
+  - **Reason:** Dataset hosted on Codabench; appears structured but details on image sourcing and labeling pipeline are limited. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** Classification accuracy and F1 are standard and appropriate.
+  - **Reason:** Classification accuracy and F1 are standard and appropriate. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 1.0
 
 
-  - **Reason:** No starter model or baseline code linked
+  - **Reason:** No starter model or baseline code linked 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 7.5
 
 
-  - **Reason:** Codabench task page describes dataset and evaluation method but lacks full API/docs.
+  - **Reason:** Codabench task page describes dataset and evaluation method but lacks full API/docs. 
 
 
 **Radar Plot:**

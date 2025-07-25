@@ -65,7 +65,7 @@ Specification:
   - **Rating:** 10.0
 
 
-  - **Reason:** Multimodal task  segmentation + natural language QA pairs ;.
+  - **Reason:** Multimodal task  segmentation + natural language QA pairs ;. 
 
 
 Dataset:
@@ -74,7 +74,7 @@ Dataset:
   - **Rating:** 10.0
 
 
-  - **Reason:** sonar imagery + masks + descriptions, georeferenced and labeled with QA
+  - **Reason:** sonar imagery + masks + descriptions, georeferenced and labeled with QA 
 
 
 Metrics:
@@ -83,7 +83,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** Pixel accuracy and QA metrics clearly defined; tasks split by modality.
+  - **Reason:** Pixel accuracy and QA metrics clearly defined; tasks split by modality. 
 
 
 Reference Solution:
@@ -92,7 +92,7 @@ Reference Solution:
   - **Rating:** 8.0
 
 
-  - **Reason:** Baseline models  SegFormer, ViLT  are cited, partial configs likely available.
+  - **Reason:** Baseline models  SegFormer, ViLT  are cited, partial configs likely available. 
 
 
 Documentation:
@@ -101,7 +101,7 @@ Documentation:
   - **Rating:** 8.5
 
 
-  - **Reason:** Paper + GitHub metadata and processing details are comprehensive, though full dataset is not yet available.
+  - **Reason:** Paper + GitHub metadata and processing details are comprehensive, though full dataset is not yet available. 
 
 
 **Radar Plot:**

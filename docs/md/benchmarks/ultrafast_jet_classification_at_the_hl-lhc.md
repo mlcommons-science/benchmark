@@ -63,7 +63,7 @@ Specification:
   - **Rating:** 8.0
 
 
-  - **Reason:** Task is clear  RL control of beam stability , with BOOSTR-based simulator; control objectives are well motivated, but system constraints and reward structure are still under refinement.
+  - **Reason:** Task is clear  RL control of beam stability , with BOOSTR-based simulator; control objectives are well motivated, but system constraints and reward structure are still under refinement. 
 
 
 Dataset:
@@ -72,7 +72,7 @@ Dataset:
   - **Rating:** 7.0
 
 
-  - **Reason:** BOOSTR dataset exists and is cited, but integration into the benchmark is in early stages; metadata and FAIR structure are limited.
+  - **Reason:** BOOSTR dataset exists and is cited, but integration into the benchmark is in early stages; metadata and FAIR structure are limited. 
 
 
 Metrics:
@@ -81,7 +81,7 @@ Metrics:
   - **Rating:** 7.0
 
 
-  - **Reason:** Stability and control loss are mentioned, but metrics are not yet formalized with clear definitions or baselines.
+  - **Reason:** Stability and control loss are mentioned, but metrics are not yet formalized with clear definitions or baselines. 
 
 
 Reference Solution:
@@ -90,7 +90,7 @@ Reference Solution:
   - **Rating:** 5.5
 
 
-  - **Reason:** DDPG baseline mentioned; PPO planned; implementation is still in progress with no reproducible results available yet.
+  - **Reason:** DDPG baseline mentioned; PPO planned; implementation is still in progress with no reproducible results available yet. 
 
 
 Documentation:
@@ -99,7 +99,7 @@ Documentation:
   - **Rating:** 6.0
 
 
-  - **Reason:** GitHub has a defined structure but is incomplete; setup and execution instructions for training/evaluation are not fully established.
+  - **Reason:** GitHub has a defined structure but is incomplete; setup and execution instructions for training/evaluation are not fully established. 
 
 
 **Radar Plot:**

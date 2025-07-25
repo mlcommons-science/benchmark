@@ -79,11 +79,11 @@ check:
 	python ${SCRIPT} --files ${CHECK_FILES} --check 
 
 
-urlcheck:
-	python ${SCRIPT} --files ${CHECK_FILES} --urlcheck 
+check_url:
+	python ${SCRIPT} --files ${CHECK_FILES} --check_url 
 
 u:
-	python ${SCRIPT} --files ${CHECK_FILES} --urlcheck --url=https://pubs.acs.org/doi/10.1021/acscatal.2c05426
+	python ${SCRIPT} --files ${CHECK_FILES} --check_url --url=https://pubs.acs.org/doi/10.1021/acscatal.2c05426
 
 
 
@@ -99,3 +99,8 @@ publish:
 	cp content/tex/benchmarks.pdf docs/benchmarks.pdf
 	cp content/tex/images/* docs/tex/images
 
+structure:
+	python ${SCRIPT} --files=source/benchmarks.yaml --check_structure 
+	python ${SCRIPT} --files=source/benchmarks.yaml --check_structure --structure=source/benchmarks-addon.yaml
+	python ${SCRIPT} --files=source/benchmarks-addon.yaml --check_structure 
+	

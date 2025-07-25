@@ -101,7 +101,7 @@ Specification:
   - **Rating:** 10.0
 
 
-  - **Reason:** Scientific ML tasks  e.g., CosmoFlow, DeepCAM  are clearly defined with HPC system-level constraints and targets.
+  - **Reason:** Scientific ML tasks  e.g., CosmoFlow, DeepCAM  are clearly defined with HPC system-level constraints and targets. 
 
 
 Dataset:
@@ -110,7 +110,7 @@ Dataset:
   - **Rating:** 9.0
 
 
-  - **Reason:** Public scientific datasets  e.g., cosmology, weather ; used consistently, though FAIR-compliance of individual datasets varies slightly.
+  - **Reason:** Public scientific datasets  e.g., cosmology, weather ; used consistently, though FAIR-compliance of individual datasets varies slightly. 
 
 
 Metrics:
@@ -119,7 +119,7 @@ Metrics:
   - **Rating:** 10.0
 
 
-  - **Reason:** Training time, GPU utilization, and accuracy are all directly measured and benchmarked across HPC systems.
+  - **Reason:** Training time, GPU utilization, and accuracy are all directly measured and benchmarked across HPC systems. 
 
 
 Reference Solution:
@@ -128,7 +128,7 @@ Reference Solution:
   - **Rating:** 9.0
 
 
-  - **Reason:** Reference implementations available and actively maintained; HPC setup may require domain-specific environment.
+  - **Reason:** Reference implementations available and actively maintained; HPC setup may require domain-specific environment. 
 
 
 Documentation:
@@ -137,7 +137,7 @@ Documentation:
   - **Rating:** 9.0
 
 
-  - **Reason:** GitHub repo and papers provide detailed instructions; reproducibility supported across multiple institutions.
+  - **Reason:** GitHub repo and papers provide detailed instructions; reproducibility supported across multiple institutions. 
 
 
 **Radar Plot:**

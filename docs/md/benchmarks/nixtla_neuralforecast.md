@@ -57,7 +57,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Targets high-throughput LLM inference via PagedAttention and memory-optimized serving; benchmarks cover many configs.
+  - **Reason:** Targets high-throughput LLM inference via PagedAttention and memory-optimized serving; benchmarks cover many configs. 
 
 
 Dataset:
@@ -66,7 +66,7 @@ Dataset:
   - **Rating:** 7.0
 
 
-  - **Reason:** Focuses on model configs and streaming input/output pipelines rather than classical datasets.
+  - **Reason:** Focuses on model configs and streaming input/output pipelines rather than classical datasets. 
 
 
 Metrics:
@@ -75,7 +75,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** Strong token/sec, memory usage, and TTFT metrics; comparative plots and logs included.
+  - **Reason:** Strong token/sec, memory usage, and TTFT metrics; comparative plots and logs included. 
 
 
 Reference Solution:
@@ -84,7 +84,7 @@ Reference Solution:
   - **Rating:** 9.0
 
 
-  - **Reason:** Benchmarks reproducible via script with support for multiple models and hardware types.
+  - **Reason:** Benchmarks reproducible via script with support for multiple models and hardware types. 
 
 
 Documentation:
@@ -93,7 +93,7 @@ Documentation:
   - **Rating:** 9.0
 
 
-  - **Reason:** Excellent GitHub docs, CLI/API usage, and deployment walkthroughs.
+  - **Reason:** Excellent GitHub docs, CLI/API usage, and deployment walkthroughs. 
 
 
 **Radar Plot:**

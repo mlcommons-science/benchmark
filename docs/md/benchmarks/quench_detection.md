@@ -43,7 +43,7 @@ Specification:
   - **Rating:** 10.0
 
 
-  - **Reason:** Real-time jet origin classification under FPGA constraints is clearly defined, with explicit latency targets  ~100 ns  and I/O formats.
+  - **Reason:** Real-time jet origin classification under FPGA constraints is clearly defined, with explicit latency targets  ~100 ns  and I/O formats. 
 
 
 Dataset:
@@ -52,7 +52,7 @@ Dataset:
   - **Rating:** 9.0
 
 
-  - **Reason:** Data available on Zenodo with DOI, includes constituent-level jets; accessible and well-documented, though not deeply versioned with full FAIR metadata.
+  - **Reason:** Data available on Zenodo with DOI, includes constituent-level jets; accessible and well-documented, though not deeply versioned with full FAIR metadata. 
 
 
 Metrics:
@@ -61,7 +61,7 @@ Metrics:
   - **Rating:** 10.0
 
 
-  - **Reason:** Accuracy, latency, and hardware resource usage  LUTs, DSPs  are rigorously measured and aligned with real-time goals.
+  - **Reason:** Accuracy, latency, and hardware resource usage  LUTs, DSPs  are rigorously measured and aligned with real-time goals. 
 
 
 Reference Solution:
@@ -70,7 +70,7 @@ Reference Solution:
   - **Rating:** 9.0
 
 
-  - **Reason:** Includes models  MLP, Deep Sets, Interaction Networks  with quantization-aware training and synthesis results via hls4ml; reproducible but tightly coupled with specific toolchains.
+  - **Reason:** Includes models  MLP, Deep Sets, Interaction Networks  with quantization-aware training and synthesis results via hls4ml; reproducible but tightly coupled with specific toolchains. 
 
 
 Documentation:
@@ -79,7 +79,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** Paper and code  via hls4ml  are sufficient, but a centralized, standalone repo for reproducing all models would enhance accessibility.
+  - **Reason:** Paper and code  via hls4ml  are sufficient, but a centralized, standalone repo for reproducing all models would enhance accessibility. 
 
 
 **Radar Plot:**

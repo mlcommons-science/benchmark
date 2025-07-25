@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 8.0
 
 
-  - **Reason:** Task  quench detection via anomaly detection  is clearly described; multi-modal sensors, streaming rates, and objective are provided, but constraints  latency thresholds  are qualitative.
+  - **Reason:** Task  quench detection via anomaly detection  is clearly described; multi-modal sensors, streaming rates, and objective are provided, but constraints  latency thresholds  are qualitative. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 7.0
 
 
-  - **Reason:** Custom dataset using real data from BNL; HDF5 formatted and structured, but access may be internal or limited, and not versioned for public FAIR use.
+  - **Reason:** Custom dataset using real data from BNL; HDF5 formatted and structured, but access may be internal or limited, and not versioned for public FAIR use. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 8.0
 
 
-  - **Reason:** ROC-AUC and detection latency are defined; relevant and quantitative but not yet paired with benchmark baselines.
+  - **Reason:** ROC-AUC and detection latency are defined; relevant and quantitative but not yet paired with benchmark baselines. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 6.0
 
 
-  - **Reason:** Autoencoder prototype exists; RL methods are in development; no fully reproducible pipeline is available yet.
+  - **Reason:** Autoencoder prototype exists; RL methods are in development; no fully reproducible pipeline is available yet. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 7.0
 
 
-  - **Reason:** Slides and GDocs outline results; implementation is in progress with limited setup/code release.
+  - **Reason:** Slides and GDocs outline results; implementation is in progress with limited setup/code release. 
 
 
 **Radar Plot:**

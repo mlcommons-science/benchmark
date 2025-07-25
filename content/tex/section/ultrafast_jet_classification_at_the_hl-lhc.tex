@@ -2,10 +2,13 @@
 {{\footnotesize
 \begin{description}[labelwidth=5em, labelsep=1em, leftmargin=*, align=left, itemsep=0.3em, parsep=0em]
   \item[date:] 2024-07-08
+  \item[version:] TODO
   \item[last\_updated:] 2024-07
-  \item[expired:] unkown
+  \item[expired:] unknown
   \item[valid:] yes
+  \item[valid\_date:] TODO
   \item[url:] \href{https://arxiv.org/pdf/2402.01876}{https://arxiv.org/pdf/2402.01876}
+  \item[doi:] TODO
   \item[domain:] Particle Physics
   \item[focus:] FPGA-optimized real-time jet origin classification at the HL-LHC
   \item[keywords:]
@@ -14,6 +17,9 @@
     - quantization-aware training
     - Deep Sets
     - Interaction Networks
+  \item[summary:] Demonstrates three ML models (MLP, Deep Sets, Interaction Networks) optimized for FPGA deployment with O(100 ns) inference using quantized models and hls4ml, targeting real-time jet tagging in the L1 trigger environment at the high-luminosity LHC. Data is available on Zenodo DOI:10.5281/zenodo.3602260. :contentReference[oaicite:1]\{index=1\}
+
+  \item[licensing:] TODO
   \item[task\_types:]
     - Classification
   \item[ai\_capability\_measured:]
@@ -29,28 +35,37 @@
   \item[ml\_motif:]
     - Real-time
   \item[type:] Model
-  \item[ml\_task:] Supervised Learning
+  \item[ml\_task:]
+    - Supervised Learning
+  \item[solutions:] TODO
   \item[notes:] Uses quantization-aware training; hardware synthesis evaluated via hls4ml
+
   \item[contact.name:] Patrick Odagiu
-  \item[contact.email:] unkown
-  \item[dataset.name:] Zenodo DOI:10.5281/zenodo.3602260
-  \item[dataset.url:] \href{constituent-level jets}{constituent-level jets}
-  \item[results.name:] ChatGPT LLM
-  \item[results.url:] \href{https://docs.google.com/document/d/1gDf1CIYtfmfZ9urv1jCRZMYz\_3WwEETkugUC65OZBdw}{https://docs.google.com/document/d/1gDf1CIYtfmfZ9urv1jCRZMYz\_3WwEETkugUC65OZBdw}
+  \item[contact.email:] unknown
+  \item[datasets.links.name:] Zenodo dataset
+  \item[datasets.links.url:] \href{https://zenodo.org/records/3602260}{https://zenodo.org/records/3602260}
+  \item[results.links.name:] ChatGPT LLM
+  \item[results.links.url:] \href{https://docs.google.com/document/d/1gDf1CIYtfmfZ9urv1jCRZMYz\_3WwEETkugUC65OZBdw}{https://docs.google.com/document/d/1gDf1CIYtfmfZ9urv1jCRZMYz\_3WwEETkugUC65OZBdw}
   \item[fair.reproducible:] True
   \item[fair.benchmark\_ready:] False
   \item[ratings.software.rating:] 0
   \item[ratings.software.reason:] Not analyzed. 
+
   \item[ratings.specification.rating:] 8.0
   \item[ratings.specification.reason:] Task is clear (RL control of beam stability), with BOOSTR-based simulator; control objectives are well motivated, but system constraints and reward structure are still under refinement.
+
   \item[ratings.dataset.rating:] 7.0
   \item[ratings.dataset.reason:] BOOSTR dataset exists and is cited, but integration into the benchmark is in early stages; metadata and FAIR structure are limited.
+
   \item[ratings.metrics.rating:] 7.0
   \item[ratings.metrics.reason:] Stability and control loss are mentioned, but metrics are not yet formalized with clear definitions or baselines.
+
   \item[ratings.reference\_solution.rating:] 5.5
   \item[ratings.reference\_solution.reason:] DDPG baseline mentioned; PPO planned; implementation is still in progress with no reproducible results available yet.
+
   \item[ratings.documentation.rating:] 6.0
   \item[ratings.documentation.reason:] GitHub has a defined structure but is incomplete; setup and execution instructions for training/evaluation are not fully established.
+
   \item[id:] ultrafast\_jet\_classification\_at\_the\_hl-lhc
   \item[Citations:] \cite{odagiu2024ultrafastjetclassificationfpgas}
   \item[Ratings:]

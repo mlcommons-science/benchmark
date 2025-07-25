@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Evaluates AI at multiple levels  micro to end-to-end ; tasks and workloads are clearly defined, though specific I/O formats and constraints vary.
+  - **Reason:** Evaluates AI at multiple levels  micro to end-to-end ; tasks and workloads are clearly defined, though specific I/O formats and constraints vary. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 9.0
 
 
-  - **Reason:** Realistic datasets across diverse domains; FAIR structure for many components, but individual datasets may not all be versioned or richly annotated.
+  - **Reason:** Realistic datasets across diverse domains; FAIR structure for many components, but individual datasets may not all be versioned or richly annotated. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** Latency, throughput, and accuracy clearly defined for end-to-end tasks; consistent across models and setups.
+  - **Reason:** Latency, throughput, and accuracy clearly defined for end-to-end tasks; consistent across models and setups. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 8.0
 
 
-  - **Reason:** Reference implementations for several tasks exist, but setup across all tasks is complex and not fully streamlined.
+  - **Reason:** Reference implementations for several tasks exist, but setup across all tasks is complex and not fully streamlined. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** Central documentation exists, with detailed component breakdowns; environment setup across platforms  e.g., hardware variations  can require manual adjustment.
+  - **Reason:** Central documentation exists, with detailed component breakdowns; environment setup across platforms  e.g., hardware variations  can require manual adjustment. 
 
 
 **Radar Plot:**

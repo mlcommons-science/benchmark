@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 10.0
 
 
-  - **Reason:** Task is clearly defined  triggering on rare events with sub-10 micros latency ; architecture, constraints, and system context  FPGA, Alveo  are well detailed.
+  - **Reason:** Task is clearly defined  triggering on rare events with sub-10 micros latency ; architecture, constraints, and system context  FPGA, Alveo  are well detailed. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 7.0
 
 
-  - **Reason:** Simulated tracking data from sPHENIX and EIC; internally structured but not yet released in a public FAIR-compliant format.
+  - **Reason:** Simulated tracking data from sPHENIX and EIC; internally structured but not yet released in a public FAIR-compliant format. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 10.0
 
 
-  - **Reason:** Accuracy, latency, and hardware resource utilization  LUTs, DSPs  are clearly defined and used in evaluation.
+  - **Reason:** Accuracy, latency, and hardware resource utilization  LUTs, DSPs  are clearly defined and used in evaluation. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 9.0
 
 
-  - **Reason:** Graph-based models  BGN-ST, GarNet  are implemented and tested on real hardware; reproducibility possible with hls4ml but full scripts not bundled.
+  - **Reason:** Graph-based models  BGN-ST, GarNet  are implemented and tested on real hardware; reproducibility possible with hls4ml but full scripts not bundled. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** Paper is detailed and tool usage  FlowGNN, hls4ml  is described, but repo release and dataset access remain in progress.
+  - **Reason:** Paper is detailed and tool usage  FlowGNN, hls4ml  is described, but repo release and dataset access remain in progress. 
 
 
 **Radar Plot:**

@@ -67,7 +67,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Diverse scientific tasks  earthquake, CFD, microscopy  with detailed problem statements and goals; system constraints not uniformly applied.
+  - **Reason:** Diverse scientific tasks  earthquake, CFD, microscopy  with detailed problem statements and goals; system constraints not uniformly applied. 
 
 
 Dataset:
@@ -76,7 +76,7 @@ Dataset:
   - **Rating:** 9.0
 
 
-  - **Reason:** Domain-specific datasets  e.g., microscopy, climate ; mostly public and structured, but FAIR annotations are not always explicit.
+  - **Reason:** Domain-specific datasets  e.g., microscopy, climate ; mostly public and structured, but FAIR annotations are not always explicit. 
 
 
 Metrics:
@@ -85,7 +85,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** Task-specific metrics  MAE, speedup, accuracy  are clear and reproducible.
+  - **Reason:** Task-specific metrics  MAE, speedup, accuracy  are clear and reproducible. 
 
 
 Reference Solution:
@@ -94,7 +94,7 @@ Reference Solution:
   - **Rating:** 9.0
 
 
-  - **Reason:** Reference models  CNN, GNN, Transformer  provided with training/evaluation pipelines.
+  - **Reason:** Reference models  CNN, GNN, Transformer  provided with training/evaluation pipelines. 
 
 
 Documentation:
@@ -103,7 +103,7 @@ Documentation:
   - **Rating:** 9.0
 
 
-  - **Reason:** Well-documented, open-sourced, and maintained with examples; strong community support and reproducibility focus.
+  - **Reason:** Well-documented, open-sourced, and maintained with examples; strong community support and reproducibility focus. 
 
 
 **Radar Plot:**

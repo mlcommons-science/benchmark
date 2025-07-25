@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 8.0
 
 
-  - **Reason:** Task  trigger-level anomaly detection  is clearly defined for low-latency streaming input, but the problem framing lacks complete architectural/system specs.
+  - **Reason:** Task  trigger-level anomaly detection  is clearly defined for low-latency streaming input, but the problem framing lacks complete architectural/system specs. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 6.0
 
 
-  - **Reason:** Internal DUNE SONIC data; not publicly released and no formal FAIR support; replicability is institutionally gated.
+  - **Reason:** Internal DUNE SONIC data; not publicly released and no formal FAIR support; replicability is institutionally gated. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 7.0
 
 
-  - **Reason:** Metrics include detection efficiency and latency, which are relevant, but only lightly supported by baselines or formal eval scripts.
+  - **Reason:** Metrics include detection efficiency and latency, which are relevant, but only lightly supported by baselines or formal eval scripts. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 5.0
 
 
-  - **Reason:** One CNN prototype demonstrated; LSTM planned. No public implementation or ready-to-run example yet.
+  - **Reason:** One CNN prototype demonstrated; LSTM planned. No public implementation or ready-to-run example yet. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 6.0
 
 
-  - **Reason:** Slides and some internal documentation exist, but no full pipeline or public GitHub repo yet.
+  - **Reason:** Slides and some internal documentation exist, but no full pipeline or public GitHub repo yet. 
 
 
 **Radar Plot:**

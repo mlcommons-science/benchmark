@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Task is clearly defined: real-time anomaly detection from high-rate LHC collisions. Latency and bandwidth constraints are mentioned, though not numerically enforced.
+  - **Reason:** Task is clearly defined: real-time anomaly detection from high-rate LHC collisions. Latency and bandwidth constraints are mentioned, though not numerically enforced. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 9.0
 
 
-  - **Reason:** Publicly available via Zenodo, with structured signal/background splits, and rich metadata; nearly fully FAIR.
+  - **Reason:** Publicly available via Zenodo, with structured signal/background splits, and rich metadata; nearly fully FAIR. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** ROC-AUC and detection efficiency are clearly defined and appropriate for unsupervised anomaly detection.
+  - **Reason:** ROC-AUC and detection efficiency are clearly defined and appropriate for unsupervised anomaly detection. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 8.0
 
 
-  - **Reason:** Several baseline methods  autoencoder, VAE, isolation forest  are evaluated; runnable versions available via community repos but not tightly bundled.
+  - **Reason:** Several baseline methods  autoencoder, VAE, isolation forest  are evaluated; runnable versions available via community repos but not tightly bundled. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** Paper and data documentation are clear, and the dataset is widely reused. Setup requires some manual effort to reproduce full pipelines.
+  - **Reason:** Paper and data documentation are clear, and the dataset is widely reused. Setup requires some manual effort to reproduce full pipelines. 
 
 
 **Radar Plot:**

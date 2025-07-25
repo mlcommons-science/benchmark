@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 7.0
 
 
-  - **Reason:** The problem  anomaly detection for new physics at LHC  is clearly described with goals and background, but lacks a formal task specification or constraints.
+  - **Reason:** The problem  anomaly detection for new physics at LHC  is clearly described with goals and background, but lacks a formal task specification or constraints. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 8.0
 
 
-  - **Reason:** Large-scale, public dataset derived from LHC simulations; well-documented and available via Zenodo.
+  - **Reason:** Large-scale, public dataset derived from LHC simulations; well-documented and available via Zenodo. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 7.0
 
 
-  - **Reason:** Provides AUROC, accuracy, and anomaly detection metrics but lacks standardized evaluation script.
+  - **Reason:** Provides AUROC, accuracy, and anomaly detection metrics but lacks standardized evaluation script. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 5.0
 
 
-  - **Reason:** Baseline models  autoencoders, GANs  are described in associated papers, but implementations vary across papers.
+  - **Reason:** Baseline models  autoencoders, GANs  are described in associated papers, but implementations vary across papers. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 6.0
 
 
-  - **Reason:** Publicly available papers and datasets with descriptions, but no unified README or training setup.
+  - **Reason:** Publicly available papers and datasets with descriptions, but no unified README or training setup. 
 
 
 **Radar Plot:**

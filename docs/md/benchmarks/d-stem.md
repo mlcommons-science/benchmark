@@ -57,7 +57,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Peak localization task is well-defined for diffraction images; input/output described clearly, but no system constraints.
+  - **Reason:** Peak localization task is well-defined for diffraction images; input/output described clearly, but no system constraints. 
 
 
 Dataset:
@@ -66,7 +66,7 @@ Dataset:
   - **Rating:** 8.0
 
 
-  - **Reason:** Simulated diffraction images provided; reusable and downloadable, but not externally versioned or FAIR-structured.
+  - **Reason:** Simulated diffraction images provided; reusable and downloadable, but not externally versioned or FAIR-structured. 
 
 
 Metrics:
@@ -75,7 +75,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** Inference speed and localization accuracy are standard and quantitatively reported.
+  - **Reason:** Inference speed and localization accuracy are standard and quantitatively reported. 
 
 
 Reference Solution:
@@ -84,7 +84,7 @@ Reference Solution:
   - **Rating:** 8.0
 
 
-  - **Reason:** BraggNN model and training pipeline exist, but need stitching from separate repositories.
+  - **Reason:** BraggNN model and training pipeline exist, but need stitching from separate repositories. 
 
 
 Documentation:
@@ -93,7 +93,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** Paper and codebase are available and usable, though not fully turnkey.
+  - **Reason:** Paper and codebase are available and usable, though not fully turnkey. 
 
 
 **Radar Plot:**

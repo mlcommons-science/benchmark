@@ -71,7 +71,7 @@ Specification:
   - **Rating:** 10.0
 
 
-  - **Reason:** Simulation task  generative calorimeter showers  is clearly stated with multiple datasets, fidelity requirements, and performance constraints.
+  - **Reason:** Simulation task  generative calorimeter showers  is clearly stated with multiple datasets, fidelity requirements, and performance constraints. 
 
 
 Dataset:
@@ -80,7 +80,7 @@ Dataset:
   - **Rating:** 9.5
 
 
-  - **Reason:** Public datasets available in multiple sizes and formats; well-documented; not versioned
+  - **Reason:** Public datasets available in multiple sizes and formats; well-documented; not versioned 
 
 
 Metrics:
@@ -89,7 +89,7 @@ Metrics:
   - **Rating:** 10.0
 
 
-  - **Reason:** Histogram similarity, classifier AUC, and generation latency are clearly defined and benchmarked across all submissions.
+  - **Reason:** Histogram similarity, classifier AUC, and generation latency are clearly defined and benchmarked across all submissions. 
 
 
 Reference Solution:
@@ -98,7 +98,7 @@ Reference Solution:
   - **Rating:** 9.0
 
 
-  - **Reason:** 31 model implementations submitted; some made public and reproducible, though others remain undocumented or private.
+  - **Reason:** 31 model implementations submitted; some made public and reproducible, though others remain undocumented or private. 
 
 
 Documentation:
@@ -107,7 +107,7 @@ Documentation:
   - **Rating:** 9.0
 
 
-  - **Reason:** Paper, leaderboard, and Gemini doc are comprehensive; unified repo or launchable baseline kit would push this to a 10.
+  - **Reason:** Paper, leaderboard, and Gemini doc are comprehensive; unified repo or launchable baseline kit would push this to a 10. 
 
 
 **Radar Plot:**

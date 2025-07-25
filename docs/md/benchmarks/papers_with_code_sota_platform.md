@@ -75,7 +75,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Evaluation setting  federated clinical benchmarking  is well-defined; I/O interfaces vary slightly by task but are standardized in MedPerf platform.
+  - **Reason:** Evaluation setting  federated clinical benchmarking  is well-defined; I/O interfaces vary slightly by task but are standardized in MedPerf platform. 
 
 
 Dataset:
@@ -84,7 +84,7 @@ Dataset:
   - **Rating:** 8.0
 
 
-  - **Reason:** Uses distributed, real-world clinical datasets across institutions; FAIR compliance varies across hospitals and data hosts.
+  - **Reason:** Uses distributed, real-world clinical datasets across institutions; FAIR compliance varies across hospitals and data hosts. 
 
 
 Metrics:
@@ -93,7 +93,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** ROC AUC, accuracy, and fairness metrics are explicitly defined and task-dependent; consistently tracked across institutions.
+  - **Reason:** ROC AUC, accuracy, and fairness metrics are explicitly defined and task-dependent; consistently tracked across institutions. 
 
 
 Reference Solution:
@@ -102,7 +102,7 @@ Reference Solution:
   - **Rating:** 8.0
 
 
-  - **Reason:** Validated CNNs and GaNDLF pipelines are used and shared via the MedPerf tool, but some implementations are abstracted behind the platform.
+  - **Reason:** Validated CNNs and GaNDLF pipelines are used and shared via the MedPerf tool, but some implementations are abstracted behind the platform. 
 
 
 Documentation:
@@ -111,7 +111,7 @@ Documentation:
   - **Rating:** 9.0
 
 
-  - **Reason:** Excellent documentation across MedPerf, GaNDLF, and COFE; reproducibility handled via containerized flows and task templates.
+  - **Reason:** Excellent documentation across MedPerf, GaNDLF, and COFE; reproducibility handled via containerized flows and task templates. 
 
 
 **Radar Plot:**

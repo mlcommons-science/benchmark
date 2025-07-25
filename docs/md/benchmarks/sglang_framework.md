@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 8.0
 
 
-  - **Reason:** Clearly framed around surrogate learning across 16 domains, but not all tasks are formally posed or constrained in a unified benchmark protocol. Paper mentions performance on NVIDIA H100.
+  - **Reason:** Clearly framed around surrogate learning across 16 domains, but not all tasks are formally posed or constrained in a unified benchmark protocol. Paper mentions performance on NVIDIA H100. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 9.0
 
 
-  - **Reason:** FAIR-compliant physics simulation dataset, structured in HDF5 with unified metadata.
+  - **Reason:** FAIR-compliant physics simulation dataset, structured in HDF5 with unified metadata. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 7.0
 
 
-  - **Reason:** Metrics like dataset size and domain coverage are listed, but standardized quantitative model evaluation metrics  e.g., RMSE, MAE  are not enforced.
+  - **Reason:** Metrics like dataset size and domain coverage are listed, but standardized quantitative model evaluation metrics  e.g., RMSE, MAE  are not enforced. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 9.0
 
 
-  - **Reason:** FNO and U-Net baselines available; full benchmarking implementations pending NeurIPS paper code release.
+  - **Reason:** FNO and U-Net baselines available; full benchmarking implementations pending NeurIPS paper code release. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 10.0
 
 
-  - **Reason:** Site and GitHub offer a unified API, metadata standards, and dataset loading tools; NeurIPS paper adds detailed design context.
+  - **Reason:** Site and GitHub offer a unified API, metadata standards, and dataset loading tools; NeurIPS paper adds detailed design context. 
 
 
 **Radar Plot:**

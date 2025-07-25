@@ -57,7 +57,7 @@ Specification:
   - **Rating:** 8.0
 
 
-  - **Reason:** The benchmark defines simulation-based inference  SBI  tasks clearly with FAIR principles applied to particle physics datasets.
+  - **Reason:** The benchmark defines simulation-based inference  SBI  tasks clearly with FAIR principles applied to particle physics datasets. 
 
 
 Dataset:
@@ -66,7 +66,7 @@ Dataset:
   - **Rating:** 8.0
 
 
-  - **Reason:** Data is well-structured for SBI and publicly available with clear licensing.
+  - **Reason:** Data is well-structured for SBI and publicly available with clear licensing. 
 
 
 Metrics:
@@ -75,7 +75,7 @@ Metrics:
   - **Rating:** 8.0
 
 
-  - **Reason:** Includes likelihood and posterior accuracy; metrics well-matched to SBI.
+  - **Reason:** Includes likelihood and posterior accuracy; metrics well-matched to SBI. 
 
 
 Reference Solution:
@@ -84,7 +84,7 @@ Reference Solution:
   - **Rating:** 7.0
 
 
-  - **Reason:** Baseline SBI models are implemented and reproducible.
+  - **Reason:** Baseline SBI models are implemented and reproducible. 
 
 
 Documentation:
@@ -93,7 +93,7 @@ Documentation:
   - **Rating:** 6.0
 
 
-  - **Reason:** GitHub repo includes code and instructions, but lacks full tutorials or walkthroughs.
+  - **Reason:** GitHub repo includes code and instructions, but lacks full tutorials or walkthroughs. 
 
 
 **Radar Plot:**

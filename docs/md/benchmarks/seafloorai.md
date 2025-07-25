@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Real-time qubit classification task clearly defined in quantum instrumentation context.
+  - **Reason:** Real-time qubit classification task clearly defined in quantum instrumentation context. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 9.0
 
 
-  - **Reason:** Dataset available on Zenodo with signal traces; compact and reproducible.
+  - **Reason:** Dataset available on Zenodo with signal traces; compact and reproducible. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** Accuracy and latency are well defined and crucial in this setting.
+  - **Reason:** Accuracy and latency are well defined and crucial in this setting. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 9.0
 
 
-  - **Reason:** GitHub repo has reproducible code and HLS firmware targeting FPGA.
+  - **Reason:** GitHub repo has reproducible code and HLS firmware targeting FPGA. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** Good setup instructions, but no interactive visualization or starter notebook.
+  - **Reason:** Good setup instructions, but no interactive visualization or starter notebook. 
 
 
 **Radar Plot:**

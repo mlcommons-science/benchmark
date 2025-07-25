@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** The task of ML correction to DFT energy predictions is well-specified.
+  - **Reason:** The task of ML correction to DFT energy predictions is well-specified. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 9.0
 
 
-  - **Reason:** 10 public reaction datasets with DFT and CC references; well-documented.
+  - **Reason:** 10 public reaction datasets with DFT and CC references; well-documented. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 8.0
 
 
-  - **Reason:** Uses MAE and ranking accuracy, suitable for this task.
+  - **Reason:** Uses MAE and ranking accuracy, suitable for this task. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 8.0
 
 
-  - **Reason:** Includes both Delta^2 and KRR baselines.
+  - **Reason:** Includes both Delta^2 and KRR baselines. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 9.0
 
 
-  - **Reason:** Public benchmarks and clear reproducibility via datasets and model code.
+  - **Reason:** Public benchmarks and clear reproducibility via datasets and model code. 
 
 
 **Radar Plot:**

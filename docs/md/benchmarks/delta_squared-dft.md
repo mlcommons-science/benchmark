@@ -61,7 +61,7 @@ Specification:
   - **Rating:** 8.0
 
 
-  - **Reason:** Clear goals around unifying urban data formats and tasks  e.g., air quality prediction , though some specifics could be more formal.
+  - **Reason:** Clear goals around unifying urban data formats and tasks  e.g., air quality prediction , though some specifics could be more formal. 
 
 
 Dataset:
@@ -70,7 +70,7 @@ Dataset:
   - **Rating:** 9.0
 
 
-  - **Reason:** Multi-modal data is standardized and accessible; GitHub repo available.
+  - **Reason:** Multi-modal data is standardized and accessible; GitHub repo available. 
 
 
 Metrics:
@@ -79,7 +79,7 @@ Metrics:
   - **Rating:** 8.0
 
 
-  - **Reason:** Uses common task metrics like accuracy/RMSE, though varies by task.
+  - **Reason:** Uses common task metrics like accuracy/RMSE, though varies by task. 
 
 
 Reference Solution:
@@ -88,7 +88,7 @@ Reference Solution:
   - **Rating:** 7.0
 
 
-  - **Reason:** Baseline regression/classification models included.
+  - **Reason:** Baseline regression/classification models included. 
 
 
 Documentation:
@@ -97,7 +97,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** Source code supports pipeline reuse, but formal evaluation splits may vary.
+  - **Reason:** Source code supports pipeline reuse, but formal evaluation splits may vary. 
 
 
 **Radar Plot:**

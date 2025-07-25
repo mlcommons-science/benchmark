@@ -83,7 +83,7 @@ Specification:
   - **Rating:** 9.0
 
 
-  - **Reason:** Task is well defined  real-time compression of sparse, irregular sensor data using autoencoders ; latency constraints are implied but not fully quantified.
+  - **Reason:** Task is well defined  real-time compression of sparse, irregular sensor data using autoencoders ; latency constraints are implied but not fully quantified. 
 
 
 Dataset:
@@ -92,7 +92,7 @@ Dataset:
   - **Rating:** 8.0
 
 
-  - **Reason:** Dataset is custom and synthetic but described well; FAIR-compliance is partial  reusable and accessible, but not externally versioned with rich metadata .
+  - **Reason:** Dataset is custom and synthetic but described well; FAIR-compliance is partial  reusable and accessible, but not externally versioned with rich metadata . 
 
 
 Metrics:
@@ -101,7 +101,7 @@ Metrics:
   - **Rating:** 9.0
 
 
-  - **Reason:** Uses standard quantitative metrics  MSE, compression ratio  clearly aligned with compression and reconstruction goals.
+  - **Reason:** Uses standard quantitative metrics  MSE, compression ratio  clearly aligned with compression and reconstruction goals. 
 
 
 Reference Solution:
@@ -110,7 +110,7 @@ Reference Solution:
   - **Rating:** 7.0
 
 
-  - **Reason:** Baseline  autoencoder and quantized variant  is provided, but training/inference pipeline is minimally documented and needs user setup.
+  - **Reason:** Baseline  autoencoder and quantized variant  is provided, but training/inference pipeline is minimally documented and needs user setup. 
 
 
 Documentation:
@@ -119,7 +119,7 @@ Documentation:
   - **Rating:** 8.0
 
 
-  - **Reason:** GitHub repo contains core components, but more structured setup instructions and pretrained weights would improve usability.
+  - **Reason:** GitHub repo contains core components, but more structured setup instructions and pretrained weights would improve usability. 
 
 
 **Radar Plot:**

@@ -138,7 +138,7 @@ if __name__ == "__main__":
         if not manager.check_required_fields():
             sys.exit(0)
 
-    if args["--urlcheck"]:
+    if args["--check_url"]:
 
         if args["--url"]:
             url = args["--url"]

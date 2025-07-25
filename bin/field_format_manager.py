@@ -11,13 +11,15 @@ class FieldFormatManager:
         Creates a new FieldFormatManager with `format_file` as the formatting file.
 
         The file at `format_file` must meet the following preconditions:
-        - Be in YAML format
-        - Use 2 spaces (no tabs) as indentation
-        - Have 2 commented lines below each entry, one which starts with "description:" and another starting with "condition:"
+        - Be in valid YAML format
+        - Use 2 spaces (no tabs) as indentation.
+        - Have at least 2 commented lines below each entry, one which starts with "description:" and another starting with "condition:"
         The "description" line may have multiple commented lines below it, in case its text takes multiple lines.
         The "condition:" line must consist of exactly one line.
         "description" lines must come before "condition" lines.
-        - A field called 'ratings' appears last. Its subfields are indented by 4 spaces.
+        - All commented lines have 4 spaces of indentation.
+        - A field called 'ratings' exists and appears last. 
+        Its subfield names are indented by 4 spaces. Its commented lines have 6 spaces of indentation.
 
         Parameters:
             format_file (str): path to the formatting file
@@ -197,13 +199,13 @@ class FieldFormatManager:
         pass
 
 
-    def check_entry(self, field_name) -> tuple[str, str, str]:
+    def get_field(self, field_name) -> tuple[str, str, str]:
         """
-        Returns the entry name, description, and condition of `entry_name` as a tuple.
+        Returns the field name, description, and condition of `field_name` as a tuple.
 
         To get a subfield inside `ratings`, use `ratings`.{subfield name}. Example: 'ratings.specification'.
 
-        If `entry_name`'s description or condition is not found, raises a ValueError.
+        If `field_name`'s description or condition is not found, raises a ValueError.
 
         Parameters:
             field_name: name of desired field (dot-separated)
@@ -223,9 +225,9 @@ class FieldFormatManager:
         return (field_name, description.strip(), condition.strip())
 
 
-    def check_entries(self) -> list[tuple[str, str, str]]:
+    def get_all_fields(self) -> list[tuple[str, str, str]]:
         """
-        Returns a list of tuples. Each tuple contains the name, description, and condition of the given field.
+        Returns a list of tuples. Each tuple contains the name, description, and condition of the fields in the checking file.
 
         Returns:
             list containing, for each field name, (field name, description of field, condition of field)

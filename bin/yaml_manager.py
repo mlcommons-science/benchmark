@@ -41,6 +41,7 @@ from requests.exceptions import (
 from collections import OrderedDict
 import codecs
 
+from field_format_manager import FieldFormatManager
 
 def find_unicode_chars(filename=None):
     """
@@ -91,7 +92,7 @@ def find_unicode_chars(filename=None):
         # Add more mappings as needed
         # Example for Cyrillic (note: not all Cyrillic have simple 1-to-1 ASCII transliterations)
         "П": "P",
-        "р": "p",
+        "р": "r",
         "и": "i",
         "в": "v",
         "е": "e",
@@ -265,7 +266,7 @@ class YamlManager(object):
 
     def load_single_yaml_file(
         self, file_path: str, enable_error_messages: bool = True
-    ) -> list[dict]:
+    ) -> list[dict]: #type: ignore
         """
         Loads a YAML file containing a flat list of field-level entries,
         and groups them into full benchmark entries using 'name' as the reset key.
@@ -627,27 +628,84 @@ class YamlManager(object):
         return valid
 
 
+
+    def check_required_fields_comment(self, checking_file: str = 'source/benchmarks-format.yaml') -> bool:
+        """
+        Returns True if all YAML entries in the manager contains all fields marked as "required".
+
+        This method uses the new YAML template. Required fields are listed as YAML comments.
+
+        Parameters:
+            printing_errors (bool, default=True): whether to print error messages to the console
+        Returns:
+            bool: whether all required entries in the YAMLs are present
+        """
+        valid = True
+
+        fmt_manager = FieldFormatManager(format_file=checking_file)
+
+        field_information = fmt_manager.get_all_fields()
+
+        #Check all the flattened benchmarks
+        for i, benchmark in enumerate(self.flat):
+            
+            #Get name and condition from the field format manager
+            for name, _, condition in field_information:
+
+                name_value = benchmark.get(name)
+                
+                #Check presence if required
+                if not name_value and (condition=='required' or condition.startswith('">=')):
+                    valid = False
+                    Console.error(f"ERROR: {name_value} is required in benchmark entry {i}")
+                    continue 
+                
+                #Check >= condition
+                if condition.startswith('">='):
+                    if not isinstance(name_value, list):
+                        valid = False
+                        Console.error(f"ERROR: {name_value} must be a YAML list in benchmark entry {i}")
+                        continue 
+                    
+                    #get numerical length and check it
+                    try:
+                        min_length = int(condition[2:-1])
+                    except ValueError:
+                        valid = False
+                        Console.warning(f"WARNING: Minimum length specified ({condition[2:-1]}) is not a number")
+                        continue 
+
+                    if len(name_value) < min_length:
+                        valid = False
+                        Console.error(f"ERROR: {name_value} (length: {len(name_value)}) must have a length of at least {min_length} in benchmark {i}")
+                        continue
+
+        return valid
+
+
+
+
     #############################################################################################
     # URL Checking
     #############################################################################################
 
     def explain_http_error(self, code, url=None, with_url: bool = False) -> str:
         http_errors = {
-            400: "Bad Request – The server couldn't understand the request due to invalid syntax.",
-            401: "Unauthorized – Authentication is required and has failed or has not yet been provided.",
-            403: "Forbidden – The server understood the request but refuses to authorize it.",
-            404: "Not Found – The requested resource could not be found on the server.",
-            405: "Method Not Allowed – The request method is known by the server but is not supported by the target resource.",
-            408: "Request Timeout – The server timed out waiting for the request.",
-            429: "Too Many Requests – The user has sent too many requests in a given amount of time (rate limiting).",
-            500: "Internal Server Error – The server has encountered a situation it doesn't know how to handle.",
-            502: "Bad Gateway – The server received an invalid response from the upstream server.",
-            503: "Service Unavailable – The server is not ready to handle the request (often due to maintenance or overload).",
-            504: "Gateway Timeout – The server didn’t get a response in time from the upstream server.",
+            400: "Bad Request - The server couldn't understand the request due to invalid syntax.",
+            401: "Unauthorized - Authentication is required and has failed or has not yet been provided.",
+            403: "Forbidden - The server understood the request but refuses to authorize it.",
+            404: "Not Found - The requested resource could not be found on the server.",
+            405: "Method Not Allowed- The request method is known by the server but is not supported by the target resource.",
+            408: "Request Timeout - The server timed out waiting for the request.",
+            429: "Too Many Requests - The user has sent too many requests in a given amount of time (rate limiting).",
+            500: "Internal Server Error - The server has encountered a situation it doesn't know how to handle.",
+            502: "Bad Gateway - The server received an invalid response from the upstream server.",
+            503: "Service Unavailable - The server is not ready to handle the request (often due to maintenance or overload).",
+            504: "Gateway Timeout - The server didn’t get a response in time from the upstream server.",
         }
 
         explanation = http_errors.get(
-            code, "Unknown error code – not a standard HTTP error."
+            code, "Unknown error code - not a standard HTTP error."
         )
 
         if url and not with_url:

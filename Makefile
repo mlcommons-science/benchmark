@@ -38,8 +38,7 @@ install_latex:
 	biber --version
 	latexmk --version
 	pdflatex --version
-	
-	
+
 install:
 	pip install -r requirements.txt
 

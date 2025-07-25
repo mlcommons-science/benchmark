@@ -646,8 +646,10 @@ class YamlManager(object):
 
         field_information = fmt_manager.get_all_fields()
 
+        #Check all the flattened benchmarks
         for i, benchmark in enumerate(self.flat):
-
+            
+            #Get name and condition from the field format manager
             for name, _, condition in field_information:
 
                 name_value = benchmark.get(name)
@@ -665,6 +667,7 @@ class YamlManager(object):
                         Console.error(f"ERROR: {name_value} must be a YAML list in benchmark entry {i}")
                         continue 
                     
+                    #get numerical length and check it
                     try:
                         min_length = int(condition[2:-1])
                     except ValueError:

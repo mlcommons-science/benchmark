@@ -1,7 +1,7 @@
 - date: "2020-09-07"
   version: "TODO"
   last_updated: "2020-09-07"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "MMLU (Massive Multitask Language Understanding)"
@@ -90,7 +90,7 @@
 - date: "2023-11-20"
   version: "TODO"
   last_updated: "2023-11-20"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "GPQA Diamond"
@@ -177,7 +177,7 @@
 - date: "2018-03-14"
   version: "TODO"
   last_updated: "2018-03-14"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "ARC-Challenge (Advanced Reasoning Challenge)"
@@ -263,7 +263,7 @@
 - date: "2025-01-24"
   version: "TODO"
   last_updated: "2025-01-24"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "Humanity's Last Exam"
@@ -348,7 +348,7 @@
 - date: "2024-11-07"
   version: "TODO"
   last_updated: "2024-11-07"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "FrontierMath"
@@ -433,7 +433,7 @@
 - date: "2024-07-18"
   version: "TODO"
   last_updated: "2024-07-18"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "SciCode"
@@ -518,7 +518,7 @@
 - date: "2025-03-13"
   version: "TODO"
   last_updated: "2025-03-13"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "AIME (American Invitational Mathematics Examination)"
@@ -549,7 +549,7 @@
   ml_task:
   - "Supervised Learning"
   solutions: "TODO"
-  notes:
+  notes: "TODO"
   contact:
     name: "TODO"
     email: "TODO"
@@ -602,7 +602,7 @@
 - date: "2025-02-15"
   version: "TODO"
   last_updated: "2025-02-15"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "MATH-500"
@@ -684,7 +684,7 @@
 - date: "2024-04-02"
   version: "TODO"
   last_updated: "2024-04-02"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction)"
@@ -772,7 +772,7 @@
 - date: "2023-01-26"
   version: "TODO"
   last_updated: "2023-01-26"
-  expired:
+  expired: "false"
   valid: "no"
   valid_date: "TODO"
   name: "FEABench (Finite Element Analysis Benchmark)"
@@ -810,7 +810,7 @@
     name: "TODO"
     email: "TODO"
   cite:
-  - []
+  - "TODO"
   datasets:
     links:
     - name: "TODO"
@@ -850,7 +850,7 @@
 - date: "2024-07-12"
   version: "TODO"
   last_updated: "2024-07-12"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "SPIQA (Scientific Paper Image Question Answering)"
@@ -937,7 +937,7 @@
 - date: "2020-09-28"
   version: "TODO"
   last_updated: "2020-09-28"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "MedQA"
@@ -1024,7 +1024,7 @@
 - date: "2025-05-13"
   version: "TODO"
   last_updated: "2025-05-13"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "BaisBench (Biological AI Scientist Benchmark)"
@@ -1111,7 +1111,7 @@
 - date: "2023-01-26"
   version: "TODO"
   last_updated: "2023-01-26"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "MOLGEN"
@@ -1200,7 +1200,7 @@
 - date: "2020-05-02"
   version: "TODO"
   last_updated: "2020-05-02"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "Open Graph Benchmark (OGB) - Biology"
@@ -1290,7 +1290,7 @@
 - date: "2011-10-01"
   version: "TODO"
   last_updated: "2011-10-01"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "Materials Project"
@@ -1378,7 +1378,7 @@
 - date: "2020-10-20"
   version: "TODO"
   last_updated: "2020-10-20"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "OCP (Open Catalyst Project)"
@@ -1507,7 +1507,7 @@
 - date: "2023-06-20"
   version: "TODO"
   last_updated: "2023-06-20"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "JARVIS-Leaderboard"
@@ -1596,13 +1596,11 @@
 - date: "2022-02-22"
   version: "TODO"
   last_updated: "2022-02-22"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "Quantum Computing Benchmarks (QML)"
-  url:
-  - "https://github.com/XanaduAI/qml-benchmarks"
-  - "https://pennylane.ai/datasets/collection/qml-benchmarks"
+  url: "https://github.com/XanaduAI/qml-benchmarks"
   doi: "TODO"
   domain: "Quantum Computing"
   focus: "Quantum algorithm performance evaluation"
@@ -1651,7 +1649,7 @@
   datasets:
     links:
     - name: "TODO"
-      url: "TODO"
+      url: "https://pennylane.ai/datasets/collection/qml-benchmarks"
   results:
     links:
     - name: "TODO"
@@ -1687,7 +1685,7 @@
 - date: "2024-10-01"
   version: "TODO"
   last_updated: "2024-10-01"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "CFDBench (Fluid Dynamics)"
@@ -1769,14 +1767,14 @@
       rating: 6
       reason: |
         GitHub and Zenodo provide data and code, but setup for evaluating across all 739 cases requires moderate user effort and technical fluency with PyTorch-based frameworks. Reproducibility depends on full implementation details.
-- date:
+- date: "2023-04-23"
   version: "TODO"
-  last_updated:
-  expired:
+  last_updated: "TODO"
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "SatImgNet"
-  url:
+  url: "TODO"
   doi: "TODO"
   domain: "Remote Sensing"
   focus: "Satellite imagery classification"
@@ -1857,7 +1855,7 @@
 - date: "2023-07-19"
   version: "TODO"
   last_updated: "2023-07-19"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "ClimateLearn"
@@ -1943,7 +1941,7 @@
 - date: "2022-06-09"
   version: "TODO"
   last_updated: "2022-06-09"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "BIG-Bench (Beyond the Imitation Game Benchmark)"
@@ -2031,7 +2029,7 @@
 - date: "2019-11-20"
   version: "TODO"
   last_updated: "2019-11-20"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "CommonSenseQA"
@@ -2118,7 +2116,7 @@
 - date: "2019-07-24"
   version: "TODO"
   last_updated: "2019-07-24"
-  expired:
+  expired: "false"
   valid: "yes"
   valid_date: "TODO"
   name: "Winogrande"

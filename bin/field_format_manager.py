@@ -1,5 +1,8 @@
 import yaml
+from cloudmesh.common.console import Console
 # from pprint import pprint
+
+from yaml_manager import YamlManager
 
 class FieldFormatManager:
     """
@@ -19,7 +22,9 @@ class FieldFormatManager:
         "description" lines must come before "condition" lines.
         - All commented lines have 4 spaces of indentation.
         - A field called 'ratings' exists and appears last. 
-        Its subfield names are indented by 4 spaces. Its commented lines have 6 spaces of indentation.
+        Its subfield names are indented by 4 spaces. Its commented lines have 6 spaces of indentation.  
+        
+        The file CANNOT HAVE ANY COMMENTS anywhere except as specified in the precondition.
 
         Parameters:
             format_file (str): path to the formatting file
@@ -34,7 +39,6 @@ class FieldFormatManager:
 
         self.contents = {**self.contents, **self._process_ratings(initial_contents, format_file)} 
 
-        # pprint(self.contents)
 
 
     def _process_yaml_lines(self, yaml_file_list: list[str], format_filename: str) -> dict:
@@ -81,7 +85,8 @@ class FieldFormatManager:
                 
                 #Check for a "condition" header. If found, move on
                 elif line.replace("|", "").replace("#", "").strip().startswith("condition:"):
-                    condition = line.replace("|", "").replace("#", "").strip() [11:]
+                    condition = line.replace("|", "").replace("#", "").replace('"', '').strip() [11:]
+
                     output[ file_categories[file_cat_index] + ".description"] = description
                     output[ file_categories[file_cat_index] + ".condition"] = condition
                     # print(">>>> CONDITION: " + line.replace("|", "").replace("#", "").strip() [10:])
@@ -162,7 +167,7 @@ class FieldFormatManager:
                 
                 #Check for a "condition" header. If found, move on
                 elif line.replace("|", "").replace("#", "").strip().startswith("condition:"):
-                    condition = line.replace("|", "").replace("#", "").strip() [11:]
+                    condition = line.replace("|", "").replace("#", "").replace('"', '').strip() [11:]
 
                     output[ "ratings." + file_categories[file_cat_index] + ".description"] = description
                     output[ "ratings." + file_categories[file_cat_index] + ".condition"] = condition
@@ -191,12 +196,56 @@ class FieldFormatManager:
     # -----------------------------------------------------------------------------------------------------------------
 
 
+    def compare_all_fields(self, filepath: str, verbose: bool = True) -> bool:
+        """
+        Returns whether the YAML file at `filepath` contains all required fields, as dictated by the manager's checking file.
 
-    def load(self, filename = 'source/benchmarks.yaml'):
+        Parameters:
+            filepath (str): file to check
+            verbose (bool, default=True): whether to print warning messages to the console
+        Returns:
+            bool: whether the given file is in the correct format
         """
-        Specification unknown. Does nothing.
-        """
-        pass
+        valid = True
+
+        mgr = YamlManager(filepath)
+
+        checker_fields = self.get_all_fields()
+
+        for i, benchmark in enumerate(mgr.data):
+            for field_name, _, condition in checker_fields:
+
+                field_value = benchmark.get(field_name)
+
+                #If the field doesn't exist, check if the field is required
+                if field_value == None:
+                    if (condition == "required" or condition.startswith('>=')):
+                        valid = False 
+                        if verbose:
+                            Console.error(f"(benchmark {i}): Required field '{field_name}' is not present")
+                
+                    continue
+
+                
+                #If the condition is >=, check length
+                if condition == '>=':
+                    if not isinstance(field_value, list):
+                        valid = False 
+                        if verbose:
+                            Console.error(f"(benchmark {i}): Required field '{field_name}' must be a YAML list, as specified by the >= condition")
+
+                    #Get minimum length
+                    try:
+                        min_length = int(condition[2:])
+                    except ValueError:
+                        Console.warn(f"Formatting file's >= condition ({condition[2:]}) is not an integer")
+                    
+                    if len(field_value) < min_length:
+                        valid = False 
+                        if verbose:
+                            Console.error(f"(benchmark {i}): Required field '{field_name}' (of length {len(field_value)}) must have length at least {min_length}")
+
+        return valid
 
 
     def get_field(self, field_name) -> tuple[str, str, str]:
@@ -264,4 +313,3 @@ class FieldFormatManager:
         Specification unknown. Does nothing.
         """
         pass
-

@@ -6,7 +6,7 @@
   valid_date: "2025-07-28"
   name: "MMLU (Massive Multitask Language Understanding)"
   url: "https://paperswithcode.com/dataset/mmlu"
-  doi: "10.48550/arXiv.2009.03300"
+  doi: "TODO"
   domain: "Multidomain"
   focus: "Academic knowledge and reasoning across 57 subjects"
   keywords:
@@ -90,11 +90,11 @@
         Code and datasets provided and easy to find, but no environment setup instructions given.
 
 - date: "2023-11-20"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2023-11-20"
   expired: "false"
   valid: "yes"
-  valid_date: "2023-11-20"
+  valid_date: "TODO"
   name: "GPQA Diamond"
   url: "https://arxiv.org/abs/2311.12022"
   doi: "TODO"
@@ -127,11 +127,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "See the associated paper for solution details."
+  solutions: "TODO"
   notes: "Good"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{rein2023gpqagraduatelevelgoogleproofqa,
@@ -142,20 +142,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 6.5
       reason: |
@@ -177,11 +177,11 @@
       reason: |
         No reference solution, platform for reproduction, or procedure for replication
 - date: "2018-03-14"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2018-03-14"
   expired: "false"
   valid: "yes"
-  valid_date: "2018-03-14"
+  valid_date: "TODO"
   name: "ARC-Challenge (Advanced Reasoning Challenge)"
   url: "https://allenai.org/data/arc"
   doi: "TODO"
@@ -211,11 +211,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "See the associated paper for solution details."
+  solutions: "TODO"
   notes: "Good"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @inproceedings{clark2018think,
@@ -228,20 +228,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 9
       reason: |
@@ -263,14 +263,14 @@
       reason: |
         There are easy ways TODOwnload the dataset. Documentation quantity and clarity depends on authors of tested models
 - date: "2025-01-24"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2025-01-24"
   expired: "false"
   valid: "yes"
-  valid_date: "2025-01-24"
+  valid_date: "TODO"
   name: "Humanity's Last Exam"
   url: "https://arxiv.org/abs/2501.14249"
-  doi: "10.48550/arXiv.2501.14249"
+  doi: "TODO"
   domain: "Multidomain"
   focus: "Broad cross-domain academic reasoning"
   keywords:
@@ -295,11 +295,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "Solution details are described in the referenced paper or repository."
+  solutions: "TODO"
   notes: "Good"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{phan2025humanitysexam,
@@ -313,20 +313,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 8.5
       reason: |
@@ -348,14 +348,14 @@
       reason: |
         No specified way to reproduce the reference solution
 - date: "2024-11-07"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2024-11-07"
   expired: "false"
   valid: "yes"
-  valid_date: "2024-11-07"
+  valid_date: "TODO"
   name: "FrontierMath"
   url: "https://arxiv.org/abs/2411.04872"
-  doi: "10.48550/arXiv.2411.04872"
+  doi: "TODO"
   domain: "Mathematics"
   focus: "Challenging advanced mathematical reasoning"
   keywords:
@@ -380,11 +380,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "Solution details are described in the referenced paper or repository."
+  solutions: "TODO"
   notes: "Good"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{glazer2024frontiermathbenchmarkevaluatingadvanced,
@@ -398,20 +398,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 9
       reason: |
@@ -433,14 +433,14 @@
       reason: |
         No specified way to reproduce the reference solution
 - date: "2024-07-18"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2024-07-18"
   expired: "false"
   valid: "yes"
-  valid_date: "2024-07-18"
+  valid_date: "TODO"
   name: "SciCode"
   url: "https://arxiv.org/abs/2407.13168"
-  doi: "10.48550/arXiv.2407.13168"
+  doi: "TODO"
   domain: "Scientific Programming"
   focus: "Scientific code generation and problem solving"
   keywords:
@@ -465,11 +465,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "Solution details are described in the referenced paper or repository."
+  solutions: "TODO"
   notes: "Good"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{tian2024scicoderesearchcodingbenchmark,
@@ -483,20 +483,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 6
       reason: |
@@ -518,11 +518,11 @@
       reason: |
         No specified way to reproduce the reference solution
 - date: "2025-03-13"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2025-03-13"
   expired: "false"
   valid: "yes"
-  valid_date: "2025-03-13"
+  valid_date: "TODO"
   name: "AIME (American Invitational Mathematics Examination)"
   url: "https://artofproblemsolving.com/wiki/index.php/AIME_Problems_and_Solutions"
   doi: "TODO"
@@ -550,11 +550,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "See the associated paper for solution details."
+  solutions: "TODO"
   notes: "TODO"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{www-aime,
@@ -567,20 +567,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 3
       reason: |
@@ -602,11 +602,11 @@
       reason: |
         Not given
 - date: "2025-02-15"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2025-02-15"
   expired: "false"
   valid: "yes"
-  valid_date: "2025-02-15"
+  valid_date: "TODO"
   name: "MATH-500"
   url: "https://huggingface.co/datasets/HuggingFaceH4/MATH-500"
   doi: "TODO"
@@ -621,7 +621,7 @@
     MATH-500 is a curated subset of 500 problems from the OpenAI MATH dataset, spanning
     high-school to advanced levels, designed to evaluate LLMs mathematical reasoning and 
     generalization.
-  licensing: "Apache-2.0"
+  licensing: "TODO"
   task_types:
   - "Problem solving"
   ai_capability_measured:
@@ -634,11 +634,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "See the associated paper for solution details."
+  solutions: "TODO"
   notes: "Dataset hosted on Hugging Face"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{huggingface2025math500,
@@ -649,20 +649,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 3
       reason: |
@@ -684,11 +684,11 @@
       reason: |
         Not given. Implicit instructions TODOwnload dataset.
 - date: "2024-04-02"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2024-04-02"
   expired: "false"
   valid: "yes"
-  valid_date: "2024-04-02"
+  valid_date: "TODO"
   name: "CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction)"
   url: "https://arxiv.org/abs/2404.02029"
   doi: "TODO"
@@ -715,18 +715,18 @@
   - "Long-context understanding and scientific reasoning"
   metrics:
   - "Accuracy"
-  models:
-  - "unkown"
+  models: 
+   - "unkown"
   ml_motif:
   - "TODO"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "See the associated paper for solution details."
+  solutions: "TODO"
   notes: "Good"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{curie2024,
@@ -737,20 +737,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 0
       reason: |
@@ -772,11 +772,11 @@
       reason: |
         This is an AI model, not a benchmark
 - date: "2023-01-26"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2023-01-26"
   expired: "false"
   valid: "no"
-  valid_date: "2023-01-26"
+  valid_date: "TODO"
   name: "FEABench (Finite Element Analysis Benchmark)"
   url: "https://github.com/alleninstitute/feabench"
   doi: "TODO"
@@ -805,30 +805,30 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "See the associated paper for solution details."
+  solutions: "TODO"
   notes: "Google search for \"FEABench\" gave https://arxiv.org/abs/2503.06680, which
     relates to coding instead of math"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - "TODO"
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 0
       reason: |
@@ -850,11 +850,11 @@
       reason: |
         Using the link results in a 404 Not Found error
 - date: "2024-07-12"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2024-07-12"
   expired: "false"
   valid: "yes"
-  valid_date: "2024-07-12"
+  valid_date: "TODO"
   name: "SPIQA (Scientific Paper Image Question Answering)"
   url: "https://arxiv.org/abs/2407.09413"
   doi: "TODO"
@@ -887,11 +887,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "See the associated paper for solution details."
+  solutions: "TODO"
   notes: "Good"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{zhong2024spiqa,
@@ -902,20 +902,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 10
       reason: |
@@ -937,14 +937,14 @@
       reason: |
         Dataset and benchmark description provided; code/software mentioned; however, full step-by-step setup or containerized environment not stated.
 - date: "2020-09-28"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2020-09-28"
   expired: "false"
   valid: "yes"
-  valid_date: "2020-09-28"
+  valid_date: "TODO"
   name: "MedQA"
   url: "https://arxiv.org/abs/2009.13081"
-  doi: "10.48550/arXiv.2009.13081"
+  doi: "TODO"
   domain: "Medical Question Answering"
   focus: "Medical board exam QA"
   keywords:
@@ -971,11 +971,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "Solution details are described in the referenced paper or repository."
+  solutions: "TODO"
   notes: "Multilingual (English, Simplified and Traditional Chinese)"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{jin2020diseasedoespatienthave,
@@ -989,20 +989,20 @@
       }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 9
       reason: |
@@ -1024,14 +1024,14 @@
       reason: |
         Dataset and paper are accessible; instructions on how to use the source code available, but environment setup or full reproducibility workflow is not packaged.
 - date: "2025-05-13"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2025-05-13"
   expired: "false"
   valid: "yes"
-  valid_date: "2025-05-13"
+  valid_date: "TODO"
   name: "BaisBench (Biological AI Scientist Benchmark)"
   url: "https://arxiv.org/abs/2505.08341"
-  doi: "10.48550/arXiv.2505.08341"
+  doi: "TODO"
   domain: "Computational Biology"
   focus: "Omics-driven AI research tasks"
   keywords:
@@ -1058,11 +1058,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "Solution details are described in the referenced paper or repository."
+  solutions: "TODO"
   notes: "Underperforms human experts; aims to advance AI-driven discovery"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{luo2025benchmarkingaiscientistsomics,
@@ -1076,20 +1076,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 9
       reason: |
@@ -1111,14 +1111,14 @@
       reason: |
         Dataset and paper accessible; IPYNB files for setup are available on the github repo; further instructions are minimal.
 - date: "2023-01-26"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2023-01-26"
   expired: "false"
   valid: "yes"
-  valid_date: "2023-01-26"
+  valid_date: "TODO"
   name: "MOLGEN"
   url: "https://github.com/zjunlp/MolGen"
-  doi: "10.48550/arXiv.2301.11259"
+  doi: "TODO"
   domain: "Computational Chemistry"
   focus: "Molecular generation and optimization"
   keywords:
@@ -1129,7 +1129,7 @@
     MolGen is a pre-trained molecular language model that generates chemically valid
     molecules using SELFIES and reinforcement learning, guided by chemical feedback 
     to optimize properties such as logP, QED, and docking score.
-  licensing: "MIT License"
+  licensing: "TODO"
   task_types:
   - "Distribution learning"
   - "Goal-oriented generation"
@@ -1147,11 +1147,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "Solution details are described in the referenced paper or repository."
+  solutions: "TODO"
   notes: "This is a model, not a benchmark"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{fang2024domainagnosticmoleculargenerationchemical,
@@ -1165,20 +1165,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 8
       reason: |
@@ -1200,14 +1200,14 @@
       reason: |
         Code is available and usable; instructions exist, though setup may require domain knowledge or adaptation for different datasets/environments.
 - date: "2020-05-02"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2020-05-02"
   expired: "false"
   valid: "yes"
-  valid_date: "2020-05-02"
+  valid_date: "TODO"
   name: "Open Graph Benchmark (OGB) - Biology"
   url: "https://ogb.stanford.edu/docs/home/"
-  doi: "10.48550/arXiv.2005.00687"
+  doi: "TODO"
   domain: "Graph ML"
   focus: "Biological graph property prediction"
   keywords:
@@ -1237,11 +1237,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "Solution details are described in the referenced paper or repository."
+  solutions: "TODO"
   notes: "Community-driven updates"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{hu2021opengraphbenchmarkdatasets,
@@ -1255,20 +1255,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 10
       reason: |
@@ -1290,11 +1290,11 @@
       reason: |
         Full codebase available via GitHub, with documented installation and usage instructions.
 - date: "2011-10-01"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2011-10-01"
   expired: "false"
   valid: "yes"
-  valid_date: "2011-10-01"
+  valid_date: "TODO"
   name: "Materials Project"
   url: "https://materialsproject.org/"
   doi: "TODO"
@@ -1324,11 +1324,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "See the associated paper for solution details."
+  solutions: "TODO"
   notes: "Core component of the Materials Genome Initiative"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @article{jain2013materials,
@@ -1343,20 +1343,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 8
       reason: |
@@ -1378,11 +1378,11 @@
       reason: |
         Extensive API, code repositories, and user guides exist, but end-to-end benchmarking workflows require additional setup by users. 'Documentation' link did not work.
 - date: "2020-10-20"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2020-10-20"
   expired: "false"
   valid: "yes"
-  valid_date: "2020-10-20"
+  valid_date: "TODO"
   name: "OCP (Open Catalyst Project)"
   url: "https://opencatalystproject.org/"
   doi: "TODO"
@@ -1415,11 +1415,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "See the associated paper for solution details."
+  solutions: "TODO"
   notes: "Public leaderboards; active community development"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @article{chanussot2021oc20,
@@ -1472,20 +1472,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 10
       reason: |
@@ -1507,11 +1507,11 @@
       reason: |
         Code, data loaders, usage instructions, and leaderboard available; minor setup effort may still be required for full reproduction.
 - date: "2023-06-20"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2023-06-20"
   expired: "false"
   valid: "yes"
-  valid_date: "2023-06-20"
+  valid_date: "TODO"
   name: "JARVIS-Leaderboard"
   url: "https://arxiv.org/abs/2306.11688"
   doi: "TODO"
@@ -1541,11 +1541,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "See the associated paper for solution details."
+  solutions: "TODO"
   notes: "1,281 contributions across 274 benchmarks"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @article{choudhary2024jarvis,
@@ -1561,20 +1561,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 6
       reason: |
@@ -1596,11 +1596,11 @@
       reason: |
         JARVIS-Tools and leaderboard APIs are well-documented and actively maintained; minimal setup burden, though some task-specific workflows may require additional guidance.
 - date: "2022-02-22"
-  version: "v0.2"
+  version: "TODO"
   last_updated: "2022-02-22"
   expired: "false"
   valid: "yes"
-  valid_date: "2022-02-22"
+  valid_date: "TODO"
   name: "Quantum Computing Benchmarks (QML)"
   url: "https://github.com/XanaduAI/qml-benchmarks"
   doi: "TODO"
@@ -1613,7 +1613,7 @@
   summary: |
     A suite of benchmarks evaluating quantum hardware and algorithms on tasks such as state 
     preparation, circuit optimization, and error correction across multiple platforms.
-  licensing: "Apache License 2.0"
+  licensing: "TODO"
   task_types:
   - "Circuit benchmarking"
   - "State classification"
@@ -1631,11 +1631,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "See the associated paper for solution details."
+  solutions: "TODO"
   notes: "Hardware-agnostic, application-level metrics. The citation may not be correct."
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @inproceedings{kiwit2023,
@@ -1650,20 +1650,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
+    - name: "TODO"
       url: "https://pennylane.ai/datasets/collection/qml-benchmarks"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 9
       reason: |
@@ -1685,11 +1685,11 @@
       reason: |
         Strong integration with PennyLane and QML ecosystem; guides and code provided, but advanced hardware setup may pose reproducibility hurdles for newcomers.
 - date: "2024-10-01"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2024-10-01"
   expired: "false"
   valid: "yes"
-  valid_date: "2024-10-01"
+  valid_date: "TODO"
   name: "CFDBench (Fluid Dynamics)"
   url: "https://arxiv.org/abs/2310.05963"
   doi: "TODO"
@@ -1720,11 +1720,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "See the associated paper for solution details."
+  solutions: "TODO"
   notes: "302K frames across 739 cases"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{luo2024cfdbenchlargescalebenchmarkmachine,
@@ -1735,20 +1735,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 10
       reason: |
@@ -1770,14 +1770,14 @@
       reason: |
         GitHub and Zenodo provide data and code, but setup for evaluating across all 739 cases requires moderate user effort and technical fluency with PyTorch-based frameworks. Reproducibility depends on full implementation details.
 - date: "2023-04-23"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "TODO"
   expired: "false"
   valid: "yes"
-  valid_date: "2023-04-23"
+  valid_date: "TODO"
   name: "SatImgNet"
   url: "TODO"
-  doi: "10.48550/arXiv.2304.11619"
+  doi: "TODO"
   domain: "Remote Sensing"
   focus: "Satellite imagery classification"
   keywords:
@@ -1795,18 +1795,18 @@
   - "Zero-shot land-use classification"
   metrics:
   - "Accuracy"
-  models:
+  models: 
   - "unkown"
   ml_motif:
   - "TODO"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "Solution details are described in the referenced paper or repository."
+  solutions: "TODO"
   notes: "Public leaderboard available"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{roberts2023satinmultitaskmetadatasetclassifying,
@@ -1820,20 +1820,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 9
       reason: |
@@ -1855,14 +1855,14 @@
       reason: |
         Good usage guidance via Hugging Face and paper; example scripts and evaluation tools exist, but end-to-end reproducibility may require manual integration of model checkpoints and preprocessing.
 - date: "2023-07-19"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2023-07-19"
   expired: "false"
   valid: "yes"
-  valid_date: "2023-07-19"
+  valid_date: "TODO"
   name: "ClimateLearn"
   url: "https://arxiv.org/abs/2307.01909"
-  doi: "10.48550/arXiv.2307.01909"
+  doi: "TODO"
   domain: "Climate Science; Forecasting"
   focus: "ML for weather and climate modeling"
   keywords:
@@ -1888,12 +1888,12 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "Solution details are described in the referenced paper or repository."
+  solutions: "TODO"
   notes: "Includes physical and ML baselines. Appears to be the same as the SatImgNet
     entry"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{nguyen2023climatelearnbenchmarkingmachinelearning, 
@@ -1906,20 +1906,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 10
       reason: |
@@ -1941,14 +1941,14 @@
       reason: |
         Comprehensive setup via GitHub, including data loaders, training scripts, config files, and reproducibility protocols; minor complexity in large-scale data preprocessing.
 - date: "2022-06-09"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2022-06-09"
   expired: "false"
   valid: "yes"
-  valid_date: "2022-06-09"
+  valid_date: "TODO"
   name: "BIG-Bench (Beyond the Imitation Game Benchmark)"
   url: "https://github.com/google/BIG-bench"
-  doi: "10.48550/arXiv.2206.04615"
+  doi: "TODO"
   domain: "NLP; AI Evaluation"
   focus: "Diverse reasoning and generalization tasks"
   keywords:
@@ -1958,7 +1958,7 @@
   summary: |
     BIG-Bench is a collaborative suite of 204 tasks designed to probe LLMs' reasoning, 
     knowledge, and bias across diverse domains and difficulty levels beyond simple imitation.
-  licensing: "Apache License 2.0"
+  licensing: "TODO"
   task_types:
   - "Few-shot evaluation"
   - "Multi-task evaluation"
@@ -1976,11 +1976,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "Solution details are described in the referenced paper or repository."
+  solutions: "TODO"
   notes: "Human baselines included"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{srivastava2023imitationgamequantifyingextrapolating,
@@ -1994,20 +1994,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 9.0
       reason: |
@@ -2029,14 +2029,14 @@
       reason: |
         Excellent GitHub documentation with usage examples, task templates, and tooling; task diversity may require manual task-by-task execution setup.
 - date: "2019-11-20"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2019-11-20"
   expired: "false"
   valid: "yes"
-  valid_date: "2019-11-20"
+  valid_date: "TODO"
   name: "CommonSenseQA"
   url: "https://paperswithcode.com/paper/commonsenseqa-a-question-answering-challenge"
-  doi: "10.48550/arXiv.1811.00937"
+  doi: "TODO"
   domain: "NLP; Commonsense"
   focus: "Commonsense question answering"
   keywords:
@@ -2063,11 +2063,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "Solution details are described in the referenced paper or repository."
+  solutions: "TODO"
   notes: "Baseline 56%, human 89%"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{talmor2019commonsenseqaquestionansweringchallenge,
@@ -2081,20 +2081,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 9.0
       reason: |
@@ -2116,14 +2116,14 @@
       reason: |
         Clear paper, GitHub repo, and integration with HuggingFace Datasets; full reproducibility requires manually connecting models to dataset.
 - date: "2019-07-24"
-  version: "v1.0"
+  version: "TODO"
   last_updated: "2019-07-24"
   expired: "false"
   valid: "yes"
-  valid_date: "2019-07-24"
+  valid_date: "TODO"
   name: "Winogrande"
   url: "https://leaderboard.allenai.org/winogrande/submissions/public"
-  doi: "10.48550/arXiv.1907.10641"
+  doi: "TODO"
   domain: "NLP; Commonsense"
   focus: "Winograd Schema-style pronoun resolution"
   keywords:
@@ -2150,11 +2150,11 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "Solution details are described in the referenced paper or repository."
+  solutions: "TODO"
   notes: "Human ~94%"
   contact:
-    name: "Unknown"
-    email: "unknown"
+    name: "TODO"
+    email: "TODO"
   cite:
   - |
     @misc{sakaguchi2019winograndeadversarialwinogradschema,
@@ -2168,20 +2168,20 @@
     }
   datasets:
     links:
-    - name: "Dataset"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   results:
     links:
-    - name: "Result"
-      url: "https://example.com"
+    - name: "TODO"
+      url: "TODO"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
-      reason: |-
-        Not yet provided.
+      rating: -1
+      reason: |
+        TODO
     specification:
       rating: 9.0
       reason: |

@@ -1,9 +1,9 @@
 - date: "2020-09-07"
-  version: "TODO"
+  version: "1"
   last_updated: "2020-09-07"
   expired: "false"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2025-07-28"
   name: "MMLU (Massive Multitask Language Understanding)"
   url: "https://paperswithcode.com/dataset/mmlu"
   doi: "TODO"
@@ -20,7 +20,7 @@
     multiple-choice tasks covering elementary mathematics, US history, computer science, 
     law, and more, designed to evaluate a model's breadth and depth of knowledge in 
     zero-shot and few-shot settings.
-  licensing: "TODO"
+  licensing: "MIT License"
   task_types:
   - "Multiple choice"
   ai_capability_measured:
@@ -33,15 +33,15 @@
   - "o1"
   - "DeepSeek-R1"
   ml_motif:
-  - "TODO"
+  - "General knowledge"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "1"
   notes: "Good"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "Dan Hendrycks"
+    email: "dan (at) safe.ai"
   cite:
   - |
     @article{hendrycks2021measuring,
@@ -53,40 +53,42 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "Papers with Code datasets"
+      url: "https://github.com/paperswithcode/paperswithcode-data"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "Chinchilla"
+      url: "https://arxiv.org/abs/2203.15556"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
-      reason: |
-        TODO
-    specification:
-      rating: 6
-      reason: |
-        TODO
-    dataset:
-      rating: 6.5
-      reason: |
-        TODO
-    metrics:
       rating: 10
       reason: |
-        TODO
+        Well documented Github, instructions and dataset easy to download
+    specification:
+      rating: 9
+      reason: |
+        Clearly defined method of giving inputs, although it lacks hardware specifications.
+    dataset:
+      rating: 9
+      reason: |
+        Contains predefined few-shot development, validation, and testing set. Easy to access and download, but not versioned.
+    metrics:
+      rating: 9
+      reason: |
+        Clearly defined primary metric of number of multiple-choice questions answered correctly.
+        Secondary metric of confidence requires models to self-report.
     reference_solution:
-      rating: 0
+      rating: 10
       reason: |
-        TODO
+        Performance and links to several top models linked on the Github.
     documentation:
-      rating: 6
+      rating: 8
       reason: |
-        TODO
+        Code and datasets provided and easy to find, but no environment setup instructions given.
+
 - date: "2023-11-20"
   version: "TODO"
   last_updated: "2023-11-20"

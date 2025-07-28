@@ -1,12 +1,12 @@
 - date: "2024-05-01"
-  version: "TODO"
+  version: "v0.2.0"
   last_updated: "2024-05"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-05-01"
   name: "Jet Classification"
   url: "https://github.com/fastmachinelearning/fastml-science/tree/main/jet-classify"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2207.07958"
   domain: "Particle Physics"
   focus: "Real-time classification of particle jets using HL-LHC simulation features"
   keywords:
@@ -18,7 +18,7 @@
     This benchmark evaluates ML models for real-time classification of
     particle jets using high-level features derived from simulated LHC data. It
     includes both full-precision and quantized models optimized for FPGA deployment.
-  licensing: "TODO"
+  licensing: "Apache License 2.0"
   task_types:
   - "Classification"
   ai_capability_measured:
@@ -35,7 +35,7 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Includes both float and quantized models using QKeras
   contact:
@@ -93,14 +93,14 @@
       reason: |
         Clear paper, GitHub repo, and integration with HuggingFace Datasets; full reproducibility requires manually connecting models to dataset.
 - date: "2024-05-01"
-  version: "TODO"
+  version: "v0.2.0"
   last_updated: "2024-05"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-05-01"
   name: "Irregular Sensor Data Compression"
   url: "https://github.com/fastmachinelearning/fastml-science/tree/main/sensor-data-compression"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2207.07958"
   domain: "Particle Physics"
   focus: "Real-time compression of sparse sensor data with autoencoders"
   keywords:
@@ -112,7 +112,7 @@
     This benchmark addresses lossy compression of irregularly sampled
     sensor data from particle detectors using real-time autoencoder architectures,
     targeting latency-critical applications in physics experiments.
-  licensing: "TODO"
+  licensing: "Apache License 2.0"
   task_types:
   - "Compression"
   ai_capability_measured:
@@ -129,7 +129,7 @@
   type: "Benchmark"
   ml_task:
   - "Unsupervised Learning"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Based on synthetic but realistic physics sensor data
   contact:
@@ -185,14 +185,14 @@
       reason: |
         GitHub contains baseline code, data loaders, and references, but setup for deployment (e.g., FPGA pipeline) requires familiarity with the tooling.
 - date: "2024-05-01"
-  version: "TODO"
+  version: "v0.2.0"
   last_updated: "2024-05"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-05-01"
   name: "Beam Control"
   url: "https://github.com/fastmachinelearning/fastml-science/tree/main/beam-control"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2207.07958"
   domain: "Accelerators and Magnets"
   focus: "Reinforcement learning control of accelerator beam position"
   keywords:
@@ -204,7 +204,7 @@
     Beam Control explores real-time reinforcement learning strategies for maintaining 
     stable beam trajectories in particle accelerators. The benchmark is based on the 
     BOOSTR environment for accelerator simulation.
-  licensing: "TODO"
+  licensing: "Apache License 2.0"
   task_types:
   - "Control"
   ai_capability_measured:
@@ -220,7 +220,7 @@
   type: "Benchmark"
   ml_task:
   - "Reinforcement Learning"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Environment defined, baseline RL implementation is in progress
   contact:
@@ -284,14 +284,14 @@
       reason: |
         GitHub repo contains core components, but more structured setup instructions and pretrained weights would improve usability.
 - date: "2024-07-08"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2024-07"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-07-08"
   name: "Ultrafast jet classification at the HL-LHC"
   url: "https://arxiv.org/pdf/2402.01876"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2402.01876"
   domain: "Particle Physics"
   focus: "FPGA-optimized real-time jet origin classification at the HL-LHC"
   keywords:
@@ -320,7 +320,7 @@
   type: "Model"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Uses quantization-aware training; hardware synthesis evaluated via hls4ml
   contact:
@@ -377,11 +377,11 @@
       reason: |
         GitHub has a defined structure but is incomplete; setup and execution instructions for training/evaluation are not fully established.
 - date: "2024-10-15"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2024-10"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-10-15"
   name: "Quench detection"
   url: "https://indico.cern.ch/event/1387540/contributions/6153618/attachments/2948441/5182077/fast_ml_magnets_2024_final.pdf"
   doi: "TODO"
@@ -457,14 +457,14 @@
       reason: |
         Paper and code (via hls4ml) are sufficient, but a centralized, standalone repo for reproducing all models would enhance accessibility.
 - date: "2024-10-15"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2024-10"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-10-15"
   name: "DUNE"
   url: "https://indico.fnal.gov/event/66520/contributions/301423/attachments/182439/250508/fast_ml_dunedaq_sonic_10_15_24.pdf"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2103.13910"
   domain: "Particle Physics"
   focus: "Real-time ML for DUNE DAQ time-series data"
   keywords:
@@ -491,7 +491,7 @@
   type: "Benchmark (in progress)"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Prototype models demonstrated on SONIC platform
   contact:
@@ -547,14 +547,14 @@
       reason: |
         Slides and GDocs outline results; implementation is in progress with limited setup/code release.
 - date: "2025-01-08"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2025-01"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2025-01-08"
   name: "Intelligent experiments through real-time AI"
   url: "https://arxiv.org/pdf/2501.04845"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2501.04845"
   domain: "Instrumentation and Detectors; Nuclear Physics; Particle Physics"
   focus: "Real-time FPGA-based triggering and detector control for sPHENIX and future
     EIC"
@@ -585,7 +585,7 @@
   type: "Model"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Achieved ~97.4% accuracy for beauty decay triggers; sub-10 micros latency on Alveo U280; hit-based FPGA design via hls4ml and FlowGNN.
   contact:
@@ -641,14 +641,14 @@
       reason: |
         Slides and some internal documentation exist, but no full pipeline or public GitHub repo yet.
 - date: "2025-01-09"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2025-01"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2025-01-09"
   name: "Neural Architecture Codesign for Fast Physics Applications"
   url: "https://arxiv.org/abs/2501.05515"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2501.05515"
   domain: "Physics; Materials Science; Particle Physics"
   focus: "Automated neural architecture search and hardware-efficient model codesign
     for fast physics applications"
@@ -681,7 +681,7 @@
   type: "Framework"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Demonstrated two case studies (materials science, HEP); pipeline and code open-sourced.
   contact:
@@ -735,14 +735,14 @@
       reason: |
         Paper is detailed and tool usage (FlowGNN, hls4ml) is described, but repo release and dataset access remain in progress.
 - date: "2024-06-24"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2024-06"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-06-24"
   name: "Smart Pixels for LHC"
   url: "https://arxiv.org/abs/2406.14860"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2406.14860"
   domain: "Particle Physics; Instrumentation and Detectors"
   focus: "On-sensor, in-pixel ML filtering for high-rate LHC pixel detectors"
   keywords:
@@ -771,7 +771,7 @@
   type: "Benchmark"
   ml_task:
   - "Image Classification"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Prototype in CMOS 28 nm; proof-of-concept for Phase III pixel upgrades.
   contact:
@@ -825,14 +825,14 @@
       reason: |
         NAC pipeline, hls4ml usage, and results are discussed; code (e.g., nac-opt) referenced, but replication requires stitching together toolchain and data.
 - date: "2023-10-03"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2023-10"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2023-10-03"
   name: "HEDM (BraggNN)"
   url: "https://arxiv.org/abs/2008.08198"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2008.08198"
   domain: "Material Science"
   focus: "Fast Bragg peak analysis using deep learning in diffraction microscopy"
   keywords:
@@ -859,7 +859,7 @@
   type: "Framework"
   ml_task:
   - "Peak finding"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Enables real-time HEDM workflows; basis for NAC case study.
   contact:
@@ -914,11 +914,11 @@
       reason: |
         Paper is clear; Zenodo asset is referenced, but additional GitHub or setup repo would improve reproducibility.
 - date: "2023-12-03"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2023-12"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2023-12-03"
   name: "4D-STEM"
   url: "https://openreview.net/pdf?id=7yt3N0o0W9"
   doi: "TODO"
@@ -1000,14 +1000,14 @@
       reason: |
         Paper and codebase are available and usable, though not fully turnkey.
 - date: "2023-12-05"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2023-12"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2023-12-05"
   name: "In-Situ High-Speed Computer Vision"
   url: "https://arxiv.org/abs/2312.00128"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2312.00128"
   domain: "Fusion/Plasma"
   focus: "Real-time image classification for in-situ plasma diagnostics"
   keywords:
@@ -1031,7 +1031,7 @@
   type: "Model"
   ml_task:
   - "Image Classification"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Embedded/deployment details in progress.
   contact:
@@ -1086,14 +1086,14 @@
       reason: |
         OpenReview paper and Gemini doc give some insight, but no working code, environment, or example.
 - date: "2020-01-01"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2020-01"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2020-01-01"
   name: "BenchCouncil AIBench"
   url: "https://www.benchcouncil.org/AIBench/"
-  doi: "TODO"
+  doi: "10.48550/arXiv.1908.08998"
   domain: "General"
   focus: "End-to-end AI benchmarking across micro, component, and application levels"
   keywords:
@@ -1123,7 +1123,7 @@
   type: "Benchmark"
   ml_task:
   - "NA"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Covers scenario-distilling, micro, component, and end-to-end benchmarks.
   contact:
@@ -1177,14 +1177,14 @@
       reason: |
         Paper and Gemini doc exist, but full setup instructions and tools are still in progress.
 - date: "2020-01-01"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2020-01"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2020-01-01"
   name: "BenchCouncil BigDataBench"
   url: "https://www.benchcouncil.org/BigDataBench/"
-  doi: "TODO"
+  doi: "10.48550/arXiv.1802.08254"
   domain: "General"
   focus: "Big data and AI benchmarking across structured, semi-structured, and unstructured
     data workloads"
@@ -1215,7 +1215,7 @@
   type: "Benchmark"
   ml_task:
   - "NA"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Built on eight data motifs; provides Hadoop, Spark, Flink, MPI implementations.
   contact:
@@ -1269,14 +1269,14 @@
       reason: |
         Central documentation exists, with detailed component breakdowns; environment setup across platforms (e.g., hardware variations) can require manual adjustment.
 - date: "2021-10-20"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2021-10"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2021-10-20"
   name: "MLPerf HPC"
   url: "https://github.com/mlcommons/hpc"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2110.11466"
   domain: "Cosmology, Climate, Protein Structure, Catalysis"
   focus: "Scientific ML training and inference on HPC systems"
   keywords:
@@ -1286,7 +1286,7 @@
   - "scientific ML"
   summary: |
     MLPerf HPC introduces scientific model benchmarks (e.g., CosmoFlow, DeepCAM) aimed at large-scale HPC evaluation with >10x performance scaling through system-level optimizations.
-  licensing: "TODO"
+  licensing: "Apache License 2.0"
   task_types:
   - "Training"
   - "Inference"
@@ -1307,7 +1307,7 @@
   type: "Framework"
   ml_task:
   - "NA"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Shared framework with MLCommons Science; reference implementations included.
   contact:
@@ -1361,11 +1361,11 @@
       reason: |
         Strong documentation with examples and task specifications; centralized support exists, but task-specific tuning may require domain expertise.
 - date: "2023-06-01"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2023-06"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2023-06-01"
   name: "MLCommons Science"
   url: "https://github.com/mlcommons/science"
   doi: "TODO"
@@ -1379,7 +1379,7 @@
   - "HPC"
   summary: |
     MLCommons Science assembles benchmark tasks with datasets, targets, and implementations across earthquake forecasting, satellite imagery, drug screening, electron microscopy, and CFD to drive scientific ML reproducibility.
-  licensing: "TODO"
+  licensing: "Apache License 2.0"
   task_types:
   - "Time-series analysis"
   - "Image classification"
@@ -1475,11 +1475,11 @@
       reason: |
         GitHub repo and papers provide detailed instructions; reproducibility supported across multiple institutions.
 - date: "2021-07-05"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2021-07"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2021-07-05"
   name: "LHC New Physics Dataset"
   url: "https://arxiv.org/pdf/2107.02157"
   doi: "TODO"
@@ -1568,11 +1568,11 @@
       reason: |
         Publicly available papers and datasets with descriptions, but no unified README or training setup.
 - date: "2023-07-17"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2023-07"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2023-07-17"
   name: "MLCommons Medical AI"
   url: "https://github.com/mlcommons/medical"
   doi: "TODO"
@@ -1589,7 +1589,7 @@
     The MLCommons Medical AI working group develops benchmarks, best practices, and platforms (MedPerf, GaNDLF, COFE)
     to accelerate robust, privacy-preserving AI development for healthcare. MedPerf enables federated testing of clinical
     models on diverse datasets, improving generalizability and equity while keeping data onsite :contentReference[oaicite:1]{index=1}.
-  licensing: "TODO"
+  licensing: "Apache License 2.0"
   task_types:
   - "Federated evaluation"
   - "Model validation"
@@ -1669,14 +1669,14 @@
       reason: |
         Well-documented, open-sourced, and maintained with examples; strong community support and reproducibility focus.
 - date: "2024-10-28"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2024-10"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-10-28"
   name: "CaloChallenge 2022"
   url: "http://arxiv.org/abs/2410.21611"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2410.21611"
   domain: "LHC Calorimeter; Particle Physics"
   focus: "Fast generative-model-based calorimeter shower simulation evaluation"
   keywords:
@@ -1709,7 +1709,7 @@
   type: "Dataset"
   ml_task:
   - "Surrogate Modeling"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     The most comprehensive survey to date on ML-based calorimeter simulation; 31 submissions over different dataset sizes.
   contact:
@@ -1765,11 +1765,11 @@
       reason: |
         Paper and data documentation are clear, and the dataset is widely reused. Setup requires some manual effort to reproduce full pipelines.
 - date: "ongoing"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2025-06"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "ongoing"
   name: "Papers With Code (SOTA Platform)"
   url: "https://paperswithcode.com/sota"
   doi: "TODO"
@@ -1862,11 +1862,11 @@
       reason: |
         Excellent documentation across MedPerf, GaNDLF, and COFE; reproducibility handled via containerized flows and task templates.
 - date: "2022-01-01"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2025-03"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2022-01-01"
   name: "Codabench"
   url: "https://www.codabench.org/"
   doi: "TODO"
@@ -1956,11 +1956,11 @@
       reason: |
         Paper, leaderboard, and Gemini doc are comprehensive; unified repo or launchable baseline kit would push this to a 10.
 - date: "2021-09-27"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2023-07"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2021-09-27"
   name: "Sabath (SBI-FAIR)"
   url: "https://sbi-fair.github.io/docs/software/sabath/"
   doi: "TODO"
@@ -2042,14 +2042,14 @@
       reason: |
         GitHub repo includes code and instructions, but lacks full tutorials or walkthroughs.
 - date: "2022-10-13"
-  version: "TODO"
+  version: "v0.1.0"
   last_updated: "2025-05"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2022-10-13"
   name: "PDEBench"
   url: "https://github.com/pdebench/PDEBench"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2210.07182"
   domain: "CFD; Weather Modeling"
   focus: "Benchmark suite for ML-based surrogates solving time-dependent PDEs"
   keywords:
@@ -2060,7 +2060,7 @@
   - "NeurIPS"
   summary: |
     PDEBench offers forward/inverse PDE tasks with large ready-to-use datasets and baselines (FNO, U-Net, PINN), packaged via a unified API. It won the SimTech Best Paper Award 2023 :contentReference[oaicite:5]{index=5}.
-  licensing: "TODO"
+  licensing: "Other"
   task_types:
   - "Supervised Learning"
   ai_capability_measured:
@@ -2079,7 +2079,7 @@
   type: "Framework"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Datasets hosted on DaRUS (DOI:10.18419/darus-2986); contact maintainers by email :contentReference[oaicite:6]{index=6}
   contact:
@@ -2133,11 +2133,11 @@
       reason: |
         Well-organized GitHub with examples, dataset loading scripts, and training configs.
 - date: "2024-12-03"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2025-06"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-12-03"
   name: "The Well"
   url: "https://polymathic-ai.org/the_well/"
   doi: "TODO"
@@ -2226,11 +2226,11 @@
       reason: |
         Paper gives use cases, but code and data are not yet public.
 - date: "2024-10-31"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2024-11"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-10-31"
   name: "LLM-Inference-Bench"
   url: "https://github.com/argonne-lcf/LLM-Inference-Bench"
   doi: "TODO"
@@ -2244,7 +2244,7 @@
   - "throughput"
   summary: |
     A suite evaluating inference performance of LLMs (LLaMA, Mistral, Qwen) across diverse accelerators (NVIDIA, AMD, Intel, SambaNova) and frameworks (vLLM, DeepSpeed-MII, etc.), with an interactive dashboard and per-platform metrics. :contentReference[oaicite:3]{index=3}
-  licensing: "TODO"
+  licensing: "BSD 3-Clause \"New\" or \"Revised\" License"
   task_types:
   - "Inference Benchmarking"
   ai_capability_measured:
@@ -2321,14 +2321,14 @@
       reason: |
         Clean GitHub with usage, dataset links, and tutorial notebooks.
 - date: "2023-12-12"
-  version: "TODO"
+  version: "v0.4.9"
   last_updated: "2025-06"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2023-12-12"
   name: "SGLang Framework"
   url: "https://github.com/sgl-project/sglang/tree/main/benchmark"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2312.07104"
   domain: "LLM Vision"
   focus: "Fast serving framework for LLMs and vision-language models"
   keywords:
@@ -2339,7 +2339,7 @@
   - "JSON decoding"
   summary: |
     A high-performance open-source serving framework combining efficient backend runtime (RadixAttention, batching, quantization) and expressive frontend language, boosting LLM/VLM inference throughput up to ~3x over alternatives. :contentReference[oaicite:5]{index=5}
-  licensing: "TODO"
+  licensing: "Apache License 2.0"
   task_types:
   - "Model serving framework"
   ai_capability_measured:
@@ -2358,7 +2358,7 @@
   type: "Framework"
   ml_task:
   - "Model serving"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025. :contentReference[oaicite:6]{index=6}
   contact:
@@ -2414,11 +2414,11 @@
       reason: |
         Site and GitHub offer a unified API, metadata standards, and dataset loading tools; NeurIPS paper adds detailed design context.
 - date: "2023-09-12"
-  version: "TODO"
+  version: "v0.10.0"
   last_updated: "2025-06"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2023-09-12"
   name: "vLLM Inference and Serving Engine"
   url: "https://github.com/vllm-project/vllm/tree/main/benchmarks"
   doi: "TODO"
@@ -2434,7 +2434,7 @@
     vLLM is a fast, high-throughput, memory-efficient inference and serving engine for large language models, 
     featuring PagedAttention, continuous batching, and support for quantized and pipelined model execution. 
     Benchmarks compare it to TensorRT-LLM, SGLang, and others. :contentReference[oaicite:1]{index=1}
-  licensing: "TODO"
+  licensing: "Apache License 2.0"
   task_types:
   - "Inference Benchmarking"
   ai_capability_measured:
@@ -2514,11 +2514,11 @@
       reason: |
         GitHub contains clear instructions, platform details, and framework comparisons.
 - date: "2022-06-22"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2025-01"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2022-06-22"
   name: "vLLM Performance Dashboard"
   url: "https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/"
   doi: "TODO"
@@ -2603,11 +2603,11 @@
       reason: |
         High-quality usage guides, examples, and performance tuning docs.
 - date: "2022-04-01"
-  version: "TODO"
+  version: "v3.0.2"
   last_updated: "2025-06"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2022-04-01"
   name: "Nixtla NeuralForecast"
   url: "https://github.com/Nixtla/neuralforecast"
   doi: "TODO"
@@ -2622,7 +2622,7 @@
   summary: |
     NeuralForecast offers scalable, user-friendly implementations of over 30 neural forecasting models (NBEATS, NHITS, TFT, DeepAR, etc.),
     emphasizing quality, usability, interpretability, and performance.
-  licensing: "TODO"
+  licensing: "Apache License 2.0"
   task_types:
   - "Time-series forecasting"
   ai_capability_measured:
@@ -2695,11 +2695,11 @@
       reason: |
         Excellent GitHub docs, CLI/API usage, and deployment walkthroughs.
 - date: "2023-06-01"
-  version: "TODO"
+  version: "v3.0.2"
   last_updated: "2025-06"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2023-06-01"
   name: "Nixtla Neural Forecast NHITS"
   url: "https://github.com/Nixtla/neuralforecast"
   doi: "TODO"
@@ -2714,7 +2714,7 @@
     NHITS (Neural Hierarchical Interpolation for Time Series) is a state-of-the-art model that
     improved accuracy by ~25% and reduced compute by 50x compared to Transformer baselines,
     using hierarchical interpolation and multi-rate sampling :contentReference[oaicite:1]{index=1}.
-  licensing: "TODO"
+  licensing: "Apache License 2.0"
   task_types:
   - "Time-series forecasting"
   ai_capability_measured:
@@ -2786,14 +2786,14 @@
       reason: |
         Observable notebooks are intuitive; customization instructions are minimal but UI is self-explanatory.
 - date: "2023-10-03"
-  version: "TODO"
+  version: "v3.0.2"
   last_updated: "2025-06"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2023-10-03"
   name: "Nixtla Neural Forecast TimeLLM"
   url: "https://github.com/Nixtla/neuralforecast"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2310.01728"
   domain: "Time-series; General ML"
   focus: "Reprogramming LLMs for time series forecasting"
   keywords:
@@ -2804,7 +2804,7 @@
   summary: |
     Time-LLM uses reprogramming layers to adapt frozen LLMs for time series forecasting, treating
     forecasting as a language task :contentReference[oaicite:2]{index=2}.
-  licensing: "TODO"
+  licensing: "Apache License 2.0"
   task_types:
   - "Time-series forecasting"
   ai_capability_measured:
@@ -2820,7 +2820,7 @@
   type: "Platform"
   ml_task:
   - "Forecasting"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Fully open-source; transforms forecasting using LLM text reconstruction.
   contact:
@@ -2876,14 +2876,14 @@
       reason: |
         GitHub readme with installation and example usage; lacks API or extensive tutorials.
 - date: "2023-10-05"
-  version: "TODO"
+  version: "v3.0.2"
   last_updated: "2025-06"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2023-10-05"
   name: "Nixtla Neural Forecast TimeGPT"
   url: "https://github.com/Nixtla/neuralforecast"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2310.03589"
   domain: "Time-series; General ML"
   focus: "Time-series foundation model \"TimeGPT\" for forecasting and anomaly detection"
   keywords:
@@ -2894,7 +2894,7 @@
   summary: |
     TimeGPT is a transformer-based generative pretrained model on 100B+ time series data for
     zero-shot forecasting and anomaly detection via API :contentReference[oaicite:3]{index=3}.
-  licensing: "TODO"
+  licensing: "Apache License 2.0"
   task_types:
   - "Time-series forecasting"
   - "Anomaly detection"
@@ -2911,7 +2911,7 @@
   type: "Platform"
   ml_task:
   - "Forecasting"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Offered via Nixtla API and Azure Studio; enterprise-grade support available.
   contact:
@@ -2965,14 +2965,14 @@
       reason: |
         GitHub readme with installation and example usage; lacks API or extensive tutorials.
 - date: "2025-03-03"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2025-03"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2025-03-03"
   name: "HDR ML Anomaly Challenge (Gravitational Waves)"
   url: "https://www.codabench.org/competitions/2626/"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2503.02112"
   domain: "Astrophysics; Time-series"
   focus: "Detecting anomalous gravitational-wave signals from LIGO/Virgo datasets"
   keywords:
@@ -2998,7 +2998,7 @@
   type: "Dataset"
   ml_task:
   - "Anomaly detection"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     NSF HDR A3D3 sponsored; prize pool and starter kit provided on Codabench. :contentReference[oaicite:2]{index=2}
   contact:
@@ -3052,14 +3052,14 @@
       reason: |
         Model and architecture overview present, though usability guide is slightly lighter than others.
 - date: "2025-03-03"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2025-03"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2025-03-03"
   name: "HDR ML Anomaly Challenge (Butterfly)"
   url: "https://www.codabench.org/competitions/3764/"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2503.02112"
   domain: "Genomics; Image/CV"
   focus: "Detecting hybrid butterflies via image anomaly detection in genomic-informed
     dataset"
@@ -3085,7 +3085,7 @@
   type: "Dataset"
   ml_task:
   - "Anomaly detection"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Hybrid detection benchmarks hosted on Codabench. :contentReference[oaicite:4]{index=4}
   contact:
@@ -3139,14 +3139,14 @@
       reason: |
         Challenge site includes overview and metrics, but limited in walkthrough or examples.
 - date: "2025-03-03"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2025-03"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2025-03-03"
   name: "HDR ML Anomaly Challenge (Sea Level Rise)"
   url: "https://www.codabench.org/competitions/3223/"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2503.02112"
   domain: "Climate Science; Time-series, Image/CV"
   focus: "Detecting anomalous sea-level rise and flooding events via time-series and
     satellite imagery"
@@ -3173,7 +3173,7 @@
   type: "Dataset"
   ml_task:
   - "Anomaly detection"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Sponsored by NSF HDR; integrates sensor and satellite data. :contentReference[oaicite:6]{index=6}
   contact:
@@ -3227,14 +3227,14 @@
       reason: |
         Codabench page, GitHub starter kit, and related papers provide strong guidance.
 - date: "2025-01-24"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2025-02"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2025-01-24"
   name: "Single Qubit Readout on QICK System"
   url: "https://github.com/fastmachinelearning/ml-quantum-readout"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2501.14663"
   domain: "Quantum Computing"
   focus: "Real-time single-qubit state classification using FPGA firmware"
   keywords:
@@ -3260,7 +3260,7 @@
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization. :contentReference[oaicite:1]{index=1}
   contact:
@@ -3316,14 +3316,14 @@
       reason: |
         Codabench task page describes dataset and evaluation method but lacks full API/docs.
 - date: "2023-11-20"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2023-11"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2023-11-20"
   name: "GPQA: A Graduate-Level Google-Proof Question and Answer Benchmark"
   url: "https://arxiv.org/abs/2311.12022"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2311.12022"
   domain: "Science (Biology, Physics, Chemistry)"
   focus: "Graduate-level, expert-validated multiple-choice questions hard even with
     web access"
@@ -3349,7 +3349,7 @@
   type: "Benchmark"
   ml_task:
   - "Multiple choice"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Google-proof, supports oversight research.
   contact:
@@ -3405,14 +3405,14 @@
       reason: |
         Moderate Codabench documentation with climate context; lacks pipeline-level walkthrough.
 - date: "2024-12-13"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2024-12"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-12-13"
   name: "SeafloorAI"
   url: "https://neurips.cc/virtual/2024/poster/97432"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2411.00172"
   domain: "Marine Science; Vision-Language"
   focus: "Large-scale vision-language dataset for seafloor mapping and geological
     classification"
@@ -3442,7 +3442,7 @@
   type: "Dataset"
   ml_task:
   - "Segmentation, QA"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Data processing code publicly available, covering five geological layers; curated with marine scientists :contentReference[oaicite:2]{index=2}.
   contact:
@@ -3498,11 +3498,11 @@
       reason: |
         Good setup instructions, but no interactive visualization or starter notebook.
 - date: "2024-12-13"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2024-12"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-12-13"
   name: "SuperCon3D"
   url: "https://neurips.cc/virtual/2024/poster/97553"
   doi: "TODO"
@@ -3590,11 +3590,11 @@
       reason: |
         Paper + GitHub metadata and processing details are comprehensive, though full dataset is not yet available.
 - date: "2024-12-13"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2024-12"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-12-13"
   name: "GeSS"
   url: "https://neurips.cc/virtual/2024/poster/97816"
   doi: "TODO"
@@ -3683,11 +3683,11 @@
       reason: |
         Paper and poster explain design choices well; software availability confirms reproducibility but limited external documentation.
 - date: "2024-12-13"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2024-12"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-12-13"
   name: "Vocal Call Locator (VCL)"
   url: "https://neurips.cc/virtual/2024/poster/97470"
   doi: "TODO"
@@ -3772,11 +3772,11 @@
       reason: |
         Paper, poster, and source code provide thorough access to methodology and implementation. Setup instructions and accompanying code not present.
 - date: "2024-12-13"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2024-12"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-12-13"
   name: "MassSpecGym"
   url: "https://neurips.cc/virtual/2024/poster/97823"
   doi: "TODO"
@@ -3865,11 +3865,11 @@
       reason: |
         Poster and paper outline benchmark intent and setup; repo expected but not confirmed in dataset card.
 - date: "2024-12-13"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2024-12"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-12-13"
   name: "Urban Data Layer (UDL)"
   url: "https://neurips.cc/virtual/2024/poster/97837"
   doi: "TODO"
@@ -3954,14 +3954,14 @@
       reason: |
         GitHub repo and poster provide code and reproducibility guidance.
 - date: "2024-12-13"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2024-12"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-12-13"
   name: "Delta Squared-DFT"
   url: "https://neurips.cc/virtual/2024/poster/97788"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2406.14347"
   domain: "Computational Chemistry; Materials Science"
   focus: "Benchmarking machine-learning corrections to DFT using Delta Squared-trained
     models for reaction energies"
@@ -3989,7 +3989,7 @@
   type: "Dataset + Benchmark"
   ml_task:
   - "Regression"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Demonstrates CC-level accuracy with ~1% of high-level data. Benchmarks publicly included for reproducibility.
   contact:
@@ -4043,14 +4043,14 @@
       reason: |
         Source code supports pipeline reuse, but formal evaluation splits may vary.
 - date: "2024-12-13"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2024-12"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-12-13"
   name: "LLMs for Crop Science"
   url: "https://neurips.cc/virtual/2024/poster/97570"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2406.03085"
   domain: "Agricultural Science; NLP"
   focus: "Evaluating LLMs on crop trait QA and textual inference tasks with domain-specific
     prompts"
@@ -4080,7 +4080,7 @@
   type: "Dataset"
   ml_task:
   - "QA, inference"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Includes examples with retrieval-augmented and chain-of-thought prompt templates; supports few-shot adaptation.
   contact:
@@ -4134,14 +4134,14 @@
       reason: |
         Public benchmarks and clear reproducibility via datasets and model code.
 - date: "2024-12-13"
-  version: "TODO"
+  version: "v1.0"
   last_updated: "2024-12"
   expired: "unknown"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2024-12-13"
   name: "SPIQA (LLM)"
   url: "https://neurips.cc/virtual/2024/poster/97575"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2407.09413"
   domain: "Multimodal Scientific QA; Computer Vision"
   focus: "Evaluating LLMs on image-based scientific paper figure QA tasks (LLM Adapter
     performance)"
@@ -4170,7 +4170,7 @@
   type: "Benchmark"
   ml_task:
   - "Multimodal QA"
-  solutions: "TODO"
+  solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Companion to SPIQA main benchmark; compares adapter strategies using same images and QA pairs.
   contact:

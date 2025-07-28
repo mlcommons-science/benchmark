@@ -111,7 +111,7 @@
     and chemistry, written by domain experts. It is Google-proof - experts score 65% 
     (74% after error correction) while skilled non-experts with web access score only 34%. 
     State-of-the-art LLMs like GPT-4 reach around 39% accuracy.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Multiple choice"
   - "Multi-step QA"
@@ -123,15 +123,15 @@
   - "o1"
   - "DeepSeek-R1"
   ml_motif:
-  - "TODO"
+  - "Science and STEM fields"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "0"
   notes: "Good"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "Julian Michael"
+    email: "julianjm@nyu.edu"
   cite:
   - |
     @misc{rein2023gpqagraduatelevelgoogleproofqa,
@@ -142,20 +142,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet rated
     specification:
       rating: 6.5
       reason: |
@@ -184,7 +184,7 @@
   valid_date: "2018-03-14"
   name: "ARC-Challenge (Advanced Reasoning Challenge)"
   url: "https://allenai.org/data/arc"
-  doi: "TODO"
+  doi: "NA"
   domain: "Science"
   focus: "Grade-school science with reasoning emphasis"
   keywords:
@@ -196,7 +196,7 @@
     The AI2 Reasoning Challenge (ARC) Challenge set comprises 7,787 natural, grade-school
     science questions that retrieval-based and word co-occurrence algorithms both fail, 
     requiring advanced reasoning over a 14-million-sentence corpus.
-  licensing: "TODO"
+  licensing: "Apache 2.0 License"
   task_types:
   - "Multiple choice"
   ai_capability_measured:
@@ -207,15 +207,15 @@
   - "GPT-4"
   - "Claude"
   ml_motif:
-  - "TODO"
+  - "Elementary science"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "0"
   notes: "Good"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "unknown"
+    email: "unknown"
   cite:
   - |
     @inproceedings{clark2018think,
@@ -228,20 +228,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "Hugging Face"
+      url: "https://huggingface.co/datasets/allenai/ai2_arc"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet rated
     specification:
       rating: 9
       reason: |
@@ -249,7 +249,7 @@
     dataset:
       rating: 10
       reason: |
-        Data accessible, offers instructions on how TODOwnload the data via CLI tools
+        Data accessible, offers instructions on how to download the data via CLI tools
     metrics:
       rating: 10
       reason: |
@@ -261,7 +261,7 @@
     documentation:
       rating: 4
       reason: |
-        There are easy ways TODOwnload the dataset. Documentation quantity and clarity depends on authors of tested models
+        There are easy ways to download the dataset. Documentation quantity and clarity depends on authors of tested models
 - date: "2025-01-24"
   version: "1"
   last_updated: "2025-01-24"
@@ -282,7 +282,7 @@
     Humanity's Last Exam is a multi-domain, multiple-choice benchmark containing 2,000
     questions across diverse academic disciplines, designed to evaluate LLMs' ability to
     reason across domains without external resources.
-  licensing: "TODO"
+  licensing: "MIT License"
   task_types:
   - "Multiple choice"
   ai_capability_measured:
@@ -291,15 +291,15 @@
   - "Accuracy"
   models: []
   ml_motif:
-  - "TODO"
+  - "Multi-domain"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "0"
   notes: "Good"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "HLE team"
+    email: "agibenchmark@safe.ai"
   cite:
   - |
     @misc{phan2025humanitysexam,
@@ -313,20 +313,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "Hugging Face"
+      url: "https://huggingface.co/datasets/cais/hle"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet evaluated
     specification:
       rating: 8.5
       reason: |
@@ -367,7 +367,7 @@
     FrontierMath is a benchmark of hundreds of expert-vetted mathematics problems spanning
     number theory, real analysis, algebraic geometry, and category theory, measuring LLMs 
     ability to solve problems requiring deep abstract reasoning.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Problem solving"
   ai_capability_measured:
@@ -376,15 +376,15 @@
   - "Accuracy"
   models: []
   ml_motif:
-  - "TODO"
+  - "Math problem solving"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "0"
   notes: "Good"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "FrontierMath team"
+    email: "math_evals@epochai.org"
   cite:
   - |
     @misc{glazer2024frontiermathbenchmarkevaluatingadvanced,
@@ -398,20 +398,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet evaluated
     specification:
       rating: 9
       reason: |
@@ -451,7 +451,7 @@
     SciCode is a scientist-curated coding benchmark with 338 subproblems derived from 80
     real research tasks across 16 scientific subfields, evaluating models on knowledge recall, 
     reasoning, and code synthesis for scientific computing tasks.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Coding"
   ai_capability_measured:
@@ -461,15 +461,15 @@
   models:
   - "Claude3.5-Sonnet"
   ml_motif:
-  - "TODO"
+  - "Coding"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "unknown"
   notes: "Good"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "Minyang Tian"
+    email: "mtian8@illinois.edu"
   cite:
   - |
     @misc{tian2024scicoderesearchcodingbenchmark,
@@ -483,20 +483,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet evaluated
     specification:
       rating: 6
       reason: |
@@ -525,7 +525,7 @@
   valid_date: "2025-03-13"
   name: "AIME (American Invitational Mathematics Examination)"
   url: "https://artofproblemsolving.com/wiki/index.php/AIME_Problems_and_Solutions"
-  doi: "TODO"
+  doi: "NA"
   domain: "Mathematics"
   focus: "Pre-college advanced problem solving"
   keywords:
@@ -537,7 +537,7 @@
     The AIME is a 15-question, 3-hour exam for high-school students featuring challenging
     short-answer math problems in algebra, number theory, geometry, and combinatorics, 
     assessing depth of problem-solving ability.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Problem solving"
   ai_capability_measured:
@@ -546,15 +546,15 @@
   - "Accuracy"
   models: []
   ml_motif:
-  - "TODO"
+  - "Math problem solving"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
-  notes: "TODO"
+  solutions: "0"
+  notes: "Designed for human test-takers"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "unknown"
+    email: "unknown"
   cite:
   - |
     @misc{www-aime,
@@ -567,20 +567,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "AoPS website"
+      url: "https://artofproblemsolving.com/wiki/index.php/AIME_Problems_and_Solutions"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet evaluated
     specification:
       rating: 3
       reason: |
@@ -609,7 +609,7 @@
   valid_date: "2025-02-15"
   name: "MATH-500"
   url: "https://huggingface.co/datasets/HuggingFaceH4/MATH-500"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Mathematics"
   focus: "Math reasoning generalization"
   keywords:
@@ -621,7 +621,7 @@
     MATH-500 is a curated subset of 500 problems from the OpenAI MATH dataset, spanning
     high-school to advanced levels, designed to evaluate LLMs mathematical reasoning and 
     generalization.
-  licensing: "TODO"
+  licensing: "MIT License"
   task_types:
   - "Problem solving"
   ai_capability_measured:
@@ -630,15 +630,15 @@
   - "Accuracy"
   models: []
   ml_motif:
-  - "TODO"
+  - "Math problem solving"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
-  notes: "Dataset hosted on Hugging Face"
+  solutions: "0"
+  notes: "Dataset hosted on Hugging Face. Data comes from a subset of OpenAI's dataset"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "unknown"
+    email: "unknown"
   cite:
   - |
     @misc{huggingface2025math500,
@@ -649,20 +649,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "Hugging Face"
+      url: "https://huggingface.co/datasets/HuggingFaceH4/MATH-500"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet evaluated
     specification:
       rating: 3
       reason: |
@@ -670,7 +670,7 @@
     dataset:
       rating: 9.9
       reason: |
-        Problems and solutions are easily downloaded. Could not find a way TODOwnload the data
+        Problems and solutions are easily downloaded. Could not find a way to download the data
     metrics:
       rating: 2
       reason: |
@@ -682,7 +682,7 @@
     documentation:
       rating: 0.5
       reason: |
-        Not given. Implicit instructions TODOwnload dataset.
+        Not given. Implicit instructions to download dataset.
 - date: "2024-04-02"
   version: "1"
   last_updated: "2024-04-02"
@@ -690,8 +690,8 @@
   valid: "yes"
   valid_date: "2024-04-02"
   name: "CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction)"
-  url: "https://arxiv.org/abs/2404.02029"
-  doi: "10.48550/arXiv.2404.02029"
+  url: "https://arxiv.org/abs/2503.13517"
+  doi: "10.48550/arXiv.2503.13517"
   domain: "Multidomain Science"
   focus: "Long-context scientific reasoning"
   keywords:
@@ -703,7 +703,7 @@
     science, quantum computing, biology, chemistry, climate science, and astrophysics-
     designed to evaluate LLMs on long-context understanding, reasoning, and information 
     extraction in realistic scientific workflows.
-  licensing: "TODO"
+  licensing: "Apache 2.0 License"
   task_types:
   - "Information extraction"
   - "Reasoning"
@@ -718,59 +718,62 @@
   models:
   - "unkown"
   ml_motif:
-  - "TODO"
+  - "Scientific problem solving"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "0"
   notes: "Good"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "Subhashini Venugopalan"
+    email: "vsubhashini@google.com"
   cite:
   - |
-    @misc{curie2024,
-      title={Scientific Reasoning Benchmarks from the CURIE Dataset},
-      author={TODO: Add authors},
-      year={2024},
-      url={https://arxiv.org/abs/2404.02029}
+    @misc{cui2025curieevaluatingllmsmultitask,
+      title={CURIE: Evaluating LLMs On Multitask Scientific Long Context Understanding and Reasoning}, 
+      author={Hao Cui and Zahra Shamsi and Gowoon Cheon and Xuejian Ma and Shutong Li and Maria Tikhanovskaya and Peter Norgaard and Nayantara Mudur and Martyna Plomecka and Paul Raccuglia and Yasaman Bahri and Victor V. Albert and Pranesh Srinivasan and Haining Pan and Philippe Faist and Brian Rohr and Ekin Dogus Cubuk and Muratahan Aykol and Amil Merchant and Michael J. Statt and Dan Morris and Drew Purves and Elise Kleeman and Ruth Alcantara and Matthew Abraham and Muqthar Mohammad and Ean Phing VanLee and Chenfei Jiang and Elizabeth Dorfman and Eun-Ah Kim and Michael P Brenner and Viren Jain and Sameera Ponda and Subhashini Venugopalan},
+      year={2025},
+      eprint={2503.13517},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2503.13517}, 
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet evaluated
     specification:
-      rating: 0
+      rating: 7.5
       reason: |
-        This is an AI model, not a benchmark
+        Explains types of problems in detail, but does not state exactly how to administer them.
     dataset:
-      rating: 0
+      rating: 8.5
       reason: |
-        This is an AI model, not a benchmark
+        Dataset is available via Github, but hard to find
     metrics:
-      rating: 0
+      rating: 10
       reason: |
-        This is an AI model, not a benchmark
+        Quantitiative metrics such as ROUGE-L and F1 used. Metrics are tailored to the specific problem.
     reference_solution:
-      rating: 0
+      rating: 1
       reason: |
-        This is an AI model, not a benchmark
+        Does not exist
     documentation:
-      rating: 0
+      rating: 2
       reason: |
-        This is an AI model, not a benchmark
+        Provides very little information, if at all, on how to install and run the programs.
 - date: "2023-01-26"
   version: "1"
   last_updated: "2023-01-26"
@@ -779,7 +782,7 @@
   valid_date: "2023-01-26"
   name: "FEABench (Finite Element Analysis Benchmark)"
   url: "https://github.com/alleninstitute/feabench"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Computational Engineering"
   focus: "FEA simulation accuracy and performance"
   keywords:
@@ -788,7 +791,7 @@
   - "PDE"
   summary: |
     Does not exist
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Simulation"
   - "Performance evaluation"
@@ -801,34 +804,34 @@
   - "FEniCS"
   - "deal.II"
   ml_motif:
-  - "TODO"
+  - "unknown"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "unknown"
   notes: "Google search for \"FEABench\" gave https://arxiv.org/abs/2503.06680, which
     relates to coding instead of math"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "unknown"
+    email: "unknown"
   cite:
-  - "TODO"
+  - "unknown"
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet evaluated
     specification:
       rating: 0
       reason: |
@@ -869,7 +872,7 @@
     SPIQA assesses AI models' ability to interpret and answer questions about figures
     and tables in scientific papers by integrating visual and textual modalities 
     with chain-of-thought reasoning.
-  licensing: "TODO"
+  licensing: "Apache 2.0 License"
   task_types:
   - "Question answering"
   - "Multimodal QA"
@@ -883,15 +886,15 @@
   - "Chain-of-Thought models"
   - "Multimodal QA systems"
   ml_motif:
-  - "TODO"
+  - "Scientific paper reading"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "0"
   notes: "Good"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "Subhashini Venugopalan"
+    email: "vsubhashini@google.com"
   cite:
   - |
     @misc{zhong2024spiqa,
@@ -902,20 +905,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "Hugging Face"
+      url: "https://huggingface.co/datasets/google/spiqa"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet evaluated
     specification:
       rating: 10
       reason: |
@@ -956,7 +959,7 @@
     MedQA is a large-scale multiple-choice dataset drawn from professional medical
     board exams (e.g., USMLE), testing AI systems on diagnostic and medical knowledge 
     questions in English and Chinese.
-  licensing: "TODO"
+  licensing: "Under Association for the Advancement of Artificial Intelligence"
   task_types:
   - "Multiple choice"
   ai_capability_measured:
@@ -967,15 +970,15 @@
   - "Neural reader"
   - "Retrieval-based QA systems"
   ml_motif:
-  - "TODO"
+  - "Medical diagnosis"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "0"
   notes: "Multilingual (English, Simplified and Traditional Chinese)"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "Di Jin"
+    email: "jindi15@mit.edu"
   cite:
   - |
     @misc{jin2020diseasedoespatienthave,
@@ -989,20 +992,20 @@
       }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "Github"
+      url: "https://github.com/jind11/MedQA"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet evaluated
     specification:
       rating: 9
       reason: |
@@ -1042,7 +1045,7 @@
     BaisBench evaluates AI scientists' ability to perform data-driven biological research
     by annotating cell types in single-cell datasets and answering MCQs derived from 
     biological study insights, measuring autonomous scientific discovery.
-  licensing: "TODO"
+  licensing: "MIT License"
   task_types:
   - "Cell type annotation"
   - "Multiple choice"
@@ -1054,15 +1057,15 @@
   models:
   - "LLM-based AI scientist agents"
   ml_motif:
-  - "TODO"
+  - "Scientific research"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "0"
   notes: "Underperforms human experts; aims to advance AI-driven discovery"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "Xuegong Zhang"
+    email: "zhangxg@mail.tsinghua.edu.cn"
   cite:
   - |
     @misc{luo2025benchmarkingaiscientistsomics,
@@ -1076,20 +1079,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "Github"
+      url: "https://github.com/EperLuo/BaisBench"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet evaluated
     specification:
       rating: 9
       reason: |
@@ -1129,7 +1132,7 @@
     MolGen is a pre-trained molecular language model that generates chemically valid
     molecules using SELFIES and reinforcement learning, guided by chemical feedback 
     to optimize properties such as logP, QED, and docking score.
-  licensing: "TODO"
+  licensing: "MIT License"
   task_types:
   - "Distribution learning"
   - "Goal-oriented generation"
@@ -1143,15 +1146,15 @@
   models:
   - "MolGen"
   ml_motif:
-  - "TODO"
+  - "Chemical generation"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "0"
   notes: "This is a model, not a benchmark"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "unknown"
+    email: "unknown"
   cite:
   - |
     @misc{fang2024domainagnosticmoleculargenerationchemical,
@@ -1165,20 +1168,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet evaluated
     specification:
       rating: 8
       reason: |
@@ -1218,7 +1221,7 @@
     OGB-Biology is a suite of large-scale biological network datasets (protein-protein
     interaction, drug-target, etc.) with standardized splits and evaluation protocols 
     for node, link, and graph property prediction tasks.
-  licensing: "TODO"
+  licensing: "MIT License"
   task_types:
   - "Node property prediction"
   - "Link property prediction"
@@ -1233,15 +1236,15 @@
   - "GraphSAGE"
   - "GAT"
   ml_motif:
-  - "TODO"
+  - "Chemical biology"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "0"
   notes: "Community-driven updates"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "OGB Team"
+    email: "ogb@cs.stanford.edu"
   cite:
   - |
     @misc{hu2021opengraphbenchmarkdatasets,
@@ -1255,20 +1258,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "OGB Webpage"
+      url: "https://ogb.stanford.edu/docs/dataset_overview/"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet evaluated
     specification:
       rating: 10
       reason: |

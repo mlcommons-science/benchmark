@@ -302,7 +302,7 @@
   - "Interaction Networks"
   summary: |
     Demonstrates three ML models (MLP, Deep Sets, Interaction Networks) optimized for FPGA deployment with O(100 ns) inference using quantized models and hls4ml, targeting real-time jet tagging in the L1 trigger environment at the high-luminosity LHC. Data is available on Zenodo DOI:10.5281/zenodo.3602260. :contentReference[oaicite:1]{index=1}
-  licensing: "TODO"
+  licensing: "CC-BY"
   task_types:
   - "Classification"
   ai_capability_measured:
@@ -325,7 +325,7 @@
     Uses quantization-aware training; hardware synthesis evaluated via hls4ml
   contact:
     name: "Patrick Odagiu"
-    email: "unknown"
+    email: "podagiu@ethz.ch"
   cite:
   - |
     @misc{odagiu2024ultrafastjetclassificationfpgas,
@@ -379,12 +379,12 @@
 - date: "2024-10-15"
   version: "v1.0"
   last_updated: "2024-10"
-  expired: "unknown"
+  expired: "no"
   valid: "yes"
   valid_date: "2024-10-15"
   name: "Quench detection"
   url: "https://indico.cern.ch/event/1387540/contributions/6153618/attachments/2948441/5182077/fast_ml_magnets_2024_final.pdf"
-  doi: "TODO"
+  doi: "NA"
   domain: "Accelerators and Magnets"
   focus: "Real-time detection of superconducting magnet quenches using ML"
   keywords:
@@ -394,7 +394,7 @@
   - "real-time"
   summary: |
     Exploration of real-time quench detection using unsupervised and RL approaches, combining multi-modal sensor data (BPM, power supply, acoustic), operating on kHz-MHz streams with anomaly detection and frequency-domain features. :contentReference[oaicite:2]{index=2}
-  licensing: "TODO"
+  licensing: "Via Fermilab"
   task_types:
   - "Anomaly detection"
   - "Quench localization"
@@ -411,7 +411,7 @@
   type: "Benchmark"
   ml_task:
   - "Reinforcement + Unsupervised Learning"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     Precursor detection in progress; multi-modal and dynamic weighting methods
   contact:
@@ -433,9 +433,9 @@
     benchmark_ready: false
   ratings:
     software:
-      rating: 0
+      rating: 1
       reason: |
-        Not analyzed. 
+        Not provided.
     specification:
       rating: 10.0
       reason: |
@@ -474,7 +474,7 @@
   - "trigger"
   summary: |
     Applying real-time ML methods to time-series data from DUNE detectors, exploring trigger-level anomaly detection and event selection with low latency constraints.
-  licensing: "TODO"
+  licensing: "Via Fermilab"
   task_types:
   - "Trigger selection"
   - "Time-series anomaly detection"
@@ -565,8 +565,8 @@
   - "real-time inference"
   - "detector control"
   summary: |
-    Resaerch and Development demonstrator for real-time processing of high-rate tracking data from the sPHENIX detector (RHIC) and future EIC systems. Uses GNNs with hls4ml for FPGA-based trigger generation to identify rare events (heavy flavor, DIS electrons) within 10 micros latency. Demonstrated improved accuracy and latency on Alveo/FELIX platforms.
-  licensing: "TODO"
+    Research and Development demonstrator for real-time processing of high-rate tracking data from the sPHENIX detector (RHIC) and future EIC systems. Uses GNNs with hls4ml for FPGA-based trigger generation to identify rare events (heavy flavor, DIS electrons) within 10 micros latency. Demonstrated improved accuracy and latency on Alveo/FELIX platforms.
+  licensing: "CC BY-NC-ND 4.0"
   task_types:
   - "Trigger classification"
   - "Detector control"
@@ -589,8 +589,8 @@
   notes: |
     Achieved ~97.4% accuracy for beauty decay triggers; sub-10 micros latency on Alveo U280; hit-based FPGA design via hls4ml and FlowGNN.
   contact:
-    name: "Jakub Kvapil (lanl.gov)"
-    email: "unknown"
+    name: "Jakub Kvapil"
+    email: "Jakub.Kvapil@lanl.gov"
   cite:
   - |
     @misc{kvapil2025intelligentexperimentsrealtimeai,
@@ -663,7 +663,7 @@
     quantization-aware training, and pruning to design efficient models for fast Bragg peak finding and
     jet classification, synthesized for FPGA deployment with hls4ml. Achieves >30x reduction in BOPs
     and sub-100 ns inference latency on FPGA.
-  licensing: "TODO"
+  licensing: "Via Fermilab"
   task_types:
   - "Classification"
   - "Peak finding"
@@ -754,7 +754,7 @@
     Presents a 256x256-pixel ROIC in 28 nm CMOS with embedded 2-layer NN for cluster filtering
     at 25 ns, achieving 54-75% data reduction while maintaining noise and latency constraints. Prototype
     consumes ~300 microW/pixel and operates in combinatorial digital logic.
-  licensing: "TODO"
+  licensing: "Via Fermilab"
   task_types:
   - "Image Classification"
   - "Data filtering"
@@ -844,7 +844,7 @@
     Uses BraggNN, a deep neural network, for rapid Bragg peak localization in 
     high-energy diffraction microscopy, achieving about 13x speedup compared 
     to Voigt-based methods while maintaining sub-pixel accuracy.
-  licensing: "TODO"
+  licensing: "DOE Public Access Plan"
   task_types:
   - "Peak detection"
   ai_capability_measured:
@@ -921,7 +921,7 @@
   valid_date: "2023-12-03"
   name: "4D-STEM"
   url: "https://openreview.net/pdf?id=7yt3N0o0W9"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Material Science"
   focus: "Real-time ML for scanning transmission electron microscopy"
   keywords:
@@ -932,7 +932,7 @@
   summary: |
     Proposes ML methods for real-time analysis of 4D scanning transmission electron microscopy
     datasets; framework details in progress.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Image Classification"
   - "Streamed data inference"
@@ -948,12 +948,12 @@
   type: "Model"
   ml_task:
   - "Image Classification"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     In-progress; model design under development.
   contact:
-    name: "unknown"
-    email: "unknown"
+    name: "Shuyu Qin"
+    email: "shq219@lehigh.edu"
   cite:
   - |
     @inproceedings{qin2023extremely,
@@ -1016,7 +1016,7 @@
   - "real-time ML"
   summary: |
     Applies low-latency CNN models for image classification of plasma diagnostics streams; supports deployment on embedded platforms.
-  licensing: "TODO"
+  licensing: "Via Fermilab"
   task_types:
   - "Image Classification"
   ai_capability_measured:
@@ -1102,7 +1102,7 @@
   - "application-level evaluation"
   summary: |
     AIBench is a comprehensive benchmark suite that evaluates AI workloads at different levels (micro, component, application) across hardware systems-covering image generation, object detection, translation, recommendation, video prediction, etc.
-  licensing: "TODO"
+  licensing: "Apache License 2.0"
   task_types:
   - "Training"
   - "Inference"
@@ -1194,7 +1194,7 @@
   - "data analytics"
   summary: |
     BigDataBench provides benchmarks for evaluating big data and AI workloads with realistic datasets (13 sources) and pipelines across analytics, graph, warehouse, NoSQL, streaming, and AI.
-  licensing: "TODO"
+  licensing: "Apache License 2.0"
   task_types:
   - "Data preprocessing"
   - "Inference"
@@ -1368,7 +1368,7 @@
   valid_date: "2023-06-01"
   name: "MLCommons Science"
   url: "https://github.com/mlcommons/science"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Earthquake, Satellite Image, Drug Discovery, Electron Microscope, CFD"
   focus: "AI benchmarks for scientific applications including time-series, imaging,
     and simulation"
@@ -1401,7 +1401,7 @@
   type: "Framework"
   ml_task:
   - "NA"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     Joint national-lab effort under Apache-2.0 license.
   contact:
@@ -1482,7 +1482,7 @@
   valid_date: "2021-07-05"
   name: "LHC New Physics Dataset"
   url: "https://arxiv.org/pdf/2107.02157"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Particle Physics; Real-time Triggering"
   focus: "Real-time LHC event filtering for anomaly detection using proton collision
     data"
@@ -1494,7 +1494,7 @@
   - "unsupervised ML"
   summary: |
     A dataset of proton-proton collision events emulating a 40 MHz real-time data stream from LHC detectors, pre-filtered on electron or muon presence. Designed for unsupervised new-physics detection algorithms under latency/bandwidth constraints.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Anomaly detection"
   - "Event classification"
@@ -1512,7 +1512,7 @@
   type: "Framework"
   ml_task:
   - "NA"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     Includes electron/muon-filtered background and black-box signal benchmarks; 1M events per black box.
   contact:
@@ -1575,7 +1575,7 @@
   valid_date: "2023-07-17"
   name: "MLCommons Medical AI"
   url: "https://github.com/mlcommons/medical"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Healthcare; Medical AI"
   focus: "Federated benchmarking and evaluation of medical AI models across diverse
     real-world clinical data"
@@ -1610,7 +1610,7 @@
   type: "Platform"
   ml_task:
   - "NA"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     Open-source platform under Apache-2.0; used across 20+ institutions and hospitals :contentReference[oaicite:2]{index=2}.
   contact:
@@ -1688,7 +1688,7 @@
   summary: |
     The Fast Calorimeter Simulation Challenge 2022 assessed 31 generative-model submissions (VAEs, GANs, Flows, Diffusion)
     on four calorimeter shower datasets; benchmarking shower quality, generation speed, and model complexity :contentReference[oaicite:3]{index=3}.
-  licensing: "TODO"
+  licensing: "Via Fermilab"
   task_types:
   - "Surrogate modeling"
   ai_capability_measured:
@@ -1772,7 +1772,7 @@
   valid_date: "ongoing"
   name: "Papers With Code (SOTA Platform)"
   url: "https://paperswithcode.com/sota"
-  doi: "TODO"
+  doi: "unknown"
   domain: "General ML; All domains"
   focus: "Open platform tracking state-of-the-art results, benchmarks, and implementations
     across ML tasks and papers"
@@ -1784,7 +1784,7 @@
   summary: |
     Papers With Code (PWC) aggregates benchmark suites, tasks, and code across ML research:
     12,423 benchmarks, 5,358 unique tasks, and 154,766 papers with code links. It tracks SOTA metrics and fosters reproducibility.
-  licensing: "TODO"
+  licensing: "Apache License 2.0"
   task_types:
   - "Multiple (Classification, Detection, NLP, etc.)"
   ai_capability_measured:
@@ -1801,7 +1801,7 @@
   type: "Platform"
   ml_task:
   - "Multiple"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     Community-driven open platform; automatic data extraction and versioning.
   contact:
@@ -1869,7 +1869,7 @@
   valid_date: "2022-01-01"
   name: "Codabench"
   url: "https://www.codabench.org/"
-  doi: "TODO"
+  doi: "https://doi.org/10.1016/j.patter.2022.100543"
   domain: "General ML; Multiple"
   focus: "Open-source platform for organizing reproducible AI benchmarks and competitions"
   keywords:
@@ -1880,7 +1880,7 @@
   summary: |
     Codabench (successor to CodaLab) is a flexible, easy-to-use, reproducible API platform for hosting AI benchmarks
     and code-submission challenges. It supports custom scoring, inverted benchmarks, and scalable public or private queues :contentReference[oaicite:1]{index=1}.
-  licensing: "TODO"
+  licensing: "https://github.com/codalab/codalab-competitions/wiki/Privacy"
   task_types:
   - "Multiple"
   ai_capability_measured:
@@ -1897,7 +1897,7 @@
   type: "Platform"
   ml_task:
   - "Multiple"
-  solutions: "TODO"
+  solutions: "Several"
   notes: |
     Hosts 51 public competitions, ~26 k users, 177 k submissions :contentReference[oaicite:2]{index=2}
   contact:
@@ -1932,29 +1932,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 0
+      rating: 1
       reason: |
-        Not analyzed.
+        This is a platform for posting benchmarks, not a benchmark in itself.
     specification:
-      rating: 10.0
+      rating: 1
       reason: |
-        Simulation task (generative calorimeter showers) is clearly stated with multiple datasets, fidelity requirements, and performance constraints.
+        This is a platform for posting benchmarks, not a benchmark in itself.
     dataset:
-      rating: 9.5
+      rating: 1
       reason: |
-        Public datasets available in multiple sizes and formats; well-documented; not versioned
+        This is a platform for posting benchmarks, not a benchmark in itself.
     metrics:
-      rating: 10.0
+      rating: 1
       reason: |
-        Histogram similarity, classifier AUC, and generation latency are clearly defined and benchmarked across all submissions.
+        This is a platform for posting benchmarks, not a benchmark in itself.
     reference_solution:
-      rating: 9.0
+      rating: 1
       reason: |
-        31 model implementations submitted; some made public and reproducible, though others remain undocumented or private.
+        This is a platform for posting benchmarks, not a benchmark in itself.
     documentation:
-      rating: 9.0
+      rating: 1
       reason: |
-        Paper, leaderboard, and Gemini doc are comprehensive; unified repo or launchable baseline kit would push this to a 10.
+        This is a platform for posting benchmarks, not a benchmark in itself.
 - date: "2021-09-27"
   version: "v1.0"
   last_updated: "2023-07"
@@ -1963,7 +1963,7 @@
   valid_date: "2021-09-27"
   name: "Sabath (SBI-FAIR)"
   url: "https://sbi-fair.github.io/docs/software/sabath/"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Systems; Metadata"
   focus: "FAIR metadata framework for ML-driven surrogate workflows in HPC systems"
   keywords:
@@ -1974,7 +1974,7 @@
   summary: |
     Sabath is a metadata framework from the SBI-FAIR group (UTK, Argonne, Virginia) facilitating
     FAIR-compliant benchmarking and surrogate execution logging across HPC systems :contentReference[oaicite:3]{index=3}.
-  licensing: "TODO"
+  licensing: "BSD 3-Clause License"
   task_types:
   - "Systems benchmarking"
   ai_capability_measured:
@@ -1984,18 +1984,18 @@
   - "Metadata completeness"
   - "FAIR compliance"
   models:
-  - "N/A"
+  - "NA"
   ml_motif:
   - "Systems"
   type: "Platform"
   ml_task:
   - "NA"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc. :contentReference[oaicite:4]{index=4}
   contact:
-    name: "Piotr Luszczek (luszczek@utk.edu)"
-    email: "unknown"
+    name: "Piotr Luszczek"
+    email: "luszczek@utk.edu"
   cite:
   - |
     @techreport{luszczek2021sabath,
@@ -2140,7 +2140,7 @@
   valid_date: "2024-12-03"
   name: "The Well"
   url: "https://polymathic-ai.org/the_well/"
-  doi: "TODO"
+  doi: "unknown"
   domain: "biological systems, fluid dynamics, acoustic scattering, astrophysical
     MHD"
   focus: "Foundation model + surrogate dataset spanning 16 physical simulation domains"
@@ -2151,7 +2151,7 @@
   - "spatiotemporal dynamics"
   summary: |
     A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains-from biology to astrophysical magnetohydrodynamic simulations-with unified API and metadata. Ideal for training surrogate and foundation models on scientific data. :contentReference[oaicite:1]{index=1}
-  licensing: "TODO"
+  licensing: "BSD 3-Clause License"
   task_types:
   - "Supervised Learning"
   ai_capability_measured:
@@ -2168,12 +2168,12 @@
   type: "Dataset"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "1"
   notes: |
     Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. :contentReference[oaicite:2]{index=2}
   contact:
-    name: "Wes Brewer"
-    email: "unknown"
+    name: "Ruben Ohana"
+    email: "rohana@flatironinstitute.org"
   cite:
   - |
     @inproceedings{neurips2024_4f9a5acd,
@@ -2233,7 +2233,7 @@
   valid_date: "2024-10-31"
   name: "LLM-Inference-Bench"
   url: "https://github.com/argonne-lcf/LLM-Inference-Bench"
-  doi: "TODO"
+  doi: "unknown"
   domain: "LLM; HPC/inference"
   focus: "Hardware performance benchmarking of LLMs on AI accelerators"
   keywords:
@@ -2265,7 +2265,7 @@
   type: "Dataset"
   ml_task:
   - "Inference Benchmarking"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     Licensed under BSD-3, maintained by Argonne; supports GPUs and accelerators. :contentReference[oaicite:4]{index=4}
   contact:
@@ -2421,7 +2421,7 @@
   valid_date: "2023-09-12"
   name: "vLLM Inference and Serving Engine"
   url: "https://github.com/vllm-project/vllm/tree/main/benchmarks"
-  doi: "TODO"
+  doi: "unknown"
   domain: "LLM; HPC/inference"
   focus: "High-throughput, memory-efficient inference and serving engine for LLMs"
   keywords:
@@ -2454,7 +2454,7 @@
   type: "Framework"
   ml_task:
   - "Inference"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     Incubated by LF AI and Data; achieves up to 24x throughput over HuggingFace Transformers :contentReference[oaicite:2]{index=2}
   contact:
@@ -2521,7 +2521,7 @@
   valid_date: "2022-06-22"
   name: "vLLM Performance Dashboard"
   url: "https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/"
-  doi: "TODO"
+  doi: "unknown"
   domain: "LLM; HPC/inference"
   focus: "Interactive dashboard showing inference performance of vLLM"
   keywords:
@@ -2531,7 +2531,7 @@
   - "Metric tracking"
   summary: |
     A live visual dashboard for vLLM showcasing throughput, latency, and other inference metrics across models and hardware configurations.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Performance visualization"
   ai_capability_measured:
@@ -2551,7 +2551,7 @@
   type: "Framework"
   ml_task:
   - "Visualization"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     Built using ObservableHQ; integrates live data from vLLM benchmarks.
     The URL requires a login to access the content.
@@ -2610,7 +2610,7 @@
   valid_date: "2022-04-01"
   name: "Nixtla NeuralForecast"
   url: "https://github.com/Nixtla/neuralforecast"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Time-series forecasting; General ML"
   focus: "High-performance neural forecasting library with >30 models"
   keywords:
@@ -2643,7 +2643,7 @@
   type: "Platform"
   ml_task:
   - "Forecasting"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     AutoModel supports hyperparameter tuning and distributed execution via Ray and Optuna. First official NHITS implementation. contentReference oaicite:4 ndex=4
   contact:
@@ -2702,7 +2702,7 @@
   valid_date: "2023-06-01"
   name: "Nixtla Neural Forecast NHITS"
   url: "https://github.com/Nixtla/neuralforecast"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Time-series; General ML"
   focus: "Official NHITS implementation for long-horizon time series forecasting"
   keywords:
@@ -2730,7 +2730,7 @@
   type: "Platform"
   ml_task:
   - "Forecasting"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     Official implementation in NeuralForecast, included since its AAAI 2023 release.
   contact:
@@ -2982,7 +2982,7 @@
   - "time-series"
   summary: |
     A benchmark for detecting anomalous transient gravitational-wave signals, including "unknown-unknowns," using preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments from dual interferometers. :contentReference[oaicite:1]{index=1}
-  licensing: "TODO"
+  licensing: "NA"
   task_types:
   - "Anomaly detection"
   ai_capability_measured:
@@ -3000,7 +3000,7 @@
   - "Anomaly detection"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
-    NSF HDR A3D3 sponsored; prize pool and starter kit provided on Codabench. :contentReference[oaicite:2]{index=2}
+    NSF HDR A3D3 sponsored; prize pool and starter kit provided on Codabench.
   contact:
     name: "HDR A3D3 Team"
     email: "unknown"
@@ -3070,7 +3070,7 @@
   - "butterfly hybrids"
   summary: |
     Image-based challenge for detecting butterfly hybrids in microscopy-driven species data. Participants evaluate models on Codabench using image segmentation/classification. :contentReference[oaicite:3]{index=3}
-  licensing: "TODO"
+  licensing: "NA"
   task_types:
   - "Anomaly detection"
   ai_capability_measured:
@@ -3158,7 +3158,7 @@
   - "remote sensing"
   summary: |
     A challenge combining North Atlantic sea-level time-series and satellite imagery to detect flooding anomalies. Models submitted via Codabench. :contentReference[oaicite:5]{index=5}
-  licensing: "TODO"
+  licensing: "NA"
   task_types:
   - "Anomaly detection"
   ai_capability_measured:
@@ -3244,7 +3244,7 @@
   - "QICK"
   summary: |
     Implements real-time ML models for single-qubit readout on the Quantum Instrumentation Control Kit (QICK), using hls4ml to deploy quantized neural networks on RFSoC FPGAs. Offers high-fidelity, low-latency quantum state discrimination. :contentReference[oaicite:0]{index=0}
-  licensing: "TODO"
+  licensing: "NA"
   task_types:
   - "Classification"
   ai_capability_measured:
@@ -3334,7 +3334,7 @@
   - "science QA"
   summary: |
     Contains 448 challenging questions written by domain experts, with expert accuracy at 65% (74% discounting clear errors) and non-experts reaching just 34%. GPT-4 baseline scores ~39%-designed for scalable oversight evaluation. :contentReference[oaicite:2]{index=2}
-  licensing: "TODO"
+  licensing: "NA"
   task_types:
   - "Multiple choice"
   ai_capability_measured:
@@ -3424,7 +3424,7 @@
   - "QA"
   summary: |
     A first-of-its-kind dataset covering 17,300 sq.km of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs-designed for both vision and language-based ML models in marine science :contentReference[oaicite:1]{index=1}.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Image segmentation"
   - "Vision-language QA"
@@ -3462,13 +3462,13 @@
   datasets:
     links:
     - name: "Sonar imagery + annotations"
-      url: "~15 TB"
+      url: "unknown"
   results:
     links:
     - name: "Gemini LLM Deep Research"
-      url: ""
+      url: "unknown"
     - name: "ChatGPT LLM"
-      url: ""
+      url: "unknown"
   fair:
     reproducible: "Yes"
     benchmark_ready: "Yes"
@@ -3505,7 +3505,7 @@
   valid_date: "2024-12-13"
   name: "SuperCon3D"
   url: "https://neurips.cc/virtual/2024/poster/97553"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Materials Science; Superconductivity"
   focus: "Dataset and models for predicting and generating high-Tc superconductors
     using 3D crystal structures"
@@ -3516,7 +3516,7 @@
   - "generative models"
   summary: |
     SuperCon3D introduces 3D crystal structures with associated critical temperatures (Tc) and two deep-learning models: SODNet (equivariant graph model) and DiffCSP-SC (diffusion generator) designed to screen and synthesize high-Tc candidates :contentReference[oaicite:3]{index=3}.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Regression (Tc prediction)"
   - "Generative modeling"
@@ -3534,7 +3534,7 @@
   type: "Dataset + Models"
   ml_task:
   - "Regression, Generation"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     Demonstrates advantage of combining ordered and disordered structural data in model design :contentReference[oaicite:4]{index=4}.
   contact:
@@ -3597,7 +3597,7 @@
   valid_date: "2024-12-13"
   name: "GeSS"
   url: "https://neurips.cc/virtual/2024/poster/97816"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Scientific ML; Geometric Deep Learning"
   focus: "Benchmark suite evaluating geometric deep learning models under real-world
     distribution shifts"
@@ -3608,7 +3608,7 @@
   - "scientific applications"
   summary: |
     GeSS provides 30 benchmark scenarios across particle physics, materials science, and biochemistry, evaluating 3 GDL backbones and 11 algorithms under covariate, concept, and conditional shifts, with varied OOD access :contentReference[oaicite:5]{index=5}.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Classification"
   - "Regression"
@@ -3627,7 +3627,7 @@
   type: "Benchmark"
   ml_task:
   - "Classification, Regression"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     Includes no-OOD, unlabeled-OOD, and few-label scenarios :contentReference[oaicite:6]{index=6}.
   contact:
@@ -3690,7 +3690,7 @@
   valid_date: "2024-12-13"
   name: "Vocal Call Locator (VCL)"
   url: "https://neurips.cc/virtual/2024/poster/97470"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Neuroscience; Bioacoustics"
   focus: "Benchmarking sound-source localization of rodent vocalizations from multi-channel
     audio"
@@ -3701,7 +3701,7 @@
   - "SSL"
   summary: |
     The first large-scale benchmark (767K sounds across 9 conditions) for localizing rodent vocal calls using synchronized audio and video in standard lab environments, enabling systematic evaluation of sound-source localization algorithms in bioacoustics :contentReference[oaicite:1]{index=1}.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Sound source localization"
   ai_capability_measured:
@@ -3716,7 +3716,7 @@
   type: "Dataset"
   ml_task:
   - "Anomaly detection / localization"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     Dataset spans real, simulated, and mixed audio; supports benchmarking across data types :contentReference[oaicite:2]{index=2}.
   contact:
@@ -3779,7 +3779,7 @@
   valid_date: "2024-12-13"
   name: "MassSpecGym"
   url: "https://neurips.cc/virtual/2024/poster/97823"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Cheminformatics; Molecular Discovery"
   focus: "Benchmark suite for discovery and identification of molecules via MS/MS"
   keywords:
@@ -3790,7 +3790,7 @@
   - "dataset"
   summary: |
     MassSpecGym curates the largest public MS/MS dataset with three standardized tasks-de novo structure generation, molecule retrieval, and spectrum simulation-using challenging generalization splits to propel ML-driven molecule discovery :contentReference[oaicite:3]{index=3}.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "De novo generation"
   - "Retrieval"
@@ -3809,7 +3809,7 @@
   type: "Dataset + Benchmark"
   ml_task:
   - "Generation, retrieval, simulation"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks :contentReference[oaicite:4]{index=4}.
   contact:
@@ -3872,7 +3872,7 @@
   valid_date: "2024-12-13"
   name: "Urban Data Layer (UDL)"
   url: "https://neurips.cc/virtual/2024/poster/97837"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Urban Computing; Data Engineering"
   focus: "Unified data pipeline for multi-modal urban science research"
   keywords:
@@ -3882,7 +3882,7 @@
   - "benchmark"
   summary: |
     UrbanDataLayer standardizes heterogeneous urban data formats and provides pipelines for tasks like air quality prediction and land-use classification, enabling the rapid creation of multi-modal urban benchmarks :contentReference[oaicite:5]{index=5}.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Prediction"
   - "Classification"
@@ -3898,7 +3898,7 @@
   type: "Framework"
   ml_task:
   - "Prediction, classification"
-  solutions: "TODO"
+  solutions: "0"
   notes: |
     Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models :contentReference[oaicite:6]{index=6}.
   contact:
@@ -3972,7 +3972,7 @@
   - "quantum chemistry"
   summary: |
     Introduces the Delta Squared-ML paradigm-using ML corrections to DFT to predict reaction energies with accuracy comparable to CCSD(T), while training on small CC datasets. Evaluated across 10 reaction datasets covering organic and organometallic transformations.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Regression"
   ai_capability_measured:
@@ -4061,7 +4061,7 @@
   - "question answering"
   summary: |
     Establishes a benchmark of 3,500 expert-annotated prompts and QA pairs covering crop traits, growth stages, and environmental interactions. Tests GPT-style LLMs on accuracy and domain reasoning using in-context, chain-of-thought, and retrieval-augmented prompts.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Question Answering"
   - "Inference"
@@ -4152,7 +4152,7 @@
   - "chain-of-thought prompting"
   summary: |
     A workshop version of SPIQA comparing 10 LLM adapter methods on the SPIQA benchmark with scientific diagram/questions. Highlights performance differences between chain-of-thought and end-to-end adapter models.
-  licensing: "TODO"
+  licensing: "unknown"
   task_types:
   - "Multimodal QA"
   ai_capability_measured:

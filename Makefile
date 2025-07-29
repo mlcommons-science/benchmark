@@ -1,9 +1,12 @@
 # makefile that will create all the content
 
-FILES=source/benchmarks-addon.yaml
+BASE=.
+BASE=../yaml3/benchmark
+
+FILES=${BASE}/source/benchmarks-addon.yaml
 # FILES=source/benchmarks.yaml source/benchmarks-addon.yaml
 
-CHECK_FILES=source/benchmarks.yaml,source/benchmarks-addon.yaml 
+CHECK_FILES=${BASE}/source/benchmarks.yaml,${BASE}/source/benchmarks-addon.yaml 
 
 # FILES=source/benchmark-entry-comment-gregor.yaml
 
@@ -17,13 +20,16 @@ COLUMNS=date,name,domain,focus,keywords,task_types,metrics,models,cite,ratings.s
 
 all: pdf md publish
 	echo "If you see no errors it is finished."
-	
+
+ls:
+	ls ${BASE}>
+
 g:
 	python bin/test.py
 
 summary:
-	python bin/summary.py --file source/benchmarks-addon.yaml --graph=pdf
-	python bin/summary.py --file source/benchmarks-addon.yaml --graph=png
+	python bin/summary.py --file ${FILES} --graph=pdf
+	python bin/summary.py --file ${FILES} --graph=png
 	#cd content/summary; bibtool -s -i benchmarks.bib -o tmp.bib
 	cd content/tex; latexmk -pdf -silent summary.tex
 	open content/tex/summary.pdf 
@@ -96,7 +102,6 @@ log:
 publish:
 	mkdir -p docs/tex/images
 	mkdir -p docs/md
-	
 	cp -r content/md/* docs/md
 	cp source/index.md docs/index.md
 	cp content/tex/benchmarks.pdf docs/benchmarks.pdf
@@ -106,4 +111,3 @@ structure:
 	python ${SCRIPT} --files=source/benchmarks.yaml --check_structure 
 	python ${SCRIPT} --files=source/benchmarks.yaml --check_structure --structure=source/benchmarks-addon.yaml
 	python ${SCRIPT} --files=source/benchmarks-addon.yaml --check_structure 
-	

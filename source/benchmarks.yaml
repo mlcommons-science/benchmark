@@ -1300,7 +1300,7 @@
   valid_date: "2011-10-01"
   name: "Materials Project"
   url: "https://materialsproject.org/"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Materials Science"
   focus: "DFT-based property prediction"
   keywords:
@@ -1311,7 +1311,7 @@
     The Materials Project provides an open-access database of computed properties for
     inorganic materials via high-throughput density functional theory (DFT), accelerating 
     materials discovery.
-  licensing: "TODO"
+  licensing: "https://next-gen.materialsproject.org/about/terms"
   task_types:
   - "Property prediction"
   ai_capability_measured:
@@ -1323,15 +1323,15 @@
   - "Automatminer"
   - "Crystal Graph Neural Networks"
   ml_motif:
-  - "TODO"
+  - "Material properties"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "0"
   notes: "Core component of the Materials Genome Initiative"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "unknown"
+    email: "unknown"
   cite:
   - |
     @article{jain2013materials,
@@ -1346,20 +1346,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "Materials Project Catalysis Explorer"
+      url: "https://next-gen.materialsproject.org/catalysis"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet evaluated
     specification:
       rating: 8
       reason: |
@@ -1388,7 +1388,7 @@
   valid_date: "2020-10-20"
   name: "OCP (Open Catalyst Project)"
   url: "https://opencatalystproject.org/"
-  doi: "TODO"
+  doi: "unknown"
   domain: "Chemistry; Materials Science"
   focus: "Catalyst adsorption energy prediction"
   keywords:
@@ -1399,7 +1399,7 @@
     The Open Catalyst Project (OC20 and OC22) provides DFT-calculated catalyst-adsorbate 
     relaxation datasets, challenging ML models to predict energies and forces for 
     renewable energy applications.
-  licensing: "TODO"
+  licensing: "OCP Terms of Use"
   task_types:
   - "Energy prediction"
   - "Force prediction"
@@ -1414,15 +1414,15 @@
   - "DimeNet++"
   - "GemNet-OC"
   ml_motif:
-  - "TODO"
+  - "Chemistry"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "0"
   notes: "Public leaderboards; active community development"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "unknown"
+    email: "unknown"
   cite:
   - |
     @article{chanussot2021oc20,
@@ -1475,20 +1475,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "OCP Dataset"
+      url: "https://fair-chem.github.io/catalysts/datasets/summary"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "OCP Pretrained Models"
+      url: "https://fair-chem.github.io/catalysts/models.html"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet evaluated
     specification:
       rating: 10
       reason: |
@@ -1517,7 +1517,7 @@
   valid_date: "2023-06-20"
   name: "JARVIS-Leaderboard"
   url: "https://arxiv.org/abs/2306.11688"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2306.11688"
   domain: "Materials Science; Benchmarking"
   focus: "Comparative evaluation of materials design methods"
   keywords:
@@ -1528,7 +1528,7 @@
     JARVIS-Leaderboard is a community-driven platform benchmarking AI, electronic
     structure, force-fields, quantum computing, and experimental methods across hundreds
     of materials science tasks.
-  licensing: "TODO"
+  licensing: "NIST"
   task_types:
   - "Method benchmarking"
   - "Leaderboard ranking"
@@ -1540,15 +1540,15 @@
   - "Accuracy"
   models: []
   ml_motif:
-  - "TODO"
+  - "Material science"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
-  notes: "1,281 contributions across 274 benchmarks"
+  solutions: "0"
+  notes: "1281 contributions across 274 benchmarks"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "Kamal Choudhary"
+    email: "kamal.choudhary@nist.gov"
   cite:
   - |
     @article{choudhary2024jarvis,
@@ -1564,20 +1564,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "AI model specific benchmarks"
+      url: "https://pages.nist.gov/jarvis_leaderboard/AI/"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "unknown"
+      url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not yet evaluated
     specification:
       rating: 6
       reason: |

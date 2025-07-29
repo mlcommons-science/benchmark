@@ -1,7 +1,7 @@
 # makefile that will create all the content
 
 BASE=.
-BASE=../yaml3/benchmark
+# BASE=../yaml3/benchmark
 
 # FILES=${BASE}/source/benchmarks.yaml
 FILES=${BASE}/source/benchmarks-addon.yaml

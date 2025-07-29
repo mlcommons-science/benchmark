@@ -3,8 +3,8 @@
 BASE=.
 # BASE=../yaml3/benchmark
 
-# FILES=${BASE}/source/benchmarks.yaml
-FILES=${BASE}/source/benchmarks-addon.yaml
+FILES=${BASE}/source/benchmarks.yaml
+# FILES=${BASE}/source/benchmarks-addon.yaml
 # FILES=${BASE}/source/benchmarks.yaml,${BASE}/source/benchmarks-addon.yaml 
 
 CHECK_FILES=${BASE}/source/benchmarks.yaml,${BASE}/source/benchmarks-addon.yaml 

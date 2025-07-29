@@ -44,7 +44,7 @@
     email: "dan (at) safe.ai"
   cite:
   - |
-    @article{hendrycks2021measuring,
+    @misc{hendrycks2021measuring,
       title={Measuring Massive Multitask Language Understanding},
       author={Hendrycks, Dan and Burns, Collin and Kadavath, Saurav},
       journal={arXiv preprint arXiv:2009.03300},
@@ -289,7 +289,8 @@
   - "Cross-domain academic reasoning"
   metrics:
   - "Accuracy"
-  models: []
+  models: 
+  -  "unkown"
   ml_motif:
   - "Multi-domain"
   type: "Benchmark"
@@ -374,7 +375,8 @@
   - "Symbolic and abstract mathematical reasoning"
   metrics:
   - "Accuracy"
-  models: []
+  models: 
+  - unkown
   ml_motif:
   - "Math problem solving"
   type: "Benchmark"
@@ -544,7 +546,8 @@
   - "Mathematical problem-solving and reasoning"
   metrics:
   - "Accuracy"
-  models: []
+  models: 
+  - "unkown"
   ml_motif:
   - "Math problem solving"
   type: "Benchmark"
@@ -628,7 +631,8 @@
   - "Math reasoning and generalization"
   metrics:
   - "Accuracy"
-  models: []
+  models:
+  - "unkown"
   ml_motif:
   - "Math problem solving"
   type: "Benchmark"
@@ -1538,7 +1542,8 @@
   - "MAE"
   - "RMSE"
   - "Accuracy"
-  models: []
+  models:
+  - "unkown"
   ml_motif:
   - "Material science"
   type: "Benchmark"

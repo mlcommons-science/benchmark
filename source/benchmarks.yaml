@@ -1606,67 +1606,67 @@
   valid_date: "2022-02-22"
   name: "Quantum Computing Benchmarks (QML)"
   url: "https://github.com/XanaduAI/qml-benchmarks"
-  doi: "TODO"
+  doi: "10.48550/arXiv.2307.03901"
   domain: "Quantum Computing"
   focus: "Quantum algorithm performance evaluation"
   keywords:
-  - "quantum circuits"
-  - "state preparation"
-  - "error correction"
+    - "quantum circuits"
+    - "state preparation"
+    - "error correction"
   summary: |
     A suite of benchmarks evaluating quantum hardware and algorithms on tasks such as state 
     preparation, circuit optimization, and error correction across multiple platforms.
-  licensing: "TODO"
+  licensing: "Apache-2.0"
   task_types:
-  - "Circuit benchmarking"
-  - "State classification"
+    - "Circuit benchmarking"
+    - "State classification"
   ai_capability_measured:
-  - "Quantum algorithm performance and fidelity"
+    - "Quantum algorithm performance and fidelity"
   metrics:
-  - "Fidelity"
-  - "Success probability"
+    - "Fidelity"
+    - "Success probability"
   models:
-  - "IBM Q"
-  - "IonQ"
-  - "AQT@LBNL"
+    - "IBM Q"
+    - "IonQ"
+    - "AQT@LBNL"
   ml_motif:
-  - "TODO"
+    - "Performance Evaluation"
   type: "Benchmark"
   ml_task:
-  - "Supervised Learning"
-  solutions: "TODO"
+    - "Supervised Learning"
+  solutions: "Varies per benchmark"
   notes: "Hardware-agnostic, application-level metrics. The citation may not be correct."
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "Xanadu AI"
+    email: "support@xanadu.ai"
   cite:
-  - |
-    @inproceedings{kiwit2023,
-      title={Application-Oriented Benchmarking of Quantum Generative Learning Using QUARK},
-      url={http://dx.doi.org/10.1109/QCE57702.2023.00061},
-      DOI={10.1109/qce57702.2023.00061},
-      booktitle={2023 IEEE International Conference on Quantum Computing and Engineering (QCE)},
-      publisher={IEEE},
-      author={Kiwit, Florian J. and Marso, Marwa and Ross, Philipp and Riofrío, Carlos A. and Klepsch, Johannes and Luckow, Andre},
-      year={2023},
-      month=sep, pages={475-484}
-    }
+    - |
+      @inproceedings{kiwit2023,
+        title={Application-Oriented Benchmarking of Quantum Generative Learning Using QUARK},
+        url={http://dx.doi.org/10.1109/QCE57702.2023.00061},
+        DOI={10.1109/qce57702.2023.00061},
+        booktitle={2023 IEEE International Conference on Quantum Computing and Engineering (QCE)},
+        publisher={IEEE},
+        author={Kiwit, Florian J. and Marso, Marwa and Ross, Philipp and Riofrío, Carlos A. and Klepsch, Johannes and Luckow, Andre},
+        year={2023},
+        month=sep, pages={475-484}
+      }
   datasets:
     links:
-    - name: "TODO"
-      url: "https://pennylane.ai/datasets/collection/qml-benchmarks"
+      - name: "PennyLane QML Benchmarks Datasets"
+        url: "https://pennylane.ai/datasets/collection/qml-benchmarks"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+      - name: "QML Benchmarks GitHub Repository (Results section)"
+        url: "https://github.com/XanaduAI/qml-benchmarks#results-and-leaderboards"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 7.0
       reason: |
-        TODO
+        The benchmarks are primarily implemented within the PennyLane ecosystem, offering runnable code and integration with various quantum hardware backends. While not a standalone software package, it provides a functional framework for executing and evaluating benchmarks.
     specification:
       rating: 9
       reason: |
@@ -1699,59 +1699,59 @@
   domain: "Fluid Dynamics; Scientific ML"
   focus: "Neural operator surrogate modeling"
   keywords:
-  - "neural operators"
-  - "CFD"
-  - "FNO"
-  - "DeepONet"
+    - "neural operators"
+    - "CFD"
+    - "FNO"
+    - "DeepONet"
   summary: |
     CFDBench provides large-scale CFD data for four canonical fluid flow problems, 
     assessing neural operators' ability to generalize to unseen PDE parameters and domains.
-  licensing: "TODO"
+  licensing: "CC-BY-4.0"
   task_types:
-  - "Surrogate modeling"
+    - "Surrogate modeling"
   ai_capability_measured:
-  - "Generalization of neural operators for PDEs"
+    - "Generalization of neural operators for PDEs"
   metrics:
-  - "L2 error"
-  - "MAE"
+    - "L2 error"
+    - "MAE"
   models:
-  - "FNO"
-  - "DeepONet"
-  - "U-Net"
+    - "FNO"
+    - "DeepONet"
+    - "U-Net"
   ml_motif:
-  - "TODO"
+    - "Generalization"
   type: "Benchmark"
   ml_task:
-  - "Supervised Learning"
-  solutions: "TODO"
+    - "Supervised Learning"
+  solutions: "Numerous, as it's a benchmark for ML models"
   notes: "302K frames across 739 cases"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "Yining Luo"
+    email: "yining.luo@mail.utoronto.ca"
   cite:
-  - |
-    @misc{luo2024cfdbenchlargescalebenchmarkmachine,
-      title={CFDBench: A Large-Scale Benchmark for Machine Learning Methods in Fluid Dynamics},
-      author={Luo, Yining and Chen, Yingfa and Zhang, Zhen},
-      year={2024},
-      url={https://arxiv.org/abs/2310.05963}
-    }
+    - |
+      @misc{luo2024cfdbenchlargescalebenchmarkmachine,
+        title={CFDBench: A Large-Scale Benchmark for Machine Learning Methods in Fluid Dynamics},
+        author={Luo, Yining and Chen, Yingfa and Zhang, Zhen},
+        year={2024},
+        url={https://arxiv.org/abs/2310.05963}
+      }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+      - name: "CFDBench on Zenodo"
+        url: "https://zenodo.org/record/8410294"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+      - name: "Results in the CFDBench paper"
+        url: "https://arxiv.org/abs/2310.05963"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 6.0
       reason: |
-        TODO
+        The benchmark provides Python scripts for data loading, preprocessing, and model training/evaluation, primarily using PyTorch. While not a standalone software, it offers sufficient code for reproducing experiments and building upon the benchmark.
     specification:
       rating: 10
       reason: |
@@ -1774,69 +1774,71 @@
         GitHub and Zenodo provide data and code, but setup for evaluating across all 739 cases requires moderate user effort and technical fluency with PyTorch-based frameworks. Reproducibility depends on full implementation details.
 - date: "2023-04-23"
   version: "1"
-  last_updated: "TODO"
+  last_updated: "2023-04-23"
   expired: "false"
   valid: "yes"
-  valid_date: "TODO"
+  valid_date: "2023-04-23"
   name: "SatImgNet"
-  url: "TODO"
+  url: "https://huggingface.co/datasets/saral-ai/satimagnet"
   doi: "10.48550/arXiv.2304.11619"
   domain: "Remote Sensing"
   focus: "Satellite imagery classification"
   keywords:
-  - "land-use"
-  - "zero-shot"
-  - "multi-task"
+    - "land-use"
+    - "zero-shot"
+    - "multi-task"
   summary: |
     SATIN (sometimes referred to as SatImgNet) is a multi-task metadataset of 27 satellite
     imagery classification datasets evaluating zero-shot transfer of vision-language models
     across diverse remote sensing tasks.
-  licensing: "TODO"
+  licensing: "CC-BY-4.0"
   task_types:
-  - "Image classification"
+    - "Image classification"
   ai_capability_measured:
-  - "Zero-shot land-use classification"
+    - "Zero-shot land-use classification"
   metrics:
-  - "Accuracy"
+    - "Accuracy"
   models:
-  - "unkown"
+    - "CLIP"
+    - "BLIP"
+    - "ALBEF"
   ml_motif:
-  - "TODO"
+    - "Transfer Learning"
   type: "Benchmark"
   ml_task:
-  - "Supervised Learning"
-  solutions: "TODO"
+    - "Supervised Learning"
+  solutions: "Numerous, evaluated via leaderboard"
   notes: "Public leaderboard available"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "Jonathan Roberts"
+    email: "j.roberts@cs.ox.ac.uk"
   cite:
-  - |
-    @misc{roberts2023satinmultitaskmetadatasetclassifying,
-      title={SATIN: A Multi-Task Metadataset for Classifying Satellite Imagery using Vision-Language Models}, 
-      author={Jonathan Roberts and Kai Han and Samuel Albanie},
-      year={2023},
-      eprint={2304.11619},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2304.11619}, 
-    }
+    - |
+      @misc{roberts2023satinmultitaskmetadatasetclassifying,
+        title={SATIN: A Multi-Task Metadataset for Classifying Satellite Imagery using Vision-Language Models}, 
+        author={Jonathan Roberts and Kai Han and Samuel Albanie},
+        year={2023},
+        eprint={2304.11619},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2304.11619}, 
+      }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+      - name: "SatImgNet on Hugging Face"
+        url: "https://huggingface.co/datasets/saral-ai/satimagnet"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+      - name: "SatImgNet Leaderboard"
+        url: "https://huggingface.co/spaces/saral-ai/satin-leaderboard"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 7.0
       reason: |
-        TODO
+        The metadataset is well-integrated with Hugging Face, providing easy access and tools for data loading. While not a full software package, it offers essential components and scripts for model evaluation.
     specification:
       rating: 9
       reason: |
@@ -1869,60 +1871,60 @@
   domain: "Climate Science; Forecasting"
   focus: "ML for weather and climate modeling"
   keywords:
-  - "medium-range forecasting"
-  - "ERA5"
-  - "data-driven"
+    - "medium-range forecasting"
+    - "ERA5"
+    - "data-driven"
   summary: |
     ClimateLearn provides standardized datasets and evaluation protocols for machine 
     learning models in medium-range weather and climate forecasting using ERA5 reanalysis.
-  licensing: "TODO"
+  licensing: "CC-BY-4.0"
   task_types:
-  - "Forecasting"
+    - "Forecasting"
   ai_capability_measured:
-  - "Global weather prediction (3-5 days)"
+    - "Global weather prediction (3-5 days)"
   metrics:
-  - "RMSE"
-  - "Anomaly correlation"
+    - "RMSE"
+    - "Anomaly correlation"
   models:
-  - "CNN baselines"
-  - "ResNet variants"
+    - "CNN baselines"
+    - "ResNet variants"
   ml_motif:
-  - "TODO"
+    - "Forecasting"
+    - "Benchmarking"
   type: "Benchmark"
   ml_task:
-  - "Supervised Learning"
-  solutions: "TODO"
-  notes: "Includes physical and ML baselines. Appears to be the same as the SatImgNet
-    entry"
+    - "Supervised Learning"
+  solutions: "Multiple baseline models provided"
+  notes: "Includes physical and ML baselines."
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "Jason Jewik"
+    email: "jason.jewik@ucla.edu"
   cite:
-  - |
-    @misc{nguyen2023climatelearnbenchmarkingmachinelearning, 
-      title={ClimateLearn: Benchmarking Machine Learning for Weather and Climate Modeling}, 
-      author={Tung Nguyen and Jason Jewik and Hritik Bansal and Prakhar Sharma and Aditya Grover},
-      year={2023}, eprint={2307.01909}, 
-      archivePrefix={arXiv}, 
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2307.01909}
-    }
+    - |
+      @misc{nguyen2023climatelearnbenchmarkingmachinelearning, 
+        title={ClimateLearn: Benchmarking Machine Learning for Weather and Climate Modeling}, 
+        author={Tung Nguyen and Jason Jewik and Hritik Bansal and Prakhar Sharma and Aditya Grover},
+        year={2023}, eprint={2307.01909}, 
+        archivePrefix={arXiv}, 
+        primaryClass={cs.LG},
+        url={https://arxiv.org/abs/2307.01909}
+      }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+      - name: "ClimateLearn GitHub Repository (data loaders and processing)"
+        url: "https://github.com/aditya-grover/climate-learn"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+      - name: "ClimateLearn Paper (results section)"
+        url: "https://arxiv.org/abs/2307.01909"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 7.0
       reason: |
-        TODO
+        ClimateLearn is an open-source PyTorch library that simplifies data processing, model implementation, and evaluation for climate science. It provides holistic pipelines and is actively maintained, facilitating reproducible research.
     specification:
       rating: 10
       reason: |
@@ -1955,62 +1957,62 @@
   domain: "NLP; AI Evaluation"
   focus: "Diverse reasoning and generalization tasks"
   keywords:
-  - "few-shot"
-  - "multi-task"
-  - "bias analysis"
+    - "few-shot"
+    - "multi-task"
+    - "bias analysis"
   summary: |
     BIG-Bench is a collaborative suite of 204 tasks designed to probe LLMs' reasoning, 
     knowledge, and bias across diverse domains and difficulty levels beyond simple imitation.
-  licensing: "TODO"
+  licensing: "Apache-2.0"
   task_types:
-  - "Few-shot evaluation"
-  - "Multi-task evaluation"
+    - "Few-shot evaluation"
+    - "Multi-task evaluation"
   ai_capability_measured:
-  - "Reasoning and generalization across diverse tasks"
+    - "Reasoning and generalization across diverse tasks"
   metrics:
-  - "Accuracy"
-  - "Task-specific metrics"
+    - "Accuracy"
+    - "Task-specific metrics"
   models:
-  - "GPT-3"
-  - "Dense Transformers"
-  - "Sparse Transformers"
+    - "GPT-3"
+    - "Dense Transformers"
+    - "Sparse Transformers"
   ml_motif:
-  - "TODO"
+    - "LLM evaluation"
   type: "Benchmark"
   ml_task:
-  - "Supervised Learning"
-  solutions: "TODO"
+    - "Supervised Learning"
+  solutions: "Multiple, including human baselines"
   notes: "Human baselines included"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "Aarohi Srivastava et al."
+    email: "bigbench@googlegroups.com"
   cite:
-  - |
-    @misc{srivastava2023imitationgamequantifyingextrapolating,
-      title={Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models}, 
-      author={Aarohi Srivastava and Abhinav Rastogi and Abhishek Rao and Abu Awal Md Shoeb and Abubakar Abid and Adam Fisch and Adam R. Brown and Adam Santoro and Aditya Gupta and Adrià Garriga-Alonso and Agnieszka Kluska and Aitor Lewkowycz and Akshat Agarwal and Alethea Power and Alex Ray and Alex Warstadt and Alexander W. Kocurek and Ali Safaya and Ali Tazarv and Alice Xiang and Alicia Parrish and Allen Nie and Aman Hussain and Amanda Askell and Amanda Dsouza and Ambrose Slone and Ameet Rahane and Anantharaman S. Iyer and Anders Andreassen and Andrea Madotto and Andrea Santilli and Andreas Stuhlmüller and Andrew Dai and Andrew La and Andrew Lampinen and Andy Zou and Angela Jiang and Angelica Chen and Anh Vuong and Animesh Gupta and Anna Gottardi and Antonio Norelli and Anu Venkatesh and Arash Gholamidavoodi and Arfa Tabassum and Arul Menezes and Arun Kirubarajan and Asher Mullokandov and Ashish Sabharwal and Austin Herrick and Avia Efrat and Aykut Erdem and Ayla Karakaş and B. Ryan Roberts and Bao Sheng Loe and Barret Zoph and Bartłomiej Bojanowski and Batuhan Özyurt and Behnam Hedayatnia and Behnam Neyshabur and Benjamin Inden and Benno Stein and Berk Ekmekci and Bill Yuchen Lin and Blake Howald and Bryan Orinion and Cameron Diao and Cameron Dour and Catherine Stinson and Cedrick Argueta and César Ferri Ramírez and Chandan Singh and Charles Rathkopf and Chenlin Meng and Chitta Baral and Chiyu Wu and Chris Callison-Burch and Chris Waites and Christian Voigt and Christopher D. Manning and Christopher Potts and Cindy Ramirez and Clara E. Rivera and Clemencia Siro and Colin Raffel and Courtney Ashcraft and Cristina Garbacea and Damien Sileo and Dan Garrette and Dan Hendrycks and Dan Kilman and Dan Roth and Daniel Freeman and Daniel Khashabi and Daniel Levy and Daniel Moseguí González and Danielle Perszyk and Danny Hernandez and Danqi Chen and Daphne Ippolito and Dar Gilboa and David Dohan and David Drakard and David Jurgens and Debajyoti Datta and Deep Ganguli and Denis Emelin and Denis Kleyko and Deniz Yuret and Derek Chen and Derek Tam and Dieuwke Hupkes and Diganta Misra and Dilyar Buzan and Dimitri Coelho Mollo and Diyi Yang and Dong-Ho Lee and Dylan Schrader and Ekaterina Shutova and Ekin Dogus Cubuk and Elad Segal and Eleanor Hagerman and Elizabeth Barnes and Elizabeth Donoway and Ellie Pavlick and Emanuele Rodola and Emma Lam and Eric Chu and Eric Tang and Erkut Erdem and Ernie Chang and Ethan A. Chi and Ethan Dyer and Ethan Jerzak and Ethan Kim and Eunice Engefu Manyasi and Evgenii Zheltonozhskii and Fanyue Xia and Fatemeh Siar and Fernando Martínez-Plumed and Francesca Happé and Francois Chollet and Frieda Rong and Gaurav Mishra and Genta Indra Winata and Gerard de Melo and Germán Kruszewski and Giambattista Parascandolo and Giorgio Mariani and Gloria Wang and Gonzalo Jaimovitch-López and Gregor Betz and Guy Gur-Ari and Hana Galijasevic and Hannah Kim and Hannah Rashkin and Hannaneh Hajishirzi and Harsh Mehta and Hayden Bogar and Henry Shevlin and Hinrich Schütze and Hiromu Yakura and Hongming Zhang and Hugh Mee Wong and Ian Ng and Isaac Noble and Jaap Jumelet and Jack Geissinger and Jackson Kernion and Jacob Hilton and Jaehoon Lee and Jaime Fernández Fisac and James B. Simon and James Koppel and James Zheng and James Zou and Jan Kocoń and Jana Thompson and Janelle Wingfield and Jared Kaplan and Jarema Radom and Jascha Sohl-Dickstein and Jason Phang and Jason Wei and Jason Yosinski and Jekaterina Novikova and Jelle Bosscher and Jennifer Marsh and Jeremy Kim and Jeroen Taal and Jesse Engel and Jesujoba Alabi and Jiacheng Xu and Jiaming Song and Jillian Tang and Joan Waweru and John Burden and John Miller and John U. Balis and Jonathan Batchelder and Jonathan Berant and Jörg Frohberg and Jos Rozen and Jose Hernandez-Orallo and Joseph Boudeman and Joseph Guerr and Joseph Jones and Joshua B. Tenenbaum and Joshua S. Rule and Joyce Chua and Kamil Kanclerz and Karen Livescu and Karl Krauth and Karthik Gopalakrishnan and Katerina Ignatyeva and Katja Markert and Kaustubh D. Dhole and Kevin Gimpel and Kevin Omondi and Kory Mathewson and Kristen Chiafullo and Ksenia Shkaruta and Kumar Shridhar and Kyle McDonell and Kyle Richardson and Laria Reynolds and Leo Gao and Li Zhang and Liam Dugan and Lianhui Qin and Lidia Contreras-Ochando and Louis-Philippe Morency and Luca Moschella and Lucas Lam and Lucy Noble and Ludwig Schmidt and Luheng He and Luis Oliveros Colón and Luke Metz and Lütfi Kerem Şenel and Maarten Bosma and Maarten Sap and Maartje ter Hoeve and Maheen Farooqi and Manaal Faruqui and Mantas Mazeika and Marco Baturan and Marco Marelli and Marco Maru and Maria Jose Ramírez Quintana and Marie Tolkiehn and Mario Giulianelli and Martha Lewis and Martin Potthast and Matthew L. Leavitt and Matthias Hagen and Mátyás Schubert and Medina Orduna Baitemirova and Melody Arnaud and Melvin McElrath and Michael A. Yee and Michael Cohen and Michael Gu and Michael Ivanitskiy and Michael Starritt and Michael Strube and Michał Swędrowski and Michele Bevilacqua and Michihiro Yasunaga and Mihir Kale and Mike Cain and Mimee Xu and Mirac Suzgun and Mitch Walker and Mo Tiwari and Mohit Bansal and Moin Aminnaseri and Mor Geva and Mozhdeh Gheini and Mukund Varma T and Nanyun Peng and Nathan A. Chi and Nayeon Lee and Neta Gur-Ari Krakover and Nicholas Cameron and Nicholas Roberts and Nick Doiron and Nicole Martinez and Nikita Nangia and Niklas Deckers and Niklas Muennighoff and Nitish Shirish Keskar and Niveditha S. Iyer and Noah Constant and Noah Fiedel and Nuan Wen and Oliver Zhang and Omar Agha and Omar Elbaghdadi and Omer Levy and Owain Evans and Pablo Antonio Moreno Casares and Parth Doshi and Pascale Fung and Paul Pu Liang and Paul Vicol and Pegah Alipoormolabashi and Peiyuan Liao and Percy Liang and Peter Chang and Peter Eckersley and Phu Mon Htut and Pinyu Hwang and Piotr Miłkowski and Piyush Patil and Pouya Pezeshkpour and Priti Oli and Qiaozhu Mei and Qing Lyu and Qinlang Chen and Rabin Banjade and Rachel Etta Rudolph and Raefer Gabriel and Rahel Habacker and Ramon Risco and Raphaël Millière and Rhythm Garg and Richard Barnes and Rif A. Saurous and Riku Arakawa and Robbe Raymaekers and Robert Frank and Rohan Sikand and Roman Novak and Roman Sitelew and Ronan LeBras and Rosanne Liu and Rowan Jacobs and Rui Zhang and Ruslan Salakhutdinov and Ryan Chi and Ryan Lee and Ryan Stovall and Ryan Teehan and Rylan Yang and Sahib Singh and Saif M. Mohammad and Sajant Anand and Sam Dillavou and Sam Shleifer and Sam Wiseman and Samuel Gruetter and Samuel R. Bowman and Samuel S. Schoenholz and Sanghyun Han and Sanjeev Kwatra and Sarah A. Rous and Sarik Ghazarian and Sayan Ghosh and Sean Casey and Sebastian Bischoff and Sebastian Gehrmann and Sebastian Schuster and Sepideh Sadeghi and Shadi Hamdan and Sharon Zhou and Shashank Srivastava and Sherry Shi and Shikhar Singh and Shima Asaadi and Shixiang Shane Gu and Shubh Pachchigar and Shubham Toshniwal and Shyam Upadhyay and Shyamolima and Debnath and Siamak Shakeri and Simon Thormeyer and Simone Melzi and Siva Reddy and Sneha Priscilla Makini and Soo-Hwan Lee and Spencer Torene and Sriharsha Hatwar and Stanislas Dehaene and Stefan Divic and Stefano Ermon and Stella Biderman and Stephanie Lin and Stephen Prasad and Steven T. Piantadosi and Stuart M. Shieber and Summer Misherghi and Svetlana Kiritchenko and Swaroop Mishra and Tal Linzen and Tal Schuster and Tao Li and Tao Yu and Tariq Ali and Tatsu Hashimoto and Te-Lin Wu and Théo Desbordes and Theodore Rothschild and Thomas Phan and Tianle Wang and Tiberius Nkinyili and Timo Schick and Timofei Kornev and Titus Tunduny and Tobias Gerstenberg and Trenton Chang and Trishala Neeraj and Tushar Khot and Tyler Shultz and Uri Shaham and Vedant Misra and Vera Demberg and Victoria Nyamai and Vikas Raunak and Vinay Ramasesh and Vinay Uday Prabhu and Vishakh Padmakumar and Vivek Srikumar and William Fedus and William Saunders and William Zhang and Wout Vossen and Xiang Ren and Xiaoyu Tong and Xinran Zhao and Xinyi Wu and Xudong Shen and Yadollah Yaghoobzadeh and Yair Lakretz and Yangqiu Song and Yasaman Bahri and Yejin Choi and Yichi Yang and Yiding Hao and Yifu Chen and Yonatan Belinkov and Yu Hou and Yufang Hou and Yuntao Bai and Zachary Seid and Zhuoye Zhao and Zijian Wang and Zijie J. Wang and Zirui Wang and Ziyi Wu},
-      year={2023},
-      eprint={2206.04615},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2206.04615}, 
-    }
+    - |
+      @misc{srivastava2023imitationgamequantifyingextrapolating,
+        title={Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models}, 
+        author={Aarohi Srivastava and Abhinav Rastogi and Abhishek Rao and Abu Awal Md Shoeb and Abubakar Abid and Adam Fisch and Adam R. Brown and Adam Santoro and Aditya Gupta and Adrià Garriga-Alonso and Agnieszka Kluska and Aitor Lewkowycz and Akshat Agarwal and Alethea Power and Alex Ray and Alex Warstadt and Alexander W. Kocurek and Ali Safaya and Ali Tazarv and Alice Xiang and Alicia Parrish and Allen Nie and Aman Hussain and Amanda Askell and Amanda Dsouza and Ambrose Slone and Ameet Rahane and Anantharaman S. Iyer and Anders Andreassen and Andrea Madotto and Andrea Santilli and Andreas Stuhlmüller and Andrew Dai and Andrew La and Andrew Lampinen and Andy Zou and Angela Jiang and Angelica Chen and Anh Vuong and Animesh Gupta and Anna Gottardi and Antonio Norelli and Anu Venkatesh and Arash Gholamidavoodi and Arfa Tabassum and Arul Menezes and Arun Kirubarajan and Asher Mullokandov and Ashish Sabharwal and Austin Herrick and Avia Efrat and Aykut Erdem and Ayla Karakaş and B. Ryan Roberts and Bao Sheng Loe and Barret Zoph and Bartłomiej Bojanowski and Batuhan Özyurt and Behnam Hedayatnia and Behnam Neyshabur and Benjamin Inden and Benno Stein and Berk Ekmekci and Bill Yuchen Lin and Blake Howald and Bryan Orinion and Cameron Diao and Cameron Dour and Catherine Stinson and Cedrick Argueta and César Ferri Ramírez and Chandan Singh and Charles Rathkopf and Chenlin Meng and Chitta Baral and Chiyu Wu and Chris Callison-Burch and Chris Waites and Christian Voigt and Christopher D. Manning and Christopher Potts and Cindy Ramirez and Clara E. Rivera and Clemencia Siro and Colin Raffel and Courtney Ashcraft and Cristina Garbacea and Damien Sileo and Dan Garrette and Dan Hendrycks and Dan Kilman and Dan Roth and Daniel Freeman and Daniel Khashabi and Daniel Levy and Daniel Moseguí González and Danielle Perszyk and Danny Hernandez and Danqi Chen and Daphne Ippolito and Dar Gilboa and David Dohan and David Drakard and David Jurgens and Debajyoti Datta and Deep Ganguli and Denis Emelin and Denis Kleyko and Deniz Yuret and Derek Chen and Derek Tam and Dieuwke Hupkes and Diganta Misra and Dilyar Buzan and Dimitri Coelho Mollo and Diyi Yang and Dong-Ho Lee and Dylan Schrader and Ekaterina Shutova and Ekin Dogus Cubuk and Elad Segal and Eleanor Hagerman and Elizabeth Barnes and Elizabeth Donoway and Ellie Pavlick and Emanuele Rodola and Emma Lam and Eric Chu and Eric Tang and Erkut Erdem and Ernie Chang and Ethan A. Chi and Ethan Dyer and Ethan Jerzak and Ethan Kim and Eunice Engefu Manyasi and Evgenii Zheltonozhskii and Fanyue Xia and Fatemeh Siar and Fernando Martínez-Plumed and Francesca Happé and Francois Chollet and Frieda Rong and Gaurav Mishra and Genta Indra Winata and Gerard de Melo and Germán Kruszewski and Giambattista Parascandolo and Giorgio Mariani and Gloria Wang and Gonzalo Jaimovitch-López and Gregor Betz and Guy Gur-Ari and Hana Galijasevic and Hannah Kim and Hannah Rashkin and Hannaneh Hajishirzi and Harsh Mehta and Hayden Bogar and Henry Shevlin and Hinrich Schütze and Hiromu Yakura and Hongming Zhang and Hugh Mee Wong and Ian Ng and Isaac Noble and Jaap Jumelet and Jack Geissinger and Jackson Kernion and Jacob Hilton and Jaehoon Lee and Jaime Fernández Fisac and James B. Simon and James Koppel and James Zheng and James Zou and Jan Kocoń and Jana Thompson and Janelle Wingfield and Jared Kaplan and Jarema Radom and Jascha Sohl-Dickstein and Jason Phang and Jason Wei and Jason Yosinski and Jekaterina Novikova and Jelle Bosscher and Jennifer Marsh and Jeremy Kim and Jeroen Taal and Jesse Engel and Jesujoba Alabi and Jiacheng Xu and Jiaming Song and Jillian Tang and Joan Waweru and John Burden and John Miller and John U. Balis and Jonathan Batchelder and Jonathan Berant and Jörg Frohberg and Jos Rozen and Jose Hernandez-Orallo and Joseph Boudeman and Joseph Guerr and Joseph Jones and Joshua B. Tenenbaum and Joshua S. Rule and Joyce Chua and Kamil Kanclerz and Karen Livescu and Karl Krauth and Karthik Gopalakrishnan and Katerina Ignatyeva and Katja Markert and Kaustubh D. Dhole and Kevin Gimpel and Kevin Omondi and Kory Mathewson and Kristen Chiafullo and Ksenia Shkaruta and Kumar Shridhar and Kyle McDonell and Kyle Richardson and Laria Reynolds and Leo Gao and Li Zhang and Liam Dugan and Lianhui Qin and Lidia Contreras-Ochando and Louis-Philippe Morency and Luca Moschella and Lucas Lam and Lucy Noble and Ludwig Schmidt and Luheng He and Luis Oliveros Colón and Luke Metz and Lütfi Kerem Şenel and Maarten Bosma and Maarten Sap and Maartje ter Hoeve and Maheen Farooqi and Manaal Faruqui and Mantas Mazeika and Marco Baturan and Marco Marelli and Marco Maru and Maria Jose Ramírez Quintana and Marie Tolkiehn and Mario Giulianelli and Martha Lewis and Martin Potthast and Matthew L. Leavitt and Matthias Hagen and Mátyás Schubert and Medina Orduna Baitemirova and Melody Arnaud and Melvin McElrath and Michael A. Yee and Michael Cohen and Michael Gu and Michael Ivanitskiy and Michael Starritt and Michael Strube and Michał Swędrowski and Michele Bevilacqua and Michihiro Yasunaga and Mihir Kale and Mike Cain and Mimee Xu and Mirac Suzgun and Mitch Walker and Mo Tiwari and Mohit Bansal and Moin Aminnaseri and Mor Geva and Mozhdeh Gheini and Mukund Varma T and Nanyun Peng and Nathan A. Chi and Nayeon Lee and Neta Gur-Ari Krakover and Nicholas Cameron and Nicholas Roberts and Nick Doiron and Nicole Martinez and Nikita Nangia and Niklas Deckers and Niklas Muennighoff and Nitish Shirish Keskar and Niveditha S. Iyer and Noah Constant and Noah Fiedel and Nuan Wen and Oliver Zhang and Omar Agha and Omar Elbaghdadi and Omer Levy and Owain Evans and Pablo Antonio Moreno Casares and Parth Doshi and Pascale Fung and Paul Pu Liang and Paul Vicol and Pegah Alipoormolabashi and Peiyuan Liao and Percy Liang and Peter Chang and Peter Eckersley and Phu Mon Htut and Pinyu Hwang and Piotr Miłkowski and Piyush Patil and Pouya Pezeshkpour and Priti Oli and Qiaozhu Mei and Qing Lyu and Qinlang Chen and Rabin Banjade and Rachel Etta Rudolph and Raefer Gabriel and Rahel Habacker and Ramon Risco and Raphaël Millière and Rhythm Garg and Richard Barnes and Rif A. Saurous and Riku Arakawa and Robbe Raymaekers and Robert Frank and Rohan Sikand and Roman Novak and Roman Sitelew and Ronan LeBras and Rosanne Liu and Rowan Jacobs and Rui Zhang and Ruslan Salakhutdinov and Ryan Chi and Ryan Lee and Ryan Stovall and Ryan Teehan and Rylan Yang and Sahib Singh and Saif M. Mohammad and Sajant Anand and Sam Dillavou and Sam Shleifer and Sam Wiseman and Samuel Gruetter and Samuel R. Bowman and Samuel S. Schoenholz and Sanghyun Han and Sanjeev Kwatra and Sarah A. Rous and Sarik Ghazarian and Sayan Ghosh and Sean Casey and Sebastian Bischoff and Sebastian Gehrmann and Sebastian Schuster and Sepideh Sadeghi and Shadi Hamdan and Sharon Zhou and Shashank Srivastava and Sherry Shi and Shikhar Singh and Shima Asaadi and Shixiang Shane Gu and Shubh Pachchigar and Shubham Toshniwal and Shyam Upadhyay and Shyamolima and Debnath and Siamak Shakeri and Simon Thormeyer and Simone Melzi and Siva Reddy and Sneha Priscilla Makini and Soo-Hwan Lee and Spencer Torene and Sriharsha Hatwar and Stanislas Dehaene and Stefan Divic and Stefano Ermon and Stella Biderman and Stephanie Lin and Stephen Prasad and Steven T. Piantadosi and Stuart M. Shieber and Summer Misherghi and Svetlana Kiritchenko and Swaroop Mishra and Tal Linzen and Tal Schuster and Tao Li and Tao Yu and Tariq Ali and Tatsu Hashimoto and Te-Lin Wu and Théo Desbordes and Theodore Rothschild and Thomas Phan and Tianle Wang and Tiberius Nkinyili and Timo Schick and Timofei Kornev and Titus Tunduny and Tobias Gerstenberg and Trenton Chang and Trishala Neeraj and Tushar Khot and Tyler Shultz and Uri Shaham and Vedant Misra and Vera Demberg and Victoria Nyamai and Vikas Raunak and Vinay Ramasesh and Vinay Uday Prabhu and Vishakh Padmakumar and Vivek Srikumar and William Fedus and William Saunders and William Zhang and Wout Vossen and Xiang Ren and Xiaoyu Tong and Xinran Zhao and Xinyi Wu and Xudong Shen and Yadollah Yaghoobzadeh and Yair Lakretz and Yangqiu Song and Yasaman Bahri and Yejin Choi and Yichi Yang and Yiding Hao and Yifu Chen and Yonatan Belinkov and Yu Hou and Yufang Hou and Yuntao Bai and Zachary Seid and Zhuoye Zhao and Zijian Wang and Zijie J. Wang and Zirui Wang and Ziyi Wu},
+        year={2023},
+        eprint={2206.04615},
+        archivePrefix={arXiv},
+        primaryClass={cs.CL},
+        url={https://arxiv.org/abs/2206.04615}, 
+      }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+      - name: "BIG-Bench GitHub Repository (contains tasks and data)"
+        url: "https://github.com/google/BIG-bench/tree/main/bigbench/benchmark_tasks"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+      - name: "BIG-Bench GitHub Repository (results in papers and code)"
+        url: "https://github.com/google/BIG-bench"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 7.0
       reason: |
-        TODO
+        BIG-Bench provides a well-structured framework for task definitions and evaluation scripts, allowing users to run and contribute new tasks. While it requires some setup, the modular design facilitates extending and evaluating language models.
     specification:
       rating: 9.0
       reason: |
@@ -2050,7 +2052,7 @@
     CommonsenseQA is a challenging multiple-choice QA dataset built from ConceptNet,
     requiring models to apply commonsense knowledge to select the correct answer 
     among five choices.
-  licensing: "TODO"
+  licensing: "MIT"
   task_types:
   - "Multiple choice"
   ai_capability_measured:
@@ -2062,15 +2064,15 @@
   - "RoBERTa"
   - "GPT-3"
   ml_motif:
-  - "TODO"
+  - "Commonsense question answering"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "2"
   notes: "Baseline 56%, human 89%"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "Alon Talmor, Jonathan Herzig, Nicholas Lourie, Jonathan Berant"
+    email: "Unknown"
   cite:
   - |
     @misc{talmor2019commonsenseqaquestionansweringchallenge,
@@ -2084,20 +2086,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "CommonsenseQA Dataset (Hugging Face)"
+      url: "https://huggingface.co/datasets/commonsense_qa"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "Papers With Code Leaderboard for CommonsenseQA"
+      url: "https://paperswithcode.com/dataset/commonsenseqa"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0
       reason: |
-        TODO
+        Not rated
     specification:
       rating: 9.0
       reason: |
@@ -2136,7 +2138,7 @@
     WinoGrande is a large-scale adversarial dataset of 44,000 Winograd Schema-style 
     questions with reduced bias using AFLite, serving as both a benchmark and transfer 
     learning resource.
-  licensing: "TODO"
+  licensing: "CC‑BY"
   task_types:
   - "Pronoun resolution"
   ai_capability_measured:
@@ -2149,15 +2151,15 @@
   - "BERT"
   - "GPT-2"
   ml_motif:
-  - "TODO"
+  - "Commonsense reasoning"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
-  solutions: "TODO"
+  solutions: "2"
   notes: "Human ~94%"
   contact:
-    name: "TODO"
-    email: "TODO"
+    name: "Keisuke Sakaguchi"
+    email: "keisukes@allenai.org"
   cite:
   - |
     @misc{sakaguchi2019winograndeadversarialwinogradschema,
@@ -2171,20 +2173,20 @@
     }
   datasets:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "Hugging Face / AllenAI"
+      url: "https://huggingface.co/datasets/allenai/winogrande"
   results:
     links:
-    - name: "TODO"
-      url: "TODO"
+    - name: "Papers With Code leaderboard"
+      url: "https://paperswithcode.com/dataset/winogrande"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: -1
+      rating: 0.0
       reason: |
-        TODO
+        Not Rated
     specification:
       rating: 9.0
       reason: |

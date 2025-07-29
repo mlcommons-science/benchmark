@@ -1,6 +1,56 @@
 # Index of Benchmarks
 
 
+- [MMLU (Massive Multitask Language Understanding)](mmlu_massive_multitask_language_understanding.md)
+
+- [GPQA Diamond](gpqa_diamond.md)
+
+- [ARC-Challenge (Advanced Reasoning Challenge)](arc-challenge_advanced_reasoning_challenge.md)
+
+- [Humanity's Last Exam](humanitys_last_exam.md)
+
+- [FrontierMath](frontiermath.md)
+
+- [SciCode](scicode.md)
+
+- [AIME (American Invitational Mathematics Examination)](aime_american_invitational_mathematics_examination.md)
+
+- [MATH-500](math-.md)
+
+- [CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction)](curie_scientific_long-context_understanding_reasoning_and_information_extraction.md)
+
+- [FEABench (Finite Element Analysis Benchmark)](feabench_finite_element_analysis_benchmark.md)
+
+- [SPIQA (Scientific Paper Image Question Answering)](spiqa_scientific_paper_image_question_answering.md)
+
+- [MedQA](medqa.md)
+
+- [BaisBench (Biological AI Scientist Benchmark)](baisbench_biological_ai_scientist_benchmark.md)
+
+- [MOLGEN](molgen.md)
+
+- [Open Graph Benchmark (OGB) - Biology](open_graph_benchmark_ogb_-_biology.md)
+
+- [Materials Project](materials_project.md)
+
+- [OCP (Open Catalyst Project)](ocp_open_catalyst_project.md)
+
+- [JARVIS-Leaderboard](jarvis-leaderboard.md)
+
+- [Quantum Computing Benchmarks (QML)](quantum_computing_benchmarks_qml.md)
+
+- [CFDBench (Fluid Dynamics)](cfdbench_fluid_dynamics.md)
+
+- [SatImgNet](satimgnet.md)
+
+- [ClimateLearn](climatelearn.md)
+
+- [BIG-Bench (Beyond the Imitation Game Benchmark)](big-bench_beyond_the_imitation_game_benchmark.md)
+
+- [CommonSenseQA](commonsenseqa.md)
+
+- [Winogrande](winogrande.md)
+
 - [Jet Classification](jet_classification.md)
 
 - [Irregular Sensor Data Compression](irregular_sensor_data_compression.md)

@@ -68,46 +68,46 @@
 Specification:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 1
 
 
-  - **Reason:** Simulation task  generative calorimeter showers  is clearly stated with multiple datasets, fidelity requirements, and performance constraints. 
+  - **Reason:** This is a platform for posting benchmarks, not a benchmark in itself. 
 
 
 Dataset:
 
 
-  - **Rating:** 9.5
+  - **Rating:** 1
 
 
-  - **Reason:** Public datasets available in multiple sizes and formats; well-documented; not versioned 
+  - **Reason:** This is a platform for posting benchmarks, not a benchmark in itself. 
 
 
 Metrics:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 1
 
 
-  - **Reason:** Histogram similarity, classifier AUC, and generation latency are clearly defined and benchmarked across all submissions. 
+  - **Reason:** This is a platform for posting benchmarks, not a benchmark in itself. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 1
 
 
-  - **Reason:** 31 model implementations submitted; some made public and reproducible, though others remain undocumented or private. 
+  - **Reason:** This is a platform for posting benchmarks, not a benchmark in itself. 
 
 
 Documentation:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 1
 
 
-  - **Reason:** Paper, leaderboard, and Gemini doc are comprehensive; unified repo or launchable baseline kit would push this to a 10. 
+  - **Reason:** This is a platform for posting benchmarks, not a benchmark in itself. 
 
 
 **Radar Plot:**

@@ -22,7 +22,7 @@
 **Metrics**: Metadata completeness, FAIR compliance
 
 
-**Models**: N/A
+**Models**: NA
 
 
 **Citation**:

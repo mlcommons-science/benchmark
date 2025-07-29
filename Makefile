@@ -13,7 +13,9 @@ CHECK_FILES=${BASE}/source/benchmarks.yaml,${BASE}/source/benchmarks-addon.yaml
 SCRIPT=bin/generate.py
 
 COLUMNS=date,name,domain,focus,keywords,task_types,metrics,models,cite,ratings.specification.rating,ratings.specification.reason,ratings.dataset.rating,ratings.dataset.reason,ratings.metrics.rating,ratings.metrics.reason,ratings.reference_solution.rating,ratings.reference_solution.reason,ratings.documentation.rating,ratings.documentation.reason
+
 #COLUMNS=date,expired,valid,name,url,domain,focus,keywords,summary,task_types,ai_capability_measured,metrics,models,notes,cite,ratings.specification.rating,ratings.specification.reason,ratings.dataset.rating,ratings.dataset.reason,ratings.metrics.rating,ratings.metrics.reason,ratings.reference_solution.rating,ratings.reference_solution.reason,ratings.documentation.rating,ratings.documentation.reason
+
 #COLUMNS=date,name,url,domain,focus,keywords,summary,task_types,ai_capability_measured,metrics,models,notes,cite,ratings.specification.rating,ratings.specification.reason,ratings.dataset.rating,ratings.dataset.reason,ratings.metrics.rating,ratings.metrics.reason,ratings.reference_solution.rating,ratings.reference_solution.reason,ratings.documentation.rating,ratings.documentation.reason
 
 .PHONY: all content single tex pdf publish
@@ -22,7 +24,8 @@ all: pdf md publish
 	echo "If you see no errors it is finished."
 
 ls:
-	ls ${BASE}>
+	cd ${BASE}; pwd; ls
+	ls ${BASE}
 
 g:
 	python bin/test.py

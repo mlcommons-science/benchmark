@@ -785,7 +785,7 @@
   valid: "no"
   valid_date: "2023-01-26"
   name: "FEABench (Finite Element Analysis Benchmark)"
-  url: "https://github.com/alleninstitute/feabench"
+  url: "https://github.com/google/feabench"
   doi: "unknown"
   domain: "Computational Engineering"
   focus: "FEA simulation accuracy and performance"
@@ -813,13 +813,21 @@
   ml_task:
   - "Supervised Learning"
   solutions: "unknown"
-  notes: "Google search for \"FEABench\" gave https://arxiv.org/abs/2503.06680, which
-    relates to coding instead of math"
+  notes: "OK"
   contact:
     name: "unknown"
     email: "unknown"
   cite:
-  - "unknown"
+  - |
+    @misc{mudur2025feabenchevaluatinglanguagemodels,
+      title={FEABench: Evaluating Language Models on Multiphysics Reasoning Ability}, 
+      author={Nayantara Mudur and Hao Cui and Subhashini Venugopalan and Paul Raccuglia and Michael P. Brenner and Peter Norgaard},
+      year={2025},
+      eprint={2504.06260},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2504.06260}, 
+      }
   datasets:
     links:
     - name: "unknown"
@@ -839,23 +847,23 @@
     specification:
       rating: 0
       reason: |
-        Using the link results in a 404 Not Found error
+        Not yet evaluated
     dataset:
       rating: 0
       reason: |
-        Using the link results in a 404 Not Found error
+        Not yet evaluated
     metrics:
       rating: 0
       reason: |
-        Using the link results in a 404 Not Found error
+        Not yet evaluated
     reference_solution:
       rating: 0
       reason: |
-        Using the link results in a 404 Not Found error
+        Not yet evaluated
     documentation:
       rating: 0
       reason: |
-        Using the link results in a 404 Not Found error
+        Not yet evaluated
 - date: "2024-07-12"
   version: "1"
   last_updated: "2024-07-12"

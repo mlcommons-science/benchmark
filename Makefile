@@ -3,9 +3,9 @@
 BASE=.
 # BASE=../yaml3/benchmark
 
-FILES=${BASE}/source/benchmarks.yaml
+# FILES=${BASE}/source/benchmarks.yaml
 # FILES=${BASE}/source/benchmarks-addon.yaml
-# FILES=${BASE}/source/benchmarks.yaml,${BASE}/source/benchmarks-addon.yaml 
+FILES=${BASE}/source/benchmarks.yaml,${BASE}/source/benchmarks-addon.yaml 
 
 CHECK_FILES=${BASE}/source/benchmarks.yaml,${BASE}/source/benchmarks-addon.yaml 
 
@@ -91,6 +91,8 @@ debug: tex pdf view
 check:
 	python ${SCRIPT} --files ${CHECK_FILES} --check 
 
+check_ruls: check_url
+	echo "DONE"
 
 check_url:
 	python ${SCRIPT} --files ${CHECK_FILES} --check_url 

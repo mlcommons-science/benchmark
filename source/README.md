@@ -61,65 +61,96 @@ cite:
 ### Sample of properly formatted YAML document
 
 Please use 2 charachters for indentations.
-Bug: this example is incomlete as it includes ... (should be fixed)
 
 ```
-- date: "2025-02-15"
+- date: "2020-09-07"
   version: "1"
-  last_updated: "2025-02-15"
+  last_updated: "2020-09-07"
   expired: "false"
   valid: "yes"
-  valid_date: "2025-02-15"
-  name: "MATH-500"
-  url: "https://huggingface.co/datasets/HuggingFaceH4/MATH-500"
-  doi: "unknown"
-  domain: "Mathematics"
-  focus: "Math reasoning generalization"
+  valid_date: "2025-07-28"
+  name: "MMLU (Massive Multitask Language Understanding)"
+  url: "https://paperswithcode.com/dataset/mmlu"
+  doi: "10.48550/arXiv.2009.03300"
+  domain: "Multidomain"
+  focus: "Academic knowledge and reasoning across 57 subjects"
   keywords:
-  - "calculus"
-  - "algebra"
-  - "number theory"
-  - "geometry"
+  - "multitask"
+  - "multiple-choice"
+  - "zero-shot"
+  - "few-shot"
+  - "knowledge probing"
   summary: |
-    MATH-500 is a curated subset of 500 problems from the OpenAI MATH dataset, spanning
-    high-school to advanced levels, designed to evaluate LLMs mathematical reasoning and 
-    generalization.
-  ...
+    Measuring Massive Multitask Language Understanding (MMLU) is a benchmark of 57 
+    multiple-choice tasks covering elementary mathematics, US history, computer science, 
+    law, and more, designed to evaluate a model's breadth and depth of knowledge in 
+    zero-shot and few-shot settings.
+  licensing: "MIT License"
+  task_types:
+  - "Multiple choice"
+  ai_capability_measured:
+  - "General reasoning, subject-matter understanding"
+  metrics:
+  - "Accuracy"
+  models:
+  - "GPT-4o"
+  - "Gemini 1.5 Pro"
+  - "o1"
+  - "DeepSeek-R1"
+  ml_motif:
+  - "General knowledge"
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "1"
+  notes: "Good"
+  contact:
+    name: "Dan Hendrycks"
+    email: "dan (at) safe.ai"
+  cite:
+  - |
+    @misc{hendrycks2021measuring,
+      title={Measuring Massive Multitask Language Understanding},
+      author={Hendrycks, Dan and Burns, Collin and Kadavath, Saurav},
+      journal={arXiv preprint arXiv:2009.03300},
+      year={2021},
+      url={https://arxiv.org/abs/2009.03300}
+    }
   datasets:
     links:
-    - name: "Hugging Face"
-      url: "https://huggingface.co/datasets/HuggingFaceH4/MATH-500"
+    - name: "Papers with Code datasets"
+      url: "https://github.com/paperswithcode/paperswithcode-data"
   results:
     links:
-    - name: "unknown"
-      url: "unknown"
+    - name: "Chinchilla"
+      url: "https://arxiv.org/abs/2203.15556"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-    rating: 0
-    reason: |
-      Not yet evaluated
-    specification:
-      rating: 3
+      rating: 10
       reason: |
-        Known what the problems are, but method of presentation and evaluation is not stated. No HW constraints
-      dataset:
-        rating: 9.9
-        reason: |
-            Problems and solutions are easily downloaded. Could not find a way to download the data
-      metrics:
-        rating: 2
-        reason: |
-            Problem spec states that all of the AI reasoning steps are subject to grading, but no specified way to evaluate the steps
-      reference_solution:
-        rating: 0
-        reason: |
-            Not given
-      documentation:
-        rating: 0.5
-        reason: |
-            Not given. Implicit instructions to download dataset.
-...
+        Well documented Github, instructions and dataset easy to download
+    specification:
+      rating: 9
+      reason: |
+        Clearly defined method of giving inputs, although it lacks hardware specifications.
+    dataset:
+      rating: 9
+      reason: |
+        Contains predefined few-shot development, validation, and testing set. Easy to access and download, but not versioned.
+    metrics:
+      rating: 9
+      reason: |
+        Clearly defined primary metric of number of multiple-choice questions answered correctly.
+        Secondary metric of confidence requires models to self-report.
+    reference_solution:
+      rating: 10
+      reason: |
+        Performance and links to several top models linked on the Github.
+    documentation:
+      rating: 8
+      reason: |
+        Code and datasets provided and easy to find, but no environment setup instructions given.
 ```

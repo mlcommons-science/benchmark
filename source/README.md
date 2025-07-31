@@ -8,7 +8,7 @@ IMPORTANT: Indentation must use two spaces, *not tabs*.
 
 - **Field Definition**: All fields must exist, they must not be ommitted. 
 
-- **Field Velues**: No field can be `null`. If a field is unknown, use "unknown" instead.
+- **Field Values**: No field can be `null`. If a field is unknown, use "unknown" instead.
     - Use `bin/check_structure.py` to automatically check YAML structures.
 
 - **Strings:** We recommend to use "quotes" around any value that is a string. THis includes URLs and strings that contain charaters such as : _ and others.

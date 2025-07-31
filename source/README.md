@@ -13,12 +13,15 @@ IMPORTANT: Indentation must use two spaces, *not tabs*.
 - **Multiline Fields:** Multiline fields should not use quotes. Instead, they should use newline bar notation.  
 Example:
      
+```
         field_name: |
             This is a multiline description of the field.
             It does not contain quotes or newline characters.
+```
 
-    Example in a list, i.e. in the `cite` field:  
+Example in a list, i.e. in the `cite` field:  
 
+```
         cite:
             - |
                 @misc{samplecitationlabel2020,
@@ -40,6 +43,7 @@ Example:
                 primaryClass={cs.AI},
                 url={https://www.example.com}, 
                 }
+```
 
 - **URLs:** Every benchmark entry's `url` field must point to the benchmark's GitHub, official website, or associated paper. *`url` cannot be "unknown".*
 
@@ -47,8 +51,10 @@ Example:
 
 
 ### Sample of properly formatted YAML document
+
 For better clarity, indentation uses 4 spaces. In real documents, *indentation should use 2 spaces.*
 
+```
       - date: "2025-02-15"
         version: "1"
         last_updated: "2025-02-15"
@@ -78,11 +84,9 @@ For better clarity, indentation uses 4 spaces. In real documents, *indentation s
             links:
                 - name: "unknown"
                     url: "unknown"
-        
         fair:
             reproducible: true
             benchmark_ready: true
-
         ratings:
             software:
             rating: 0
@@ -126,3 +130,4 @@ For better clarity, indentation uses 4 spaces. In real documents, *indentation s
             Sample 2 is a benchmark that measures an AI's ability to
             engage in meaningful, human-like conversation.
         ...
+```

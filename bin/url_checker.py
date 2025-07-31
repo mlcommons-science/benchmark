@@ -382,6 +382,11 @@ class URLChecker:
         Returns a tuple: (True if valid, False otherwise), an explanation string, and the HTTP status code (or None if no HTTP error).
         """
         try:
+            if url in self.ignore_check:
+                Console.warning(
+                    f"URL '{url}' is in the ignore list, skipping further checks."
+                )
+                return True, "URL is in the ignore list", None  
             if url is None or url == "":
                 error_msg = "URL is empty or None."
                 Console.error(error_msg)
@@ -523,6 +528,8 @@ class URLChecker:
             }  # Store status_code
             issues.append(i)
 
+        # Collect URLs from the entries to be checked
+
         for entry in self.entries:  # Use the flat property directly
             name = entry.get("name")
             if name not in urls_by_name:
@@ -554,7 +561,7 @@ class URLChecker:
                                     re.findall(r"url\s*=\s*\{(.*?)\}", bib_string)
                                 )
 
-        pprint(urls_by_name)  # Debug print to see collected URLs
+        # pprint(urls_by_name)  # Debug print to see collected URLs
 
         for name, urls in urls_by_name.items():
             print()

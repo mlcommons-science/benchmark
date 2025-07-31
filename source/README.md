@@ -21,11 +21,11 @@ IMPORTANT: Indentation must use two spaces, *not tabs*.
 
 An example for miltiline fields is:
      
-    ```
-    field_name: |
-    This is a multiline description of the field.
-    It does not contain quotes or newline characters.
-    ```
+```
+field_name: |
+  This is a multiline description of the field.
+  It does not contain quotes or newline characters.
+```
 
 An example in a list, i.e. in the `cite` field is:  
 

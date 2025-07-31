@@ -42,6 +42,9 @@ from collections import OrderedDict
 import codecs
 
 from field_format_manager import FieldFormatManager
+from url_checker_chrome import SeleniumFetcher
+from cloudmesh.common.util import banner
+
 
 def find_unicode_chars(filename=None):
     """
@@ -266,7 +269,7 @@ class YamlManager(object):
 
     def load_single_yaml_file(
         self, file_path: str, enable_error_messages: bool = True
-    ) -> list[dict]: #type: ignore
+    ) -> list[dict]:  # type: ignore
         """
         Loads a YAML file containing a flat list of field-level entries,
         and groups them into full benchmark entries using 'name' as the reset key.
@@ -627,9 +630,9 @@ class YamlManager(object):
 
         return valid
 
-
-
-    def check_required_fields_comment(self, checking_file: str = 'source/benchmarks-format.yaml') -> bool:
+    def check_required_fields_comment(
+        self, checking_file: str = "source/benchmarks-format.yaml"
+    ) -> bool:
         """
         Returns True if all YAML entries in the manager contains all fields marked as "required".
 
@@ -646,254 +649,53 @@ class YamlManager(object):
 
         field_information = fmt_manager.get_all_fields()
 
-        #Check all the flattened benchmarks
+        # Check all the flattened benchmarks
         for i, benchmark in enumerate(self.flat):
-            
-            #Get name and condition from the field format manager
+
+            # Get name and condition from the field format manager
             for name, _, condition in field_information:
 
                 name_value = benchmark.get(name)
-                
-                #Check presence if required
-                if not name_value and (condition=='required' or condition.startswith('">=')):
+
+                # Check presence if required
+                if not name_value and (
+                    condition == "required" or condition.startswith('">=')
+                ):
                     valid = False
-                    Console.error(f"ERROR: {name_value} is required in benchmark entry {i}")
-                    continue 
-                
-                #Check >= condition
+                    Console.error(
+                        f"ERROR: {name_value} is required in benchmark entry {i}"
+                    )
+                    continue
+
+                # Check >= condition
                 if condition.startswith('">='):
                     if not isinstance(name_value, list):
                         valid = False
-                        Console.error(f"ERROR: {name_value} must be a YAML list in benchmark entry {i}")
-                        continue 
-                    
-                    #get numerical length and check it
+                        Console.error(
+                            f"ERROR: {name_value} must be a YAML list in benchmark entry {i}"
+                        )
+                        continue
+
+                    # get numerical length and check it
                     try:
                         min_length = int(condition[2:-1])
                     except ValueError:
                         valid = False
-                        Console.warning(f"WARNING: Minimum length specified ({condition[2:-1]}) is not a number")
-                        continue 
+                        Console.warning(
+                            f"WARNING: Minimum length specified ({condition[2:-1]}) is not a number"
+                        )
+                        continue
 
                     if len(name_value) < min_length:
                         valid = False
-                        Console.error(f"ERROR: {name_value} (length: {len(name_value)}) must have a length of at least {min_length} in benchmark {i}")
+                        Console.error(
+                            f"ERROR: {name_value} (length: {len(name_value)}) must have a length of at least {min_length} in benchmark {i}"
+                        )
                         continue
 
         return valid
 
-
-
-
-    #############################################################################################
-    # URL Checking
-    #############################################################################################
-
-    def explain_http_error(self, code, url=None, with_url: bool = False) -> str:
-        http_errors = {
-            400: "Bad Request - The server couldn't understand the request due to invalid syntax.",
-            401: "Unauthorized - Authentication is required and has failed or has not yet been provided.",
-            403: "Forbidden - The server understood the request but refuses to authorize it.",
-            404: "Not Found - The requested resource could not be found on the server.",
-            405: "Method Not Allowed- The request method is known by the server but is not supported by the target resource.",
-            408: "Request Timeout - The server timed out waiting for the request.",
-            429: "Too Many Requests - The user has sent too many requests in a given amount of time (rate limiting).",
-            500: "Internal Server Error - The server has encountered a situation it doesn't know how to handle.",
-            502: "Bad Gateway - The server received an invalid response from the upstream server.",
-            503: "Service Unavailable - The server is not ready to handle the request (often due to maintenance or overload).",
-            504: "Gateway Timeout - The server didn’t get a response in time from the upstream server.",
-        }
-
-        explanation = http_errors.get(
-            code, "Unknown error code - not a standard HTTP error."
-        )
-
-        if url and not with_url:
-            return f"{explanation}: {code} at {url}"
-        else:
-            return f"{explanation}"
-
-    def is_url_valid(self, url: str, timeout: int = 10) -> (bool, str, int | None): # Modified to return (bool, explanation, status_code)
-        """
-        Checks if a given URL is accessible and returns a successful HTTP status code (2xx).
-        Returns a tuple: (True if valid, False otherwise), an explanation string, and the HTTP status code (or None if no HTTP error).
-        """
-        try:
-            if url is None or url == "":
-                error_msg = "URL is empty or None."
-                Console.error(error_msg)
-                return False, error_msg, None
-            
-            headers = {"User-Agent": "Mozilla/5.0"}
-            response = requests.get(url, timeout=timeout, headers=headers)
-            status_code = response.status_code
-            
-            response.raise_for_status()
-            return True, "Valid URL", status_code
-
-        except requests.exceptions.MissingSchema:
-            error_msg = f"Missing scheme in URL '{url}'. Did you mean to include 'http://' or 'https://'?"
-            Console.error(error_msg)
-            return False, error_msg, None
-        except requests.exceptions.InvalidSchema:
-            error_msg = f"Invalid URL scheme in '{url}'. Only HTTP and HTTPS are supported."
-            Console.error(error_msg)
-            return False, error_msg, None
-        except requests.exceptions.InvalidURL:
-            error_msg = f"Invalid URL format: '{url}'. Please check the structure."
-            Console.error(error_msg)
-            return False, error_msg, None
-        except requests.exceptions.SSLError as e:
-            error_msg = f"SSL error while accessing '{url}': {e}"
-            Console.error(error_msg)
-            return False, error_msg, None
-        except requests.exceptions.Timeout:
-            error_msg = f"Request to '{url}' timed out after {timeout} seconds."
-            Console.error(error_msg)
-            return False, error_msg, None
-        except requests.exceptions.ConnectionError:
-            error_msg = f"Could not connect to '{url}'. Check your internet connection or the URL."
-            Console.error(error_msg)
-            return False, error_msg, None
-        except requests.exceptions.TooManyRedirects:
-            error_msg = f"Too many redirects while trying to access '{url}'."
-            Console.error(error_msg)
-            return False, error_msg, None
-        except requests.exceptions.HTTPError as e:
-            status_code = e.response.status_code
-            explanation = self.explain_http_error(status_code, url)
-            error_msg = f"HTTP Error {status_code} for '{url}'. {explanation}"
-            Console.error(error_msg)
-            return False, explanation, status_code # Return the explanation and status code
-        except requests.exceptions.RequestException as e:
-            error_msg = f"A request error occurred for '{url}': {e}"
-            Console.error(error_msg)
-            return False, error_msg, None
-        except Exception as e:
-            error_msg = f"An unexpected error occurred for '{url}': {e}"
-            Console.error(error_msg)
-            return False, error_msg, None
-
-    def check_urls(self, printing_status: bool = True) -> bool:
-        """
-        Returns whether all the URLs in the manager's YAML files are valid.
-
-        Any field without subfields that ends with "url" is checked.
-        The "cite" field's URL is also checked.
-
-        Parameters:
-            printing_status (bool): whether to print statuses
-        Returns:
-            bool: True if all URLs are valid, False otherwise
-        """
-
-        issues = []
-        valid = []
-        checked_urls = {}  # To avoid checking the same URL multiple times, store URL and its validity
-        urls_by_name = OrderedDict()
-
-        def error(name, url, message, status_code=None): # Modified to accept status_code
-            """
-            Helper function to log issues with URLs.
-            """
-            i = {"name": name, "url": url, "message": message, "status_code": status_code} # Store status_code
-            issues.append(i)
-
-        for entry in self.flat:  # Use the flat property directly
-            name = entry.get("name")
-            if name not in urls_by_name:
-                urls_by_name[name] = []
-            print(
-                f"Checking URLs for entry: '{name}'"
-            )  # Debug print to see which entry is being processed
-            for key, value in entry.items():
-                # Handle flat keys with 'url'
-                if key.lower().endswith("url"):
-                    if isinstance(value, str) and value != "":
-                        urls_by_name[name].append(
-                            value
-                        )  # Store the URL under the entry name
-                # Handle BibTeX citation strings which might be directly in a 'cite' key,
-                # or if 'cite' key can contain a list of strings, each being a bibtex entry.
-                # Assuming 'cite' itself is a key in the flattened dict.
-                elif key == "cite":
-                    if isinstance(
-                        value, str
-                    ):  # 'cite' field itself is a string with BibTeX
-                        urls_by_name[name].extend(
-                            re.findall(r"url\s*=\s*\{(.*?)\}", value)
-                        )
-                    elif isinstance(
-                        value, list
-                    ):  # 'cite' field is a list of BibTeX strings
-                        for bib_string in value:
-                            if isinstance(bib_string, str):
-                                urls_by_name[name].extend(
-                                    re.findall(r"url\s*=\s*\{(.*?)\}", bib_string)
-                                )
-
-        pprint(urls_by_name)  # Debug print to see collected URLs
-
-        for name, urls in urls_by_name.items():
-            print()
-            Console.msg(f"Checking URLs for entry '{name}'...")
-
-            if not urls:
-                if printing_status:
-                    msg = f"No URLs found for entry '{name}'"
-                    Console.warning(msg)
-                    error(name, None, msg)
-                continue
-
-            for url in urls:
-                Console.msg(f"  Checking URL: '{url}'")
-                # Check if the URL has already been checked
-                if url in checked_urls:
-                    if checked_urls[url]["is_valid"]:
-                        Console.warning(f"URL '{url}' duplicated, already checked and is valid.")
-                    else:
-                        Console.warning(f"URL '{url}' duplicated, already checked and found to be invalid: {checked_urls[url]['explanation']}")
-                    continue # Skip re-checking if already processed
-
-                is_valid, explanation, status_code = self.is_url_valid(url) # Capture status_code
-                checked_urls[url] = {"is_valid": is_valid, "explanation": explanation, "status_code": status_code} # Store status_code
-
-                if is_valid:
-                    valid.append(url)
-                else:
-                    msg = f"Invalid URL: '{url}' for entry '{name}' - {explanation}" # Include explanation here
-                    Console.error(msg)
-                    error(name, url, explanation, status_code) # Pass the status_code to the error function
-
-        print("\n", "#" * 79)
-        print("# Summary of URL check errors")
-        print("#", "#" * 79)
-
-        all_urls_valid = not issues
-
-        if all_urls_valid:
-            Console.msg("All URLs checked are valid.")
-        else:
-            for issue in issues:
-                error_detail = ""
-                if issue['status_code']:
-                    # Use explain_http_error to get the detailed message for the summary
-                    error_detail = self.explain_http_error(issue['status_code'], issue['url'])
-                else:
-                    error_detail = issue['message'] # For non-HTTP errors, use the stored message
-
-                Console.error(
-                    f"Entry '{issue['name']}' has an issue with URL '{issue['url']}'"
-                    f"{f' (Status: {issue["status_code"]})' if issue['status_code'] else ''}: {error_detail}"
-                )
-            print()
-            count = len(issues)
-            Console.info(f"At least {count} URLs had issues.")
-            print("#" * 79)
-            Console.info("The sumary does not include duplicated URL errors, only unique issues.")
-            Console.info("The summary does not unclude all malformed URLS")
-            
-        return all_urls_valid
+    
 
     #############################################################################################
     # FILENAME Checking

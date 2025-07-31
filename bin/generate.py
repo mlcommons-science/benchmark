@@ -52,6 +52,7 @@ from cloudmesh.common.console import Console
 from yaml_manager import find_unicode_chars
 from check_structure import validate_yaml_entries
 from pprint import pprint
+from url_checker import URLChecker
 
 VERBOSE = True
 if VERBOSE:
@@ -140,16 +141,18 @@ if __name__ == "__main__":
 
     if args["--check_url"]:
 
+        checker = URLChecker(entries, verbose=VERBOSE)
+
         if args["--url"]:
             url = args["--url"]
-            if not manager.is_url_valid(url):
+            if not checker.is_url_valid(url):
                 Console.error(f"URL {url} is not valid.")
                 sys.exit(1)
             Console.ok(f"URL {url} is valid.")
             sys.exit(0)
         else:
             Console.info("Checking URLs ...")
-            manager.check_urls()
+            checker.check_urls()
             sys.exit(0)
 
     if format_type == "md":

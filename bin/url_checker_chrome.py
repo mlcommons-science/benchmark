@@ -9,6 +9,7 @@ import requests # Import the requests library for direct HTTP requests
 from pybtex.database import parse_string # Import parse_string from pybtex
 import textwrap # Import the textwrap module for line wrapping
 
+
 class SeleniumFetcher:
     """
     A class to fetch HTML content of webpages using Selenium WebDriver.

@@ -2,36 +2,30 @@
 
 This repository holds a list of scientific AI benchmarks. 
 
-It is maintained through a yaml file to which anyone can add through a
-pull request. The file is located at:
+It is maintained through a [yaml file](source/benchmarks.yaml) to which anyone can add through a pull request.
 
-* https://github.com/mlcommons-science/benchmark/blob/main/source/benchmarks.yaml
+To edit, go to our
+[edit link](https://github.com/mlcommons-science/benchmark/edit/main/source/benchmarks.yaml) and create the pull request when done.
 
-To edit simply follow our
-[edit][https://github.com/mlcommons-science/benchmark/edit/main/source/benchmarks.yaml]
-link and create the pull request when done.
+All benchmark entries should follow the format of `source/benchmarks-format.yaml`. The file has placeholder attributes, which should be substituted for the benchmark's content. Attribute explanations are at the end of this README.
 
-Make sure that the entries are in the format specified and that
-indentation is used with 2 spaces, do not use tabs. The explanation of
-the attributes is given at the end of this README.
+Make sure that yaml indentation is **2 spaces**. *Do not use tabs.* 
 
-Form this yaml file several documents are generated. An index file that
-points to individual markdown files for each benchmark 
+To rate benchmarks, use the system defined [here](ratings.md).
 
-* https://github.com/mlcommons-science/benchmark/blob/main/content/md/index.md
+The yaml file is used to generate documents, such as:
 
-A pdf file that generates a table of selected attributes and its tex
-source and bibtex file
+* An index Markdown file, which points to individual Markdown files: https://github.com/mlcommons-science/benchmark/blob/main/content/md/index.md
 
-* https://github.com/mlcommons-science/benchmark/blob/main/content/tex/benchmarks.pdf
-* https://github.com/mlcommons-science/benchmark/tree/main/content/tex
+* A pdf file with a table of selected attributes: https://github.com/mlcommons-science/benchmark/blob/main/content/tex/benchmarks.pdf
+
+* A TeX source and its BibTeX bibliography: https://github.com/mlcommons-science/benchmark/tree/main/content/tex
 
 
 ## Generating the PDF, TeX, and md files
 
-The content should not be directly modified, but instead only the YAML
-file. The content can be generated with a simple make file under the
-assumption you have latex, biber, and latexmk installed
+The content should be modified only through the YAML
+file (never directly). The content can be generated with a Makefile given that you have latex, biber, and latexmk installed.
 
 To generate the pdf and TeX files use
 
@@ -49,7 +43,7 @@ In case you need to start from a clean content dir, you can use
 
 ## Attributes
 
-This is the list of current attriutes
+This is the list of attributes that currently appear in the script outputs:
 
 * date: date first found
 
@@ -67,7 +61,7 @@ This is the list of current attriutes
 
 * keyword: keywords related to this benchmark
 
-* description: A short paragraph describing the benchamrk (abstract)
+* description: A short paragraph describing the benchmark (abstract)
 
 * task_types (from either task_types or tasks): Gregor forgot what
   this is, figure out
@@ -83,6 +77,8 @@ This is the list of current attriutes
 * notes: additinal notes to this benchmark
 
 * cite: citations as enumerated list in bibtex format
+
+For more information on the rating system, see the [ratings explanations](ratings.md).
 
 
 ## Proposed Markdown

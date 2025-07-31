@@ -111,7 +111,7 @@ class SeleniumFetcher:
             formatted_bibtex_body = "\n".join(wrapped_lines)
 
         except Exception as e:
-            print(f"Warning: Could not parse or format BibTeX content with pybtex or textwrap: {e}")
+            Console.warning(f"Could not parse or format BibTeX content with pybtex or textwrap: {e}")
             # In case of parsing/formatting error, the original raw_bibtex will be used.
 
         header = "=" * 10 + " BIBTEX CITATION " + "=" * 10
@@ -162,7 +162,7 @@ class SeleniumFetcher:
 
             return self.driver.page_source  # Full HTML of the page
         except Exception as e:
-            print(f"Error fetching page: {e}")
+            Console.error(f"fetching page: {e}")
             return None
 
     def fetch_bibtex_from_doi(self, doi: str) -> str | None:
@@ -190,7 +190,7 @@ class SeleniumFetcher:
             raw_bibtex = response.text
             return self._format_bibtex_output(raw_bibtex) # Format the output
         except requests.exceptions.RequestException as e:
-            print(f"Error fetching BibTeX for DOI '{doi}': {e}")
+            Console.error(f"fetching BibTeX for DOI '{doi}': {e}")
             return None
 
     def close(self):
@@ -202,54 +202,6 @@ class SeleniumFetcher:
         if self.driver:
             self.driver.quit()
             self.driver = None # Set to None to indicate it's closed
-
-# Example usage
-if __name__ == "__main__":
-    url = "https://pubs.acs.org/doi/10.1021/acscatal.0c04525"
-    doi = "10.1021/acscatal.0c04525"
-
-    # Create an instance of the SeleniumFetcher
-    fetcher = SeleniumFetcher(headless=True) # Set to False to see the browser
-
-    try:
-        print(f"Attempting to fetch HTML from: {url}")
-        # Fetch HTML content
-        html_content = fetcher.fetch_page_html(url, wait_time=15)
-        if html_content:
-            print("\nPage accessed successfully (HTML)!")
-            print("--- Full HTML Content (first 1000 chars) ---")
-            print(html_content[:1000]) # Print first 1000 chars of HTML for brevity in example
-            print("-------------------------")
-            print("HTML content fetched and printed.")
-
-            print("\n" + "="*50 + "\n") # Separator
-
-            # Convert HTML to Markdown and print
-            print(f"Converting fetched HTML to Markdown and printing...")
-            markdown_content = fetcher._convert_html_to_markdown(html_content)
-            print("\nPage content converted to Markdown!")
-            print("--- Full Markdown Content (first 1000 chars) ---")
-            print(markdown_content[:1000]) # Print first 1000 chars of Markdown for brevity in example
-            print("-----------------------------")
-            print("Markdown content fetched and printed.")
-
-            print("\n" + "="*50 + "\n") # Separator
-
-            # Fetch BibTeX from DOI (now includes formatting)
-            print(f"Attempting to fetch BibTeX for DOI: {doi}")
-            bibtex_content = fetcher.fetch_bibtex_from_doi(doi)
-            if bibtex_content:
-                print(bibtex_content) # Print the already formatted content
-            else:
-                print(f"\nFailed to fetch BibTeX for DOI: {doi}")
-
-        else:
-            print("\nFailed to fetch the page (HTML).")
-
-    finally:
-        # Ensure the driver is closed even if an error occurs
-        print("Closing Selenium WebDriver.")
-        fetcher.close()
 
 
 
@@ -284,7 +236,7 @@ def access_webpage(url: str, headers: dict = None) -> str:
         response = requests.get(url, headers=headers)
 
         if response.status_code == 200:
-            print("Page accessed successfully!")
+            Console.ok("Page accessed successfully!")
             return response.text
         else:
             # Using a dictionary to emulate a switch statement for status codes
@@ -321,28 +273,28 @@ def access_webpage(url: str, headers: dict = None) -> str:
                 f"Request returned unexpected status code: {response.status_code} ({response.reason}) "
                 f"for URL '{url}'. No specific handler for this code.",
             )
-            print(f"Warning: {error_message}")
+            Console.warning(f"{error_message}")
             return error_message
     except requests.exceptions.ConnectionError as e:
         error_message = (
             f"Connection Error: Could not connect to the server at '{url}'. "
             f"Please check your internet connection or the URL. Details: {e}"
         )
-        print(f"Error: {error_message}")
+        Console.error(f"{error_message}")
         return error_message
     except requests.exceptions.Timeout as e:
         error_message = (
             f"Timeout Error: The request to '{url}' timed out. "
             f"The server took too long to respond. Details: {e}"
         )
-        print(f"Error: {error_message}")
+        Console.error(f"{error_message}")
         return error_message
     except requests.RequestException as e:
         error_message = (
             f"An unexpected Request Error occurred while accessing '{url}'. "
             f"Details: {type(e).__name__}: {e}"
         )
-        print(f"Error: {error_message}")
+        Console.error(f"{error_message}")
         return error_message
 
 
@@ -601,6 +553,7 @@ class URLChecker:
                             f"URL '{url}' duplicated, already checked and found to be invalid: {checked_urls[url]['explanation']}"
                         )
                     continue  # Skip re-checking if already processed
+                
 
                 is_valid, explanation, status_code = self.is_url_valid(
                     url
@@ -620,9 +573,9 @@ class URLChecker:
                         name, url, explanation, status_code
                     )  # Pass the status_code to the error function
 
-        print("\n", "#" * 79)
-        print("# Summary of URL check errors")
-        print("#", "#" * 79)
+        print()
+        banner("Summary of URL check errors")
+        print()
 
         all_urls_valid = not issues
 
@@ -655,3 +608,52 @@ class URLChecker:
             Console.info("The summary does not unclude all malformed URLS")
 
         return all_urls_valid
+
+# Example usage
+if __name__ == "__main__":
+    url = "https://pubs.acs.org/doi/10.1021/acscatal.0c04525"
+    doi = "10.1021/acscatal.0c04525"
+
+    # Create an instance of the SeleniumFetcher
+    fetcher = SeleniumFetcher(headless=True) # Set to False to see the browser
+
+    try:
+        print(f"Attempting to fetch HTML from: {url}")
+        # Fetch HTML content
+        html_content = fetcher.fetch_page_html(url, wait_time=15)
+        if html_content:
+            print("\nPage accessed successfully (HTML)!")
+            print("--- Full HTML Content (first 1000 chars) ---")
+            print(html_content[:1000]) # Print first 1000 chars of HTML for brevity in example
+            print("-------------------------")
+            print("HTML content fetched and printed.")
+
+            print("\n" + "="*50 + "\n") # Separator
+
+            # Convert HTML to Markdown and print
+            print(f"Converting fetched HTML to Markdown and printing...")
+            markdown_content = fetcher._convert_html_to_markdown(html_content)
+            print("\nPage content converted to Markdown!")
+            print("--- Full Markdown Content (first 1000 chars) ---")
+            print(markdown_content[:1000]) # Print first 1000 chars of Markdown for brevity in example
+            print("-----------------------------")
+            print("Markdown content fetched and printed.")
+
+            print("\n" + "="*50 + "\n") # Separator
+
+            # Fetch BibTeX from DOI (now includes formatting)
+            print(f"Attempting to fetch BibTeX for DOI: {doi}")
+            bibtex_content = fetcher.fetch_bibtex_from_doi(doi)
+            if bibtex_content:
+                print(bibtex_content) # Print the already formatted content
+            else:
+                print(f"\nFailed to fetch BibTeX for DOI: {doi}")
+
+        else:
+            print("\nFailed to fetch the page (HTML).")
+
+    finally:
+        # Ensure the driver is closed even if an error occurs
+        print("Closing Selenium WebDriver.")
+        fetcher.close()
+

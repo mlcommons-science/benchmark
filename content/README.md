@@ -1,4 +1,4 @@
-## 📄 Markdown Output Files
+## Markdown Output Files
 
 All Markdown files are located in the folder: `benchmark/content/md`. This folder contains the following:
 
@@ -7,7 +7,7 @@ All Markdown files are located in the folder: `benchmark/content/md`. This folde
 | `benchmarks.md`          | Combined Markdown file containing all benchmarks in a single table format. |
 | `benchmarks/`            | Folder containing individual Markdown files for each benchmark entry.       |
 
-### 📁 `benchmarks/` — Individual Benchmark Files
+### `benchmarks/` — Individual Benchmark Files
 
 Each file in this folder represents a single benchmark and follows a consistent format. For example:
 
@@ -27,7 +27,7 @@ The AIME is a highly selective mathematics exam used in the United States to ide
 
 
 
-## 📄 LaTeX Output Files
+## LaTeX Output Files
 
 All LaTeX files are located in the folder: `benchmark/content/tex`. This folder contains the following files:
 

@@ -11,7 +11,7 @@ All benchmark entries should follow the format of `source/benchmarks-format.yaml
 
 Make sure that yaml indentation is **2 spaces**. *Do not use tabs.* 
 
-To rate benchmarks, use the system defined [here](ratings.md).
+To rate benchmarks, use the system defined [here](ratings_explanations.md).
 
 The yaml file is used to generate documents, such as:
 
@@ -25,7 +25,8 @@ The yaml file is used to generate documents, such as:
 ## Generating the PDF, TeX, and md files
 
 The content should be modified only through the YAML
-file (never directly). The content can be generated with a Makefile given that you have latex, biber, and latexmk installed.
+file (never directly). The content can be generated with the [Makefile](Makefile) given that you have latex, biber, and latexmk installed.  
+A list of required Python packages is in the [requirements document](requirements.txt).
 
 To generate the pdf and TeX files use
 
@@ -40,60 +41,26 @@ In case you need to start from a clean content dir, you can use
 ```make clean```
 
 
-
 ## Attributes
 
 This is the list of attributes that currently appear in the script outputs:
 
-* date: date first found
+* date: date when the benchmark was first found. In YYYY-MM-DD format.
 
-* expired: date when we first noted it is no longer valid
+* name: The benchmark's title as listed in the paper or project GitHub
 
-* valid: yes if still valid
+* domain: The scientific domain(s) of this benchmark, i.e. physics, biology, math
 
-* name: The name of the benchmark
+* focus: short sentence on the main topics of the benchmark. Likely to be deprecated.
 
-* url: The main url for the benchmark
+* keywords: keywords related to this benchmark, which may appear in a paper abstract
 
-* domain: The scientific domain(s) of this benchmark
+* task_types: what models evaluated by the benchmark should do
 
-* focus: short keyword of wht the main focus of the benchmark is
+* metrics: The main ways of measuring performance on the benchmark, i.e. number of questions correct
 
-* keyword: keywords related to this benchmark
+* models: List of notable models that were evaluated with the benchmark
 
-* description: A short paragraph describing the benchmark (abstract)
+* cite: List of BibTeX citations
 
-* task_types (from either task_types or tasks): Gregor forgot what
-  this is, figure out
-
-* ai_capability_measured (from either ai_capability_measured or
-  metrics): A more detailed description of what AI task is measured,
-  could be keywords
-
-* metrics: The main metrics defined by this benchmark
-
-* models: The main models used in this benchmark
-
-* notes: additinal notes to this benchmark
-
-* cite: citations as enumerated list in bibtex format
-
-For more information on the rating system, see the [ratings explanations](ratings.md).
-
-
-## Proposed Markdown
-
-
-```
-# Science Benchmarks
-
-## Name of the benchmark
-
-| Attribute | Description |
-| ----------- | ----------- |
-| name | abc |
-| date | xyz |
-...
-
-
-```
+* ratings (each category listed separately): See the [ratings explanations](ratings_explanations.md).

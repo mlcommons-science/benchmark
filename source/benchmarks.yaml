@@ -785,7 +785,7 @@
   valid: "no"
   valid_date: "2023-01-26"
   name: "FEABench (Finite Element Analysis Benchmark)"
-  url: "https://github.com/alleninstitute/feabench"
+  url: "hhttps://github.com/google/feabench"
   doi: "unknown"
   domain: "Computational Engineering"
   focus: "FEA simulation accuracy and performance"

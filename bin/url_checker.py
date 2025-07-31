@@ -27,11 +27,69 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-import html2text # Import the html2text library for Markdown conversion
-import requests # Import the requests library for direct HTTP requests
-from pybtex.database import parse_string # Import parse_string from pybtex
-import textwrap # Import the textwrap module for line wrapping
+import html2text  # Import the html2text library for Markdown conversion
+import requests  # Import the requests library for direct HTTP requests
+from pybtex.database import parse_string  # Import parse_string from pybtex
+import textwrap  # Import the textwrap module for line wrapping
 
+
+def http_error_message(code, url=None) -> str:
+    http_errors = {
+        # 1xx Informational
+        100: "Continue - The server has received the request headers and the client should proceed with the request.",
+        101: "Switching Protocols - The server is switching protocols as requested by the client.",
+
+        # 2xx Success
+        200: "OK - The request has succeeded.",
+        201: "Created - The request has been fulfilled and resulted in a new resource being created.",
+        202: "Accepted - The request has been accepted for processing, but the processing has not been completed.",
+        204: "No Content - The server successfully processed the request, and is not returning any content.",
+        205: "Reset Content - The server successfully processed the request, and requires the requester to reset the document view.",
+        206: "Partial Content - The server is delivering only part of the resource due to a range header from the client.",
+
+        # 3xx Redirection
+        301: "Moved Permanently - The requested resource has been assigned a new permanent URI.",
+        302: "Found (Temporary Redirect) - The requested resource resides temporarily under a different URI.",
+        303: "See Other - The response to the request can be found under another URI using a GET method.",
+        304: "Not Modified - The requested resource has not been modified since the conditions specified in the client's headers.",
+        307: "Temporary Redirect - The requested resource resides temporarily under a different URI.",
+        308: "Permanent Redirect - The request and all future requests should be repeated using another URI.",
+
+        # 4xx Client Error
+        400: "Bad Request - The server couldn't understand the request due to invalid syntax.",
+        401: "Unauthorized - Authentication is required and has failed or has not yet been provided.",
+        403: "Forbidden - The server understood the request but refuses to authorize it.",
+        404: "Not Found - The requested resource could not be found on the server.",
+        405: "Method Not Allowed - The request method is known by the server but is not supported by the target resource.",
+        406: "Not Acceptable - The server cannot produce a response matching the list of acceptable values.",
+        408: "Request Timeout - The server timed out waiting for the request.",
+        409: "Conflict - The request could not be completed due to a conflict with the current state of the resource.",
+        410: "Gone - The target resource is no longer available at the origin server and this condition is likely permanent.",
+        413: "Payload Too Large - The request entity is larger than limits defined by the server.",
+        415: "Unsupported Media Type - The server refuses the request because the payload format is in an unsupported format.",
+        416: "Range Not Satisfiable - The client has asked for a portion of the file, but the server cannot supply that portion.",
+        418: "I'm a teapot - This is a humorous error, not expected to be implemented by HTTP servers.", # For fun
+        422: "Unprocessable Entity - The server understands the content type but was unable to process the contained instructions.",
+        429: "Too Many Requests - The user has sent too many requests in a given amount of time (rate limiting).",
+
+        # 5xx Server Error
+        500: "Internal Server Error - The server has encountered an unexpected condition.",
+        501: "Not Implemented - The server does not support the functionality required to fulfill the request.",
+        502: "Bad Gateway - The server received an invalid response from an upstream server.",
+        503: "Service Unavailable - The server is not ready to handle the request (often due to maintenance or overload).",
+        504: "Gateway Timeout - The server didn’t get a response in time from the upstream server.",
+        507: "Insufficient Storage - The server is unable to store the representation needed to complete the request.",
+    }
+
+    if code in http_errors:
+        explanation = http_errors[code]
+    else:
+        explanation = "Unknown HTTP status code."
+
+    if url:
+        return f"{code}: {explanation} at {url}"
+    else:
+        return f"{code}: {explanation}"
 
 class SeleniumFetcher:
     """
@@ -54,15 +112,28 @@ class SeleniumFetcher:
         self.chrome_options.add_argument("--disable-gpu")
         self.chrome_options.add_argument("--no-sandbox")
         self.chrome_options.add_argument("--window-size=1920,1080")
-        self.chrome_options.add_argument("--disable-dev-shm-usage") # Overcomes limited resource problems
-        self.chrome_options.add_argument("--disable-blink-features=AutomationControlled") # Disables browser control by automation
-        self.chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"]) # Removes the "controlled by automation" infobar
-        self.chrome_options.add_experimental_option('useAutomationExtension', False) # Disables automation extension
+        self.chrome_options.add_argument(
+            "--disable-dev-shm-usage"
+        )  # Overcomes limited resource problems
+        self.chrome_options.add_argument(
+            "--disable-blink-features=AutomationControlled"
+        )  # Disables browser control by automation
+        self.chrome_options.add_experimental_option(
+            "excludeSwitches", ["enable-automation"]
+        )  # Removes the "controlled by automation" infobar
+        self.chrome_options.add_experimental_option(
+            "useAutomationExtension", False
+        )  # Disables automation extension
 
         # Initialize the driver. This creates a new browser instance.
         self.driver = webdriver.Chrome(options=self.chrome_options)
         # Set the User-Agent to mimic a regular browser
-        self.driver.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'})
+        self.driver.execute_cdp_cmd(
+            "Network.setUserAgentOverride",
+            {
+                "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            },
+        )
 
     def _convert_html_to_markdown(self, html_content: str) -> str:
         """
@@ -75,8 +146,10 @@ class SeleniumFetcher:
             str: The converted Markdown string.
         """
         h = html2text.HTML2Text()
-        h.ignore_links = False # Configure based on needs (e.g., True to remove links)
-        h.ignore_images = False # Configure based on needs (e.g., True to remove images)
+        h.ignore_links = False  # Configure based on needs (e.g., True to remove links)
+        h.ignore_images = (
+            False  # Configure based on needs (e.g., True to remove images)
+        )
         # You can add more configurations here, e.g., h.body_width = 0 for no line wrapping
         markdown_content = h.handle(html_content)
         return markdown_content
@@ -93,25 +166,29 @@ class SeleniumFetcher:
         Returns:
             str: The formatted BibTeX string (with headers/footers and wrapped lines).
         """
-        formatted_bibtex_body = bibtex_content # Default to raw content if pybtex fails
+        formatted_bibtex_body = bibtex_content  # Default to raw content if pybtex fails
 
         try:
             # Use pybtex to parse the BibTeX content
-            bib_database = parse_string(bibtex_content, bib_format='bibtex')
+            bib_database = parse_string(bibtex_content, bib_format="bibtex")
 
             # Convert the BibDatabase object back to a string using pybtex's default serialization
-            pybtex_serialized = bib_database.to_string('bibtex')
+            pybtex_serialized = bib_database.to_string("bibtex")
 
             # Use textwrap to wrap lines to the specified line_length
             # Split the string into lines, wrap each line, then join them back
             wrapped_lines = []
             for line in pybtex_serialized.splitlines():
                 # textwrap.fill handles indentation correctly for wrapped lines
-                wrapped_lines.append(textwrap.fill(line, width=line_length, subsequent_indent='    ')) # Add some indent for wrapped lines
+                wrapped_lines.append(
+                    textwrap.fill(line, width=line_length, subsequent_indent="    ")
+                )  # Add some indent for wrapped lines
             formatted_bibtex_body = "\n".join(wrapped_lines)
 
         except Exception as e:
-            Console.warning(f"Could not parse or format BibTeX content with pybtex or textwrap: {e}")
+            Console.warning(
+                f"Could not parse or format BibTeX content with pybtex or textwrap: {e}"
+            )
             # In case of parsing/formatting error, the original raw_bibtex will be used.
 
         header = "=" * 10 + " BIBTEX CITATION " + "=" * 10
@@ -146,15 +223,21 @@ class SeleniumFetcher:
             try:
                 # Wait for the element containing "Just a moment..." to disappear
                 WebDriverWait(self.driver, wait_time).until(
-                    EC.invisibility_of_element_located((By.XPATH, "//*[contains(text(), 'Just a moment...')]"))
+                    EC.invisibility_of_element_located(
+                        (By.XPATH, "//*[contains(text(), 'Just a moment...')]")
+                    )
                 )
-                print("Successfully waited for 'Just a moment...' to disappear (if present).")
+                print(
+                    "Successfully waited for 'Just a moment...' to disappear (if present)."
+                )
             except Exception:
                 # If the "Just a moment..." element wasn't found or didn't disappear,
                 # we'll still try to wait for the body element to be present.
                 # This handles cases where the "Just a moment..." isn't the issue,
                 # but the page is still loading.
-                print("No 'Just a moment...' element found or it persisted. Waiting for body element.")
+                print(
+                    "No 'Just a moment...' element found or it persisted. Waiting for body element."
+                )
                 WebDriverWait(self.driver, wait_time).until(
                     EC.presence_of_element_located((By.TAG_NAME, "body"))
                 )
@@ -181,14 +264,14 @@ class SeleniumFetcher:
         crossref_url = f"https://doi.org/{doi}"
         headers = {
             "Accept": "application/x-bibtex",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         }
 
         try:
             response = requests.get(crossref_url, headers=headers, timeout=10)
-            response.raise_for_status() # Raise an exception for HTTP errors (4xx or 5xx)
+            response.raise_for_status()  # Raise an exception for HTTP errors (4xx or 5xx)
             raw_bibtex = response.text
-            return self._format_bibtex_output(raw_bibtex) # Format the output
+            return self._format_bibtex_output(raw_bibtex)  # Format the output
         except requests.exceptions.RequestException as e:
             Console.error(f"fetching BibTeX for DOI '{doi}': {e}")
             return None
@@ -201,11 +284,10 @@ class SeleniumFetcher:
         """
         if self.driver:
             self.driver.quit()
-            self.driver = None # Set to None to indicate it's closed
+            self.driver = None  # Set to None to indicate it's closed
 
 
-
-def access_webpage(url: str, headers: dict = None) -> str:
+def fetch_webpage(url: str, headers: dict = None) -> str:
     """
     Accesses a web page at the given URL and returns its content.
 
@@ -219,7 +301,7 @@ def access_webpage(url: str, headers: dict = None) -> str:
 
     Example
         url = "https://pubs.acs.org/doi/10.1021/acscatal.0c04525"
-        content = access_webpage(url)
+        content = fetch_webpage(url)
         if "Page accessed successfully!" in page_content: # Check if the success message is part of the returned content
             print("\nFirst 500 characters of the page content:")
             print(content[:500])
@@ -234,47 +316,12 @@ def access_webpage(url: str, headers: dict = None) -> str:
 
     try:
         response = requests.get(url, headers=headers)
-
+        explenation = http_error_message(response.status_code)
         if response.status_code == 200:
-            Console.ok("Page accessed successfully!")
             return response.text
         else:
-            # Using a dictionary to emulate a switch statement for status codes
-            status_code_messages = {
-                400: (
-                    f"Bad Request (400): The server could not understand the request for '{url}'. "
-                    "This might indicate malformed syntax or invalid parameters."
-                ),
-                401: (
-                    f"Unauthorized (401): Authentication is required for '{url}' and has failed or "
-                    "has not yet been provided."
-                ),
-                403: (
-                    f"Access forbidden (403): The server refused the request for '{url}'. "
-                    "This might be due to robot detection, IP blocking, or missing authentication."
-                ),
-                404: (
-                    f"Not Found (404): The requested URL '{url}' was not found on the server. "
-                    "Please check the URL for typos."
-                ),
-                500: (
-                    f"Internal Server Error (500): The server encountered an unexpected condition "
-                    f"which prevented it from fulfilling the request for '{url}'."
-                ),
-                503: (
-                    f"Service Unavailable (503): The server for '{url}' is currently unable to handle "
-                    "the request due to temporary overloading or maintenance of the server."
-                ),
-            }
-
-            # Get the specific message for the status code, or a generic one if not found
-            error_message = status_code_messages.get(
-                response.status_code,
-                f"Request returned unexpected status code: {response.status_code} ({response.reason}) "
-                f"for URL '{url}'. No specific handler for this code.",
-            )
             Console.warning(f"{error_message}")
-            return error_message
+            return explenatio
     except requests.exceptions.ConnectionError as e:
         error_message = (
             f"Connection Error: Could not connect to the server at '{url}'. "
@@ -310,11 +357,15 @@ class URLChecker:
         if ignore_check is None:
             # read file from source/verified_urls.yaml
             try:
-                with codecs.open("source/verified_urls.yaml", "r", encoding="utf-8") as f:
+                with codecs.open(
+                    "source/verified_urls.yaml", "r", encoding="utf-8"
+                ) as f:
                     verified_urls = yaml.safe_load(f)
                 self.ignore_check = verified_urls.get("urls", [])
             except FileNotFoundError:
-                Console.error("source/verified_urls.yaml not found. No URLs will be ignored.")
+                Console.error(
+                    "source/verified_urls.yaml not found. No URLs will be ignored."
+                )
                 self.ignore_check = []
         else:
             self.ignore_check = ignore_check
@@ -322,30 +373,6 @@ class URLChecker:
     #############################################################################################
     # URL Checking
     #############################################################################################
-
-    def explain_http_error(self, code, url=None, with_url: bool = False) -> str:
-        http_errors = {
-            400: "Bad Request - The server couldn't understand the request due to invalid syntax.",
-            401: "Unauthorized - Authentication is required and has failed or has not yet been provided.",
-            403: "Forbidden - The server understood the request but refuses to authorize it.",
-            404: "Not Found - The requested resource could not be found on the server.",
-            405: "Method Not Allowed- The request method is known by the server but is not supported by the target resource.",
-            408: "Request Timeout - The server timed out waiting for the request.",
-            429: "Too Many Requests - The user has sent too many requests in a given amount of time (rate limiting).",
-            500: "Internal Server Error - The server has encountered a situation it doesn't know how to handle.",
-            502: "Bad Gateway - The server received an invalid response from the upstream server.",
-            503: "Service Unavailable - The server is not ready to handle the request (often due to maintenance or overload).",
-            504: "Gateway Timeout - The server didn’t get a response in time from the upstream server.",
-        }
-
-        explanation = http_errors.get(
-            code, "Unknown error code - not a standard HTTP error."
-        )
-
-        if url and not with_url:
-            return f"{explanation}: {code} at {url}"
-        else:
-            return f"{explanation}"
 
     def is_url_valid(
         self, url: str, timeout: int = 10
@@ -374,7 +401,7 @@ class URLChecker:
                         f"URL '{url}' is in the ignore list, skipping further checks."
                     )
                     return True, "URL is in the ignore list", status_code
-                   
+
             if status_code == 403:
                 error_msg = f"Access to '{url}' via requests is forbidden (HTTP 403). Trying Chrome"
 
@@ -445,7 +472,7 @@ class URLChecker:
             return False, error_msg, None
         except requests.exceptions.HTTPError as e:
             status_code = e.response.status_code
-            explanation = self.explain_http_error(status_code, url)
+            explanation = http_error_message(status_code, url=url)
             error_msg = f"HTTP Error {status_code} for '{url}'. {explanation}"
             Console.error(error_msg)
             return (
@@ -553,7 +580,6 @@ class URLChecker:
                             f"URL '{url}' duplicated, already checked and found to be invalid: {checked_urls[url]['explanation']}"
                         )
                     continue  # Skip re-checking if already processed
-                
 
                 is_valid, explanation, status_code = self.is_url_valid(
                     url
@@ -586,7 +612,8 @@ class URLChecker:
                 error_detail = ""
                 if issue["status_code"]:
                     # Use explain_http_error to get the detailed message for the summary
-                    error_detail = self.explain_http_error(
+                    Console.ok(f"{issue['status_code']} - {issue['url']}")
+                    error_detail = http_error_message(
                         issue["status_code"], issue["url"]
                     )
                 else:
@@ -609,13 +636,14 @@ class URLChecker:
 
         return all_urls_valid
 
+
 # Example usage
 if __name__ == "__main__":
     url = "https://pubs.acs.org/doi/10.1021/acscatal.0c04525"
     doi = "10.1021/acscatal.0c04525"
 
     # Create an instance of the SeleniumFetcher
-    fetcher = SeleniumFetcher(headless=True) # Set to False to see the browser
+    fetcher = SeleniumFetcher(headless=True)  # Set to False to see the browser
 
     try:
         print(f"Attempting to fetch HTML from: {url}")
@@ -624,28 +652,32 @@ if __name__ == "__main__":
         if html_content:
             print("\nPage accessed successfully (HTML)!")
             print("--- Full HTML Content (first 1000 chars) ---")
-            print(html_content[:1000]) # Print first 1000 chars of HTML for brevity in example
+            print(
+                html_content[:1000]
+            )  # Print first 1000 chars of HTML for brevity in example
             print("-------------------------")
             print("HTML content fetched and printed.")
 
-            print("\n" + "="*50 + "\n") # Separator
+            print("\n" + "=" * 50 + "\n")  # Separator
 
             # Convert HTML to Markdown and print
             print(f"Converting fetched HTML to Markdown and printing...")
             markdown_content = fetcher._convert_html_to_markdown(html_content)
             print("\nPage content converted to Markdown!")
             print("--- Full Markdown Content (first 1000 chars) ---")
-            print(markdown_content[:1000]) # Print first 1000 chars of Markdown for brevity in example
+            print(
+                markdown_content[:1000]
+            )  # Print first 1000 chars of Markdown for brevity in example
             print("-----------------------------")
             print("Markdown content fetched and printed.")
 
-            print("\n" + "="*50 + "\n") # Separator
+            print("\n" + "=" * 50 + "\n")  # Separator
 
             # Fetch BibTeX from DOI (now includes formatting)
             print(f"Attempting to fetch BibTeX for DOI: {doi}")
             bibtex_content = fetcher.fetch_bibtex_from_doi(doi)
             if bibtex_content:
-                print(bibtex_content) # Print the already formatted content
+                print(bibtex_content)  # Print the already formatted content
             else:
                 print(f"\nFailed to fetch BibTeX for DOI: {doi}")
 
@@ -656,4 +688,3 @@ if __name__ == "__main__":
         # Ensure the driver is closed even if an error occurs
         print("Closing Selenium WebDriver.")
         fetcher.close()
-

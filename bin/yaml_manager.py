@@ -42,7 +42,6 @@ from collections import OrderedDict
 import codecs
 
 from field_format_manager import FieldFormatManager
-from url_checker_chrome import SeleniumFetcher
 from cloudmesh.common.util import banner
 
 

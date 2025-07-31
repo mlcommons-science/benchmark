@@ -91,6 +91,8 @@ debug: tex pdf view
 check:
 	python ${SCRIPT} --files ${CHECK_FILES} --check 
 
+check_ruls: check_url
+	echo "DONE"
 
 check_url:
 	python ${SCRIPT} --files ${CHECK_FILES} --check_url 

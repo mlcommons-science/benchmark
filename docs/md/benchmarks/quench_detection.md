@@ -28,9 +28,29 @@
 **Citation**:
 
 
-- Could not parse citation: 
+- Maira Khan, Steve Krave, Vittorio Marinozzi, Jennifer Ngadiuba, Stoyan Stoynev, and Nhan Tran. Benchmarking and interpreting real time quench detection algorithms. In Fast Machine Learning for Science Conference 2024. Purdue University, IN, October 2024. indico.cern.ch. URL: https://indico.cern.ch/event/1387540/contributions/6153618/attachments/2948441/5182077/fast_ml_magnets_2024_final.pdf.
 
   - bibtex: |
+
+      @inproceedings{quench2024,
+
+        author = {Maira Khan and Steve Krave and Vittorio Marinozzi and Jennifer Ngadiuba and Stoyan Stoynev and Nhan Tran},
+
+        title = {Benchmarking and Interpreting Real Time Quench Detection Algorithms},
+
+        booktitle = {Fast Machine Learning for Science Conference 2024},
+
+        year = {2024},
+
+        month = oct,
+
+        address = {Purdue University, IN},
+
+        publisher = {indico.cern.ch},
+
+        url = {https://indico.cern.ch/event/1387540/contributions/6153618/attachments/2948441/5182077/fast_ml_magnets_2024_final.pdf}
+
+      }
 
 
 

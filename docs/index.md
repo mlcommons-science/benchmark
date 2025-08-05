@@ -1,7 +1,3 @@
-<head>
-  <link rel="stylesheet" href="style.css">
-</head>
-
 # MLCommons Science Collection
 
 The following collection is a list of benchmarks that the MLCommons science working group is looking at.

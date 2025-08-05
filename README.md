@@ -2,36 +2,31 @@
 
 This repository holds a list of scientific AI benchmarks. 
 
-It is maintained through a yaml file to which anyone can add through a
-pull request. The file is located at:
+It is maintained through a [yaml file](source/benchmarks.yaml) to which anyone can add through a pull request.
 
-* https://github.com/mlcommons-science/benchmark/blob/main/source/benchmarks.yaml
+To edit, go to our
+[edit link](https://github.com/mlcommons-science/benchmark/edit/main/source/benchmarks.yaml) and create the pull request when done.
 
-To edit simply follow our
-[edit][https://github.com/mlcommons-science/benchmark/edit/main/source/benchmarks.yaml]
-link and create the pull request when done.
+All benchmark entries should follow the format of `source/benchmarks-format.yaml`. The file has placeholder attributes, which should be substituted for the benchmark's content. Attribute explanations are at the end of this README.
 
-Make sure that the entries are in the format specified and that
-indentation is used with 2 spaces, do not use tabs. The explanation of
-the attributes is given at the end of this README.
+Make sure that yaml indentation is **2 spaces**. *Do not use tabs.* 
 
-Form this yaml file several documents are generated. An index file that
-points to individual markdown files for each benchmark 
+To rate benchmarks, use the [rating system](ratings_explanations.md). *The [0-10 scale system](ratings_explanations_old.md) is now deprecated.*
 
-* https://github.com/mlcommons-science/benchmark/blob/main/content/md/index.md
+The yaml file is used to generate documents, such as:
 
-A pdf file that generates a table of selected attributes and its tex
-source and bibtex file
+* An index Markdown file, which points to individual Markdown files [here](content/md/benchmarks/index.md)
 
-* https://github.com/mlcommons-science/benchmark/blob/main/content/tex/benchmarks.pdf
-* https://github.com/mlcommons-science/benchmark/tree/main/content/tex
+* A pdf file with a table of selected attributes [here](content/tex/benchmarks.pdf)
+
+* A TeX source and its BibTeX bibliography [here](content/tex)
 
 
 ## Generating the PDF, TeX, and md files
 
-The content should not be directly modified, but instead only the YAML
-file. The content can be generated with a simple make file under the
-assumption you have latex, biber, and latexmk installed
+The content should be modified only through the YAML
+file (never directly). The content can be generated with the [Makefile](Makefile) given that you have latex, biber, and latexmk installed.  
+A list of required Python packages is in the [requirements document](requirements.txt).
 
 To generate the pdf and TeX files use
 
@@ -46,58 +41,26 @@ In case you need to start from a clean content dir, you can use
 ```make clean```
 
 
-
 ## Attributes
 
-This is the list of current attriutes
+This is the list of attributes that currently appear in the script outputs:
 
-* date: date first found
+* date: date when the benchmark was first found. In YYYY-MM-DD format.
 
-* expired: date when we first noted it is no longer valid
+* name: The benchmark's title as listed in the paper or project GitHub
 
-* valid: yes if still valid
+* domain: The scientific domain(s) of this benchmark, i.e. physics, biology, math
 
-* name: The name of the benchmark
+* focus: short sentence on the main topics of the benchmark. Likely to be deprecated.
 
-* url: The main url for the benchmark
+* keywords: keywords related to this benchmark, which may appear in a paper abstract
 
-* domain: The scientific domain(s) of this benchmark
+* task_types: what models evaluated by the benchmark should do
 
-* focus: short keyword of wht the main focus of the benchmark is
+* metrics: The main ways of measuring performance on the benchmark, i.e. number of questions correct
 
-* keyword: keywords related to this benchmark
+* models: List of notable models that were evaluated with the benchmark
 
-* description: A short paragraph describing the benchamrk (abstract)
+* cite: List of BibTeX citations
 
-* task_types (from either task_types or tasks): Gregor forgot what
-  this is, figure out
-
-* ai_capability_measured (from either ai_capability_measured or
-  metrics): A more detailed description of what AI task is measured,
-  could be keywords
-
-* metrics: The main metrics defined by this benchmark
-
-* models: The main models used in this benchmark
-
-* notes: additinal notes to this benchmark
-
-* cite: citations as enumerated list in bibtex format
-
-
-## Proposed Markdown
-
-
-```
-# Science Benchmarks
-
-## Name of the benchmark
-
-| Attribute | Description |
-| ----------- | ----------- |
-| name | abc |
-| date | xyz |
-...
-
-
-```
+* ratings (each category listed separately): See the [ratings explanations](ratings_explanations.md).

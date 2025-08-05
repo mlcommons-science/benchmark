@@ -4,7 +4,7 @@ All YAML files must follow the format listed in the [formatting file](benchmarks
 
 IMPORTANT: Indentation must use two spaces, *not tabs*.
 
-## Additional Formatting Rules
+## Additional Overall Formatting Rules
 
 - **Field Definition**: All fields must exist, they must not be ommitted. 
 
@@ -15,11 +15,12 @@ IMPORTANT: Indentation must use two spaces, *not tabs*.
 
 - **Datatypes:** The datatype of each entry must match that of the formatting file. If a formatting file entry is a YAML list, the fields of all other entries must be a YAML list.
 
-- **Multiline Fields:** Multiline fields should not use quotes. Instead, they should use newline bar notation.  
+- **Multiline Fields:** Multiline fields should not use quotes. Instead, they should use newline bar notation. Refer to the [multiline examples](#multiline-examples) for clarification.
 
-## Examples
 
-An example for miltiline fields is:
+#### Multiline Examples
+
+An example for multiline fields is:
      
 ```
 field_name: |
@@ -27,7 +28,7 @@ field_name: |
   It does not contain quotes or newline characters.
 ```
 
-An example in a list, i.e. in the `cite` field is:  
+An example of a list, i.e. in the `cite` field, is:  
 
 ```
 cite:
@@ -53,14 +54,16 @@ cite:
     }
 ```
 
+## Additional Field-Specific Rules
+
 - **URLs:** Every benchmark entry's `url` field must point to the benchmark's GitHub, official website, or associated paper. *`url` cannot be "unknown".*
 
 - **Citation Labels**: All citation labels in BibTeX citations across *all* given files must be unique.
 
 
-### Sample of properly formatted YAML document
+## Sample of properly formatted YAML document
 
-Please use 2 charachters for indentations.
+As a reminder, all indentations should use *2 spaces*.
 
 ```
 - date: "2020-09-07"
@@ -153,4 +156,92 @@ Please use 2 charachters for indentations.
       rating: 8
       reason: |
         Code and datasets provided and easy to find, but no environment setup instructions given.
+
+- date: "2023-11-20"
+  version: "1"
+  last_updated: "2023-11-20"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2023-11-20"
+  name: "GPQA Diamond"
+  url: "https://arxiv.org/abs/2311.12022"
+  doi: "10.48550/arXiv.2311.12022"
+  domain: "Science"
+  focus: "Graduate-level scientific reasoning"
+  keywords:
+  - "Google-proof"
+  - "graduate-level"
+  - "science QA"
+  - "chemistry"
+  - "physics"
+  summary: |
+    GPQA is a dataset of 448 challenging, multiple-choice questions in biology, physics,
+    and chemistry, written by domain experts. It is Google-proof - experts score 65% 
+    (74% after error correction) while skilled non-experts with web access score only 34%. 
+    State-of-the-art LLMs like GPT-4 reach around 39% accuracy.
+  licensing: "unknown"
+  task_types:
+  - "Multiple choice"
+  - "Multi-step QA"
+  ai_capability_measured:
+  - "Scientific reasoning, deep knowledge"
+  metrics:
+  - "Accuracy"
+  models:
+  - "o1"
+  - "DeepSeek-R1"
+  ml_motif:
+  - "Science and STEM fields"
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "0"
+  notes: "Good"
+  contact:
+    name: "Julian Michael"
+    email: "julianjm@nyu.edu"
+  cite:
+  - |
+    @misc{rein2023gpqagraduatelevelgoogleproofqa,
+      title={GPQA: A Graduate-Level Google-Proof Q and A Benchmark},
+      author={Rein, David and Hou, Betty Li and Stickland, Asa Cooper},
+      year={2023},
+      url={https://arxiv.org/abs/2311.12022}
+    }
+  datasets:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  results:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  fair:
+    reproducible: true
+    benchmark_ready: true
+  ratings:
+    software:
+      rating: 0
+      reason: |
+        Not yet rated
+    specification:
+      rating: 6.5
+      reason: |
+        Good description of how the problems are received, but little specification on how the models are tested
+    dataset:
+      rating: 8.5
+      reason: |
+        Easily able to access dataset. No labels or train/test/valid split
+    metrics:
+      rating: 10
+      reason: |
+        Each question has a correct answer
+    reference_solution:
+      rating: 7.5
+      reason: |
+        Common models such as GPT-3.5 were compared. Reproducibility of results unknown
+    documentation:
+      rating: 1
+      reason: |
+        No reference solution, platform for reproduction, or procedure for replication
 ```

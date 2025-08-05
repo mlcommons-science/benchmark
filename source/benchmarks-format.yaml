@@ -1,15 +1,3 @@
-#
-# THIS ENTRY IS FICTIONAL
-#
-# why we do not use json: 
-# * json does not allow multiline text
-# * reading json is more difficult as it includes { }
-# * no comments allowed such as using #
-# * syntax of yaml is cleaner/easier
-# * yaml has optional quoating
-# * pasting citations from google scholar, acm, ieee is easier in YAML while keeping multilines.
-
-# We will not engange in a discussion about json vs YAML. 
 
 - date: '2024-05-01'
     # description: | 

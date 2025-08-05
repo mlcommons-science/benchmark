@@ -67,31 +67,31 @@
   fair:
     reproducible: true
     benchmark_ready: true
-    ratings:
-      software:
-        rating: 3
-        reason: |
-          Not containerized; Setup automation/documentation could be improved
-      specification:
-        rating: 4
-        reason: |
-          System constraints missing
-      dataset:
-        rating: 5
-        reason: |
-          None
-      metrics:
-        rating: 5
-        reason: |
-          None
-      reference_solution:
-        rating: 4
-        reason: |
-          HW/SW requirements missing; Reference not bundled as official starter kit
-      documentation:
-        rating: 4
-        reason: |
-          Full reproducibility requires manual setup
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Not containerized; Setup automation/documentation could be improved
+    specification:
+      rating: 4
+      reason: |
+        System constraints missing
+    dataset:
+      rating: 5
+      reason: |
+        None
+    metrics:
+      rating: 5
+      reason: |
+        None
+    reference_solution:
+      rating: 4
+      reason: |
+        HW/SW requirements missing; Reference not bundled as official starter kit
+    documentation:
+      rating: 4
+      reason: |
+        Full reproducibility requires manual setup
 
 - date: "2024-05-01"
   version: "v0.2.0"
@@ -138,7 +138,7 @@
     email: "unknown"
   cite:
   - |
-    @misc{duarte2022fastmlsciencebenchmarksaccelerating,
+    @misc{duarte2022fastmlsciencebenchmarksaccelerating2,
       archiveprefix = {arXiv},
       author        = {Javier Duarte and Nhan Tran and Ben Hawks and Christian Herwig and Jules Muhizi and Shvetank Prakash and Reddi, Vijay Janapa},
       eprint        = {2207.07958},
@@ -160,31 +160,32 @@
   fair:
     reproducible: true
     benchmark_ready: true
-    ratings:
-      software:
-        rating: 3
-        reason: |
-          Not containerized; Full automation and documentation could be improved
-      specification:
-        rating: 4
-        reason: |
-          Exact latency or resource constraints not numerically specified
-      dataset:
-        rating: 5
-        reason: |
-          All criteria met
-      metrics:
-        rating: 5
-        reason: |
-          All criteria met
-      reference_solution:
-        rating: 4
-        reason: |
-          Not fully documented or automated for reproducibility
-      documentation:
-        rating: 4
-        reason: |
-          Setup for deployment (e.g., FPGA pipeline) requires familiarity with tooling
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Not containerized; Full automation and documentation could be improved
+    specification:
+      rating: 4
+      reason: |
+        Exact latency or resource constraints not numerically specified
+    dataset:
+      rating: 5
+      reason: |
+        All criteria met
+    metrics:
+      rating: 5
+      reason: |
+        All criteria met
+    reference_solution:
+      rating: 4
+      reason: |
+        Not fully documented or automated for reproducibility
+    documentation:
+      rating: 4
+      reason: |
+        Setup for deployment (e.g., FPGA pipeline) requires familiarity with tooling
+
 - date: "2024-05-01"
   version: "v0.2.0"
   last_updated: "2024-05"
@@ -229,7 +230,7 @@
     email: "unknown"
   cite:
   - |
-    @misc{duarte2022fastmlsciencebenchmarksaccelerating,
+    @misc{duarte2022fastmlsciencebenchmarksaccelerating3,
       archiveprefix = {arXiv},
       author        = {Javier Duarte and Nhan Tran and Ben Hawks and Christian Herwig and Jules Muhizi and Shvetank Prakash and Vijay Janapa Reddi},
       eprint        = {2207.07958},
@@ -302,7 +303,7 @@
   - "Deep Sets"
   - "Interaction Networks"
   summary: |
-    Demonstrates three ML models (MLP, Deep Sets, Interaction Networks) optimized for FPGA deployment with O(100 ns) inference using quantized models and hls4ml, targeting real-time jet tagging in the L1 trigger environment at the high-luminosity LHC. Data is available on Zenodo DOI:10.5281/zenodo.3602260. :contentReference[oaicite:1]{index=1}
+    Demonstrates three ML models (MLP, Deep Sets, Interaction Networks) optimized for FPGA deployment with O(100 ns) inference using quantized models and hls4ml, targeting real-time jet tagging in the L1 trigger environment at the high-luminosity LHC. Data is available on Zenodo DOI:10.5281/zenodo.3602260. 
   licensing: "CC-BY"
   task_types:
   - "Classification"
@@ -1610,7 +1611,7 @@
   summary: |
     The MLCommons Medical AI working group develops benchmarks, best practices, and platforms (MedPerf, GaNDLF, COFE)
     to accelerate robust, privacy-preserving AI development for healthcare. MedPerf enables federated testing of clinical
-    models on diverse datasets, improving generalizability and equity while keeping data onsite :contentReference[oaicite:1]{index=1}.
+    models on diverse datasets, improving generalizability and equity while keeping data onsite .
   licensing: "Apache License 2.0"
   task_types:
   - "Federated evaluation"
@@ -1634,7 +1635,7 @@
   - "NA"
   solutions: "0"
   notes: |
-    Open-source platform under Apache-2.0; used across 20+ institutions and hospitals :contentReference[oaicite:2]{index=2}.
+    Open-source platform under Apache-2.0; used across 20+ institutions and hospitals .
   contact:
     name: "Alex Karargyris (MLCommons Medical AI)"
     email: "unknown"
@@ -1715,7 +1716,7 @@
   - "fast simulation"
   summary: |
     The Fast Calorimeter Simulation Challenge 2022 assessed 31 generative-model submissions (VAEs, GANs, Flows, Diffusion)
-    on four calorimeter shower datasets; benchmarking shower quality, generation speed, and model complexity :contentReference[oaicite:3]{index=3}.
+    on four calorimeter shower datasets; benchmarking shower quality, generation speed, and model complexity .
   licensing: "Via Fermilab"
   task_types:
   - "Surrogate modeling"
@@ -1922,7 +1923,7 @@
   - "meta-benchmark"
   summary: |
     Codabench (successor to CodaLab) is a flexible, easy-to-use, reproducible API platform for hosting AI benchmarks
-    and code-submission challenges. It supports custom scoring, inverted benchmarks, and scalable public or private queues :contentReference[oaicite:1]{index=1}.
+    and code-submission challenges. It supports custom scoring, inverted benchmarks, and scalable public or private queues .
   licensing: "https://github.com/codalab/codalab-competitions/wiki/Privacy"
   task_types:
   - "Multiple"
@@ -1942,7 +1943,7 @@
   - "Multiple"
   solutions: "Several"
   notes: |
-    Hosts 51 public competitions, ~26 k users, 177 k submissions :contentReference[oaicite:2]{index=2}
+    Hosts 51 public competitions, ~26 k users, 177 k submissions 
   contact:
     name: "Isabelle Guyon (Université Paris-Saclay)"
     email: "unknown"
@@ -1998,7 +1999,7 @@
       rating: 1
       reason: |
         This is a platform for posting benchmarks, not a benchmark in itself.
-        
+
 - date: "2021-09-27"
   version: "v1.0"
   last_updated: "2023-07"
@@ -2017,7 +2018,7 @@
   - "surrogate modeling"
   summary: |
     Sabath is a metadata framework from the SBI-FAIR group (UTK, Argonne, Virginia) facilitating
-    FAIR-compliant benchmarking and surrogate execution logging across HPC systems :contentReference[oaicite:3]{index=3}.
+    FAIR-compliant benchmarking and surrogate execution logging across HPC systems .
   licensing: "BSD 3-Clause License"
   task_types:
   - "Systems benchmarking"
@@ -2036,7 +2037,7 @@
   - "NA"
   solutions: "0"
   notes: |
-    Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc. :contentReference[oaicite:4]{index=4}
+    Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc. 
   contact:
     name: "Piotr Luszczek"
     email: "luszczek@utk.edu"
@@ -2110,7 +2111,7 @@
   - "surrogate modeling"
   - "NeurIPS"
   summary: |
-    PDEBench offers forward/inverse PDE tasks with large ready-to-use datasets and baselines (FNO, U-Net, PINN), packaged via a unified API. It won the SimTech Best Paper Award 2023 :contentReference[oaicite:5]{index=5}.
+    PDEBench offers forward/inverse PDE tasks with large ready-to-use datasets and baselines (FNO, U-Net, PINN), packaged via a unified API. It won the SimTech Best Paper Award 2023 .
   licensing: "Other"
   task_types:
   - "Supervised Learning"
@@ -2132,7 +2133,7 @@
   - "Supervised Learning"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
-    Datasets hosted on DaRUS (DOI:10.18419/darus-2986); contact maintainers by email :contentReference[oaicite:6]{index=6}
+    Datasets hosted on DaRUS (DOI:10.18419/darus-2986); contact maintainers by email 
   contact:
     name: "Makoto Takamoto (makoto.takamoto@neclab.eu)"
     email: "unknown"
@@ -2207,7 +2208,7 @@
   - "physics simulations"
   - "spatiotemporal dynamics"
   summary: |
-    A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains-from biology to astrophysical magnetohydrodynamic simulations-with unified API and metadata. Ideal for training surrogate and foundation models on scientific data. :contentReference[oaicite:1]{index=1}
+    A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains-from biology to astrophysical magnetohydrodynamic simulations-with unified API and metadata. Ideal for training surrogate and foundation models on scientific data. 
   licensing: "BSD 3-Clause License"
   task_types:
   - "Supervised Learning"
@@ -2227,7 +2228,7 @@
   - "Supervised Learning"
   solutions: "1"
   notes: |
-    Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. :contentReference[oaicite:2]{index=2}
+    Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. 
   contact:
     name: "Ruben Ohana"
     email: "rohana@flatironinstitute.org"
@@ -2306,7 +2307,7 @@
   - "accelerator"
   - "throughput"
   summary: |
-    A suite evaluating inference performance of LLMs (LLaMA, Mistral, Qwen) across diverse accelerators (NVIDIA, AMD, Intel, SambaNova) and frameworks (vLLM, DeepSpeed-MII, etc.), with an interactive dashboard and per-platform metrics. :contentReference[oaicite:3]{index=3}
+    A suite evaluating inference performance of LLMs (LLaMA, Mistral, Qwen) across diverse accelerators (NVIDIA, AMD, Intel, SambaNova) and frameworks (vLLM, DeepSpeed-MII, etc.), with an interactive dashboard and per-platform metrics. 
   licensing: "BSD 3-Clause \"New\" or \"Revised\" License"
   task_types:
   - "Inference Benchmarking"
@@ -2330,7 +2331,7 @@
   - "Inference Benchmarking"
   solutions: "0"
   notes: |
-    Licensed under BSD-3, maintained by Argonne; supports GPUs and accelerators. :contentReference[oaicite:4]{index=4}
+    Licensed under BSD-3, maintained by Argonne; supports GPUs and accelerators. 
   contact:
     name: "Krishna Teja Chitty-Venkata (Argonne LCF)"
     email: "unknown"
@@ -2408,7 +2409,7 @@
   - "performance"
   - "JSON decoding"
   summary: |
-    A high-performance open-source serving framework combining efficient backend runtime (RadixAttention, batching, quantization) and expressive frontend language, boosting LLM/VLM inference throughput up to ~3x over alternatives. :contentReference[oaicite:5]{index=5}
+    A high-performance open-source serving framework combining efficient backend runtime (RadixAttention, batching, quantization) and expressive frontend language, boosting LLM/VLM inference throughput up to ~3x over alternatives. 
   licensing: "Apache License 2.0"
   task_types:
   - "Model serving framework"
@@ -2430,7 +2431,7 @@
   - "Model serving"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
-    Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025. :contentReference[oaicite:6]{index=6}
+    Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025. 
   contact:
     name: "SGLang Team"
     email: "unknown"
@@ -2510,7 +2511,7 @@
   summary: |
     vLLM is a fast, high-throughput, memory-efficient inference and serving engine for large language models, 
     featuring PagedAttention, continuous batching, and support for quantized and pipelined model execution. 
-    Benchmarks compare it to TensorRT-LLM, SGLang, and others. :contentReference[oaicite:1]{index=1}
+    Benchmarks compare it to TensorRT-LLM, SGLang, and others. 
   licensing: "Apache License 2.0"
   task_types:
   - "Inference Benchmarking"
@@ -2533,7 +2534,7 @@
   - "Inference"
   solutions: "0"
   notes: |
-    Incubated by LF AI and Data; achieves up to 24x throughput over HuggingFace Transformers :contentReference[oaicite:2]{index=2}
+    Incubated by LF AI and Data; achieves up to 24x throughput over HuggingFace Transformers 
   contact:
     name: "Woosuk Kwon (vLLM Team)"
     email: "unknown"
@@ -2808,7 +2809,7 @@
   summary: |
     NHITS (Neural Hierarchical Interpolation for Time Series) is a state-of-the-art model that
     improved accuracy by ~25% and reduced compute by 50x compared to Transformer baselines,
-    using hierarchical interpolation and multi-rate sampling :contentReference[oaicite:1]{index=1}.
+    using hierarchical interpolation and multi-rate sampling .
   licensing: "Apache License 2.0"
   task_types:
   - "Time-series forecasting"
@@ -2904,7 +2905,7 @@
   - "reprogramming"
   summary: |
     Time-LLM uses reprogramming layers to adapt frozen LLMs for time series forecasting, treating
-    forecasting as a language task :contentReference[oaicite:2]{index=2}.
+    forecasting as a language task .
   licensing: "Apache License 2.0"
   task_types:
   - "Time-series forecasting"
@@ -3000,7 +3001,7 @@
   - "generative model"
   summary: |
     TimeGPT is a transformer-based generative pretrained model on 100B+ time series data for
-    zero-shot forecasting and anomaly detection via API :contentReference[oaicite:3]{index=3}.
+    zero-shot forecasting and anomaly detection via API .
   licensing: "Apache License 2.0"
   task_types:
   - "Time-series forecasting"
@@ -3094,7 +3095,7 @@
   - "astrophysics"
   - "time-series"
   summary: |
-    A benchmark for detecting anomalous transient gravitational-wave signals, including "unknown-unknowns," using preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments from dual interferometers. :contentReference[oaicite:1]{index=1}
+    A benchmark for detecting anomalous transient gravitational-wave signals, including "unknown-unknowns," using preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments from dual interferometers. 
   licensing: "NA"
   task_types:
   - "Anomaly detection"
@@ -3185,7 +3186,7 @@
   - "genomics"
   - "butterfly hybrids"
   summary: |
-    Image-based challenge for detecting butterfly hybrids in microscopy-driven species data. Participants evaluate models on Codabench using image segmentation/classification. :contentReference[oaicite:3]{index=3}
+    Image-based challenge for detecting butterfly hybrids in microscopy-driven species data. Participants evaluate models on Codabench using image segmentation/classification. 
   licensing: "NA"
   task_types:
   - "Anomaly detection"
@@ -3203,13 +3204,13 @@
   - "Anomaly detection"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
-    Hybrid detection benchmarks hosted on Codabench. :contentReference[oaicite:4]{index=4}
+    Hybrid detection benchmarks hosted on Codabench
   contact:
     name: "Imageomics/HDR Team"
     email: "unknown"
   cite:
   - |
-    @misc{campolongo2025buildingmachinelearningchallenges,
+    @misc{campolongo2025buildingmachinelearningchallenges2,
       archiveprefix = {arXiv},
       author        = {Elizabeth G. Campolongo and Yuan-Tang Chou and Ekaterina Govorkova and Wahid Bhimji and Wei-Lun Chao and Chris Harris and Shih-Chieh Hsu and Hilmar Lapp and Mark S. Neubauer and Josephine Namayanja and Aneesh Subramanian and Philip Harris and Advaith Anand and David E. Carlyn and Subhankar Ghosh and Christopher Lawrence and Eric Moreno and Ryan Raikman and Jiaman Wu and Ziheng Zhang and Bayu Adhi and Mohammad Ahmadi Gharehtoragh and Saúl Alonso Monsalve and Marta Babicz and Furqan Baig and Namrata Banerji and William Bardon and Tyler Barna and Tanya Berger-Wolf and Adji Bousso Dieng and Micah Brachman and Quentin Buat and David C. Y. Hui and Phuong Cao and Franco Cerino and Yi-Chun Chang and Shivaji Chaulagain and An-Kai Chen and Deming Chen and Eric Chen and Chia-Jui Chou and Zih-Chen Ciou and Miles Cochran-Branson and Artur Cordeiro Oudot Choi and Michael Coughlin and Matteo Cremonesi and Maria Dadarlat and Peter Darch and Malina Desai and Daniel Diaz and Steven Dillmann and Javier Duarte and Isla Duporge and Urbas Ekka and Saba Entezari Heravi and Hao Fang and Rian Flynn and Geoffrey Fox and Emily Freed and Hang Gao and Jing Gao and Julia Gonski and Matthew Graham and Abolfazl Hashemi and Scott Hauck and James Hazelden and Joshua Henry Peterson and Duc Hoang and Wei Hu and Mirco Huennefeld and David Hyde and Vandana Janeja and Nattapon Jaroenchai and Haoyi Jia and Yunfan Kang and Maksim Kholiavchenko and Elham E. Khoda and Sangin Kim and Aditya Kumar and Bo-Cheng Lai and Trung Le and Chi-Wei Lee and JangHyeon Lee and Shaocheng Lee and Suzan van der Lee and Charles Lewis and Haitong Li and Haoyang Li and Henry Liao and Mia Liu and Xiaolin Liu and Xiulong Liu and Vladimir Loncar and Fangzheng Lyu and Ilya Makarov and Abhishikth Mallampalli Chen-Yu Mao and Alexander Michels and Alexander Migala and Farouk Mokhtar and Mathieu Morlighem and Min Namgung and Andrzej Novak and Andrew Novick and Amy Orsborn and Anand Padmanabhan and Jia-Cheng Pan and Sneh Pandya and Zhiyuan Pei and Ana Peixoto and George Percivall and Alex Po Leung and Sanjay Purushotham and Zhiqiang Que and Melissa Quinnan and Arghya Ranjan and Dylan Rankin and Christina Reissel and Benedikt Riedel and Dan Rubenstein and Argyro Sasli and Eli Shlizerman and Arushi Singh and Kim Singh and Eric R. Sokol and Arturo Sorensen and Yu Su and Mitra Taheri and Vaibhav Thakkar and Ann Mariam Thomas and Eric Toberer and Chenghan Tsai and Rebecca Vandewalle and Arjun Verma and Ricco C. Venterea and He Wang and Jianwu Wang and Sam Wang and Shaowen Wang and Gordon Watts and Jason Weitz and Andrew Wildridge and Rebecca Williams and Scott Wolf and Yue Xu and Jianqi Yan and Jai Yu and Yulei Zhang and Haoran Zhao and Ying Zhao and Yibo Zhong},
       eprint        = {2503.02112},
@@ -3279,7 +3280,7 @@
   - "time-series"
   - "remote sensing"
   summary: |
-    A challenge combining North Atlantic sea-level time-series and satellite imagery to detect flooding anomalies. Models submitted via Codabench. :contentReference[oaicite:5]{index=5}
+    A challenge combining North Atlantic sea-level time-series and satellite imagery to detect flooding anomalies. Models submitted via Codabench. 
   licensing: "NA"
   task_types:
   - "Anomaly detection"
@@ -3297,13 +3298,13 @@
   - "Anomaly detection"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
-    Sponsored by NSF HDR; integrates sensor and satellite data. :contentReference[oaicite:6]{index=6}
+    Sponsored by NSF HDR; integrates sensor and satellite data. 
   contact:
     name: "HDR A3D3 Team"
     email: "unknown"
   cite:
   - |
-    @misc{campolongo2025buildingmachinelearningchallenges,
+    @misc{campolongo2025buildingmachinelearningchallenges3,
       archiveprefix = {arXiv},
       author        = {Elizabeth G. Campolongo and Yuan-Tang Chou and Ekaterina Govorkova and Wahid Bhimji and Wei-Lun Chao and Chris Harris and Shih-Chieh Hsu and Hilmar Lapp and Mark S. Neubauer and Josephine Namayanja and Aneesh Subramanian and Philip Harris and Advaith Anand and David E. Carlyn and Subhankar Ghosh and Christopher Lawrence and Eric Moreno and Ryan Raikman and Jiaman Wu and Ziheng Zhang and Bayu Adhi and Mohammad Ahmadi Gharehtoragh and Saúl Alonso Monsalve and Marta Babicz and Furqan Baig and Namrata Banerji and William Bardon and Tyler Barna and Tanya Berger-Wolf and Adji Bousso Dieng and Micah Brachman and Quentin Buat and David C. Y. Hui and Phuong Cao and Franco Cerino and Yi-Chun Chang and Shivaji Chaulagain and An-Kai Chen and Deming Chen and Eric Chen and Chia-Jui Chou and Zih-Chen Ciou and Miles Cochran-Branson and Artur Cordeiro Oudot Choi and Michael Coughlin and Matteo Cremonesi and Maria Dadarlat and Peter Darch and Malina Desai and Daniel Diaz and Steven Dillmann and Javier Duarte and Isla Duporge and Urbas Ekka and Saba Entezari Heravi and Hao Fang and Rian Flynn and Geoffrey Fox and Emily Freed and Hang Gao and Jing Gao and Julia Gonski and Matthew Graham and Abolfazl Hashemi and Scott Hauck and James Hazelden and Joshua Henry Peterson and Duc Hoang and Wei Hu and Mirco Huennefeld and David Hyde and Vandana Janeja and Nattapon Jaroenchai and Haoyi Jia and Yunfan Kang and Maksim Kholiavchenko and Elham E. Khoda and Sangin Kim and Aditya Kumar and Bo-Cheng Lai and Trung Le and Chi-Wei Lee and JangHyeon Lee and Shaocheng Lee and Suzan van der Lee and Charles Lewis and Haitong Li and Haoyang Li and Henry Liao and Mia Liu and Xiaolin Liu and Xiulong Liu and Vladimir Loncar and Fangzheng Lyu and Ilya Makarov and Abhishikth Mallampalli Chen-Yu Mao and Alexander Michels and Alexander Migala and Farouk Mokhtar and Mathieu Morlighem and Min Namgung and Andrzej Novak and Andrew Novick and Amy Orsborn and Anand Padmanabhan and Jia-Cheng Pan and Sneh Pandya and Zhiyuan Pei and Ana Peixoto and George Percivall and Alex Po Leung and Sanjay Purushotham and Zhiqiang Que and Melissa Quinnan and Arghya Ranjan and Dylan Rankin and Christina Reissel and Benedikt Riedel and Dan Rubenstein and Argyro Sasli and Eli Shlizerman and Arushi Singh and Kim Singh and Eric R. Sokol and Arturo Sorensen and Yu Su and Mitra Taheri and Vaibhav Thakkar and Ann Mariam Thomas and Eric Toberer and Chenghan Tsai and Rebecca Vandewalle and Arjun Verma and Ricco C. Venterea and He Wang and Jianwu Wang and Sam Wang and Shaowen Wang and Gordon Watts and Jason Weitz and Andrew Wildridge and Rebecca Williams and Scott Wolf and Yue Xu and Jianqi Yan and Jai Yu and Yulei Zhang and Haoran Zhao and Ying Zhao and Yibo Zhong},
       eprint        = {2503.02112},
@@ -3388,7 +3389,7 @@
   - "Supervised Learning"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
-    Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization. :contentReference[oaicite:1]{index=1}
+    Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization. 
   contact:
     name: "Javier Campos, Giuseppe Di Guglielmo"
     email: "unknown"
@@ -3464,7 +3465,7 @@
   - "expert reasoning"
   - "science QA"
   summary: |
-    Contains 448 challenging questions written by domain experts, with expert accuracy at 65% (74% discounting clear errors) and non-experts reaching just 34%. GPT-4 baseline scores ~39%-designed for scalable oversight evaluation. :contentReference[oaicite:2]{index=2}
+    Contains 448 challenging questions written by domain experts, with expert accuracy at 65% (74% discounting clear errors) and non-experts reaching just 34%. GPT-4 baseline scores ~39%-designed for scalable oversight evaluation. 
   licensing: "NA"
   task_types:
   - "Multiple choice"
@@ -3488,7 +3489,7 @@
     email: "unknown"
   cite:
   - |
-    @misc{rein2023gpqagraduatelevelgoogleproofqa,
+    @misc{rein2023gpqagraduatelevelgoogleproofqa2,
       archiveprefix = {arXiv},
       author        = {David Rein and Betty Li Hou and Asa Cooper Stickland and Jackson Petty and Richard Yuanzhe Pang and Julien Dirani and Julian Michael and Samuel R. Bowman},
       eprint        = {2311.12022},
@@ -3556,7 +3557,7 @@
   - "segmentation"
   - "QA"
   summary: |
-    A first-of-its-kind dataset covering 17,300 sq.km of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs-designed for both vision and language-based ML models in marine science :contentReference[oaicite:1]{index=1}.
+    A first-of-its-kind dataset covering 17,300 sq.km of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs-designed for both vision and language-based ML models in marine science
   licensing: "unknown"
   task_types:
   - "Image segmentation"
@@ -3577,7 +3578,7 @@
   - "Segmentation, QA"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
-    Data processing code publicly available, covering five geological layers; curated with marine scientists :contentReference[oaicite:2]{index=2}.
+    Data processing code publicly available, covering five geological layers; curated with marine scientists
   contact:
     name: "Kien X. Nguyen"
     email: "unknown"
@@ -3654,7 +3655,7 @@
   - "equivariant GNN"
   - "generative models"
   summary: |
-    SuperCon3D introduces 3D crystal structures with associated critical temperatures (Tc) and two deep-learning models: SODNet (equivariant graph model) and DiffCSP-SC (diffusion generator) designed to screen and synthesize high-Tc candidates :contentReference[oaicite:3]{index=3}.
+    SuperCon3D introduces 3D crystal structures with associated critical temperatures (Tc) and two deep-learning models: SODNet (equivariant graph model) and DiffCSP-SC (diffusion generator) designed to screen and synthesize high-Tc candidates .
   licensing: "unknown"
   task_types:
   - "Regression (Tc prediction)"
@@ -3675,7 +3676,7 @@
   - "Regression, Generation"
   solutions: "0"
   notes: |
-    Demonstrates advantage of combining ordered and disordered structural data in model design :contentReference[oaicite:4]{index=4}.
+    Demonstrates advantage of combining ordered and disordered structural data in model design .
   contact:
     name: "Zhong Zuo"
     email: "unknown"
@@ -3752,7 +3753,7 @@
   - "OOD robustness"
   - "scientific applications"
   summary: |
-    GeSS provides 30 benchmark scenarios across particle physics, materials science, and biochemistry, evaluating 3 GDL backbones and 11 algorithms under covariate, concept, and conditional shifts, with varied OOD access :contentReference[oaicite:5]{index=5}.
+    GeSS provides 30 benchmark scenarios across particle physics, materials science, and biochemistry, evaluating 3 GDL backbones and 11 algorithms under covariate, concept, and conditional shifts, with varied OOD access .
   licensing: "unknown"
   task_types:
   - "Classification"
@@ -3774,7 +3775,7 @@
   - "Classification, Regression"
   solutions: "0"
   notes: |
-    Includes no-OOD, unlabeled-OOD, and few-label scenarios :contentReference[oaicite:6]{index=6}.
+    Includes no-OOD, unlabeled-OOD, and few-label scenarios .
   contact:
     name: "Deyu Zou"
     email: "unknown"
@@ -3851,7 +3852,7 @@
   - "time-series"
   - "SSL"
   summary: |
-    The first large-scale benchmark (767K sounds across 9 conditions) for localizing rodent vocal calls using synchronized audio and video in standard lab environments, enabling systematic evaluation of sound-source localization algorithms in bioacoustics :contentReference[oaicite:1]{index=1}.
+    The first large-scale benchmark (767K sounds across 9 conditions) for localizing rodent vocal calls using synchronized audio and video in standard lab environments, enabling systematic evaluation of sound-source localization algorithms in bioacoustics .
   licensing: "unknown"
   task_types:
   - "Sound source localization"
@@ -3869,7 +3870,7 @@
   - "Anomaly detection / localization"
   solutions: "0"
   notes: |
-    Dataset spans real, simulated, and mixed audio; supports benchmarking across data types :contentReference[oaicite:2]{index=2}.
+    Dataset spans real, simulated, and mixed audio; supports benchmarking across data types .
   contact:
     name: "Ralph Peterson"
     email: "unknown"
@@ -3946,7 +3947,7 @@
   - "retrieval"
   - "dataset"
   summary: |
-    MassSpecGym curates the largest public MS/MS dataset with three standardized tasks-de novo structure generation, molecule retrieval, and spectrum simulation-using challenging generalization splits to propel ML-driven molecule discovery :contentReference[oaicite:3]{index=3}.
+    MassSpecGym curates the largest public MS/MS dataset with three standardized tasks-de novo structure generation, molecule retrieval, and spectrum simulation-using challenging generalization splits to propel ML-driven molecule discovery .
   licensing: "unknown"
   task_types:
   - "De novo generation"
@@ -3968,7 +3969,7 @@
   - "Generation, retrieval, simulation"
   solutions: "0"
   notes: |
-    Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks :contentReference[oaicite:4]{index=4}.
+    Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks .
   contact:
     name: "Roman Bushuiev"
     email: "unknown"
@@ -4044,7 +4045,7 @@
   - "multi-modal"
   - "benchmark"
   summary: |
-    UrbanDataLayer standardizes heterogeneous urban data formats and provides pipelines for tasks like air quality prediction and land-use classification, enabling the rapid creation of multi-modal urban benchmarks :contentReference[oaicite:5]{index=5}.
+    UrbanDataLayer standardizes heterogeneous urban data formats and provides pipelines for tasks like air quality prediction and land-use classification, enabling the rapid creation of multi-modal urban benchmarks .
   licensing: "unknown"
   task_types:
   - "Prediction"
@@ -4063,7 +4064,7 @@
   - "Prediction, classification"
   solutions: "0"
   notes: |
-    Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models :contentReference[oaicite:6]{index=6}.
+    Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models .
   contact:
     name: "Yiheng Wang"
     email: "unknown"
@@ -4165,7 +4166,7 @@
   cite:
   - |
     @misc{khrabrov2024nabla2dftuniversalquantumchemistry,
-      title={$\nabla^2$DFT: A Universal Quantum Chemistry Dataset of Drug-Like Molecules and a Benchmark for Neural Network Potentials}, 
+      title={Delta-Squared DFT: A Universal Quantum Chemistry Dataset of Drug-Like Molecules and a Benchmark for Neural Network Potentials}, 
       author={Kuzma Khrabrov and Anton Ber and Artem Tsypin and Konstantin Ushenin and Egor Rumiantsev and Alexander Telepov and Dmitry Protasov and Ilya Shenbin and Anton Alekseev and Mikhail Shirokikh and Sergey Nikolenko and Elena Tutubalina and Artur Kadurin},
       year={2024},
       eprint={2406.14347},

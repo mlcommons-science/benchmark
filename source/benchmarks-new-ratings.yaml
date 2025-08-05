@@ -1704,8 +1704,8 @@
       rating: 4
       reason: |
         Datasets are accessible, but not split.
-    metrics: 3
-      rating: 
+    metrics: 
+      rating: 3 
       reason: |
         Partially defined, somewhat inferrable metrics. Unknown whether a system's performance is captured.
     reference_solution:
@@ -1845,11 +1845,12 @@
     email: "j.roberts@cs.ox.ac.uk"
   cite:
     - |
-      @article{roberts2023satin,
+      @misc{roberts2023satin,
         title={SATIN: A multi-task metadataset for classifying satellite imagery using vision-language models},
         author={Roberts, Jonathan and Han, Kai and Albanie, Samuel},
         journal={arXiv preprint arXiv:2304.11619},
         year={2023}
+        url={https://huggingface.co/datasets/saral-ai/satimagnet}
       }
   datasets:
     links:
@@ -1868,7 +1869,7 @@
       reason: |
         No scripts or environment information provided
     specification:
-      rating: 9
+      rating: 4
       reason: |
         Tasks (image classification across 27 satellite datasets) are clearly defined with multi-task and zero-shot framing; input/output structure is mostly standard but some task-specific nuances require interpretation.
     dataset:

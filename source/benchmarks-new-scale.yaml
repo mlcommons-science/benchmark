@@ -2170,7 +2170,7 @@
     WinoGrande is a large-scale adversarial dataset of 44,000 Winograd Schema-style 
     questions with reduced bias using AFLite, serving as both a benchmark and transfer 
     learning resource.
-  licensing: "CC‑BY"
+  licensing: "CC-BY"
   task_types:
   - "Pronoun resolution"
   ai_capability_measured:
@@ -2216,26 +2216,26 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 0.0
+      rating: 0
       reason: |
-        Not Rated
+        No template code provided
     specification:
-      rating: 9.0
+      rating: 5
       reason: |
         Task (pronoun/coreference resolution) is clearly defined in Winograd Schema style, with consistent input/output format; no system constraints included.
     dataset:
-      rating: 9.0
+      rating: 5
       reason: |
         Public, versioned, and FAIR-compliant with AFLite-generated splits to reduce annotation artifacts; hosted by AllenAI with good metadata.
     metrics:
-      rating: 9.0
+      rating: 5
       reason: |
         Accuracy and AUC are quantitative and well-aligned with disambiguation goals; standardized across evaluations.
     reference_solution:
-      rating: 8.0
+      rating: 4
       reason: |
-        Baseline results for BERT, RoBERTa, GPT-2, etc., are published, but official runnable baselines require setup via AllenNLP or other frameworks.
+        Baseline results available, requiring users to submit their methods along with their submissions. Constraints are not required in submissions.
     documentation:
-      rating: 6.0
+      rating: 5
       reason: |
-        Dataset page and paper provide sufficient detail; usage with HuggingFace is smooth, but full reproducibility for training requires configuration effort.
+        Dataset page and paper provide sufficient detail

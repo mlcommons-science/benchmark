@@ -11,7 +11,7 @@ All benchmark entries should follow the format of `source/benchmarks-format.yaml
 
 Make sure that yaml indentation is **2 spaces**. *Do not use tabs.* 
 
-To rate benchmarks, use the system defined [here](ratings_explanations.md).
+To rate benchmarks, use the [rating system](ratings_explanations.md). *The [0-10 scale system](ratings_explanations_old.md) is now deprecated.*
 
 The yaml file is used to generate documents, such as:
 

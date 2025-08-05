@@ -78,7 +78,7 @@ class MarkdownWriter:
         return content
 
     def write_table(
-        self, filename="content/md/benchmarks.md", columns=DEFAULT_COLUMNS
+        self, filename="content/md/benchmarks.md", columns=DEFAULT_COLUMNS, average_ratings: bool = True
     ) -> None:
 
         col_labels = []
@@ -89,11 +89,16 @@ class MarkdownWriter:
             col_widths.append(self.column_width_str(col))
 
         section = "# Benchmarks\n\n"
-        header = " | " + " | ".join(col_labels) + " | " + "\n"
+        header = " | " + " | ".join(col_labels) + " | "
+        if average_ratings:
+            header += " Average Ratings "
+        header += '\n'
+
         divider = ""
         for e in col_widths:
             divider += "| " + str(e) + " "
-
+        if average_ratings:
+            divider += " | -------- "
         divider += "|\n"
 
         # Create the contents string
@@ -103,6 +108,7 @@ class MarkdownWriter:
         # Write each entry to the table
         for entry in self.entries:
             row = ""
+            ratings_average = 0
 
             # Write each cell to the table
             for col in columns:
@@ -125,9 +131,20 @@ class MarkdownWriter:
                     row += ", ".join(map(self._escape_md, val))
 
                 else:
+                    if col.endswith("rating"):
+                        try:
+                            ratings_average += float(val)
+                        except ValueError:
+                            Console.error(f'Rating entry "{val}" must be a number')
+
                     row += self._escape_md(str(val))
 
                 row += " | "
+            
+            #Calculate and add average
+            ratings_average /= 6
+            if average_ratings:
+                row += str(round(ratings_average, 3)) + " |"
 
             current_contents += row + "\n"
 
@@ -144,6 +161,7 @@ class MarkdownWriter:
         output_dir="content/md/benchmarks",
         columns=DEFAULT_COLUMNS,
         author_trunc: int | None = None,
+        average_ratings: bool = True
     ) -> None:
         """
         Writes all entries stored by this writer into individual Markdown documents at `output_dir`/md_tables.
@@ -174,6 +192,8 @@ class MarkdownWriter:
 
             lines.append(f"# {name}\n\n")
 
+            average_rating = 0
+
             for col in columns:
                 val = entry.get(col, "")
                 col_label = self.colunm_label(col)
@@ -197,13 +217,17 @@ class MarkdownWriter:
                             lines.append(f"      {raw_line}\n")
                     lines.append("\n")
 
-                # elif col == "ratings":
-                #    print("TODO")
 
                 elif col.startswith("ratings"):
                     if not ratings_header_written:
                         lines.append("**Ratings:**\n\n")
                         ratings_header_written = True
+                    
+                    if col.endswith('rating'):
+                        try:
+                            average_rating += float(val)
+                        except ValueError:
+                            Console.error(f'The rating "{val}" must be a number')
 
                     # ###########
                     # #Flat writing here
@@ -231,6 +255,9 @@ class MarkdownWriter:
                     val_str = val_to_str(val)
 
                     lines.append(f"**{col_label}**: {val_str}\n\n")
+
+            # write the ratings
+            lines.append(f"**Average Rating:** {str(round(average_rating/6, 3))}\n\n") #This assumes the new rating system with 6 categories
 
             # write the image
             image_location = f"../../tex/images/{id}_radar.png"

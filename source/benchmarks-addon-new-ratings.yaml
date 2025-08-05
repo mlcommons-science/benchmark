@@ -4122,6 +4122,7 @@
       rating: 8.0
       reason: |
         Source code supports pipeline reuse, but formal evaluation splits may vary.
+        
 - date: "2024-12-13"
   version: "v1.0"
   last_updated: "2024-12"
@@ -4192,27 +4193,28 @@
     software:
       rating: 0
       reason: |
-        Not analyzed.
+        This is a model, not a benchmark.
     specification:
-      rating: 9.0
+      rating: 0
       reason: |
-        The task of ML correction to DFT energy predictions is well-specified.
+        This is a model, not a benchmark.
     dataset:
-      rating: 9.0
+      rating: 0
       reason: |
-        10 public reaction datasets with DFT and CC references; well-documented.
+        This is a model, not a benchmark.
     metrics:
-      rating: 8.0
+      rating: 0
       reason: |
-        Uses MAE and ranking accuracy, suitable for this task.
+        This is a model, not a benchmark.
     reference_solution:
-      rating: 8.0
+      rating: 0
       reason: |
-        Includes both Delta^2 and KRR baselines.
+        This is a model, not a benchmark.
     documentation:
-      rating: 9.0
+      rating: 0
       reason: |
-        Public benchmarks and clear reproducibility via datasets and model code.
+        This is a model, not a benchmark.
+
 - date: "2024-12-13"
   version: "v1.0"
   last_updated: "2024-12"
@@ -4280,26 +4282,26 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 0
+      rating: 5
       reason: |
-        Not analyzed.
+        Well-documented codebase available on Github
     specification:
-      rating: 6.0
+      rating: 3.5
       reason: |
-        Task of QA over scientific figures is interesting but not fully formalized in input/output terms.
+        Task of QA over scientific figures is sufficient but not fully formalized in input/output terms. No hawrdware constraints.
     dataset:
-      rating: 6.0
+      rating: 5
       reason: |
-        Uses SPIQA dataset with ~10 adapters; figures and questions are included, but not fully open.
+        Full dataset available on Hugging Face with train/test/valid splits.
     metrics:
-      rating: 7.0
+      rating: 4
       reason: |
         Reports accuracy and F1; fair but no visual reasoning-specific metric.
     reference_solution:
-      rating: 6.0
+      rating: 4
       reason: |
-        10 LLM adapter baselines; results included.
+        10 LLM adapter baselines; results included without constraints.
     documentation:
-      rating: 5.0
+      rating: 5
       reason: |
-        Poster paper and limited documentation; no reproducibility instructions.
+        Full paper available

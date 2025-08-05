@@ -5,7 +5,7 @@ BASE=.
 
 # FILES=${BASE}/source/benchmarks.yaml
 # FILES=${BASE}/source/benchmarks-addon.yaml
-FILES=${BASE}/source/benchmarks-new-ratings.yaml,${BASE}/source/benchmarks-addon-new-ratings.yaml 
+FILES=${BASE}/source/benchmarks.yaml,${BASE}/source/benchmarks-addon.yaml 
 
 CHECK_FILES=${BASE}/source/benchmarks.yaml,${BASE}/source/benchmarks-addon.yaml 
 

@@ -30,9 +30,9 @@
 
 - Javier Duarte, Nhan Tran, Ben Hawks, Christian Herwig, Jules Muhizi, Shvetank Prakash, and Vijay Janapa Reddi. Fastml science benchmarks: accelerating real-time scientific edge machine learning. 2022. URL: https://arxiv.org/abs/2207.07958, arXiv:2207.07958.
 
-  - bibtex: |
-
-      @misc{duarte2022fastmlsciencebenchmarksaccelerating,
+  - bibtex:
+      ```
+      @misc{duarte2022fastmlsciencebenchmarksaccelerating2,
 
         archiveprefix = {arXiv},
 
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** Not containerized; Full automation and documentation could be improved 
 
 
 Specification:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Classification is clearly defined for real-time inference on simulated LHC jets. Input features  HLFs  are documented, though exact latency or resource constraints are not numerically specified. 
+  - **Reason:** Exact latency or resource constraints not numerically specified 
 
 
 Dataset:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Two datasets  OpenML and Zenodo  are public, well-formatted, and documented; FAIR principles are followed, though richer metadata would raise confidence to a 10. 
+  - **Reason:** All criteria met 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** AUC and Accuracy are standard, quantitative, and well-aligned with goals of jet tagging and inference efficiency. 
+  - **Reason:** All criteria met 
 
 
 Reference Solution:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Float and quantized Keras/QKeras models are provided with results. Reproducibility is good, though full automation and documentation could be improved. 
+  - **Reason:** Not fully documented or automated for reproducibility 
 
 
 Documentation:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** GitHub contains baseline code, data loaders, and references, but setup for deployment  e.g., FPGA pipeline  requires familiarity with the tooling. 
+  - **Reason:** Setup for deployment  e.g., FPGA pipeline  requires familiarity with tooling 
+
+
+**Average Rating:** 4.167
 
 
 **Radar Plot:**

@@ -30,8 +30,8 @@
 
 - Ralph E Peterson, Aramis Tanelus, Christopher Ick, Bartul Mimica, Niegil Francis, Violet J Ivan, Aman Choudhri, Annegret L Falkner, Mala Murthy, David M Schneider, Dan H Sanes, and Alex H Williams. Vocal call locator benchmark (vcl) for localizing rodent vocalizations from multi-channel audio. In A. Globerson, L. Mackey, D. Belgrave, A. Fan, U. Paquet, J. Tomczak, and C. Zhang, editors, Advances in Neural Information Processing Systems, volume 37, 106370–106382. Curran Associates, Inc., 2024. URL: https://proceedings.neurips.cc/paper_files/paper/2024/file/c00d37d6b04d73b870b963a4d70051c1-Paper-Datasets_and_Benchmarks_Track.pdf.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @inproceedings{neurips2024_c00d37d6,
 
         author = {Peterson, Ralph E and Tanelus, Aramis and Ick, Christopher and Mimica, Bartul and Francis, Niegil and Ivan, Violet J and Choudhri, Aman and Falkner, Annegret L and Murthy, Mala and Schneider, David M and Sanes, Dan H and Williams, Alex H},
@@ -54,54 +54,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** Some baseline CNN models for sound source localization are reported, but no publicly available or fully integrated runnable codebase yet. 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Clear benchmark scenarios across GDL tasks under multiple real-world shift settings; OOD settings precisely categorized. 
+  - **Reason:** Well-defined localization tasks with multiple scenarios and real-world environment conditions; input/output formats clearly described. 
 
 
 Dataset:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Scientific graph datasets provided in multiple shift regimes; standardized splits across domains. Exact format of data not specified. 
+  - **Reason:** Large-scale audio dataset covering real and simulated data with standardized splits, though exact data formats are not fully detailed. 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Includes base metrics  accuracy, RMSE  plus OOD delta robustness for evaluation under shifts. 
+  - **Reason:** Includes localization error, precision, recall, and other relevant metrics for robust evaluation. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Multiple baselines  11 algorithms x 3 backbones  evaluated; setup supports reproducible comparison. 
+  - **Reason:** Multiple baselines evaluated over diverse models and architectures, supporting reproducibility of benchmark comparisons. 
 
 
 Documentation:
 
 
-  - **Rating:** 2.0
+  - **Rating:** 1
 
 
-  - **Reason:** Paper, poster, and source code provide thorough access to methodology and implementation. Setup instructions and accompanying code not present. 
+  - **Reason:** Methodology and paper are thorough, but setup instructions and runnable code are not publicly provided, limiting user onboarding. 
+
+
+**Average Rating:** 3.833
 
 
 **Radar Plot:**

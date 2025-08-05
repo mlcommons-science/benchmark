@@ -30,8 +30,8 @@
 
 - HuggingFaceH4. Math-500. 2025. URL: https://huggingface.co/datasets/HuggingFaceH4/MATH-500.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{huggingface2025math500,
 
         title={MATH-500},
@@ -44,24 +44,33 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 0
+
+
+  - **Reason:** No code provided 
 
 
 Specification:
 
 
-  - **Rating:** 3
+  - **Rating:** 0
 
 
-  - **Reason:** Known what the problems are, but method of presentation and evaluation is not stated. No HW constraints 
+  - **Reason:** No method of presentation and evaluation is not stated. No constraints 
 
 
 Dataset:
 
 
-  - **Rating:** 9.9
+  - **Rating:** 5
 
 
   - **Reason:** Problems and solutions are easily downloaded. Could not find a way to download the data 
@@ -88,10 +97,13 @@ Reference Solution:
 Documentation:
 
 
-  - **Rating:** 0.5
+  - **Rating:** 0
 
 
   - **Reason:** Not given. Implicit instructions to download dataset. 
+
+
+**Average Rating:** 1.167
 
 
 **Radar Plot:**

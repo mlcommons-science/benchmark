@@ -30,8 +30,8 @@
 
 - Avrim Blum and Moritz Hardt. The ladder: a reliable leaderboard for machine learning competitions. In Francis Bach and David Blei, editors, Proceedings of the 32nd International Conference on Machine Learning, volume 37 of Proceedings of Machine Learning Research, 1006–1014. Lille, France, July 2015. PMLR. URL: https://proceedings.mlr.press/v37/blum15.html.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @InProceedings{pmlr-v37-blum15,
 
         title =    {The Ladder: A Reliable Leaderboard for Machine Learning Competitions},
@@ -64,54 +64,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** Actively maintained open-source platform  https://paperswithcode.com  under Apache 2.0 license; includes automatic integration with GitHub, datasets, and models for reproducibility. 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** Evaluation setting  federated clinical benchmarking  is well-defined; I/O interfaces vary slightly by task but are standardized in MedPerf platform. 
+  - **Reason:** Task and benchmark structures are well organized and standardized, but due to its broad coverage, input/output formats vary significantly between tasks and are not always tightly controlled. 
 
 
 Dataset:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 3
 
 
-  - **Reason:** Uses distributed, real-world clinical datasets across institutions; FAIR compliance varies across hospitals and data hosts. 
+  - **Reason:** Relies on external datasets submitted by the community. While links are available, FAIR compliance is not guaranteed or systematically enforced across all benchmarks. 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** ROC AUC, accuracy, and fairness metrics are explicitly defined and task-dependent; consistently tracked across institutions. 
+  - **Reason:** Tracks state-of-the-art using task-specific metrics like Accuracy, F1, BLEU, etc., with consistent aggregation and historical SOTA tracking. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 3
 
 
-  - **Reason:** Validated CNNs and GaNDLF pipelines are used and shared via the MedPerf tool, but some implementations are abstracted behind the platform. 
+  - **Reason:** Provides links to implementations of many SOTA models, but no single unified reference baseline is required or maintained per benchmark. 
 
 
 Documentation:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** Excellent documentation across MedPerf, GaNDLF, and COFE; reproducibility handled via containerized flows and task templates. 
+  - **Reason:** Strong front-end documentation and metadata on benchmarks, tasks, and models; however, some benchmark-specific instructions are sparse or dependent on external paper links. 
+
+
+**Average Rating:** 4.0
 
 
 **Radar Plot:**

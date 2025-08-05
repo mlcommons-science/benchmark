@@ -30,8 +30,8 @@
 
 - Xiaoyan Zhong, Yijian Gao, and Suchin Gururangan. Spiqa: scientific paper image question answering. 2024. URL: https://arxiv.org/abs/2407.09413.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{zhong2024spiqa,
 
         title={SPIQA: Scientific Paper Image Question Answering},
@@ -44,15 +44,24 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 0
+
+
+  - **Reason:** Not provided 
 
 
 Specification:
 
 
-  - **Rating:** 10
+  - **Rating:** 5
 
 
   - **Reason:** Task administration clearly defined; prompt instructions explicitly given, no ambiguity in format or scope. 
@@ -61,7 +70,7 @@ Specification:
 Dataset:
 
 
-  - **Rating:** 9
+  - **Rating:** 4.5
 
 
   - **Reason:** Dataset is available  via paper/appendix , includes train/test/valid split. FAIR-compliant with minor gaps in versioning or access standardization. 
@@ -70,16 +79,16 @@ Dataset:
 Metrics:
 
 
-  - **Rating:** 9
+  - **Rating:** 5
 
 
-  - **Reason:** Uses quantitative metrics  Accuracy, F1  aligned with the task. Well-suited for benchmarking multimodal reasoning. 
+  - **Reason:** Uses quantitative metrics  Accuracy, F1  aligned with the task 
 
 
 Reference Solution:
 
 
-  - **Rating:** 5
+  - **Rating:** 2
 
 
   - **Reason:** Multiple model results  e.g., GPT-4V, Gemini  reported; baselines exist, but full runnable code not confirmed for all. 
@@ -88,10 +97,13 @@ Reference Solution:
 Documentation:
 
 
-  - **Rating:** 2
+  - **Rating:** 5
 
 
-  - **Reason:** Dataset and benchmark description provided; code/software mentioned; however, full step-by-step setup or containerized environment not stated. 
+  - **Reason:** All information provided in paper 
+
+
+**Average Rating:** 3.583
 
 
 **Radar Plot:**

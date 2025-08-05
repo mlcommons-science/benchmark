@@ -30,8 +30,8 @@
 
 - Peter Clark, Isaac Cowhey, and Oren Etzioni. Think you have solved question answering? try arc, the ai2 reasoning challenge. In EMNLP 2018, 237 248. 2018. URL: https://allenai.org/data/arc.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @inproceedings{clark2018think,
 
         title={Think you have solved question answering? Try ARC, the AI2 Reasoning Challenge},
@@ -48,33 +48,42 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 0
+
+
+  - **Reason:** No link to code or documentation 
 
 
 Specification:
 
 
-  - **Rating:** 9
+  - **Rating:** 2
 
 
-  - **Reason:** Exact format of data, questions, and answers are specified. No HW constraints 
+  - **Reason:** Task is clear, but no constraints or format is mentioned 
 
 
 Dataset:
 
 
-  - **Rating:** 10
+  - **Rating:** 4
 
 
-  - **Reason:** Data accessible, offers instructions on how to download the data via CLI tools 
+  - **Reason:** Data accessible, offers instructions on how to download the data via CLI tools. No splits. 
 
 
 Metrics:
 
 
-  - **Rating:** 10
+  - **Rating:** 5
 
 
   - **Reason:**  by default  All questions in the dataset are multiple choice, all have a correct answer 
@@ -83,19 +92,22 @@ Metrics:
 Reference Solution:
 
 
-  - **Rating:** 4.5
+  - **Rating:** 1
 
 
-  - **Reason:** There are over 300 models listed, but very few, if any, show performance on the dataset 
+  - **Reason:** There are over 300 models listed, but very few, if any, show performance on the dataset or list constraints 
 
 
 Documentation:
 
 
-  - **Rating:** 4
+  - **Rating:** 5
 
 
-  - **Reason:** There are easy ways to download the dataset. Documentation quantity and clarity depends on authors of tested models 
+  - **Reason:** Explains all necessary information inside a paper 
+
+
+**Average Rating:** 2.833
 
 
 **Radar Plot:**

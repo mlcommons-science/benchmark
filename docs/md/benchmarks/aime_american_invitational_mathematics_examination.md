@@ -30,8 +30,8 @@
 
 - TBD. Aime. March 2025. [Online accessed 2025-06-24]. URL: https://www.vals.ai/benchmarks/aime-2025-03-13.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{www-aime,
 
         author = {TBD},
@@ -48,15 +48,24 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 0
+
+
+  - **Reason:** No code available 
 
 
 Specification:
 
 
-  - **Rating:** 3
+  - **Rating:** 0
 
 
   - **Reason:** Obvious what the problems are, but not specified how to administer them to AI models. No HW constraints 
@@ -65,16 +74,16 @@ Specification:
 Dataset:
 
 
-  - **Rating:** 9
+  - **Rating:** 4
 
 
-  - **Reason:** Easily accessible data with problems and solutions 
+  - **Reason:** Easily accessible data with problems and solutions, but no splits 
 
 
 Metrics:
 
 
-  - **Rating:** 10
+  - **Rating:** 5
 
 
   - **Reason:**  by default  Answer is correct or it's not 
@@ -96,6 +105,9 @@ Documentation:
 
 
   - **Reason:** Not given 
+
+
+**Average Rating:** 1.5
 
 
 **Radar Plot:**

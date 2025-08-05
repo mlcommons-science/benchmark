@@ -30,8 +30,8 @@
 
 - Weihua Hu, Matthias Fey, Marinka Zitnik, Yuxiao Dong, Hongyu Ren, Bowen Liu, Michele Catasta, and Jure Leskovec. Open graph benchmark: datasets for machine learning on graphs. 2021. URL: https://arxiv.org/abs/2005.00687, arXiv:2005.00687.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{hu2021opengraphbenchmarkdatasets,
 
           archiveprefix = {arXiv},
@@ -50,24 +50,33 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** All necessary information is provided on the Github 
 
 
 Specification:
 
 
-  - **Rating:** 10
+  - **Rating:** 4
 
 
-  - **Reason:** Tasks  node/link/graph property prediction  are clearly specified with input/output formats and standardized protocols; constraints  e.g., splits  are well-defined. 
+  - **Reason:** Tasks  node/link/graph property prediction  are clearly specified with input/output formats and standardized protocols; constraints  e.g., splits  are well-defined. No constraints. 
 
 
 Dataset:
 
 
-  - **Rating:** 10
+  - **Rating:** 5
 
 
   - **Reason:** Fully FAIR- datasets are versioned, split, and accessible via a standardized API; extensive metadata and documentation are included. 
@@ -76,7 +85,7 @@ Dataset:
 Metrics:
 
 
-  - **Rating:** 10
+  - **Rating:** 5
 
 
   - **Reason:** Reproducible, quantitative metrics  e.g., ROC-AUC, accuracy  that are tightly aligned with the tasks. 
@@ -85,19 +94,22 @@ Metrics:
 Reference Solution:
 
 
-  - **Rating:** 7
+  - **Rating:** 3
 
 
-  - **Reason:** Multiple baselines implemented and documented  GCN, GAT, GraphSAGE , though most are provided by 3rd parties. 
+  - **Reason:** Multiple baselines implemented and documented  GCN, GAT, GraphSAGE . No contraints. 
 
 
 Documentation:
 
 
-  - **Rating:** 10
+  - **Rating:** 5
 
 
-  - **Reason:** Full codebase available via GitHub, with documented installation and usage instructions. 
+  - **Reason:** All necessary information is included in a paper. 
+
+
+**Average Rating:** 4.5
 
 
 **Radar Plot:**

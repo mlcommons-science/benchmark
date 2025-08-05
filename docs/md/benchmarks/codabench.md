@@ -30,8 +30,8 @@
 
 - Zhen Xu, Sergio Escalera, Adrien Pavão, Magali Richard, Wei-Wei Tu, Quanming Yao, Huan Zhao, and Isabelle Guyon. Codabench: flexible, easy-to-use, and reproducible meta-benchmark platform. Patterns, 3(7):100543, July 2022. URL: http://dx.doi.org/10.1016/j.patter.2022.100543, doi:10.1016/j.patter.2022.100543.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @article{xu-2022,
 
         author    = {Xu, Zhen and Escalera, Sergio and Pavão, Adrien and Richard, Magali and Tu, Wei-Wei and Yao, Quanming and Zhao, Huan and Guyon, Isabelle},
@@ -60,9 +60,18 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 1
+
+
+  - **Reason:** This is a platform for posting benchmarks, not a benchmark in itself. 
 
 
 Specification:
@@ -108,6 +117,9 @@ Documentation:
 
 
   - **Reason:** This is a platform for posting benchmarks, not a benchmark in itself. 
+
+
+**Average Rating:** 1.0
 
 
 **Radar Plot:**

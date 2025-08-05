@@ -30,8 +30,8 @@
 
 - Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph Gonzalez, Hao Zhang, and Ion Stoica. Efficient memory management for large language model serving with pagedattention. In Proceedings of the 29th Symposium on Operating Systems Principles, SOSP '23, 611 626. New York, NY, USA, 2023. Association for Computing Machinery. URL: https://doi.org/10.1145/3600006.3613165, doi:10.1145/3600006.3613165.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @inproceedings{10.1145/3600006.3613165,
 
         author = {Kwon, Woosuk and Li, Zhuohan and Zhuang, Siyuan and Sheng, Ying and Zheng, Lianmin and Yu, Cody Hao and Gonzalez, Joseph and Zhang, Hao and Stoica, Ion},
@@ -62,54 +62,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** Actively maintained open-source project under Apache 2.0. GitHub repo includes full serving engine, benchmarking scripts, CUDA integration, and deployment examples. 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Benchmarks hardware performance of LLM inference across multiple platforms with well-defined input/output and platform constraints. 
+  - **Reason:** Inference benchmarks are well-defined with clear input/output formats and platform-specific constraints. Covers multiple models, hardware backends, and batching configurations. 
 
 
 Dataset:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 3
 
 
-  - **Reason:** Uses structured log files and configs instead of conventional datasets; suitable for inference benchmarking. 
+  - **Reason:** No traditional dataset is included. Instead, it uses structured configs and logs suitable for inference benchmarking. FAIR principles are only partially applicable. 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Clear throughput, latency, and utilization metrics; platform comparison dashboard enhances evaluation. 
+  - **Reason:** Comprehensive performance metrics like tokens/sec, time-to-first-token  TTFT , and memory footprint are consistently applied and benchmarked across frameworks. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Includes reproducible scripts and example runs; models like LLaMA and Mistral are referenced with platform-specific configs. 
+  - **Reason:** Provides runnable scripts and configs for several models  LLaMA, Mixtral, etc.  across platforms. Baselines are reproducible, though not all models are fully wrapped or hosted. 
 
 
 Documentation:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** GitHub contains clear instructions, platform details, and framework comparisons. 
+  - **Reason:** Well-structured GitHub documentation with setup instructions, config examples, benchmarking comparisons, and performance tuning guides. 
+
+
+**Average Rating:** 4.333
 
 
 **Radar Plot:**

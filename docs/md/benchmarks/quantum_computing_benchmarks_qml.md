@@ -30,8 +30,8 @@
 
 - Florian J. Kiwit, Marwa Marso, Philipp Ross, Carlos A. Riofrío, Johannes Klepsch, and Andre Luckow. Application-oriented benchmarking of quantum generative learning using quark. In 2023 IEEE International Conference on Quantum Computing and Engineering (QCE), 475 484. IEEE, September 2023. URL: http://dx.doi.org/10.1109/QCE57702.2023.00061, doi:10.1109/qce57702.2023.00061.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @inproceedings{kiwit2023,
 
         title={Application-Oriented Benchmarking of Quantum Generative Learning Using QUARK},
@@ -52,54 +52,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 4
+
+
+  - **Reason:** Run instructions exist, but are not easy to follow 
 
 
 Specification:
 
 
-  - **Rating:** 9
+  - **Rating:** 3
 
 
-  - **Reason:** Tasks like fidelity estimation, state preparation, and runtime benchmarking are clearly defined; I/O formats vary slightly across hardware but are consistently framed in PennyLane/Qiskit ecosystems. 
+  - **Reason:** No system constraints. Task clarity and dataset format are not clearly specified. 
 
 
 Dataset:
 
 
-  - **Rating:** 8
+  - **Rating:** 4
 
 
-  - **Reason:** Datasets are accessible, structured, and interoperable via PennyLane; however, not all are versioned or richly annotated in conventional ML metadata standards. 
+  - **Reason:** Datasets are accessible, but not split. 
 
 
 Metrics:
 
 
-  - **Rating:** 9
+  - **Rating:** 3
 
 
-  - **Reason:** Quantitative and well-motivated metrics  e.g., fidelity, success probability  are used, though reproducibility can depend on hardware noise profiles. 
+  - **Reason:** Partially defined, somewhat inferrable metrics. Unknown whether a system's performance is captured. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 5
+  - **Rating:** 0
 
 
-  - **Reason:** Reference implementations exist and are integrated into tools like PennyLane, but performance varies per backend; not all benchmarks include reproducible reference runs. 
+  - **Reason:** Not provided 
 
 
 Documentation:
 
 
-  - **Rating:** 8
+  - **Rating:** 1
 
 
-  - **Reason:** Strong integration with PennyLane and QML ecosystem; guides and code provided, but advanced hardware setup may pose reproducibility hurdles for newcomers. 
+  - **Reason:** Only the task is defined.  
+
+
+**Average Rating:** 2.5
 
 
 **Radar Plot:**

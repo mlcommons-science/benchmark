@@ -30,8 +30,8 @@
 
 - Azul Garza, Cristian Challu, and Max Mergenthaler-Canseco. Timegpt-1. 2024. URL: https://arxiv.org/abs/2310.03589, arXiv:2310.03589.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{garza2024timegpt1,
 
         archiveprefix = {arXiv},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 4
+
+
+  - **Reason:** Fully open-source Apache 2.0 implementation integrated in NeuralForecast, supporting training and evaluation via API. Production-grade deployment available via Nixtla API and Azure. 
 
 
 Specification:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 3
 
 
-  - **Reason:** Describes forecasting with LLMs, but less formal on input/output or task framing. 
+  - **Reason:** Concept and forecasting goals are described, but formal input/output definitions and task constraints are not rigorously specified. 
 
 
 Dataset:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 3
 
 
-  - **Reason:** Uses open time series datasets, but lacks a consolidated data release or splits. 
+  - **Reason:** Evaluated on existing open datasets, but consolidated data release, splits, and FAIR metadata are not provided. 
 
 
 Metrics:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 4
 
 
-  - **Reason:** Reports metrics like MASE and SMAPE, standard in forecasting. 
+  - **Reason:** Uses standard forecasting metrics such as RMSE, MASE, SMAPE, and anomaly detection metrics consistently across evaluations. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 3
 
 
-  - **Reason:** Provides TimeLLM with open source, but no other baselines included. 
+  - **Reason:** TimeGPT implementation is available, but baseline comparisons and additional reference models are limited. 
 
 
 Documentation:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 3
 
 
-  - **Reason:** GitHub readme with installation and example usage; lacks API or extensive tutorials. 
+  - **Reason:** Basic README with installation and usage examples; more detailed API docs and tutorials would improve usability. 
+
+
+**Average Rating:** 3.333
 
 
 **Radar Plot:**

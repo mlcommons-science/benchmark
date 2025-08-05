@@ -30,8 +30,8 @@
 
 - Benjamin Parpillon, Chinar Syal, Jieun Yoo, Jennet Dickinson, Morris Swartz, Giuseppe Di Guglielmo, Alice Bean, Douglas Berry, Manuel Blanco Valentin, Karri DiPetrillo, Anthony Badea, Lindsey Gray, Petar Maksimovic, Corrinne Mills, Mark S. Neubauer, Gauri Pradhan, Nhan Tran, Dahai Wen, and Farah Fahim. Smart pixels: in-pixel ai for on-sensor data filtering. 2024. URL: https://arxiv.org/abs/2406.14860, arXiv:2406.14860.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{parpillon2024smartpixelsinpixelai,
 
         archiveprefix = {arXiv},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 2
+
+
+  - **Reason:** No packaged code or setup scripts available; replication depends on hardware description and paper 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Task  automated neural architecture search for real-time physics  is well formulated with clear latency, model compression, and deployment goals. 
+  - **Reason:** None 
 
 
 Dataset:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 2
 
 
-  - **Reason:** Internal Bragg and jet datasets used; not publicly hosted or FAIR-compliant, though mentioned in the paper. 
+  - **Reason:** No dataset links; not publicly hosted or FAIR-compliant 
 
 
 Metrics:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 5
 
 
-  - **Reason:** BOP reduction, latency, and accuracy are all quantitatively evaluated. 
+  - **Reason:** None 
 
 
 Reference Solution:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 3
 
 
-  - **Reason:** NAC-generated models for Bragg peak and jet classification are described, but pipeline requires integration of several tools and is not fully packaged. 
+  - **Reason:** In-pixel 2-layer NN described and evaluated, but reproducibility and source files are not released 
 
 
 Documentation:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 3
 
 
-  - **Reason:** NAC pipeline, hls4ml usage, and results are discussed; code  e.g., nac-opt  referenced, but replication requires stitching together toolchain and data. 
+  - **Reason:** Paper contains detailed descriptions, but no repo or external guide for reproducing results 
+
+
+**Average Rating:** 3.333
 
 
 **Radar Plot:**

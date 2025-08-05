@@ -30,8 +30,8 @@
 
 - Shuyu Qin, Joshua Agar, and Nhan Tran. Extremely noisy 4d-tem strain mapping using cycle consistent spatial transforming autoencoders. In AI for Accelerated Materials Design - NeurIPS 2023 Workshop. 2023. URL: https://openreview.net/forum?id=7yt3N0o0W9.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @inproceedings{qin2023extremely,
 
         title={Extremely Noisy 4D-TEM Strain Mapping Using Cycle Consistent Spatial Transforming Autoencoders},
@@ -46,54 +46,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 2
+
+
+  - **Reason:** No standalone code repository or setup instructions provided 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Peak localization task is well-defined for diffraction images; input/output described clearly, but no system constraints. 
+  - **Reason:** None 
 
 
 Dataset:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 2
 
 
-  - **Reason:** Simulated diffraction images provided; reusable and downloadable, but not externally versioned or FAIR-structured. 
+  - **Reason:** No dataset links or FAIR metadata; unclear public access 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** Inference speed and localization accuracy are standard and quantitatively reported. 
+  - **Reason:** Only localization accuracy and inference time mentioned; not formally benchmarked with scripts 
 
 
 Reference Solution:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 3
 
 
-  - **Reason:** BraggNN model and training pipeline exist, but need stitching from separate repositories. 
+  - **Reason:** BraggNN model is described and evaluated, but no direct implementation or inference scripts available 
 
 
 Documentation:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 3
 
 
-  - **Reason:** Paper and codebase are available and usable, though not fully turnkey. 
+  - **Reason:** Paper is clear, but lacks a GitHub repo or full reproducibility pipeline 
+
+
+**Average Rating:** 3.167
 
 
 **Radar Plot:**

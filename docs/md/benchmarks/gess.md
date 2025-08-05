@@ -30,8 +30,8 @@
 
 - Deyu Zou, Shikun Liu, Siqi Miao, Victor Fung, Shiyu Chang, and Pan Li. Gess: benchmarking geometric deep learning under scientific applications with distribution shifts. In A. Globerson, L. Mackey, D. Belgrave, A. Fan, U. Paquet, J. Tomczak, and C. Zhang, editors, Advances in Neural Information Processing Systems, volume 37, 92499–92528. Curran Associates, Inc., 2024. URL: https://proceedings.neurips.cc/paper_files/paper/2024/file/a8063075b00168dc39bc81683619f1a8-Paper-Datasets_and_Benchmarks_Track.pdf.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @inproceedings{neurips2024_a8063075,
 
         author = {Zou, Deyu and Liu, Shikun and Miao, Siqi and Fung, Victor and Chang, Shiyu and Li, Pan},
@@ -54,54 +54,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** Reference code expected post-conference; current public software availability limited. Benchmark infrastructure partially described but not fully released yet. 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Well-defined problem  Tc prediction, generation  with strong scientific motivation  high-Tc materials , but no formal hardware constraints. 
+  - **Reason:** Benchmark clearly defines OOD robustness scenarios with classification and regression tasks in scientific domains, though no explicit hardware constraints are given. 
 
 
 Dataset:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Includes curated 3D crystal structures and Tc data; readily downloadable and used in paper models. 
+  - **Reason:** Curated datasets of 3D crystal structures and material properties are included and publicly available for reproducible research. 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** MAE and structural validity used, well-established in materials modeling. 
+  - **Reason:** Uses well-established metrics such as MAE and structural validity for materials modeling, plus accuracy and OOD robustness deltas. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Provides two reference models  SODNet, DiffCSP-SC  with results. Code likely available post-conference. 
+  - **Reason:** Two reference models  SODNet, DiffCSP-SC  are reported with results, code expected to be released soon. 
 
 
 Documentation:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Paper and poster explain design choices well; software availability confirms reproducibility but limited external documentation. 
+  - **Reason:** Paper and poster provide solid explanation of benchmarks and scientific motivation; more extensive user documentation forthcoming. 
+
+
+**Average Rating:** 4.333
 
 
 **Radar Plot:**

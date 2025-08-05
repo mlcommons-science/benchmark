@@ -30,8 +30,8 @@
 
 - Minyang Tian, Luyu Gao, Shizhuo Dylan Zhang, Xinan Chen, Cunwei Fan, Xuefei Guo, Roland Haas, Pan Ji, Kittithat Krongchon, Yao Li, Shengyan Liu, Di Luo, Yutao Ma, Hao Tong, Kha Trinh, Chenyu Tian, Zihan Wang, Bohao Wu, Yanyu Xiong, Shengzhu Yin, Minhui Zhu, Kilian Lieret, Yanxin Lu, Genglin Liu, Yufeng Du, Tianhua Tao, Ofir Press, Jamie Callan, Eliu Huerta, and Hao Peng. Scicode: a research coding benchmark curated by scientists. 2024. URL: https://arxiv.org/abs/2407.13168, arXiv:2407.13168.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{tian2024scicoderesearchcodingbenchmark,
 
         archiveprefix = {arXiv},
@@ -50,15 +50,24 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** Code to run exists on github repo 
 
 
 Specification:
 
 
-  - **Rating:** 6
+  - **Rating:** 4.5
 
 
   - **Reason:** Expected outputs and broad types of inputs stated. Few details on output grading. No HW constraints. 
@@ -67,7 +76,7 @@ Specification:
 Dataset:
 
 
-  - **Rating:** 0.5
+  - **Rating:** 0
 
 
   - **Reason:** Paper and website had no link to any dataset. It may still exist somewhere 
@@ -76,28 +85,31 @@ Dataset:
 Metrics:
 
 
-  - **Rating:** 4
+  - **Rating:** 2
 
 
-  - **Reason:** Metrics stated, but not specified in detail 
+  - **Reason:** Metrics stated, but method of grading is not specified 
 
 
 Reference Solution:
 
 
-  - **Rating:** 9
+  - **Rating:** 1
 
 
-  - **Reason:** Models presented with scores 
+  - **Reason:** Models presented with scores, but none are open or list constraints 
 
 
 Documentation:
 
 
-  - **Rating:** 0.5
+  - **Rating:** 4
 
 
-  - **Reason:** No specified way to reproduce the reference solution 
+  - **Reason:** Paper containing all needed info except for evlauation criteria 
+
+
+**Average Rating:** 2.75
 
 
 **Radar Plot:**

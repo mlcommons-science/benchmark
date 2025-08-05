@@ -30,8 +30,8 @@
 
 - Dan Hendrycks, Collin Burns, and Saurav Kadavath. Measuring massive multitask language understanding. 2021. URL: https://arxiv.org/abs/2009.03300.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{hendrycks2021measuring,
 
         title={Measuring Massive Multitask Language Understanding},
@@ -46,54 +46,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 0
+
+
+  - **Reason:** No instructions to download or run data given on the site 
 
 
 Specification:
 
 
-  - **Rating:** 9
+  - **Rating:** 4
 
 
-  - **Reason:** Clearly defined method of giving inputs, although it lacks hardware specifications. 
+  - **Reason:** No system constraints 
 
 
 Dataset:
 
 
-  - **Rating:** 9
+  - **Rating:** 5
 
 
-  - **Reason:** Contains predefined few-shot development, validation, and testing set. Easy to access and download, but not versioned. 
+  - **Reason:** Meets all FAIR principles and properly versioned. 
 
 
 Metrics:
 
 
-  - **Rating:** 9
+  - **Rating:** 5
 
 
-  - **Reason:** Clearly defined primary metric of number of multiple-choice questions answered correctly. Secondary metric of confidence requires models to self-report. 
+  - **Reason:** Fully defined, represents a solution's performance. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 10
+  - **Rating:** 2
 
 
-  - **Reason:** Performance and links to several top models linked on the Github. 
+  - **Reason:** Reference models are available  i.e. GPT-3 , but are not trainable or publicly documented 
 
 
 Documentation:
 
 
-  - **Rating:** 8
+  - **Rating:** 5
 
 
-  - **Reason:** Code and datasets provided and easy to find, but no environment setup instructions given. 
+  - **Reason:** Well-explained in a provided paper. 
+
+
+**Average Rating:** 3.5
 
 
 **Radar Plot:**

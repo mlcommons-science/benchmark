@@ -30,8 +30,8 @@
 
 - Jeyan Thiyagalingam, Gregor von Laszewski, Junqi Yin, Murali Emani, Juri Papay, Gregg Barrett, Piotr Luszczek, Aristeidis Tsaris, Christine Kirkpatrick, Feiyi Wang, Tom Gibbs, Venkatram Vishwanath, Mallikarjun Shankar, Geoffrey Fox, and Tony Hey. Ai benchmarking for science: efforts from the mlcommons science working group. In Hartwig Anzt, Amanda Bienz, Piotr Luszczek, and Marc Baboulin, editors, High Performance Computing. ISC High Performance 2022 International Workshops, 47–64. Cham, 2022. Springer International Publishing.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @InProceedings{10.1007/978-3-031-23220-6_4,
 
         author="Thiyagalingam, Jeyan
@@ -90,54 +90,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** Actively maintained GitHub repository available at https://github.com/mlcommons/science with implementations, scripts, and reproducibility support. 
 
 
 Specification:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 5
 
 
-  - **Reason:** Scientific ML tasks  e.g., CosmoFlow, DeepCAM  are clearly defined with HPC system-level constraints and targets. 
+  - **Reason:** All five specification aspects are covered: system constraints, task, dataset format, benchmark inputs, and outputs. 
 
 
 Dataset:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Public scientific datasets  e.g., cosmology, weather ; used consistently, though FAIR-compliance of individual datasets varies slightly. 
+  - **Reason:** Public scientific datasets are used with defined splits. At least 4 FAIR principles are followed. 
 
 
 Metrics:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 5
 
 
-  - **Reason:** Training time, GPU utilization, and accuracy are all directly measured and benchmarked across HPC systems. 
+  - **Reason:** Clearly defined metrics such as accuracy, training time, and GPU utilization are used. These metrics are explained and effectively capture solution performance. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Reference implementations available and actively maintained; HPC setup may require domain-specific environment. 
+  - **Reason:** A reference implementation is available, well-documented, trainable/open, and includes full metric evaluation and software/hardware details. 
 
 
 Documentation:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** GitHub repo and papers provide detailed instructions; reproducibility supported across multiple institutions. 
+  - **Reason:** Thorough documentation exists covering the task, background, motivation, evaluation criteria, and includes a supporting paper. 
+
+
+**Average Rating:** 5.0
 
 
 **Radar Plot:**

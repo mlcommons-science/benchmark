@@ -30,8 +30,8 @@
 
 - Patrick Odagiu, Zhiqiang Que, Javier Duarte, Johannes Haller, Gregor Kasieczka, Artur Lobanov, Vladimir Loncar, Wayne Luk, Jennifer Ngadiuba, Maurizio Pierini, Philipp Rincke, Arpita Seksaria, Sioni Summers, Andre Sznajder, Alexander Tapper, and Thea K. Aarrestad. Ultrafast jet classification on fpgas for the hl-lhc. 2024. URL: https://arxiv.org/abs/2402.01876, arXiv:2402.01876, doi:https://doi.org/10.1088/2632-2153/ad5f10.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{odagiu2024ultrafastjetclassificationfpgas,
 
         archiveprefix = {arXiv},
@@ -52,54 +52,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** Not containerized; Setup and automation incomplete 
 
 
 Specification:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Task is clear  RL control of beam stability , with BOOSTR-based simulator; control objectives are well motivated, but system constraints and reward structure are still under refinement. 
+  - **Reason:** Hardware constraints are referenced but not fully detailed or standardized 
 
 
 Dataset:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 4
 
 
-  - **Reason:** BOOSTR dataset exists and is cited, but integration into the benchmark is in early stages; metadata and FAIR structure are limited. 
+  - **Reason:** FAIR metadata limited; no clear mention of dataset format or splits 
 
 
 Metrics:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 3
 
 
-  - **Reason:** Stability and control loss are mentioned, but metrics are not yet formalized with clear definitions or baselines. 
+  - **Reason:** Metrics exist  accuracy, latency, utilization , but formal definitions and evaluation guidance are limited 
 
 
 Reference Solution:
 
 
-  - **Rating:** 5.5
+  - **Rating:** 2
 
 
-  - **Reason:** DDPG baseline mentioned; PPO planned; implementation is still in progress with no reproducible results available yet. 
+  - **Reason:** Reference implementations not fully reproducible; no evaluation pipeline or training setup provided 
 
 
 Documentation:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 3
 
 
-  - **Reason:** GitHub has a defined structure but is incomplete; setup and execution instructions for training/evaluation are not fully established. 
+  - **Reason:** No linked GitHub repo or setup instructions; paper provides partial guidance only 
+
+
+**Average Rating:** 3.167
 
 
 **Radar Plot:**

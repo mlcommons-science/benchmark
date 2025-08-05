@@ -30,8 +30,8 @@
 
 - Tingjia Shen, Hao Wang, Jiaqing Zhang, Sirui Zhao, Liangyue Li, Zulong Chen, Defu Lian, and Enhong Chen. Exploring user retrieval integration towards large language models for cross-domain sequential recommendation. 2024. URL: https://arxiv.org/abs/2406.03085, arXiv:2406.03085.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{shen2024exploringuserretrievalintegration,
 
         title={Exploring User Retrieval Integration towards Large Language Models for Cross-Domain Sequential Recommendation}, 
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 0
+
+
+  - **Reason:** This is a model, not a benchmark. 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 0
 
 
-  - **Reason:** The task of ML correction to DFT energy predictions is well-specified. 
+  - **Reason:** This is a model, not a benchmark. 
 
 
 Dataset:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 0
 
 
-  - **Reason:** 10 public reaction datasets with DFT and CC references; well-documented. 
+  - **Reason:** This is a model, not a benchmark. 
 
 
 Metrics:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 0
 
 
-  - **Reason:** Uses MAE and ranking accuracy, suitable for this task. 
+  - **Reason:** This is a model, not a benchmark. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 0
 
 
-  - **Reason:** Includes both Delta^2 and KRR baselines. 
+  - **Reason:** This is a model, not a benchmark. 
 
 
 Documentation:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 0
 
 
-  - **Reason:** Public benchmarks and clear reproducibility via datasets and model code. 
+  - **Reason:** This is a model, not a benchmark. 
+
+
+**Average Rating:** 0.0
 
 
 **Radar Plot:**

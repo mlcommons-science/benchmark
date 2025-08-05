@@ -30,8 +30,8 @@
 
 - Pin Chen, Luoxuan Peng, Rui Jiao, Qing Mo, Zhen Wang, Wenbing Huang, Yang Liu, and Yutong Lu. Learning superconductivity from ordered and disordered material structures. In A. Globerson, L. Mackey, D. Belgrave, A. Fan, U. Paquet, J. Tomczak, and C. Zhang, editors, Advances in Neural Information Processing Systems, volume 37, 108902–108928. Curran Associates, Inc., 2024. URL: https://proceedings.neurips.cc/paper_files/paper/2024/file/c4e3b55ed4ac9ba52d7df11f8bddbbf4-Paper-Datasets_and_Benchmarks_Track.pdf.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @inproceedings{neurips2024_c4e3b55e,
 
         author = {Chen, Pin and Peng, Luoxuan and Jiao, Rui and Mo, Qing and Wang, Zhen and Huang, Wenbing and Liu, Yang and Lu, Yutong},
@@ -54,54 +54,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** Baseline models  SODNet, DiffCSP-SC  are described in the paper; however, fully reproducible code and pretrained models are not publicly available yet. 
 
 
 Specification:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 5
 
 
-  - **Reason:** Multimodal task  segmentation + natural language QA pairs ;. 
+  - **Reason:** Tasks for regression  Tc prediction  and generative modeling with clear input/output structures and domain constraints are well defined. 
 
 
 Dataset:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 5
 
 
-  - **Reason:** sonar imagery + masks + descriptions, georeferenced and labeled with QA 
+  - **Reason:** Dataset contains 3D crystal structures and associated properties; well-curated but not fully released publicly at this time. 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** Pixel accuracy and QA metrics clearly defined; tasks split by modality. 
+  - **Reason:** Metrics such as MAE for Tc prediction and validity checks for generated structures are appropriate and clearly described. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Baseline models  SegFormer, ViLT  are cited, partial configs likely available. 
+  - **Reason:** Paper provides model architecture details and some training insights, but no complete open-source reference implementations yet. 
 
 
 Documentation:
 
 
-  - **Rating:** 8.5
+  - **Rating:** 4
 
 
-  - **Reason:** Paper + GitHub metadata and processing details are comprehensive, though full dataset is not yet available. 
+  - **Reason:** Paper and GitHub provide good metadata and data processing descriptions; tutorials and user guides could be expanded. 
+
+
+**Average Rating:** 4.167
 
 
 **Radar Plot:**

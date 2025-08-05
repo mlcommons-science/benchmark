@@ -30,8 +30,8 @@
 
 - Yiheng Wang, Tianyu Wang, Yuying Zhang, Hongji Zhang, Haoyu Zheng, Guanjie Zheng, and Linghe Kong. Urbandatalayer: a unified data pipeline for urban science. In A. Globerson, L. Mackey, D. Belgrave, A. Fan, U. Paquet, J. Tomczak, and C. Zhang, editors, Advances in Neural Information Processing Systems, volume 37, 7296–7310. Curran Associates, Inc., 2024. URL: https://proceedings.neurips.cc/paper_files/paper/2024/file/0db7f135f6991e8cec5e516ecc66bfba-Paper-Datasets_and_Benchmarks_Track.pdf.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @inproceedings{neurips2024_0db7f135,
 
         author = {Wang, Yiheng and Wang, Tianyu and Zhang, Yuying and Zhang, Hongji and Zheng, Haoyu and Zheng, Guanjie and Kong, Linghe},
@@ -54,54 +54,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** Source code is publicly available on GitHub; baseline regression and classification pipelines are included but framework maturity is moderate. 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Three tasks  de novo generation, retrieval, simulation  are clearly defined for MS/MS molecule discovery. 
+  - **Reason:** Multiple urban science tasks like prediction and classification are well specified with clear input/output and evaluation criteria. 
 
 
 Dataset:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 5
 
 
-  - **Reason:** Over 1 million spectra with structure annotations; dataset is open-source and well-documented. 
+  - **Reason:** Large, multi-modal urban datasets are open-source, well-documented, and support reproducible research. 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Task-appropriate metrics  structure accuracy, precision, MSE  are specified and used consistently. 
+  - **Reason:** Uses task-specific accuracy and RMSE metrics appropriate for prediction and classification. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Baseline models are available  graph-based and retrieval , though not exhaustive. 
+  - **Reason:** Baseline models available but not exhaustive; community adoption and extensions expected. 
 
 
 Documentation:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** GitHub repo and poster provide code and reproducibility guidance. 
+  - **Reason:** GitHub repository and conference poster provide comprehensive code and reproducibility instructions. 
+
+
+**Average Rating:** 4.5
 
 
 **Radar Plot:**

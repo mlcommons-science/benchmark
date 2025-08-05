@@ -30,8 +30,8 @@
 
 - Keisuke Sakaguchi, Ronan Le Bras, Chandra Bhagavatula, and Yejin Choi. Winogrande: an adversarial winograd schema challenge at scale. 2019. URL: https://arxiv.org/abs/1907.10641, arXiv:1907.10641.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{sakaguchi2019winograndeadversarialwinogradschema,
 
         archiveprefix = {arXiv},
@@ -50,15 +50,24 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 0
+
+
+  - **Reason:** No template code provided 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
   - **Reason:** Task  pronoun/coreference resolution  is clearly defined in Winograd Schema style, with consistent input/output format; no system constraints included. 
@@ -67,7 +76,7 @@ Specification:
 Dataset:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
   - **Reason:** Public, versioned, and FAIR-compliant with AFLite-generated splits to reduce annotation artifacts; hosted by AllenAI with good metadata. 
@@ -76,7 +85,7 @@ Dataset:
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
   - **Reason:** Accuracy and AUC are quantitative and well-aligned with disambiguation goals; standardized across evaluations. 
@@ -85,19 +94,22 @@ Metrics:
 Reference Solution:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Baseline results for BERT, RoBERTa, GPT-2, etc., are published, but official runnable baselines require setup via AllenNLP or other frameworks. 
+  - **Reason:** Baseline results available, requiring users to submit their methods along with their submissions. Constraints are not required in submissions. 
 
 
 Documentation:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 5
 
 
-  - **Reason:** Dataset page and paper provide sufficient detail; usage with HuggingFace is smooth, but full reproducibility for training requires configuration effort. 
+  - **Reason:** Dataset page and paper provide sufficient detail 
+
+
+**Average Rating:** 4.0
 
 
 **Radar Plot:**

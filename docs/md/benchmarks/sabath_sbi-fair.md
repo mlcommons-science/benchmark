@@ -30,8 +30,8 @@
 
 - Piotr Luszczek. Sabath: fair metadata technology for surrogate benchmarks. Technical Report, University of Tennessee, 2021. URL: https://github.com/icl-utk-edu/slip/tree/sabath.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @techreport{luszczek2021sabath,
 
         title={SABATH: FAIR Metadata Technology for Surrogate Benchmarks},
@@ -46,54 +46,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 4
+
+
+  - **Reason:** Actively maintained GitHub repository  https://github.com/icl-utk-edu/slip/tree/sabath  with BSD-licensed tooling for FAIR metadata capture; integrates with existing surrogate modeling benchmarks. 
 
 
 Specification:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** The benchmark defines simulation-based inference  SBI  tasks clearly with FAIR principles applied to particle physics datasets. 
+  - **Reason:** FAIR metadata structure and logging goals are clearly described. Input/output definitions are implied through integrations  e.g., MiniWeatherML , though not always formalized. 
 
 
 Dataset:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Data is well-structured for SBI and publicly available with clear licensing. 
+  - **Reason:** Datasets used in surrogate benchmarks are publicly available, well-structured, and FAIR-aligned, but not independently hosted by Sabath itself. 
 
 
 Metrics:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Includes likelihood and posterior accuracy; metrics well-matched to SBI. 
+  - **Reason:** Emphasizes metadata completeness and FAIR compliance. Metrics are clear and well-matched to its metadata-focused benchmarking context. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 3
 
 
-  - **Reason:** Baseline SBI models are implemented and reproducible. 
+  - **Reason:** Includes integration with multiple surrogate benchmarks and models, though not all are fully documented or packaged as standardized reference solutions. 
 
 
 Documentation:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 3
 
 
-  - **Reason:** GitHub repo includes code and instructions, but lacks full tutorials or walkthroughs. 
+  - **Reason:** Basic instructions and code are provided on GitHub, but more detailed walkthroughs, use-case examples, or tutorials are limited. 
+
+
+**Average Rating:** 3.667
 
 
 **Radar Plot:**

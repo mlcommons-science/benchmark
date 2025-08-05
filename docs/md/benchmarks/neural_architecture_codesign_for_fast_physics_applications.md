@@ -30,8 +30,8 @@
 
 - Jason Weitz, Dmitri Demler, Luke McDermott, Nhan Tran, and Javier Duarte. Neural architecture codesign for fast physics applications. 2025. URL: https://arxiv.org/abs/2501.05515, arXiv:2501.05515.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{weitz2025neuralarchitecturecodesignfast,
 
         archiveprefix={arXiv},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** Toolchain  hls4ml, nac-opt  described but not yet containerized or fully packaged 
 
 
 Specification:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 5
 
 
-  - **Reason:** Task is clearly defined  triggering on rare events with sub-10 micros latency ; architecture, constraints, and system context  FPGA, Alveo  are well detailed. 
+  - **Reason:** Fully specified task with constraints and target deployment; includes hardware context 
 
 
 Dataset:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 2
 
 
-  - **Reason:** Simulated tracking data from sPHENIX and EIC; internally structured but not yet released in a public FAIR-compliant format. 
+  - **Reason:** Simulated datasets referenced but not publicly available or FAIR-compliant 
 
 
 Metrics:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 5
 
 
-  - **Reason:** Accuracy, latency, and hardware resource utilization  LUTs, DSPs  are clearly defined and used in evaluation. 
+  - **Reason:** Clear, quantitative metrics aligned with task goals and hardware evaluation 
 
 
 Reference Solution:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** Graph-based models  BGN-ST, GarNet  are implemented and tested on real hardware; reproducibility possible with hls4ml but full scripts not bundled. 
+  - **Reason:** Models tested on hardware with source code references; full training pipeline not yet released 
 
 
 Documentation:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Paper is detailed and tool usage  FlowGNN, hls4ml  is described, but repo release and dataset access remain in progress. 
+  - **Reason:** Detailed paper and tools described; open repo planned but not yet complete 
+
+
+**Average Rating:** 3.833
 
 
 **Radar Plot:**

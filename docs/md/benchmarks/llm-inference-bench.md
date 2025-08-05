@@ -30,8 +30,8 @@
 
 - Krishna Teja Chitty-Venkata, Siddhisanket Raskar, Bharat Kale, Farah Ferdaus, Aditya Tanikanti, Ken Raffenetti, Valerie Taylor, Murali Emani, and Venkatram Vishwanath. Llm-inference-bench: inference benchmarking of large language models on ai accelerators. In SC24-W: Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis, volume, 1362 1379. 2024. doi:10.1109/SCW63240.2024.00178.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @INPROCEEDINGS{10820566,
 
         author={Chitty-Venkata, Krishna Teja and Raskar, Siddhisanket and Kale, Bharat and Ferdaus, Farah and Tanikanti, Aditya and Raffenetti, Ken and Taylor, Valerie and Emani, Murali and Vishwanath, Venkatram},
@@ -54,54 +54,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** Public GitHub repository  https://github.com/argonne-lcf/LLM-Inference-Bench  under BSD-3 license. Includes scripts, configurations, and dashboards for running and visualizing LLM inference benchmarks across multiple accelerator platforms. 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** PDE tasks  forward/inverse  and I/O structures are clearly specified with detailed PDE context and constraints. 
+  - **Reason:** Benchmark scope, models, accelerator targets, and supported frameworks are clearly specified. Input configurations and output metrics are standardized across hardware types. 
 
 
 Dataset:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 2
 
 
-  - **Reason:** Hosted via DaRUS with a DOI, well-documented, versioned, and FAIR-compliant. 
+  - **Reason:** No novel dataset is introduced; benchmark relies on pre-trained LLMs and synthetic inference inputs. Dataset structure and FAIR considerations are minimal. 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Uses RMSE variants and Fourier-based errors. 
+  - **Reason:** Hardware-specific metrics  token throughput, latency, utilization  are well-defined, consistently measured, and aggregated in dashboards. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 3
 
 
-  - **Reason:** Baselines  FNO, U-Net, PINN  implemented and ready-to-run; strong community adoption. 
+  - **Reason:** Inference configurations and baseline performance results are provided, but there are no full reference training pipelines or model implementations. 
 
 
 Documentation:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** Clean GitHub with usage, dataset links, and tutorial notebooks. 
+  - **Reason:** GitHub repo provides clear usage instructions, setup guides, and interactive dashboard tooling. Some areas like benchmarking extensions or advanced tuning are less detailed. 
+
+
+**Average Rating:** 4.0
 
 
 **Radar Plot:**

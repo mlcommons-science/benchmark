@@ -30,8 +30,8 @@
 
 - Anubhav Jain, Shyue Ping Ong, Geoffroy Hautier, Wei Chen, William Davidson Richards, Stephen Dacek, Shreyas Cholia, Dan Gunter, David Skinner, Gerbrand Ceder, and Kristin A. Persson. The materials project: a materials genome approach. APL Materials, 2013. URL: https://materialsproject.org/, doi:10.1063/1.4812323.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @article{jain2013materials,
 
         title={The Materials Project: A materials genome approach},
@@ -52,15 +52,24 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 0
+
+
+  - **Reason:** No instructions available 
 
 
 Specification:
 
 
-  - **Rating:** 8
+  - **Rating:** 1.5
 
 
   - **Reason:** The platform offers a wide range of material property prediction tasks, but task framing and I/O formats vary by API use and are not always standardized across use cases. 
@@ -69,16 +78,16 @@ Specification:
 Dataset:
 
 
-  - **Rating:** 8
+  - **Rating:** 3
 
 
-  - **Reason:** Data is versioned, accessible through both UI and API, with rich metadata and citations; widely reused. API key required to access data. 
+  - **Reason:** API key required to access data. No predefined splits. 
 
 
 Metrics:
 
 
-  - **Rating:** 10
+  - **Rating:** 5
 
 
   - **Reason:** Uses numerical metrics like MAE and R^2 
@@ -87,19 +96,22 @@ Metrics:
 Reference Solution:
 
 
-  - **Rating:** 6
+  - **Rating:** 2
 
 
-  - **Reason:** Numerous models  e.g., Automatminer, CGCNN  trained on the database, but no single canonical baseline is tightly integrated into the platform. 
+  - **Reason:** Numerous models  e.g., Automatminer, CGCNN  trained on the database, but no constraints or documentation listed. 
 
 
 Documentation:
 
 
-  - **Rating:** 7
+  - **Rating:** 0
 
 
-  - **Reason:** Extensive API, code repositories, and user guides exist, but end-to-end benchmarking workflows require additional setup by users. 'Documentation' link did not work. 
+  - **Reason:** No explanations or paper provided 
+
+
+**Average Rating:** 1.917
 
 
 **Radar Plot:**

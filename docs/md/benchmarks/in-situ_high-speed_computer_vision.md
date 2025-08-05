@@ -30,8 +30,8 @@
 
 - Yumou Wei, Ryan F. Forelli, Chris Hansen, Jeffrey P. Levesque, Nhan Tran, Joshua C. Agar, Giuseppe Di Guglielmo, Michael E. Mauel, and Gerald A. Navratil. Low latency optical-based mode tracking with machine learning deployed on fpgas on a tokamak. 2024. URL: https://arxiv.org/abs/2312.00128, arXiv:2312.00128, doi:https://doi.org/10.1063/5.0190354.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{wei2024lowlatencyopticalbasedmode,
 
         archiveprefix = {arXiv},
@@ -52,54 +52,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 1
+
+
+  - **Reason:** No public implementation or containerized setup released 
 
 
 Specification:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 3
 
 
-  - **Reason:** General task defined  real-time microscopy inference , but no standardized I/O format, latency constraint, or complete problem framing yet. 
+  - **Reason:** No standardized I/O, latency constraint, or complete framing 
 
 
 Dataset:
 
 
-  - **Rating:** 0.0
+  - **Rating:** 0
 
 
-  - **Reason:** Dataset not provided or described in any formal way. 
+  - **Reason:** Dataset not provided or described in any formal way 
 
 
 Metrics:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 2
 
 
-  - **Reason:** Mentions throughput and accuracy, but metrics are not formally defined or benchmarked. 
+  - **Reason:** Throughput and accuracy mentioned, but not defined or benchmarked 
 
 
 Reference Solution:
 
 
-  - **Rating:** 2.0
+  - **Rating:** 1
 
 
-  - **Reason:** Prototype CNNs described; no baseline or implementation released. 
+  - **Reason:** Prototype CNNs described; no code, baseline, or training details available 
 
 
 Documentation:
 
 
-  - **Rating:** 5.0
+  - **Rating:** 2
 
 
-  - **Reason:** OpenReview paper and Gemini doc give some insight, but no working code, environment, or example. 
+  - **Reason:** Some insight via papers, but no working repo, setup, or replication path 
+
+
+**Average Rating:** 1.5
 
 
 **Radar Plot:**

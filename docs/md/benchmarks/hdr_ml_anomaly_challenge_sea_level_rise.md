@@ -30,9 +30,9 @@
 
 - Elizabeth G. Campolongo, Yuan-Tang Chou, Ekaterina Govorkova, Wahid Bhimji, Wei-Lun Chao, Chris Harris, Shih-Chieh Hsu, Hilmar Lapp, Mark S. Neubauer, Josephine Namayanja, Aneesh Subramanian, Philip Harris, Advaith Anand, David E. Carlyn, Subhankar Ghosh, Christopher Lawrence, Eric Moreno, Ryan Raikman, Jiaman Wu, Ziheng Zhang, Bayu Adhi, Mohammad Ahmadi Gharehtoragh, Saúl Alonso Monsalve, Marta Babicz, Furqan Baig, Namrata Banerji, William Bardon, Tyler Barna, Tanya Berger-Wolf, Adji Bousso Dieng, Micah Brachman, Quentin Buat, David C. Y. Hui, Phuong Cao, Franco Cerino, Yi-Chun Chang, Shivaji Chaulagain, An-Kai Chen, Deming Chen, Eric Chen, Chia-Jui Chou, Zih-Chen Ciou, Miles Cochran-Branson, Artur Cordeiro Oudot Choi, Michael Coughlin, Matteo Cremonesi, Maria Dadarlat, Peter Darch, Malina Desai, Daniel Diaz, Steven Dillmann, Javier Duarte, Isla Duporge, Urbas Ekka, Saba Entezari Heravi, Hao Fang, Rian Flynn, Geoffrey Fox, Emily Freed, Hang Gao, Jing Gao, Julia Gonski, Matthew Graham, Abolfazl Hashemi, Scott Hauck, James Hazelden, Joshua Henry Peterson, Duc Hoang, Wei Hu, Mirco Huennefeld, David Hyde, Vandana Janeja, Nattapon Jaroenchai, Haoyi Jia, Yunfan Kang, Maksim Kholiavchenko, Elham E. Khoda, Sangin Kim, Aditya Kumar, Bo-Cheng Lai, Trung Le, Chi-Wei Lee, JangHyeon Lee, Shaocheng Lee, Suzan van der Lee, Charles Lewis, Haitong Li, Haoyang Li, Henry Liao, Mia Liu, Xiaolin Liu, Xiulong Liu, Vladimir Loncar, Fangzheng Lyu, Ilya Makarov, Abhishikth Mallampalli Chen-Yu Mao, Alexander Michels, Alexander Migala, Farouk Mokhtar, Mathieu Morlighem, Min Namgung, Andrzej Novak, Andrew Novick, Amy Orsborn, Anand Padmanabhan, Jia-Cheng Pan, Sneh Pandya, Zhiyuan Pei, Ana Peixoto, George Percivall, Alex Po Leung, Sanjay Purushotham, Zhiqiang Que, Melissa Quinnan, Arghya Ranjan, Dylan Rankin, Christina Reissel, Benedikt Riedel, Dan Rubenstein, Argyro Sasli, Eli Shlizerman, Arushi Singh, Kim Singh, Eric R. Sokol, Arturo Sorensen, Yu Su, Mitra Taheri, Vaibhav Thakkar, Ann Mariam Thomas, Eric Toberer, Chenghan Tsai, Rebecca Vandewalle, Arjun Verma, Ricco C. Venterea, He Wang, Jianwu Wang, Sam Wang, Shaowen Wang, Gordon Watts, Jason Weitz, Andrew Wildridge, Rebecca Williams, Scott Wolf, Yue Xu, Jianqi Yan, Jai Yu, Yulei Zhang, Haoran Zhao, Ying Zhao, and Yibo Zhong. Building machine learning challenges for anomaly detection in science. 2025. URL: https://arxiv.org/abs/2503.02112, arXiv:2503.02112.
 
-  - bibtex: |
-
-      @misc{campolongo2025buildingmachinelearningchallenges,
+  - bibtex:
+      ```
+      @misc{campolongo2025buildingmachinelearningchallenges3,
 
         archiveprefix = {arXiv},
 
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 2
+
+
+  - **Reason:** Benchmark platform exists on Codabench, but no baseline code or maintained repository for reference solutions provided yet. 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Clear anomaly detection objective framed for physical signal discovery  LIGO/Virgo . 
+  - **Reason:** Well-defined anomaly detection task combining satellite imagery and time-series data, with clear physical and domain-specific framing. 
 
 
 Dataset:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 5
 
 
-  - **Reason:** Preprocessed waveform data from dual interferometers, public and well-structured. 
+  - **Reason:** Uses preprocessed, public, and well-structured sensor and satellite data for the North Atlantic sea-level rise region. 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** ROC-AUC, Precision/Recall, and confusion-based metrics are standardized. 
+  - **Reason:** Standard metrics such as ROC-AUC, precision, and recall are specified and suitable for the anomaly detection tasks. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 1.0
+  - **Rating:** 1
 
 
-  - **Reason:** No starter model or baseline code linked 
+  - **Reason:** No starter models or baseline implementations linked or provided publicly. 
 
 
 Documentation:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Codabench page, GitHub starter kit, and related papers provide strong guidance. 
+  - **Reason:** Challenge page, starter kits, and related papers offer strong guidance for participants. 
+
+
+**Average Rating:** 3.833
 
 
 **Radar Plot:**

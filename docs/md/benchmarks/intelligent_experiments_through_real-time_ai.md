@@ -30,8 +30,8 @@
 
 - J. Kvapil, G. Borca-Tasciuc, H. Bossi, K. Chen, Y. Chen, Y. Corrales Morales, H. Da Costa, C. Da Silva, C. Dean, J. Durham, S. Fu, C. Hao, P. Harris, O. Hen, H. Jheng, Y. Lee, P. Li, X. Li, Y. Lin, M. X. Liu, V. Loncar, J. P. Mitrevski, A. Olvera, M. L. Purschke, J. S. Renck, G. Roland, J. Schambach, Z. Shi, N. Tran, N. Wuerfel, B. Xu, D. Yu, and H. Zhang. Intelligent experiments through real-time ai: fast data processing and autonomous detector control for sphenix and future eic detectors. 2025. URL: https://arxiv.org/abs/2501.04845, arXiv:2501.04845.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{kvapil2025intelligentexperimentsrealtimeai,
 
         archiveprefix={arXiv},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** No containerized or open-source setup provided 
 
 
 Specification:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Task  trigger-level anomaly detection  is clearly defined for low-latency streaming input, but the problem framing lacks complete architectural/system specs. 
+  - **Reason:** Architectural/system specifications are incomplete 
 
 
 Dataset:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 2
 
 
-  - **Reason:** Internal DUNE SONIC data; not publicly released and no formal FAIR support; replicability is institutionally gated. 
+  - **Reason:** Dataset is internal and not publicly available or FAIR-compliant 
 
 
 Metrics:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 3
 
 
-  - **Reason:** Metrics include detection efficiency and latency, which are relevant, but only lightly supported by baselines or formal eval scripts. 
+  - **Reason:** Metrics relevant but not supported by evaluation scripts or baselines 
 
 
 Reference Solution:
 
 
-  - **Rating:** 5.0
+  - **Rating:** 3
 
 
-  - **Reason:** One CNN prototype demonstrated; LSTM planned. No public implementation or ready-to-run example yet. 
+  - **Reason:** No public or reproducible implementation released 
 
 
 Documentation:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 3
 
 
-  - **Reason:** Slides and some internal documentation exist, but no full pipeline or public GitHub repo yet. 
+  - **Reason:** No public GitHub or complete pipeline documentation 
+
+
+**Average Rating:** 3.0
 
 
 **Radar Plot:**

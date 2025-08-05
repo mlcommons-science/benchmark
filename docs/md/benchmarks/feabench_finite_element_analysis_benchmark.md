@@ -28,60 +28,88 @@
 **Citation**:
 
 
-- Could not parse citation: 
+- Nayantara Mudur, Hao Cui, Subhashini Venugopalan, Paul Raccuglia, Michael P. Brenner, and Peter Norgaard. Feabench: evaluating language models on multiphysics reasoning ability. 2025. URL: https://arxiv.org/abs/2504.06260, arXiv:2504.06260.
 
-  - bibtex: |
+  - bibtex:
+      ```
+      @misc{mudur2025feabenchevaluatinglanguagemodels,
 
-      unknown
+        title={FEABench: Evaluating Language Models on Multiphysics Reasoning Ability}, 
 
+        author={Nayantara Mudur and Hao Cui and Subhashini Venugopalan and Paul Raccuglia and Michael P. Brenner and Peter Norgaard},
 
+        year={2025},
+
+        eprint={2504.06260},
+
+        archivePrefix={arXiv},
+
+        primaryClass={cs.AI},
+
+        url={https://arxiv.org/abs/2504.06260}, 
+
+        }
+
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 4
+
+
+  - **Reason:** Code is available, but poorly documented 
 
 
 Specification:
 
 
-  - **Rating:** 0
+  - **Rating:** 1.5
 
 
-  - **Reason:** Using the link results in a 404 Not Found error 
+  - **Reason:** Output is defined and task clarity is questionable 
 
 
 Dataset:
 
 
-  - **Rating:** 0
+  - **Rating:** 4
 
 
-  - **Reason:** Using the link results in a 404 Not Found error 
+  - **Reason:** Available, but not split into sets 
 
 
 Metrics:
 
 
-  - **Rating:** 0
+  - **Rating:** 5
 
 
-  - **Reason:** Using the link results in a 404 Not Found error 
+  - **Reason:** Fully defined metrics 
 
 
 Reference Solution:
 
 
-  - **Rating:** 0
+  - **Rating:** 4
 
 
-  - **Reason:** Using the link results in a 404 Not Found error 
+  - **Reason:** Three open-source models were used. No system constraints. 
 
 
 Documentation:
 
 
-  - **Rating:** 0
+  - **Rating:** 5
 
 
-  - **Reason:** Using the link results in a 404 Not Found error 
+  - **Reason:** In associated paper 
+
+
+**Average Rating:** 3.917
 
 
 **Radar Plot:**

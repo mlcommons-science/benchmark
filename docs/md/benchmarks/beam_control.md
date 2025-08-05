@@ -30,9 +30,9 @@
 
 - Javier Duarte, Nhan Tran, Ben Hawks, Christian Herwig, Jules Muhizi, Shvetank Prakash, and Vijay Janapa Reddi. Fastml science benchmarks: accelerating real-time scientific edge machine learning. 2022. URL: https://arxiv.org/abs/2207.07958, arXiv:2207.07958.
 
-  - bibtex: |
-
-      @misc{duarte2022fastmlsciencebenchmarksaccelerating,
+  - bibtex:
+      ```
+      @misc{duarte2022fastmlsciencebenchmarksaccelerating3,
 
         archiveprefix = {arXiv},
 
@@ -52,8 +52,8 @@
 
 - Diana Kafkes and Jason St. John. Boostr: a dataset for accelerator control systems. 2021. URL: https://arxiv.org/abs/2101.08359, arXiv:2101.08359.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{kafkes2021boostrdatasetacceleratorcontrol,
 
         archiveprefix = {arXiv},
@@ -72,54 +72,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 1
+
+
+  - **Reason:** Code not documented; Incomplete setup and not containerized 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** Task is well defined  real-time compression of sparse, irregular sensor data using autoencoders ; latency constraints are implied but not fully quantified. 
+  - **Reason:** Latency/resource constraints not fully quantified 
 
 
 Dataset:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 3
 
 
-  - **Reason:** Dataset is custom and synthetic but described well; FAIR-compliance is partial  reusable and accessible, but not externally versioned with rich metadata . 
+  - **Reason:** Not findable  no DOI/indexing ; Not interoperable  format/schema unspecified  
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Uses standard quantitative metrics  MSE, compression ratio  clearly aligned with compression and reconstruction goals. 
+  - **Reason:** All criteria met 
 
 
 Reference Solution:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 2
 
 
-  - **Reason:** Baseline  autoencoder and quantized variant  is provided, but training/inference pipeline is minimally documented and needs user setup. 
+  - **Reason:** HW/SW requirements missing; Metrics not evaluated with reference; Baseline not trainable/open 
 
 
 Documentation:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 3
 
 
-  - **Reason:** GitHub repo contains core components, but more structured setup instructions and pretrained weights would improve usability. 
+  - **Reason:** Setup instructions and pretrained model details are missing 
+
+
+**Average Rating:** 3.0
 
 
 **Radar Plot:**

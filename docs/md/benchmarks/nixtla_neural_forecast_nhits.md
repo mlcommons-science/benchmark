@@ -30,8 +30,8 @@
 
 - Cristian Challu, Kin G Olivares, Boris N Oreshkin, Federico Garza Ramirez, Max Mergenthaler Canseco, and Artur Dubrawski. Nhits: neural hierarchical interpolation for time series forecasting. In Proceedings of the AAAI conference on artificial intelligence, volume 37, 6989–6997. 2023.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @inproceedings{challu2023nhits,
 
        title={Nhits: Neural hierarchical interpolation for time series forecasting},
@@ -50,54 +50,66 @@
 
        }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** Implemented within the open-source NeuralForecast library under Apache 2.0. Includes training, evaluation, and hyperparameter tuning pipelines. Actively maintained. 
 
 
 Specification:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 5
 
 
-  - **Reason:** Primarily a visualization frontend; underlying benchmark definitions come from vLLM project. 
+  - **Reason:** The NHITS forecasting task is clearly defined with structured input/output formats. Model design targets long-horizon accuracy and compute efficiency. 
 
 
 Dataset:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 3
 
 
-  - **Reason:** No traditional dataset; displays live or logged benchmark metrics. 
+  - **Reason:** Uses standard benchmark datasets like M4, but does not bundle them directly. FAIR compliance depends on external dataset sources and user setup. 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Live throughput, memory, latency, and TTFT displayed interactively; highly informative for performance analysis. 
+  - **Reason:** Evaluated using RMSE, MAPE, and other standard forecasting metrics, integrated into training and evaluation APIs. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 4
 
 
-  - **Reason:** Dashboard built on vLLM benchmarks but not itself a complete experiment package. 
+  - **Reason:** Official NHITS implementation is fully reproducible with training/eval configs, though pretrained weights are not always provided. 
 
 
 Documentation:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Observable notebooks are intuitive; customization instructions are minimal but UI is self-explanatory. 
+  - **Reason:** Well-documented on GitHub and in AAAI paper, with code examples, training guidance, and usage tutorials. More model-specific docs could improve clarity further. 
+
+
+**Average Rating:** 4.333
 
 
 **Radar Plot:**

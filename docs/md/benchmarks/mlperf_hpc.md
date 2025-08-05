@@ -30,8 +30,8 @@
 
 - Steven Farrell, Murali Emani, Jacob Balma, Lukas Drescher, Aleksandr Drozd, Andreas Fink, Geoffrey Fox, David Kanter, Thorsten Kurth, Peter Mattson, Dawei Mu, Amit Ruhela, Kento Sato, Koichi Shirahata, Tsuguchika Tabaru, Aristeidis Tsaris, Jan Balewski, Ben Cumming, Takumi Danjo, Jens Domke, Takaaki Fukai, Naoto Fukumoto, Tatsuya Fukushi, Balazs Gerofi, Takumi Honda, Toshiyuki Imamura, Akihiko Kasagi, Kentaro Kawakami, Shuhei Kudo, Akiyoshi Kuroda, Maxime Martinasso, Satoshi Matsuoka, Henrique Mendonça, Kazuki Minami, Prabhat Ram, Takashi Sawada, Mallikarjun Shankar, Tom St. John, Akihiro Tabuchi, Venkatram Vishwanath, Mohamed Wahib, Masafumi Yamazaki, and Junqi Yin. Mlperf hpc: a holistic benchmark suite for scientific machine learning on hpc systems. 2021. URL: https://arxiv.org/abs/2110.11466, arXiv:2110.11466.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{farrell2021mlperfhpcholisticbenchmark,
 
         archiveprefix = {arXiv},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** Reference implementations exist but containerization and environment setup require manual effort across HPC systems. 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** Focused on structured/unstructured data pipelines; clearly defined tasks spanning analytics to AI; some scenarios lack hardware constraint modeling. 
+  - **Reason:** Hardware constraints and I/O formats are not fully defined for all scenarios. 
 
 
 Dataset:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Built from 13 real-world sources; structured for realistic big data scenarios; partially FAIR-compliant with documented data motifs. 
+  - **Reason:** Not all data is independently versioned or comes with standardized FAIR metadata. 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Covers data throughput, latency, and accuracy; quantitative and benchmark-ready. 
+  - **Reason:** None 
 
 
 Reference Solution:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Many pipeline and model examples provided using Hadoop/Spark/Flink; setup effort varies by task and platform. 
+  - **Reason:** Reproducibility and environment tuning depend on system configuration; baseline models not uniformly bundled. 
 
 
 Documentation:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Strong documentation with examples and task specifications; centralized support exists, but task-specific tuning may require domain expertise. 
+  - **Reason:** Central guidance is available but requires domain-specific effort to replicate results across systems. 
+
+
+**Average Rating:** 4.167
 
 
 **Radar Plot:**

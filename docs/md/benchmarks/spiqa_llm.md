@@ -30,8 +30,8 @@
 
 - Shraman Pramanick, Rama Chellappa, and Subhashini Venugopalan. Spiqa: a dataset for multimodal question answering on scientific papers. 2025. URL: https://arxiv.org/abs/2407.09413, arXiv:2407.09413.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{pramanick2025spiqadatasetmultimodalquestion,
 
         title={SPIQA: A Dataset for Multimodal Question Answering on Scientific Papers}, 
@@ -50,33 +50,42 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** Well-documented codebase available on Github 
 
 
 Specification:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 3.5
 
 
-  - **Reason:** Task of QA over scientific figures is interesting but not fully formalized in input/output terms. 
+  - **Reason:** Task of QA over scientific figures is sufficient but not fully formalized in input/output terms. No hawrdware constraints. 
 
 
 Dataset:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 5
 
 
-  - **Reason:** Uses SPIQA dataset with ~10 adapters; figures and questions are included, but not fully open. 
+  - **Reason:** Full dataset available on Hugging Face with train/test/valid splits. 
 
 
 Metrics:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 4
 
 
   - **Reason:** Reports accuracy and F1; fair but no visual reasoning-specific metric. 
@@ -85,19 +94,22 @@ Metrics:
 Reference Solution:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 4
 
 
-  - **Reason:** 10 LLM adapter baselines; results included. 
+  - **Reason:** 10 LLM adapter baselines; results included without constraints. 
 
 
 Documentation:
 
 
-  - **Rating:** 5.0
+  - **Rating:** 5
 
 
-  - **Reason:** Poster paper and limited documentation; no reproducibility instructions. 
+  - **Reason:** Full paper available 
+
+
+**Average Rating:** 4.417
 
 
 **Radar Plot:**

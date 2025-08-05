@@ -30,8 +30,8 @@
 
 - Hao Cui, Zahra Shamsi, Gowoon Cheon, Xuejian Ma, Shutong Li, Maria Tikhanovskaya, Peter Norgaard, Nayantara Mudur, Martyna Plomecka, Paul Raccuglia, Yasaman Bahri, Victor V. Albert, Pranesh Srinivasan, Haining Pan, Philippe Faist, Brian Rohr, Ekin Dogus Cubuk, Muratahan Aykol, Amil Merchant, Michael J. Statt, Dan Morris, Drew Purves, Elise Kleeman, Ruth Alcantara, Matthew Abraham, Muqthar Mohammad, Ean Phing VanLee, Chenfei Jiang, Elizabeth Dorfman, Eun-Ah Kim, Michael P Brenner, Viren Jain, Sameera Ponda, and Subhashini Venugopalan. Curie: evaluating llms on multitask scientific long context understanding and reasoning. 2025. URL: https://arxiv.org/abs/2503.13517, arXiv:2503.13517.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{cui2025curieevaluatingllmsmultitask,
 
         title={CURIE: Evaluating LLMs On Multitask Scientific Long Context Understanding and Reasoning}, 
@@ -50,15 +50,24 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 4
+
+
+  - **Reason:** Code is available, but not well documented 
 
 
 Specification:
 
 
-  - **Rating:** 7.5
+  - **Rating:** 1
 
 
   - **Reason:** Explains types of problems in detail, but does not state exactly how to administer them. 
@@ -67,7 +76,7 @@ Specification:
 Dataset:
 
 
-  - **Rating:** 8.5
+  - **Rating:** 4
 
 
   - **Reason:** Dataset is available via Github, but hard to find 
@@ -76,7 +85,7 @@ Dataset:
 Metrics:
 
 
-  - **Rating:** 10
+  - **Rating:** 5
 
 
   - **Reason:** Quantitiative metrics such as ROUGE-L and F1 used. Metrics are tailored to the specific problem. 
@@ -88,16 +97,19 @@ Reference Solution:
   - **Rating:** 1
 
 
-  - **Reason:** Does not exist 
+  - **Reason:** Exists, but is not open 
 
 
 Documentation:
 
 
-  - **Rating:** 2
+  - **Rating:** 5
 
 
-  - **Reason:** Provides very little information, if at all, on how to install and run the programs. 
+  - **Reason:** Associated paper explains all criteria 
+
+
+**Average Rating:** 3.333
 
 
 **Radar Plot:**

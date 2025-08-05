@@ -30,8 +30,8 @@
 
 - Elizabeth G. Campolongo, Yuan-Tang Chou, Ekaterina Govorkova, Wahid Bhimji, Wei-Lun Chao, Chris Harris, Shih-Chieh Hsu, Hilmar Lapp, Mark S. Neubauer, Josephine Namayanja, Aneesh Subramanian, Philip Harris, Advaith Anand, David E. Carlyn, Subhankar Ghosh, Christopher Lawrence, Eric Moreno, Ryan Raikman, Jiaman Wu, Ziheng Zhang, Bayu Adhi, Mohammad Ahmadi Gharehtoragh, Saúl Alonso Monsalve, Marta Babicz, Furqan Baig, Namrata Banerji, William Bardon, Tyler Barna, Tanya Berger-Wolf, Adji Bousso Dieng, Micah Brachman, Quentin Buat, David C. Y. Hui, Phuong Cao, Franco Cerino, Yi-Chun Chang, Shivaji Chaulagain, An-Kai Chen, Deming Chen, Eric Chen, Chia-Jui Chou, Zih-Chen Ciou, Miles Cochran-Branson, Artur Cordeiro Oudot Choi, Michael Coughlin, Matteo Cremonesi, Maria Dadarlat, Peter Darch, Malina Desai, Daniel Diaz, Steven Dillmann, Javier Duarte, Isla Duporge, Urbas Ekka, Saba Entezari Heravi, Hao Fang, Rian Flynn, Geoffrey Fox, Emily Freed, Hang Gao, Jing Gao, Julia Gonski, Matthew Graham, Abolfazl Hashemi, Scott Hauck, James Hazelden, Joshua Henry Peterson, Duc Hoang, Wei Hu, Mirco Huennefeld, David Hyde, Vandana Janeja, Nattapon Jaroenchai, Haoyi Jia, Yunfan Kang, Maksim Kholiavchenko, Elham E. Khoda, Sangin Kim, Aditya Kumar, Bo-Cheng Lai, Trung Le, Chi-Wei Lee, JangHyeon Lee, Shaocheng Lee, Suzan van der Lee, Charles Lewis, Haitong Li, Haoyang Li, Henry Liao, Mia Liu, Xiaolin Liu, Xiulong Liu, Vladimir Loncar, Fangzheng Lyu, Ilya Makarov, Abhishikth Mallampalli Chen-Yu Mao, Alexander Michels, Alexander Migala, Farouk Mokhtar, Mathieu Morlighem, Min Namgung, Andrzej Novak, Andrew Novick, Amy Orsborn, Anand Padmanabhan, Jia-Cheng Pan, Sneh Pandya, Zhiyuan Pei, Ana Peixoto, George Percivall, Alex Po Leung, Sanjay Purushotham, Zhiqiang Que, Melissa Quinnan, Arghya Ranjan, Dylan Rankin, Christina Reissel, Benedikt Riedel, Dan Rubenstein, Argyro Sasli, Eli Shlizerman, Arushi Singh, Kim Singh, Eric R. Sokol, Arturo Sorensen, Yu Su, Mitra Taheri, Vaibhav Thakkar, Ann Mariam Thomas, Eric Toberer, Chenghan Tsai, Rebecca Vandewalle, Arjun Verma, Ricco C. Venterea, He Wang, Jianwu Wang, Sam Wang, Shaowen Wang, Gordon Watts, Jason Weitz, Andrew Wildridge, Rebecca Williams, Scott Wolf, Yue Xu, Jianqi Yan, Jai Yu, Yulei Zhang, Haoran Zhao, Ying Zhao, and Yibo Zhong. Building machine learning challenges for anomaly detection in science. 2025. URL: https://arxiv.org/abs/2503.02112, arXiv:2503.02112.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{campolongo2025buildingmachinelearningchallenges,
 
         archiveprefix = {arXiv},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 4
+
+
+  - **Reason:** Benchmark platform provided on Codabench with starter kits and submission infrastructure. Code and baseline models are publicly accessible but not extensively maintained beyond the challenge. 
 
 
 Specification:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Novel approach treating forecasting as text generation is explained; framing is less conventional. 
+  - **Reason:** Well-defined anomaly detection task on gravitational-wave time series with clear input/output expectations and challenge constraints. 
 
 
 Dataset:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Compatible with standard forecasting datasets  e.g., M4, electricity . 
+  - **Reason:** Uses preprocessed LIGO/Virgo time series data at 4096 Hz, publicly available and standard in astrophysics. 
 
 
 Metrics:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** RMSE and MAPE are included, but less emphasis on interpretability or time-series domain constraints. 
+  - **Reason:** ROC-AUC, precision, and recall metrics are clearly specified and appropriate for anomaly detection. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** Open-source with reprogramming layers, LLM interface scripts provided. 
+  - **Reason:** Baseline deep latent CNNs and autoencoders are provided and reproducible, but not extensively documented. 
 
 
 Documentation:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Model and architecture overview present, though usability guide is slightly lighter than others. 
+  - **Reason:** Documentation includes challenge instructions, starter kit details, and baseline descriptions, but could benefit from more thorough tutorials and code walkthroughs. 
+
+
+**Average Rating:** 4.167
 
 
 **Radar Plot:**

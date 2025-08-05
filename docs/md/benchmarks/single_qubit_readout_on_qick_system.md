@@ -30,8 +30,8 @@
 
 - Giuseppe Di Guglielmo, Botao Du, Javier Campos, Alexandra Boltasseva, Akash V. Dixit, Farah Fahim, Zhaxylyk Kudyshev, Santiago Lopez, Ruichao Ma, Gabriel N. Perdue, Nhan Tran, Omer Yesilyurt, and Daniel Bowring. End-to-end workflow for machine learning-based qubit readout with qick and hls4ml. 2025. URL: https://arxiv.org/abs/2501.14663, arXiv:2501.14663.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{diguglielmo2025endtoendworkflowmachinelearningbased,
 
         archiveprefix = {arXiv},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** Code and FPGA firmware available on GitHub; integration with hls4ml demonstrated. Some deployment details and examples are provided but overall software maturity is moderate. 
 
 
 Specification:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Task clearly framed around detecting hybrid species via images, but exact labeling methods and hybrid definitions may need elaboration. 
+  - **Reason:** Task clearly defined: real-time single-qubit state classification with latency and fidelity constraints. Labeling and ground truth definitions could be more explicit. 
 
 
 Dataset:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Dataset hosted on Codabench; appears structured but details on image sourcing and labeling pipeline are limited. 
+  - **Reason:** Dataset hosted on Zenodo with structured data; however, detailed documentation on image acquisition and labeling pipeline is limited. 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Classification accuracy and F1 are standard and appropriate. 
+  - **Reason:** Standard classification metrics  accuracy, latency  are used and directly relevant to the quantum readout task. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 1.0
+  - **Rating:** 1
 
 
-  - **Reason:** No starter model or baseline code linked 
+  - **Reason:** No baseline or starter models with runnable code are linked publicly. 
 
 
 Documentation:
 
 
-  - **Rating:** 7.5
+  - **Rating:** 4
 
 
-  - **Reason:** Codabench task page describes dataset and evaluation method but lacks full API/docs. 
+  - **Reason:** Codabench task page and GitHub repo provide descriptions and usage instructions, but detailed API or deployment tutorials are limited. 
+
+
+**Average Rating:** 3.5
 
 
 **Radar Plot:**

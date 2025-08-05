@@ -30,8 +30,8 @@
 
 - Simon Mo. Vllm performance dashboard. 2024. URL: https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{mo2024vllm_dashboard,
 
         title={vLLM Performance Dashboard},
@@ -44,54 +44,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 4
+
+
+  - **Reason:** Interactive dashboard built with ObservableHQ and linked to vLLM benchmarks. Source code is not fully open, but backend integration with vLLM is well-maintained. 
 
 
 Specification:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Framed as a model-serving tool rather than a benchmark, but includes benchmark configurations and real model tasks. 
+  - **Reason:** While primarily a visualization tool, it includes benchmark configurations, metric definitions, and supports comparison across models and hardware. 
 
 
 Dataset:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 2
 
 
-  - **Reason:** Mostly uses dummy configs or external model endpoints for evaluation; not designed around a formal dataset. 
+  - **Reason:** No datasets are bundled; the dashboard visualizes metrics derived from model inference logs or external endpoints, not a formal dataset. 
 
 
 Metrics:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Well-defined serving metrics: tokens/sec, time-to-first-token, and gain over baselines. 
+  - **Reason:** Tracks tokens/sec, TTFT, memory usage, and platform comparisons. Metrics are clear but focused on visualization rather than statistical robustness. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 3
 
 
-  - **Reason:** Core framework includes full reproducible serving benchmarks and code; multiple deployment case studies. 
+  - **Reason:** Dashboards include reproducible views of benchmarked models, but do not ship with runnable model code. Relies on external serving infrastructure. 
 
 
 Documentation:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** High-quality usage guides, examples, and performance tuning docs. 
+  - **Reason:** Public dashboard with instructions and tooltips; documentation is clear, though access is restricted  login required  and backend setup is opaque to users. 
+
+
+**Average Rating:** 3.5
 
 
 **Radar Plot:**

@@ -30,8 +30,8 @@
 
 - Wanling Gao, Jianfeng Zhan, Lei Wang, Chunjie Luo, Daoyi Zheng, Xu Wen, Rui Ren, Chen Zheng, Xiwen He, Hainan Ye, Haoning Tang, Zheng Cao, Shujie Zhang, and Jiahui Dai. Bigdatabench: a scalable and unified big data and ai benchmark suite. 2018. URL: https://arxiv.org/abs/1802.08254, arXiv:1802.08254.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{gao2018bigdatabenchscalableunifiedbig,
 
         archiveprefix = {arXiv},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** No automated setup across all tasks; some components require manual integration. 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** Evaluates AI at multiple levels  micro to end-to-end ; tasks and workloads are clearly defined, though specific I/O formats and constraints vary. 
+  - **Reason:** Specific I/O formats and hardware constraints are not uniformly detailed across all tasks. 
 
 
 Dataset:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** Realistic datasets across diverse domains; FAIR structure for many components, but individual datasets may not all be versioned or richly annotated. 
+  - **Reason:** Some datasets lack consistent versioning or rich metadata annotations. 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Latency, throughput, and accuracy clearly defined for end-to-end tasks; consistent across models and setups. 
+  - **Reason:** None 
 
 
 Reference Solution:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Reference implementations for several tasks exist, but setup across all tasks is complex and not fully streamlined. 
+  - **Reason:** Not all benchmark components have fully reproducible baselines; deployment across platforms is fragmented. 
 
 
 Documentation:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Central documentation exists, with detailed component breakdowns; environment setup across platforms  e.g., hardware variations  can require manual adjustment. 
+  - **Reason:** Setup requires manual steps; some task-specific instructions lack clarity. 
+
+
+**Average Rating:** 4.0
 
 
 **Radar Plot:**

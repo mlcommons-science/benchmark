@@ -30,8 +30,8 @@
 
 - Lianmin Zheng, Liangsheng Yin, Zhiqiang Xie, Chuyue Sun, Jeff Huang, Cody Hao Yu, Shiyi Cao, Christos Kozyrakis, Ion Stoica, Joseph E. Gonzalez, Clark Barrett, and Ying Sheng. Sglang: efficient execution of structured language model programs. 2024. URL: https://arxiv.org/abs/2312.07104, arXiv:2312.07104.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{zheng2024sglangefficientexecutionstructured,
 
         archiveprefix = {arXiv},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** Actively maintained and production-deployed  e.g., xAI, NVIDIA ; source code available under Apache 2.0. Includes efficient backends  RadixAttention, quantization, batching  and full serving infrastructure. 
 
 
 Specification:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Clearly framed around surrogate learning across 16 domains, but not all tasks are formally posed or constrained in a unified benchmark protocol. Paper mentions performance on NVIDIA H100. 
+  - **Reason:** The framework clearly defines performance targets, serving logic, and model integration. Input/output expectations are consistent, but not all benchmarks are standardized. 
 
 
 Dataset:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 2
 
 
-  - **Reason:** FAIR-compliant physics simulation dataset, structured in HDF5 with unified metadata. 
+  - **Reason:** Does not introduce new datasets; instead, it evaluates performance using existing model benchmarks. Only configuration files are included. 
 
 
 Metrics:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 5
 
 
-  - **Reason:** Metrics like dataset size and domain coverage are listed, but standardized quantitative model evaluation metrics  e.g., RMSE, MAE  are not enforced. 
+  - **Reason:** Serving-related metrics such as tokens/sec, time-to-first-token, and throughput gain vs. baselines are well-defined and consistently applied. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 3
 
 
-  - **Reason:** FNO and U-Net baselines available; full benchmarking implementations pending NeurIPS paper code release. 
+  - **Reason:** Provides benchmark configs and example integrations  e.g., with LLaVA, DeepSeek , but not all models or scripts are runnable out-of-the-box. 
 
 
 Documentation:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 4
 
 
-  - **Reason:** Site and GitHub offer a unified API, metadata standards, and dataset loading tools; NeurIPS paper adds detailed design context. 
+  - **Reason:** Strong GitHub documentation, install guides, and benchmarks. Some advanced topics  e.g., scaling, hardware tuning  could use deeper walkthroughs. 
+
+
+**Average Rating:** 3.833
 
 
 **Radar Plot:**

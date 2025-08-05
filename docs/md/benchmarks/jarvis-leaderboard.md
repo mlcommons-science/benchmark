@@ -30,8 +30,8 @@
 
 - Kamal Choudhary, Daniel Wines, Kangming Li, Kevin F. Garrity, Vishu Gupta, Aldo H. Romero, Jaron T. Krogel, Kayahan Saritas, Addis Fuhr, Panchapakesan Ganesh, Paul R. C. Kent, Keqiang Yan, Yuchao Lin, Shuiwang Ji, Ben Blaiszik, Patrick Reiser, Pascal Friederich, Ankit Agrawal, Pratyush Tiwary, Eric Beyerle, Peter Minch, Trevor D. Rhone, Ichiro Takeuchi, Robert B. Wexler, Arun Mannodi-Kanakkithodi, Elif Ertekin, Avanish Mishra, Nithin Mathew, Mitchell Wood, Andrew D. Rohskopf, Jason Hattrick-Simpers, Shih-Han Wang, Luke E. K. Achenie, Hongliang Xin, Maureen Williams, Adam J. Biacchi, and Francesca Tavazza. JARVIS-Leaderboard: a large scale benchmark of materials design methods. npj Computational Materials, 10(1):93, 2024. URL: https://doi.org/10.1038/s41524-024-01259-w, doi:10.1038/s41524-024-01259-w.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @article{choudhary2024jarvis,
 
         title = {{JARVIS-Leaderboard}: a large scale benchmark of materials design methods},
@@ -54,54 +54,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 1
+
+
+  - **Reason:** Setup script provided, but no code provided 
 
 
 Specification:
 
 
-  - **Rating:** 6
+  - **Rating:** 1
 
 
-  - **Reason:** Tasks are clearly defined; heterogeneity in benchmarks slightly reduces uniformity; I/O format is not specified 
+  - **Reason:** Only dataset format is defined. 
 
 
 Dataset:
 
 
-  - **Rating:** 9
+  - **Rating:** 4
 
 
-  - **Reason:** Data is versioned, public, and adheres to FAIR principles across the NIST-hosted infrastructure; however, metadata completeness varies slightly across benchmarks. 
+  - **Reason:** Data is public and adheres to FAIR principles across the NIST-hosted infrastructure; however, metadata completeness varies slightly across benchmarks. No splits. 
 
 
 Metrics:
 
 
-  - **Rating:** 4
+  - **Rating:** 5
 
 
-  - **Reason:** Overall goal is stated, but the exact metric evaluated is not listed 
+  - **Reason:** Metrics stated for each benchmark. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 5
+  - **Rating:** 4
 
 
-  - **Reason:** Many baselines across tasks  CGCNN, ALIGNN, M3GNet, etc. ; documentation is good, but baselines may be hard to find or not available for every individual task. 
+  - **Reason:** Many baselines across tasks  CGCNN, ALIGNN, M3GNet, etc. ; no constraints specified. 
 
 
 Documentation:
 
 
-  - **Rating:** 8.5
+  - **Rating:** 1
 
 
-  - **Reason:** JARVIS-Tools and leaderboard APIs are well-documented and actively maintained; minimal setup burden, though some task-specific workflows may require additional guidance. 
+  - **Reason:** Only the task is specified. 
+
+
+**Average Rating:** 2.667
 
 
 **Radar Plot:**

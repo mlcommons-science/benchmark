@@ -30,8 +30,8 @@
 
 - Lowik Chanussot, Abhishek Das, Siddharth Goyal, Thibaut Lavril, Muhammed Shuaibi, Morgane Riviere, Kevin Tran, Javier Heras-Domingo, Caleb Ho, Weihua Hu, Aini Palizhati, Anuroop Sriram, Brandon Wood, Junwoong Yoon, Devi Parikh, C. Lawrence Zitnick, and Zachary Ulissi. The open catalyst 2020 (oc20) dataset and community challenges. ACS Catalysis, 11(10):6059–6072, 2021. URL: https://pubs.acs.org/doi/10.1021/acscatal.0c04525, doi:10.1021/acscatal.0c04525.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @article{chanussot2021oc20,
 
         title     = {The Open Catalyst 2020 (OC20) Dataset and Community Challenges},
@@ -56,8 +56,8 @@
 
 - Richard Tran, Janice Lan, Muhammed Shuaibi, Brandon M. Wood, Siddharth Goyal, Abhishek Das, Javier Heras-Domingo, Adeesh Kolluru, Ammar Rizvi, Nima Shoghi, Anuroop Sriram, Félix Therrien, Jehad Abed, Oleksandr Voznyy, Edward H. Sargent, Zachary Ulissi, and C. Lawrence Zitnick. The open catalyst 2022 (oc22) dataset and challenges for oxide electrocatalysts. ACS Catalysis, 13(5):3066–3084, 2023. URL: https://pubs.acs.org/doi/10.1021/acscatal.2c05426, doi:10.1021/acscatal.2c05426.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @article{tran2023oc22,
 
         title     = {The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts},
@@ -82,8 +82,8 @@
 
 - Lowik Chanussot, Abhishek Das, Siddharth Goyal, Thibaut Lavril, Muhammed Shuaibi, Morgane Riviere, Kevin Tran, Javier Heras-Domingo, Caleb Ho, Weihua Hu, Aini Palizhati, Anuroop Sriram, Brandon Wood, Junwoong Yoon, Devi Parikh, C. Lawrence Zitnick, and Zachary Ulissi. Open catalyst 2020 (oc20) dataset and community challenges. ACS Catalysis, 11(10):6059 6072, 2021. URL: https://doi.org/10.1021/acscatal.0c04525, arXiv:https://doi.org/10.1021/acscatal.0c04525, doi:10.1021/acscatal.0c04525.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @article{doi:10.1021/acscatal.0c04525,
 
         author = {Chanussot, Lowik and Das, Abhishek and Goyal, Siddharth and Lavril, Thibaut and Shuaibi, Muhammed and Riviere, Morgane and Tran, Kevin and Heras-Domingo, Javier and Ho, Caleb and Hu, Weihua and Palizhati, Aini and Sriram, Anuroop and Wood, Brandon and Yoon, Junwoong and Parikh, Devi and Zitnick, C. Lawrence and Ulissi, Zachary},
@@ -106,8 +106,8 @@
 
 - Richard Tran, Janice Lan, Muhammed Shuaibi, Brandon M. Wood, Siddharth Goyal, Abhishek Das, Javier Heras-Domingo, Adeesh Kolluru, Ammar Rizvi, Nima Shoghi, Anuroop Sriram, Félix Therrien, Jehad Abed, Oleksandr Voznyy, Edward H. Sargent, Zachary Ulissi, and C. Lawrence Zitnick. The open catalyst 2022 (oc22) dataset and challenges for oxide electrocatalysts. ACS Catalysis, 13(5):3066 3084, February 2023. URL: http://dx.doi.org/10.1021/acscatal.2c05426, doi:10.1021/acscatal.2c05426.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @article{tran2023b,
 
         title={The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts},
@@ -134,15 +134,24 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** Data provided in Github links 
 
 
 Specification:
 
 
-  - **Rating:** 10
+  - **Rating:** 5
 
 
   - **Reason:** Tasks  energy and force prediction  are clearly defined with explicit I/O specifications, constraints, and physical relevance for renewable energy. 
@@ -151,7 +160,7 @@ Specification:
 Dataset:
 
 
-  - **Rating:** 9.5
+  - **Rating:** 5
 
 
   - **Reason:** Fully FAIR- OC20, per-adsorbate trajectories, and OC22 are versioned; datasets come with standardized splits, metadata, and are downloadable. 
@@ -160,7 +169,7 @@ Dataset:
 Metrics:
 
 
-  - **Rating:** 10
+  - **Rating:** 5
 
 
   - **Reason:** MAE  energy and force  are standard and reproducible. 
@@ -169,19 +178,22 @@ Metrics:
 Reference Solution:
 
 
-  - **Rating:** 9
+  - **Rating:** 4
 
 
-  - **Reason:** Multiple baselines  GemNet-OC, DimeNet++, etc.  implemented and evaluated; highly cited with documented performance. 
+  - **Reason:** Multiple baselines  GemNet-OC, DimeNet++, etc.  implemented and evaluated. No hardware listed. 
 
 
 Documentation:
 
 
-  - **Rating:** 9
+  - **Rating:** 1
 
 
-  - **Reason:** Code, data loaders, usage instructions, and leaderboard available; minor setup effort may still be required for full reproduction. 
+  - **Reason:** Paper exists, but content is behind a paywall. 
+
+
+**Average Rating:** 4.167
 
 
 **Radar Plot:**

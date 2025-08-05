@@ -30,8 +30,8 @@
 
 - Tung Nguyen, Jason Jewik, Hritik Bansal, Prakhar Sharma, and Aditya Grover. Climatelearn: benchmarking machine learning for weather and climate modeling. 2023. URL: https://arxiv.org/abs/2307.01909, arXiv:2307.01909.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{nguyen2023climatelearnbenchmarkingmachinelearning, 
 
         title={ClimateLearn: Benchmarking Machine Learning for Weather and Climate Modeling}, 
@@ -48,15 +48,24 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** Quickstart notebook makes for easy usage 
 
 
 Specification:
 
 
-  - **Rating:** 10
+  - **Rating:** 5
 
 
   - **Reason:** Task framing  medium-range climate forecasting , input/output formats, and evaluation windows are clearly defined; benchmark supports both physical and learned models with detailed constraints. 
@@ -65,7 +74,7 @@ Specification:
 Dataset:
 
 
-  - **Rating:** 10
+  - **Rating:** 5
 
 
   - **Reason:** Provides standardized access to ERA5 and other reanalysis datasets, with ML-ready splits, metadata, and Xarray-compatible formats; versioned and fully FAIR-compliant. 
@@ -74,7 +83,7 @@ Dataset:
 Metrics:
 
 
-  - **Rating:** 9
+  - **Rating:** 5
 
 
   - **Reason:** ACC and RMSE are standard, quantitative, and appropriate for climate forecasting; well-integrated into the benchmark, though interpretation across domains may vary. 
@@ -83,19 +92,22 @@ Metrics:
 Reference Solution:
 
 
-  - **Rating:** 8
+  - **Rating:** 0
 
 
-  - **Reason:** Multiple baselines  e.g., FourCastNet, ClimaX  are provided and evaluated; implementations are available but may require tuning or GPU-specific configuration. 
+  - **Reason:** The benchmark is geared for CNN architectures, but no specific model was mentioned. 
 
 
 Documentation:
 
 
-  - **Rating:** 8.5
+  - **Rating:** 5
 
 
-  - **Reason:** Comprehensive setup via GitHub, including data loaders, training scripts, config files, and reproducibility protocols; minor complexity in large-scale data preprocessing. 
+  - **Reason:** Explained in the benchmark's paper.  
+
+
+**Average Rating:** 4.167
 
 
 **Radar Plot:**

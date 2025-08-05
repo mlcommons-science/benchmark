@@ -30,9 +30,9 @@
 
 - David Rein, Betty Li Hou, Asa Cooper Stickland, Jackson Petty, Richard Yuanzhe Pang, Julien Dirani, Julian Michael, and Samuel R. Bowman. Gpqa: a graduate-level google-proof q and a benchmark. 2023. URL: https://arxiv.org/abs/2311.12022, arXiv:2311.12022.
 
-  - bibtex: |
-
-      @misc{rein2023gpqagraduatelevelgoogleproofqa,
+  - bibtex:
+      ```
+      @misc{rein2023gpqagraduatelevelgoogleproofqa2,
 
         archiveprefix = {arXiv},
 
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** Dataset and benchmark materials are publicly available via HuggingFace and GitHub, but no integrated runnable code or software framework is provided. 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Clear dual-modality task  image + time-series ; environmental focus is well described. 
+  - **Reason:** Task is clearly defined as a multiple-choice benchmark requiring expert-level scientific reasoning. Input/output formats and evaluation criteria are well described. 
 
 
 Dataset:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Time-series and satellite imagery data provided; sensor info and collection intervals are explained. 
+  - **Reason:** The GPQA dataset is publicly released, well curated, with metadata and clearly documented splits. 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** ROC-AUC, Precision/Recall are appropriate and robust. 
+  - **Reason:** Accuracy is the primary metric and is clearly defined and appropriate for multiple-choice QA. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 1.0
+  - **Rating:** 1
 
 
-  - **Reason:** No starter model or baseline code linked 
+  - **Reason:** No baseline implementations or starter code are linked or provided for reproduction. 
 
 
 Documentation:
 
 
-  - **Rating:** 6.5
+  - **Rating:** 3
 
 
-  - **Reason:** Moderate Codabench documentation with climate context; lacks pipeline-level walkthrough. 
+  - **Reason:** Documentation includes dataset description and benchmark instructions, but lacks detailed usage tutorials or pipelines. 
+
+
+**Average Rating:** 3.667
 
 
 **Radar Plot:**

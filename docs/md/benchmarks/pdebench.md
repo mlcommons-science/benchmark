@@ -30,8 +30,8 @@
 
 - Makoto Takamoto, Timothy Praditia, Raphael Leiteritz, Dan MacKinlay, Francesco Alesiani, Dirk Pflüger, and Mathias Niepert. Pdebench: an extensive benchmark for scientific machine learning. 2024. URL: https://arxiv.org/abs/2210.07182, arXiv:2210.07182.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{takamoto2024pdebenchextensivebenchmarkscientific,
 
         archiveprefix = {arXiv},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** GitHub repository  https://github.com/pdebench/PDEBench  is actively maintained and includes training pipelines, data loaders, and evaluation scripts. Installation and usage are well-documented. 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Clearly defined PDE-solving tasks with well-specified constraints and solution formats. 
+  - **Reason:** Clearly defined tasks for forward and inverse PDE problems, with structured input/output formats, system constraints, and task specifications. 
 
 
 Dataset:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Includes synthetic and real-world PDE datasets with detailed format descriptions. 
+  - **Reason:** Diverse PDE datasets  synthetic and real-world  hosted on DaRUS with DOIs. Datasets are well-documented, structured, and follow FAIR practices. 
 
 
 Metrics:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Uses L2 error and other norms relevant to PDE solutions. 
+  - **Reason:** Includes RMSE, boundary RMSE, and Fourier-domain RMSE. These are well-suited to PDE problems, though rationale behind metric choices could be expanded in some cases. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 4
 
 
-  - **Reason:** Includes baseline solvers and trained models across multiple PDE tasks. 
+  - **Reason:** Baselines  FNO, U-Net, PINN, etc.  are available and documented, but not every model includes full training and evaluation reproducibility out-of-the-box. 
 
 
 Documentation:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Well-organized GitHub with examples, dataset loading scripts, and training configs. 
+  - **Reason:** Strong documentation on GitHub including examples, configs, and usage instructions. Some model-specific details and tutorials could be further expanded. 
+
+
+**Average Rating:** 4.5
 
 
 **Radar Plot:**

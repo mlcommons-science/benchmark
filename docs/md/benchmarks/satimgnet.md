@@ -28,37 +28,42 @@
 **Citation**:
 
 
-- Jonathan Roberts, Kai Han, and Samuel Albanie. Satin: a multi-task metadataset for classifying satellite imagery using vision-language models. 2023. URL: https://arxiv.org/abs/2304.11619, arXiv:2304.11619.
+- Jonathan Roberts, Kai Han, and Samuel Albanie. Satin: a multi-task metadataset for classifying satellite imagery using vision-language models. 2023. URL: https://huggingface.co/datasets/saral-ai/satimagnet.
 
-  - bibtex: |
+  - bibtex:
+      ```
+      @misc{roberts2023satin,
 
-      @misc{roberts2023satinmultitaskmetadatasetclassifying,
+        title={SATIN: A multi-task metadataset for classifying satellite imagery using vision-language models},
 
-        title={SATIN: A Multi-Task Metadataset for Classifying Satellite Imagery using Vision-Language Models}, 
+        author={Roberts, Jonathan and Han, Kai and Albanie, Samuel},
 
-        author={Jonathan Roberts and Kai Han and Samuel Albanie},
+        journal={arXiv preprint arXiv:2304.11619},
 
         year={2023},
 
-        eprint={2304.11619},
-
-        archivePrefix={arXiv},
-
-        primaryClass={cs.CV},
-
-        url={https://arxiv.org/abs/2304.11619}, 
+        url={https://huggingface.co/datasets/saral-ai/satimagnet}
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 0
+
+
+  - **Reason:** No scripts or environment information provided 
 
 
 Specification:
 
 
-  - **Rating:** 9
+  - **Rating:** 4
 
 
   - **Reason:** Tasks  image classification across 27 satellite datasets  are clearly defined with multi-task and zero-shot framing; input/output structure is mostly standard but some task-specific nuances require interpretation. 
@@ -67,7 +72,7 @@ Specification:
 Dataset:
 
 
-  - **Rating:** 9
+  - **Rating:** 5
 
 
   - **Reason:** Hosted on Hugging Face, versioned, FAIR-compliant with rich metadata; covers many well-known remote sensing datasets unified under one metadataset, though documentation depth varies slightly across tasks. 
@@ -76,28 +81,31 @@ Dataset:
 Metrics:
 
 
-  - **Rating:** 9
+  - **Rating:** 5
 
 
-  - **Reason:** Standard quantitative metrics  Accuracy, Top-1 Accuracy  aligned with classification tasks; consistent across models, with leaderboard results available. 
+  - **Reason:** Accuracy of classification is an appropriate metric 
 
 
 Reference Solution:
 
 
-  - **Rating:** 7
+  - **Rating:** 4
 
 
-  - **Reason:** Baselines like CLIP, BLIP, ALBEF evaluated in the paper; full inference pipelines or training code may need reconstruction from paper or GitHub references. 
+  - **Reason:** Baselines like CLIP, BLIP, ALBEF evaluated in the paper; no constraints specified 
 
 
 Documentation:
 
 
-  - **Rating:** 7
+  - **Rating:** 5
 
 
-  - **Reason:** Good usage guidance via Hugging Face and paper; example scripts and evaluation tools exist, but end-to-end reproducibility may require manual integration of model checkpoints and preprocessing. 
+  - **Reason:** Paper provides all required information 
+
+
+**Average Rating:** 3.833
 
 
 **Radar Plot:**

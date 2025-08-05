@@ -30,8 +30,8 @@
 
 - Maira Khan, Steve Krave, Vittorio Marinozzi, Jennifer Ngadiuba, Stoyan Stoynev, and Nhan Tran. Benchmarking and interpreting real time quench detection algorithms. In Fast Machine Learning for Science Conference 2024. Purdue University, IN, October 2024. indico.cern.ch. URL: https://indico.cern.ch/event/1387540/contributions/6153618/attachments/2948441/5182077/fast_ml_magnets_2024_final.pdf.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @inproceedings{quench2024,
 
         author = {Maira Khan and Steve Krave and Vittorio Marinozzi and Jennifer Ngadiuba and Stoyan Stoynev and Nhan Tran},
@@ -52,54 +52,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 1
+
+
+  - **Reason:** Code not provided; no evidence of documentation or containerization 
 
 
 Specification:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 4
 
 
-  - **Reason:** Real-time jet origin classification under FPGA constraints is clearly defined, with explicit latency targets  ~100 ns  and I/O formats. 
+  - **Reason:** Real-time detection task is clearly described, but exact constraints, inputs/outputs, and evaluation protocol are only partially specified 
 
 
 Dataset:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 2
 
 
-  - **Reason:** Data available on Zenodo with DOI, includes constituent-level jets; accessible and well-documented, though not deeply versioned with full FAIR metadata. 
+  - **Reason:** Dataset URL is missing; FAIR principles largely unmet 
 
 
 Metrics:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 3
 
 
-  - **Reason:** Accuracy, latency, and hardware resource usage  LUTs, DSPs  are rigorously measured and aligned with real-time goals. 
+  - **Reason:** ROC-AUC and latency are mentioned, but metric definitions and formal evaluation setup are missing 
 
 
 Reference Solution:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 1
 
 
-  - **Reason:** Includes models  MLP, Deep Sets, Interaction Networks  with quantization-aware training and synthesis results via hls4ml; reproducible but tightly coupled with specific toolchains. 
+  - **Reason:** No baseline or reproducible model implementation available 
 
 
 Documentation:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 2
 
 
-  - **Reason:** Paper and code  via hls4ml  are sufficient, but a centralized, standalone repo for reproducing all models would enhance accessibility. 
+  - **Reason:** Only a conference slide deck is available; lacks detailed instructions or repository for reproduction 
+
+
+**Average Rating:** 2.167
 
 
 **Radar Plot:**

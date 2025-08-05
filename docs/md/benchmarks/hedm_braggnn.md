@@ -30,8 +30,8 @@
 
 - Zhengchun Liu, Hemant Sharma, Jun-Sang Park, Peter Kenesei, Antonino Miceli, Jonathan Almer, Rajkumar Kettimuthu, and Ian Foster. Braggnn: fast x-ray bragg peak analysis using deep learning. 2021. URL: https://arxiv.org/abs/2008.08198, arXiv:2008.08198.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{liu2021braggnnfastxraybragg,
 
         archiveprefix = {arXiv},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 2
+
+
+  - **Reason:** No standalone code repository or setup instructions provided 
 
 
 Specification:
 
 
-  - **Rating:** 10.0
+  - **Rating:** 5
 
 
-  - **Reason:** Fully specified: describes task  data filtering/classification, system design  on-sensor inference ,  latency  25 ns , and power constraints. 
+  - **Reason:** None 
 
 
 Dataset:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 2
 
 
-  - **Reason:** In-pixel charge cluster data used, but dataset release info is minimal; FAIR metadata/versioning limited. 
+  - **Reason:** No dataset links or FAIR metadata; unclear public access 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** Data rejection rate and power per pixel are clearly defined and directly tied to hardware goals. 
+  - **Reason:** Only localization accuracy and inference time mentioned; not formally benchmarked with scripts 
 
 
 Reference Solution:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 3
 
 
-  - **Reason:** 2-layer NN implementation is evaluated in hardware; reproducible via hls4ml flow with results in paper. 
+  - **Reason:** BraggNN model is described and evaluated, but no direct implementation or inference scripts available 
 
 
 Documentation:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 3
 
 
-  - **Reason:** Paper is clear; Zenodo asset is referenced, but additional GitHub or setup repo would improve reproducibility. 
+  - **Reason:** Paper is clear, but lacks a GitHub repo or full reproducibility pipeline 
+
+
+**Average Rating:** 3.167
 
 
 **Radar Plot:**

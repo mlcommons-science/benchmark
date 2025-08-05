@@ -30,8 +30,8 @@
 
 - Javier Duarte, Nhan Tran, Ben Hawks, Christian Herwig, Jules Muhizi, Shvetank Prakash, and Vijay Janapa Reddi. Fastml science benchmarks: accelerating real-time scientific edge machine learning. 2022. URL: https://arxiv.org/abs/2207.07958, arXiv:2207.07958.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{duarte2022fastml,
 
         archiveprefix = {arXiv},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** Not containerized; Setup automation/documentation could be improved 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** Task and format  multiple-choice QA with 5 options  are clearly defined; grounded in ConceptNet with consistent structure, though no hardware/system constraints are specified. 
+  - **Reason:** System constraints missing 
 
 
 Dataset:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Public, versioned, and FAIR-compliant; includes metadata, splits, and licensing; well-integrated with HuggingFace and other ML libraries. 
+  - **Reason:** None 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Accuracy is a simple, reproducible metric aligned with task goals; no ambiguity in evaluation. 
+  - **Reason:** None 
 
 
 Reference Solution:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Several baseline models  e.g., BERT, RoBERTa  are reported with scores; implementations exist in public repos, but not bundled as an official starter kit. 
+  - **Reason:** HW/SW requirements missing; Reference not bundled as official starter kit 
 
 
 Documentation:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 4
 
 
-  - **Reason:** Clear paper, GitHub repo, and integration with HuggingFace Datasets; full reproducibility requires manually connecting models to dataset. 
+  - **Reason:** Full reproducibility requires manual setup 
+
+
+**Average Rating:** 4.167
 
 
 **Radar Plot:**

@@ -30,8 +30,8 @@
 
 - Thea Aarrestad, Ekaterina Govorkova, Jennifer Ngadiuba, Ema Puljak, Maurizio Pierini, and Kinga Anna Wozniak. Unsupervised new physics detection at 40 mhz: training dataset. 2021. URL: https://zenodo.org/record/5046389, doi:10.5281/ZENODO.5046389.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{https://doi.org/10.5281/zenodo.5046389,
 
         author    = {Aarrestad, Thea and Govorkova, Ekaterina and Ngadiuba, Jennifer and Puljak, Ema and Pierini, Maurizio and Wozniak, Kinga Anna},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** While not formally evaluated in the previous version, Zenodo and paper links suggest available code for baseline models  e.g., autoencoders, GANs , though they are scattered and not unified in a single repository. 
 
 
 Specification:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 3
 
 
-  - **Reason:** The problem  anomaly detection for new physics at LHC  is clearly described with goals and background, but lacks a formal task specification or constraints. 
+  - **Reason:** The task and context are clearly described, but system constraints and formal inputs/outputs are not fully specified. 
 
 
 Dataset:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 5
 
 
-  - **Reason:** Large-scale, public dataset derived from LHC simulations; well-documented and available via Zenodo. 
+  - **Reason:** Large-scale dataset hosted on Zenodo, publicly available, well-documented, with defined train/test structure. Appears to follow at least 4 FAIR principles. 
 
 
 Metrics:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 4
 
 
-  - **Reason:** Provides AUROC, accuracy, and anomaly detection metrics but lacks standardized evaluation script. 
+  - **Reason:** Uses reasonable metrics  ROC-AUC, detection efficiency  that capture performance but lacks full explanation and standard evaluation tools. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 5.0
+  - **Rating:** 2
 
 
-  - **Reason:** Baseline models  autoencoders, GANs  are described in associated papers, but implementations vary across papers. 
+  - **Reason:** Baselines are described across multiple papers but lack centralized, reproducible implementations and hardware/software setup details. 
 
 
 Documentation:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 3
 
 
-  - **Reason:** Publicly available papers and datasets with descriptions, but no unified README or training setup. 
+  - **Reason:** Some description in papers and dataset metadata exists, but lacks a unified guide, README, or training setup in a central location. 
+
+
+**Average Rating:** 3.333
 
 
 **Radar Plot:**

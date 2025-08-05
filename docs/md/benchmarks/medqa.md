@@ -30,8 +30,8 @@
 
 - Di Jin, Eileen Pan, Nassim Oufattole, Wei-Hung Weng, Hanyi Fang, and Peter Szolovits. What disease does this patient have? a large-scale open domain question answering dataset from medical exams. 2020. URL: https://arxiv.org/abs/2009.13081, arXiv:2009.13081.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{jin2020diseasedoespatienthave,
 
           archiveprefix = {arXiv},
@@ -50,15 +50,24 @@
 
         }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** All code available on the github 
 
 
 Specification:
 
 
-  - **Rating:** 9
+  - **Rating:** 3
 
 
   - **Reason:** Task is clearly defined as multiple-choice QA for medical board exams; input and output formats are explicit; task scope is rigorous and structured. System constraints not specified. 
@@ -67,7 +76,7 @@ Specification:
 Dataset:
 
 
-  - **Rating:** 8
+  - **Rating:** 4
 
 
   - **Reason:** Dataset is publicly available  GitHub, paper, Hugging Face , well-structured. However, versioning and metadata could be more standardized to fully meet FAIR criteria. 
@@ -76,7 +85,7 @@ Dataset:
 Metrics:
 
 
-  - **Rating:** 9
+  - **Rating:** 5
 
 
   - **Reason:** Uses clear, quantitative metric  accuracy , standard for multiple-choice benchmarks; easily comparable across models. 
@@ -85,19 +94,22 @@ Metrics:
 Reference Solution:
 
 
-  - **Rating:** 7
+  - **Rating:** 0
 
 
-  - **Reason:** Model results reported  GPT-4, Med-PaLM, etc. ; implementations discussed in papers, but runnable baselines not fully packaged or documented. 
+  - **Reason:** No reference solution mentioned. 
 
 
 Documentation:
 
 
-  - **Rating:** 6
+  - **Rating:** 4
 
 
-  - **Reason:** Dataset and paper are accessible; instructions on how to use the source code available, but environment setup or full reproducibility workflow is not packaged. 
+  - **Reason:** Paper is available. Evaluation criteria are not mentioned. 
+
+
+**Average Rating:** 3.5
 
 
 **Radar Plot:**

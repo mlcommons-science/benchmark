@@ -30,8 +30,8 @@
 
 - Elliot Glazer, Ege Erdil, Tamay Besiroglu, Diego Chicharro, Evan Chen, Alex Gunning, Caroline Falkman Olsson, Jean-Stanislas Denain, Anson Ho, Emily de Oliveira Santos, Olli Järviniemi, Matthew Barnett, Robert Sandler, Matej Vrzala, Jaime Sevilla, Qiuyu Ren, Elizabeth Pratt, Lionel Levine, Grant Barkley, Natalie Stewart, Bogdan Grechuk, Tetiana Grechuk, Shreepranav Varma Enugandla, and Mark Wildon. Frontiermath: a benchmark for evaluating advanced mathematical reasoning in ai. 2024. URL: https://arxiv.org/abs/2411.04872, arXiv:2411.04872.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{glazer2024frontiermathbenchmarkevaluatingadvanced,
 
         archiveprefix = {arXiv},
@@ -50,24 +50,33 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 0
+
+
+  - **Reason:** No link to code provided 
 
 
 Specification:
 
 
-  - **Rating:** 9
+  - **Rating:** 3
 
 
-  - **Reason:** Well-specified process for asking questions and receiving answers. No HW constraints 
+  - **Reason:** Well-specified process for asking questions and receiving answers. No software or hardware constraints 
 
 
 Dataset:
 
 
-  - **Rating:** 0.5
+  - **Rating:** 0
 
 
   - **Reason:** Paper and website had no link to any dataset. It may still exist somewhere 
@@ -76,28 +85,31 @@ Dataset:
 Metrics:
 
 
-  - **Rating:** 10
+  - **Rating:** 5
 
 
-  - **Reason:**  by default  All questions in the dataset are multiple choice, all have a correct answer 
+  - **Reason:**  by default  All questions in the dataset have a correct answer 
 
 
 Reference Solution:
 
 
-  - **Rating:** 9
+  - **Rating:** 2
 
 
-  - **Reason:** Displays result of leading models on the benchmark 
+  - **Reason:** Displays result of leading models on the benchmark, but none are trainable or list constraints 
 
 
 Documentation:
 
 
-  - **Rating:** 0.5
+  - **Rating:** 0
 
 
   - **Reason:** No specified way to reproduce the reference solution 
+
+
+**Average Rating:** 1.667
 
 
 **Radar Plot:**

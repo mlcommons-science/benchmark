@@ -30,8 +30,8 @@
 
 - Kin G. Olivares, Cristian Challú, Federico Garza, Max Mergenthaler Canseco, and Artur Dubrawski. Neuralforecast: user friendly state-of-the-art neural forecasting models. PyCon Salt Lake City, Utah, US 2022, 2022. URL: https://github.com/Nixtla/neuralforecast.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{olivares2022library_neuralforecast,
 
         author={Kin G. Olivares and Cristian Challú and Federico Garza and Max Mergenthaler Canseco and Artur Dubrawski},
@@ -46,54 +46,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** Actively maintained open-source library under Apache 2.0. Offers a clean API, extensive model zoo  >30 models , integration with Ray, Optuna, and supports scalable training and inference workflows. 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Targets high-throughput LLM inference via PagedAttention and memory-optimized serving; benchmarks cover many configs. 
+  - **Reason:** Forecasting task is well-defined with clear input/output structures. Framework supports probabilistic and deterministic forecasting, with unified interfaces and support for batch evaluation. 
 
 
 Dataset:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 3
 
 
-  - **Reason:** Focuses on model configs and streaming input/output pipelines rather than classical datasets. 
+  - **Reason:** NeuralForecast does not include its own datasets but supports standard datasets  e.g., M4, M5, ETT . FAIR compliance depends on user-supplied data. 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Strong token/sec, memory usage, and TTFT metrics; comparative plots and logs included. 
+  - **Reason:** RMSE, MAPE, CRPS, and other domain-relevant metrics are well supported and integrated into the evaluation loop. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** Benchmarks reproducible via script with support for multiple models and hardware types. 
+  - **Reason:** Includes runnable model baselines and training scripts for all supported models. Some models have pretrained weights, but not all are fully benchmarked out-of-the-box. 
 
 
 Documentation:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Excellent GitHub docs, CLI/API usage, and deployment walkthroughs. 
+  - **Reason:** Rich documentation with examples, API references, tutorials, notebooks, and CLI support. PyPI, GitHub, and official blog posts offer clear guidance for usage and extension. 
+
+
+**Average Rating:** 4.5
 
 
 **Radar Plot:**

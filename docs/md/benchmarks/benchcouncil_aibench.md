@@ -30,8 +30,8 @@
 
 - Wanling Gao, Fei Tang, Lei Wang, Jianfeng Zhan, Chunxin Lan, Chunjie Luo, Yunyou Huang, Chen Zheng, Jiahui Dai, Zheng Cao, Daoyi Zheng, Haoning Tang, Kunlin Zhan, Biao Wang, Defei Kong, Tong Wu, Minghe Yu, Chongkang Tan, Huan Li, Xinhui Tian, Yatao Li, Junchao Shao, Zhenyu Wang, Xiaoyu Wang, and Hainan Ye. Aibench: an industry standard internet service ai benchmark suite. 2019. URL: https://arxiv.org/abs/1908.08998, arXiv:1908.08998.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{gao2019aibenchindustrystandardinternet,
 
         archiveprefix = {arXiv},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** No containerized or automated implementation provided for full benchmark suite 
 
 
 Specification:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Task  plasma diagnostic classification  and real-time deployment described; system specs  FPS targets  implied but not fully quantified. 
+  - **Reason:** Task coverage is broad and well-scoped, but system constraints and expected outputs are not uniformly defined 
 
 
 Dataset:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 3
 
 
-  - **Reason:** Dataset is sensor stream-based but not shared or FAIR-documented. 
+  - **Reason:** Multiple datasets are mentioned, but not consistently FAIR-documented, versioned, or linked 
 
 
 Metrics:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** FPS and classification accuracy reported and relevant. 
+  - **Reason:** Metrics are appropriate, but standardization and reproducibility across tasks vary 
 
 
 Reference Solution:
 
 
-  - **Rating:** 7.0
+  - **Rating:** 3
 
 
-  - **Reason:** CNN model described and evaluated, but public implementation and benchmarks are not available yet. 
+  - **Reason:** Reference models  e.g., ResNet, BERT  described; no turnkey implementation or results repository for all levels 
 
 
 Documentation:
 
 
-  - **Rating:** 6.0
+  - **Rating:** 3
 
 
-  - **Reason:** Paper and Gemini doc exist, but full setup instructions and tools are still in progress. 
+  - **Reason:** Paper is comprehensive, but minimal user-facing documentation or structured reproduction guide 
+
+
+**Average Rating:** 3.333
 
 
 **Radar Plot:**

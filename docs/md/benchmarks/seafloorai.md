@@ -30,8 +30,8 @@
 
 - Kien X. Nguyen, Fengchun Qiao, Arthur Trembanis, and Xi Peng. Seafloorai: a large-scale vision-language dataset for seafloor geological survey. 2024. URL: https://arxiv.org/abs/2411.00172, arXiv:2411.00172.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{nguyen2024seafloor,
 
         archiveprefix = {arXiv},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 3
+
+
+  - **Reason:** Data processing code is publicly available, but no full benchmark framework or runnable model implementations are provided yet. 
 
 
 Specification:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Real-time qubit classification task clearly defined in quantum instrumentation context. 
+  - **Reason:** Tasks  image segmentation and vision-language QA  are clearly defined with geospatial and multimodal objectives well specified. 
 
 
 Dataset:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Dataset available on Zenodo with signal traces; compact and reproducible. 
+  - **Reason:** Large-scale, well-annotated sonar imagery dataset with segmentation masks and natural language descriptions; curated with domain experts. 
 
 
 Metrics:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 5
 
 
-  - **Reason:** Accuracy and latency are well defined and crucial in this setting. 
+  - **Reason:** Standard segmentation pixel accuracy and QA accuracy metrics are clearly specified and appropriate for the tasks. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 9.0
+  - **Rating:** 4
 
 
-  - **Reason:** GitHub repo has reproducible code and HLS firmware targeting FPGA. 
+  - **Reason:** Some baseline models  e.g., SegFormer, ViLT-style  are mentioned, but reproducible code or pretrained weights are not fully available yet. 
 
 
 Documentation:
 
 
-  - **Rating:** 8.0
+  - **Rating:** 4
 
 
-  - **Reason:** Good setup instructions, but no interactive visualization or starter notebook. 
+  - **Reason:** Dataset description and data processing instructions are provided, but tutorials and benchmark usage guides are limited. 
+
+
+**Average Rating:** 4.333
 
 
 **Radar Plot:**

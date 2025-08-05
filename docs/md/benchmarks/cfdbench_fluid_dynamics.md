@@ -30,8 +30,8 @@
 
 - Yining Luo, Yingfa Chen, and Zhen Zhang. Cfdbench: a large-scale benchmark for machine learning methods in fluid dynamics. 2024. URL: https://arxiv.org/abs/2310.05963.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{luo2024cfdbenchlargescalebenchmarkmachine,
 
         title={CFDBench: A Large-Scale Benchmark for Machine Learning Methods in Fluid Dynamics},
@@ -44,33 +44,42 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** The benchmark provides Python scripts for data loading, preprocessing, and model training/evaluation 
 
 
 Specification:
 
 
-  - **Rating:** 10
+  - **Rating:** 0
 
 
-  - **Reason:** Tasks are clearly framed  PDE regression, surrogate modeling , with explicit details on the four canonical CFD problems, input/output structure, and generalization goals. 
+  - **Reason:** Not listed 
 
 
 Dataset:
 
 
-  - **Rating:** 10
+  - **Rating:** 0
 
 
-  - **Reason:** Publicly available on Zenodo, versioned, with metadata and splits; covers thousands of simulations with proper documentation. 
+  - **Reason:** Not given 
 
 
 Metrics:
 
 
-  - **Rating:** 9
+  - **Rating:** 5
 
 
   - **Reason:** Quantitative metrics  L2 error, MAE, relative error  are clearly defined and align with regression task objectives. 
@@ -79,19 +88,22 @@ Metrics:
 Reference Solution:
 
 
-  - **Rating:** 8
+  - **Rating:** 5
 
 
-  - **Reason:** Baseline models like FNO and DeepONet are implemented, but full reproduction pipelines or eval scripts may require additional user configuration. 
+  - **Reason:** Baseline models like FNO and DeepONet are implemented, hardware specified. 
 
 
 Documentation:
 
 
-  - **Rating:** 6
+  - **Rating:** 5
 
 
-  - **Reason:** GitHub and Zenodo provide data and code, but setup for evaluating across all 739 cases requires moderate user effort and technical fluency with PyTorch-based frameworks. Reproducibility depends on full implementation details. 
+  - **Reason:** Associated paper gives all necessary information. 
+
+
+**Average Rating:** 3.333
 
 
 **Radar Plot:**

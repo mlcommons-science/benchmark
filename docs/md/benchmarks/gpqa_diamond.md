@@ -30,8 +30,8 @@
 
 - David Rein, Betty Li Hou, and Asa Cooper Stickland. Gpqa: a graduate-level google-proof q and a benchmark. 2023. URL: https://arxiv.org/abs/2311.12022.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{rein2023gpqagraduatelevelgoogleproofqa,
 
         title={GPQA: A Graduate-Level Google-Proof Q and A Benchmark},
@@ -44,54 +44,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 5
+
+
+  - **Reason:** Python version and requirements specified on Github site 
 
 
 Specification:
 
 
-  - **Rating:** 6.5
+  - **Rating:** 2
 
 
-  - **Reason:** Good description of how the problems are received, but little specification on how the models are tested 
+  - **Reason:** No system constraints or I/O specified 
 
 
 Dataset:
 
 
-  - **Rating:** 8.5
+  - **Rating:** 5
 
 
-  - **Reason:** Easily able to access dataset. No labels or train/test/valid split 
+  - **Reason:** Easily able to access dataset. Comes with predefined splits as mentioned in the paper 
 
 
 Metrics:
 
 
-  - **Rating:** 10
+  - **Rating:** 5
 
 
-  - **Reason:** Each question has a correct answer 
+  - **Reason:** Each question has a correct answer, representing the tested model's performance. 
 
 
 Reference Solution:
 
 
-  - **Rating:** 7.5
+  - **Rating:** 1
 
 
-  - **Reason:** Common models such as GPT-3.5 were compared. Reproducibility of results unknown 
+  - **Reason:** Common models such as GPT-3.5 were compared. They are not open and don't provide requirements 
 
 
 Documentation:
 
 
-  - **Rating:** 1
+  - **Rating:** 5
 
 
-  - **Reason:** No reference solution, platform for reproduction, or procedure for replication 
+  - **Reason:** All information is listed in the associated paper 
+
+
+**Average Rating:** 3.833
 
 
 **Radar Plot:**

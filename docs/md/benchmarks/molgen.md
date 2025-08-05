@@ -30,8 +30,8 @@
 
 - Yin Fang, Ningyu Zhang, Zhuo Chen, Lingbing Guo, Xiaohui Fan, and Huajun Chen. Domain-agnostic molecular generation with chemical feedback. 2024. URL: https://arxiv.org/abs/2301.11259, arXiv:2301.11259.
 
-  - bibtex: |
-
+  - bibtex:
+      ```
       @misc{fang2024domainagnosticmoleculargenerationchemical,
 
         archiveprefix = {arXiv},
@@ -50,54 +50,66 @@
 
       }
 
-
+      ```
 
 **Ratings:**
+
+
+Software:
+
+
+  - **Rating:** 0
+
+
+  - **Reason:** This is a pre-trained model 
 
 
 Specification:
 
 
-  - **Rating:** 8
+  - **Rating:** 0
 
 
-  - **Reason:** The molecular generation task is well-defined, with input/output via SELFIES and chemical properties 
+  - **Reason:** This is a pre-trained model 
 
 
 Dataset:
 
 
-  - **Rating:** 7
+  - **Rating:** 0
 
 
-  - **Reason:** Uses standard datasets  ZINC, MOSES, QM9 ; accessible and widely used, but FAIR metadata, versioning, and splits are not detailed within this specific repo. 
+  - **Reason:** This is a pre-trained model 
 
 
 Metrics:
 
 
-  - **Rating:** 9
+  - **Rating:** 0
 
 
-  - **Reason:** Metrics like Validity%, Novelty%, QED, and Docking Score are quantitative, supporting clear model evaluation. 
+  - **Reason:** This is a pre-trained model 
 
 
 Reference Solution:
 
 
-  - **Rating:** 6
+  - **Rating:** 0
 
 
-  - **Reason:** Model is released and functional; some training/evaluation code exists, but it's not framed as a reusable baseline in a benchmark context. 
+  - **Reason:** This is a pre-trained model 
 
 
 Documentation:
 
 
-  - **Rating:** 6.5
+  - **Rating:** 0
 
 
-  - **Reason:** Code is available and usable; instructions exist, though setup may require domain knowledge or adaptation for different datasets/environments. 
+  - **Reason:** This is a pre-trained model 
+
+
+**Average Rating:** 0.0
 
 
 **Radar Plot:**

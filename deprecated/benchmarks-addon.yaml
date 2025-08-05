@@ -69,30 +69,29 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        Not containerized; Setup automation/documentation could be improved
+        Not analyzed.
     specification:
-      rating: 4
+      rating: 9.0
       reason: |
-        System constraints missing
+        Task and format (multiple-choice QA with 5 options) are clearly defined; grounded in ConceptNet with consistent structure, though no hardware/system constraints are specified.
     dataset:
-      rating: 5
+      rating: 9.0
       reason: |
-        None
+        Public, versioned, and FAIR-compliant; includes metadata, splits, and licensing; well-integrated with HuggingFace and other ML libraries.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        None
+        Accuracy is a simple, reproducible metric aligned with task goals; no ambiguity in evaluation.
     reference_solution:
-      rating: 4
+      rating: 8.0
       reason: |
-        HW/SW requirements missing; Reference not bundled as official starter kit
+        Several baseline models (e.g., BERT, RoBERTa) are reported with scores; implementations exist in public repos, but not bundled as an official starter kit.
     documentation:
-      rating: 4
+      rating: 7.0
       reason: |
-        Full reproducibility requires manual setup
-
+        Clear paper, GitHub repo, and integration with HuggingFace Datasets; full reproducibility requires manually connecting models to dataset.
 - date: "2024-05-01"
   version: "v0.2.0"
   last_updated: "2024-05"
@@ -138,7 +137,7 @@
     email: "unknown"
   cite:
   - |
-    @misc{duarte2022fastmlsciencebenchmarksaccelerating2,
+    @misc{duarte2022fastmlsciencebenchmarksaccelerating,
       archiveprefix = {arXiv},
       author        = {Javier Duarte and Nhan Tran and Ben Hawks and Christian Herwig and Jules Muhizi and Shvetank Prakash and Reddi, Vijay Janapa},
       eprint        = {2207.07958},
@@ -162,30 +161,29 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        Not containerized; Full automation and documentation could be improved
+        Not analyzed. 
     specification:
-      rating: 4
+      rating: 8.0
       reason: |
-        Exact latency or resource constraints not numerically specified
+        Classification is clearly defined for real-time inference on simulated LHC jets. Input features (HLFs) are documented, though exact latency or resource constraints are not numerically specified.
     dataset:
-      rating: 5
+      rating: 9.0
       reason: |
-        All criteria met
+        Two datasets (OpenML and Zenodo) are public, well-formatted, and documented; FAIR principles are followed, though richer metadata would raise confidence to a 10.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        All criteria met
+        AUC and Accuracy are standard, quantitative, and well-aligned with goals of jet tagging and inference efficiency.
     reference_solution:
-      rating: 4
+      rating: 8.0
       reason: |
-        Not fully documented or automated for reproducibility
+        Float and quantized Keras/QKeras models are provided with results. Reproducibility is good, though full automation and documentation could be improved.
     documentation:
-      rating: 4
+      rating: 8.0
       reason: |
-        Setup for deployment (e.g., FPGA pipeline) requires familiarity with tooling
-
+        GitHub contains baseline code, data loaders, and references, but setup for deployment (e.g., FPGA pipeline) requires familiarity with the tooling.
 - date: "2024-05-01"
   version: "v0.2.0"
   last_updated: "2024-05"
@@ -230,7 +228,7 @@
     email: "unknown"
   cite:
   - |
-    @misc{duarte2022fastmlsciencebenchmarksaccelerating3,
+    @misc{duarte2022fastmlsciencebenchmarksaccelerating,
       archiveprefix = {arXiv},
       author        = {Javier Duarte and Nhan Tran and Ben Hawks and Christian Herwig and Jules Muhizi and Shvetank Prakash and Vijay Janapa Reddi},
       eprint        = {2207.07958},
@@ -262,29 +260,29 @@
     benchmark_ready: "in progress"
   ratings:
     software:
-      rating: 1
+      rating: 0
       reason: |
-        Code not documented; Incomplete setup and not containerized
+        Not analyzed. 
     specification:
-      rating: 4
+      rating: 9.0
       reason: |
-        Latency/resource constraints not fully quantified
+        Task is well defined (real-time compression of sparse, irregular sensor data using autoencoders); latency constraints are implied but not fully quantified.
     dataset:
-      rating: 3
+      rating: 8.0
       reason: |
-        Not findable (no DOI/indexing); Not interoperable (format/schema unspecified)
+        Dataset is custom and synthetic but described well; FAIR-compliance is partial (reusable and accessible, but not externally versioned with rich metadata).
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        All criteria met
+        Uses standard quantitative metrics (MSE, compression ratio) clearly aligned with compression and reconstruction goals.
     reference_solution:
-      rating: 2
+      rating: 7.0
       reason: |
-        HW/SW requirements missing; Metrics not evaluated with reference; Baseline not trainable/open
+        Baseline (autoencoder and quantized variant) is provided, but training/inference pipeline is minimally documented and needs user setup.
     documentation:
-      rating: 3
+      rating: 8.0
       reason: |
-        Setup instructions and pretrained model details are missing
+        GitHub repo contains core components, but more structured setup instructions and pretrained weights would improve usability.
 - date: "2024-07-08"
   version: "v1.0"
   last_updated: "2024-07"
@@ -303,7 +301,7 @@
   - "Deep Sets"
   - "Interaction Networks"
   summary: |
-    Demonstrates three ML models (MLP, Deep Sets, Interaction Networks) optimized for FPGA deployment with O(100 ns) inference using quantized models and hls4ml, targeting real-time jet tagging in the L1 trigger environment at the high-luminosity LHC. Data is available on Zenodo DOI:10.5281/zenodo.3602260. 
+    Demonstrates three ML models (MLP, Deep Sets, Interaction Networks) optimized for FPGA deployment with O(100 ns) inference using quantized models and hls4ml, targeting real-time jet tagging in the L1 trigger environment at the high-luminosity LHC. Data is available on Zenodo DOI:10.5281/zenodo.3602260. :contentReference[oaicite:1]{index=1}
   licensing: "CC-BY"
   task_types:
   - "Classification"
@@ -355,29 +353,29 @@
     benchmark_ready: false
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        Not containerized; Setup and automation incomplete
+        Not analyzed. 
     specification:
-      rating: 4
+      rating: 8.0
       reason: |
-        Hardware constraints are referenced but not fully detailed or standardized
+        Task is clear (RL control of beam stability), with BOOSTR-based simulator; control objectives are well motivated, but system constraints and reward structure are still under refinement.
     dataset:
-      rating: 4
+      rating: 7.0
       reason: |
-        FAIR metadata limited; no clear mention of dataset format or splits
+        BOOSTR dataset exists and is cited, but integration into the benchmark is in early stages; metadata and FAIR structure are limited.
     metrics:
-      rating: 3
+      rating: 7.0
       reason: |
-        Metrics exist (accuracy, latency, utilization), but formal definitions and evaluation guidance are limited
+        Stability and control loss are mentioned, but metrics are not yet formalized with clear definitions or baselines.
     reference_solution:
-      rating: 2
+      rating: 5.5
       reason: |
-        Reference implementations not fully reproducible; no evaluation pipeline or training setup provided
+        DDPG baseline mentioned; PPO planned; implementation is still in progress with no reproducible results available yet.
     documentation:
-      rating: 3
+      rating: 6.0
       reason: |
-        No linked GitHub repo or setup instructions; paper provides partial guidance only
+        GitHub has a defined structure but is incomplete; setup and execution instructions for training/evaluation are not fully established.
 - date: "2024-10-15"
   version: "v1.0"
   last_updated: "2024-10"
@@ -448,27 +446,27 @@
     software:
       rating: 1
       reason: |
-        Code not provided; no evidence of documentation or containerization
+        Not provided.
     specification:
-      rating: 4
+      rating: 10.0
       reason: |
-        Real-time detection task is clearly described, but exact constraints, inputs/outputs, and evaluation protocol are only partially specified
+        Real-time jet origin classification under FPGA constraints is clearly defined, with explicit latency targets (~100 ns) and I/O formats.
     dataset:
-      rating: 2
+      rating: 9.0
       reason: |
-        Dataset URL is missing; FAIR principles largely unmet
+        Data available on Zenodo with DOI, includes constituent-level jets; accessible and well-documented, though not deeply versioned with full FAIR metadata.
     metrics:
-      rating: 3
+      rating: 10.0
       reason: |
-        ROC-AUC and latency are mentioned, but metric definitions and formal evaluation setup are missing
+        Accuracy, latency, and hardware resource usage (LUTs, DSPs) are rigorously measured and aligned with real-time goals.
     reference_solution:
-      rating: 1
+      rating: 9.0
       reason: |
-        No baseline or reproducible model implementation available
+        Includes models (MLP, Deep Sets, Interaction Networks) with quantization-aware training and synthesis results via hls4ml; reproducible but tightly coupled with specific toolchains.
     documentation:
-      rating: 2
+      rating: 8.0
       reason: |
-        Only a conference slide deck is available; lacks detailed instructions or repository for reproduction
+        Paper and code (via hls4ml) are sufficient, but a centralized, standalone repo for reproducing all models would enhance accessibility.
 - date: "2024-10-15"
   version: "v1.0"
   last_updated: "2024-10"
@@ -536,29 +534,29 @@
     benchmark_ready: false
   ratings:
     software:
-      rating: 1
+      rating: 0
       reason: |
-        Code not available; no containerization or setup provided
+        Not analyzed. 
     specification:
-      rating: 4
+      rating: 8.0
       reason: |
-        Constraints like latency thresholds are described qualitatively but not numerically defined
+        Task (quench detection via anomaly detection) is clearly described; multi-modal sensors, streaming rates, and objective are provided, but constraints (latency thresholds) are qualitative.
     dataset:
-      rating: 3
+      rating: 7.0
       reason: |
-        Dataset lacks a public URL; FAIR metadata and versioning are missing
+        Custom dataset using real data from BNL; HDF5 formatted and structured, but access may be internal or limited, and not versioned for public FAIR use.
     metrics:
-      rating: 4
+      rating: 8.0
       reason: |
-        Metrics are relevant but no benchmark baseline or detailed evaluation guidance is provided
+        ROC-AUC and detection latency are defined; relevant and quantitative but not yet paired with benchmark baselines.
     reference_solution:
-      rating: 2
+      rating: 6.0
       reason: |
-        Autoencoder prototype exists but is not reproducible; RL model still in development
+        Autoencoder prototype exists; RL methods are in development; no fully reproducible pipeline is available yet.
     documentation:
-      rating: 3
+      rating: 7.0
       reason: |
-        Documentation exists only in slides/GDocs; no implementation guide or structured release
+        Slides and GDocs outline results; implementation is in progress with limited setup/code release.
 - date: "2025-01-08"
   version: "v1.0"
   last_updated: "2025-01"
@@ -630,29 +628,29 @@
     benchmark_ready: false
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        No containerized or open-source setup provided
+        Not analyzed. 
     specification:
-      rating: 4
+      rating: 8.0
       reason: |
-        Architectural/system specifications are incomplete
+        Task (trigger-level anomaly detection) is clearly defined for low-latency streaming input, but the problem framing lacks complete architectural/system specs.
     dataset:
-      rating: 2
+      rating: 6.0
       reason: |
-        Dataset is internal and not publicly available or FAIR-compliant
+        Internal DUNE SONIC data; not publicly released and no formal FAIR support; replicability is institutionally gated.
     metrics:
-      rating: 3
+      rating: 7.0
       reason: |
-        Metrics relevant but not supported by evaluation scripts or baselines
+        Metrics include detection efficiency and latency, which are relevant, but only lightly supported by baselines or formal eval scripts.
     reference_solution:
-      rating: 3
+      rating: 5.0
       reason: |
-        No public or reproducible implementation released
+        One CNN prototype demonstrated; LSTM planned. No public implementation or ready-to-run example yet.
     documentation:
-      rating: 3
+      rating: 6.0
       reason: |
-        No public GitHub or complete pipeline documentation
+        Slides and some internal documentation exist, but no full pipeline or public GitHub repo yet.
 - date: "2025-01-09"
   version: "v1.0"
   last_updated: "2025-01"
@@ -724,29 +722,29 @@
     benchmark_ready: false
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        Toolchain (hls4ml, nac-opt) described but not yet containerized or fully packaged
+        Not analyzed. 
     specification:
-      rating: 5
+      rating: 10.0
       reason: |
-        Fully specified task with constraints and target deployment; includes hardware context
+        Task is clearly defined (triggering on rare events with sub-10 micros latency); architecture, constraints, and system context (FPGA, Alveo) are well detailed.
     dataset:
-      rating: 2
+      rating: 7.0
       reason: |
-        Simulated datasets referenced but not publicly available or FAIR-compliant
+        Simulated tracking data from sPHENIX and EIC; internally structured but not yet released in a public FAIR-compliant format.
     metrics:
-      rating: 5
+      rating: 10.0
       reason: |
-        Clear, quantitative metrics aligned with task goals and hardware evaluation
+        Accuracy, latency, and hardware resource utilization (LUTs, DSPs) are clearly defined and used in evaluation.
     reference_solution:
-      rating: 4
+      rating: 9.0
       reason: |
-        Models tested on hardware with source code references; full training pipeline not yet released
+        Graph-based models (BGN-ST, GarNet) are implemented and tested on real hardware; reproducibility possible with hls4ml but full scripts not bundled.
     documentation:
-      rating: 4
+      rating: 8.0
       reason: |
-        Detailed paper and tools described; open repo planned but not yet complete
+        Paper is detailed and tool usage (FlowGNN, hls4ml) is described, but repo release and dataset access remain in progress.
 - date: "2024-06-24"
   version: "v1.0"
   last_updated: "2024-06"
@@ -814,29 +812,29 @@
     benchmark_ready: "Yes (Zenodo:7331128)"
   ratings:
     software:
-      rating: 2
+      rating: 0
       reason: |
-        No packaged code or setup scripts available; replication depends on hardware description and paper
+        Not analyzed. 
     specification:
-      rating: 5
+      rating: 9.0
       reason: |
-        None
+        Task (automated neural architecture search for real-time physics) is well formulated with clear latency, model compression, and deployment goals.
     dataset:
-      rating: 2
+      rating: 6.0
       reason: |
-        No dataset links; not publicly hosted or FAIR-compliant
+        Internal Bragg and jet datasets used; not publicly hosted or FAIR-compliant, though mentioned in the paper.
     metrics:
-      rating: 5
+      rating: 10.0
       reason: |
-        None
+        BOP reduction, latency, and accuracy are all quantitatively evaluated.
     reference_solution:
-      rating: 3
+      rating: 8.0
       reason: |
-        In-pixel 2-layer NN described and evaluated, but reproducibility and source files are not released
+        NAC-generated models for Bragg peak and jet classification are described, but pipeline requires integration of several tools and is not fully packaged.
     documentation:
-      rating: 3
+      rating: 7.0
       reason: |
-        Paper contains detailed descriptions, but no repo or external guide for reproducing results
+        NAC pipeline, hls4ml usage, and results are discussed; code (e.g., nac-opt) referenced, but replication requires stitching together toolchain and data.
 - date: "2023-10-03"
   version: "v1.0"
   last_updated: "2023-10"
@@ -902,29 +900,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 2
+      rating: 0
       reason: |
-        No standalone code repository or setup instructions provided
+        Not analyzed. 
     specification:
-      rating: 5
+      rating: 10.0
       reason: |
-        None
+        Fully specified: describes task (data filtering/classification, system design (on-sensor inference), 
+        latency (25 ns), and power constraints.
     dataset:
-      rating: 2
+      rating: 8.0
       reason: |
-        No dataset links or FAIR metadata; unclear public access
+        In-pixel charge cluster data used, but dataset release info is minimal; FAIR metadata/versioning limited.
     metrics:
-      rating: 4
+      rating: 9.0
       reason: |
-        Only localization accuracy and inference time mentioned; not formally benchmarked with scripts
+        Data rejection rate and power per pixel are clearly defined and directly tied to hardware goals.
     reference_solution:
-      rating: 3
+      rating: 9.0
       reason: |
-        BraggNN model is described and evaluated, but no direct implementation or inference scripts available
+        2-layer NN implementation is evaluated in hardware; reproducible via hls4ml flow with results in paper.
     documentation:
-      rating: 3
+      rating: 8.0
       reason: |
-        Paper is clear, but lacks a GitHub repo or full reproducibility pipeline
+        Paper is clear; Zenodo asset is referenced, but additional GitHub or setup repo would improve reproducibility.
 - date: "2023-12-03"
   version: "v1.0"
   last_updated: "2023-12"
@@ -988,29 +987,29 @@
     benchmark_ready: false
   ratings:
     software:
-      rating: 2
+      rating: 0
       reason: |
-        No standalone code repository or setup instructions provided
+        Not analyzed. 
     specification:
-      rating: 5
+      rating: 9.0
       reason: |
-        None
+        Peak localization task is well-defined for diffraction images; input/output described clearly, but no system constraints.
     dataset:
-      rating: 2
+      rating: 8.0
       reason: |
-        No dataset links or FAIR metadata; unclear public access
+        Simulated diffraction images provided; reusable and downloadable, but not externally versioned or FAIR-structured.
     metrics:
-      rating: 4
+      rating: 9.0
       reason: |
-        Only localization accuracy and inference time mentioned; not formally benchmarked with scripts
+        Inference speed and localization accuracy are standard and quantitatively reported.
     reference_solution:
-      rating: 3
+      rating: 8.0
       reason: |
-        BraggNN model is described and evaluated, but no direct implementation or inference scripts available
+        BraggNN model and training pipeline exist, but need stitching from separate repositories.
     documentation:
-      rating: 3
+      rating: 8.0
       reason: |
-        Paper is clear, but lacks a GitHub repo or full reproducibility pipeline
+        Paper and codebase are available and usable, though not fully turnkey.
 - date: "2023-12-05"
   version: "v1.0"
   last_updated: "2023-12"
@@ -1074,29 +1073,29 @@
     benchmark_ready: false
   ratings:
     software:
-      rating: 1
-      reason: |
-        No public implementation or containerized setup released
-    specification:
-      rating: 3
-      reason: |
-        No standardized I/O, latency constraint, or complete framing
-    dataset:
       rating: 0
       reason: |
-        Dataset not provided or described in any formal way
+        Not analyzed. 
+    specification:
+      rating: 7.0
+      reason: |
+        General task defined (real-time microscopy inference), but no standardized I/O format, latency constraint, or complete problem framing yet.
+    dataset:
+      rating: 0.0
+      reason: |
+        Dataset not provided or described in any formal way.
     metrics:
-      rating: 2
+      rating: 6.0
       reason: |
-        Throughput and accuracy mentioned, but not defined or benchmarked
+        Mentions throughput and accuracy, but metrics are not formally defined or benchmarked.
     reference_solution:
-      rating: 1
+      rating: 2.0
       reason: |
-        Prototype CNNs described; no code, baseline, or training details available
+        Prototype CNNs described; no baseline or implementation released.
     documentation:
-      rating: 2
+      rating: 5.0
       reason: |
-        Some insight via papers, but no working repo, setup, or replication path
+        OpenReview paper and Gemini doc give some insight, but no working code, environment, or example.
 - date: "2020-01-01"
   version: "v1.0"
   last_updated: "2020-01"
@@ -1165,29 +1164,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        No containerized or automated implementation provided for full benchmark suite
+        Not analyzed. 
     specification:
-      rating: 4
+      rating: 8.0
       reason: |
-        Task coverage is broad and well-scoped, but system constraints and expected outputs are not uniformly defined
+        Task (plasma diagnostic classification) and real-time deployment described; system specs (FPS targets) implied but not fully quantified.
     dataset:
-      rating: 3
+      rating: 6.0
       reason: |
-        Multiple datasets are mentioned, but not consistently FAIR-documented, versioned, or linked
+        Dataset is sensor stream-based but not shared or FAIR-documented.
     metrics:
-      rating: 4
+      rating: 8.0
       reason: |
-        Metrics are appropriate, but standardization and reproducibility across tasks vary
+        FPS and classification accuracy reported and relevant.
     reference_solution:
-      rating: 3
+      rating: 7.0
       reason: |
-        Reference models (e.g., ResNet, BERT) described; no turnkey implementation or results repository for all levels
+        CNN model described and evaluated, but public implementation and benchmarks are not available yet.
     documentation:
-      rating: 3
+      rating: 6.0
       reason: |
-        Paper is comprehensive, but minimal user-facing documentation or structured reproduction guide
+        Paper and Gemini doc exist, but full setup instructions and tools are still in progress.
 - date: "2020-01-01"
   version: "v1.0"
   last_updated: "2020-01"
@@ -1257,29 +1256,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        No automated setup across all tasks; some components require manual integration.
+        Not analyzed. 
     specification:
-      rating: 4
+      rating: 9.0
       reason: |
-        Specific I/O formats and hardware constraints are not uniformly detailed across all tasks.
+        Evaluates AI at multiple levels (micro to end-to-end); tasks and workloads are clearly defined, though specific I/O formats and constraints vary.
     dataset:
-      rating: 4
+      rating: 9.0
       reason: |
-        Some datasets lack consistent versioning or rich metadata annotations.
+        Realistic datasets across diverse domains; FAIR structure for many components, but individual datasets may not all be versioned or richly annotated.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        None
+        Latency, throughput, and accuracy clearly defined for end-to-end tasks; consistent across models and setups.
     reference_solution:
-      rating: 4
+      rating: 8.0
       reason: |
-        Not all benchmark components have fully reproducible baselines; deployment across platforms is fragmented.
+        Reference implementations for several tasks exist, but setup across all tasks is complex and not fully streamlined.
     documentation:
-      rating: 4
+      rating: 8.0
       reason: |
-        Setup requires manual steps; some task-specific instructions lack clarity.
+        Central documentation exists, with detailed component breakdowns; environment setup across platforms (e.g., hardware variations) can require manual adjustment.
 - date: "2021-10-20"
   version: "v1.0"
   last_updated: "2021-10"
@@ -1349,29 +1348,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        Reference implementations exist but containerization and environment setup require manual effort across HPC systems.
+        Not analyzed. 
     specification:
-      rating: 4
+      rating: 9.0
       reason: |
-        Hardware constraints and I/O formats are not fully defined for all scenarios.
+        Focused on structured/unstructured data pipelines; clearly defined tasks spanning analytics to AI; some scenarios lack hardware constraint modeling.
     dataset:
-      rating: 5
+      rating: 9.0
       reason: |
-        Not all data is independently versioned or comes with standardized FAIR metadata.
+        Built from 13 real-world sources; structured for realistic big data scenarios; partially FAIR-compliant with documented data motifs.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        None
+        Covers data throughput, latency, and accuracy; quantitative and benchmark-ready.
     reference_solution:
-      rating: 4
+      rating: 8.0
       reason: |
-        Reproducibility and environment tuning depend on system configuration; baseline models not uniformly bundled.
+        Many pipeline and model examples provided using Hadoop/Spark/Flink; setup effort varies by task and platform.
     documentation:
-      rating: 4
+      rating: 8.0
       reason: |
-        Central guidance is available but requires domain-specific effort to replicate results across systems.
+        Strong documentation with examples and task specifications; centralized support exists, but task-specific tuning may require domain expertise.
 - date: "2023-06-01"
   version: "v1.0"
   last_updated: "2023-06"
@@ -1463,35 +1462,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 5
+      rating: 0
       reason: |
-        Actively maintained GitHub repository available at https://github.com/mlcommons/science
-        with implementations, scripts, and reproducibility support.
+        Not analyzed. 
     specification:
-      rating: 5
+      rating: 10.0
       reason: |
-        All five specification aspects are covered: system constraints, task, dataset format,
-        benchmark inputs, and outputs.
+        Scientific ML tasks (e.g., CosmoFlow, DeepCAM) are clearly defined with HPC system-level constraints and targets.
     dataset:
-      rating: 5
+      rating: 9.0
       reason: |
-        Public scientific datasets are used with defined splits. At least 4 FAIR principles
-        are followed.
+        Public scientific datasets (e.g., cosmology, weather); used consistently, though FAIR-compliance of individual datasets varies slightly.
     metrics:
-      rating: 5
+      rating: 10.0
       reason: |
-        Clearly defined metrics such as accuracy, training time, and GPU utilization are
-        used. These metrics are explained and effectively capture solution performance.
+        Training time, GPU utilization, and accuracy are all directly measured and benchmarked across HPC systems.
     reference_solution:
-      rating: 5
+      rating: 9.0
       reason: |
-        A reference implementation is available, well-documented, trainable/open, and includes
-        full metric evaluation and software/hardware details.
+        Reference implementations available and actively maintained; HPC setup may require domain-specific environment.
     documentation:
-      rating: 5
+      rating: 9.0
       reason: |
-        Thorough documentation exists covering the task, background, motivation, evaluation
-        criteria, and includes a supporting paper.
+        GitHub repo and papers provide detailed instructions; reproducibility supported across multiple institutions.
 - date: "2021-07-05"
   version: "v1.0"
   last_updated: "2021-07"
@@ -1562,34 +1555,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        While not formally evaluated in the previous version, Zenodo and paper links suggest available code for baseline models
-        (e.g., autoencoders, GANs), though they are scattered and not unified in a single repository.
+        Not analysed. 
     specification:
-      rating: 3
+      rating: 7.0
       reason: |
-        The task and context are clearly described, but system constraints and formal inputs/outputs are not fully specified.
+        The problem (anomaly detection for new physics at LHC) is clearly described with goals and background, but lacks a formal task specification or constraints.
     dataset:
-      rating: 5
+      rating: 8.0
       reason: |
-        Large-scale dataset hosted on Zenodo, publicly available, well-documented, with defined train/test structure.
-        Appears to follow at least 4 FAIR principles.
+        Large-scale, public dataset derived from LHC simulations; well-documented and available via Zenodo.
     metrics:
-      rating: 4
+      rating: 7.0
       reason: |
-        Uses reasonable metrics (ROC-AUC, detection efficiency) that capture performance but lacks
-        full explanation and standard evaluation tools.
+        Provides AUROC, accuracy, and anomaly detection metrics but lacks standardized evaluation script.
     reference_solution:
-      rating: 2
+      rating: 5.0
       reason: |
-        Baselines are described across multiple papers but lack centralized, reproducible implementations
-        and hardware/software setup details.
+        Baseline models (autoencoders, GANs) are described in associated papers, but implementations vary across papers.
     documentation:
-      rating: 3
+      rating: 6.0
       reason: |
-        Some description in papers and dataset metadata exists, but lacks a unified guide, README,
-        or training setup in a central location.
+        Publicly available papers and datasets with descriptions, but no unified README or training setup.
 - date: "2023-07-17"
   version: "v1.0"
   last_updated: "2023-07"
@@ -1611,7 +1599,7 @@
   summary: |
     The MLCommons Medical AI working group develops benchmarks, best practices, and platforms (MedPerf, GaNDLF, COFE)
     to accelerate robust, privacy-preserving AI development for healthcare. MedPerf enables federated testing of clinical
-    models on diverse datasets, improving generalizability and equity while keeping data onsite .
+    models on diverse datasets, improving generalizability and equity while keeping data onsite :contentReference[oaicite:1]{index=1}.
   licensing: "Apache License 2.0"
   task_types:
   - "Federated evaluation"
@@ -1635,7 +1623,7 @@
   - "NA"
   solutions: "0"
   notes: |
-    Open-source platform under Apache-2.0; used across 20+ institutions and hospitals .
+    Open-source platform under Apache-2.0; used across 20+ institutions and hospitals :contentReference[oaicite:2]{index=2}.
   contact:
     name: "Alex Karargyris (MLCommons Medical AI)"
     email: "unknown"
@@ -1668,35 +1656,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 5
+      rating: 0
       reason: |
-        GitHub repository (https://github.com/mlcommons/medical) provides actively maintained
-        open-source tools like MedPerf and GaNDLF for federated medical AI evaluation.
+        Not analyzed.
     specification:
-      rating: 4
+      rating: 9.0
       reason: |
-        The platform defines federated tasks and model evaluation scenarios. Some clinical and
-        system-level constraints are implied but not uniformly formalized across all use cases.
+        Diverse scientific tasks (earthquake, CFD, microscopy) with detailed problem statements and goals; system constraints not uniformly applied.
     dataset:
-      rating: 4
+      rating: 9.0
       reason: |
-        Multi-institutional datasets used in federated settings; real-world data is handled
-        privately onsite, but some FAIR aspects (e.g., accessibility and metadata) are implicit.
+        Domain-specific datasets (e.g., microscopy, climate); mostly public and structured, but FAIR annotations are not always explicit.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        Metrics such as ROC AUC, accuracy, and fairness are clearly specified and directly
-        support goals like generalizability and equity.
+        Task-specific metrics (MAE, speedup, accuracy) are clear and reproducible.
     reference_solution:
-      rating: 3
+      rating: 9.0
       reason: |
-        GaNDLF workflows and MedPerf-validated CNNs are referenced, but not all baseline models
-        are centrally documented or easily reproducible.
+        Reference models (CNN, GNN, Transformer) provided with training/evaluation pipelines.
     documentation:
-      rating: 5
+      rating: 9.0
       reason: |
-        Extensive documentation, papers, and community support exist. Clear examples and usage
-        instructions are provided in GitHub and publications.
+        Well-documented, open-sourced, and maintained with examples; strong community support and reproducibility focus.
 - date: "2024-10-28"
   version: "v1.0"
   last_updated: "2024-10"
@@ -1716,7 +1698,7 @@
   - "fast simulation"
   summary: |
     The Fast Calorimeter Simulation Challenge 2022 assessed 31 generative-model submissions (VAEs, GANs, Flows, Diffusion)
-    on four calorimeter shower datasets; benchmarking shower quality, generation speed, and model complexity .
+    on four calorimeter shower datasets; benchmarking shower quality, generation speed, and model complexity :contentReference[oaicite:3]{index=3}.
   licensing: "Via Fermilab"
   task_types:
   - "Surrogate modeling"
@@ -1770,37 +1752,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 4
+      rating: 0
       reason: |
-        Community GitHub repos and model implementations are available for the 31 submissions.
-        While not fully unified in one place, the software is accessible and reproducible.
+        Not analyzed.
     specification:
-      rating: 5
+      rating: 9.0
       reason: |
-        The task—evaluating fast generative calorimeter simulations—is clearly defined with
-        benchmarking protocols, constraints like latency and model complexity, and structured
-        evaluation criteria.
+        Task is clearly defined: real-time anomaly detection from high-rate LHC collisions. Latency and bandwidth constraints are mentioned, though not numerically enforced.
     dataset:
-      rating: 5
+      rating: 9.0
       reason: |
-        Four well-structured calorimeter datasets are provided, with different voxel resolutions,
-        open access, signal/background separation, and metadata. FAIR principles are well covered.
+        Publicly available via Zenodo, with structured signal/background splits, and rich metadata; nearly fully FAIR.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        Metrics like histogram similarity, classifier AUC, and generation latency are well defined
-        and relevant for simulation quality, fidelity, and performance.
+        ROC-AUC and detection efficiency are clearly defined and appropriate for unsupervised anomaly detection.
     reference_solution:
-      rating: 4
+      rating: 8.0
       reason: |
-        Several baselines (GANs, VAEs, flows, diffusion models) are documented and evaluated.
-        Some are available via community repos, though not all are fully standardized or bundled.
+        Several baseline methods (autoencoder, VAE, isolation forest) are evaluated; runnable versions available via community repos but not tightly bundled.
     documentation:
-      rating: 4
+      rating: 8.0
       reason: |
-        Accompanied by a detailed paper and dataset description. Reproduction of pipelines may require
-        additional setup or familiarity with the model submissions.
-        
+        Paper and data documentation are clear, and the dataset is widely reused. Setup requires some manual effort to reproduce full pipelines.
 - date: "ongoing"
   version: "v1.0"
   last_updated: "2025-06"
@@ -1875,36 +1849,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 5
+      rating: 0
       reason: |
-        Actively maintained open-source platform (https://paperswithcode.com) under Apache 2.0 license;
-        includes automatic integration with GitHub, datasets, and models for reproducibility.
+        Not analyzed.
     specification:
-      rating: 4
+      rating: 9.0
       reason: |
-        Task and benchmark structures are well organized and standardized, but due to its broad coverage,
-        input/output formats vary significantly between tasks and are not always tightly controlled.
+        Evaluation setting (federated clinical benchmarking) is well-defined; I/O interfaces vary slightly by task but are standardized in MedPerf platform.
     dataset:
-      rating: 3
+      rating: 8.0
       reason: |
-        Relies on external datasets submitted by the community. While links are available, FAIR compliance
-        is not guaranteed or systematically enforced across all benchmarks.
+        Uses distributed, real-world clinical datasets across institutions; FAIR compliance varies across hospitals and data hosts.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        Tracks state-of-the-art using task-specific metrics like Accuracy, F1, BLEU, etc., with consistent
-        aggregation and historical SOTA tracking.
+        ROC AUC, accuracy, and fairness metrics are explicitly defined and task-dependent; consistently tracked across institutions.
     reference_solution:
-      rating: 3
+      rating: 8.0
       reason: |
-        Provides links to implementations of many SOTA models, but no single unified reference baseline
-        is required or maintained per benchmark.
+        Validated CNNs and GaNDLF pipelines are used and shared via the MedPerf tool, but some implementations are abstracted behind the platform.
     documentation:
-      rating: 4
+      rating: 9.0
       reason: |
-        Strong front-end documentation and metadata on benchmarks, tasks, and models; however, some benchmark-specific
-        instructions are sparse or dependent on external paper links.
-
+        Excellent documentation across MedPerf, GaNDLF, and COFE; reproducibility handled via containerized flows and task templates.
 - date: "2022-01-01"
   version: "v1.0"
   last_updated: "2025-03"
@@ -1923,7 +1890,7 @@
   - "meta-benchmark"
   summary: |
     Codabench (successor to CodaLab) is a flexible, easy-to-use, reproducible API platform for hosting AI benchmarks
-    and code-submission challenges. It supports custom scoring, inverted benchmarks, and scalable public or private queues .
+    and code-submission challenges. It supports custom scoring, inverted benchmarks, and scalable public or private queues :contentReference[oaicite:1]{index=1}.
   licensing: "https://github.com/codalab/codalab-competitions/wiki/Privacy"
   task_types:
   - "Multiple"
@@ -1943,7 +1910,7 @@
   - "Multiple"
   solutions: "Several"
   notes: |
-    Hosts 51 public competitions, ~26 k users, 177 k submissions 
+    Hosts 51 public competitions, ~26 k users, 177 k submissions :contentReference[oaicite:2]{index=2}
   contact:
     name: "Isabelle Guyon (Université Paris-Saclay)"
     email: "unknown"
@@ -1999,7 +1966,6 @@
       rating: 1
       reason: |
         This is a platform for posting benchmarks, not a benchmark in itself.
-
 - date: "2021-09-27"
   version: "v1.0"
   last_updated: "2023-07"
@@ -2018,7 +1984,7 @@
   - "surrogate modeling"
   summary: |
     Sabath is a metadata framework from the SBI-FAIR group (UTK, Argonne, Virginia) facilitating
-    FAIR-compliant benchmarking and surrogate execution logging across HPC systems .
+    FAIR-compliant benchmarking and surrogate execution logging across HPC systems :contentReference[oaicite:3]{index=3}.
   licensing: "BSD 3-Clause License"
   task_types:
   - "Systems benchmarking"
@@ -2037,7 +2003,7 @@
   - "NA"
   solutions: "0"
   notes: |
-    Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc. 
+    Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc. :contentReference[oaicite:4]{index=4}
   contact:
     name: "Piotr Luszczek"
     email: "luszczek@utk.edu"
@@ -2063,36 +2029,29 @@
     benchmark_ready: "N/A"
   ratings:
     software:
-      rating: 4
+      rating: 0
       reason: |
-        Actively maintained GitHub repository (https://github.com/icl-utk-edu/slip/tree/sabath)
-        with BSD-licensed tooling for FAIR metadata capture; integrates with existing surrogate
-        modeling benchmarks.
+        Not analyzed.
     specification:
-      rating: 4
+      rating: 8.0
       reason: |
-        FAIR metadata structure and logging goals are clearly described. Input/output definitions
-        are implied through integrations (e.g., MiniWeatherML), though not always formalized.
+        The benchmark defines simulation-based inference (SBI) tasks clearly with FAIR principles applied to particle physics datasets.
     dataset:
-      rating: 4
+      rating: 8.0
       reason: |
-        Datasets used in surrogate benchmarks are publicly available, well-structured, and
-        FAIR-aligned, but not independently hosted by Sabath itself.
+        Data is well-structured for SBI and publicly available with clear licensing.
     metrics:
-      rating: 4
+      rating: 8.0
       reason: |
-        Emphasizes metadata completeness and FAIR compliance. Metrics are clear and well-matched
-        to its metadata-focused benchmarking context.
+        Includes likelihood and posterior accuracy; metrics well-matched to SBI.
     reference_solution:
-      rating: 3
+      rating: 7.0
       reason: |
-        Includes integration with multiple surrogate benchmarks and models, though not all are
-        fully documented or packaged as standardized reference solutions.
+        Baseline SBI models are implemented and reproducible.
     documentation:
-      rating: 3
+      rating: 6.0
       reason: |
-        Basic instructions and code are provided on GitHub, but more detailed walkthroughs,
-        use-case examples, or tutorials are limited.
+        GitHub repo includes code and instructions, but lacks full tutorials or walkthroughs.
 - date: "2022-10-13"
   version: "v0.1.0"
   last_updated: "2025-05"
@@ -2111,7 +2070,7 @@
   - "surrogate modeling"
   - "NeurIPS"
   summary: |
-    PDEBench offers forward/inverse PDE tasks with large ready-to-use datasets and baselines (FNO, U-Net, PINN), packaged via a unified API. It won the SimTech Best Paper Award 2023 .
+    PDEBench offers forward/inverse PDE tasks with large ready-to-use datasets and baselines (FNO, U-Net, PINN), packaged via a unified API. It won the SimTech Best Paper Award 2023 :contentReference[oaicite:5]{index=5}.
   licensing: "Other"
   task_types:
   - "Supervised Learning"
@@ -2133,7 +2092,7 @@
   - "Supervised Learning"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
-    Datasets hosted on DaRUS (DOI:10.18419/darus-2986); contact maintainers by email 
+    Datasets hosted on DaRUS (DOI:10.18419/darus-2986); contact maintainers by email :contentReference[oaicite:6]{index=6}
   contact:
     name: "Makoto Takamoto (makoto.takamoto@neclab.eu)"
     email: "unknown"
@@ -2161,35 +2120,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 5
+      rating: 0
       reason: |
-        GitHub repository (https://github.com/pdebench/PDEBench) is actively maintained and includes
-        training pipelines, data loaders, and evaluation scripts. Installation and usage are well-documented.
+        Not analyzed.
     specification:
-      rating: 5
+      rating: 9.0
       reason: |
-        Clearly defined tasks for forward and inverse PDE problems, with structured input/output formats,
-        system constraints, and task specifications.
+        Clearly defined PDE-solving tasks with well-specified constraints and solution formats.
     dataset:
-      rating: 5
+      rating: 9.0
       reason: |
-        Diverse PDE datasets (synthetic and real-world) hosted on DaRUS with DOIs. Datasets are
-        well-documented, structured, and follow FAIR practices.
+        Includes synthetic and real-world PDE datasets with detailed format descriptions.
     metrics:
-      rating: 4
+      rating: 8.0
       reason: |
-        Includes RMSE, boundary RMSE, and Fourier-domain RMSE. These are well-suited to PDE problems,
-        though rationale behind metric choices could be expanded in some cases.
+        Uses L2 error and other norms relevant to PDE solutions.
     reference_solution:
-      rating: 4
+      rating: 7.0
       reason: |
-        Baselines (FNO, U-Net, PINN, etc.) are available and documented, but not every model
-        includes full training and evaluation reproducibility out-of-the-box.
+        Includes baseline solvers and trained models across multiple PDE tasks.
     documentation:
-      rating: 4
+      rating: 8.0
       reason: |
-        Strong documentation on GitHub including examples, configs, and usage instructions.
-        Some model-specific details and tutorials could be further expanded.
+        Well-organized GitHub with examples, dataset loading scripts, and training configs.
 - date: "2024-12-03"
   version: "v1.0"
   last_updated: "2025-06"
@@ -2208,7 +2161,7 @@
   - "physics simulations"
   - "spatiotemporal dynamics"
   summary: |
-    A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains-from biology to astrophysical magnetohydrodynamic simulations-with unified API and metadata. Ideal for training surrogate and foundation models on scientific data. 
+    A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains-from biology to astrophysical magnetohydrodynamic simulations-with unified API and metadata. Ideal for training surrogate and foundation models on scientific data. :contentReference[oaicite:1]{index=1}
   licensing: "BSD 3-Clause License"
   task_types:
   - "Supervised Learning"
@@ -2228,7 +2181,7 @@
   - "Supervised Learning"
   solutions: "1"
   notes: |
-    Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. 
+    Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. :contentReference[oaicite:2]{index=2}
   contact:
     name: "Ruben Ohana"
     email: "rohana@flatironinstitute.org"
@@ -2260,35 +2213,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 5
+      rating: 0
       reason: |
-        BSD-licensed software and unified API are available via GitHub and PyPI.
-        Supports loading and manipulating large HDF5 datasets across 16 domains.
+        Not analyzed.
     specification:
-      rating: 4
+      rating: 7.0
       reason: |
-        The benchmark includes clearly defined surrogate modeling tasks, data structure, and metadata.
-        However, constraints and formal task specs vary slightly across domains.
+        Explores LLM understanding of mental health scenarios; framing is creative but loosely defined.
     dataset:
-      rating: 5
+      rating: 6.0
       reason: |
-        15 TB of ML-ready HDF5 datasets across 16 physics domains. Public, well-structured,
-        richly annotated, and designed with FAIR principles in mind.
+        Dataset is described in concept but not released; privacy limits public access though synthetic proxies are referenced.
     metrics:
-      rating: 3
+      rating: 7.0
       reason: |
-        Domain breadth and dataset size are emphasized. Standardized quantitative metrics for
-        model evaluation (e.g., RMSE, accuracy) are not uniformly applied across all domains.
+        Uses manual annotation and quality scores, but lacks standardized automatic metrics.
     reference_solution:
-      rating: 3
+      rating: 6.0
       reason: |
-        Includes FNO and U-Net baselines, but does not yet provide fully trained, reproducible
-        models or scripts across all datasets.
+        Provides few-shot prompt examples and human rating calibration details.
     documentation:
-      rating: 4
+      rating: 5.0
       reason: |
-        The GitHub repo and NeurIPS paper provide detailed guidance on dataset use,
-        structure, and training setup. Tutorials and walkthroughs could be expanded further.
+        Paper gives use cases, but code and data are not yet public.
 - date: "2024-10-31"
   version: "v1.0"
   last_updated: "2024-11"
@@ -2307,7 +2254,7 @@
   - "accelerator"
   - "throughput"
   summary: |
-    A suite evaluating inference performance of LLMs (LLaMA, Mistral, Qwen) across diverse accelerators (NVIDIA, AMD, Intel, SambaNova) and frameworks (vLLM, DeepSpeed-MII, etc.), with an interactive dashboard and per-platform metrics. 
+    A suite evaluating inference performance of LLMs (LLaMA, Mistral, Qwen) across diverse accelerators (NVIDIA, AMD, Intel, SambaNova) and frameworks (vLLM, DeepSpeed-MII, etc.), with an interactive dashboard and per-platform metrics. :contentReference[oaicite:3]{index=3}
   licensing: "BSD 3-Clause \"New\" or \"Revised\" License"
   task_types:
   - "Inference Benchmarking"
@@ -2331,7 +2278,7 @@
   - "Inference Benchmarking"
   solutions: "0"
   notes: |
-    Licensed under BSD-3, maintained by Argonne; supports GPUs and accelerators. 
+    Licensed under BSD-3, maintained by Argonne; supports GPUs and accelerators. :contentReference[oaicite:4]{index=4}
   contact:
     name: "Krishna Teja Chitty-Venkata (Argonne LCF)"
     email: "unknown"
@@ -2361,36 +2308,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 5
+      rating: 0
       reason: |
-        Public GitHub repository (https://github.com/argonne-lcf/LLM-Inference-Bench) under BSD-3 license.
-        Includes scripts, configurations, and dashboards for running and visualizing LLM inference benchmarks
-        across multiple accelerator platforms.
+        Not analyzed.
     specification:
-      rating: 5
+      rating: 9.0
       reason: |
-        Benchmark scope, models, accelerator targets, and supported frameworks are clearly specified.
-        Input configurations and output metrics are standardized across hardware types.
+        PDE tasks (forward/inverse) and I/O structures are clearly specified with detailed PDE context and constraints.
     dataset:
-      rating: 2
+      rating: 10.0
       reason: |
-        No novel dataset is introduced; benchmark relies on pre-trained LLMs and synthetic inference inputs.
-        Dataset structure and FAIR considerations are minimal.
+        Hosted via DaRUS with a DOI, well-documented, versioned, and FAIR-compliant.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        Hardware-specific metrics (token throughput, latency, utilization) are well-defined, consistently measured,
-        and aggregated in dashboards.
+        Uses RMSE variants and Fourier-based errors.
     reference_solution:
-      rating: 3
+      rating: 10.0
       reason: |
-        Inference configurations and baseline performance results are provided, but there are no
-        full reference training pipelines or model implementations.
+        Baselines (FNO, U-Net, PINN) implemented and ready-to-run; strong community adoption.
     documentation:
-      rating: 4
+      rating: 9.0
       reason: |
-        GitHub repo provides clear usage instructions, setup guides, and interactive dashboard tooling.
-        Some areas like benchmarking extensions or advanced tuning are less detailed.
+        Clean GitHub with usage, dataset links, and tutorial notebooks.
 - date: "2023-12-12"
   version: "v0.4.9"
   last_updated: "2025-06"
@@ -2409,7 +2349,7 @@
   - "performance"
   - "JSON decoding"
   summary: |
-    A high-performance open-source serving framework combining efficient backend runtime (RadixAttention, batching, quantization) and expressive frontend language, boosting LLM/VLM inference throughput up to ~3x over alternatives. 
+    A high-performance open-source serving framework combining efficient backend runtime (RadixAttention, batching, quantization) and expressive frontend language, boosting LLM/VLM inference throughput up to ~3x over alternatives. :contentReference[oaicite:5]{index=5}
   licensing: "Apache License 2.0"
   task_types:
   - "Model serving framework"
@@ -2431,7 +2371,7 @@
   - "Model serving"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
-    Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025. 
+    Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025. :contentReference[oaicite:6]{index=6}
   contact:
     name: "SGLang Team"
     email: "unknown"
@@ -2461,36 +2401,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 5
+      rating: 0
       reason: |
-        Actively maintained and production-deployed (e.g., xAI, NVIDIA); source code available under
-        Apache 2.0. Includes efficient backends (RadixAttention, quantization, batching) and full
-        serving infrastructure.
+        Not analyzed.
     specification:
-      rating: 4
+      rating: 8.0
       reason: |
-        The framework clearly defines performance targets, serving logic, and model integration.
-        Input/output expectations are consistent, but not all benchmarks are standardized.
+        Clearly framed around surrogate learning across 16 domains, but not all tasks are formally posed or constrained in a unified benchmark protocol. Paper mentions performance on NVIDIA H100.
     dataset:
-      rating: 2
+      rating: 9.0
       reason: |
-        Does not introduce new datasets; instead, it evaluates performance using existing model benchmarks.
-        Only configuration files are included.
+        FAIR-compliant physics simulation dataset, structured in HDF5 with unified metadata.
     metrics:
-      rating: 5
+      rating: 7.0
       reason: |
-        Serving-related metrics such as tokens/sec, time-to-first-token, and throughput gain vs. baselines
-        are well-defined and consistently applied.
+        Metrics like dataset size and domain coverage are listed, but standardized quantitative model evaluation metrics (e.g., RMSE, MAE) are not enforced.
     reference_solution:
-      rating: 3
+      rating: 9.0
       reason: |
-        Provides benchmark configs and example integrations (e.g., with LLaVA, DeepSeek), but not all
-        models or scripts are runnable out-of-the-box.
+        FNO and U-Net baselines available; full benchmarking implementations pending NeurIPS paper code release.
     documentation:
-      rating: 4
+      rating: 10.0
       reason: |
-        Strong GitHub documentation, install guides, and benchmarks. Some advanced topics (e.g.,
-        scaling, hardware tuning) could use deeper walkthroughs.
+        Site and GitHub offer a unified API, metadata standards, and dataset loading tools; NeurIPS paper adds detailed design context.
 - date: "2023-09-12"
   version: "v0.10.0"
   last_updated: "2025-06"
@@ -2511,7 +2444,7 @@
   summary: |
     vLLM is a fast, high-throughput, memory-efficient inference and serving engine for large language models, 
     featuring PagedAttention, continuous batching, and support for quantized and pipelined model execution. 
-    Benchmarks compare it to TensorRT-LLM, SGLang, and others. 
+    Benchmarks compare it to TensorRT-LLM, SGLang, and others. :contentReference[oaicite:1]{index=1}
   licensing: "Apache License 2.0"
   task_types:
   - "Inference Benchmarking"
@@ -2534,7 +2467,7 @@
   - "Inference"
   solutions: "0"
   notes: |
-    Incubated by LF AI and Data; achieves up to 24x throughput over HuggingFace Transformers 
+    Incubated by LF AI and Data; achieves up to 24x throughput over HuggingFace Transformers :contentReference[oaicite:2]{index=2}
   contact:
     name: "Woosuk Kwon (vLLM Team)"
     email: "unknown"
@@ -2568,35 +2501,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 5
+      rating: 0
       reason: |
-        Actively maintained open-source project under Apache 2.0. GitHub repo includes
-        full serving engine, benchmarking scripts, CUDA integration, and deployment examples.
+        Not analyzed.
     specification:
-      rating: 5
+      rating: 9.0
       reason: |
-        Inference benchmarks are well-defined with clear input/output formats and platform-specific constraints.
-        Covers multiple models, hardware backends, and batching configurations.
+        Benchmarks hardware performance of LLM inference across multiple platforms with well-defined input/output and platform constraints.
     dataset:
-      rating: 3
+      rating: 7.0
       reason: |
-        No traditional dataset is included. Instead, it uses structured configs and logs suitable for inference benchmarking.
-        FAIR principles are only partially applicable.
+        Uses structured log files and configs instead of conventional datasets; suitable for inference benchmarking.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        Comprehensive performance metrics like tokens/sec, time-to-first-token (TTFT), and memory footprint
-        are consistently applied and benchmarked across frameworks.
+        Clear throughput, latency, and utilization metrics; platform comparison dashboard enhances evaluation.
     reference_solution:
-      rating: 4
+      rating: 8.0
       reason: |
-        Provides runnable scripts and configs for several models (LLaMA, Mixtral, etc.) across platforms.
-        Baselines are reproducible, though not all models are fully wrapped or hosted.
+        Includes reproducible scripts and example runs; models like LLaMA and Mistral are referenced with platform-specific configs.
     documentation:
-      rating: 4
+      rating: 8.0
       reason: |
-        Well-structured GitHub documentation with setup instructions, config examples, benchmarking comparisons,
-        and performance tuning guides.
+        GitHub contains clear instructions, platform details, and framework comparisons.
 - date: "2022-06-22"
   version: "v1.0"
   last_updated: "2025-01"
@@ -2663,35 +2590,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 4
+      rating: 0
       reason: |
-        Interactive dashboard built with ObservableHQ and linked to vLLM benchmarks.
-        Source code is not fully open, but backend integration with vLLM is well-maintained.
+        Not analyzed.
     specification:
-      rating: 4
+      rating: 8.0
       reason: |
-        While primarily a visualization tool, it includes benchmark configurations,
-        metric definitions, and supports comparison across models and hardware.
+        Framed as a model-serving tool rather than a benchmark, but includes benchmark configurations and real model tasks.
     dataset:
-      rating: 2
+      rating: 6.0
       reason: |
-        No datasets are bundled; the dashboard visualizes metrics derived from model
-        inference logs or external endpoints, not a formal dataset.
+        Mostly uses dummy configs or external model endpoints for evaluation; not designed around a formal dataset.
     metrics:
-      rating: 4
+      rating: 8.0
       reason: |
-        Tracks tokens/sec, TTFT, memory usage, and platform comparisons. Metrics are clear
-        but focused on visualization rather than statistical robustness.
+        Well-defined serving metrics: tokens/sec, time-to-first-token, and gain over baselines.
     reference_solution:
-      rating: 3
+      rating: 9.0
       reason: |
-        Dashboards include reproducible views of benchmarked models, but do not ship
-        with runnable model code. Relies on external serving infrastructure.
+        Core framework includes full reproducible serving benchmarks and code; multiple deployment case studies.
     documentation:
-      rating: 4
+      rating: 9.0
       reason: |
-        Public dashboard with instructions and tooltips; documentation is clear, though access
-        is restricted (login required) and backend setup is opaque to users.
+        High-quality usage guides, examples, and performance tuning docs.
 - date: "2022-04-01"
   version: "v3.0.2"
   last_updated: "2025-06"
@@ -2761,35 +2682,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 5
+      rating: 0
       reason: |
-        Actively maintained open-source library under Apache 2.0. Offers a clean API,
-        extensive model zoo (>30 models), integration with Ray, Optuna, and supports
-        scalable training and inference workflows.
+        Not analyzed.
     specification:
-      rating: 5
+      rating: 9.0
       reason: |
-        Forecasting task is well-defined with clear input/output structures. Framework supports
-        probabilistic and deterministic forecasting, with unified interfaces and support for batch evaluation.
+        Targets high-throughput LLM inference via PagedAttention and memory-optimized serving; benchmarks cover many configs.
     dataset:
-      rating: 3
+      rating: 7.0
       reason: |
-        NeuralForecast does not include its own datasets but supports standard datasets (e.g., M4, M5, ETT).
-        FAIR compliance depends on user-supplied data.
+        Focuses on model configs and streaming input/output pipelines rather than classical datasets.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        RMSE, MAPE, CRPS, and other domain-relevant metrics are well supported and integrated into the evaluation loop.
+        Strong token/sec, memory usage, and TTFT metrics; comparative plots and logs included.
     reference_solution:
-      rating: 4
+      rating: 9.0
       reason: |
-        Includes runnable model baselines and training scripts for all supported models.
-        Some models have pretrained weights, but not all are fully benchmarked out-of-the-box.
+        Benchmarks reproducible via script with support for multiple models and hardware types.
     documentation:
-      rating: 5
+      rating: 9.0
       reason: |
-        Rich documentation with examples, API references, tutorials, notebooks, and CLI support.
-        PyPI, GitHub, and official blog posts offer clear guidance for usage and extension.
+        Excellent GitHub docs, CLI/API usage, and deployment walkthroughs.
 - date: "2023-06-01"
   version: "v3.0.2"
   last_updated: "2025-06"
@@ -2809,7 +2724,7 @@
   summary: |
     NHITS (Neural Hierarchical Interpolation for Time Series) is a state-of-the-art model that
     improved accuracy by ~25% and reduced compute by 50x compared to Transformer baselines,
-    using hierarchical interpolation and multi-rate sampling .
+    using hierarchical interpolation and multi-rate sampling :contentReference[oaicite:1]{index=1}.
   licensing: "Apache License 2.0"
   task_types:
   - "Time-series forecasting"
@@ -2858,35 +2773,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 5
+      rating: 0
       reason: |
-        Implemented within the open-source NeuralForecast library under Apache 2.0.
-        Includes training, evaluation, and hyperparameter tuning pipelines. Actively maintained.
+        Not analyzed.
     specification:
-      rating: 5
+      rating: 7.0
       reason: |
-        The NHITS forecasting task is clearly defined with structured input/output formats.
-        Model design targets long-horizon accuracy and compute efficiency.
+        Primarily a visualization frontend; underlying benchmark definitions come from vLLM project.
     dataset:
-      rating: 3
+      rating: 6.0
       reason: |
-        Uses standard benchmark datasets like M4, but does not bundle them directly.
-        FAIR compliance depends on external dataset sources and user setup.
+        No traditional dataset; displays live or logged benchmark metrics.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        Evaluated using RMSE, MAPE, and other standard forecasting metrics, integrated
-        into training and evaluation APIs.
+        Live throughput, memory, latency, and TTFT displayed interactively; highly informative for performance analysis.
     reference_solution:
-      rating: 4
+      rating: 7.0
       reason: |
-        Official NHITS implementation is fully reproducible with training/eval configs,
-        though pretrained weights are not always provided.
+        Dashboard built on vLLM benchmarks but not itself a complete experiment package.
     documentation:
-      rating: 4
+      rating: 8.0
       reason: |
-        Well-documented on GitHub and in AAAI paper, with code examples, training guidance,
-        and usage tutorials. More model-specific docs could improve clarity further.
+        Observable notebooks are intuitive; customization instructions are minimal but UI is self-explanatory.
 - date: "2023-10-03"
   version: "v3.0.2"
   last_updated: "2025-06"
@@ -2905,7 +2814,7 @@
   - "reprogramming"
   summary: |
     Time-LLM uses reprogramming layers to adapt frozen LLMs for time series forecasting, treating
-    forecasting as a language task .
+    forecasting as a language task :contentReference[oaicite:2]{index=2}.
   licensing: "Apache License 2.0"
   task_types:
   - "Time-series forecasting"
@@ -2954,35 +2863,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 4
+      rating: 0
       reason: |
-        Fully open-source under Apache 2.0, integrated into the NeuralForecast library.
-        Includes Time-LLM implementation with example usage and training scripts.
+        Not analyzed.
     specification:
-      rating: 3
+      rating: 7.0
       reason: |
-        High-level framing of forecasting as language modeling is clear, but detailed input/output
-        specifications, constraints, and task formalization are minimal.
+        Describes forecasting with LLMs, but less formal on input/output or task framing.
     dataset:
-      rating: 3
+      rating: 6.0
       reason: |
-        Evaluated on standard datasets like M4 and ETT, but dataset splits and versioning are not
-        bundled or explicitly FAIR-compliant.
+        Uses open time series datasets, but lacks a consolidated data release or splits.
     metrics:
-      rating: 4
+      rating: 7.0
       reason: |
-        Standard forecasting metrics such as RMSE, MAPE, and SMAPE are reported.
-        Evaluation is consistent, though deeper metric justification is limited.
+        Reports metrics like MASE and SMAPE, standard in forecasting.
     reference_solution:
-      rating: 3
+      rating: 6.0
       reason: |
-        Time-LLM implementation is open and reproducible, but limited baselines or comparative
-        implementations are included directly.
+        Provides TimeLLM with open source, but no other baselines included.
     documentation:
-      rating: 3
+      rating: 6.0
       reason: |
-        GitHub README provides installation and quick usage examples, but lacks detailed API docs,
-        training walkthroughs, or extended tutorials.
+        GitHub readme with installation and example usage; lacks API or extensive tutorials.
 - date: "2023-10-05"
   version: "v3.0.2"
   last_updated: "2025-06"
@@ -3001,7 +2904,7 @@
   - "generative model"
   summary: |
     TimeGPT is a transformer-based generative pretrained model on 100B+ time series data for
-    zero-shot forecasting and anomaly detection via API .
+    zero-shot forecasting and anomaly detection via API :contentReference[oaicite:3]{index=3}.
   licensing: "Apache License 2.0"
   task_types:
   - "Time-series forecasting"
@@ -3049,35 +2952,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 4
+      rating: 0
       reason: |
-        Fully open-source Apache 2.0 implementation integrated in NeuralForecast,
-        supporting training and evaluation via API. Production-grade deployment available via Nixtla API and Azure.
+        Not analyzed.
     specification:
-      rating: 3
+      rating: 7.0
       reason: |
-        Concept and forecasting goals are described, but formal input/output definitions
-        and task constraints are not rigorously specified.
+        Describes forecasting with LLMs, but less formal on input/output or task framing.
     dataset:
-      rating: 3
+      rating: 6.0
       reason: |
-        Evaluated on existing open datasets, but consolidated data release, splits, and FAIR
-        metadata are not provided.
+        Uses open time series datasets, but lacks a consolidated data release or splits.
     metrics:
-      rating: 4
+      rating: 7.0
       reason: |
-        Uses standard forecasting metrics such as RMSE, MASE, SMAPE, and anomaly detection
-        metrics consistently across evaluations.
+        Reports metrics like MASE and SMAPE, standard in forecasting.
     reference_solution:
-      rating: 3
+      rating: 6.0
       reason: |
-        TimeGPT implementation is available, but baseline comparisons and additional reference
-        models are limited.
+        Provides TimeLLM with open source, but no other baselines included.
     documentation:
-      rating: 3
+      rating: 6.0
       reason: |
-        Basic README with installation and usage examples; more detailed API docs and tutorials
-        would improve usability.
+        GitHub readme with installation and example usage; lacks API or extensive tutorials.
 - date: "2025-03-03"
   version: "v1.0"
   last_updated: "2025-03"
@@ -3095,7 +2992,7 @@
   - "astrophysics"
   - "time-series"
   summary: |
-    A benchmark for detecting anomalous transient gravitational-wave signals, including "unknown-unknowns," using preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments from dual interferometers. 
+    A benchmark for detecting anomalous transient gravitational-wave signals, including "unknown-unknowns," using preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments from dual interferometers. :contentReference[oaicite:1]{index=1}
   licensing: "NA"
   task_types:
   - "Anomaly detection"
@@ -3142,32 +3039,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 4
+      rating: 0
       reason: |
-        Benchmark platform provided on Codabench with starter kits and submission infrastructure.
-        Code and baseline models are publicly accessible but not extensively maintained beyond the challenge.
+        Not analyzed.
     specification:
-      rating: 4
+      rating: 8.0
       reason: |
-        Well-defined anomaly detection task on gravitational-wave time series with clear input/output
-        expectations and challenge constraints.
+        Novel approach treating forecasting as text generation is explained; framing is less conventional.
     dataset:
-      rating: 5
+      rating: 9.0
       reason: |
-        Uses preprocessed LIGO/Virgo time series data at 4096 Hz, publicly available and standard in astrophysics.
+        Compatible with standard forecasting datasets (e.g., M4, electricity).
     metrics:
-      rating: 4
+      rating: 8.0
       reason: |
-        ROC-AUC, precision, and recall metrics are clearly specified and appropriate for anomaly detection.
+        RMSE and MAPE are included, but less emphasis on interpretability or time-series domain constraints.
     reference_solution:
-      rating: 4
+      rating: 9.0
       reason: |
-        Baseline deep latent CNNs and autoencoders are provided and reproducible, but not extensively documented.
+        Open-source with reprogramming layers, LLM interface scripts provided.
     documentation:
-      rating: 4
+      rating: 8.0
       reason: |
-        Documentation includes challenge instructions, starter kit details, and baseline descriptions,
-        but could benefit from more thorough tutorials and code walkthroughs.
+        Model and architecture overview present, though usability guide is slightly lighter than others.
 - date: "2025-03-03"
   version: "v1.0"
   last_updated: "2025-03"
@@ -3186,7 +3080,7 @@
   - "genomics"
   - "butterfly hybrids"
   summary: |
-    Image-based challenge for detecting butterfly hybrids in microscopy-driven species data. Participants evaluate models on Codabench using image segmentation/classification. 
+    Image-based challenge for detecting butterfly hybrids in microscopy-driven species data. Participants evaluate models on Codabench using image segmentation/classification. :contentReference[oaicite:3]{index=3}
   licensing: "NA"
   task_types:
   - "Anomaly detection"
@@ -3204,13 +3098,13 @@
   - "Anomaly detection"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
-    Hybrid detection benchmarks hosted on Codabench
+    Hybrid detection benchmarks hosted on Codabench. :contentReference[oaicite:4]{index=4}
   contact:
     name: "Imageomics/HDR Team"
     email: "unknown"
   cite:
   - |
-    @misc{campolongo2025buildingmachinelearningchallenges2,
+    @misc{campolongo2025buildingmachinelearningchallenges,
       archiveprefix = {arXiv},
       author        = {Elizabeth G. Campolongo and Yuan-Tang Chou and Ekaterina Govorkova and Wahid Bhimji and Wei-Lun Chao and Chris Harris and Shih-Chieh Hsu and Hilmar Lapp and Mark S. Neubauer and Josephine Namayanja and Aneesh Subramanian and Philip Harris and Advaith Anand and David E. Carlyn and Subhankar Ghosh and Christopher Lawrence and Eric Moreno and Ryan Raikman and Jiaman Wu and Ziheng Zhang and Bayu Adhi and Mohammad Ahmadi Gharehtoragh and Saúl Alonso Monsalve and Marta Babicz and Furqan Baig and Namrata Banerji and William Bardon and Tyler Barna and Tanya Berger-Wolf and Adji Bousso Dieng and Micah Brachman and Quentin Buat and David C. Y. Hui and Phuong Cao and Franco Cerino and Yi-Chun Chang and Shivaji Chaulagain and An-Kai Chen and Deming Chen and Eric Chen and Chia-Jui Chou and Zih-Chen Ciou and Miles Cochran-Branson and Artur Cordeiro Oudot Choi and Michael Coughlin and Matteo Cremonesi and Maria Dadarlat and Peter Darch and Malina Desai and Daniel Diaz and Steven Dillmann and Javier Duarte and Isla Duporge and Urbas Ekka and Saba Entezari Heravi and Hao Fang and Rian Flynn and Geoffrey Fox and Emily Freed and Hang Gao and Jing Gao and Julia Gonski and Matthew Graham and Abolfazl Hashemi and Scott Hauck and James Hazelden and Joshua Henry Peterson and Duc Hoang and Wei Hu and Mirco Huennefeld and David Hyde and Vandana Janeja and Nattapon Jaroenchai and Haoyi Jia and Yunfan Kang and Maksim Kholiavchenko and Elham E. Khoda and Sangin Kim and Aditya Kumar and Bo-Cheng Lai and Trung Le and Chi-Wei Lee and JangHyeon Lee and Shaocheng Lee and Suzan van der Lee and Charles Lewis and Haitong Li and Haoyang Li and Henry Liao and Mia Liu and Xiaolin Liu and Xiulong Liu and Vladimir Loncar and Fangzheng Lyu and Ilya Makarov and Abhishikth Mallampalli Chen-Yu Mao and Alexander Michels and Alexander Migala and Farouk Mokhtar and Mathieu Morlighem and Min Namgung and Andrzej Novak and Andrew Novick and Amy Orsborn and Anand Padmanabhan and Jia-Cheng Pan and Sneh Pandya and Zhiyuan Pei and Ana Peixoto and George Percivall and Alex Po Leung and Sanjay Purushotham and Zhiqiang Que and Melissa Quinnan and Arghya Ranjan and Dylan Rankin and Christina Reissel and Benedikt Riedel and Dan Rubenstein and Argyro Sasli and Eli Shlizerman and Arushi Singh and Kim Singh and Eric R. Sokol and Arturo Sorensen and Yu Su and Mitra Taheri and Vaibhav Thakkar and Ann Mariam Thomas and Eric Toberer and Chenghan Tsai and Rebecca Vandewalle and Arjun Verma and Ricco C. Venterea and He Wang and Jianwu Wang and Sam Wang and Shaowen Wang and Gordon Watts and Jason Weitz and Andrew Wildridge and Rebecca Williams and Scott Wolf and Yue Xu and Jianqi Yan and Jai Yu and Yulei Zhang and Haoran Zhao and Ying Zhao and Yibo Zhong},
       eprint        = {2503.02112},
@@ -3232,35 +3126,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        Codabench platform provides submission infrastructure but no fully maintained
-        code repository or reproducible baseline implementations.
+        Not analyzed.
     specification:
-      rating: 4
+      rating: 8.0
       reason: |
-        Task is clearly described with domain-specific anomaly detection objectives and
-        relevant physics motivation.
+        Task of detecting rare anomalies in butterfly physics is well-described with physics motivation.
     dataset:
-      rating: 3
+      rating: 7.0
       reason: |
-        Dataset consists of real detector data with synthetic anomaly injections; access
-        is restricted and requires NDA, limiting openness and FAIR compliance.
+        Real detector data with injected anomalies is available, but requires NDA for full access.
     metrics:
-      rating: 3
+      rating: 7.0
       reason: |
-        Standard metrics (ROC, F1, precision) are used; evaluation protocols are clear
-        but not deeply elaborated.
+        Uses ROC, F1, and anomaly precision, standard in challenge evaluations.
     reference_solution:
-      rating: 2
+      rating: 4.0
       reason: |
-        Baselines are partially described but lack public code or reproducible execution
-        scripts.
+        Partial baselines described, but no codebase or reproducible runs.
     documentation:
-      rating: 3
+      rating: 6.0
       reason: |
-        Challenge website provides basic descriptions and evaluation metrics but lacks
-        comprehensive tutorials or example workflows.
+        Challenge site includes overview and metrics, but limited in walkthrough or examples.
 - date: "2025-03-03"
   version: "v1.0"
   last_updated: "2025-03"
@@ -3280,7 +3168,7 @@
   - "time-series"
   - "remote sensing"
   summary: |
-    A challenge combining North Atlantic sea-level time-series and satellite imagery to detect flooding anomalies. Models submitted via Codabench. 
+    A challenge combining North Atlantic sea-level time-series and satellite imagery to detect flooding anomalies. Models submitted via Codabench. :contentReference[oaicite:5]{index=5}
   licensing: "NA"
   task_types:
   - "Anomaly detection"
@@ -3298,13 +3186,13 @@
   - "Anomaly detection"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
-    Sponsored by NSF HDR; integrates sensor and satellite data. 
+    Sponsored by NSF HDR; integrates sensor and satellite data. :contentReference[oaicite:6]{index=6}
   contact:
     name: "HDR A3D3 Team"
     email: "unknown"
   cite:
   - |
-    @misc{campolongo2025buildingmachinelearningchallenges3,
+    @misc{campolongo2025buildingmachinelearningchallenges,
       archiveprefix = {arXiv},
       author        = {Elizabeth G. Campolongo and Yuan-Tang Chou and Ekaterina Govorkova and Wahid Bhimji and Wei-Lun Chao and Chris Harris and Shih-Chieh Hsu and Hilmar Lapp and Mark S. Neubauer and Josephine Namayanja and Aneesh Subramanian and Philip Harris and Advaith Anand and David E. Carlyn and Subhankar Ghosh and Christopher Lawrence and Eric Moreno and Ryan Raikman and Jiaman Wu and Ziheng Zhang and Bayu Adhi and Mohammad Ahmadi Gharehtoragh and Saúl Alonso Monsalve and Marta Babicz and Furqan Baig and Namrata Banerji and William Bardon and Tyler Barna and Tanya Berger-Wolf and Adji Bousso Dieng and Micah Brachman and Quentin Buat and David C. Y. Hui and Phuong Cao and Franco Cerino and Yi-Chun Chang and Shivaji Chaulagain and An-Kai Chen and Deming Chen and Eric Chen and Chia-Jui Chou and Zih-Chen Ciou and Miles Cochran-Branson and Artur Cordeiro Oudot Choi and Michael Coughlin and Matteo Cremonesi and Maria Dadarlat and Peter Darch and Malina Desai and Daniel Diaz and Steven Dillmann and Javier Duarte and Isla Duporge and Urbas Ekka and Saba Entezari Heravi and Hao Fang and Rian Flynn and Geoffrey Fox and Emily Freed and Hang Gao and Jing Gao and Julia Gonski and Matthew Graham and Abolfazl Hashemi and Scott Hauck and James Hazelden and Joshua Henry Peterson and Duc Hoang and Wei Hu and Mirco Huennefeld and David Hyde and Vandana Janeja and Nattapon Jaroenchai and Haoyi Jia and Yunfan Kang and Maksim Kholiavchenko and Elham E. Khoda and Sangin Kim and Aditya Kumar and Bo-Cheng Lai and Trung Le and Chi-Wei Lee and JangHyeon Lee and Shaocheng Lee and Suzan van der Lee and Charles Lewis and Haitong Li and Haoyang Li and Henry Liao and Mia Liu and Xiaolin Liu and Xiulong Liu and Vladimir Loncar and Fangzheng Lyu and Ilya Makarov and Abhishikth Mallampalli Chen-Yu Mao and Alexander Michels and Alexander Migala and Farouk Mokhtar and Mathieu Morlighem and Min Namgung and Andrzej Novak and Andrew Novick and Amy Orsborn and Anand Padmanabhan and Jia-Cheng Pan and Sneh Pandya and Zhiyuan Pei and Ana Peixoto and George Percivall and Alex Po Leung and Sanjay Purushotham and Zhiqiang Que and Melissa Quinnan and Arghya Ranjan and Dylan Rankin and Christina Reissel and Benedikt Riedel and Dan Rubenstein and Argyro Sasli and Eli Shlizerman and Arushi Singh and Kim Singh and Eric R. Sokol and Arturo Sorensen and Yu Su and Mitra Taheri and Vaibhav Thakkar and Ann Mariam Thomas and Eric Toberer and Chenghan Tsai and Rebecca Vandewalle and Arjun Verma and Ricco C. Venterea and He Wang and Jianwu Wang and Sam Wang and Shaowen Wang and Gordon Watts and Jason Weitz and Andrew Wildridge and Rebecca Williams and Scott Wolf and Yue Xu and Jianqi Yan and Jai Yu and Yulei Zhang and Haoran Zhao and Ying Zhao and Yibo Zhong},
       eprint        = {2503.02112},
@@ -3326,33 +3214,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 2
+      rating: 0
       reason: |
-        Benchmark platform exists on Codabench, but no baseline code or maintained repository
-        for reference solutions provided yet.
+        TBD
     specification:
-      rating: 5
+      rating: 9.0
       reason: |
-        Well-defined anomaly detection task combining satellite imagery and time-series data,
-        with clear physical and domain-specific framing.
+        Clear anomaly detection objective framed for physical signal discovery (LIGO/Virgo).
     dataset:
-      rating: 5
+      rating: 10.0
       reason: |
-        Uses preprocessed, public, and well-structured sensor and satellite data for the
-        North Atlantic sea-level rise region.
+        Preprocessed waveform data from dual interferometers, public and well-structured.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        Standard metrics such as ROC-AUC, precision, and recall are specified and suitable
-        for the anomaly detection tasks.
+        ROC-AUC, Precision/Recall, and confusion-based metrics are standardized.
     reference_solution:
-      rating: 1
+      rating: 1.0
       reason: |
-        No starter models or baseline implementations linked or provided publicly.
+        No starter model or baseline code linked
     documentation:
-      rating: 5
+      rating: 9.0
       reason: |
-        Challenge page, starter kits, and related papers offer strong guidance for participants.
+        Codabench page, GitHub starter kit, and related papers provide strong guidance.
 - date: "2025-01-24"
   version: "v1.0"
   last_updated: "2025-02"
@@ -3389,7 +3273,7 @@
   - "Supervised Learning"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
-    Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization. 
+    Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization. :contentReference[oaicite:1]{index=1}
   contact:
     name: "Javier Campos, Giuseppe Di Guglielmo"
     email: "unknown"
@@ -3419,34 +3303,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        Code and FPGA firmware available on GitHub; integration with hls4ml demonstrated.
-        Some deployment details and examples are provided but overall software maturity is moderate.
+        Not analyzed.
     specification:
-      rating: 4
+      rating: 8.0
       reason: |
-        Task clearly defined: real-time single-qubit state classification with latency and
-        fidelity constraints. Labeling and ground truth definitions could be more explicit.
+        Task clearly framed around detecting hybrid species via images, but exact labeling methods and hybrid definitions may need elaboration.
     dataset:
-      rating: 4
+      rating: 8.0
       reason: |
-        Dataset hosted on Zenodo with structured data; however, detailed documentation on
-        image acquisition and labeling pipeline is limited.
+        Dataset hosted on Codabench; appears structured but details on image sourcing and labeling pipeline are limited.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        Standard classification metrics (accuracy, latency) are used and directly relevant
-        to the quantum readout task.
+        Classification accuracy and F1 are standard and appropriate.
     reference_solution:
-      rating: 1
+      rating: 1.0
       reason: |
-        No baseline or starter models with runnable code are linked publicly.
+        No starter model or baseline code linked
     documentation:
-      rating: 4
+      rating: 7.5
       reason: |
-        Codabench task page and GitHub repo provide descriptions and usage instructions,
-        but detailed API or deployment tutorials are limited.
+        Codabench task page describes dataset and evaluation method but lacks full API/docs.
 - date: "2023-11-20"
   version: "v1.0"
   last_updated: "2023-11"
@@ -3465,7 +3344,7 @@
   - "expert reasoning"
   - "science QA"
   summary: |
-    Contains 448 challenging questions written by domain experts, with expert accuracy at 65% (74% discounting clear errors) and non-experts reaching just 34%. GPT-4 baseline scores ~39%-designed for scalable oversight evaluation. 
+    Contains 448 challenging questions written by domain experts, with expert accuracy at 65% (74% discounting clear errors) and non-experts reaching just 34%. GPT-4 baseline scores ~39%-designed for scalable oversight evaluation. :contentReference[oaicite:2]{index=2}
   licensing: "NA"
   task_types:
   - "Multiple choice"
@@ -3489,7 +3368,7 @@
     email: "unknown"
   cite:
   - |
-    @misc{rein2023gpqagraduatelevelgoogleproofqa2,
+    @misc{rein2023gpqagraduatelevelgoogleproofqa,
       archiveprefix = {arXiv},
       author        = {David Rein and Betty Li Hou and Asa Cooper Stickland and Jackson Petty and Richard Yuanzhe Pang and Julien Dirani and Julian Michael and Samuel R. Bowman},
       eprint        = {2311.12022},
@@ -3513,31 +3392,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        Dataset and benchmark materials are publicly available via HuggingFace and GitHub,
-        but no integrated runnable code or software framework is provided.
+        Not analyzed.
     specification:
-      rating: 5
+      rating: 9.0
       reason: |
-        Task is clearly defined as a multiple-choice benchmark requiring expert-level scientific reasoning.
-        Input/output formats and evaluation criteria are well described.
+        Clear dual-modality task (image + time-series); environmental focus is well described.
     dataset:
-      rating: 5
+      rating: 9.0
       reason: |
-        The GPQA dataset is publicly released, well curated, with metadata and clearly documented splits.
+        Time-series and satellite imagery data provided; sensor info and collection intervals are explained.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        Accuracy is the primary metric and is clearly defined and appropriate for multiple-choice QA.
+        ROC-AUC, Precision/Recall are appropriate and robust.
     reference_solution:
-      rating: 1
+      rating: 1.0
       reason: |
-        No baseline implementations or starter code are linked or provided for reproduction.
+        No starter model or baseline code linked
     documentation:
-      rating: 3
+      rating: 6.5
       reason: |
-        Documentation includes dataset description and benchmark instructions, but lacks detailed usage tutorials or pipelines.
+        Moderate Codabench documentation with climate context; lacks pipeline-level walkthrough.
 - date: "2024-12-13"
   version: "v1.0"
   last_updated: "2024-12"
@@ -3557,7 +3434,7 @@
   - "segmentation"
   - "QA"
   summary: |
-    A first-of-its-kind dataset covering 17,300 sq.km of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs-designed for both vision and language-based ML models in marine science
+    A first-of-its-kind dataset covering 17,300 sq.km of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs-designed for both vision and language-based ML models in marine science :contentReference[oaicite:1]{index=1}.
   licensing: "unknown"
   task_types:
   - "Image segmentation"
@@ -3578,7 +3455,7 @@
   - "Segmentation, QA"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
-    Data processing code publicly available, covering five geological layers; curated with marine scientists
+    Data processing code publicly available, covering five geological layers; curated with marine scientists :contentReference[oaicite:2]{index=2}.
   contact:
     name: "Kien X. Nguyen"
     email: "unknown"
@@ -3608,35 +3485,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        Data processing code is publicly available, but no full benchmark framework or
-        runnable model implementations are provided yet.
+        Not analyzed.
     specification:
-      rating: 5
+      rating: 9.0
       reason: |
-        Tasks (image segmentation and vision-language QA) are clearly defined with
-        geospatial and multimodal objectives well specified.
+        Real-time qubit classification task clearly defined in quantum instrumentation context.
     dataset:
-      rating: 5
+      rating: 9.0
       reason: |
-        Large-scale, well-annotated sonar imagery dataset with segmentation masks
-        and natural language descriptions; curated with domain experts.
+        Dataset available on Zenodo with signal traces; compact and reproducible.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        Standard segmentation pixel accuracy and QA accuracy metrics are clearly specified
-        and appropriate for the tasks.
+        Accuracy and latency are well defined and crucial in this setting.
     reference_solution:
-      rating: 4
+      rating: 9.0
       reason: |
-        Some baseline models (e.g., SegFormer, ViLT-style) are mentioned, but
-        reproducible code or pretrained weights are not fully available yet.
+        GitHub repo has reproducible code and HLS firmware targeting FPGA.
     documentation:
-      rating: 4
+      rating: 8.0
       reason: |
-        Dataset description and data processing instructions are provided,
-        but tutorials and benchmark usage guides are limited.
+        Good setup instructions, but no interactive visualization or starter notebook.
 - date: "2024-12-13"
   version: "v1.0"
   last_updated: "2024-12"
@@ -3655,7 +3526,7 @@
   - "equivariant GNN"
   - "generative models"
   summary: |
-    SuperCon3D introduces 3D crystal structures with associated critical temperatures (Tc) and two deep-learning models: SODNet (equivariant graph model) and DiffCSP-SC (diffusion generator) designed to screen and synthesize high-Tc candidates .
+    SuperCon3D introduces 3D crystal structures with associated critical temperatures (Tc) and two deep-learning models: SODNet (equivariant graph model) and DiffCSP-SC (diffusion generator) designed to screen and synthesize high-Tc candidates :contentReference[oaicite:3]{index=3}.
   licensing: "unknown"
   task_types:
   - "Regression (Tc prediction)"
@@ -3676,7 +3547,7 @@
   - "Regression, Generation"
   solutions: "0"
   notes: |
-    Demonstrates advantage of combining ordered and disordered structural data in model design .
+    Demonstrates advantage of combining ordered and disordered structural data in model design :contentReference[oaicite:4]{index=4}.
   contact:
     name: "Zhong Zuo"
     email: "unknown"
@@ -3706,35 +3577,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        Baseline models (SODNet, DiffCSP-SC) are described in the paper; however,
-        fully reproducible code and pretrained models are not publicly available yet.
+        Not analyzed.
     specification:
-      rating: 5
+      rating: 10.0
       reason: |
-        Tasks for regression (Tc prediction) and generative modeling with clear input/output
-        structures and domain constraints are well defined.
+        Multimodal task (segmentation + natural language QA pairs);.
     dataset:
-      rating: 5
+      rating: 10.0
       reason: |
-        Dataset contains 3D crystal structures and associated properties; well-curated but
-        not fully released publicly at this time.
+        sonar imagery + masks + descriptions, georeferenced and labeled with QA
     metrics:
-      rating: 4
+      rating: 9.0
       reason: |
-        Metrics such as MAE for Tc prediction and validity checks for generated structures
-        are appropriate and clearly described.
+        Pixel accuracy and QA metrics clearly defined; tasks split by modality.
     reference_solution:
-      rating: 4
+      rating: 8.0
       reason: |
-        Paper provides model architecture details and some training insights, but no
-        complete open-source reference implementations yet.
+        Baseline models (SegFormer, ViLT) are cited, partial configs likely available.
     documentation:
-      rating: 4
+      rating: 8.5
       reason: |
-        Paper and GitHub provide good metadata and data processing descriptions; tutorials
-        and user guides could be expanded.
+        Paper + GitHub metadata and processing details are comprehensive, though full dataset is not yet available.
 - date: "2024-12-13"
   version: "v1.0"
   last_updated: "2024-12"
@@ -3753,7 +3618,7 @@
   - "OOD robustness"
   - "scientific applications"
   summary: |
-    GeSS provides 30 benchmark scenarios across particle physics, materials science, and biochemistry, evaluating 3 GDL backbones and 11 algorithms under covariate, concept, and conditional shifts, with varied OOD access .
+    GeSS provides 30 benchmark scenarios across particle physics, materials science, and biochemistry, evaluating 3 GDL backbones and 11 algorithms under covariate, concept, and conditional shifts, with varied OOD access :contentReference[oaicite:5]{index=5}.
   licensing: "unknown"
   task_types:
   - "Classification"
@@ -3775,7 +3640,7 @@
   - "Classification, Regression"
   solutions: "0"
   notes: |
-    Includes no-OOD, unlabeled-OOD, and few-label scenarios .
+    Includes no-OOD, unlabeled-OOD, and few-label scenarios :contentReference[oaicite:6]{index=6}.
   contact:
     name: "Deyu Zou"
     email: "unknown"
@@ -3805,35 +3670,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        Reference code expected post-conference; current public software availability limited.
-        Benchmark infrastructure partially described but not fully released yet.
+        Not analyzed.
     specification:
-      rating: 5
+      rating: 9.0
       reason: |
-        Benchmark clearly defines OOD robustness scenarios with classification and regression
-        tasks in scientific domains, though no explicit hardware constraints are given.
+        Well-defined problem (Tc prediction, generation) with strong scientific motivation (high-Tc materials), but no formal hardware constraints.
     dataset:
-      rating: 5
+      rating: 9.0
       reason: |
-        Curated datasets of 3D crystal structures and material properties are included and
-        publicly available for reproducible research.
+        Includes curated 3D crystal structures and Tc data; readily downloadable and used in paper models.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        Uses well-established metrics such as MAE and structural validity for materials modeling,
-        plus accuracy and OOD robustness deltas.
+        MAE and structural validity used, well-established in materials modeling.
     reference_solution:
-      rating: 4
+      rating: 8.0
       reason: |
-        Two reference models (SODNet, DiffCSP-SC) are reported with results, code expected
-        to be released soon.
+        Provides two reference models (SODNet, DiffCSP-SC) with results. Code likely available post-conference.
     documentation:
-      rating: 4
+      rating: 8.0
       reason: |
-        Paper and poster provide solid explanation of benchmarks and scientific motivation;
-        more extensive user documentation forthcoming.
+        Paper and poster explain design choices well; software availability confirms reproducibility but limited external documentation.
 - date: "2024-12-13"
   version: "v1.0"
   last_updated: "2024-12"
@@ -3852,7 +3711,7 @@
   - "time-series"
   - "SSL"
   summary: |
-    The first large-scale benchmark (767K sounds across 9 conditions) for localizing rodent vocal calls using synchronized audio and video in standard lab environments, enabling systematic evaluation of sound-source localization algorithms in bioacoustics .
+    The first large-scale benchmark (767K sounds across 9 conditions) for localizing rodent vocal calls using synchronized audio and video in standard lab environments, enabling systematic evaluation of sound-source localization algorithms in bioacoustics :contentReference[oaicite:1]{index=1}.
   licensing: "unknown"
   task_types:
   - "Sound source localization"
@@ -3870,7 +3729,7 @@
   - "Anomaly detection / localization"
   solutions: "0"
   notes: |
-    Dataset spans real, simulated, and mixed audio; supports benchmarking across data types .
+    Dataset spans real, simulated, and mixed audio; supports benchmarking across data types :contentReference[oaicite:2]{index=2}.
   contact:
     name: "Ralph Peterson"
     email: "unknown"
@@ -3900,35 +3759,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        Some baseline CNN models for sound source localization are reported,
-        but no publicly available or fully integrated runnable codebase yet.
+        Not analyzed.
     specification:
-      rating: 5
+      rating: 9.0
       reason: |
-        Well-defined localization tasks with multiple scenarios and real-world
-        environment conditions; input/output formats clearly described.
+        Clear benchmark scenarios across GDL tasks under multiple real-world shift settings; OOD settings precisely categorized.
     dataset:
-      rating: 4
+      rating: 8.0
       reason: |
-        Large-scale audio dataset covering real and simulated data with
-        standardized splits, though exact data formats are not fully detailed.
+        Scientific graph datasets provided in multiple shift regimes; standardized splits across domains. Exact format of data not specified.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        Includes localization error, precision, recall, and other relevant metrics
-        for robust evaluation.
+        Includes base metrics (accuracy, RMSE) plus OOD delta robustness for evaluation under shifts.
     reference_solution:
-      rating: 5
+      rating: 9.0
       reason: |
-        Multiple baselines evaluated over diverse models and architectures,
-        supporting reproducibility of benchmark comparisons.
+        Multiple baselines (11 algorithms x 3 backbones) evaluated; setup supports reproducible comparison.
     documentation:
-      rating: 1
+      rating: 2.0
       reason: |
-        Methodology and paper are thorough, but setup instructions and runnable
-        code are not publicly provided, limiting user onboarding.
+        Paper, poster, and source code provide thorough access to methodology and implementation. Setup instructions and accompanying code not present.
 - date: "2024-12-13"
   version: "v1.0"
   last_updated: "2024-12"
@@ -3947,7 +3800,7 @@
   - "retrieval"
   - "dataset"
   summary: |
-    MassSpecGym curates the largest public MS/MS dataset with three standardized tasks-de novo structure generation, molecule retrieval, and spectrum simulation-using challenging generalization splits to propel ML-driven molecule discovery .
+    MassSpecGym curates the largest public MS/MS dataset with three standardized tasks-de novo structure generation, molecule retrieval, and spectrum simulation-using challenging generalization splits to propel ML-driven molecule discovery :contentReference[oaicite:3]{index=3}.
   licensing: "unknown"
   task_types:
   - "De novo generation"
@@ -3969,7 +3822,7 @@
   - "Generation, retrieval, simulation"
   solutions: "0"
   notes: |
-    Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks .
+    Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks :contentReference[oaicite:4]{index=4}.
   contact:
     name: "Roman Bushuiev"
     email: "unknown"
@@ -3999,35 +3852,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        Open-source GitHub repository available; baseline models and training code partially
-        provided but overall framework maturity is moderate.
+        Not analyzed.
     specification:
-      rating: 5
+      rating: 9.0
       reason: |
-        Clearly defined tasks including molecule generation, retrieval, and spectrum simulation,
-        scoped for MS/MS molecular identification.
+        Focused on sound source localization for rodent vocalizations in lab settings; well-scoped.
     dataset:
-      rating: 5
+      rating: 9.5
       reason: |
-        Largest public MS/MS dataset with extensive annotations; minor point deducted for
-        lack of explicit train/validation/test splits.
+        767000 annotated audio segments across diverse conditions. Minor deduction for no train/test/valid split.
     metrics:
-      rating: 5
+      rating: 9.5
       reason: |
-        Well-defined metrics such as structure accuracy, retrieval precision, and simulation MSE
-        used consistently.
+        Localization error, precision/recall used
     reference_solution:
-      rating: 3.5
+      rating: 7.0
       reason: |
-        CNN-based baselines are referenced, but pretrained weights and comprehensive training
-        pipelines are not fully documented.
+        CNN-based baselines referenced but unclear whether pretrained models or training code are available.
     documentation:
-      rating: 1
+      rating: 2.0
       reason: |
-        Paper and poster describe benchmark goals and design, but documentation and user
-        guides are minimal and repo status uncertain.
+        Poster and paper outline benchmark intent and setup; repo expected but not confirmed in dataset card.
 - date: "2024-12-13"
   version: "v1.0"
   last_updated: "2024-12"
@@ -4045,7 +3892,7 @@
   - "multi-modal"
   - "benchmark"
   summary: |
-    UrbanDataLayer standardizes heterogeneous urban data formats and provides pipelines for tasks like air quality prediction and land-use classification, enabling the rapid creation of multi-modal urban benchmarks .
+    UrbanDataLayer standardizes heterogeneous urban data formats and provides pipelines for tasks like air quality prediction and land-use classification, enabling the rapid creation of multi-modal urban benchmarks :contentReference[oaicite:5]{index=5}.
   licensing: "unknown"
   task_types:
   - "Prediction"
@@ -4064,7 +3911,7 @@
   - "Prediction, classification"
   solutions: "0"
   notes: |
-    Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models .
+    Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models :contentReference[oaicite:6]{index=6}.
   contact:
     name: "Yiheng Wang"
     email: "unknown"
@@ -4094,33 +3941,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        Source code is publicly available on GitHub; baseline regression and classification
-        pipelines are included but framework maturity is moderate.
+        Not analyzed.
     specification:
-      rating: 5
+      rating: 9.0
       reason: |
-        Multiple urban science tasks like prediction and classification are well specified
-        with clear input/output and evaluation criteria.
+        Three tasks (de novo generation, retrieval, simulation) are clearly defined for MS/MS molecule discovery.
     dataset:
-      rating: 5
+      rating: 10.0
       reason: |
-        Large, multi-modal urban datasets are open-source, well-documented, and support
-        reproducible research.
+        Over 1 million spectra with structure annotations; dataset is open-source and well-documented.
     metrics:
-      rating: 5
+      rating: 9.0
       reason: |
-        Uses task-specific accuracy and RMSE metrics appropriate for prediction and classification.
+        Task-appropriate metrics (structure accuracy, precision, MSE) are specified and used consistently.
     reference_solution:
-      rating: 4
+      rating: 8.0
       reason: |
-        Baseline models available but not exhaustive; community adoption and extensions expected.
+        Baseline models are available (graph-based and retrieval), though not exhaustive.
     documentation:
-      rating: 5
+      rating: 9.0
       reason: |
-        GitHub repository and conference poster provide comprehensive code and reproducibility
-        instructions.
+        GitHub repo and poster provide code and reproducibility guidance.
 - date: "2024-12-13"
   version: "v1.0"
   last_updated: "2024-12"
@@ -4166,7 +4009,7 @@
   cite:
   - |
     @misc{khrabrov2024nabla2dftuniversalquantumchemistry,
-      title={Delta-Squared DFT: A Universal Quantum Chemistry Dataset of Drug-Like Molecules and a Benchmark for Neural Network Potentials}, 
+      title={$\nabla^2$DFT: A Universal Quantum Chemistry Dataset of Drug-Like Molecules and a Benchmark for Neural Network Potentials}, 
       author={Kuzma Khrabrov and Anton Ber and Artem Tsypin and Konstantin Ushenin and Egor Rumiantsev and Alexander Telepov and Dmitry Protasov and Ilya Shenbin and Anton Alekseev and Mikhail Shirokikh and Sergey Nikolenko and Elena Tutubalina and Artur Kadurin},
       year={2024},
       eprint={2406.14347},
@@ -4187,30 +4030,29 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 3
+      rating: 0
       reason: |
-        Source code and baseline models available for ML correction to DFT; framework maturity is moderate.
+        Not analyzed.
     specification:
-      rating: 4
+      rating: 8.0
       reason: |
-        Benchmark focuses on reaction energy prediction with clear goals, though some task specifics could be formalized further.
+        Clear goals around unifying urban data formats and tasks (e.g., air quality prediction), though some specifics could be more formal.
     dataset:
-      rating: 4.5
+      rating: 9.0
       reason: |
-        Multi-modal quantum chemistry datasets are standardized and accessible; repository available.
+        Multi-modal data is standardized and accessible; GitHub repo available.
     metrics:
-      rating: 4
+      rating: 8.0
       reason: |
-        Uses standard regression metrics like MAE and energy ranking accuracy; appropriate for task.
+        Uses common task metrics like accuracy/RMSE, though varies by task.
     reference_solution:
-      rating: 3.5
+      rating: 7.0
       reason: |
-        Includes baseline regression and kernel ridge models; implementations are reproducible.
+        Baseline regression/classification models included.
     documentation:
-      rating: 4
+      rating: 8.0
       reason: |
         Source code supports pipeline reuse, but formal evaluation splits may vary.
-        
 - date: "2024-12-13"
   version: "v1.0"
   last_updated: "2024-12"
@@ -4281,28 +4123,27 @@
     software:
       rating: 0
       reason: |
-        This is a model, not a benchmark.
+        Not analyzed.
     specification:
-      rating: 0
+      rating: 9.0
       reason: |
-        This is a model, not a benchmark.
+        The task of ML correction to DFT energy predictions is well-specified.
     dataset:
-      rating: 0
+      rating: 9.0
       reason: |
-        This is a model, not a benchmark.
+        10 public reaction datasets with DFT and CC references; well-documented.
     metrics:
-      rating: 0
+      rating: 8.0
       reason: |
-        This is a model, not a benchmark.
+        Uses MAE and ranking accuracy, suitable for this task.
     reference_solution:
-      rating: 0
+      rating: 8.0
       reason: |
-        This is a model, not a benchmark.
+        Includes both Delta^2 and KRR baselines.
     documentation:
-      rating: 0
+      rating: 9.0
       reason: |
-        This is a model, not a benchmark.
-
+        Public benchmarks and clear reproducibility via datasets and model code.
 - date: "2024-12-13"
   version: "v1.0"
   last_updated: "2024-12"
@@ -4370,26 +4211,26 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 5
+      rating: 0
       reason: |
-        Well-documented codebase available on Github
+        Not analyzed.
     specification:
-      rating: 3.5
+      rating: 6.0
       reason: |
-        Task of QA over scientific figures is sufficient but not fully formalized in input/output terms. No hawrdware constraints.
+        Task of QA over scientific figures is interesting but not fully formalized in input/output terms.
     dataset:
-      rating: 5
+      rating: 6.0
       reason: |
-        Full dataset available on Hugging Face with train/test/valid splits.
+        Uses SPIQA dataset with ~10 adapters; figures and questions are included, but not fully open.
     metrics:
-      rating: 4
+      rating: 7.0
       reason: |
         Reports accuracy and F1; fair but no visual reasoning-specific metric.
     reference_solution:
-      rating: 4
+      rating: 6.0
       reason: |
-        10 LLM adapter baselines; results included without constraints.
+        10 LLM adapter baselines; results included.
     documentation:
-      rating: 5
+      rating: 5.0
       reason: |
-        Full paper available
+        Poster paper and limited documentation; no reproducibility instructions.

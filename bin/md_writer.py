@@ -212,10 +212,10 @@ class MarkdownWriter:
                         lines.append(f"- {citation_text}\n")
 
                         # Write raw BibTeX
-                        lines.append("  - bibtex: |\n")
+                        lines.append("  - bibtex:\n      ```")
                         for raw_line in bibtex.strip().splitlines():
                             lines.append(f"      {raw_line}\n")
-                    lines.append("\n")
+                    lines.append("      ```\n")
 
 
                 elif col.startswith("ratings"):

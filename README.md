@@ -15,11 +15,11 @@ To rate benchmarks, use the [rating system](ratings_explanations.md). *The [0-10
 
 The yaml file is used to generate documents, such as:
 
-* An index Markdown file, which points to individual Markdown files: https://github.com/mlcommons-science/benchmark/blob/main/content/md/index.md
+* An index Markdown file, which points to individual Markdown files [here](content/md/benchmarks/index.md)
 
-* A pdf file with a table of selected attributes: https://github.com/mlcommons-science/benchmark/blob/main/content/tex/benchmarks.pdf
+* A pdf file with a table of selected attributes [here](content/tex/benchmarks.pdf)
 
-* A TeX source and its BibTeX bibliography: https://github.com/mlcommons-science/benchmark/tree/main/content/tex
+* A TeX source and its BibTeX bibliography [here](content/tex)
 
 
 ## Generating the PDF, TeX, and md files

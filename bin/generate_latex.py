@@ -89,6 +89,8 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
     "notes": {"width": 3, "label": "Notes"},
     "cite": {"width": 1, "label": "Citation"},
     "ratings": {"width": 3, "label": "Ratings"},
+    "ratings.software.rating": {"width": 1, "label": "Software Rating"},
+    "ratings.software.reason": {"width": 3, "label": "Software Reason"},
     "ratings.specification.rating": {"width": 1, "label": "Specification Rating"},
     "ratings.specification.reason": {"width": 3, "label": "Specification Reason"},
     "ratings.dataset.rating": {"width": 1, "label": "Dataset Rating"},
@@ -726,6 +728,7 @@ class GenerateLatex:
         else:
             url = ""
         return url
+    
 
     def entry_to_table_row(self, entry, columns=DEFAULT_COLUMNS) -> str:
         row = []
@@ -801,6 +804,14 @@ class GenerateLatex:
                     total_width += float(ALL_COLUMNS[col]["width"])
                     width.append(ALL_COLUMNS[col]["width"])
                     names.append(ALL_COLUMNS[col]["label"])
+
+            # #add ratings
+            # if average_ratings:
+            #     total_width += 1
+            #     width.append("1")
+            #     names.append("Average Ratings")
+
+
             # normalize the width to fit into the tex_width
 
             for col in range(len(width)):
@@ -809,11 +820,11 @@ class GenerateLatex:
 
                 width[col] = f"{w}\\textwidth"
 
-            formated_names = [f"\\textbf{{{escape_latex(name)}}}" for name in names]
-            formated_names_str = " & ".join(formated_names) + r" "
-            formated_width = "{|" + "|".join([f"p{{{x}}}" for x in width]) + "|}"
+            formatted_names = [f"\\textbf{{{escape_latex(name)}}}" for name in names]
+            formatted_names_str = " & ".join(formatted_names) + r" "
+            formatted_width = "{|" + "|".join([f"p{{{x}}}" for x in width]) + "|}"
 
-            return formated_width, formated_names_str
+            return formatted_width, formatted_names_str
 
         column_widths, column_names = generate_column_format()
 

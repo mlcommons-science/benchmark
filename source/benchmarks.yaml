@@ -64,30 +64,29 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 10
+      rating: 0
       reason: |
-        Well documented Github, instructions and dataset easy to download
+        No instructions to download or run data given on the site
     specification:
-      rating: 9
+      rating: 4
       reason: |
-        Clearly defined method of giving inputs, although it lacks hardware specifications.
+        No system constraints
     dataset:
-      rating: 9
+      rating: 5
       reason: |
-        Contains predefined few-shot development, validation, and testing set. Easy to access and download, but not versioned.
+        Meets all FAIR principles and properly versioned.
     metrics:
-      rating: 9
+      rating: 5
       reason: |
-        Clearly defined primary metric of number of multiple-choice questions answered correctly.
-        Secondary metric of confidence requires models to self-report.
+        Fully defined, represents a solution's performance.
     reference_solution:
-      rating: 10
+      rating: 2
       reason: |
-        Performance and links to several top models linked on the Github.
+        Reference models are available (i.e. GPT-3), but are not trainable or publicly documented
     documentation:
-      rating: 8
+      rating: 5
       reason: |
-        Code and datasets provided and easy to find, but no environment setup instructions given.
+        Well-explained in a provided paper.
 
 - date: "2023-11-20"
   version: "1"
@@ -153,29 +152,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
+      rating: 5
       reason: |
-        Not yet rated
+        Python version and requirements specified on Github site
     specification:
-      rating: 6.5
+      rating: 2
       reason: |
-        Good description of how the problems are received, but little specification on how the models are tested
+        No system constraints or I/O specified
     dataset:
-      rating: 8.5
+      rating: 5
       reason: |
-        Easily able to access dataset. No labels or train/test/valid split
+        Easily able to access dataset. Comes with predefined splits as mentioned in the paper
     metrics:
-      rating: 10
+      rating: 5
       reason: |
-        Each question has a correct answer
+        Each question has a correct answer, representing the tested model's performance.
     reference_solution:
-      rating: 7.5
-      reason: |
-        Common models such as GPT-3.5 were compared. Reproducibility of results unknown
-    documentation:
       rating: 1
       reason: |
-        No reference solution, platform for reproduction, or procedure for replication
+        Common models such as GPT-3.5 were compared. They are not open and don't provide requirements
+    documentation:
+      rating: 5
+      reason: |
+        All information is listed in the associated paper
+
 - date: "2018-03-14"
   version: "1"
   last_updated: "2018-03-14"
@@ -241,27 +241,28 @@
     software:
       rating: 0
       reason: |
-        Not yet rated
+        No link to code or documentation
     specification:
-      rating: 9
+      rating: 2
       reason: |
-        Exact format of data, questions, and answers are specified. No HW constraints
+        Task is clear, but no constraints or format is mentioned
     dataset:
-      rating: 10
+      rating: 4
       reason: |
-        Data accessible, offers instructions on how to download the data via CLI tools
+        Data accessible, offers instructions on how to download the data via CLI tools. No splits.
     metrics:
-      rating: 10
+      rating: 5
       reason: |
         (by default) All questions in the dataset are multiple choice, all have a correct answer
     reference_solution:
-      rating: 4.5
+      rating: 1
       reason: |
-        There are over 300 models listed, but very few, if any, show performance on the dataset
+        There are over 300 models listed, but very few, if any, show performance on the dataset or list constraints
     documentation:
-      rating: 4
+      rating: 5
       reason: |
-        There are easy ways to download the dataset. Documentation quantity and clarity depends on authors of tested models
+        Explains all necessary information inside a paper
+
 - date: "2025-01-24"
   version: "1"
   last_updated: "2025-01-24"
@@ -325,29 +326,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
+      rating: 4
       reason: |
-        Not yet evaluated
+        Code for testing models posted on the github. Unknown how to run a custom model.
     specification:
-      rating: 8.5
+      rating: 2
       reason: |
         Format of inputs (natural language) and outputs (multiple choice or natural language) specified. No HW constraints specified
     dataset:
-      rating: 6
+      rating: 2
       reason: |
         Data accessible through Hugging Face, but requires giving contact information to access
     metrics:
-      rating: 10
+      rating: 5
       reason: |
         (by default) All questions in the dataset are multiple choice, all have a correct answer
     reference_solution:
-      rating: 6
+      rating: 2
       reason: |
         Performance for cutting-edge models listed, but does not specify exact version of the models or how to reproduce the result
     documentation:
-      rating: 0.5
+      rating: 5
       reason: |
-        No specified way to reproduce the reference solution
+        Paper available with necessary information
+
 - date: "2024-11-07"
   version: "1"
   last_updated: "2024-11-07"
@@ -413,27 +415,28 @@
     software:
       rating: 0
       reason: |
-        Not yet evaluated
+        No link to code provided
     specification:
-      rating: 9
+      rating: 3
       reason: |
-        Well-specified process for asking questions and receiving answers. No HW constraints
+        Well-specified process for asking questions and receiving answers. No software or hardware constraints
     dataset:
-      rating: 0.5
+      rating: 0
       reason: |
         Paper and website had no link to any dataset. It may still exist somewhere
     metrics:
-      rating: 10
+      rating: 5
       reason: |
-        (by default) All questions in the dataset are multiple choice, all have a correct answer
+        (by default) All questions in the dataset have a correct answer
     reference_solution:
-      rating: 9
+      rating: 2
       reason: |
-        Displays result of leading models on the benchmark
+        Displays result of leading models on the benchmark, but none are trainable or list constraints
     documentation:
-      rating: 0.5
+      rating: 0
       reason: |
         No specified way to reproduce the reference solution
+
 - date: "2024-07-18"
   version: "1"
   last_updated: "2024-07-18"
@@ -496,29 +499,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
+      rating: 5
       reason: |
-        Not yet evaluated
+        Code to run exists on github repo
     specification:
-      rating: 6
+      rating: 4.5
       reason: |
         Expected outputs and broad types of inputs stated. Few details on output grading. No HW constraints.
     dataset:
-      rating: 0.5
+      rating: 0
       reason: |
         Paper and website had no link to any dataset. It may still exist somewhere
     metrics:
+      rating: 2
+      reason: |
+        Metrics stated, but method of grading is not specified
+    reference_solution:
+      rating: 1
+      reason: |
+        Models presented with scores, but none are open or list constraints
+    documentation:
       rating: 4
       reason: |
-        Metrics stated, but not specified in detail
-    reference_solution:
-      rating: 9
-      reason: |
-        Models presented with scores
-    documentation:
-      rating: 0.5
-      reason: |
-        No specified way to reproduce the reference solution
+        Paper containing all needed info except for evlauation criteria
+
 - date: "2025-03-13"
   version: "1"
   last_updated: "2025-03-13"
@@ -583,17 +587,17 @@
     software:
       rating: 0
       reason: |
-        Not yet evaluated
+        No code available
     specification:
-      rating: 3
+      rating: 0
       reason: |
         Obvious what the problems are, but not specified how to administer them to AI models. No HW constraints
     dataset:
-      rating: 9
+      rating: 4
       reason: |
-        Easily accessible data with problems and solutions
+        Easily accessible data with problems and solutions, but no splits
     metrics:
-      rating: 10
+      rating: 5
       reason: |
         (by default) Answer is correct or it's not
     reference_solution:
@@ -604,6 +608,7 @@
       rating: 0
       reason: |
         Not given
+
 - date: "2025-02-15"
   version: "1"
   last_updated: "2025-02-15"
@@ -666,13 +671,13 @@
     software:
       rating: 0
       reason: |
-        Not yet evaluated
+        No code provided
     specification:
-      rating: 3
+      rating: 0
       reason: |
-        Known what the problems are, but method of presentation and evaluation is not stated. No HW constraints
+        No method of presentation and evaluation is not stated. No constraints
     dataset:
-      rating: 9.9
+      rating: 5
       reason: |
         Problems and solutions are easily downloaded. Could not find a way to download the data
     metrics:
@@ -684,9 +689,10 @@
       reason: |
         Not given
     documentation:
-      rating: 0.5
+      rating: 0
       reason: |
         Not given. Implicit instructions to download dataset.
+
 - date: "2024-04-02"
   version: "1"
   last_updated: "2024-04-02"
@@ -755,29 +761,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
+      rating: 4
       reason: |
-        Not yet evaluated
+        Code is available, but not well documented
     specification:
-      rating: 7.5
+      rating: 1
       reason: |
         Explains types of problems in detail, but does not state exactly how to administer them.
     dataset:
-      rating: 8.5
+      rating: 4
       reason: |
         Dataset is available via Github, but hard to find
     metrics:
-      rating: 10
+      rating: 5
       reason: |
         Quantitiative metrics such as ROUGE-L and F1 used. Metrics are tailored to the specific problem.
     reference_solution:
       rating: 1
       reason: |
-        Does not exist
+        Exists, but is not open
     documentation:
-      rating: 2
+      rating: 5
       reason: |
-        Provides very little information, if at all, on how to install and run the programs.
+        Associated paper explains all criteria
+
 - date: "2023-01-26"
   version: "1"
   last_updated: "2023-01-26"
@@ -841,29 +848,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
+      rating: 4
       reason: |
-        Not yet evaluated
+        Code is available, but poorly documented
     specification:
-      rating: 0
+      rating: 1.5
       reason: |
-        Not yet evaluated
+        Output is defined and task clarity is questionable
     dataset:
-      rating: 0
+      rating: 4
       reason: |
-        Not yet evaluated
+        Available, but not split into sets
     metrics:
-      rating: 0
+      rating: 5
       reason: |
-        Not yet evaluated
+        Fully defined metrics
     reference_solution:
-      rating: 0
+      rating: 4
       reason: |
-        Not yet evaluated
+        Three open-source models were used. No system constraints.
     documentation:
-      rating: 0
+      rating: 5
       reason: |
-        Not yet evaluated
+        In associated paper
+
 - date: "2024-07-12"
   version: "1"
   last_updated: "2024-07-12"
@@ -930,27 +938,28 @@
     software:
       rating: 0
       reason: |
-        Not yet evaluated
+        Not provided
     specification:
-      rating: 10
+      rating: 5
       reason: |
         Task administration clearly defined; prompt instructions explicitly given, no ambiguity in format or scope.
     dataset:
-      rating: 9
+      rating: 4.5
       reason: |
         Dataset is available (via paper/appendix), includes train/test/valid split. FAIR-compliant with minor gaps in versioning or access standardization.
     metrics:
-      rating: 9
-      reason: |
-        Uses quantitative metrics (Accuracy, F1) aligned with the task. Well-suited for benchmarking multimodal reasoning.
-    reference_solution:
       rating: 5
+      reason: |
+        Uses quantitative metrics (Accuracy, F1) aligned with the task
+    reference_solution:
+      rating: 2
       reason: |
         Multiple model results (e.g., GPT-4V, Gemini) reported; baselines exist, but full runnable code not confirmed for all.
     documentation:
-      rating: 2
+      rating: 5
       reason: |
-        Dataset and benchmark description provided; code/software mentioned; however, full step-by-step setup or containerized environment not stated.
+        All information provided in paper
+
 - date: "2020-09-28"
   version: "1"
   last_updated: "2020-09-28"
@@ -1015,29 +1024,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
+      rating: 5
       reason: |
-        Not yet evaluated
+        All code available on the github
     specification:
-      rating: 9
+      rating: 3
       reason: |
         Task is clearly defined as multiple-choice QA for medical board exams; input and output formats are explicit; task scope is rigorous and structured. System constraints not specified.
     dataset:
-      rating: 8
+      rating: 4
       reason: |
         Dataset is publicly available (GitHub, paper, Hugging Face), well-structured. However, versioning and metadata could be more standardized to fully meet FAIR criteria.
     metrics:
-      rating: 9
+      rating: 5
       reason: |
         Uses clear, quantitative metric (accuracy), standard for multiple-choice benchmarks; easily comparable across models.
     reference_solution:
-      rating: 7
+      rating: 0
       reason: |
-        Model results reported (GPT-4, Med-PaLM, etc.); implementations discussed in papers, but runnable baselines not fully packaged or documented.
+        No reference solution mentioned.
     documentation:
-      rating: 6
+      rating: 4
       reason: |
-        Dataset and paper are accessible; instructions on how to use the source code available, but environment setup or full reproducibility workflow is not packaged.
+        Paper is available. Evaluation criteria are not mentioned.
+
 - date: "2025-05-13"
   version: "1"
   last_updated: "2025-05-13"
@@ -1102,29 +1112,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
+      rating: 5
       reason: |
-        Not yet evaluated
+        Instructions for environment setup available
     specification:
-      rating: 9
+      rating: 4
       reason: |
-        Task clearly defined-cell type annotation and biological QA; input/output formats are well-described; system constraints are not deeply quantified.
+        Task clearly defined-cell type annotation and biological QA; input/output formats are well-described; system constraints are not quantified.
     dataset:
-      rating: 8
+      rating: 5
       reason: |
         Uses public scRNA-seq datasets linked in paper appendix; structured and accessible, though versioning and full metadata not formalized per FAIR standards.
     metrics:
-      rating: 9
+      rating: 5
       reason: |
         Includes precise and interpretable metrics (annotation and QA accuracy); directly aligned with task outputs and benchmarking goals.
     reference_solution:
-      rating: 7
+      rating: 0
       reason: |
-        Model evaluations and LLM agent results discussed; however, no fully packaged, runnable baseline with training/eval pipeline confirmed yet.
+        Model evaluations and LLM agent results discussed; however, no fully packaged, runnable baseline confirmed yet.
     documentation:
-      rating: 8
+      rating: 5
       reason: |
-        Dataset and paper accessible; IPYNB files for setup are available on the github repo; further instructions are minimal.
+        Dataset and paper accessible; IPYNB files for setup are available on the github repo.
+
 - date: "2023-01-26"
   version: "1"
   last_updated: "2023-01-26"
@@ -1193,27 +1204,28 @@
     software:
       rating: 0
       reason: |
-        Not yet evaluated
+        This is a pre-trained model
     specification:
-      rating: 8
+      rating: 0
       reason: |
-        The molecular generation task is well-defined, with input/output via SELFIES and chemical properties
+        This is a pre-trained model
     dataset:
-      rating: 7
+      rating: 0
       reason: |
-        Uses standard datasets (ZINC, MOSES, QM9); accessible and widely used, but FAIR metadata, versioning, and splits are not detailed within this specific repo.
+        This is a pre-trained model
     metrics:
-      rating: 9
+      rating: 0
       reason: |
-        Metrics like Validity%, Novelty%, QED, and Docking Score are quantitative, supporting clear model evaluation.
+        This is a pre-trained model
     reference_solution:
-      rating: 6
+      rating: 0
       reason: |
-        Model is released and functional; some training/evaluation code exists, but it's not framed as a reusable baseline in a benchmark context.
+        This is a pre-trained model
     documentation:
-      rating: 6.5
+      rating: 0
       reason: |
-        Code is available and usable; instructions exist, though setup may require domain knowledge or adaptation for different datasets/environments.
+        This is a pre-trained model
+
 - date: "2020-05-02"
   version: "1"
   last_updated: "2020-05-02"
@@ -1281,29 +1293,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
+      rating: 5
       reason: |
-        Not yet evaluated
+        All necessary information is provided on the Github
     specification:
-      rating: 10
+      rating: 4
       reason: |
-        Tasks (node/link/graph property prediction) are clearly specified with input/output formats and standardized protocols; constraints (e.g., splits) are well-defined.
+        Tasks (node/link/graph property prediction) are clearly specified with input/output formats and standardized protocols; constraints (e.g., splits) are well-defined. No constraints.
     dataset:
-      rating: 10
+      rating: 5
       reason: |
         Fully FAIR- datasets are versioned, split, and accessible via a standardized API; extensive metadata and documentation are included.
     metrics:
-      rating: 10
+      rating: 5
       reason: |
         Reproducible, quantitative metrics (e.g., ROC-AUC, accuracy) that are tightly aligned with the tasks.
     reference_solution:
-      rating: 7
+      rating: 3
       reason: |
-        Multiple baselines implemented and documented (GCN, GAT, GraphSAGE), though most are provided by 3rd parties.
+        Multiple baselines implemented and documented (GCN, GAT, GraphSAGE). No contraints.
     documentation:
-      rating: 10
+      rating: 5
       reason: |
-        Full codebase available via GitHub, with documented installation and usage instructions.
+        All necessary information is included in a paper.
+
 - date: "2011-10-01"
   version: "1"
   last_updated: "2011-10-01"
@@ -1371,27 +1384,28 @@
     software:
       rating: 0
       reason: |
-        Not yet evaluated
+        No instructions available
     specification:
-      rating: 8
+      rating: 1.5
       reason: |
         The platform offers a wide range of material property prediction tasks, but task framing and I/O formats vary by API use and are not always standardized across use cases.
     dataset:
-      rating: 8
+      rating: 3
       reason: |
-        Data is versioned, accessible through both UI and API, with rich metadata and citations; widely reused. API key required to access data.
+        API key required to access data. No predefined splits.
     metrics:
-      rating: 10
+      rating: 5
       reason: |
         Uses numerical metrics like MAE and R^2
     reference_solution:
-      rating: 6
+      rating: 2
       reason: |
-        Numerous models (e.g., Automatminer, CGCNN) trained on the database, but no single canonical baseline is tightly integrated into the platform.
+        Numerous models (e.g., Automatminer, CGCNN) trained on the database, but no constraints or documentation listed.
     documentation:
-      rating: 7
+      rating: 0
       reason: |
-        Extensive API, code repositories, and user guides exist, but end-to-end benchmarking workflows require additional setup by users. 'Documentation' link did not work.
+        No explanations or paper provided
+
 - date: "2020-10-20"
   version: "1"
   last_updated: "2020-10-20"
@@ -1498,29 +1512,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
+      rating: 5
       reason: |
-        Not yet evaluated
+        Data provided in Github links
     specification:
-      rating: 10
+      rating: 5
       reason: |
         Tasks (energy and force prediction) are clearly defined with explicit I/O specifications, constraints, and physical relevance for renewable energy.
     dataset:
-      rating: 9.5
+      rating: 5
       reason: |
         Fully FAIR- OC20, per-adsorbate trajectories, and OC22 are versioned; datasets come with standardized splits, metadata, and are downloadable.
     metrics:
-      rating: 10
+      rating: 5
       reason: |
         MAE (energy and force) are standard and reproducible.
     reference_solution:
-      rating: 9
+      rating: 4
       reason: |
-        Multiple baselines (GemNet-OC, DimeNet++, etc.) implemented and evaluated; highly cited with documented performance.
+        Multiple baselines (GemNet-OC, DimeNet++, etc.) implemented and evaluated. No hardware listed.
     documentation:
-      rating: 9
+      rating: 1
       reason: |
-        Code, data loaders, usage instructions, and leaderboard available; minor setup effort may still be required for full reproduction.
+        Paper exists, but content is behind a paywall.
+
 - date: "2023-06-20"
   version: "1"
   last_updated: "2023-06-20"
@@ -1588,29 +1603,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
+      rating: 1
       reason: |
-        Not yet evaluated
+        Setup script provided, but no code provided
     specification:
-      rating: 6
+      rating: 1
       reason: |
-        Tasks are clearly defined; heterogeneity in benchmarks slightly reduces uniformity; I/O format is not specified
+        Only dataset format is defined.
     dataset:
-      rating: 9
-      reason: |
-        Data is versioned, public, and adheres to FAIR principles across the NIST-hosted infrastructure; however, metadata completeness varies slightly across benchmarks.
-    metrics:
       rating: 4
       reason: |
-        Overall goal is stated, but the exact metric evaluated is not listed
-    reference_solution:
+        Data is public and adheres to FAIR principles across the NIST-hosted infrastructure; however, metadata completeness varies slightly across benchmarks. No splits.
+    metrics:
       rating: 5
       reason: |
-        Many baselines across tasks (CGCNN, ALIGNN, M3GNet, etc.); documentation is good, but baselines may be hard to find or not available for every individual task.
-    documentation:
-      rating: 8.5
+        Metrics stated for each benchmark.
+    reference_solution:
+      rating: 4
       reason: |
-        JARVIS-Tools and leaderboard APIs are well-documented and actively maintained; minimal setup burden, though some task-specific workflows may require additional guidance.
+        Many baselines across tasks (CGCNN, ALIGNN, M3GNet, etc.); no constraints specified.
+    documentation:
+      rating: 1
+      reason: |
+        Only the task is specified.
+
 - date: "2022-02-22"
   version: "1"
   last_updated: "2022-02-22"
@@ -1677,29 +1693,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 7.0
+      rating: 4
       reason: |
-        The benchmarks are primarily implemented within the PennyLane ecosystem, offering runnable code and integration with various quantum hardware backends. While not a standalone software package, it provides a functional framework for executing and evaluating benchmarks.
+        Run instructions exist, but are not easy to follow
     specification:
-      rating: 9
+      rating: 3
       reason: |
-        Tasks like fidelity estimation, state preparation, and runtime benchmarking are clearly defined; I/O formats vary slightly across hardware but are consistently framed in PennyLane/Qiskit ecosystems.
+        No system constraints. Task clarity and dataset format are not clearly specified.
     dataset:
-      rating: 8
+      rating: 4
       reason: |
-        Datasets are accessible, structured, and interoperable via PennyLane; however, not all are versioned or richly annotated in conventional ML metadata standards.
-    metrics:
-      rating: 9
+        Datasets are accessible, but not split.
+    metrics: 
+      rating: 3 
       reason: |
-        Quantitative and well-motivated metrics (e.g., fidelity, success probability) are used, though reproducibility can depend on hardware noise profiles.
+        Partially defined, somewhat inferrable metrics. Unknown whether a system's performance is captured.
     reference_solution:
-      rating: 5
+      rating: 0
       reason: |
-        Reference implementations exist and are integrated into tools like PennyLane, but performance varies per backend; not all benchmarks include reproducible reference runs.
+        Not provided
     documentation:
-      rating: 8
+      rating: 1
       reason: |
-        Strong integration with PennyLane and QML ecosystem; guides and code provided, but advanced hardware setup may pose reproducibility hurdles for newcomers.
+        Only the task is defined. 
+
 - date: "2024-10-01"
   version: "1"
   last_updated: "2024-10-01"
@@ -1751,40 +1768,41 @@
       }
   datasets:
     links:
-      - name: "CFDBench on Zenodo"
-        url: "https://zenodo.org/record/8410294"
+      - name: "unknown"
+        url: "unknown"
   results:
     links:
-      - name: "Results in the CFDBench paper"
-        url: "https://arxiv.org/abs/2310.05963"
+      - name: "unknown"
+        url: "unknown"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 6.0
+      rating: 5
       reason: |
-        The benchmark provides Python scripts for data loading, preprocessing, and model training/evaluation, primarily using PyTorch. While not a standalone software, it offers sufficient code for reproducing experiments and building upon the benchmark.
+        The benchmark provides Python scripts for data loading, preprocessing, and model training/evaluation
     specification:
-      rating: 10
+      rating: 0
       reason: |
-        Tasks are clearly framed (PDE regression, surrogate modeling), with explicit details on the four canonical CFD problems, input/output structure, and generalization goals.
+        Not listed
     dataset:
-      rating: 10
+      rating: 0
       reason: |
-        Publicly available on Zenodo, versioned, with metadata and splits; covers thousands of simulations with proper documentation.
+        Not given
     metrics:
-      rating: 9
+      rating: 5
       reason: |
         Quantitative metrics (L2 error, MAE, relative error) are clearly defined and align with regression task objectives.
     reference_solution:
-      rating: 8
+      rating: 5
       reason: |
-        Baseline models like FNO and DeepONet are implemented, but full reproduction pipelines or eval scripts may require additional user configuration.
+        Baseline models like FNO and DeepONet are implemented, hardware specified.
     documentation:
-      rating: 6
+      rating: 5
       reason: |
-        GitHub and Zenodo provide data and code, but setup for evaluating across all 739 cases requires moderate user effort and technical fluency with PyTorch-based frameworks. Reproducibility depends on full implementation details.
+        Associated paper gives all necessary information.
+
 - date: "2023-04-23"
   version: "1"
   last_updated: "2023-04-23"
@@ -1827,14 +1845,12 @@
     email: "j.roberts@cs.ox.ac.uk"
   cite:
     - |
-      @misc{roberts2023satinmultitaskmetadatasetclassifying,
-        title={SATIN: A Multi-Task Metadataset for Classifying Satellite Imagery using Vision-Language Models}, 
-        author={Jonathan Roberts and Kai Han and Samuel Albanie},
+      @misc{roberts2023satin,
+        title={SATIN: A multi-task metadataset for classifying satellite imagery using vision-language models},
+        author={Roberts, Jonathan and Han, Kai and Albanie, Samuel},
+        journal={arXiv preprint arXiv:2304.11619},
         year={2023},
-        eprint={2304.11619},
-        archivePrefix={arXiv},
-        primaryClass={cs.CV},
-        url={https://arxiv.org/abs/2304.11619}, 
+        url={https://huggingface.co/datasets/saral-ai/satimagnet}
       }
   datasets:
     links:
@@ -1849,29 +1865,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 7.0
+      rating: 0
       reason: |
-        The metadataset is well-integrated with Hugging Face, providing easy access and tools for data loading. While not a full software package, it offers essential components and scripts for model evaluation.
+        No scripts or environment information provided
     specification:
-      rating: 9
+      rating: 4
       reason: |
         Tasks (image classification across 27 satellite datasets) are clearly defined with multi-task and zero-shot framing; input/output structure is mostly standard but some task-specific nuances require interpretation.
     dataset:
-      rating: 9
+      rating: 5
       reason: |
         Hosted on Hugging Face, versioned, FAIR-compliant with rich metadata; covers many well-known remote sensing datasets unified under one metadataset, though documentation depth varies slightly across tasks.
     metrics:
-      rating: 9
+      rating: 5
       reason: |
-        Standard quantitative metrics (Accuracy, Top-1 Accuracy) aligned with classification tasks; consistent across models, with leaderboard results available.
+        Accuracy of classification is an appropriate metric
     reference_solution:
-      rating: 7
+      rating: 4
       reason: |
-        Baselines like CLIP, BLIP, ALBEF evaluated in the paper; full inference pipelines or training code may need reconstruction from paper or GitHub references.
+        Baselines like CLIP, BLIP, ALBEF evaluated in the paper; no constraints specified
     documentation:
-      rating: 7
+      rating: 5
       reason: |
-        Good usage guidance via Hugging Face and paper; example scripts and evaluation tools exist, but end-to-end reproducibility may require manual integration of model checkpoints and preprocessing.
+        Paper provides all required information
+
 - date: "2023-07-19"
   version: "1"
   last_updated: "2023-07-19"
@@ -1935,29 +1952,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 7.0
+      rating: 5
       reason: |
-        ClimateLearn is an open-source PyTorch library that simplifies data processing, model implementation, and evaluation for climate science. It provides holistic pipelines and is actively maintained, facilitating reproducible research.
+        Quickstart notebook makes for easy usage
     specification:
-      rating: 10
+      rating: 5
       reason: |
         Task framing (medium-range climate forecasting), input/output formats, and evaluation windows are clearly defined; benchmark supports both physical and learned models with detailed constraints.
     dataset:
-      rating: 10
+      rating: 5
       reason: |
         Provides standardized access to ERA5 and other reanalysis datasets, with ML-ready splits, metadata, and Xarray-compatible formats; versioned and fully FAIR-compliant.
     metrics:
-      rating: 9
+      rating: 5
       reason: |
         ACC and RMSE are standard, quantitative, and appropriate for climate forecasting; well-integrated into the benchmark, though interpretation across domains may vary.
     reference_solution:
-      rating: 8
+      rating: 0
       reason: |
-        Multiple baselines (e.g., FourCastNet, ClimaX) are provided and evaluated; implementations are available but may require tuning or GPU-specific configuration.
+        The benchmark is geared for CNN architectures, but no specific model was mentioned.
     documentation:
-      rating: 8.5
+      rating: 5
       reason: |
-        Comprehensive setup via GitHub, including data loaders, training scripts, config files, and reproducibility protocols; minor complexity in large-scale data preprocessing.
+        Explained in the benchmark's paper. 
+
 - date: "2022-06-09"
   version: "1"
   last_updated: "2022-06-09"
@@ -2023,29 +2041,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 7.0
+      rating: 4.5
       reason: |
-        BIG-Bench provides a well-structured framework for task definitions and evaluation scripts, allowing users to run and contribute new tasks. While it requires some setup, the modular design facilitates extending and evaluating language models.
+        Quick start notebook provided, but instructions on how to run it are lacking.
     specification:
-      rating: 9.0
+      rating: 4.5
       reason: |
         Tasks are diverse and clearly described; input/output formats are usually defined but vary widely, and system constraints are not standardized.
     dataset:
-      rating: 9.0
+      rating: 5
       reason: |
-        Public, versioned, and well-documented; FAIR overall, though consistency and metadata completeness vary across tasks.
+        Public, versioned, and well-documented; FAIR overall
     metrics:
-      rating: 8.0
+      rating: 5
       reason: |
-        Many tasks use standard quantitative metrics (accuracy, BLEU, F1), but others involve subjective ratings (e.g., Likert), which reduces cross-task comparability.
+        Many tasks use standard quantitative metrics (accuracy, BLEU, F1). Others involve subjective ratings (e.g., Likert), which reduces cross-task comparability.
     reference_solution:
-      rating: 7.0
+      rating: 2
       reason: |
         Human baselines and LLM performance results are included; however, runnable reference solutions are limited and setup is not fully turnkey.
     documentation:
-      rating: 8.0
+      rating: 5
       reason: |
-        Excellent GitHub documentation with usage examples, task templates, and tooling; task diversity may require manual task-by-task execution setup.
+        Explained in the associated paper.
+
 - date: "2019-11-20"
   version: "1"
   last_updated: "2019-11-20"
@@ -2110,29 +2129,30 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
+      rating: 5
       reason: |
-        Not rated
+        All code given on Github site
     specification:
-      rating: 9.0
+      rating: 4
       reason: |
         Task and format (multiple-choice QA with 5 options) are clearly defined; grounded in ConceptNet with consistent structure, though no hardware/system constraints are specified.
     dataset:
-      rating: 9.0
+      rating: 5
       reason: |
         Public, versioned, and FAIR-compliant; includes metadata, splits, and licensing; well-integrated with HuggingFace and other ML libraries.
     metrics:
-      rating: 9.0
+      rating: 5
       reason: |
         Accuracy is a simple, reproducible metric aligned with task goals; no ambiguity in evaluation.
     reference_solution:
-      rating: 8.0
+      rating: 4
       reason: |
-        Several baseline models (e.g., BERT, RoBERTa) are reported with scores; implementations exist in public repos, but not bundled as an official starter kit.
+        Several baseline models (e.g., BERT, RoBERTa) are reported with scores; implementations exist in public repos, but not run with hardware constraints
     documentation:
-      rating: 7.0
+      rating: 5
       reason: |
-        Clear paper, GitHub repo, and integration with HuggingFace Datasets; full reproducibility requires manually connecting models to dataset.
+        Given in paper.
+
 - date: "2019-07-24"
   version: "1"
   last_updated: "2019-07-24"
@@ -2151,7 +2171,7 @@
     WinoGrande is a large-scale adversarial dataset of 44,000 Winograd Schema-style 
     questions with reduced bias using AFLite, serving as both a benchmark and transfer 
     learning resource.
-  licensing: "CC‑BY"
+  licensing: "CC-BY"
   task_types:
   - "Pronoun resolution"
   ai_capability_measured:
@@ -2197,26 +2217,26 @@
     benchmark_ready: true
   ratings:
     software:
-      rating: 0.0
+      rating: 0
       reason: |
-        Not Rated
+        No template code provided
     specification:
-      rating: 9.0
+      rating: 5
       reason: |
         Task (pronoun/coreference resolution) is clearly defined in Winograd Schema style, with consistent input/output format; no system constraints included.
     dataset:
-      rating: 9.0
+      rating: 5
       reason: |
         Public, versioned, and FAIR-compliant with AFLite-generated splits to reduce annotation artifacts; hosted by AllenAI with good metadata.
     metrics:
-      rating: 9.0
+      rating: 5
       reason: |
         Accuracy and AUC are quantitative and well-aligned with disambiguation goals; standardized across evaluations.
     reference_solution:
-      rating: 8.0
+      rating: 4
       reason: |
-        Baseline results for BERT, RoBERTa, GPT-2, etc., are published, but official runnable baselines require setup via AllenNLP or other frameworks.
+        Baseline results available, requiring users to submit their methods along with their submissions. Constraints are not required in submissions.
     documentation:
-      rating: 6.0
+      rating: 5
       reason: |
-        Dataset page and paper provide sufficient detail; usage with HuggingFace is smooth, but full reproducibility for training requires configuration effort.
+        Dataset page and paper provide sufficient detail

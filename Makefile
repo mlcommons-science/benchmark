@@ -110,6 +110,7 @@ publish:
 	cp source/index.md docs/index.md
 	cp content/tex/benchmarks.pdf docs/benchmarks.pdf
 	cp content/tex/images/* docs/tex/images
+	python bin/make-html.py docs
 
 structure:
 	python ${SCRIPT} --files=source/benchmarks.yaml --check_structure 

@@ -1,0 +1,85 @@
+<h1 id="delta-squared-dft">Delta Squared-DFT</h1>
+<p><strong>Date</strong>: 2024-12-13</p>
+<p><strong>Name</strong>: Delta Squared-DFT</p>
+<p><strong>Domain</strong>: Computational Chemistry; Materials
+Science</p>
+<p><strong>Focus</strong>: Benchmarking machine-learning corrections to
+DFT using Delta Squared-trained models for reaction energies</p>
+<p><strong>Keywords</strong>: density functional theory, Delta
+Squared-ML correction, reaction energetics, quantum chemistry</p>
+<p><strong>Task Types</strong>: Regression</p>
+<p><strong>Metrics</strong>: Mean Absolute Error eV , Energy ranking
+accuracy</p>
+<p><strong>Models</strong>: Delta Squared-ML correction networks, Kernel
+ridge regression</p>
+<p><strong>Citation</strong>:</p>
+<ul>
+<li><p>Kuzma Khrabrov, Anton Ber, Artem Tsypin, Konstantin Ushenin, Egor
+Rumiantsev, Alexander Telepov, Dmitry Protasov, Ilya Shenbin, Anton
+Alekseev, Mikhail Shirokikh, Sergey Nikolenko, Elena Tutubalina, and
+Artur Kadurin. Delta-squared dft: a universal quantum chemistry dataset
+of drug-like molecules and a benchmark for neural network potentials.
+2024. URL: https://arxiv.org/abs/2406.14347, arXiv:2406.14347.</p>
+<ul>
+<li><p>bibtex: ``` <span class="citation"
+data-cites="misc">@misc</span>{khrabrov2024nabla2dftuniversalquantumchemistry,</p>
+<pre><code>title={Delta-Squared DFT: A Universal Quantum Chemistry Dataset of Drug-Like Molecules and a Benchmark for Neural Network Potentials}, 
+
+author={Kuzma Khrabrov and Anton Ber and Artem Tsypin and Konstantin Ushenin and Egor Rumiantsev and Alexander Telepov and Dmitry Protasov and Ilya Shenbin and Anton Alekseev and Mikhail Shirokikh and Sergey Nikolenko and Elena Tutubalina and Artur Kadurin},
+
+year={2024},
+
+eprint={2406.14347},
+
+archivePrefix={arXiv},
+
+primaryClass={physics.chem-ph},
+
+url={https://arxiv.org/abs/2406.14347}, </code></pre>
+<p>}</p>
+<p>```</p></li>
+</ul></li>
+</ul>
+<p><strong>Ratings:</strong></p>
+<p>Software:</p>
+<ul>
+<li><p><strong>Rating:</strong> 3</p></li>
+<li><p><strong>Reason:</strong> Source code and baseline models
+available for ML correction to DFT; framework maturity is
+moderate.</p></li>
+</ul>
+<p>Specification:</p>
+<ul>
+<li><p><strong>Rating:</strong> 4</p></li>
+<li><p><strong>Reason:</strong> Benchmark focuses on reaction energy
+prediction with clear goals, though some task specifics could be
+formalized further.</p></li>
+</ul>
+<p>Dataset:</p>
+<ul>
+<li><p><strong>Rating:</strong> 4.5</p></li>
+<li><p><strong>Reason:</strong> Multi-modal quantum chemistry datasets
+are standardized and accessible; repository available.</p></li>
+</ul>
+<p>Metrics:</p>
+<ul>
+<li><p><strong>Rating:</strong> 4</p></li>
+<li><p><strong>Reason:</strong> Uses standard regression metrics like
+MAE and energy ranking accuracy; appropriate for task.</p></li>
+</ul>
+<p>Reference Solution:</p>
+<ul>
+<li><p><strong>Rating:</strong> 3.5</p></li>
+<li><p><strong>Reason:</strong> Includes baseline regression and kernel
+ridge models; implementations are reproducible.</p></li>
+</ul>
+<p>Documentation:</p>
+<ul>
+<li><p><strong>Rating:</strong> 4</p></li>
+<li><p><strong>Reason:</strong> Source code supports pipeline reuse, but
+formal evaluation splits may vary.</p></li>
+</ul>
+<p><strong>Average Rating:</strong> 3.833</p>
+<p><strong>Radar Plot:</strong> <img
+src="../../tex/images/delta_squared-dft_radar.png"
+alt="Delta Squared-Dft radar plot" /></p>

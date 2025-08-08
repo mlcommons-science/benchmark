@@ -53,7 +53,8 @@ LATEX_PREFIX = textwrap.dedent(
     \emergencystretch=3em
     \hbadness=10000
     
-    
+    \setlength{\parindent}{0pt}
+
     \begin{document}
     \sloppy
     \author{Gregor von Laszewski,
@@ -113,6 +114,8 @@ TABLEFONT = r"\footnotesize"
 # TABLEFONT = r"\tiny"
 
 DESCRIPTION_STYLE = "[labelwidth=5em, labelsep=1em, leftmargin=*, align=left, itemsep=0.3em, parsep=0em]"
+
+DESCRIPTION_STYLE = "[labelwidth=6cm, labelsep=1em, leftmargin=6cm, itemsep=0.1em, parsep=0em]"
 
 # Define all columns with their properties for clarity and consistency
 ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
@@ -698,10 +701,14 @@ class GenerateLatex:
         if "description" in entry and entry["description"]:
             lines.append(f"\\noindent {latex_escape(entry['description'])}\n")
 
+        if "summary" in entry and entry["summary"]:
+            lines.append(f"\\noindent {latex_escape(entry['summary'])}\n")
+
+
         # Use description environment for all fields except name/description/cite
         lines.append(f"\\begin{{description}}{DESCRIPTION_STYLE}")
 
-        skip_fields = {"name", "description", "cite"}
+        skip_fields = {"name", "description", "cite", "summary"}
         for key, value in entry.items():
             if key not in skip_fields:
                 if "url" in key:
@@ -731,35 +738,31 @@ class GenerateLatex:
                 citations.append(f"\\cite{{{label}}}")
             lines.append(f"  \\item[Citations:] {', '.join(citations)}")
 
-            if "ratings" in DEFAULT_COLUMNS:
-                lines.append(f"  \\item[Ratings:] ~ \\")
-
-                id = entry.get("id", "unknown")
-                name = entry.get("name", f"unknown_{id}")
-                image = f"{id}_radar.pdf"
-
-                # radar_block = textwrap.dedent(
-                #     f"""
-                #     # \\begin{{figure}}[h!]
-                #     #  \\centering
-                #     \\includegraphics[width=0.7\\textwidth]{{{image}}}
-                #     #  \\caption{{{name}}}
-                #     # \end{{figure}}
-                #     """
-
-                lines.append("")
-
-                ratings_table = self.make_latex_ratings_table(entry)
-                lines.append(ratings_table)
-
-                lines.append("")
-                radar_block = f"\\includegraphics[width=0.2\\textwidth]{{{image}}}"
-                lines.append(radar_block)
 
         # Close the description environmentif
 
         lines.append("\\end{description}")
+
+        if "ratings" in DEFAULT_COLUMNS:
+            lines.append("")
+            lines.append(r"{\bf Ratings:} ~ \\")
+
+            id = entry.get("id", "unknown")
+            name = entry.get("name", f"unknown_{id}")
+            image = f"{id}_radar.pdf"
+
+            lines.append("")
+
+            ratings_table = self.make_latex_ratings_table(entry)
+            lines.append(ratings_table)
+
+            lines.append("")
+            radar_block = f"\\includegraphics[width=0.2\\textwidth]{{{image}}}"
+            lines.append(radar_block)
+
+
         lines.append("}}")
+
 
         lines.append("\\clearpage")
 

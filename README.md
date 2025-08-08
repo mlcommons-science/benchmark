@@ -33,7 +33,12 @@ BibTex:
 ```
 @misc{benchmark-collection,
     title={AI Scientific Benchmarks Comparison}
-    author={Gregor von Laszewski and Reece Shiraishi and Anjay Krishnan and Nhan Tran and Benjamin Hawks and Geoffrey C. Fox}
+    author={Gregor von Laszewski and 
+            Reece Shiraishi and 
+            Anjay Krishnan and 
+            Nhan Tran and 
+            Benjamin Hawks and 
+            Geoffrey C. Fox}
     url={https://mlcommons-science.github.io/benchmark/benchmarks.pdf}
     howpublished={Github},
     year={2025}

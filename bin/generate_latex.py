@@ -23,7 +23,7 @@ VERBOSE = True
 
 LATEX_PREFIX = textwrap.dedent(
     r"""
-    \documentclass{article}
+    \documentclass[10pt]{article}
     \usepackage{fullpage}
     \usepackage{makecell}
     \usepackage{enumitem}
@@ -56,6 +56,49 @@ LATEX_PREFIX = textwrap.dedent(
     
     \begin{document}
     \sloppy
+    \author{Gregor von Laszewski,
+              Reece Shiraishi, 
+              Anjay Krishnan, 
+              Nhan Tran, \\
+              Benjamin Hawks, and 
+              Geoffrey C. Fox}
+
+    \date{\today}
+    \title{Benchmark Overview}
+    \maketitle
+
+    \begin {abstract}
+    This document provides an overview of various benchmarks, including their descriptions, URLs, domains, focus areas, keywords, task types, AI capabilities measured, metrics, models, and notes. Each benchmark
+    \end{abstract}
+
+    \vfill 
+
+    {\centering \bfseries Citation \par}
+
+    \begin{quote}
+    \begin{verbatim}
+    @misc{benchmark-collection,
+      title={AI Scientific Benchmarks Comparison}
+      author={Gregor von Laszewski and 
+              Reece Shiraishi and 
+              Anjay Krishnan and 
+              Nhan Tran and 
+              Benjamin Hawks and 
+              Geoffrey C. Fox}
+      url={https://mlcommons-science.github.io/benchmark/benchmarks.pdf}
+      howpublished={Github},
+      year={2025}
+      month=jul
+    }
+    \end{verbatim}
+    \end{quote}
+    \clearpage
+    \tableofcontents
+    \clearpage
+    
+
+    
+
 """
 )
 
@@ -147,6 +190,25 @@ REQUIRED_FIELDS_BY_TYPE = {
 
 
 # --- Utility Functions ---
+
+
+def latex_escape(text):
+    """Escape LaTeX special characters for LaTeX compatibility."""
+    replacements = {
+        "&": r"\&",
+        "%": r"\%",
+        "$": r"\$",
+        "#": r"\#",
+        "_": r"\_",
+        "{": r"\{",
+        "}": r"\}",
+        "~": r"\textasciitilde{}",
+        "^": r"\textasciicircum{}",
+        # "\\": r"\textbackslash{}",
+    }
+    for key, val in replacements.items():
+        text = text.replace(key, val)
+    return text
 
 
 def has_capital_letter(text_to_check: str) -> bool:
@@ -254,6 +316,10 @@ class GenerateLatex:
         # mkdir /content/tex/section
         os.makedirs("content/tex/section", exist_ok=True)
 
+        from pprint import pprint
+
+        # pprint(self.entries[0])
+        # sys.exit(0)
         """
         Generates a LaTeX filename for each entry and stores it internally.
         """
@@ -549,28 +615,57 @@ class GenerateLatex:
     # SECTION WRITER INTO SEPERATE FILES IN source/tex/section
     # ########################################################
 
+    def make_latex_ratings_table(self, entry):
+        # Extract ratings entries
+        ratings = {k: v for k, v in entry.items() if k.startswith("ratings.")}
+
+        # Parse into a dict[row][col] = value
+        table_data = {}
+        row_labels = set()
+        col_labels = set()
+
+        for key, value in ratings.items():
+            parts = key.split(".")  # ['ratings', 'dataset', 'rating']
+            if len(parts) != 3:
+                continue
+            _, row, col = parts
+            row_labels.add(row)
+            col_labels.add(col)
+            table_data.setdefault(row, {})[col] = value
+
+        # Sort for consistent table
+        row_labels = sorted(row_labels)
+        col_labels = sorted(col_labels)
+
+        # Build LaTeX table
+        latex = []
+        latex.append(
+            r"\begin{tabular}{p{0.15\textwidth} p{0.07\textwidth} p{0.7\textwidth}}"
+        )
+        latex.append(r"\hline")
+        latex.append("Rating & Value & Reason" + r" \\")
+        latex.append(r"\hline")
+
+        for row in row_labels:
+            # Escape underscores for LaTeX safety
+            row_label = row.replace("_", r"\_")
+            row_values = [
+                str(table_data.get(row, {}).get(col, "")) for col in col_labels
+            ]
+            latex.append(row_label + " & " + " & ".join(row_values) + r" \\")
+        latex.append(r"\hline")
+        latex.append(r"\end{tabular}")
+
+        return "\n".join(latex)
+
     @staticmethod
     def get_section_filename(name: str, location="section/") -> str:
         return location + name + ".tex"
 
     def latex_entry_to_string(self, entry):
-        def latex_escape(text):
-            """Escape LaTeX special characters for LaTeX compatibility."""
-            replacements = {
-                "&": r"\&",
-                "%": r"\%",
-                "$": r"\$",
-                "#": r"\#",
-                "_": r"\_",
-                "{": r"\{",
-                "}": r"\}",
-                "~": r"\textasciitilde{}",
-                "^": r"\textasciicircum{}",
-                # "\\": r"\textbackslash{}",
-            }
-            for key, val in replacements.items():
-                text = text.replace(key, val)
-            return text
+        from pprint import pprint
+
+        pprint(entry)
 
         def format_field(key, value, indent=0):
             indent_str = "  " * indent
@@ -591,13 +686,13 @@ class GenerateLatex:
                     else:
                         lines.append(f"{indent_str}  - {latex_escape(str(item))}")
                 return "\n".join(lines)
-            elif value is not None:
+            elif value != None:
                 return f"{indent_str}\\item[{key_escaped}:] {latex_escape(str(value))}"
             else:
                 return ""
 
         # Start with section and description paragraph
-        lines = [f"\\section{{{latex_escape(entry['name'])}}}"]
+        lines = [f"\\subsection{{{latex_escape(entry['name'])}}}"]
         lines.append("{{\\footnotesize")
 
         if "description" in entry and entry["description"]:
@@ -616,6 +711,8 @@ class GenerateLatex:
                             f"  \\item[{key}:] "
                             f"\\href{{{latex_escape(value)}}}{{{latex_escape(value)}}}"
                         )
+                elif key.startswith("ratings."):
+                    pass
                 else:
                     formatted = format_field(key, value, indent=1)
                     if formatted.strip():
@@ -635,7 +732,7 @@ class GenerateLatex:
             lines.append(f"  \\item[Citations:] {', '.join(citations)}")
 
             if "ratings" in DEFAULT_COLUMNS:
-                lines.append(f"  \\item[Ratings:]")
+                lines.append(f"  \\item[Ratings:] ~ \\")
 
                 id = entry.get("id", "unknown")
                 name = entry.get("name", f"unknown_{id}")
@@ -650,6 +747,12 @@ class GenerateLatex:
                 #     # \end{{figure}}
                 #     """
 
+                lines.append("")
+
+                ratings_table = self.make_latex_ratings_table(entry)
+                lines.append(ratings_table)
+
+                lines.append("")
                 radar_block = f"\\includegraphics[width=0.2\\textwidth]{{{image}}}"
                 lines.append(radar_block)
 
@@ -723,12 +826,11 @@ class GenerateLatex:
         if url in [None, "None", "", "unkown", "Unkown"]:
             url = None
 
-        if url is not None:
+        if url != None:
             url = f"\\href{{{escape_latex(url)}}}{{$\\Rightarrow$}}"
         else:
             url = ""
         return url
-    
 
     def entry_to_table_row(self, entry, columns=DEFAULT_COLUMNS) -> str:
         row = []
@@ -810,7 +912,6 @@ class GenerateLatex:
             #     total_width += 1
             #     width.append("1")
             #     names.append("Average Ratings")
-
 
             # normalize the width to fit into the tex_width
 

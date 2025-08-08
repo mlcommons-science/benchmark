@@ -188,8 +188,8 @@
     # description: |
     #   A set of ratings associated with the benchmark. The goal is to rate all benchmarks, but this could
     #   be time-consuming and prevent listing here. To allow addition in the list without 
-    #   ratings, we make this section optional. A value of -1 in any of the categories means 
-    #   it has not been evaluated yet.
+    #   ratings, we make this section optional. A value of 0 in any of the categories means 
+    #   it has not been evaluated yet. Values are allowed from 0 to 5. Note the ratings here are fictional.
     # condition: optional
 
     software:
@@ -200,7 +200,7 @@
       # condition: optional
 
     specification:
-      rating: 9.0
+      rating: 5.0
       reason: |
         Task and format (multiple-choice QA with 5 options) are clearly
         defined; grounded in ConceptNet with consistent structure, though no hardware/system
@@ -210,7 +210,7 @@
       # condition: optional
 
     dataset:
-      rating: 9.0
+      rating: 5.0
       reason: |
         Public, versioned, and FAIR-compliant; includes metadata, splits,
         and licensing; well-integrated with HuggingFace and other ML libraries.
@@ -223,7 +223,7 @@
       # condition: optional
 
     metrics:
-      rating: 9.0
+      rating: 5.0
       reason: | 
         Accuracy is a simple, reproducible metric aligned
         with task goals; no ambiguity in evaluation.
@@ -232,7 +232,7 @@
       # condition: optional
 
     reference_solution:
-      rating: 8.0
+      rating: 5.0
       reason: |
         Several baseline models (e.g., BERT, RoBerta) are reported
         with scores; implementations exist in public repos, but not bundled as an official
@@ -242,7 +242,7 @@
       # condition: optional
 
     documentation:
-      rating: 7.0
+      rating: 5.0
       reason: |
         Clear paper, GitHub repo, and integration with HuggingFace
         Datasets; full reproducibility requires manually connecting models to dataset.

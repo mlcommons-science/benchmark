@@ -1,5 +1,5 @@
 - date: '2024-05-01'
-  last_updated: '2024-05-01' #could also be null
+  last_updated: '2024-05-01' 
   expired: null
   valid: 'yes' #CHECK DEFINITION
   name: Jet Classification
@@ -17,7 +17,7 @@
     includes both full-precision and quantized models optimized for FPGA deployment.
   task_types:
   - Classification
-  ai_capability_measured: #Must be a YAML list
+  ai_capability_measured: 
   - Real-time inference 
   - Model compression performance
   metrics:
@@ -26,9 +26,9 @@
   models:
   - Keras DNN
   - QKeras quantized DNN
-  ml_motif: #What type of ML is tested
+  ml_motif: 
   - Real-time
-  type: Benchmark #i.e. actual benchmark, or just describes the application
+  type: Benchmark 
   ml_task: Supervised Learning
   solutions: '2' #NOT NEEDED. Number of results as a list
   notes: Includes both float and quantized models using QKeras
@@ -57,33 +57,33 @@
     reproducible: true
     benchmark_ready: true #"Is it runnable?"
   ratings:
-    software: #Can the end user set up and run the benchark
+    software: 
       rating: 0
-      reason: laksdjflkajsdlfkajsdlf
+      reason: could not set up the software environment
     specification:
-      rating: 9.0
+      rating: 5.0
       reason: |
         Task and format (multiple-choice QA with 5 options) are clearly
         defined; grounded in ConceptNet with consistent structure, though no hardware/system
         constraints are specified.
     dataset:
-      rating: 9.0
+      rating: 5.0
       reason: |
         Public, versioned, and FAIR-compliant; includes metadata, splits,
         and licensing; well-integrated with HuggingFace and other ML libraries.
     metrics:
-      rating: 9.0
+      rating: 5.0
       reason: | 
         Accuracy is a simple, reproducible metric aligned
         with task goals; no ambiguity in evaluation.
     reference_solution:
-      rating: 8.0
+      rating: 4.0
       reason: |
         Several baseline models (e.g., BERT, RoBERTa) are reported
         with scores; implementations exist in public repos, but not bundled as an official
         starter kit.
     documentation:
-      rating: 7.0
+      rating: 3.0
       reason: |
         Clear paper, GitHub repo, and integration with HuggingFace
         Datasets; full reproducibility requires manually connecting models to dataset.

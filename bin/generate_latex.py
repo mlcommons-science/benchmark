@@ -115,7 +115,9 @@ TABLEFONT = r"\footnotesize"
 
 DESCRIPTION_STYLE = "[labelwidth=5em, labelsep=1em, leftmargin=*, align=left, itemsep=0.3em, parsep=0em]"
 
-DESCRIPTION_STYLE = "[labelwidth=6cm, labelsep=1em, leftmargin=6cm, itemsep=0.1em, parsep=0em]"
+DESCRIPTION_STYLE = (
+    "[labelwidth=4cm, labelsep=1em, leftmargin=4cm, itemsep=0.1em, parsep=0em]"
+)
 
 # Define all columns with their properties for clarity and consistency
 ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
@@ -704,7 +706,6 @@ class GenerateLatex:
         if "summary" in entry and entry["summary"]:
             lines.append(f"\\noindent {latex_escape(entry['summary'])}\n")
 
-
         # Use description environment for all fields except name/description/cite
         lines.append(f"\\begin{{description}}{DESCRIPTION_STYLE}")
 
@@ -738,7 +739,6 @@ class GenerateLatex:
                 citations.append(f"\\cite{{{label}}}")
             lines.append(f"  \\item[Citations:] {', '.join(citations)}")
 
-
         # Close the description environmentif
 
         lines.append("\\end{description}")
@@ -760,9 +760,7 @@ class GenerateLatex:
             radar_block = f"\\includegraphics[width=0.2\\textwidth]{{{image}}}"
             lines.append(radar_block)
 
-
         lines.append("}}")
-
 
         lines.append("\\clearpage")
 

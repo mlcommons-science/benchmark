@@ -1,6 +1,9 @@
 # BaisBench (Biological AI Scientist Benchmark)
 
 
+**Edit:** [edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)
+
+
 **Date**: 2025-05-13
 
 

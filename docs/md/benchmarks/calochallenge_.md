@@ -1,6 +1,9 @@
 # CaloChallenge 2022
 
 
+**Edit:** [edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)
+
+
 **Date**: 2024-10-28
 
 

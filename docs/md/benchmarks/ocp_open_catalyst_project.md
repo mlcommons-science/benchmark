@@ -1,6 +1,9 @@
 # OCP (Open Catalyst Project)
 
 
+**Edit:** [edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)
+
+
 **Date**: 2020-10-20
 
 

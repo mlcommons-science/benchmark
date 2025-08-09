@@ -1,6 +1,9 @@
 # Neural Architecture Codesign for Fast Physics Applications
 
 
+**Edit:** [edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)
+
+
 **Date**: 2025-01-09
 
 

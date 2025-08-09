@@ -1,6 +1,9 @@
 # Nixtla Neural Forecast TimeGPT
 
 
+**Edit:** [edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)
+
+
 **Date**: 2023-10-05
 
 

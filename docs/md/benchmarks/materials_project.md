@@ -1,6 +1,9 @@
 # Materials Project
 
 
+**Edit:** [edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)
+
+
 **Date**: 2011-10-01
 
 

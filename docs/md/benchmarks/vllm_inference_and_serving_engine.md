@@ -1,6 +1,9 @@
 # vLLM Inference and Serving Engine
 
 
+**Edit:** [edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)
+
+
 **Date**: 2023-09-12
 
 

@@ -1,6 +1,9 @@
 # GPQA: A Graduate-Level Google-Proof Question and Answer Benchmark
 
 
+**Edit:** [edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)
+
+
 **Date**: 2023-11-20
 
 

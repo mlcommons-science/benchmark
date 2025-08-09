@@ -1,6 +1,9 @@
 # BIG-Bench (Beyond the Imitation Game Benchmark)
 
 
+**Edit:** [edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)
+
+
 **Date**: 2022-06-09
 
 

@@ -1,6 +1,9 @@
 # Irregular Sensor Data Compression
 
 
+**Edit:** [edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)
+
+
 **Date**: 2024-05-01
 
 

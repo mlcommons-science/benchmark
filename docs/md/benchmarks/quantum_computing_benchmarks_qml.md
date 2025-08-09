@@ -1,6 +1,9 @@
 # Quantum Computing Benchmarks (QML)
 
 
+**Edit:** [edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)
+
+
 **Date**: 2022-02-22
 
 

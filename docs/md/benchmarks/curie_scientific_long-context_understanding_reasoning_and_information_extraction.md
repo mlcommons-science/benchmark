@@ -1,6 +1,9 @@
 # CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction)
 
 
+**Edit:** [edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)
+
+
 **Date**: 2024-04-02
 
 

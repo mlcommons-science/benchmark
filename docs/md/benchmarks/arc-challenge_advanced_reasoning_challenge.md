@@ -1,6 +1,9 @@
 # ARC-Challenge (Advanced Reasoning Challenge)
 
 
+**Edit:** [edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)
+
+
 **Date**: 2018-03-14
 
 

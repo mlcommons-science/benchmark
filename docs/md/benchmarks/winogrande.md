@@ -1,6 +1,9 @@
 # Winogrande
 
 
+**Edit:** [edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)
+
+
 **Date**: 2019-07-24
 
 

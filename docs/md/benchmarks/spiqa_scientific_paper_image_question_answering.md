@@ -1,6 +1,9 @@
 # SPIQA (Scientific Paper Image Question Answering)
 
 
+**Edit:** [edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)
+
+
 **Date**: 2024-07-12
 
 

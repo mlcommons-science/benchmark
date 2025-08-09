@@ -7,6 +7,8 @@ from generate_latex import ALL_COLUMNS, DEFAULT_COLUMNS
 from cloudmesh.common.console import Console
 import sys
 
+html = True
+
 
 def bibtex_to_text(entry: str) -> str:
     try:
@@ -40,7 +42,7 @@ class MarkdownWriter:
     def __init__(self, entries: list[dict], raw_entries: list[dict] | None = None):
         self.entries = entries
         self.raw_entries = raw_entries
-       
+
     def _escape_md(self, text) -> str:
         if not isinstance(text, str):
             text = str(text)
@@ -78,7 +80,10 @@ class MarkdownWriter:
         return content
 
     def write_table(
-        self, filename="content/md/benchmarks.md", columns=DEFAULT_COLUMNS, average_ratings: bool = True
+        self,
+        filename="content/md/benchmarks.md",
+        columns=DEFAULT_COLUMNS,
+        average_ratings: bool = True,
     ) -> None:
 
         col_labels = []
@@ -92,7 +97,7 @@ class MarkdownWriter:
         header = " | " + " | ".join(col_labels) + " | "
         if average_ratings:
             header += " Average Ratings "
-        header += '\n'
+        header += "\n"
 
         divider = ""
         for e in col_widths:
@@ -140,8 +145,8 @@ class MarkdownWriter:
                     row += self._escape_md(str(val))
 
                 row += " | "
-            
-            #Calculate and add average
+
+            # Calculate and add average
             ratings_average /= 6
             if average_ratings:
                 row += str(round(ratings_average, 3)) + " |"
@@ -161,14 +166,14 @@ class MarkdownWriter:
         output_dir="content/md/benchmarks",
         columns=DEFAULT_COLUMNS,
         author_trunc: int | None = None,
-        average_ratings: bool = True
+        average_ratings: bool = True,
     ) -> None:
         """
         Writes all entries stored by this writer into individual Markdown documents at `output_dir`/md_tables.
 
         Each file's name will be the name of the benchmark entry. If no name exists, the name is "entry_" + an arbitrary number.
 
-        An index file, "`output_dir`/md_tables/index.md", will also be written.
+        An index file, "`output_dir`/md/index.md", will also be written.
 
         Parameters:
             output_path (str): filepath to write to
@@ -191,6 +196,10 @@ class MarkdownWriter:
             written_rating_categories = []
 
             lines.append(f"# {name}\n\n")
+
+            edit = "[edit this entry](https://github.com/mlcommons-science/benchmark/tree/main/source)"
+
+            lines.append(f"**Edit:** {edit}\n\n")
 
             average_rating = 0
 
@@ -217,13 +226,12 @@ class MarkdownWriter:
                             lines.append(f"      {raw_line}\n")
                     lines.append("      ```\n")
 
-
                 elif col.startswith("ratings"):
                     if not ratings_header_written:
                         lines.append("**Ratings:**\n\n")
                         ratings_header_written = True
-                    
-                    if col.endswith('rating'):
+
+                    if col.endswith("rating"):
                         try:
                             average_rating += float(val)
                         except ValueError:
@@ -257,13 +265,18 @@ class MarkdownWriter:
                     lines.append(f"**{col_label}**: {val_str}\n\n")
 
             # write the ratings
-            lines.append(f"**Average Rating:** {str(round(average_rating/6, 3))}\n\n") #This assumes the new rating system with 6 categories
+            lines.append(
+                f"**Average Rating:** {str(round(average_rating/6, 3))}\n\n"
+            )  # This assumes the new rating system with 6 categories
 
             # write the image
             image_location = f"../../tex/images/{id}_radar.png"
             lines.append(
                 f"**Radar Plot:**\n ![{id.replace("_", " ").title()} radar plot]({image_location})"
             )
+
+            if html:
+                link = f"{id}.html"
 
             index.append(f"- [{name}]({link})\n")
             write_to_file(content="\n".join(lines), filename=filename)

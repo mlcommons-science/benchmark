@@ -7,3 +7,17 @@
 	numpy
 	matplotlib
 	selenium
+	mkdocs
+	mkdocs-material
+	mkdocs-bibtex
+	mkdocs-awesome-pages-plugin
+	##mkdocs-git-revision-date-localized-plugin
+	#mkdocs-redirects
+	#mkdocs-minify-plugin
+	#mkdocs-macros-plugin
+	#mkdocs-exclude
+	mkdocs-include-markdown-plugin
+	#mkdocs-embed-video
+	mkdocs-extensions
+					
+	

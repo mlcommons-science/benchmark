@@ -8,6 +8,7 @@ from cloudmesh.common.console import Console
 import sys
 
 html = True
+# html = False
 
 
 def bibtex_to_text(entry: str) -> str:

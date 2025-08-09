@@ -45,6 +45,7 @@ from docopt import docopt
 from typing import Union, Dict
 from yaml_manager import YamlManager
 from md_writer import MarkdownWriter
+from mkdocs_writer import MkdocsWriter 
 from generate_latex import GenerateLatex, ALL_COLUMNS
 from cloudmesh.common.console import Console
 from check_log import print_latex_log
@@ -158,6 +159,12 @@ if __name__ == "__main__":
     if format_type == "md":
 
         converter = MarkdownWriter(entries, raw_entries=manager.data)
+        converter.write_table(columns=columns)
+        converter.write_individual_entries(columns=columns)
+
+    elif format_type == "mkdocs":
+
+        converter = MkdocsWriter(entries, raw_entries=manager.data)
         converter.write_table(columns=columns)
         converter.write_individual_entries(columns=columns)
 

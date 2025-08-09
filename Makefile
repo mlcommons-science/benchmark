@@ -56,6 +56,27 @@ content: md tex
 md:
 	python ${SCRIPT} --files=${FILES}  --format=md --outdir=./content --columns ${COLUMNS}
 
+DOCS=www/science-ai-benchmarks/docs
+WWW=www/science-ai-benchmarks
+
+
+
+publish: mkdocs
+	echo "Publishing to ${DOCS} and ${WWW}"
+
+
+mkdocs:
+	python ${SCRIPT} --files=${FILES}  --format=mkdocs --outdir=./content --columns ${COLUMNS}
+	mkdir -p ${DOCS}/tex/images
+	mkdir -p ${DOCS}/md
+	cp -r content/md/* ${DOCS}/md
+	cp source/index.md ${DOCS}/index.md
+	cp content/tex/benchmarks.pdf ${DOCS}/benchmarks.pdf
+	cp content/tex/images/* ${DOCS}/tex/images
+	# python bin/make-html.py ${DOCS}
+	cp -r ${WWW}/* docs	
+	mkdocs gh-deploy
+
 tex:
 	python ${SCRIPT} --files=${FILES} --format=tex --outdir=./content --standalone --columns=${COLUMNS}
 	cd content/tex; bibtool -s -i benchmarks.bib -o tmp.bib
@@ -103,7 +124,8 @@ u:
 log:
 	open -a Aquamacs content/tex/benchmarks.log
 
-publish:
+
+publish-old:
 	mkdir -p docs/tex/images
 	mkdir -p docs/md
 	cp -r content/md/* docs/md

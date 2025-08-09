@@ -458,10 +458,88 @@ class GenerateLatex:
     # RADAR CHART GENERATION
     # #####################################################
 
+    def _generate_single_radar_chart(
+        self, name, id, ratings, fmt, output_dir, font_size
+    ):
+        """Generates and saves a radar chart for a single entry."""
+        labels = list(ratings.keys())
+        values = list(ratings.values())
+
+        # --- Fix empty chart when all values are zero ---
+        if all(v == 0.0 for v in values):
+            values = [0.01] * len(values)  # tiny baseline so shape is visible
+
+        values += values[:1]  # close the radar loop
+
+        print("Values", values)
+
+        angles = np.linspace(0, 2 * np.pi, len(labels), endpoint=False).tolist()
+        angles += angles[:1]
+
+        fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))
+        ax.plot(angles, values, color="tab:blue", linewidth=2)
+        ax.fill(angles, values, color="tab:blue", alpha=0.25)
+
+        ax.set_xticks(angles[:-1])
+        ax.set_xticklabels(labels, fontsize=font_size)
+        ax.set_yticklabels([])
+        ax.set_ylim(0, max(1, max(values)))  # ensure grid shows
+
+        # --- Wrap name if too long ---
+        max_chars_per_line = max(1, int(30 * (font_size / 18)))
+        if len(name) > max_chars_per_line:
+            wrapped_name = "\n".join(textwrap.wrap(name, max_chars_per_line))
+        else:
+            wrapped_name = name
+
+        ax.set_title(wrapped_name, y=1.08, fontsize=font_size + 2)
+
+        filename = f"{output_dir}/{id}_radar.{fmt}"
+        plt.savefig(filename, bbox_inches="tight")
+        plt.close(fig)
+
+        Console.ok(f"Saved radar chart for '{name}' as '{filename}'.")
+
+
+    # def _generate_single_radar_chart(
+    #     self, name, id, ratings, fmt, output_dir, font_size
+    # ):
+    #     """Generates and saves a radar chart for a single entry."""
+    #     labels = list(ratings.keys())
+    #     values = list(ratings.values())
+    #     values += values[:1]  # close the radar loop
+
+    #     print("Values", values)
+
+    #     angles = np.linspace(0, 2 * np.pi, len(labels), endpoint=False).tolist()
+    #     angles += angles[:1]
+
+    #     fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))
+    #     ax.plot(angles, values, color="tab:blue", linewidth=2)
+    #     ax.fill(angles, values, color="tab:blue", alpha=0.25)
+
+    #     ax.set_xticks(angles[:-1])
+    #     ax.set_xticklabels(labels, fontsize=font_size)
+    #     ax.set_yticklabels([])
+
+    #     # --- Wrap name if too long ---
+    #     max_chars_per_line = max(1, int(30 * (font_size / 18)))
+    #     if len(name) > max_chars_per_line:
+    #         wrapped_name = "\n".join(textwrap.wrap(name, max_chars_per_line))
+    #     else:
+    #         wrapped_name = name
+
+    #     ax.set_title(wrapped_name, y=1.08, fontsize=font_size + 2)
+
+    #     filename = f"{output_dir}/{id}_radar.{fmt}"
+    #     plt.savefig(filename, bbox_inches="tight")
+    #     plt.close(fig)
+
+    #     Console.ok(f"Saved radar chart for '{name}' as '{filename}'.")
+
     def generate_radar_charts(
         self, fmt="pdf", output_dir="content/tex/images", font_size=18
     ):
-
         valid_formats = {"pdf", "jpeg", "png", "gif"}
         fmt = fmt.lower()
         if fmt not in valid_formats:
@@ -473,12 +551,9 @@ class GenerateLatex:
         os.makedirs(output_dir, exist_ok=True)
 
         for entry in self.entries:
-
-            name = entry.get("name", f"unkown")
-            id = entry.get("id", f"unkown")
+            name = entry.get("name", "unknown")
+            id = entry.get("id", "unknown")
             ratings = {}
-
-            # Console.info(f"Generating radar chart for '{name}' ({id})...")
 
             for key, value in entry.items():
                 if key.startswith("ratings.") and key.endswith(".rating"):
@@ -494,26 +569,9 @@ class GenerateLatex:
                 Console.error(f"No ratings found for '{name}', skipping radar chart.")
                 continue
 
-            labels = list(ratings.keys())
-            values = list(ratings.values())
-            values += values[:1]
-            angles = np.linspace(0, 2 * np.pi, len(labels), endpoint=False).tolist()
-            angles += angles[:1]
-
-            fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))
-            ax.plot(angles, values, color="tab:blue", linewidth=2)
-            ax.fill(angles, values, color="tab:blue", alpha=0.25)
-
-            ax.set_xticks(angles[:-1])
-            ax.set_xticklabels(labels, fontsize=font_size)
-            ax.set_yticklabels([])
-            ax.set_title(f"{name}", y=1.08, fontsize=font_size + 2)
-
-            filename = f"{output_dir}/{id}_radar.{fmt}"
-            plt.savefig(filename, bbox_inches="tight")
-            plt.close(fig)
-
-            Console.ok(f"Saved radar chart for '{name}' as '{filename}'.")
+            self._generate_single_radar_chart(
+                name, id, ratings, fmt, output_dir, font_size
+            )
 
     def get_radar_filename(self, entry, directory="content/tex/images", fmt="pdf"):
         if directory is None:
@@ -668,9 +726,9 @@ class GenerateLatex:
         return location + name + ".tex"
 
     def latex_entry_to_string(self, entry):
-        from pprint import pprint
+        # from pprint import pprint
 
-        pprint(entry)
+        # pprint(entry)
 
         def format_field(key, value, indent=0):
             indent_str = "  " * indent

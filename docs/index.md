@@ -1,4 +1,4 @@
-# MLCommons Science Collection
+# MLCommons Science Benchmark Collection
 
 
 This Web page is gathering a collection of AI benchmarks. The program for managing it has mainly been developed by Gregor von Laszewski with contributions of  Reece Shiraishi and Anjay Krishnan.

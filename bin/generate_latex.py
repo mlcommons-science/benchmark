@@ -65,7 +65,7 @@ LATEX_PREFIX = textwrap.dedent(
               Geoffrey C. Fox}
 
     \date{\today}
-    \title{Benchmark Overview}
+    \title{AI Scientific Benchmarks Comparison}
     \maketitle
 
     \begin {abstract}

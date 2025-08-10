@@ -1,9 +1,7 @@
 # MLCommons Science Benchmark Collection
 
 
-This Web page is gathering a collection of AI benchmarks. The program for managing it has mainly been developed by Gregor von Laszewski with contributions of  Reece Shiraishi and Anjay Krishnan.
-
-The main document produced is a PDF report which is is avaiialble at:
+This Web page is gathering a collection of AI benchmarks. The main document produced is a PDF report which is is avaiialble at:
 
 * <https://mlcommons-science.github.io/benchmark/benchmarks.pdf>
 
@@ -11,7 +9,7 @@ The citation is:
 
 ```
 @misc{benchmark-collection,
-    title={AI Scientific Benchmarks Comparison}
+    title={MLCommons Science Working Group AI Benchmarks Collection}
     author={Gregor von Laszewski and 
             Reece Shiraishi and 
             Anjay Krishnan and 
@@ -39,3 +37,4 @@ The documents ara all generated automatically, so please do not edit them direct
 
 * <https://github.com/mlcommons-science/benchmark/tree/main/source>
 
+For program improvements, please contact Gregor von Laszewski ar laszewski at gmail.com.

@@ -21,8 +21,7 @@ VERBOSE = True
 
 # --- Constants ---
 
-LATEX_PREFIX = textwrap.dedent(
-    r"""
+LATEX_PREFIX = textwrap.dedent(r"""
     \documentclass[10pt]{article}
     \usepackage{fullpage}
     \usepackage{makecell}
@@ -42,6 +41,7 @@ LATEX_PREFIX = textwrap.dedent(
 
     \usepackage[utf8]{inputenc}
     \usepackage[T1]{fontenc}
+   
     \usepackage{textcomp}
     \usepackage{amssymb}
     \usepackage{eurosym} 
@@ -65,7 +65,7 @@ LATEX_PREFIX = textwrap.dedent(
               Geoffrey C. Fox}
 
     \date{\today}
-    \title{AI Scientific Benchmarks Comparison}
+    \title{MLCommons Science Working Group AI Benchmarks Collection}
     \maketitle
 
     \begin {abstract}
@@ -79,7 +79,7 @@ LATEX_PREFIX = textwrap.dedent(
     \begin{quote}
     \begin{verbatim}
     @misc{benchmark-collection,
-      title={AI Scientific Benchmarks Comparison}
+      title={MLCommons Science Working Group AI Benchmarks Collection}
       author={Gregor von Laszewski and 
               Reece Shiraishi and 
               Anjay Krishnan and 
@@ -96,12 +96,7 @@ LATEX_PREFIX = textwrap.dedent(
     \clearpage
     \tableofcontents
     \clearpage
-    
-
-    
-
-"""
-)
+    """)
 
 LATEX_POSTFIX = textwrap.dedent(
     r"""

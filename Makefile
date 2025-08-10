@@ -19,6 +19,10 @@ COLUMNS=date,name,domain,focus,keywords,task_types,metrics,models,cite,ratings.s
 
 .PHONY: all content single tex pdf publish
 
+define BANNER
+	@printf "\n\033[1;33m== %s ==\033[0m\n" $(1)
+endef
+
 all: pdf md publish
 	echo "If you see no errors it is finished."
 
@@ -62,21 +66,20 @@ WWW=www/science-ai-benchmarks
 
 
 publish: mkdocs
-	echo "Publishing to ${DOCS} and ${WWW}"
+	$(call BANNER,"Publishing to ${DOCS} and ${WWW}") 
+	mkdocs gh-deploy
 
 
 mkdocs:
 	python ${SCRIPT} --files=${FILES}  --format=mkdocs --outdir=./content --columns ${COLUMNS}
 	mkdir -p ${DOCS}/tex/images
 	mkdir -p ${DOCS}/md
-	cp -r content/md/* ${DOCS}/md
+	cp -r content/md ${DOCS}
+	cp -r content/tex ${DOCS}
+	cp content/mkdocs.yml ${DOCS}
 	cp source/index.md ${DOCS}/index.md
 	cp content/tex/benchmarks.pdf ${DOCS}/benchmarks.pdf
-	cp content/tex/images/* ${DOCS}/tex/images
-	# python bin/make-html.py ${DOCS}
-	cp -r ${WWW}/* docs	
-	mkdocs gh-deploy
-
+	
 tex:
 	python ${SCRIPT} --files=${FILES} --format=tex --outdir=./content --standalone --columns=${COLUMNS}
 	cd content/tex; bibtool -s -i benchmarks.bib -o tmp.bib

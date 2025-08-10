@@ -1,4 +1,4 @@
-# Scientific AI Benchmark Collection
+# MLCommons Science Working Group AI Benchmarks Collection
 
 This repository holds a list of scientific AI benchmarks. 
 
@@ -32,7 +32,7 @@ BibTex:
 
 ```
 @misc{benchmark-collection,
-    title={AI Scientific Benchmarks Comparison}
+    title={MLCommons Science Working Group AI Benchmarks Collection}
     author={Gregor von Laszewski and 
             Reece Shiraishi and 
             Anjay Krishnan and 

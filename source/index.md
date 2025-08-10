@@ -1,4 +1,4 @@
-# MLCommons Science Benchmark Collection
+# MLCommons Science Working Group AI Benchmarks Collection
 
 
 This Web page is gathering a collection of AI benchmarks. The main document produced is a PDF report which is is avaiialble at:

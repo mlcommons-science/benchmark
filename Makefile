@@ -69,7 +69,7 @@ publish: mkdocs
 	$(call BANNER,"Publishing to ${DOCS} and ${WWW}") 
 	git commit -am "Update documentation"
 	git push
-	mkdocs gh-deploy
+	cd ${DOCS}; mkdocs gh-deploy
 
 
 mkdocs:

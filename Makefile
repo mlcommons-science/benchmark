@@ -82,7 +82,7 @@ mkdocs:
 	mkdir -p ${DOCS}/md
 	cp -r content/md ${DOCS}
 	cp -r content/tex ${DOCS}
-	cp content/mkdocs.yml ${DOCS}
+	cp content/mkdocs.yml ${WWW}
 	cp source/index.md ${DOCS}/index.md
 	cp content/tex/benchmarks.pdf ${DOCS}/benchmarks.pdf
 	$(call BANNER, "CLEAN LaTeX")

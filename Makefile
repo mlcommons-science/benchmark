@@ -20,9 +20,10 @@ COLUMNS=date,name,domain,focus,keywords,task_types,metrics,models,cite,ratings.s
 .PHONY: all content single tex pdf publish
 
 define BANNER
+	@echo
     @echo "\033[34m# ====================================================================="
     @echo "# "$(1)
-    @echo "# =====================================================================\033[0m\n"
+    @echo "# =====================================================================\033[0m"
 endef
 
 all: pdf md publish
@@ -68,13 +69,14 @@ WWW=www/science-ai-benchmarks
 
 
 publish: mkdocs
-	$(call BANNER,"Publishing to ${DOCS}") 
+	$(call BANNER,"Publishing from ${DOCS}") 
 	git commit -am "Update documentation"
 	git push
 	cd ${DOCS}; mkdocs gh-deploy
 
 
 mkdocs:
+	$(call BANNER,"Generating MkDocs content")
 	python ${SCRIPT} --files=${FILES}  --format=mkdocs --outdir=./content --columns ${COLUMNS}
 	mkdir -p ${DOCS}/tex/images
 	mkdir -p ${DOCS}/md
@@ -83,6 +85,8 @@ mkdocs:
 	cp content/mkdocs.yml ${DOCS}
 	cp source/index.md ${DOCS}/index.md
 	cp content/tex/benchmarks.pdf ${DOCS}/benchmarks.pdf
+	$(call BANNER, "CLEAN LaTeX")
+	cd ${DOCS}/tex; rm -rf *.aux *.bcf *.blg *.fdb_latexmk *.fls *.log *.out *.run.xml *.toc table.texbanner 
 	
 tex:
 	python ${SCRIPT} --files=${FILES} --format=tex --outdir=./content --standalone --columns=${COLUMNS}

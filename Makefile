@@ -70,8 +70,8 @@ WWW=www/science-ai-benchmarks
 
 publish: mkdocs
 	$(call BANNER,"Publishing from ${DOCS}") 
-	git commit -am "Update documentation"
-	git push
+	-git commit -am "Update documentation"
+	-git push
 	cd ${WWW}; mkdocs gh-deploy
 
 

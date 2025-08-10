@@ -21,7 +21,7 @@ COLUMNS=date,name,domain,focus,keywords,task_types,metrics,models,cite,ratings.s
 
 define BANNER
 	@echo "# ========================================"
-	@printf "# %%\n" $(1)
+	@printf "# %s\n" $(1)
 	@echo "=# ======================================="
 
 endef

@@ -20,10 +20,12 @@ COLUMNS=date,name,domain,focus,keywords,task_types,metrics,models,cite,ratings.s
 .PHONY: all content single tex pdf publish
 
 define BANNER
-	@echo "# ========================================"
-	@printf "# %s\n" $(1)
-	@echo "=# ======================================="
-
+	@msg="$(1)"; \
+	blue="\033[1;34m"; \
+	reset="\033[0m"; \
+	echo "$$blue# =====================================================================$$reset"; \
+	printf "$$blue# %s$$reset\n" "$$msg"; \
+	echo "$$blue# =====================================================================$$reset"
 endef
 
 all: pdf md publish

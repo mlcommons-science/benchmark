@@ -1,8 +1,7 @@
-
 - date: '2024-05-01'
     # description: | 
     #   The date of availability of the benchmark. If an official release date is 
-    #   not available, use the date of adding the entry.
+    #   not available, use the date of adding the entry. In YYYY-MM-DD format.
     # condition: required
 
   version: 'v1.0'
@@ -32,7 +31,8 @@
 
   name: 'Jet Classification'
     # description: |
-    #   The name of the benchmark
+    #   The name of the benchmark. It is best to use a short nameas it is easier to remember 
+    #   and used to create a URL.
     # condition: required
 
   url: 'https://github.com/fastmachinelearning/fastml-science/tree/main/jet-classify'
@@ -48,12 +48,12 @@
 
   domain: 'Particle Physics'
     # description: |
-    #   The scientific domain this benchmark belongs to
+    #   The scientific domain this benchmark belongs to,  i.e. physics, biology, math, ...
     # condition: required
 
   focus: 'Real-time classification of particle jets using HL-LHC simulation features'
     # description: |
-    #   This field is unclear
+    #   A short sentence on the main topics of the benchmark. 
     # condition: required
 
   keywords:
@@ -81,8 +81,8 @@
   task_types:
       - Classification
     # description: |
-    #   The task type defined by this benchmark. Gregor finds that this requires a bit more explanation, as
-    #   it is unclear for most.
+    #   The task type defined by this benchmark. Gregor finds that this requires a bit more 
+    #   explanation, as it is unclear for most.
     # condition: required
 
   ai_capability_measured:

@@ -104,29 +104,18 @@ with a pull request. To make sure you conform to the current format, you can use
 
 * <https://github.com/mlcommons-science/benchmark/blob/main/source/benchmarks-format.yaml>
 
+## Important additional documentation
 
+* [READEME-bin](RAEDME-bin.md)
+* [READEME-ratings](RAEDME-ratings.md)
+* [READEME-yaml](RAEDME-yaml.md)
+* [requirements.txt](requirements.txt)
 
-The format of the a
-## Attributes
+* [benchmarks-format.yaml](source/benchmarks-format.yaml])
+* [benchmarks-sample.yaml](source/benchmarks-sample.yaml])
 
-This is the list of attributes that currently appear in the script outputs:
+## YAML Contents
 
-* date: date when the benchmark was first found. In YYYY-MM-DD format.
+* [benchmarks.yaml](source/benchmarks.yaml])
+* [benchmarks-addon.yaml](source/benchmarks-addon.yaml])
 
-* name: The benchmark's title as listed in the paper or project GitHub
-
-* domain: The scientific domain(s) of this benchmark, i.e. physics, biology, math
-
-* focus: short sentence on the main topics of the benchmark. Likely to be deprecated.
-
-* keywords: keywords related to this benchmark, which may appear in a paper abstract
-
-* task_types: what models evaluated by the benchmark should do
-
-* metrics: The main ways of measuring performance on the benchmark, i.e. number of questions correct
-
-* models: List of notable models that were evaluated with the benchmark
-
-* cite: List of BibTeX citations
-
-* ratings (each category listed separately): See the [ratings explanations](ratings_explanations.md).

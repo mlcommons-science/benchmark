@@ -10,7 +10,7 @@ Usage:
 
 Options:
   --files=<file>...           YAML file paths to process (one or more) [default: source/benchmark-addon.yaml].
-  --format=<fmt>              Output file format [default: tex].
+  --format=<fmt>              Output file format, tex, md, mkdocs [default: tex].
   --outdir=<dir>              Output directory [default: ./content/].
   --authortruncation=N        Truncate authors for index pages [default: 9999].
   --columns=<cols>            Subset of columns to include, comma-separated.
@@ -37,7 +37,8 @@ Examples:
 
   python bin/generate.py --files=source/benchmarks.yaml --check_structure --structure=source/benchmarks-addon.yaml
     Checks the structure of the yaml files against the first element in ths structure file.
-  """
+
+"""
 
 import os
 import sys
@@ -45,7 +46,7 @@ from docopt import docopt
 from typing import Union, Dict
 from yaml_manager import YamlManager
 from md_writer import MarkdownWriter
-from mkdocs_writer import MkdocsWriter 
+from mkdocs_writer import MkdocsWriter
 from generate_latex import GenerateLatex, ALL_COLUMNS
 from cloudmesh.common.console import Console
 from check_log import print_latex_log
@@ -127,14 +128,13 @@ if __name__ == "__main__":
             structure_file = files[0]
         else:
             structure_file = args["--structure"]
-        
+
         for file in files:
             if not os.path.exists(file):
                 print(f"Error: file not found: {file}")
                 sys.exit(1)
             validate_yaml_entries(data_filepath=file, structure_filepath=structure_file)
         sys.exit(0)
-
 
     if args["--required"]:
         if not manager.check_required_fields():

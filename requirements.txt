@@ -19,5 +19,5 @@
 	mkdocs-include-markdown-plugin
 	#mkdocs-embed-video
 	mkdocs-extensions
-					
+	html2text
 	

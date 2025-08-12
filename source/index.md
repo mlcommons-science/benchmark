@@ -38,3 +38,7 @@ The documents ara all generated automatically, so please do not edit them direct
 * <https://github.com/mlcommons-science/benchmark/tree/main/source>
 
 For program improvements, please contact Gregor von Laszewski ar laszewski at gmail.com.
+
+The README is located at
+
+* <https://github.com/mlcommons-science/benchmark>

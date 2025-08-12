@@ -119,3 +119,6 @@ with a pull request. To make sure you conform to the current format, you can use
 * [benchmarks.yaml](source/benchmarks.yaml])
 * [benchmarks-addon.yaml](source/benchmarks-addon.yaml])
 
+## Code Contributors
+
+* <https://github.com/mlcommons-science/benchmark/graphs/contributors>

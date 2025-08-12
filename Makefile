@@ -149,3 +149,7 @@ structure:
 	python ${SCRIPT} --files=source/benchmarks.yaml --check_structure 
 	python ${SCRIPT} --files=source/benchmarks.yaml --check_structure --structure=source/benchmarks-addon.yaml
 	python ${SCRIPT} --files=source/benchmarks-addon.yaml --check_structure 
+
+view-local:
+	cd www/science-ai-benchmarks; mkdocs serve
+

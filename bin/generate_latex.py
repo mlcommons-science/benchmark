@@ -172,7 +172,7 @@ DEFAULT_COLUMNS = [
     "task_types",
     # "ai_capability_measured",
     "metrics",
-    "models",
+    # "models",
     # "notes",
     "cite",
 ]

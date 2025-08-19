@@ -122,6 +122,7 @@ DESCRIPTION_STYLE = (
 
 # Define all columns with their properties for clarity and consistency
 ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
+    "average_rating": {"width": 1.5, "label": "Average Rating"},
     "date": {"width": 1.5, "label": "Date"},
     "expired": {"width": 1, "label": "Expired"},
     "valid": {"width": 0.7, "label": "Valid"},
@@ -170,6 +171,7 @@ DEFAULT_COLUMNS = [
     # "keywords",
     # "description",
     "task_types",
+    "average_rating",
     # "ai_capability_measured",
     "metrics",
     # "models",
@@ -882,7 +884,7 @@ class GenerateLatex:
     def get_url_ref(self, entry):
 
         url = entry.get("url", "")
-        if url in [None, "None", "", "unkown", "Unkown"]:
+        if url in [None, "None", "", "unknown", "Unknown"]:
             url = None
 
         if url != None:
@@ -896,6 +898,15 @@ class GenerateLatex:
 
         for col in columns:
             content = ""
+
+            if col == "average_rating":
+                # Calculate the average rating
+                ratings = [
+                    float(value)
+                    for key, value in entry.items()
+                    if key.startswith("ratings.") and key.endswith(".rating") and value is not None
+                ]
+                content = f"{sum(ratings) / len(ratings):.2f}" if ratings else "N/A"
 
             if col != "ratings":  # Ratings column is no longer included
                 value = entry.get(col)

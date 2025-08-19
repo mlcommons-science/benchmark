@@ -159,7 +159,7 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
 }
 
 DEFAULT_COLUMNS = [
-    "ratings",
+    # "ratings",
     # "date",
     # "expired",
     # "valid",
@@ -167,10 +167,10 @@ DEFAULT_COLUMNS = [
     # "url",
     "domain",
     "focus",
-    "keywords",
+    # "keywords",
     # "description",
     "task_types",
-    "ai_capability_measured",
+    # "ai_capability_measured",
     "metrics",
     "models",
     # "notes",
@@ -897,21 +897,13 @@ class GenerateLatex:
         for col in columns:
             content = ""
 
-            url_txt = self.get_url_ref(entry)
-
-            if col is not "ratings":
+            if col != "ratings":  # Ratings column is no longer included
                 value = entry.get(col)
                 if value is None:
                     content = ""  # Empty string for None values
                     continue
 
-            if col == "ratings":
-                id = entry.get("id", "unknown")
-                image = f"{id}_radar.pdf"
-
-                content = f"\\includegraphics[width=0.15\\textwidth]{{{image}}}"
-
-            elif col == "cite":
+            if col == "cite":
                 cite_entries = (
                     value
                     if isinstance(value, list)
@@ -923,12 +915,8 @@ class GenerateLatex:
                     if c and c.strip().startswith("@")
                 ]
 
-                cite_text = f"\\cite{{{','.join(cite_keys)}}}" if cite_keys else ""
-
-                content = f"{cite_text}{url_txt}"
-            elif col == "url":
-
-                content = url_txt
+                # Exclude href link from citation
+                content = f"\\cite{{{','.join(cite_keys)}}}" if cite_keys else ""
 
             elif isinstance(value, list):
                 content = ", ".join(escape_latex(item) for item in value)

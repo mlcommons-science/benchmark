@@ -250,7 +250,7 @@ class MarkdownWriter:
                     category = col.split(".")[1]
 
                     if not category in written_rating_categories:
-                        lines.append(f"{category.replace("_", " ").title()}:\n\n")
+                        lines.append(f"{category.replace('_', ' ').title()}:\n\n")
                         written_rating_categories.append(category)
 
                     val_str = val_to_str(val)
@@ -273,7 +273,7 @@ class MarkdownWriter:
             # write the image
             image_location = f"../../tex/images/{id}_radar.png"
             lines.append(
-                f"**Radar Plot:**\n ![{id.replace("_", " ").title()} radar plot]({image_location})"
+                f"**Radar Plot:**\n ![{id.replace('_', ' ').title()} radar plot]({image_location})"
             )
 
             if html:

@@ -27,9 +27,9 @@ For online browsing we also have produced some html pages that are available at
 
 * List of benchmarks [link](md/benchmarks/index.html)
 
-A table in html format is also available at 
+<!-- A table in html format is also available at 
 
-* Markdown documents at the following [link](md/benchmarks.html)
+* Markdown documents at the following [link](md/benchmarks.html) -->
 
 Please note that the markdown documents should not be cited, but instead, use the PDF document.
 

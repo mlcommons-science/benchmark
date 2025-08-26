@@ -1,4 +1,5 @@
 # makefile that will create all the content
+SUDO := $(shell command -v sudo >/dev/null 2>&1 && echo sudo || echo)
 
 BASE=.
 # BASE=../yaml3/benchmark
@@ -41,15 +42,15 @@ summary:
 	python bin/summary.py --file ${FILES} --graph=png
 	#cd content/summary; bibtool -s -i benchmarks.bib -o tmp.bib
 	cd content/tex; latexmk -pdf -silent summary.tex
-	open content/tex/summary.pdf 
+	open content/tex/summary.pdf
 
 install_latex:
-	sudo apt-get update
-	sudo apt-get install texlive-full
-	sudo apt-get install latexmk
-	sudo apt-get install bibtool
-	sudo apt-get install biber
-	sudo apt-get update
+	$(SUDO) apt-get update
+	$(SUDO) apt-get install -y texlive-full
+	$(SUDO) apt-get install -y latexmk
+	$(SUDO) apt-get install -y bibtool
+	$(SUDO) apt-get install -y biber
+	$(SUDO) apt-get update
 	biber --version
 	latexmk --version
 	pdflatex --version
@@ -67,13 +68,11 @@ DOCS=www/science-ai-benchmarks/docs
 WWW=www/science-ai-benchmarks
 
 
-
 publish: mkdocs
 	$(call BANNER,"Publishing from ${DOCS}") 
-	git commit -am "Update documentation"
-	git push
+	-git commit -am "Update documentation"
+	-git push
 	cd ${WWW}; mkdocs gh-deploy
-
 
 mkdocs:
 	$(call BANNER,"Generating MkDocs content")
@@ -83,7 +82,7 @@ mkdocs:
 	mkdir -p ${DOCS}/assets
 	cp -r content/md ${DOCS}
 	cp -r content/tex ${DOCS}
-	cp -r content/assets/ ${DOCS}/assets/
+	cp -r content/assets ${DOCS}
 	cp content/mkdocs.yml ${WWW}
 	cp source/index.md ${DOCS}/index.md
 	cp content/tex/benchmarks.pdf ${DOCS}/benchmarks.pdf
@@ -103,7 +102,6 @@ t:
 standalone:
 	python ${SCRIPT} --files=${FILES} --format=tex --standalone --out-dir ./content
 
-
 pdf: tex
 	cd content/tex; latexmk -pdf -silent benchmarks.tex
 
@@ -113,7 +111,6 @@ clean:
 	rm -rf content/md_pages
 	rm -rf content/tex
 	cd content/tex && latexmk -C
-
 
 view:
 	open content/tex/benchmarks.pdf
@@ -132,11 +129,8 @@ check_url:
 u:
 	python ${SCRIPT} --files ${CHECK_FILES} --check_url --url=https://pubs.acs.org/doi/10.1021/acscatal.2c05426
 
-
-
 log:
 	open -a Aquamacs content/tex/benchmarks.log
-
 
 publish-old:
 	mkdir -p docs/tex/images
@@ -153,4 +147,4 @@ structure:
 	python ${SCRIPT} --files=source/benchmarks-addon.yaml --check_structure 
 
 view-local:
-	cd www/science-ai-benchmarks; mkdocs serve
+	cd www/science-ai-benchmarks; mkdocs serve -a 0.0.0.0:8000

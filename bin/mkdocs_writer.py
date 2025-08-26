@@ -1,9 +1,8 @@
-# mkdocs_writer.py
 # ---------------------------------------------------------------------------
 # MkDocs writer that:
 # - Generates a filterable/sortable index page with pre-rendered cards.
 # - Generates one HTML-rich detail page per entry.
-# - No global table here (intentionally removed).
+# - No global table here (temporarily removed).
 # - Emits data-* attributes for DOM-only filters/sorting.
 # ---------------------------------------------------------------------------
 

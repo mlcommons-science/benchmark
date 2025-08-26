@@ -1,0 +1,74 @@
+\contentsline {section}{\numberline {1}Benchmark Overview Table}{4}{section.1}%
+\contentsline {section}{\numberline {2}Radar Chart Table}{29}{section.2}%
+\contentsline {section}{\numberline {3}Benchmark Details}{32}{section.3}%
+\contentsline {subsection}{\numberline {3.1}MMLU (Massive Multitask Language Understanding)}{32}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}GPQA Diamond}{33}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}ARC-Challenge (Advanced Reasoning Challenge)}{34}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Humanity's Last Exam}{35}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}FrontierMath}{36}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}SciCode}{37}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}AIME (American Invitational Mathematics Examination)}{38}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}MATH-500}{39}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction)}{40}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}FEABench (Finite Element Analysis Benchmark)}{41}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}SPIQA (Scientific Paper Image Question Answering)}{42}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}MedQA}{43}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}BaisBench (Biological AI Scientist Benchmark)}{44}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}MOLGEN}{45}{subsection.3.14}%
+\contentsline {subsection}{\numberline {3.15}Open Graph Benchmark (OGB) - Biology}{46}{subsection.3.15}%
+\contentsline {subsection}{\numberline {3.16}Materials Project}{47}{subsection.3.16}%
+\contentsline {subsection}{\numberline {3.17}OCP (Open Catalyst Project)}{48}{subsection.3.17}%
+\contentsline {subsection}{\numberline {3.18}JARVIS-Leaderboard}{49}{subsection.3.18}%
+\contentsline {subsection}{\numberline {3.19}Quantum Computing Benchmarks (QML)}{50}{subsection.3.19}%
+\contentsline {subsection}{\numberline {3.20}CFDBench (Fluid Dynamics)}{51}{subsection.3.20}%
+\contentsline {subsection}{\numberline {3.21}SatImgNet}{52}{subsection.3.21}%
+\contentsline {subsection}{\numberline {3.22}ClimateLearn}{53}{subsection.3.22}%
+\contentsline {subsection}{\numberline {3.23}BIG-Bench (Beyond the Imitation Game Benchmark)}{54}{subsection.3.23}%
+\contentsline {subsection}{\numberline {3.24}CommonSenseQA}{55}{subsection.3.24}%
+\contentsline {subsection}{\numberline {3.25}Winogrande}{56}{subsection.3.25}%
+\contentsline {subsection}{\numberline {3.26}Jet Classification}{57}{subsection.3.26}%
+\contentsline {subsection}{\numberline {3.27}Irregular Sensor Data Compression}{58}{subsection.3.27}%
+\contentsline {subsection}{\numberline {3.28}Beam Control}{59}{subsection.3.28}%
+\contentsline {subsection}{\numberline {3.29}Ultrafast jet classification at the HL-LHC}{60}{subsection.3.29}%
+\contentsline {subsection}{\numberline {3.30}Quench detection}{61}{subsection.3.30}%
+\contentsline {subsection}{\numberline {3.31}DUNE}{62}{subsection.3.31}%
+\contentsline {subsection}{\numberline {3.32}Intelligent experiments through real-time AI}{63}{subsection.3.32}%
+\contentsline {subsection}{\numberline {3.33}Neural Architecture Codesign for Fast Physics Applications}{64}{subsection.3.33}%
+\contentsline {subsection}{\numberline {3.34}Smart Pixels for LHC}{65}{subsection.3.34}%
+\contentsline {subsection}{\numberline {3.35}HEDM (BraggNN)}{66}{subsection.3.35}%
+\contentsline {subsection}{\numberline {3.36}4D-STEM}{67}{subsection.3.36}%
+\contentsline {subsection}{\numberline {3.37}In-Situ High-Speed Computer Vision}{68}{subsection.3.37}%
+\contentsline {subsection}{\numberline {3.38}BenchCouncil AIBench}{69}{subsection.3.38}%
+\contentsline {subsection}{\numberline {3.39}BenchCouncil BigDataBench}{70}{subsection.3.39}%
+\contentsline {subsection}{\numberline {3.40}MLPerf HPC}{71}{subsection.3.40}%
+\contentsline {subsection}{\numberline {3.41}MLCommons Science}{72}{subsection.3.41}%
+\contentsline {subsection}{\numberline {3.42}LHC New Physics Dataset}{73}{subsection.3.42}%
+\contentsline {subsection}{\numberline {3.43}MLCommons Medical AI}{74}{subsection.3.43}%
+\contentsline {subsection}{\numberline {3.44}CaloChallenge 2022}{75}{subsection.3.44}%
+\contentsline {subsection}{\numberline {3.45}Papers With Code (SOTA Platform)}{76}{subsection.3.45}%
+\contentsline {subsection}{\numberline {3.46}Codabench}{77}{subsection.3.46}%
+\contentsline {subsection}{\numberline {3.47}Sabath (SBI-FAIR)}{78}{subsection.3.47}%
+\contentsline {subsection}{\numberline {3.48}PDEBench}{79}{subsection.3.48}%
+\contentsline {subsection}{\numberline {3.49}The Well}{80}{subsection.3.49}%
+\contentsline {subsection}{\numberline {3.50}LLM-Inference-Bench}{81}{subsection.3.50}%
+\contentsline {subsection}{\numberline {3.51}SGLang Framework}{82}{subsection.3.51}%
+\contentsline {subsection}{\numberline {3.52}vLLM Inference and Serving Engine}{83}{subsection.3.52}%
+\contentsline {subsection}{\numberline {3.53}vLLM Performance Dashboard}{84}{subsection.3.53}%
+\contentsline {subsection}{\numberline {3.54}Nixtla NeuralForecast}{85}{subsection.3.54}%
+\contentsline {subsection}{\numberline {3.55}Nixtla Neural Forecast NHITS}{86}{subsection.3.55}%
+\contentsline {subsection}{\numberline {3.56}Nixtla Neural Forecast TimeLLM}{87}{subsection.3.56}%
+\contentsline {subsection}{\numberline {3.57}Nixtla Neural Forecast TimeGPT}{88}{subsection.3.57}%
+\contentsline {subsection}{\numberline {3.58}HDR ML Anomaly Challenge (Gravitational Waves)}{89}{subsection.3.58}%
+\contentsline {subsection}{\numberline {3.59}HDR ML Anomaly Challenge (Butterfly)}{90}{subsection.3.59}%
+\contentsline {subsection}{\numberline {3.60}HDR ML Anomaly Challenge (Sea Level Rise)}{91}{subsection.3.60}%
+\contentsline {subsection}{\numberline {3.61}Single Qubit Readout on QICK System}{92}{subsection.3.61}%
+\contentsline {subsection}{\numberline {3.62}GPQA: A Graduate-Level Google-Proof Question and Answer Benchmark}{93}{subsection.3.62}%
+\contentsline {subsection}{\numberline {3.63}SeafloorAI}{94}{subsection.3.63}%
+\contentsline {subsection}{\numberline {3.64}SuperCon3D}{95}{subsection.3.64}%
+\contentsline {subsection}{\numberline {3.65}GeSS}{96}{subsection.3.65}%
+\contentsline {subsection}{\numberline {3.66}Vocal Call Locator (VCL)}{97}{subsection.3.66}%
+\contentsline {subsection}{\numberline {3.67}MassSpecGym}{98}{subsection.3.67}%
+\contentsline {subsection}{\numberline {3.68}Urban Data Layer (UDL)}{99}{subsection.3.68}%
+\contentsline {subsection}{\numberline {3.69}Delta Squared-DFT}{100}{subsection.3.69}%
+\contentsline {subsection}{\numberline {3.70}LLMs for Crop Science}{101}{subsection.3.70}%
+\contentsline {subsection}{\numberline {3.71}SPIQA (LLM)}{102}{subsection.3.71}%

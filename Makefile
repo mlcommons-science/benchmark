@@ -70,8 +70,8 @@ WWW=www/science-ai-benchmarks
 
 publish: mkdocs
 	$(call BANNER,"Publishing from ${DOCS}") 
-	-git commit -am "Update documentation"
-	-git push
+	git commit -am "Update documentation"
+	git push
 	cd ${WWW}; mkdocs gh-deploy
 
 
@@ -80,8 +80,10 @@ mkdocs:
 	python ${SCRIPT} --files=${FILES}  --format=mkdocs --outdir=./content --columns ${COLUMNS}
 	mkdir -p ${DOCS}/tex/images
 	mkdir -p ${DOCS}/md
+	mkdir -p ${DOCS}/assets
 	cp -r content/md ${DOCS}
 	cp -r content/tex ${DOCS}
+	cp -r content/assets/ ${DOCS}/assets/
 	cp content/mkdocs.yml ${WWW}
 	cp source/index.md ${DOCS}/index.md
 	cp content/tex/benchmarks.pdf ${DOCS}/benchmarks.pdf
@@ -152,4 +154,3 @@ structure:
 
 view-local:
 	cd www/science-ai-benchmarks; mkdocs serve
-

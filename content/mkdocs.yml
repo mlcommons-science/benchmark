@@ -2,8 +2,16 @@ site_name: MLCommons Science Working Group AI Benchmarks Collection
 site_url: https://mlcommons-science.github.io/benchmarks
 repo_url: https://github.com/mlcommons-science/benchmark/
 repo_name: MLCommons Science Benchmarks
+
 theme:
   name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: deep purple
+  font:
+    text: Inter
+    code: JetBrains Mono
   features:
     - navigation.tabs
     - navigation.top
@@ -16,7 +24,26 @@ theme:
     - navigation.search.share
     - navigation.search.suggest
     - navigation.search.expand
-    - navigation.search.autocomplete
+    - content.code.copy
+    - content.tabs.link
+
+extra_css:
+  - assets/css/custom.css
+
+extra_javascript:
+  - assets/js/filters.js
+
+# enable niceties used by the cleaner layout
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+
 nav:
   - index.md
   - Report: benchmarks.pdf

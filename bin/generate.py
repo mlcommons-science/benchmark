@@ -43,7 +43,6 @@ Examples:
 import os
 import sys
 from docopt import docopt
-from typing import Union, Dict
 from yaml_manager import YamlManager
 from md_writer import MarkdownWriter
 from mkdocs_writer import MkdocsWriter
@@ -165,7 +164,6 @@ if __name__ == "__main__":
     elif format_type == "mkdocs":
 
         converter = MkdocsWriter(entries, raw_entries=manager.data)
-        converter.write_table(columns=columns)
         converter.write_individual_entries(columns=columns)
 
     elif format_type == "tex":

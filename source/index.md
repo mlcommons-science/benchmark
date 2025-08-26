@@ -30,7 +30,7 @@ For online browsing, an HTML index is available:
 
 > **Note:** The Markdown pages are generated for web browsing and should **not** be cited. Please cite the PDF report above.
 
-All pages are generated automatically—please don’t edit them directly.  
+All pages are generated automatically, please don’t edit them directly.  
 To propose changes, update the source files here:
 
 - <https://github.com/mlcommons-science/benchmark/tree/main/source>

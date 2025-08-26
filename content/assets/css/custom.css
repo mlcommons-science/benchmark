@@ -468,5 +468,13 @@
   margin-top: auto;             /* pushes the Details button to the bottom */
 }
 
-/* Hide via filtering */
-.benchmark-card.is-hidden { display: none; }
+/* Ensure filtered cards actually hide (wins over flex rule) */
+.md-typeset:has(#cards-root) .benchmark-card.is-hidden {
+  display: none !important;
+}
+
+/* (optional global safety) */
+.benchmark-card.is-hidden {
+  display: none !important;
+}
+

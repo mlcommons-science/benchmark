@@ -35,14 +35,7 @@ extra_javascript:
 
 # enable niceties used by the cleaner layout
 markdown_extensions:
-  - admonition
-  - attr_list
-  - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.tabbed:
-      alternate_style: true
 
 nav:
   - index.md

@@ -1,5 +1,4 @@
 # makefile that will create all the content
-SUDO := $(shell command -v sudo >/dev/null 2>&1 && echo sudo || echo)
 
 BASE=.
 # BASE=../yaml3/benchmark
@@ -45,12 +44,12 @@ summary:
 	open content/tex/summary.pdf
 
 install_latex:
-	$(SUDO) apt-get update
-	$(SUDO) apt-get install -y texlive-full
-	$(SUDO) apt-get install -y latexmk
-	$(SUDO) apt-get install -y bibtool
-	$(SUDO) apt-get install -y biber
-	$(SUDO) apt-get update
+	sudo apt-get update
+	sudo apt-get install -y texlive-full
+	sudo apt-get install -y latexmk
+	sudo apt-get install -y bibtool
+	sudo apt-get install -y biber
+	sudo apt-get update
 	biber --version
 	latexmk --version
 	pdflatex --version

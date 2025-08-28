@@ -132,15 +132,3 @@ make view
 make view-local
 
 ```
-
-# Docker (Quick Start)
-
-## Build
-```bash
-docker build -t benchmark .
-```
-
-## Run (shell in repo)
-```bash
-docker run --rm -it -v "$PWD":/workspace -p 8000:8000 benchmark
-```

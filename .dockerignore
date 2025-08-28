@@ -1,0 +1,5 @@
+.git
+__pycache__/
+content/md
+content/tex
+www/science-ai-benchmarks/

@@ -45,10 +45,10 @@ summary:
 
 install_latex:
 	sudo apt-get update
-	sudo apt-get install -y texlive-full
-	sudo apt-get install -y latexmk
-	sudo apt-get install -y bibtool
-	sudo apt-get install -y biber
+	sudo apt-get install texlive-full
+	sudo apt-get install latexmk
+	sudo apt-get install bibtool
+	sudo apt-get install biber
 	sudo apt-get update
 	biber --version
 	latexmk --version
@@ -146,4 +146,4 @@ structure:
 	python ${SCRIPT} --files=source/benchmarks-addon.yaml --check_structure 
 
 view-local:
-	cd www/science-ai-benchmarks; mkdocs serve -a 0.0.0.0:8000
+	cd www/science-ai-benchmarks;

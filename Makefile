@@ -146,4 +146,4 @@ structure:
 	python ${SCRIPT} --files=source/benchmarks-addon.yaml --check_structure 
 
 view-local:
-	cd www/science-ai-benchmarks;
+	cd www/science-ai-benchmarks; mkdocs serve

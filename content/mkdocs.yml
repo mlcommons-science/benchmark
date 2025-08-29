@@ -36,8 +36,10 @@ extra_javascript:
 # enable niceties used by the cleaner layout
 markdown_extensions:
   - pymdownx.superfences
+  - footnotes
 
 nav:
   - index.md
   - Report: benchmarks.pdf
-  - Benchmarks: md/benchmarks/index.md
+  - Benchmarks (Table): md/benchmarks_table.md
+  - Benchmarks (Cards): md/benchmarks/index.md

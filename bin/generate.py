@@ -164,6 +164,7 @@ if __name__ == "__main__":
     elif format_type == "mkdocs":
 
         converter = MkdocsWriter(entries, raw_entries=manager.data)
+        converter.write_table(columns=columns)
         converter.write_individual_entries(columns=columns)
 
     elif format_type == "tex":

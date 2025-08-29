@@ -478,3 +478,31 @@
   display: none !important;
 }
 
+/* Benchmkark table page */
+.md-grid:has(#bench-table-page) {
+  max-width: 100vw !important;
+  width: 100% !important;
+}
+.md-content:has(#bench-table-page),
+.md-content__inner:has(#bench-table-page),
+.md-typeset:has(#bench-table-page) {
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.md-typeset:has(#bench-table-page) table {
+  table-layout: fixed;     /* let column widths apply and wrap inside cells */
+  width: 100%;
+}
+
+.md-typeset:has(#bench-table-page) table th,
+.md-typeset:has(#bench-table-page) table td {
+  /* Wrapping behavior */
+  white-space: normal;        /* allow line breaks */
+  word-break: normal;         /* do NOT split words by default */
+  overflow-wrap: break-word;  /* only break very long tokens if they overflow */
+  hyphens: auto;              /* soft hyphenation (needs html[lang] set, e.g. en) */
+  line-height: 1.25;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}

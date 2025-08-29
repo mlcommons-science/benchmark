@@ -24,9 +24,10 @@ If you cite this work, please reference the PDF (not the Markdown pages). A BibT
 }
 ```
 
-For online browsing, an HTML index is available:
+For online browsing, we provide two views:
 
-- **List of benchmarks:** [md/benchmarks/](md/benchmarks/)
+- **[Benchmarks (cards)](md/benchmarks/)**: filterable and sortable index with detail pages.
+- **[Benchmarks (table)](md/benchmarks_table.md)**: compact Markdown table with links to the same detail pages.
 
 > **Note:** The Markdown pages are generated for web browsing and should **not** be cited. Please cite the PDF report above.
 

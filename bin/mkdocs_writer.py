@@ -11,6 +11,7 @@ from __future__ import annotations
 import html
 import os
 import re
+import sys
 from typing import Any, Dict, List, Tuple
 from urllib.parse import quote
 
@@ -49,7 +50,7 @@ def _listify(v: Any) -> List[str]:
     return v if isinstance(v, list) else [v]
 
 
-def _val_to_str_legacy(val: Any) -> str:
+def _val_to_str(val: Any) -> str:
     """
     Legacy-style flattening used for detail page values:
       - remove brackets/quotes/parentheses,
@@ -90,7 +91,7 @@ def _validate_columns(columns: List[str]) -> List[str]:
     return valid
 
 
-def bibtex_to_text(entry: str) -> str:
+def _bibtex_to_text(entry: str) -> str:
     """
     Render a BibTeX entry to plain text.
     Returns a readable error string if parsing fails (never raises).
@@ -173,6 +174,33 @@ class MkdocsWriter:
         self.entries = entries
         self.raw_entries = raw_entries
         self.use_directory_urls = use_directory_urls
+    
+    # ----------------------- md table utilities ------------------------------
+    def _escape_md(self, text) -> str:
+        if not isinstance(text, str):
+            text = str(text)
+        return text.replace("|", "\\|").replace("\n", " ")
+
+    def _colunm_label(self, col):
+        if col not in ALL_COLUMNS:
+            Console.error(f"Column '{col}' is not a valid column name.")
+            sys.exit(1)
+        content = ALL_COLUMNS[col]["label"]
+        return content
+
+    def _colunm_width(self, col):
+        if col not in ALL_COLUMNS:
+            Console.error(f"Column '{col}' is not a valid column name.")
+            sys.exit(1)
+        content = float(ALL_COLUMNS[col]["width"])
+        return content
+
+    def _column_width_str(self, col):
+        if col not in ALL_COLUMNS:
+            Console.error(f"Column '{col}' is not a valid column name.")
+            sys.exit(1)
+        content = "-" * int(self._colunm_width(col) * 10.0)
+        return content
 
     # ----------------------- index page composition --------------------------
 
@@ -290,7 +318,7 @@ class MkdocsWriter:
             if not _nonempty(val):
                 continue
             label = _esc(_col_label(key))
-            value = _esc(", ".join(map(str, _listify(val))) if isinstance(val, (list, tuple)) else _val_to_str_legacy(val))
+            value = _esc(", ".join(map(str, _listify(val))) if isinstance(val, (list, tuple)) else _val_to_str(val))
             rows.append(
                 f'  <p class="meta-row"><span class="meta-label">{label}</span>'
                 f'<span class="meta-sep">:</span> <span class="meta-value">{value}</span></p>\n'
@@ -325,7 +353,7 @@ class MkdocsWriter:
                     f"- Could not parse citation: Expected BibTeX string, got {html.escape(type(bib).__name__)}\n"
                 )
                 continue
-            out.append(f"- {html.escape(bibtex_to_text(bib))}\n\n")
+            out.append(f"- {html.escape(_bibtex_to_text(bib))}\n\n")
             out.append("<pre><code class=\"language-bibtex\">")
             out.append(html.escape(bib.strip()))
             out.append("</code></pre>\n")
@@ -408,7 +436,7 @@ class MkdocsWriter:
             val = entry.get(col)
             if not _nonempty(val):
                 continue
-            out.append(f"<p><strong>{_esc(_col_label(col))}</strong>: {_esc(_val_to_str_legacy(val))}</p>\n")
+            out.append(f"<p><strong>{_esc(_col_label(col))}</strong>: {_esc(_val_to_str(val))}</p>\n")
         return "".join(out)
 
 
@@ -503,3 +531,98 @@ class MkdocsWriter:
         index_lines.append(self._index_footer_html(filters_js_src))
         index_filename = os.path.join(output_dir, "index.md")
         write_to_file(content="".join(index_lines), filename=index_filename)
+    
+    def write_table(
+        self,
+        filename="content/md/benchmarks_table.md",
+        columns=DEFAULT_COLUMNS,
+        average_ratings: bool = True,
+    ) -> None:
+        """
+        Write:
+          - index.md with a plain md table of all entries
+        """
+        col_labels = []
+        col_widths = []
+
+        for col in columns:
+            col_labels.append(self._colunm_label(col))
+            col_widths.append(self._column_width_str(col))
+
+        section = '<div id="bench-table-page"></div>\n\n# Benchmarks (Table)\n\n'
+        header = " | " + " | ".join(col_labels) + " | "
+        if average_ratings:
+            header += " Average Ratings "
+        header += "\n"
+
+        divider = ""
+        for e in col_widths:
+            divider += "| " + str(e) + " "
+        if average_ratings:
+            divider += " | -------- "
+        divider += "|\n"
+
+        # Create the contents string
+        current_contents = ""
+        footnotes = []
+
+        # Write each entry to the table
+        for entry in self.entries:
+            row = ""
+            ratings_average = 0
+
+            # Write each cell to the table
+            for col in columns:
+                val = entry.get(col, "")
+
+                if col == "name":
+                    title = self._escape_md(str(val))
+                    id_ = str(entry.get("id", "")).strip()
+                    if id_:
+                        # Link to the source .md; MkDocs will rewrite to the correct output URL
+                        # regardless of use_directory_urls.
+                        target_md = f"benchmarks/{quote(id_)}.md"
+                        row += f"[{title}]({target_md})"
+                    else:
+                        row += title
+                # handle citations
+                elif col == "cite":
+                    citations = val if isinstance(val, list) else [val]
+                    citation_refs = []
+                    for c in citations:
+                        citation_text = _bibtex_to_text(c)
+                        if citation_text.startswith("Could not parse citation:"):
+                            footnotes.append(None)
+                        else:
+                            footnotes.append(self._escape_md(citation_text))
+                            citation_refs.append(f"[^{len(footnotes)}]")
+                    row += ", ".join(citation_refs)
+
+                elif isinstance(val, list):
+                    row += ", ".join(map(self._escape_md, val))
+
+                else:
+                    if col.endswith("rating"):
+                        try:
+                            ratings_average += float(val)
+                        except ValueError:
+                            Console.error(f'Rating entry "{val}" must be a number')
+
+                    row += self._escape_md(str(val))
+
+                row += " | "
+
+            # Calculate and add average
+            ratings_average /= 6
+            if average_ratings:
+                row += str(round(ratings_average, 3)) + " |"
+
+            current_contents += row + "\n"
+
+        current_contents += "\n"
+        for i, citation in enumerate(footnotes):
+            current_contents += f"[^{i + 1}]: {citation}\n" if citation else ""
+
+        contents = section + header + divider + current_contents
+
+        write_to_file(content=contents, filename=filename)

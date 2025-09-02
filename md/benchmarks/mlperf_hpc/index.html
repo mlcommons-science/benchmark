@@ -24,6 +24,9 @@
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -36,10 +39,12 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -51,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -100,6 +112,18 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -217,13 +241,32 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../benchmarks_table/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benchmarks (Table)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../" class="md-tabs__link">
         
   
   
     
   
-  Benchmarks
+  Benchmarks (Cards)
 
       </a>
     </li>
@@ -326,12 +369,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../benchmarks_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Benchmarks (Table)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Benchmarks
+    Benchmarks (Cards)
     
   </span>
   
@@ -379,100 +444,50 @@
 
 
 <h1 id="mlperf-hpc">MLPerf HPC</h1>
+<p><a class="md-button back-link" href="../">← Back to all benchmarks</a></p>
+<div class="info-block meta-block">
+  <p class="meta-row"><span class="meta-label">Date</span><span class="meta-sep">:</span> <span class="meta-value">2021-10-20</span></p>
+  <p class="meta-row"><span class="meta-label">Name</span><span class="meta-sep">:</span> <span class="meta-value">MLPerf HPC</span></p>
+  <p class="meta-row"><span class="meta-label">Domain</span><span class="meta-sep">:</span> <span class="meta-value">Cosmology, Climate, Protein Structure, Catalysis</span></p>
+  <p class="meta-row"><span class="meta-label">Focus</span><span class="meta-sep">:</span> <span class="meta-value">Scientific ML training and inference on HPC systems</span></p>
+  <p class="meta-row"><span class="meta-label">Task Types</span><span class="meta-sep">:</span> <span class="meta-value">Training, Inference</span></p>
+  <p class="meta-row"><span class="meta-label">Metrics</span><span class="meta-sep">:</span> <span class="meta-value">Training time, Accuracy, GPU utilization</span></p>
+  <p class="meta-row"><span class="meta-label">Models</span><span class="meta-sep">:</span> <span class="meta-value">CosmoFlow, DeepCAM, OpenCatalyst</span></p>
+</div>
+<h3>Keywords</h3>
+
+<div class="chips"><a class="chip chip-link" href="../#kw=HPC">HPC</a> <a class="chip chip-link" href="../#kw=training">training</a> <a class="chip chip-link" href="../#kw=inference">inference</a> <a class="chip chip-link" href="../#kw=scientific%20ML">scientific ML</a> </div>
+<h3>Citation</h3>
+
+<ul>
+<li>Steven Farrell, Murali Emani, Jacob Balma, Lukas Drescher, Aleksandr Drozd, Andreas Fink, Geoffrey Fox, David Kanter, Thorsten Kurth, Peter Mattson, Dawei Mu, Amit Ruhela, Kento Sato, Koichi Shirahata, Tsuguchika Tabaru, Aristeidis Tsaris, Jan Balewski, Ben Cumming, Takumi Danjo, Jens Domke, Takaaki Fukai, Naoto Fukumoto, Tatsuya Fukushi, Balazs Gerofi, Takumi Honda, Toshiyuki Imamura, Akihiko Kasagi, Kentaro Kawakami, Shuhei Kudo, Akiyoshi Kuroda, Maxime Martinasso, Satoshi Matsuoka, Henrique Mendonça, Kazuki Minami, Prabhat Ram, Takashi Sawada, Mallikarjun Shankar, Tom St. John, Akihiro Tabuchi, Venkatram Vishwanath, Mohamed Wahib, Masafumi Yamazaki, and Junqi Yin. Mlperf hpc: a holistic benchmark suite for scientific machine learning on hpc systems. 2021. URL: https://arxiv.org/abs/2110.11466, arXiv:2110.11466.</li>
+</ul>
+<pre><code class="language-bibtex">@misc{farrell2021mlperfhpcholisticbenchmark,
+  archiveprefix = {arXiv},
+  author        = {Steven Farrell and Murali Emani and Jacob Balma and Lukas Drescher and Aleksandr Drozd and Andreas Fink and Geoffrey Fox and David Kanter and Thorsten Kurth and Peter Mattson and Dawei Mu and Amit Ruhela and Kento Sato and Koichi Shirahata and Tsuguchika Tabaru and Aristeidis Tsaris and Jan Balewski and Ben Cumming and Takumi Danjo and Jens Domke and Takaaki Fukai and Naoto Fukumoto and Tatsuya Fukushi and Balazs Gerofi and Takumi Honda and Toshiyuki Imamura and Akihiko Kasagi and Kentaro Kawakami and Shuhei Kudo and Akiyoshi Kuroda and Maxime Martinasso and Satoshi Matsuoka and Henrique Mendonça and Kazuki Minami and Prabhat Ram and Takashi Sawada and Mallikarjun Shankar and Tom St. John and Akihiro Tabuchi and Venkatram Vishwanath and Mohamed Wahib and Masafumi Yamazaki and Junqi Yin},
+  eprint        = {2110.11466},
+  primaryclass  = {cs.LG},
+  title         = {MLPerf HPC: A Holistic Benchmark Suite for Scientific Machine Learning on HPC Systems},
+  url           = {https://arxiv.org/abs/2110.11466},
+  year          = {2021}
+}</code></pre>
+<h3>Ratings</h3>
+<div class="ratings-grid">
+  <div class="ratings-head ratings-cell"><span>Category</span><span>Rating</span></div>
+  <div class="rating-item">  <div class="rating-cat">Software</div>  <div class="rating-badge">3.00</div>  <div class="rating-bar"><span style="width:60%"></span></div>  <div class="rating-reason">Reference implementations exist but containerization and environment setup require manual effort across HPC systems.
+</div></div><div class="rating-item">  <div class="rating-cat">Specification</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">Hardware constraints and I/O formats are not fully defined for all scenarios.
+</div></div><div class="rating-item">  <div class="rating-cat">Dataset</div>  <div class="rating-badge">5.00</div>  <div class="rating-bar"><span style="width:100%"></span></div>  <div class="rating-reason">Not all data is independently versioned or comes with standardized FAIR metadata.
+</div></div><div class="rating-item">  <div class="rating-cat">Metrics</div>  <div class="rating-badge">5.00</div>  <div class="rating-bar"><span style="width:100%"></span></div>  <div class="rating-reason">None
+</div></div><div class="rating-item">  <div class="rating-cat">Reference Solution</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">Reproducibility and environment tuning depend on system configuration; baseline models not uniformly bundled.
+</div></div><div class="rating-item">  <div class="rating-cat">Documentation</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">Central guidance is available but requires domain-specific effort to replicate results across systems.
+</div></div>
+</div>
+<div class="avg-rating">  <strong>Average rating:</strong> <span class="badge badge--ok badge--sm">4.17/5</span></div>
+<h3>Radar plot</h3>
+
+<div class="radar-wrap"><img class="radar-img" alt="MLPerf HPC radar" src="../../../tex/images/mlperf_hpc_radar.png" /></div>
+
 <p><strong>Edit:</strong> <a href="https://github.com/mlcommons-science/benchmark/tree/main/source">edit this entry</a></p>
-<p><strong>Date</strong>: 2021-10-20</p>
-<p><strong>Name</strong>: MLPerf HPC</p>
-<p><strong>Domain</strong>: Cosmology, Climate, Protein Structure, Catalysis</p>
-<p><strong>Focus</strong>: Scientific ML training and inference on HPC systems</p>
-<p><strong>Keywords</strong>: HPC, training, inference, scientific ML</p>
-<p><strong>Task Types</strong>: Training, Inference</p>
-<p><strong>Metrics</strong>: Training time, Accuracy, GPU utilization</p>
-<p><strong>Models</strong>: CosmoFlow, DeepCAM, OpenCatalyst</p>
-<p><strong>Citation</strong>:</p>
-<ul>
-<li>
-<p>Steven Farrell, Murali Emani, Jacob Balma, Lukas Drescher, Aleksandr Drozd, Andreas Fink, Geoffrey Fox, David Kanter, Thorsten Kurth, Peter Mattson, Dawei Mu, Amit Ruhela, Kento Sato, Koichi Shirahata, Tsuguchika Tabaru, Aristeidis Tsaris, Jan Balewski, Ben Cumming, Takumi Danjo, Jens Domke, Takaaki Fukai, Naoto Fukumoto, Tatsuya Fukushi, Balazs Gerofi, Takumi Honda, Toshiyuki Imamura, Akihiko Kasagi, Kentaro Kawakami, Shuhei Kudo, Akiyoshi Kuroda, Maxime Martinasso, Satoshi Matsuoka, Henrique Mendonça, Kazuki Minami, Prabhat Ram, Takashi Sawada, Mallikarjun Shankar, Tom St. John, Akihiro Tabuchi, Venkatram Vishwanath, Mohamed Wahib, Masafumi Yamazaki, and Junqi Yin. Mlperf hpc: a holistic benchmark suite for scientific machine learning on hpc systems. 2021. URL: https://arxiv.org/abs/2110.11466, arXiv:2110.11466.</p>
-</li>
-<li>
-<p>bibtex:
-      ```
-      @misc{farrell2021mlperfhpcholisticbenchmark,</p>
-<pre><code>archiveprefix = {arXiv},
-
-author        = {Steven Farrell and Murali Emani and Jacob Balma and Lukas Drescher and Aleksandr Drozd and Andreas Fink and Geoffrey Fox and David Kanter and Thorsten Kurth and Peter Mattson and Dawei Mu and Amit Ruhela and Kento Sato and Koichi Shirahata and Tsuguchika Tabaru and Aristeidis Tsaris and Jan Balewski and Ben Cumming and Takumi Danjo and Jens Domke and Takaaki Fukai and Naoto Fukumoto and Tatsuya Fukushi and Balazs Gerofi and Takumi Honda and Toshiyuki Imamura and Akihiko Kasagi and Kentaro Kawakami and Shuhei Kudo and Akiyoshi Kuroda and Maxime Martinasso and Satoshi Matsuoka and Henrique Mendonça and Kazuki Minami and Prabhat Ram and Takashi Sawada and Mallikarjun Shankar and Tom St. John and Akihiro Tabuchi and Venkatram Vishwanath and Mohamed Wahib and Masafumi Yamazaki and Junqi Yin},
-
-eprint        = {2110.11466},
-
-primaryclass  = {cs.LG},
-
-title         = {MLPerf HPC: A Holistic Benchmark Suite for Scientific Machine Learning on HPC Systems},
-
-url           = {https://arxiv.org/abs/2110.11466},
-
-year          = {2021}
-</code></pre>
-<p>}</p>
-<p>```</p>
-</li>
-</ul>
-<p><strong>Ratings:</strong></p>
-<p>Software:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 3</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Reference implementations exist but containerization and environment setup require manual effort across HPC systems. </p>
-</li>
-</ul>
-<p>Specification:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 4</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Hardware constraints and I/O formats are not fully defined for all scenarios. </p>
-</li>
-</ul>
-<p>Dataset:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 5</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Not all data is independently versioned or comes with standardized FAIR metadata. </p>
-</li>
-</ul>
-<p>Metrics:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 5</p>
-</li>
-<li>
-<p><strong>Reason:</strong> None </p>
-</li>
-</ul>
-<p>Reference Solution:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 4</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Reproducibility and environment tuning depend on system configuration; baseline models not uniformly bundled. </p>
-</li>
-</ul>
-<p>Documentation:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 4</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Central guidance is available but requires domain-specific effort to replicate results across systems. </p>
-</li>
-</ul>
-<p><strong>Average Rating:</strong> 4.167</p>
-<p><strong>Radar Plot:</strong>
- <img alt="Mlperf Hpc radar plot" src="../../../tex/images/mlperf_hpc_radar.png" /></p>
 
 
 
@@ -490,6 +505,8 @@ year          = {2021}
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -527,10 +544,12 @@ year          = {2021}
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.search.highlight", "navigation.search.share", "navigation.search.suggest", "navigation.search.expand", "navigation.search.autocomplete"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.search.highlight", "navigation.search.share", "navigation.search.suggest", "navigation.search.expand", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../../assets/js/filters.js"></script>
       
     
   </body>

@@ -24,6 +24,9 @@
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -36,10 +39,12 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -51,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -100,6 +112,18 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -217,13 +241,32 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../benchmarks_table/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benchmarks (Table)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../" class="md-tabs__link">
         
   
   
     
   
-  Benchmarks
+  Benchmarks (Cards)
 
       </a>
     </li>
@@ -326,12 +369,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../benchmarks_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Benchmarks (Table)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Benchmarks
+    Benchmarks (Cards)
     
   </span>
   
@@ -379,100 +444,57 @@
 
 
 <h1 id="sglang-framework">SGLang Framework</h1>
+<p><a class="md-button back-link" href="../">← Back to all benchmarks</a></p>
+<div class="info-block meta-block">
+  <p class="meta-row"><span class="meta-label">Date</span><span class="meta-sep">:</span> <span class="meta-value">2023-12-12</span></p>
+  <p class="meta-row"><span class="meta-label">Name</span><span class="meta-sep">:</span> <span class="meta-value">SGLang Framework</span></p>
+  <p class="meta-row"><span class="meta-label">Domain</span><span class="meta-sep">:</span> <span class="meta-value">LLM Vision</span></p>
+  <p class="meta-row"><span class="meta-label">Focus</span><span class="meta-sep">:</span> <span class="meta-value">Fast serving framework for LLMs and vision-language models</span></p>
+  <p class="meta-row"><span class="meta-label">Task Types</span><span class="meta-sep">:</span> <span class="meta-value">Model serving framework</span></p>
+  <p class="meta-row"><span class="meta-label">Metrics</span><span class="meta-sep">:</span> <span class="meta-value">Tokens/sec, Time-to-first-token, Throughput gain vs baseline</span></p>
+  <p class="meta-row"><span class="meta-label">Models</span><span class="meta-sep">:</span> <span class="meta-value">LLaVA, DeepSeek, Llama</span></p>
+</div>
+<h3>Keywords</h3>
+
+<div class="chips"><a class="chip chip-link" href="../#kw=LLM%20serving">LLM serving</a> <a class="chip chip-link" href="../#kw=vision-language">vision-language</a> <a class="chip chip-link" href="../#kw=RadixAttention">RadixAttention</a> <a class="chip chip-link" href="../#kw=performance">performance</a> <a class="chip chip-link" href="../#kw=JSON%20decoding">JSON decoding</a> </div>
+<h3>Citation</h3>
+
+<ul>
+<li>Lianmin Zheng, Liangsheng Yin, Zhiqiang Xie, Chuyue Sun, Jeff Huang, Cody Hao Yu, Shiyi Cao, Christos Kozyrakis, Ion Stoica, Joseph E. Gonzalez, Clark Barrett, and Ying Sheng. Sglang: efficient execution of structured language model programs. 2024. URL: https://arxiv.org/abs/2312.07104, arXiv:2312.07104.</li>
+</ul>
+<pre><code class="language-bibtex">@misc{zheng2024sglangefficientexecutionstructured,
+  archiveprefix = {arXiv},
+  author        = {Lianmin Zheng and Liangsheng Yin and Zhiqiang Xie and Chuyue Sun and Jeff Huang and Cody Hao Yu and Shiyi Cao and Christos Kozyrakis and Ion Stoica and Joseph E. Gonzalez and Clark Barrett and Ying Sheng},
+  eprint        = {2312.07104},
+  primaryclass  = {cs.AI},
+  title         = {SGLang: Efficient Execution of Structured Language Model Programs},
+  url           = {https://arxiv.org/abs/2312.07104},
+  year          = {2024}
+}</code></pre>
+<h3>Ratings</h3>
+<div class="ratings-grid">
+  <div class="ratings-head ratings-cell"><span>Category</span><span>Rating</span></div>
+  <div class="rating-item">  <div class="rating-cat">Software</div>  <div class="rating-badge">5.00</div>  <div class="rating-bar"><span style="width:100%"></span></div>  <div class="rating-reason">Actively maintained and production-deployed (e.g., xAI, NVIDIA); source code available under
+Apache 2.0. Includes efficient backends (RadixAttention, quantization, batching) and full
+serving infrastructure.
+</div></div><div class="rating-item">  <div class="rating-cat">Specification</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">The framework clearly defines performance targets, serving logic, and model integration.
+Input/output expectations are consistent, but not all benchmarks are standardized.
+</div></div><div class="rating-item">  <div class="rating-cat">Dataset</div>  <div class="rating-badge">2.00</div>  <div class="rating-bar"><span style="width:40%"></span></div>  <div class="rating-reason">Does not introduce new datasets; instead, it evaluates performance using existing model benchmarks.
+Only configuration files are included.
+</div></div><div class="rating-item">  <div class="rating-cat">Metrics</div>  <div class="rating-badge">5.00</div>  <div class="rating-bar"><span style="width:100%"></span></div>  <div class="rating-reason">Serving-related metrics such as tokens/sec, time-to-first-token, and throughput gain vs. baselines
+are well-defined and consistently applied.
+</div></div><div class="rating-item">  <div class="rating-cat">Reference Solution</div>  <div class="rating-badge">3.00</div>  <div class="rating-bar"><span style="width:60%"></span></div>  <div class="rating-reason">Provides benchmark configs and example integrations (e.g., with LLaVA, DeepSeek), but not all
+models or scripts are runnable out-of-the-box.
+</div></div><div class="rating-item">  <div class="rating-cat">Documentation</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">Strong GitHub documentation, install guides, and benchmarks. Some advanced topics (e.g.,
+scaling, hardware tuning) could use deeper walkthroughs.
+</div></div>
+</div>
+<div class="avg-rating">  <strong>Average rating:</strong> <span class="badge badge--meh badge--sm">3.83/5</span></div>
+<h3>Radar plot</h3>
+
+<div class="radar-wrap"><img class="radar-img" alt="SGLang Framework radar" src="../../../tex/images/sglang_framework_radar.png" /></div>
+
 <p><strong>Edit:</strong> <a href="https://github.com/mlcommons-science/benchmark/tree/main/source">edit this entry</a></p>
-<p><strong>Date</strong>: 2023-12-12</p>
-<p><strong>Name</strong>: SGLang Framework</p>
-<p><strong>Domain</strong>: LLM Vision</p>
-<p><strong>Focus</strong>: Fast serving framework for LLMs and vision-language models</p>
-<p><strong>Keywords</strong>: LLM serving, vision-language, RadixAttention, performance, JSON decoding</p>
-<p><strong>Task Types</strong>: Model serving framework</p>
-<p><strong>Metrics</strong>: Tokens/sec, Time-to-first-token, Throughput gain vs baseline</p>
-<p><strong>Models</strong>: LLaVA, DeepSeek, Llama</p>
-<p><strong>Citation</strong>:</p>
-<ul>
-<li>
-<p>Lianmin Zheng, Liangsheng Yin, Zhiqiang Xie, Chuyue Sun, Jeff Huang, Cody Hao Yu, Shiyi Cao, Christos Kozyrakis, Ion Stoica, Joseph E. Gonzalez, Clark Barrett, and Ying Sheng. Sglang: efficient execution of structured language model programs. 2024. URL: https://arxiv.org/abs/2312.07104, arXiv:2312.07104.</p>
-</li>
-<li>
-<p>bibtex:
-      ```
-      @misc{zheng2024sglangefficientexecutionstructured,</p>
-<pre><code>archiveprefix = {arXiv},
-
-author        = {Lianmin Zheng and Liangsheng Yin and Zhiqiang Xie and Chuyue Sun and Jeff Huang and Cody Hao Yu and Shiyi Cao and Christos Kozyrakis and Ion Stoica and Joseph E. Gonzalez and Clark Barrett and Ying Sheng},
-
-eprint        = {2312.07104},
-
-primaryclass  = {cs.AI},
-
-title         = {SGLang: Efficient Execution of Structured Language Model Programs},
-
-url           = {https://arxiv.org/abs/2312.07104},
-
-year          = {2024}
-</code></pre>
-<p>}</p>
-<p>```</p>
-</li>
-</ul>
-<p><strong>Ratings:</strong></p>
-<p>Software:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 5</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Actively maintained and production-deployed  e.g., xAI, NVIDIA ; source code available under Apache 2.0. Includes efficient backends  RadixAttention, quantization, batching  and full serving infrastructure. </p>
-</li>
-</ul>
-<p>Specification:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 4</p>
-</li>
-<li>
-<p><strong>Reason:</strong> The framework clearly defines performance targets, serving logic, and model integration. Input/output expectations are consistent, but not all benchmarks are standardized. </p>
-</li>
-</ul>
-<p>Dataset:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 2</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Does not introduce new datasets; instead, it evaluates performance using existing model benchmarks. Only configuration files are included. </p>
-</li>
-</ul>
-<p>Metrics:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 5</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Serving-related metrics such as tokens/sec, time-to-first-token, and throughput gain vs. baselines are well-defined and consistently applied. </p>
-</li>
-</ul>
-<p>Reference Solution:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 3</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Provides benchmark configs and example integrations  e.g., with LLaVA, DeepSeek , but not all models or scripts are runnable out-of-the-box. </p>
-</li>
-</ul>
-<p>Documentation:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 4</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Strong GitHub documentation, install guides, and benchmarks. Some advanced topics  e.g., scaling, hardware tuning  could use deeper walkthroughs. </p>
-</li>
-</ul>
-<p><strong>Average Rating:</strong> 3.833</p>
-<p><strong>Radar Plot:</strong>
- <img alt="Sglang Framework radar plot" src="../../../tex/images/sglang_framework_radar.png" /></p>
 
 
 
@@ -490,6 +512,8 @@ year          = {2024}
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -527,10 +551,12 @@ year          = {2024}
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.search.highlight", "navigation.search.share", "navigation.search.suggest", "navigation.search.expand", "navigation.search.autocomplete"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.search.highlight", "navigation.search.share", "navigation.search.suggest", "navigation.search.expand", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../../assets/js/filters.js"></script>
       
     
   </body>

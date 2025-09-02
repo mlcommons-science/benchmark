@@ -24,6 +24,9 @@
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -36,10 +39,12 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -51,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -100,6 +112,18 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -217,13 +241,32 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../benchmarks_table/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benchmarks (Table)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../" class="md-tabs__link">
         
   
   
     
   
-  Benchmarks
+  Benchmarks (Cards)
 
       </a>
     </li>
@@ -326,12 +369,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../benchmarks_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Benchmarks (Table)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Benchmarks
+    Benchmarks (Cards)
     
   </span>
   
@@ -379,104 +444,58 @@
 
 
 <h1 id="supercon3d">SuperCon3D</h1>
+<p><a class="md-button back-link" href="../">← Back to all benchmarks</a></p>
+<div class="info-block meta-block">
+  <p class="meta-row"><span class="meta-label">Date</span><span class="meta-sep">:</span> <span class="meta-value">2024-12-13</span></p>
+  <p class="meta-row"><span class="meta-label">Name</span><span class="meta-sep">:</span> <span class="meta-value">SuperCon3D</span></p>
+  <p class="meta-row"><span class="meta-label">Domain</span><span class="meta-sep">:</span> <span class="meta-value">Materials Science; Superconductivity</span></p>
+  <p class="meta-row"><span class="meta-label">Focus</span><span class="meta-sep">:</span> <span class="meta-value">Dataset and models for predicting and generating high-Tc superconductors using 3D crystal structures</span></p>
+  <p class="meta-row"><span class="meta-label">Task Types</span><span class="meta-sep">:</span> <span class="meta-value">Regression (Tc prediction), Generative modeling</span></p>
+  <p class="meta-row"><span class="meta-label">Metrics</span><span class="meta-sep">:</span> <span class="meta-value">MAE (Tc), Validity of generated structures</span></p>
+  <p class="meta-row"><span class="meta-label">Models</span><span class="meta-sep">:</span> <span class="meta-value">SODNet, DiffCSP-SC</span></p>
+</div>
+<h3>Keywords</h3>
+
+<div class="chips"><a class="chip chip-link" href="../#kw=superconductivity">superconductivity</a> <a class="chip chip-link" href="../#kw=crystal%20structures">crystal structures</a> <a class="chip chip-link" href="../#kw=equivariant%20GNN">equivariant GNN</a> <a class="chip chip-link" href="../#kw=generative%20models">generative models</a> </div>
+<h3>Citation</h3>
+
+<ul>
+<li>Pin Chen, Luoxuan Peng, Rui Jiao, Qing Mo, Zhen Wang, Wenbing Huang, Yang Liu, and Yutong Lu. Learning superconductivity from ordered and disordered material structures. In A. Globerson, L. Mackey, D. Belgrave, A. Fan, U. Paquet, J. Tomczak, and C. Zhang, editors, Advances in Neural Information Processing Systems, volume 37, 108902–108928. Curran Associates, Inc., 2024. URL: https://proceedings.neurips.cc/paper_files/paper/2024/file/c4e3b55ed4ac9ba52d7df11f8bddbbf4-Paper-Datasets_and_Benchmarks_Track.pdf.</li>
+</ul>
+<pre><code class="language-bibtex">@inproceedings{neurips2024_c4e3b55e,
+  author = {Chen, Pin and Peng, Luoxuan and Jiao, Rui and Mo, Qing and Wang, Zhen and Huang, Wenbing and Liu, Yang and Lu, Yutong},
+  booktitle = {Advances in Neural Information Processing Systems},
+  editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+  pages = {108902--108928},
+  publisher = {Curran Associates, Inc.},
+  title = {Learning Superconductivity from Ordered and Disordered Material Structures},
+  url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/c4e3b55ed4ac9ba52d7df11f8bddbbf4-Paper-Datasets_and_Benchmarks_Track.pdf},
+  volume = {37},
+  year = {2024}
+}</code></pre>
+<h3>Ratings</h3>
+<div class="ratings-grid">
+  <div class="ratings-head ratings-cell"><span>Category</span><span>Rating</span></div>
+  <div class="rating-item">  <div class="rating-cat">Software</div>  <div class="rating-badge">3.00</div>  <div class="rating-bar"><span style="width:60%"></span></div>  <div class="rating-reason">Baseline models (SODNet, DiffCSP-SC) are described in the paper; however,
+fully reproducible code and pretrained models are not publicly available yet.
+</div></div><div class="rating-item">  <div class="rating-cat">Specification</div>  <div class="rating-badge">5.00</div>  <div class="rating-bar"><span style="width:100%"></span></div>  <div class="rating-reason">Tasks for regression (Tc prediction) and generative modeling with clear input/output
+structures and domain constraints are well defined.
+</div></div><div class="rating-item">  <div class="rating-cat">Dataset</div>  <div class="rating-badge">5.00</div>  <div class="rating-bar"><span style="width:100%"></span></div>  <div class="rating-reason">Dataset contains 3D crystal structures and associated properties; well-curated but
+not fully released publicly at this time.
+</div></div><div class="rating-item">  <div class="rating-cat">Metrics</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">Metrics such as MAE for Tc prediction and validity checks for generated structures
+are appropriate and clearly described.
+</div></div><div class="rating-item">  <div class="rating-cat">Reference Solution</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">Paper provides model architecture details and some training insights, but no
+complete open-source reference implementations yet.
+</div></div><div class="rating-item">  <div class="rating-cat">Documentation</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">Paper and GitHub provide good metadata and data processing descriptions; tutorials
+and user guides could be expanded.
+</div></div>
+</div>
+<div class="avg-rating">  <strong>Average rating:</strong> <span class="badge badge--ok badge--sm">4.17/5</span></div>
+<h3>Radar plot</h3>
+
+<div class="radar-wrap"><img class="radar-img" alt="SuperCon3D radar" src="../../../tex/images/supercond_radar.png" /></div>
+
 <p><strong>Edit:</strong> <a href="https://github.com/mlcommons-science/benchmark/tree/main/source">edit this entry</a></p>
-<p><strong>Date</strong>: 2024-12-13</p>
-<p><strong>Name</strong>: SuperCon3D</p>
-<p><strong>Domain</strong>: Materials Science; Superconductivity</p>
-<p><strong>Focus</strong>: Dataset and models for predicting and generating high-Tc superconductors using 3D crystal structures</p>
-<p><strong>Keywords</strong>: superconductivity, crystal structures, equivariant GNN, generative models</p>
-<p><strong>Task Types</strong>: Regression  Tc prediction , Generative modeling</p>
-<p><strong>Metrics</strong>: MAE  Tc , Validity of generated structures</p>
-<p><strong>Models</strong>: SODNet, DiffCSP-SC</p>
-<p><strong>Citation</strong>:</p>
-<ul>
-<li>
-<p>Pin Chen, Luoxuan Peng, Rui Jiao, Qing Mo, Zhen Wang, Wenbing Huang, Yang Liu, and Yutong Lu. Learning superconductivity from ordered and disordered material structures. In A. Globerson, L. Mackey, D. Belgrave, A. Fan, U. Paquet, J. Tomczak, and C. Zhang, editors, Advances in Neural Information Processing Systems, volume 37, 108902–108928. Curran Associates, Inc., 2024. URL: https://proceedings.neurips.cc/paper_files/paper/2024/file/c4e3b55ed4ac9ba52d7df11f8bddbbf4-Paper-Datasets_and_Benchmarks_Track.pdf.</p>
-</li>
-<li>
-<p>bibtex:
-      ```
-      @inproceedings{neurips2024_c4e3b55e,</p>
-<pre><code>author = {Chen, Pin and Peng, Luoxuan and Jiao, Rui and Mo, Qing and Wang, Zhen and Huang, Wenbing and Liu, Yang and Lu, Yutong},
-
-booktitle = {Advances in Neural Information Processing Systems},
-
-editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
-
-pages = {108902--108928},
-
-publisher = {Curran Associates, Inc.},
-
-title = {Learning Superconductivity from Ordered and Disordered Material Structures},
-
-url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/c4e3b55ed4ac9ba52d7df11f8bddbbf4-Paper-Datasets_and_Benchmarks_Track.pdf},
-
-volume = {37},
-
-year = {2024}
-</code></pre>
-<p>}</p>
-<p>```</p>
-</li>
-</ul>
-<p><strong>Ratings:</strong></p>
-<p>Software:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 3</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Baseline models  SODNet, DiffCSP-SC  are described in the paper; however, fully reproducible code and pretrained models are not publicly available yet. </p>
-</li>
-</ul>
-<p>Specification:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 5</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Tasks for regression  Tc prediction  and generative modeling with clear input/output structures and domain constraints are well defined. </p>
-</li>
-</ul>
-<p>Dataset:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 5</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Dataset contains 3D crystal structures and associated properties; well-curated but not fully released publicly at this time. </p>
-</li>
-</ul>
-<p>Metrics:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 4</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Metrics such as MAE for Tc prediction and validity checks for generated structures are appropriate and clearly described. </p>
-</li>
-</ul>
-<p>Reference Solution:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 4</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Paper provides model architecture details and some training insights, but no complete open-source reference implementations yet. </p>
-</li>
-</ul>
-<p>Documentation:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 4</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Paper and GitHub provide good metadata and data processing descriptions; tutorials and user guides could be expanded. </p>
-</li>
-</ul>
-<p><strong>Average Rating:</strong> 4.167</p>
-<p><strong>Radar Plot:</strong>
- <img alt="Supercond radar plot" src="../../../tex/images/supercond_radar.png" /></p>
 
 
 
@@ -494,6 +513,8 @@ year = {2024}
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -531,10 +552,12 @@ year = {2024}
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.search.highlight", "navigation.search.share", "navigation.search.suggest", "navigation.search.expand", "navigation.search.autocomplete"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.search.highlight", "navigation.search.share", "navigation.search.suggest", "navigation.search.expand", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../../assets/js/filters.js"></script>
       
     
   </body>

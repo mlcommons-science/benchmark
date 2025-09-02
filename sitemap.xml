@@ -2,298 +2,302 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
+    </url>
+    <url>
+         <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks_table/</loc>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/aime_american_invitational_mathematics_examination/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/arc-challenge_advanced_reasoning_challenge/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/baisbench_biological_ai_scientist_benchmark/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/beam_control/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/benchcouncil_aibench/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/benchcouncil_bigdatabench/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/big-bench_beyond_the_imitation_game_benchmark/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/calochallenge_/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/cfdbench_fluid_dynamics/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/climatelearn/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/codabench/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/commonsenseqa/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/curie_scientific_long-context_understanding_reasoning_and_information_extraction/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/d-stem/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/delta_squared-dft/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/dune/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/feabench_finite_element_analysis_benchmark/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/frontiermath/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/gess/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/gpqa_a_graduate-level_google-proof_question_and_answer_benchmark/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/gpqa_diamond/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/hdr_ml_anomaly_challenge_butterfly/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/hdr_ml_anomaly_challenge_gravitational_waves/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/hdr_ml_anomaly_challenge_sea_level_rise/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/hedm_braggnn/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/humanitys_last_exam/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/in-situ_high-speed_computer_vision/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/intelligent_experiments_through_real-time_ai/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/irregular_sensor_data_compression/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/jarvis-leaderboard/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/jet_classification/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/lhc_new_physics_dataset/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/llm-inference-bench/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/llms_for_crop_science/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/massspecgym/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/materials_project/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/math-/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/medqa/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/mlcommons_medical_ai/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/mlcommons_science/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/mlperf_hpc/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/mmlu_massive_multitask_language_understanding/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/molgen/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/neural_architecture_codesign_for_fast_physics_applications/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/nixtla_neural_forecast_nhits/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/nixtla_neural_forecast_timegpt/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/nixtla_neural_forecast_timellm/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/nixtla_neuralforecast/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/ocp_open_catalyst_project/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/open_graph_benchmark_ogb_-_biology/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/papers_with_code_sota_platform/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/pdebench/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/quantum_computing_benchmarks_qml/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/quench_detection/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/sabath_sbi-fair/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/satimgnet/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/scicode/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/seafloorai/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/sglang_framework/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/single_qubit_readout_on_qick_system/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/smart_pixels_for_lhc/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/spiqa_llm/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/spiqa_scientific_paper_image_question_answering/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/supercond/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/the_well/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/ultrafast_jet_classification_at_the_hl-lhc/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/urban_data_layer_udl/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/vllm_inference_and_serving_engine/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/vllm_performance_dashboard/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/vocal_call_locator_vcl/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
     <url>
          <loc>https://mlcommons-science.github.io/benchmarks/md/benchmarks/winogrande/</loc>
-         <lastmod>2025-08-12</lastmod>
+         <lastmod>2025-09-02</lastmod>
     </url>
 </urlset>

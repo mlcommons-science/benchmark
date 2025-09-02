@@ -24,6 +24,9 @@
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -36,10 +39,12 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -51,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -100,6 +112,18 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -217,13 +241,32 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../benchmarks_table/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benchmarks (Table)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../" class="md-tabs__link">
         
   
   
     
   
-  Benchmarks
+  Benchmarks (Cards)
 
       </a>
     </li>
@@ -326,12 +369,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../benchmarks_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Benchmarks (Table)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Benchmarks
+    Benchmarks (Cards)
     
   </span>
   
@@ -379,96 +444,48 @@
 
 
 <h1 id="mmlu-massive-multitask-language-understanding">MMLU (Massive Multitask Language Understanding)</h1>
+<p><a class="md-button back-link" href="../">← Back to all benchmarks</a></p>
+<div class="info-block meta-block">
+  <p class="meta-row"><span class="meta-label">Date</span><span class="meta-sep">:</span> <span class="meta-value">2020-09-07</span></p>
+  <p class="meta-row"><span class="meta-label">Name</span><span class="meta-sep">:</span> <span class="meta-value">MMLU  Massive Multitask Language Understanding</span></p>
+  <p class="meta-row"><span class="meta-label">Domain</span><span class="meta-sep">:</span> <span class="meta-value">Multidomain</span></p>
+  <p class="meta-row"><span class="meta-label">Focus</span><span class="meta-sep">:</span> <span class="meta-value">Academic knowledge and reasoning across 57 subjects</span></p>
+  <p class="meta-row"><span class="meta-label">Task Types</span><span class="meta-sep">:</span> <span class="meta-value">Multiple choice</span></p>
+  <p class="meta-row"><span class="meta-label">Metrics</span><span class="meta-sep">:</span> <span class="meta-value">Accuracy</span></p>
+  <p class="meta-row"><span class="meta-label">Models</span><span class="meta-sep">:</span> <span class="meta-value">GPT-4o, Gemini 1.5 Pro, o1, DeepSeek-R1</span></p>
+</div>
+<h3>Keywords</h3>
+
+<div class="chips"><a class="chip chip-link" href="../#kw=multitask">multitask</a> <a class="chip chip-link" href="../#kw=multiple-choice">multiple-choice</a> <a class="chip chip-link" href="../#kw=zero-shot">zero-shot</a> <a class="chip chip-link" href="../#kw=few-shot">few-shot</a> <a class="chip chip-link" href="../#kw=knowledge%20probing">knowledge probing</a> </div>
+<h3>Citation</h3>
+
+<ul>
+<li>Dan Hendrycks, Collin Burns, and Saurav Kadavath. Measuring massive multitask language understanding. 2021. URL: https://arxiv.org/abs/2009.03300.</li>
+</ul>
+<pre><code class="language-bibtex">@misc{hendrycks2021measuring,
+  title={Measuring Massive Multitask Language Understanding},
+  author={Hendrycks, Dan and Burns, Collin and Kadavath, Saurav},
+  journal={arXiv preprint arXiv:2009.03300},
+  year={2021},
+  url={https://arxiv.org/abs/2009.03300}
+}</code></pre>
+<h3>Ratings</h3>
+<div class="ratings-grid">
+  <div class="ratings-head ratings-cell"><span>Category</span><span>Rating</span></div>
+  <div class="rating-item">  <div class="rating-cat">Software</div>  <div class="rating-badge">0.00</div>  <div class="rating-bar"><span style="width:0%"></span></div>  <div class="rating-reason">No instructions to download or run data given on the site
+</div></div><div class="rating-item">  <div class="rating-cat">Specification</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">No system constraints
+</div></div><div class="rating-item">  <div class="rating-cat">Dataset</div>  <div class="rating-badge">5.00</div>  <div class="rating-bar"><span style="width:100%"></span></div>  <div class="rating-reason">Meets all FAIR principles and properly versioned.
+</div></div><div class="rating-item">  <div class="rating-cat">Metrics</div>  <div class="rating-badge">5.00</div>  <div class="rating-bar"><span style="width:100%"></span></div>  <div class="rating-reason">Fully defined, represents a solution&#x27;s performance.
+</div></div><div class="rating-item">  <div class="rating-cat">Reference Solution</div>  <div class="rating-badge">2.00</div>  <div class="rating-bar"><span style="width:40%"></span></div>  <div class="rating-reason">Reference models are available (i.e. GPT-3), but are not trainable or publicly documented
+</div></div><div class="rating-item">  <div class="rating-cat">Documentation</div>  <div class="rating-badge">5.00</div>  <div class="rating-bar"><span style="width:100%"></span></div>  <div class="rating-reason">Well-explained in a provided paper.
+</div></div>
+</div>
+<div class="avg-rating">  <strong>Average rating:</strong> <span class="badge badge--meh badge--sm">3.50/5</span></div>
+<h3>Radar plot</h3>
+
+<div class="radar-wrap"><img class="radar-img" alt="MMLU (Massive Multitask Language Understanding) radar" src="../../../tex/images/mmlu_massive_multitask_language_understanding_radar.png" /></div>
+
 <p><strong>Edit:</strong> <a href="https://github.com/mlcommons-science/benchmark/tree/main/source">edit this entry</a></p>
-<p><strong>Date</strong>: 2020-09-07</p>
-<p><strong>Name</strong>: MMLU  Massive Multitask Language Understanding </p>
-<p><strong>Domain</strong>: Multidomain</p>
-<p><strong>Focus</strong>: Academic knowledge and reasoning across 57 subjects</p>
-<p><strong>Keywords</strong>: multitask, multiple-choice, zero-shot, few-shot, knowledge probing</p>
-<p><strong>Task Types</strong>: Multiple choice</p>
-<p><strong>Metrics</strong>: Accuracy</p>
-<p><strong>Models</strong>: GPT-4o, Gemini 1.5 Pro, o1, DeepSeek-R1</p>
-<p><strong>Citation</strong>:</p>
-<ul>
-<li>
-<p>Dan Hendrycks, Collin Burns, and Saurav Kadavath. Measuring massive multitask language understanding. 2021. URL: https://arxiv.org/abs/2009.03300.</p>
-</li>
-<li>
-<p>bibtex:
-      ```
-      @misc{hendrycks2021measuring,</p>
-<pre><code>title={Measuring Massive Multitask Language Understanding},
-
-author={Hendrycks, Dan and Burns, Collin and Kadavath, Saurav},
-
-journal={arXiv preprint arXiv:2009.03300},
-
-year={2021},
-
-url={https://arxiv.org/abs/2009.03300}
-</code></pre>
-<p>}</p>
-<p>```</p>
-</li>
-</ul>
-<p><strong>Ratings:</strong></p>
-<p>Software:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 0</p>
-</li>
-<li>
-<p><strong>Reason:</strong> No instructions to download or run data given on the site </p>
-</li>
-</ul>
-<p>Specification:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 4</p>
-</li>
-<li>
-<p><strong>Reason:</strong> No system constraints </p>
-</li>
-</ul>
-<p>Dataset:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 5</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Meets all FAIR principles and properly versioned. </p>
-</li>
-</ul>
-<p>Metrics:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 5</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Fully defined, represents a solution's performance. </p>
-</li>
-</ul>
-<p>Reference Solution:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 2</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Reference models are available  i.e. GPT-3 , but are not trainable or publicly documented </p>
-</li>
-</ul>
-<p>Documentation:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 5</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Well-explained in a provided paper. </p>
-</li>
-</ul>
-<p><strong>Average Rating:</strong> 3.5</p>
-<p><strong>Radar Plot:</strong>
- <img alt="Mmlu Massive Multitask Language Understanding radar plot" src="../../../tex/images/mmlu_massive_multitask_language_understanding_radar.png" /></p>
 
 
 
@@ -486,6 +503,8 @@ url={https://arxiv.org/abs/2009.03300}
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -523,10 +542,12 @@ url={https://arxiv.org/abs/2009.03300}
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.search.highlight", "navigation.search.share", "navigation.search.suggest", "navigation.search.expand", "navigation.search.autocomplete"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.search.highlight", "navigation.search.share", "navigation.search.suggest", "navigation.search.expand", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../../assets/js/filters.js"></script>
       
     
   </body>

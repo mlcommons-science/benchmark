@@ -24,6 +24,9 @@
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -36,10 +39,12 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -51,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -100,6 +112,18 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -217,13 +241,32 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../benchmarks_table/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benchmarks (Table)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../" class="md-tabs__link">
         
   
   
     
   
-  Benchmarks
+  Benchmarks (Cards)
 
       </a>
     </li>
@@ -326,12 +369,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../benchmarks_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Benchmarks (Table)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Benchmarks
+    Benchmarks (Cards)
     
   </span>
   
@@ -379,102 +444,51 @@
 
 
 <h1 id="ultrafast-jet-classification-at-the-hl-lhc">Ultrafast jet classification at the HL-LHC</h1>
+<p><a class="md-button back-link" href="../">← Back to all benchmarks</a></p>
+<div class="info-block meta-block">
+  <p class="meta-row"><span class="meta-label">Date</span><span class="meta-sep">:</span> <span class="meta-value">2024-07-08</span></p>
+  <p class="meta-row"><span class="meta-label">Name</span><span class="meta-sep">:</span> <span class="meta-value">Ultrafast jet classification at the HL-LHC</span></p>
+  <p class="meta-row"><span class="meta-label">Domain</span><span class="meta-sep">:</span> <span class="meta-value">Particle Physics</span></p>
+  <p class="meta-row"><span class="meta-label">Focus</span><span class="meta-sep">:</span> <span class="meta-value">FPGA-optimized real-time jet origin classification at the HL-LHC</span></p>
+  <p class="meta-row"><span class="meta-label">Task Types</span><span class="meta-sep">:</span> <span class="meta-value">Classification</span></p>
+  <p class="meta-row"><span class="meta-label">Metrics</span><span class="meta-sep">:</span> <span class="meta-value">Accuracy, Latency, Resource utilization</span></p>
+  <p class="meta-row"><span class="meta-label">Models</span><span class="meta-sep">:</span> <span class="meta-value">MLP, Deep Sets, Interaction Network</span></p>
+</div>
+<h3>Keywords</h3>
+
+<div class="chips"><a class="chip chip-link" href="../#kw=jet%20classification">jet classification</a> <a class="chip chip-link" href="../#kw=FPGA">FPGA</a> <a class="chip chip-link" href="../#kw=quantization-aware%20training">quantization-aware training</a> <a class="chip chip-link" href="../#kw=Deep%20Sets">Deep Sets</a> <a class="chip chip-link" href="../#kw=Interaction%20Networks">Interaction Networks</a> </div>
+<h3>Citation</h3>
+
+<ul>
+<li>Patrick Odagiu, Zhiqiang Que, Javier Duarte, Johannes Haller, Gregor Kasieczka, Artur Lobanov, Vladimir Loncar, Wayne Luk, Jennifer Ngadiuba, Maurizio Pierini, Philipp Rincke, Arpita Seksaria, Sioni Summers, Andre Sznajder, Alexander Tapper, and Thea K. Aarrestad. Ultrafast jet classification on fpgas for the hl-lhc. 2024. URL: https://arxiv.org/abs/2402.01876, arXiv:2402.01876, doi:https://doi.org/10.1088/2632-2153/ad5f10.</li>
+</ul>
+<pre><code class="language-bibtex">@misc{odagiu2024ultrafastjetclassificationfpgas,
+  archiveprefix = {arXiv},
+  author        = {Patrick Odagiu and Zhiqiang Que and Javier Duarte and Johannes Haller and Gregor Kasieczka and Artur Lobanov and Vladimir Loncar and Wayne Luk and Jennifer Ngadiuba and Maurizio Pierini and Philipp Rincke and Arpita Seksaria and Sioni Summers and Andre Sznajder and Alexander Tapper and Thea K. Aarrestad},
+  doi           = {https://doi.org/10.1088/2632-2153/ad5f10},
+  eprint        = {2402.01876},
+  primaryclass  = {hep-ex},
+  title         = {Ultrafast jet classification on FPGAs for the HL-LHC},
+  url           = {https://arxiv.org/abs/2402.01876},
+  year          = {2024}
+}</code></pre>
+<h3>Ratings</h3>
+<div class="ratings-grid">
+  <div class="ratings-head ratings-cell"><span>Category</span><span>Rating</span></div>
+  <div class="rating-item">  <div class="rating-cat">Software</div>  <div class="rating-badge">3.00</div>  <div class="rating-bar"><span style="width:60%"></span></div>  <div class="rating-reason">Not containerized; Setup and automation incomplete
+</div></div><div class="rating-item">  <div class="rating-cat">Specification</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">Hardware constraints are referenced but not fully detailed or standardized
+</div></div><div class="rating-item">  <div class="rating-cat">Dataset</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">FAIR metadata limited; no clear mention of dataset format or splits
+</div></div><div class="rating-item">  <div class="rating-cat">Metrics</div>  <div class="rating-badge">3.00</div>  <div class="rating-bar"><span style="width:60%"></span></div>  <div class="rating-reason">Metrics exist (accuracy, latency, utilization), but formal definitions and evaluation guidance are limited
+</div></div><div class="rating-item">  <div class="rating-cat">Reference Solution</div>  <div class="rating-badge">2.00</div>  <div class="rating-bar"><span style="width:40%"></span></div>  <div class="rating-reason">Reference implementations not fully reproducible; no evaluation pipeline or training setup provided
+</div></div><div class="rating-item">  <div class="rating-cat">Documentation</div>  <div class="rating-badge">3.00</div>  <div class="rating-bar"><span style="width:60%"></span></div>  <div class="rating-reason">No linked GitHub repo or setup instructions; paper provides partial guidance only
+</div></div>
+</div>
+<div class="avg-rating">  <strong>Average rating:</strong> <span class="badge badge--meh badge--sm">3.17/5</span></div>
+<h3>Radar plot</h3>
+
+<div class="radar-wrap"><img class="radar-img" alt="Ultrafast jet classification at the HL-LHC radar" src="../../../tex/images/ultrafast_jet_classification_at_the_hl-lhc_radar.png" /></div>
+
 <p><strong>Edit:</strong> <a href="https://github.com/mlcommons-science/benchmark/tree/main/source">edit this entry</a></p>
-<p><strong>Date</strong>: 2024-07-08</p>
-<p><strong>Name</strong>: Ultrafast jet classification at the HL-LHC</p>
-<p><strong>Domain</strong>: Particle Physics</p>
-<p><strong>Focus</strong>: FPGA-optimized real-time jet origin classification at the HL-LHC</p>
-<p><strong>Keywords</strong>: jet classification, FPGA, quantization-aware training, Deep Sets, Interaction Networks</p>
-<p><strong>Task Types</strong>: Classification</p>
-<p><strong>Metrics</strong>: Accuracy, Latency, Resource utilization</p>
-<p><strong>Models</strong>: MLP, Deep Sets, Interaction Network</p>
-<p><strong>Citation</strong>:</p>
-<ul>
-<li>
-<p>Patrick Odagiu, Zhiqiang Que, Javier Duarte, Johannes Haller, Gregor Kasieczka, Artur Lobanov, Vladimir Loncar, Wayne Luk, Jennifer Ngadiuba, Maurizio Pierini, Philipp Rincke, Arpita Seksaria, Sioni Summers, Andre Sznajder, Alexander Tapper, and Thea K. Aarrestad. Ultrafast jet classification on fpgas for the hl-lhc. 2024. URL: https://arxiv.org/abs/2402.01876, arXiv:2402.01876, doi:https://doi.org/10.1088/2632-2153/ad5f10.</p>
-</li>
-<li>
-<p>bibtex:
-      ```
-      @misc{odagiu2024ultrafastjetclassificationfpgas,</p>
-<pre><code>archiveprefix = {arXiv},
-
-author        = {Patrick Odagiu and Zhiqiang Que and Javier Duarte and Johannes Haller and Gregor Kasieczka and Artur Lobanov and Vladimir Loncar and Wayne Luk and Jennifer Ngadiuba and Maurizio Pierini and Philipp Rincke and Arpita Seksaria and Sioni Summers and Andre Sznajder and Alexander Tapper and Thea K. Aarrestad},
-
-doi           = {https://doi.org/10.1088/2632-2153/ad5f10},
-
-eprint        = {2402.01876},
-
-primaryclass  = {hep-ex},
-
-title         = {Ultrafast jet classification on FPGAs for the HL-LHC},
-
-url           = {https://arxiv.org/abs/2402.01876},
-
-year          = {2024}
-</code></pre>
-<p>}</p>
-<p>```</p>
-</li>
-</ul>
-<p><strong>Ratings:</strong></p>
-<p>Software:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 3</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Not containerized; Setup and automation incomplete </p>
-</li>
-</ul>
-<p>Specification:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 4</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Hardware constraints are referenced but not fully detailed or standardized </p>
-</li>
-</ul>
-<p>Dataset:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 4</p>
-</li>
-<li>
-<p><strong>Reason:</strong> FAIR metadata limited; no clear mention of dataset format or splits </p>
-</li>
-</ul>
-<p>Metrics:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 3</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Metrics exist  accuracy, latency, utilization , but formal definitions and evaluation guidance are limited </p>
-</li>
-</ul>
-<p>Reference Solution:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 2</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Reference implementations not fully reproducible; no evaluation pipeline or training setup provided </p>
-</li>
-</ul>
-<p>Documentation:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 3</p>
-</li>
-<li>
-<p><strong>Reason:</strong> No linked GitHub repo or setup instructions; paper provides partial guidance only </p>
-</li>
-</ul>
-<p><strong>Average Rating:</strong> 3.167</p>
-<p><strong>Radar Plot:</strong>
- <img alt="Ultrafast Jet Classification At The Hl-Lhc radar plot" src="../../../tex/images/ultrafast_jet_classification_at_the_hl-lhc_radar.png" /></p>
 
 
 
@@ -492,6 +506,8 @@ year          = {2024}
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -529,10 +545,12 @@ year          = {2024}
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.search.highlight", "navigation.search.share", "navigation.search.suggest", "navigation.search.expand", "navigation.search.autocomplete"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.search.highlight", "navigation.search.share", "navigation.search.suggest", "navigation.search.expand", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../../assets/js/filters.js"></script>
       
     
   </body>

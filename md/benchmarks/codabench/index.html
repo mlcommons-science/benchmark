@@ -24,6 +24,9 @@
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -36,10 +39,12 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -51,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -100,6 +112,18 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -217,13 +241,32 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../benchmarks_table/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benchmarks (Table)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../" class="md-tabs__link">
         
   
   
     
   
-  Benchmarks
+  Benchmarks (Cards)
 
       </a>
     </li>
@@ -326,12 +369,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../benchmarks_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Benchmarks (Table)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Benchmarks
+    Benchmarks (Cards)
     
   </span>
   
@@ -379,110 +444,55 @@
 
 
 <h1 id="codabench">Codabench</h1>
+<p><a class="md-button back-link" href="../">← Back to all benchmarks</a></p>
+<div class="info-block meta-block">
+  <p class="meta-row"><span class="meta-label">Date</span><span class="meta-sep">:</span> <span class="meta-value">2022-01-01</span></p>
+  <p class="meta-row"><span class="meta-label">Name</span><span class="meta-sep">:</span> <span class="meta-value">Codabench</span></p>
+  <p class="meta-row"><span class="meta-label">Domain</span><span class="meta-sep">:</span> <span class="meta-value">General ML; Multiple</span></p>
+  <p class="meta-row"><span class="meta-label">Focus</span><span class="meta-sep">:</span> <span class="meta-value">Open-source platform for organizing reproducible AI benchmarks and competitions</span></p>
+  <p class="meta-row"><span class="meta-label">Task Types</span><span class="meta-sep">:</span> <span class="meta-value">Multiple</span></p>
+  <p class="meta-row"><span class="meta-label">Metrics</span><span class="meta-sep">:</span> <span class="meta-value">Submission count, Leaderboard ranking, Task-specific metrics</span></p>
+  <p class="meta-row"><span class="meta-label">Models</span><span class="meta-sep">:</span> <span class="meta-value">Arbitrary code submissions</span></p>
+</div>
+<h3>Keywords</h3>
+
+<div class="chips"><a class="chip chip-link" href="../#kw=benchmark%20platform">benchmark platform</a> <a class="chip chip-link" href="../#kw=code%20submission">code submission</a> <a class="chip chip-link" href="../#kw=competitions">competitions</a> <a class="chip chip-link" href="../#kw=meta-benchmark">meta-benchmark</a> </div>
+<h3>Citation</h3>
+
+<ul>
+<li>Zhen Xu, Sergio Escalera, Adrien Pavão, Magali Richard, Wei-Wei Tu, Quanming Yao, Huan Zhao, and Isabelle Guyon. Codabench: flexible, easy-to-use, and reproducible meta-benchmark platform. Patterns, 3(7):100543, July 2022. URL: http://dx.doi.org/10.1016/j.patter.2022.100543, doi:10.1016/j.patter.2022.100543.</li>
+</ul>
+<pre><code class="language-bibtex">@article{xu-2022,
+  author    = {Xu, Zhen and Escalera, Sergio and Pavão, Adrien and Richard, Magali and Tu, Wei-Wei and Yao, Quanming and Zhao, Huan and Guyon, Isabelle},
+  doi       = {10.1016/j.patter.2022.100543},
+  issn      = {2666-3899},
+  journal   = {Patterns},
+  month     = jul,
+  number    = {7},
+  pages     = {100543},
+  publisher = {Elsevier BV},
+  title     = {Codabench: Flexible, easy-to-use, and reproducible meta-benchmark platform},
+  url       = {http://dx.doi.org/10.1016/j.patter.2022.100543},
+  volume    = {3},
+  year      = {2022}
+}</code></pre>
+<h3>Ratings</h3>
+<div class="ratings-grid">
+  <div class="ratings-head ratings-cell"><span>Category</span><span>Rating</span></div>
+  <div class="rating-item">  <div class="rating-cat">Software</div>  <div class="rating-badge">1.00</div>  <div class="rating-bar"><span style="width:20%"></span></div>  <div class="rating-reason">This is a platform for posting benchmarks, not a benchmark in itself.
+</div></div><div class="rating-item">  <div class="rating-cat">Specification</div>  <div class="rating-badge">1.00</div>  <div class="rating-bar"><span style="width:20%"></span></div>  <div class="rating-reason">This is a platform for posting benchmarks, not a benchmark in itself.
+</div></div><div class="rating-item">  <div class="rating-cat">Dataset</div>  <div class="rating-badge">1.00</div>  <div class="rating-bar"><span style="width:20%"></span></div>  <div class="rating-reason">This is a platform for posting benchmarks, not a benchmark in itself.
+</div></div><div class="rating-item">  <div class="rating-cat">Metrics</div>  <div class="rating-badge">1.00</div>  <div class="rating-bar"><span style="width:20%"></span></div>  <div class="rating-reason">This is a platform for posting benchmarks, not a benchmark in itself.
+</div></div><div class="rating-item">  <div class="rating-cat">Reference Solution</div>  <div class="rating-badge">1.00</div>  <div class="rating-bar"><span style="width:20%"></span></div>  <div class="rating-reason">This is a platform for posting benchmarks, not a benchmark in itself.
+</div></div><div class="rating-item">  <div class="rating-cat">Documentation</div>  <div class="rating-badge">1.00</div>  <div class="rating-bar"><span style="width:20%"></span></div>  <div class="rating-reason">This is a platform for posting benchmarks, not a benchmark in itself.
+</div></div>
+</div>
+<div class="avg-rating">  <strong>Average rating:</strong> <span class="badge badge--bad badge--sm">1.00/5</span></div>
+<h3>Radar plot</h3>
+
+<div class="radar-wrap"><img class="radar-img" alt="Codabench radar" src="../../../tex/images/codabench_radar.png" /></div>
+
 <p><strong>Edit:</strong> <a href="https://github.com/mlcommons-science/benchmark/tree/main/source">edit this entry</a></p>
-<p><strong>Date</strong>: 2022-01-01</p>
-<p><strong>Name</strong>: Codabench</p>
-<p><strong>Domain</strong>: General ML; Multiple</p>
-<p><strong>Focus</strong>: Open-source platform for organizing reproducible AI benchmarks and competitions</p>
-<p><strong>Keywords</strong>: benchmark platform, code submission, competitions, meta-benchmark</p>
-<p><strong>Task Types</strong>: Multiple</p>
-<p><strong>Metrics</strong>: Submission count, Leaderboard ranking, Task-specific metrics</p>
-<p><strong>Models</strong>: Arbitrary code submissions</p>
-<p><strong>Citation</strong>:</p>
-<ul>
-<li>
-<p>Zhen Xu, Sergio Escalera, Adrien Pavão, Magali Richard, Wei-Wei Tu, Quanming Yao, Huan Zhao, and Isabelle Guyon. Codabench: flexible, easy-to-use, and reproducible meta-benchmark platform. Patterns, 3(7):100543, July 2022. URL: http://dx.doi.org/10.1016/j.patter.2022.100543, doi:10.1016/j.patter.2022.100543.</p>
-</li>
-<li>
-<p>bibtex:
-      ```
-      @article{xu-2022,</p>
-<pre><code>author    = {Xu, Zhen and Escalera, Sergio and Pavão, Adrien and Richard, Magali and Tu, Wei-Wei and Yao, Quanming and Zhao, Huan and Guyon, Isabelle},
-
-doi       = {10.1016/j.patter.2022.100543},
-
-issn      = {2666-3899},
-
-journal   = {Patterns},
-
-month     = jul,
-
-number    = {7},
-
-pages     = {100543},
-
-publisher = {Elsevier BV},
-
-title     = {Codabench: Flexible, easy-to-use, and reproducible meta-benchmark platform},
-
-url       = {http://dx.doi.org/10.1016/j.patter.2022.100543},
-
-volume    = {3},
-
-year      = {2022}
-</code></pre>
-<p>}</p>
-<p>```</p>
-</li>
-</ul>
-<p><strong>Ratings:</strong></p>
-<p>Software:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 1</p>
-</li>
-<li>
-<p><strong>Reason:</strong> This is a platform for posting benchmarks, not a benchmark in itself. </p>
-</li>
-</ul>
-<p>Specification:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 1</p>
-</li>
-<li>
-<p><strong>Reason:</strong> This is a platform for posting benchmarks, not a benchmark in itself. </p>
-</li>
-</ul>
-<p>Dataset:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 1</p>
-</li>
-<li>
-<p><strong>Reason:</strong> This is a platform for posting benchmarks, not a benchmark in itself. </p>
-</li>
-</ul>
-<p>Metrics:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 1</p>
-</li>
-<li>
-<p><strong>Reason:</strong> This is a platform for posting benchmarks, not a benchmark in itself. </p>
-</li>
-</ul>
-<p>Reference Solution:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 1</p>
-</li>
-<li>
-<p><strong>Reason:</strong> This is a platform for posting benchmarks, not a benchmark in itself. </p>
-</li>
-</ul>
-<p>Documentation:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 1</p>
-</li>
-<li>
-<p><strong>Reason:</strong> This is a platform for posting benchmarks, not a benchmark in itself. </p>
-</li>
-</ul>
-<p><strong>Average Rating:</strong> 1.0</p>
-<p><strong>Radar Plot:</strong>
- <img alt="Codabench radar plot" src="../../../tex/images/codabench_radar.png" /></p>
 
 
 
@@ -500,6 +510,8 @@ year      = {2022}
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -537,10 +549,12 @@ year      = {2022}
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.search.highlight", "navigation.search.share", "navigation.search.suggest", "navigation.search.expand", "navigation.search.autocomplete"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.search.highlight", "navigation.search.share", "navigation.search.suggest", "navigation.search.expand", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../../assets/js/filters.js"></script>
       
     
   </body>

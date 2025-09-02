@@ -24,6 +24,9 @@
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -36,10 +39,12 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -51,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -100,6 +112,18 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -217,13 +241,32 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../benchmarks_table/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benchmarks (Table)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../" class="md-tabs__link">
         
   
   
     
   
-  Benchmarks
+  Benchmarks (Cards)
 
       </a>
     </li>
@@ -326,12 +369,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../benchmarks_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Benchmarks (Table)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Benchmarks
+    Benchmarks (Cards)
     
   </span>
   
@@ -379,100 +444,57 @@
 
 
 <h1 id="calochallenge-2022">CaloChallenge 2022</h1>
+<p><a class="md-button back-link" href="../">← Back to all benchmarks</a></p>
+<div class="info-block meta-block">
+  <p class="meta-row"><span class="meta-label">Date</span><span class="meta-sep">:</span> <span class="meta-value">2024-10-28</span></p>
+  <p class="meta-row"><span class="meta-label">Name</span><span class="meta-sep">:</span> <span class="meta-value">CaloChallenge 2022</span></p>
+  <p class="meta-row"><span class="meta-label">Domain</span><span class="meta-sep">:</span> <span class="meta-value">LHC Calorimeter; Particle Physics</span></p>
+  <p class="meta-row"><span class="meta-label">Focus</span><span class="meta-sep">:</span> <span class="meta-value">Fast generative-model-based calorimeter shower simulation evaluation</span></p>
+  <p class="meta-row"><span class="meta-label">Task Types</span><span class="meta-sep">:</span> <span class="meta-value">Surrogate modeling</span></p>
+  <p class="meta-row"><span class="meta-label">Metrics</span><span class="meta-sep">:</span> <span class="meta-value">Histogram similarity, Classifier AUC, Generation latency</span></p>
+  <p class="meta-row"><span class="meta-label">Models</span><span class="meta-sep">:</span> <span class="meta-value">VAE variants, GAN variants, Normalizing flows, Diffusion models</span></p>
+</div>
+<h3>Keywords</h3>
+
+<div class="chips"><a class="chip chip-link" href="../#kw=calorimeter%20simulation">calorimeter simulation</a> <a class="chip chip-link" href="../#kw=generative%20models">generative models</a> <a class="chip chip-link" href="../#kw=surrogate%20modeling">surrogate modeling</a> <a class="chip chip-link" href="../#kw=LHC">LHC</a> <a class="chip chip-link" href="../#kw=fast%20simulation">fast simulation</a> </div>
+<h3>Citation</h3>
+
+<ul>
+<li>Claudius Krause, Michele Faucci Giannelli, Gregor Kasieczka, Benjamin Nachman, Dalila Salamani, David Shih, Anna Zaborowska, Oz Amram, Kerstin Borras, Matthew R. Buckley, Erik Buhmann, Thorsten Buss, Renato Paulo Da Costa Cardoso, Anthony L. Caterini, Nadezda Chernyavskaya, Federico A. G. Corchia, Jesse C. Cresswell, Sascha Diefenbacher, Etienne Dreyer, Vijay Ekambaram, Engin Eren, Florian Ernst, Luigi Favaro, Matteo Franchini, Frank Gaede, Eilam Gross, Shih-Chieh Hsu, Kristina Jaruskova, Benno Käch, Jayant Kalagnanam, Raghav Kansal, Taewoo Kim, Dmitrii Kobylianskii, Anatolii Korol, William Korcari, Dirk Krücker, Katja Krüger, Marco Letizia, Shu Li, Qibin Liu, Xiulong Liu, Gabriel Loaiza-Ganem, Thandikire Madula, Peter McKeown, Isabell-A. Melzer-Pellmann, Vinicius Mikuni, Nam Nguyen, Ayodele Ore, Sofia Palacios Schweitzer, Ian Pang, Kevin Pedro, Tilman Plehn, Witold Pokorski, Huilin Qu, Piyush Raikwar, John A. Raine, Humberto Reyes-Gonzalez, Lorenzo Rinaldi, Brendan Leigh Ross, Moritz A. W. Scham, Simon Schnake, Chase Shimmin, Eli Shlizerman, Nathalie Soybelman, Mudhakar Srivatsa, Kalliopi Tsolaki, Sofia Vallecorsa, Kyongmin Yeo, and Rui Zhang. Calochallenge 2022: a community challenge for fast calorimeter simulation. 2024. URL: https://arxiv.org/abs/2410.21611, arXiv:2410.21611.</li>
+</ul>
+<pre><code class="language-bibtex">@misc{krause2024calochallenge2022communitychallenge,
+  archiveprefix = {arXiv},
+  author        = {Claudius Krause and Michele Faucci Giannelli and Gregor Kasieczka and Benjamin Nachman and Dalila Salamani and David Shih and Anna Zaborowska and Oz Amram and Kerstin Borras and Matthew R. Buckley and Erik Buhmann and Thorsten Buss and Renato Paulo Da Costa Cardoso and Anthony L. Caterini and Nadezda Chernyavskaya and Federico A. G. Corchia and Jesse C. Cresswell and Sascha Diefenbacher and Etienne Dreyer and Vijay Ekambaram and Engin Eren and Florian Ernst and Luigi Favaro and Matteo Franchini and Frank Gaede and Eilam Gross and Shih-Chieh Hsu and Kristina Jaruskova and Benno Käch and Jayant Kalagnanam and Raghav Kansal and Taewoo Kim and Dmitrii Kobylianskii and Anatolii Korol and William Korcari and Dirk Krücker and Katja Krüger and Marco Letizia and Shu Li and Qibin Liu and Xiulong Liu and Gabriel Loaiza-Ganem and Thandikire Madula and Peter McKeown and Isabell-A. Melzer-Pellmann and Vinicius Mikuni and Nam Nguyen and Ayodele Ore and Sofia Palacios Schweitzer and Ian Pang and Kevin Pedro and Tilman Plehn and Witold Pokorski and Huilin Qu and Piyush Raikwar and John A. Raine and Humberto Reyes-Gonzalez and Lorenzo Rinaldi and Brendan Leigh Ross and Moritz A. W. Scham and Simon Schnake and Chase Shimmin and Eli Shlizerman and Nathalie Soybelman and Mudhakar Srivatsa and Kalliopi Tsolaki and Sofia Vallecorsa and Kyongmin Yeo and Rui Zhang},
+  eprint        = {2410.21611},
+  primaryclass  = {physics.ins-det},
+  title         = {CaloChallenge 2022: A Community Challenge for Fast Calorimeter Simulation},
+  url           = {https://arxiv.org/abs/2410.21611},
+  year          = {2024}
+}</code></pre>
+<h3>Ratings</h3>
+<div class="ratings-grid">
+  <div class="ratings-head ratings-cell"><span>Category</span><span>Rating</span></div>
+  <div class="rating-item">  <div class="rating-cat">Software</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">Community GitHub repos and model implementations are available for the 31 submissions.
+While not fully unified in one place, the software is accessible and reproducible.
+</div></div><div class="rating-item">  <div class="rating-cat">Specification</div>  <div class="rating-badge">5.00</div>  <div class="rating-bar"><span style="width:100%"></span></div>  <div class="rating-reason">The task—evaluating fast generative calorimeter simulations—is clearly defined with
+benchmarking protocols, constraints like latency and model complexity, and structured
+evaluation criteria.
+</div></div><div class="rating-item">  <div class="rating-cat">Dataset</div>  <div class="rating-badge">5.00</div>  <div class="rating-bar"><span style="width:100%"></span></div>  <div class="rating-reason">Four well-structured calorimeter datasets are provided, with different voxel resolutions,
+open access, signal/background separation, and metadata. FAIR principles are well covered.
+</div></div><div class="rating-item">  <div class="rating-cat">Metrics</div>  <div class="rating-badge">5.00</div>  <div class="rating-bar"><span style="width:100%"></span></div>  <div class="rating-reason">Metrics like histogram similarity, classifier AUC, and generation latency are well defined
+and relevant for simulation quality, fidelity, and performance.
+</div></div><div class="rating-item">  <div class="rating-cat">Reference Solution</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">Several baselines (GANs, VAEs, flows, diffusion models) are documented and evaluated.
+Some are available via community repos, though not all are fully standardized or bundled.
+</div></div><div class="rating-item">  <div class="rating-cat">Documentation</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">Accompanied by a detailed paper and dataset description. Reproduction of pipelines may require
+additional setup or familiarity with the model submissions.
+</div></div>
+</div>
+<div class="avg-rating">  <strong>Average rating:</strong> <span class="badge badge--ok badge--sm">4.50/5</span></div>
+<h3>Radar plot</h3>
+
+<div class="radar-wrap"><img class="radar-img" alt="CaloChallenge 2022 radar" src="../../../tex/images/calochallenge__radar.png" /></div>
+
 <p><strong>Edit:</strong> <a href="https://github.com/mlcommons-science/benchmark/tree/main/source">edit this entry</a></p>
-<p><strong>Date</strong>: 2024-10-28</p>
-<p><strong>Name</strong>: CaloChallenge 2022</p>
-<p><strong>Domain</strong>: LHC Calorimeter; Particle Physics</p>
-<p><strong>Focus</strong>: Fast generative-model-based calorimeter shower simulation evaluation</p>
-<p><strong>Keywords</strong>: calorimeter simulation, generative models, surrogate modeling, LHC, fast simulation</p>
-<p><strong>Task Types</strong>: Surrogate modeling</p>
-<p><strong>Metrics</strong>: Histogram similarity, Classifier AUC, Generation latency</p>
-<p><strong>Models</strong>: VAE variants, GAN variants, Normalizing flows, Diffusion models</p>
-<p><strong>Citation</strong>:</p>
-<ul>
-<li>
-<p>Claudius Krause, Michele Faucci Giannelli, Gregor Kasieczka, Benjamin Nachman, Dalila Salamani, David Shih, Anna Zaborowska, Oz Amram, Kerstin Borras, Matthew R. Buckley, Erik Buhmann, Thorsten Buss, Renato Paulo Da Costa Cardoso, Anthony L. Caterini, Nadezda Chernyavskaya, Federico A. G. Corchia, Jesse C. Cresswell, Sascha Diefenbacher, Etienne Dreyer, Vijay Ekambaram, Engin Eren, Florian Ernst, Luigi Favaro, Matteo Franchini, Frank Gaede, Eilam Gross, Shih-Chieh Hsu, Kristina Jaruskova, Benno Käch, Jayant Kalagnanam, Raghav Kansal, Taewoo Kim, Dmitrii Kobylianskii, Anatolii Korol, William Korcari, Dirk Krücker, Katja Krüger, Marco Letizia, Shu Li, Qibin Liu, Xiulong Liu, Gabriel Loaiza-Ganem, Thandikire Madula, Peter McKeown, Isabell-A. Melzer-Pellmann, Vinicius Mikuni, Nam Nguyen, Ayodele Ore, Sofia Palacios Schweitzer, Ian Pang, Kevin Pedro, Tilman Plehn, Witold Pokorski, Huilin Qu, Piyush Raikwar, John A. Raine, Humberto Reyes-Gonzalez, Lorenzo Rinaldi, Brendan Leigh Ross, Moritz A. W. Scham, Simon Schnake, Chase Shimmin, Eli Shlizerman, Nathalie Soybelman, Mudhakar Srivatsa, Kalliopi Tsolaki, Sofia Vallecorsa, Kyongmin Yeo, and Rui Zhang. Calochallenge 2022: a community challenge for fast calorimeter simulation. 2024. URL: https://arxiv.org/abs/2410.21611, arXiv:2410.21611.</p>
-</li>
-<li>
-<p>bibtex:
-      ```
-      @misc{krause2024calochallenge2022communitychallenge,</p>
-<pre><code>archiveprefix = {arXiv},
-
-author        = {Claudius Krause and Michele Faucci Giannelli and Gregor Kasieczka and Benjamin Nachman and Dalila Salamani and David Shih and Anna Zaborowska and Oz Amram and Kerstin Borras and Matthew R. Buckley and Erik Buhmann and Thorsten Buss and Renato Paulo Da Costa Cardoso and Anthony L. Caterini and Nadezda Chernyavskaya and Federico A. G. Corchia and Jesse C. Cresswell and Sascha Diefenbacher and Etienne Dreyer and Vijay Ekambaram and Engin Eren and Florian Ernst and Luigi Favaro and Matteo Franchini and Frank Gaede and Eilam Gross and Shih-Chieh Hsu and Kristina Jaruskova and Benno Käch and Jayant Kalagnanam and Raghav Kansal and Taewoo Kim and Dmitrii Kobylianskii and Anatolii Korol and William Korcari and Dirk Krücker and Katja Krüger and Marco Letizia and Shu Li and Qibin Liu and Xiulong Liu and Gabriel Loaiza-Ganem and Thandikire Madula and Peter McKeown and Isabell-A. Melzer-Pellmann and Vinicius Mikuni and Nam Nguyen and Ayodele Ore and Sofia Palacios Schweitzer and Ian Pang and Kevin Pedro and Tilman Plehn and Witold Pokorski and Huilin Qu and Piyush Raikwar and John A. Raine and Humberto Reyes-Gonzalez and Lorenzo Rinaldi and Brendan Leigh Ross and Moritz A. W. Scham and Simon Schnake and Chase Shimmin and Eli Shlizerman and Nathalie Soybelman and Mudhakar Srivatsa and Kalliopi Tsolaki and Sofia Vallecorsa and Kyongmin Yeo and Rui Zhang},
-
-eprint        = {2410.21611},
-
-primaryclass  = {physics.ins-det},
-
-title         = {CaloChallenge 2022: A Community Challenge for Fast Calorimeter Simulation},
-
-url           = {https://arxiv.org/abs/2410.21611},
-
-year          = {2024}
-</code></pre>
-<p>}</p>
-<p>```</p>
-</li>
-</ul>
-<p><strong>Ratings:</strong></p>
-<p>Software:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 4</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Community GitHub repos and model implementations are available for the 31 submissions. While not fully unified in one place, the software is accessible and reproducible. </p>
-</li>
-</ul>
-<p>Specification:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 5</p>
-</li>
-<li>
-<p><strong>Reason:</strong> The task—evaluating fast generative calorimeter simulations—is clearly defined with benchmarking protocols, constraints like latency and model complexity, and structured evaluation criteria. </p>
-</li>
-</ul>
-<p>Dataset:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 5</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Four well-structured calorimeter datasets are provided, with different voxel resolutions, open access, signal/background separation, and metadata. FAIR principles are well covered. </p>
-</li>
-</ul>
-<p>Metrics:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 5</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Metrics like histogram similarity, classifier AUC, and generation latency are well defined and relevant for simulation quality, fidelity, and performance. </p>
-</li>
-</ul>
-<p>Reference Solution:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 4</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Several baselines  GANs, VAEs, flows, diffusion models  are documented and evaluated. Some are available via community repos, though not all are fully standardized or bundled. </p>
-</li>
-</ul>
-<p>Documentation:</p>
-<ul>
-<li>
-<p><strong>Rating:</strong> 4</p>
-</li>
-<li>
-<p><strong>Reason:</strong> Accompanied by a detailed paper and dataset description. Reproduction of pipelines may require additional setup or familiarity with the model submissions. </p>
-</li>
-</ul>
-<p><strong>Average Rating:</strong> 4.5</p>
-<p><strong>Radar Plot:</strong>
- <img alt="Calochallenge  radar plot" src="../../../tex/images/calochallenge__radar.png" /></p>
 
 
 
@@ -490,6 +512,8 @@ year          = {2024}
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -527,10 +551,12 @@ year          = {2024}
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.search.highlight", "navigation.search.share", "navigation.search.suggest", "navigation.search.expand", "navigation.search.autocomplete"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.search.highlight", "navigation.search.share", "navigation.search.suggest", "navigation.search.expand", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../../assets/js/filters.js"></script>
       
     
   </body>

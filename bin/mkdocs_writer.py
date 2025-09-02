@@ -529,7 +529,7 @@ class MkdocsWriter:
             index_lines.append(self._index_card_html(entry, ratings_avg))
 
         index_lines.append(self._index_footer_html(filters_js_src))
-        index_filename = os.path.join(output_dir, "index.md")
+        index_filename = os.path.join(output_dir, "cards.md")
         write_to_file(content="".join(index_lines), filename=index_filename)
     
     def write_table(
@@ -626,3 +626,40 @@ class MkdocsWriter:
         contents = section + header + divider + current_contents
 
         write_to_file(content=contents, filename=filename)
+
+    def write_index_md(
+        self,
+        output_dir: str = "content/md/benchmarks",
+        *,
+        title: str = "Index of Benchmarks",
+        detail_base: str = ".",       # where detail pages live relative to this index
+        sort_by: str = "name",        # "name" | "id" | None
+    ) -> None:
+        """
+        Writes ONLY an index file listing all benchmarks as links to their detail pages.
+        """
+        os.makedirs(output_dir, exist_ok=True)
+        index_filename = os.path.join(output_dir, "index.md")
+
+        # Prepare items (id, name)
+        items = []
+        for i, entry in enumerate(self.entries):
+            id_ = str(entry.get("id", f"entry-{i}")).strip()
+            name = str(entry.get("name", id_)).strip()
+            items.append((id_, name))
+
+        # Optional stable sort (case-insensitive)
+        if sort_by in {"name", "id"}:
+            idx = 1 if sort_by == "name" else 0
+            items.sort(key=lambda t: (t[idx] or "").lower())
+
+        # Build content
+        lines = []
+        lines.append(f"# {title}\n")
+        lines.append("\n")
+
+        for id_, name in items:
+            href = os.path.normpath(f"{detail_base}/{id_}").replace("\\", "/") + ".md"
+            lines.append(f"- [{name}]({href})\n")
+
+        write_to_file(content="".join(lines), filename=index_filename)

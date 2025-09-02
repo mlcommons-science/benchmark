@@ -41,5 +41,6 @@ markdown_extensions:
 nav:
   - index.md
   - Report: benchmarks.pdf
-  - Benchmarks (Table): md/benchmarks_table.md
-  - Benchmarks (Cards): md/benchmarks/index.md
+  - List: md/benchmarks/index.md
+  - Table: md/benchmarks_table.md
+  - Cards: md/benchmarks/cards.md

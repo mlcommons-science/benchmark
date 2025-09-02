@@ -466,7 +466,7 @@ class GenerateLatex:
 
         values += values[:1]  # close the radar loop
 
-        print("Values", values)
+        # print("Values", values)
 
         angles = np.linspace(0, 2 * np.pi, len(labels), endpoint=False).tolist()
         angles += angles[:1]

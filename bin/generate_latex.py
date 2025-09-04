@@ -21,7 +21,8 @@ VERBOSE = True
 
 # --- Constants ---
 
-LATEX_PREFIX = textwrap.dedent(r"""
+LATEX_PREFIX = textwrap.dedent(
+    r"""
     \documentclass[10pt]{article}
     \usepackage{fullpage}
     \usepackage{makecell}
@@ -38,16 +39,18 @@ LATEX_PREFIX = textwrap.dedent(r"""
     \usepackage{graphicx}
     \graphicspath{{images/}}
     
-
-    \usepackage[utf8]{inputenc}
-    \usepackage[T1]{fontenc}
-   
+    
     \usepackage{textcomp}
     \usepackage{amssymb}
     \usepackage{eurosym} 
     \usepackage{pifont} 
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+   
+                               
     \DeclareUnicodeCharacter{0394}{\Delta}
 
+                               
     \tolerance=10000
     \hfuzz=100pt
     \emergencystretch=3em
@@ -96,7 +99,8 @@ LATEX_PREFIX = textwrap.dedent(r"""
     \clearpage
     \tableofcontents
     \clearpage
-    """)
+    """
+)
 
 LATEX_POSTFIX = textwrap.dedent(
     r"""
@@ -494,7 +498,6 @@ class GenerateLatex:
         plt.close(fig)
 
         Console.ok(f"Saved radar chart for '{name}' as '{filename}'.")
-
 
     # def _generate_single_radar_chart(
     #     self, name, id, ratings, fmt, output_dir, font_size

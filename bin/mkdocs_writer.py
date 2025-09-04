@@ -770,12 +770,12 @@ class MkdocsWriter:
 
             current_contents += row + "\n"
         current_contents = current_contents.strip()
-        # current_contents += "\n"
+        current_contents += "\n\n"
         footnote_contents = ""
         for i, citation in enumerate(footnotes):
             footnote_contents += f"[^{i + 1}]: {citation}\n" if citation else ""
 
-        contents = section + header + divider + current_contents
+        contents = section + header + divider + current_contents + footnote_contents
 
         # contents = (
         #     section

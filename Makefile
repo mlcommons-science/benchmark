@@ -78,15 +78,14 @@ mkdocs:
 	python ${SCRIPT} --files=${FILES}  --format=mkdocs --outdir=./content --columns ${COLUMNS}
 	mkdir -p ${DOCS}/tex/images
 	mkdir -p ${DOCS}/md
-	mkdir -p ${DOCS}/assets
-	mkdir -p ${WWW}/site/assets
+	mkdir -p ${DOCS}
+	mkdir -p ${WWW}
 	
 	cp -r content/md ${DOCS}
 	cp -r content/tex ${DOCS}
-	cp -r content/assets ${DOCS}
+	cp -r content/assets/* ${DOCS}
 	cp content/mkdocs.yml ${WWW}
 
-	cp -r content/assets ${WWW}/site
 	cp source/index.md ${DOCS}/index.md
 	cp content/tex/benchmarks.pdf ${DOCS}/benchmarks.pdf
 	$(call BANNER, "CLEAN LaTeX")

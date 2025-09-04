@@ -39,6 +39,7 @@ _HARDCODED_DETAIL_FIELDS: List[str] = [
 
 # ------------------------------- utilities -----------------------------------
 
+
 def _nonempty(v: Any) -> bool:
     """Return True if v is a meaningful value for rendering/filtering."""
     return not (v is None or v == "" or v == [])
@@ -99,7 +100,9 @@ def _bibtex_to_text(entry: str) -> str:
     """
     try:
         if not isinstance(entry, str):
-            raise TypeError(f"Expected string for BibTeX entry, got {type(entry).__name__}")
+            raise TypeError(
+                f"Expected string for BibTeX entry, got {type(entry).__name__}"
+            )
         bib_data = parse_string(entry, bib_format="bibtex")
         style = find_plugin("pybtex.style.formatting", "plain")()
         formatted = next(style.format_entries(bib_data.entries.values()))
@@ -108,7 +111,9 @@ def _bibtex_to_text(entry: str) -> str:
         return f"Could not parse citation: {e}"
 
 
-def _collect_ratings(entry: Dict[str, Any]) -> Tuple[List[Tuple[str, Dict[str, Any]]], float, int]:
+def _collect_ratings(
+    entry: Dict[str, Any],
+) -> Tuple[List[Tuple[str, Dict[str, Any]]], float, int]:
     """
     Collect ratings.*.{rating,reason} grouped by category.
     Returns:
@@ -127,8 +132,17 @@ def _collect_ratings(entry: Dict[str, Any]) -> Tuple[List[Tuple[str, Dict[str, A
         cat, kind = m.group(1), m.group(2)
         groups.setdefault(cat, {})[kind] = v
 
-    preferred = ["software", "specification", "dataset", "metrics", "reference_solution", "documentation"]
-    ordered_keys = [k for k in preferred if k in groups] + sorted([k for k in groups.keys() if k not in preferred])
+    preferred = [
+        "software",
+        "specification",
+        "dataset",
+        "metrics",
+        "reference_solution",
+        "documentation",
+    ]
+    ordered_keys = [k for k in preferred if k in groups] + sorted(
+        [k for k in groups.keys() if k not in preferred]
+    )
 
     items: List[Tuple[str, Dict[str, Any]]] = [(k, groups[k]) for k in ordered_keys]
 
@@ -164,6 +178,7 @@ def _requested_rating_aspects(columns: List[str]) -> Dict[str, set]:
 
 # ------------------------------- main writer ---------------------------------
 
+
 class MkdocsWriter:
     """
     Writes:
@@ -171,11 +186,17 @@ class MkdocsWriter:
       - one HTML-rich detail page per entry ({id}.md).
     """
 
-    def __init__(self, entries: List[Dict[str, Any]], raw_entries: List[Dict[str, Any]] | None = None, *, use_directory_urls: bool = True):
+    def __init__(
+        self,
+        entries: List[Dict[str, Any]],
+        raw_entries: List[Dict[str, Any]] | None = None,
+        *,
+        use_directory_urls: bool = True,
+    ):
         self.entries = entries
         self.raw_entries = raw_entries
         self.use_directory_urls = use_directory_urls
-    
+
     # ----------------------- md table utilities ------------------------------
     def _escape_md(self, text) -> str:
         if not isinstance(text, str):
@@ -225,9 +246,9 @@ class MkdocsWriter:
             '  <option value="date_asc">Sort: Date ↑</option>\n'
             '  <option value="name_asc">Sort: Name A–Z</option>\n'
             '  <option value="rating_desc">Sort: Rating ↓</option>\n'
-            '</select>\n'
+            "</select>\n"
             '<button id="f_reset" type="button">Reset</button>\n'
-            '</div>\n\n'
+            "</div>\n\n"
             '<div id="cards-root" class="grid cards">\n'
         )
 
@@ -236,11 +257,16 @@ class MkdocsWriter:
         Close the cards container and (optionally) include your filters.js.
         If you manage JS via theme, pass filters_js_src=None.
         """
-        script = f'\n<script src="{_esc(filters_js_src)}"></script>\n' if filters_js_src else ""
+        script = (
+            f'\n<script src="{_esc(filters_js_src)}"></script>\n'
+            if filters_js_src
+            else ""
+        )
         return "</div>\n" + script
-    
+
     def _rating_badge(self, avg, size="sm"):
-        if avg is None: return ""
+        if avg is None:
+            return ""
         color = "ok" if avg >= 4 else "meh" if avg >= 3 else "bad"
         return f'<span class="badge badge--{color} badge--{size}">{avg:.2f}/5</span>'
 
@@ -283,7 +309,7 @@ class MkdocsWriter:
             rating_val = None if ratings_avg is None else float(ratings_avg)
         except (TypeError, ValueError):
             rating_val = None
-        
+
         rating_str = f"{rating_val:.2f}" if rating_val is not None else ""
         badge_html = self._rating_badge(rating_val)  # DO NOT _esc()
 
@@ -319,7 +345,11 @@ class MkdocsWriter:
             if not _nonempty(val):
                 continue
             label = _esc(_col_label(key))
-            value = _esc(", ".join(map(str, _listify(val))) if isinstance(val, (list, tuple)) else _val_to_str(val))
+            value = _esc(
+                ", ".join(map(str, _listify(val)))
+                if isinstance(val, (list, tuple))
+                else _val_to_str(val)
+            )
             rows.append(
                 f'  <p class="meta-row"><span class="meta-label">{label}</span>'
                 f'<span class="meta-sep">:</span> <span class="meta-value">{value}</span></p>\n'
@@ -332,10 +362,12 @@ class MkdocsWriter:
         kws = _listify(entry.get("keywords"))
         if not kws:
             return ""
-        out = ["<h3>Keywords</h3>\n\n<div class=\"chips\">"]
+        out = ['<h3>Keywords</h3>\n\n<div class="chips">']
         for kw in kws:
             safe = _esc(str(kw).strip().replace('"', "").replace("'", ""))
-            safe_href = f"{link_base}kw={quote(kw.strip())}"  # e.g. ./#kw=long%20context
+            safe_href = (
+                f"{link_base}kw={quote(kw.strip())}"  # e.g. ./#kw=long%20context
+            )
             out.append(f'<a class="chip chip-link" href="{safe_href}">{safe}</a> ')
         out.append("</div>\n")
         return "".join(out)
@@ -355,17 +387,21 @@ class MkdocsWriter:
                 )
                 continue
             out.append(f"- {html.escape(_bibtex_to_text(bib))}\n\n")
-            out.append("<pre><code class=\"language-bibtex\">")
+            out.append('<pre><code class="language-bibtex">')
             out.append(html.escape(bib.strip()))
             out.append("</code></pre>\n")
         return "".join(out)
 
-    def _ratings_html(self, entry: Dict[str, Any], columns: List[str]) -> Tuple[str, float | None]:
+    def _ratings_html(
+        self, entry: Dict[str, Any], columns: List[str]
+    ) -> Tuple[str, float | None]:
         """
         Render ratings as a compact, comparable grid (badge + bar + reason).
         Shows only aspects requested in `columns`. Average = sum/count of present numeric ratings.
         """
-        requested = _requested_rating_aspects(columns)  # {"software":{"rating","reason"}, ...}
+        requested = _requested_rating_aspects(
+            columns
+        )  # {"software":{"rating","reason"}, ...}
         items, s, c = _collect_ratings(entry)
         if not items:
             return "", None
@@ -404,7 +440,11 @@ class MkdocsWriter:
                 f'  <div class="rating-cat">{_esc(cat.replace("_", " ").title())}</div>'
                 f'  <div class="rating-badge">{_esc(r_str)}</div>'
                 f'  <div class="rating-bar"><span style="width:{width_pct}%"></span></div>'
-                + (f'  <div class="rating-reason">{_esc(reason)}</div>' if _nonempty(reason) else '')
+                + (
+                    f'  <div class="rating-reason">{_esc(reason)}</div>'
+                    if _nonempty(reason)
+                    else ""
+                )
                 + "</div>"
             )
 
@@ -430,18 +470,26 @@ class MkdocsWriter:
         """
         out: List[str] = []
         for col in columns:
-            if col in _HARDCODED_DETAIL_FIELDS or col == 'keywords' or col == "cite" or col.startswith("ratings."):
+            if (
+                col in _HARDCODED_DETAIL_FIELDS
+                or col == "keywords"
+                or col == "cite"
+                or col.startswith("ratings.")
+            ):
                 continue
             if col not in ALL_COLUMNS:
                 continue
             val = entry.get(col)
             if not _nonempty(val):
                 continue
-            out.append(f"<p><strong>{_esc(_col_label(col))}</strong>: {_esc(_val_to_str(val))}</p>\n")
+            out.append(
+                f"<p><strong>{_esc(_col_label(col))}</strong>: {_esc(_val_to_str(val))}</p>\n"
+            )
         return "".join(out)
 
-
-    def _detail_page_html(self, entry: Dict[str, Any], columns: List[str], average_ratings: bool) -> str:
+    def _detail_page_html(
+        self, entry: Dict[str, Any], columns: List[str], average_ratings: bool
+    ) -> str:
         """Compose one detail page as Markdown+HTML mix (works well in MkDocs)."""
         name = entry.get("name", entry.get("id", ""))
         id_ = entry.get("id", "")
@@ -451,7 +499,9 @@ class MkdocsWriter:
         parts.append(f"# {_esc(name)}\n")
 
         # Back link
-        parts.append('\n<p><a class="md-button back-link" href="../">← Back to all benchmarks</a></p>\n')
+        parts.append(
+            '\n<p><a class="md-button back-link" href="../">← Back to all benchmarks</a></p>\n'
+        )
 
         # Meta subset
         parts.append(self._meta_block_html(entry))
@@ -473,8 +523,9 @@ class MkdocsWriter:
         if average_ratings and ratings_avg is not None:
             parts.append(
                 '<div class="avg-rating">'
-                '  <strong>Average rating:</strong> ' + self._rating_badge(ratings_avg) +
-                '</div>'
+                "  <strong>Average rating:</strong> "
+                + self._rating_badge(ratings_avg)
+                + "</div>"
             )
 
         # Radar image (correct relative path from content/md/benchmarks/{id}.md)
@@ -486,7 +537,7 @@ class MkdocsWriter:
 
         # Edit link
         parts.append(
-            '\n<p><strong>Edit:</strong> '
+            "\n<p><strong>Edit:</strong> "
             '<a href="https://github.com/mlcommons-science/benchmark/tree/main/source">'
             "edit this entry</a></p>\n"
         )
@@ -499,10 +550,12 @@ class MkdocsWriter:
         self,
         output_dir: str = "content/md/benchmarks",
         columns: List[str] = DEFAULT_COLUMNS,
-        author_trunc: int | None = None,   # API parity (unused)
+        author_trunc: int | None = None,  # API parity (unused)
         average_ratings: bool = True,
         *,
-        filters_js_src: str | None = None,  # optionally inject <script src="..."></script> into index.md
+        filters_js_src: (
+            str | None
+        ) = None,  # optionally inject <script src="..."></script> into index.md
     ) -> None:
         """
         Write:
@@ -532,8 +585,6 @@ class MkdocsWriter:
         index_lines.append(self._index_footer_html(filters_js_src))
         index_filename = os.path.join(output_dir, "cards.md")
         write_to_file(content="".join(index_lines), filename=index_filename)
-    
-
 
     def write_table(
         self,
@@ -546,9 +597,15 @@ class MkdocsWriter:
           - index.md with a plain md table of all entries
         """
         headline = "# Benchmarks (Table)\n\n"
-        table_start = "<div class=\"page-data-table\">"
-        table_end = textwrap.dedent("""
+        table_start = '<div class="page-data-table">\n'
+        table_end = textwrap.dedent(
+            """
             </div>
+            """
+        )
+
+        table_script = textwrap.dedent(
+            """
 
             <script>
             $(document).ready(function() {
@@ -563,8 +620,8 @@ class MkdocsWriter:
             }
             });
             </script>
-            """)
-        
+            """
+        )
 
         col_labels = []
         col_widths = []
@@ -642,19 +699,24 @@ class MkdocsWriter:
                 row += str(round(ratings_average, 3)) + " |"
 
             current_contents += row + "\n"
-
-        current_contents += "\n"
+        current_contents = current_contents.strip()
+        # current_contents += "\n"
+        footnote_contents = ""
         for i, citation in enumerate(footnotes):
-            current_contents += f"[^{i + 1}]: {citation}\n" if citation else ""
+            footnote_contents += f"[^{i + 1}]: {citation}\n" if citation else ""
+
 
         # contents = section + header + divider + current_contents
-        contents = \
-            section + \
-            table_start + \
-            header + \
-            divider + \
-            current_contents + \
-            table_end
+        contents = (
+            section
+            + table_start
+            + header
+            + divider
+            + current_contents
+            + table_end
+            + footnote_contents
+            + table_script
+        )
 
         write_to_file(content=contents, filename=filename)
 
@@ -663,8 +725,8 @@ class MkdocsWriter:
         output_dir: str = "content/md/benchmarks",
         *,
         title: str = "Index of Benchmarks",
-        detail_base: str = ".",       # where detail pages live relative to this index
-        sort_by: str = "name",        # "name" | "id" | None
+        detail_base: str = ".",  # where detail pages live relative to this index
+        sort_by: str = "name",  # "name" | "id" | None
     ) -> None:
         """
         Writes ONLY an index file listing all benchmarks as links to their detail pages.

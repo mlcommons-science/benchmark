@@ -28,15 +28,15 @@ theme:
     - content.tabs.link
 
 extra_css:
-  - assets/css//jquery.dataTables.min.css
-  - assets/css//fixedColumns.dataTables.min.css
-  - assets/css/custom.css
+  - css/jquery.dataTables.min.css
+  - css/fixedColumns.dataTables.min.css
+  - css/custom.css
 
 extra_javascript:
-  - assets/js/filters.js
-  - assets/js/jquery-3.7.1.min.js
-  - assets/js/jquery.dataTables.min.js
-  - assets/js/dataTables.fixedColumns.min.js
+  - js/filters.js
+  - js/jquery-3.7.1.min.js
+  - js/jquery.dataTables.min.js
+  - js/dataTables.fixedColumns.min.js
 
 
 # enable niceties used by the cleaner layout

@@ -12,6 +12,7 @@ import html
 import os
 import re
 import sys
+import textwrap
 from typing import Any, Dict, List, Tuple
 from urllib.parse import quote
 
@@ -532,6 +533,8 @@ class MkdocsWriter:
         index_filename = os.path.join(output_dir, "cards.md")
         write_to_file(content="".join(index_lines), filename=index_filename)
     
+
+
     def write_table(
         self,
         filename="content/md/benchmarks_table.md",
@@ -542,6 +545,27 @@ class MkdocsWriter:
         Write:
           - index.md with a plain md table of all entries
         """
+        headline = "# Benchmarks (Table)\n\n"
+        table_start = "<div class=\"page-data-table\">"
+        table_end = textwrap.dedent("""
+            </div>
+
+            <script>
+            $(document).ready(function() {
+            if ($('.page-data-table table').length) {
+                $('.page-data-table table').DataTable({
+                scrollX: true,
+                fixedColumns: {
+                    left: 2
+                },
+                ordering: true
+                });
+            }
+            });
+            </script>
+            """)
+        
+
         col_labels = []
         col_widths = []
 
@@ -549,7 +573,7 @@ class MkdocsWriter:
             col_labels.append(self._colunm_label(col))
             col_widths.append(self._column_width_str(col))
 
-        section = '<div id="bench-table-page"></div>\n\n# Benchmarks (Table)\n\n'
+        section = f'<div id="bench-table-page"></div>\n\n{headline}'
         header = " | " + " | ".join(col_labels) + " | "
         if average_ratings:
             header += " Average Ratings "
@@ -623,7 +647,14 @@ class MkdocsWriter:
         for i, citation in enumerate(footnotes):
             current_contents += f"[^{i + 1}]: {citation}\n" if citation else ""
 
-        contents = section + header + divider + current_contents
+        # contents = section + header + divider + current_contents
+        contents = \
+            section + \
+            table_start + \
+            header + \
+            divider + \
+            current_contents + \
+            table_end
 
         write_to_file(content=contents, filename=filename)
 

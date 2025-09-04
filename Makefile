@@ -79,10 +79,14 @@ mkdocs:
 	mkdir -p ${DOCS}/tex/images
 	mkdir -p ${DOCS}/md
 	mkdir -p ${DOCS}/assets
+	mkdir -p ${WWW}/site/assets
+	
 	cp -r content/md ${DOCS}
 	cp -r content/tex ${DOCS}
 	cp -r content/assets ${DOCS}
 	cp content/mkdocs.yml ${WWW}
+
+	cp -r content/assets ${WWW}/site
 	cp source/index.md ${DOCS}/index.md
 	cp content/tex/benchmarks.pdf ${DOCS}/benchmarks.pdf
 	$(call BANNER, "CLEAN LaTeX")

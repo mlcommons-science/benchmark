@@ -1008,7 +1008,7 @@
     metrics:
       rating: 5
       reason: |
-        Uses numerical metrics like MAE and R^2
+        Uses numerical metrics like MAE and $R^2$
     reference_solution:
       rating: 2
       reason: |

@@ -24,7 +24,11 @@ VERBOSE = True
 LATEX_PREFIX = textwrap.dedent(
     r"""
     \documentclass[10pt]{article}
+
     \usepackage{fullpage}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    
     \usepackage{makecell}
     \usepackage{enumitem}
     \usepackage{hyperref}
@@ -44,8 +48,6 @@ LATEX_PREFIX = textwrap.dedent(
     \usepackage{amssymb}
     \usepackage{eurosym} 
     \usepackage{pifont} 
-    \usepackage[utf8]{inputenc}
-    \usepackage[T1]{fontenc}
    
                                
     \DeclareUnicodeCharacter{0394}{\Delta}

@@ -37,6 +37,7 @@ extra_javascript:
   - js/jquery-3.7.1.min.js
   - js/jquery.dataTables.min.js
   - js/dataTables.fixedColumns.min.js
+  - javascripts/datatable-init.js
 
 
 # enable niceties used by the cleaner layout

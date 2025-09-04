@@ -586,6 +586,76 @@ class MkdocsWriter:
         index_filename = os.path.join(output_dir, "cards.md")
         write_to_file(content="".join(index_lines), filename=index_filename)
 
+    def write_table_new(
+        self,
+        filename="content/md/benchmarks_table.md",
+        columns=DEFAULT_COLUMNS,
+        average_ratings: bool = True,
+    ) -> None:
+        # ... (existing code)
+
+        # New section for HTML table generation
+        html_table = f'<table id="benchmarksTable" class="display">\n'
+
+        # Generate the table header (<thead>)
+        html_table += "<thead>\n<tr>"
+        for col in columns:
+            html_table += f"<th>{self._colunm_label(col)}</th>"
+        if average_ratings:
+            html_table += "<th>Average Ratings</th>"
+        html_table += "</tr>\n</thead>\n"
+
+        # Generate the table body (<tbody>)
+        html_table += "<tbody>\n"
+        for entry in self.entries:
+            html_table += "<tr>"
+            ratings_average = 0
+
+            for col in columns:
+                val = entry.get(col, "")
+
+                # Simplified logic for creating HTML cells
+                cell_content = ""
+                if col == "name":
+                    title = self._escape_md(str(val))
+                    id_ = str(entry.get("id", "")).strip()
+                    if id_:
+                        target_md = f"benchmarks/{quote(id_)}.md"
+                        cell_content = f"<a href='{target_md}'>{title}</a>"
+                    else:
+                        cell_content = title
+                elif col == "cite":
+                    # Handle citations and footnotes in a more robust way
+                    # (You might need a separate function for this)
+                    citation_refs = []
+                    # ... (citation logic)
+                    cell_content = ", ".join(citation_refs)
+                elif isinstance(val, list):
+                    cell_content = ", ".join(map(self._escape_md, val))
+                else:
+                    if col.endswith("rating"):
+                        try:
+                            ratings_average += float(val)
+                        except ValueError:
+                            Console.error(f'Rating entry "{val}" must be a number')
+                    cell_content = self._escape_md(str(val))
+
+                html_table += f"<td>{cell_content}</td>"
+
+            # Add average rating column
+            if average_ratings:
+                avg_rating = round(ratings_average / 6, 3) if 6 > 0 else 0
+                html_table += f"<td>{avg_rating}</td>"
+
+            html_table += "</tr>\n"
+
+        html_table += "</tbody>\n</table>\n"
+
+        # Construct the final content with the HTML table
+        contents = html_table  # + footnote_contents + table_script
+
+        write_to_file(content=contents, filename=filename)
+
     def write_table(
         self,
         filename="content/md/benchmarks_table.md",
@@ -705,18 +775,18 @@ class MkdocsWriter:
         for i, citation in enumerate(footnotes):
             footnote_contents += f"[^{i + 1}]: {citation}\n" if citation else ""
 
+        contents = section + header + divider + current_contents
 
-        # contents = section + header + divider + current_contents
-        contents = (
-            section
-            + table_start
-            + header
-            + divider
-            + current_contents
-            + table_end
-            + footnote_contents
-            + table_script
-        )
+        # contents = (
+        #     section
+        #     + table_start
+        #     + header
+        #     + divider
+        #     + current_contents
+        #     + table_end
+        #     + footnote_contents
+        #     + table_script
+        # )
 
         write_to_file(content=contents, filename=filename)
 

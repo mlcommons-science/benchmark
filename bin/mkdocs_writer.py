@@ -203,7 +203,7 @@ class MkdocsWriter:
             text = str(text)
         return text.replace("|", "\\|").replace("\n", " ")
 
-    def _colunm_label(self, col):
+    def _column_label(self, col):
         if col not in ALL_COLUMNS:
             Console.error(f"Column '{col}' is not a valid column name.")
             sys.exit(1)
@@ -593,31 +593,162 @@ class MkdocsWriter:
         average_ratings: bool = True,
     ) -> None:
         """
-        Write an HTML table compatible with DataTables.
+        Write a benchmarks table as an HTML table with optional average ratings and citations.
         """
         import textwrap
         from urllib.parse import quote
 
-        # Build table headers
-        col_labels = [self._colunm_label(col) for col in columns]
-        if average_ratings:
-            col_labels.append("Average Ratings")
+        headline = "# Benchmarks (Table)\n\n"
+
+        # Column labels
+        col_labels = [self._column_label(col) for col in columns]
+
+        # Identify rating columns dynamically
+        rating_cols = [col for col in columns if col.endswith("rating")]
 
         # Start HTML table
-        table_start = '<div class="datatable-wrapper">\n'
-        table_start += (
-            '<table id="benchmarksTable" class="display" style="width:100%">\n'
+        table_html = '<div class="datatable-wrapper">\n'
+        table_html += (
+            '  <table id="benchmarksTable" class="display" style="width:100%">\n'
         )
-        table_start += "  <thead>\n    <tr>\n"
+        table_html += "    <thead>\n"
+        table_html += "      <tr>\n"
         for label in col_labels:
-            table_start += f"      <th>{label}</th>\n"
-        table_start += "    </tr>\n  </thead>\n  <tbody>\n"
+            table_html += f"        <th>{label}</th>\n"
+        if average_ratings:
+            table_html += "        <th>Average Ratings</th>\n"
+        table_html += "      </tr>\n"
+        table_html += "    </thead>\n"
+        table_html += "    <tbody>\n"
 
-        # Build table rows
-        table_rows = ""
+        footnotes = []
+
+        # Add table rows
         for entry in self.entries:
-            row_cells = []
-            ratings_average = 0
+            row_html = "      <tr>\n"
+            ratings_sum = 0.0
+
+            for col in columns:
+                val = entry.get(col, "")
+                cell_html = ""
+
+                if col == "name":
+                    title = self._escape_md(str(val))
+                    id_ = str(entry.get("id", "")).strip()
+                    if id_:
+                        target_md = f"benchmarks/{quote(id_)}.md"
+                        cell_html = f'<a href="{target_md}">{title}</a>'
+                    else:
+                        cell_html = title
+
+                elif col == "cite":
+                    citations = val if isinstance(val, list) else [val]
+                    citation_refs = []
+                    for c in citations:
+                        citation_text = _bibtex_to_text(c)
+                        if citation_text.startswith("Could not parse citation:"):
+                            footnotes.append(None)
+                        else:
+                            footnotes.append(self._escape_md(citation_text))
+                            citation_refs.append(f"[^{len(footnotes)}]")
+                    cell_html = ", ".join(citation_refs)
+
+                elif isinstance(val, list):
+                    cell_html = ", ".join(map(self._escape_md, val))
+
+                else:
+                    if col in rating_cols:
+                        try:
+                            ratings_sum += float(val)
+                        except ValueError:
+                            Console.error(f'Rating entry "{val}" must be a number')
+                    cell_html = self._escape_md(str(val))
+
+                row_html += f"        <td>{cell_html}</td>\n"
+
+            # Add average rating column
+            if average_ratings:
+                num_ratings = len(rating_cols)
+                ratings_average = ratings_sum / max(num_ratings, 1)
+                row_html += f"        <td>{round(ratings_average, 3)}</td>\n"
+
+            row_html += "      </tr>\n"
+            table_html += row_html
+
+        table_html += "    </tbody>\n"
+        table_html += "  </table>\n"
+        table_html += "</div>\n\n"
+
+        # Footnotes
+        footnote_contents = ""
+        for i, citation in enumerate(footnotes):
+            if citation:
+                footnote_contents += f"[^{i + 1}]: {citation}\n"
+
+        # Optional scripts for DataTables functionality
+        table_script = textwrap.dedent(
+            """
+        <!-- Include DataTables scripts and CSS -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css" />
+        <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+        <script src="js/table.js"></script>
+        """
+        )
+
+        # Combine everything
+        contents = headline + table_html + footnote_contents + table_script
+
+        write_to_file(content=contents, filename=filename)
+
+    def write_table_md(
+        self,
+        filename="content/md/benchmarks_table.md",
+        columns=DEFAULT_COLUMNS,
+        average_ratings: bool = True,
+    ) -> None:
+        """
+        Write:
+        - index.md with a plain md table of all entries
+        """
+        import textwrap
+        from urllib.parse import quote
+
+        headline = "# Benchmarks (Table)\n\n"
+        col_labels = []
+        col_widths = []
+
+        for col in columns:
+            col_labels.append(self._column_label(col))  # fixed typo here
+            col_widths.append(self._column_width_str(col))
+
+        section = f'<div id="bench-table-page"></div>\n\n{headline}'
+        header = " | " + " | ".join(col_labels) + " | "
+        if average_ratings:
+            header += " Average Ratings "
+        header += "\n"
+
+        divider = ""
+        for e in col_widths:
+            divider += "| " + str(e) + " "
+        if average_ratings:
+            divider += " | -------- "
+        divider += "|\n"
+
+        # Create the contents string
+        current_contents = ""
+        footnotes = []
+
+        # Identify rating columns dynamically
+        rating_cols = [col for col in columns if col.endswith("rating")]
+
+        # Write each entry to the table
+        for entry in self.entries:
+            row = ""
+            ratings_sum = 0.0
+
+            # Write each cell to the table
             for col in columns:
                 val = entry.get(col, "")
 
@@ -626,41 +757,54 @@ class MkdocsWriter:
                     id_ = str(entry.get("id", "")).strip()
                     if id_:
                         target_md = f"benchmarks/{quote(id_)}.md"
-                        row_cells.append(f'<a href="{target_md}">{title}</a>')
+                        row += f"[{title}]({target_md})"
                     else:
-                        row_cells.append(title)
+                        row += title
 
                 elif col == "cite":
                     citations = val if isinstance(val, list) else [val]
-                    citation_texts = []
+                    citation_refs = []
                     for c in citations:
                         citation_text = _bibtex_to_text(c)
-                        if not citation_text.startswith("Could not parse citation:"):
-                            citation_texts.append(self._escape_md(citation_text))
-                    row_cells.append(", ".join(citation_texts))
+                        if citation_text.startswith("Could not parse citation:"):
+                            footnotes.append(None)
+                        else:
+                            footnotes.append(self._escape_md(citation_text))
+                            citation_refs.append(f"[^{len(footnotes)}]")
+                    row += ", ".join(citation_refs)
 
                 elif isinstance(val, list):
-                    row_cells.append(", ".join(map(self._escape_md, val)))
+                    row += ", ".join(map(self._escape_md, val))
 
                 else:
-                    if col.endswith("rating"):
+                    if col in rating_cols:
                         try:
-                            ratings_average += float(val)
+                            ratings_sum += float(val)
                         except ValueError:
                             Console.error(f'Rating entry "{val}" must be a number')
-                    row_cells.append(self._escape_md(str(val)))
+                    row += self._escape_md(str(val))
 
-            # Add average rating
+                row += " | "
+
+            # Calculate and add average dynamically
             if average_ratings:
-                ratings_average /= 6
-                row_cells.append(str(round(ratings_average, 3)))
+                num_ratings = len(rating_cols)
+                ratings_average = ratings_sum / max(num_ratings, 1)
+                row += str(round(ratings_average, 3)) + " |"
 
-            table_rows += (
-                "    <tr>" + "".join(f"<td>{c}</td>" for c in row_cells) + "</tr>\n"
-            )
+            current_contents += row + "\n"
 
-        # Close tbody and table
-        table_end = "  </tbody>\n</table>\n</div>\n"
+        current_contents = current_contents.strip() + "\n\n"
+
+        # Footnotes
+        footnote_contents = ""
+        for i, citation in enumerate(footnotes):
+            if citation:
+                footnote_contents += f"[^{i + 1}]: {citation}\n"
+
+        contents = section + header + divider + current_contents + footnote_contents
+
+        write_to_file(content=contents, filename=filename)
 
         # Add DataTables CSS and JS references
         datatables_includes = textwrap.dedent(

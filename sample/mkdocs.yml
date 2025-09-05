@@ -10,6 +10,7 @@ extra_javascript:
   - https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js
   - https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js
   - https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js
+  - js/table.js
 
 extra_css:
   - https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css

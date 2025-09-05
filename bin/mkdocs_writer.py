@@ -663,6 +663,104 @@ class MkdocsWriter:
         average_ratings: bool = True,
     ) -> None:
         """
+        Write an HTML table compatible with DataTables.
+        """
+        import textwrap
+        from urllib.parse import quote
+
+        # Build table headers
+        col_labels = [self._colunm_label(col) for col in columns]
+        if average_ratings:
+            col_labels.append("Average Ratings")
+
+        # Start HTML table
+        table_start = '<div class="datatable-wrapper">\n'
+        table_start += (
+            '<table id="benchmarksTable" class="display" style="width:100%">\n'
+        )
+        table_start += "  <thead>\n    <tr>\n"
+        for label in col_labels:
+            table_start += f"      <th>{label}</th>\n"
+        table_start += "    </tr>\n  </thead>\n  <tbody>\n"
+
+        # Build table rows
+        table_rows = ""
+        for entry in self.entries:
+            row_cells = []
+            ratings_average = 0
+            for col in columns:
+                val = entry.get(col, "")
+
+                if col == "name":
+                    title = self._escape_md(str(val))
+                    id_ = str(entry.get("id", "")).strip()
+                    if id_:
+                        target_md = f"benchmarks/{quote(id_)}.md"
+                        row_cells.append(f'<a href="{target_md}">{title}</a>')
+                    else:
+                        row_cells.append(title)
+
+                elif col == "cite":
+                    citations = val if isinstance(val, list) else [val]
+                    citation_texts = []
+                    for c in citations:
+                        citation_text = _bibtex_to_text(c)
+                        if not citation_text.startswith("Could not parse citation:"):
+                            citation_texts.append(self._escape_md(citation_text))
+                    row_cells.append(", ".join(citation_texts))
+
+                elif isinstance(val, list):
+                    row_cells.append(", ".join(map(self._escape_md, val)))
+
+                else:
+                    if col.endswith("rating"):
+                        try:
+                            ratings_average += float(val)
+                        except ValueError:
+                            Console.error(f'Rating entry "{val}" must be a number')
+                    row_cells.append(self._escape_md(str(val)))
+
+            # Add average rating
+            if average_ratings:
+                ratings_average /= 6
+                row_cells.append(str(round(ratings_average, 3)))
+
+            table_rows += (
+                "    <tr>" + "".join(f"<td>{c}</td>" for c in row_cells) + "</tr>\n"
+            )
+
+        # Close tbody and table
+        table_end = "  </tbody>\n</table>\n</div>\n"
+
+        # Add DataTables CSS and JS references
+        datatables_includes = textwrap.dedent(
+            """
+            <!-- Include DataTables and export buttons -->
+            <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+            <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css" />
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+            <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+            <script src="js/table.js"></script>
+            """
+        )
+
+        # Combine everything
+        contents = table_start + table_rows + table_end + datatables_includes
+
+        # Write to file
+        write_to_file(content=contents, filename=filename)
+
+    def write_table_md(
+        self,
+        filename="content/md/benchmarks_table.md",
+        columns=DEFAULT_COLUMNS,
+        average_ratings: bool = True,
+    ) -> None:
+        """
         Write:
           - index.md with a plain md table of all entries
         """
@@ -776,6 +874,17 @@ class MkdocsWriter:
             footnote_contents += f"[^{i + 1}]: {citation}\n" if citation else ""
 
         contents = section + header + divider + current_contents + footnote_contents
+
+        # contents = (
+        #     section
+        #     + table_start
+        #     + header
+        #     + divider
+        #     + current_contents
+        #     + table_end
+        #     + footnote_contents
+        #     + table_script
+        # )
 
         # contents = (
         #     section

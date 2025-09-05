@@ -83,7 +83,7 @@ mkdocs:
 	
 	cp -r content/md ${DOCS}
 	cp -r content/tex ${DOCS}
-	cp -r content/assets/* ${DOCS}
+	cp -r content/assets ${DOCS}
 	cp content/mkdocs.yml ${WWW}
 
 	cp source/index.md ${DOCS}/index.md

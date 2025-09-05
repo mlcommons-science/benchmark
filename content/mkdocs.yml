@@ -27,34 +27,24 @@ theme:
     - content.code.copy
     - content.tabs.link
 
-extra_css:
+extra_javascript:
+  - https://code.jquery.com/jquery-3.6.0.min.js
+  - https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js
+  - https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js
+  - https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js
+  - js/table.js
+
 extra_css:
   - https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css
   - https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css
   - css/extra.css
-  - css/custom.css
 
-extra_javascript:
-  - https://code.jquery.com/jquery-3.7.1.min.js
-  - https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js
-  - https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js
-  - https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js
-  - js/filters.js
-  - js/dataTables.fixedColumns.min.js
-  - javascripts/datatable-init.js
-  - js/table.js
-
-
-# enable niceties used by the cleaner layout
 markdown_extensions:
   - attr_list
   - md_in_html
-  - pymdownx.superfences
-  - footnotes
 
 nav:
   - index.md
   - Report: benchmarks.pdf
   - List: md/benchmarks/index.md
   - Table: md/benchmarks_table.md
-  - Cards: md/benchmarks/cards.md

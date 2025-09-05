@@ -1,4 +1,4 @@
-site_name: My MkDocs Site
+site_name: Gregors Sample Site
 theme:
   name: material  # You can switch to 'mkdocs' if you don’t want Material
 nav:

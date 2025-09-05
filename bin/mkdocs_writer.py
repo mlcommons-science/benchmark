@@ -608,9 +608,7 @@ class MkdocsWriter:
 
         # Start HTML table
         table_html = '<div class="datatable-wrapper">\n'
-        table_html += (
-            '  <table id="benchmarksTable" class="display" style="width:100%">\n'
-        )
+        table_html += '  <table id="myTable" class="display" style="width:100%">\n'
         table_html += "    <thead>\n"
         table_html += "      <tr>\n"
         for label in col_labels:

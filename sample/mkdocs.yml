@@ -4,6 +4,7 @@ theme:
 nav:
   - Home: index.md
   - Table: table.md
+  - Benchmark: benchmark.md
 
 extra_javascript:
   - https://code.jquery.com/jquery-3.6.0.min.js

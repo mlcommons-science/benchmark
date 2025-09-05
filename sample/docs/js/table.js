@@ -47,6 +47,8 @@ function exportLaTeX(table) {
 // Initialize DataTable
 document.addEventListener("DOMContentLoaded", function() {
   const table = $('#myTable').DataTable({
+    responsive: true,
+    autoWidth: true,  // allow automatic column widths
     paging: false,
     searching: true,
     ordering: true,

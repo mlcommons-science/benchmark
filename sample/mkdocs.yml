@@ -1,0 +1,15 @@
+site_name: My MkDocs Site
+theme:
+  name: material  # You can switch to 'mkdocs' if you don’t want Material
+nav:
+  - Home: index.md
+  - Table: table.md
+extra_javascript:
+  - https://code.jquery.com/jquery-3.6.0.min.js
+  - https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js
+extra_css:
+  - https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css
+
+markdown_extensions:
+  - attr_list
+  - md_in_html

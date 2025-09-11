@@ -160,23 +160,24 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
 }
 
 DEFAULT_COLUMNS = [
+    "cite",
     # "ratings",
     # "date",
     # "expired",
     # "valid",
-    "name",
+    #"name",
     # "url",
     "domain",
-    "focus",
+    # "focus",
     # "keywords",
     # "description",
     "task_types",
     "average_rating",
     # "ai_capability_measured",
-    "metrics",
+    # "metrics",
     # "models",
     # "notes",
-    "cite",
+    # "cite",
 ]
 
 REQUIRED_FIELDS_BY_TYPE = {
@@ -904,21 +905,19 @@ class GenerateLatex:
                 ratings = [
                     float(value)
                     for key, value in entry.items()
-                    if key.startswith("ratings.") and key.endswith(".rating") and value is not None
+                    if key.startswith("ratings.") and key.endswith(".rating") and value not in [None, "", "N/A"]
                 ]
-                content = f"{sum(ratings) / len(ratings):.2f}" if ratings else "N/A"
+                if ratings:
+                    avg_rating = sum(ratings) / len(ratings)
+                    content = f"\\textbf{{{avg_rating:.2f}}}" if avg_rating >= 4.5 else f"{avg_rating:.2f}"
+                else:
+                    content = "N/A"
 
-            if col != "ratings":  # Ratings column is no longer included
-                value = entry.get(col)
-                if value is None:
-                    content = ""  # Empty string for None values
-                    continue
-
-            if col == "cite":
+            elif col == "cite":
                 cite_entries = (
-                    value
-                    if isinstance(value, list)
-                    else [value] if isinstance(value, str) else []
+                    entry.get(col)
+                    if isinstance(entry.get(col), list)
+                    else [entry.get(col)] if isinstance(entry.get(col), str) else []
                 )
                 cite_keys = [
                     self.get_citation_label(c)
@@ -929,10 +928,16 @@ class GenerateLatex:
                 # Exclude href link from citation
                 content = f"\\cite{{{','.join(cite_keys)}}}" if cite_keys else ""
 
-            elif isinstance(value, list):
-                content = ", ".join(escape_latex(item) for item in value)
             else:
-                content = escape_latex(value)
+                value = entry.get(col)
+                if isinstance(value, list):
+                    content = ", ".join(escape_latex(item) for item in value)
+                else:
+                    content = escape_latex(value) if value else ""
+
+            # Ensure content is not empty
+            if not content.strip():
+                content = "N/A"
 
             row.append(content)
 
@@ -949,6 +954,17 @@ class GenerateLatex:
             if col not in ALL_COLUMNS:
                 Console.error(f"Invalid column name: {col}.")
                 sys.exit(1)
+
+        # Sort entries by average rating
+        def calculate_average_rating(entry):
+            ratings = [
+                float(value)
+                for key, value in entry.items()
+                if key.startswith("ratings.") and key.endswith(".rating") and value not in [None, "", "N/A"]
+            ]
+            return sum(ratings) / len(ratings) if ratings else 0
+
+        self.entries.sort(key=calculate_average_rating, reverse=True)
 
         # Generate the table header and column format
 
@@ -997,8 +1013,8 @@ class GenerateLatex:
 
         # Constructing the table content
         table_content = (
-            textwrap.dedent(
-                rf"""
+                textwrap.dedent(
+                    rf"""
                 \begin{{landscape}}
                 {{{TABLEFONT}
                 \begin{{longtable}}{column_widths}
@@ -1014,16 +1030,16 @@ class GenerateLatex:
                 \hline
                 \endlastfoot
                 """
-            )
-            + all_rows
-            + textwrap.dedent(
-                r"""
-                \end{longtable}
-                }
-         
-                \end{landscape}
-                """
-            )
+                )
+                + all_rows
+                + textwrap.dedent(
+            r"""
+            \end{longtable}
+            }
+
+            \end{landscape}
+            """
+        )
         )
 
         # if VERBOSE:

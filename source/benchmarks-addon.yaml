@@ -3064,7 +3064,7 @@
      - name: CROP Dataset (Train Split)
        url: "https://huggingface.co/datasets/AI4Agr/CROP-dataset"
      - name: CROP Benchmark (Test Split)
-       url: "https://huggingface.co/datasets/AI4Agr/CROP-benchmark"]
+       url: "https://huggingface.co/datasets/AI4Agr/CROP-benchmark"
   results:
     links:
     - name: "Empowering and Assessing the Utility of Large Language Models in Crop Science - Experiments"

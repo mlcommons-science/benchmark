@@ -3097,10 +3097,6 @@
       reason: |
         The benchmark is well documented with a detailed paper, README, and webpage. Instructions for reproducing results are clear.
 
-
-################
-
-
 - date: "2024-10-15"
   version: "v1.0"
   last_updated: "2024-10"
@@ -4184,9 +4180,6 @@
       reason: |
         Methodology and paper are thorough, but setup instructions and runnable
         code are not publicly provided, limiting user onboarding.
-
-
-#####
 
 - date: "2024-12-13"
   version: "v1.0"

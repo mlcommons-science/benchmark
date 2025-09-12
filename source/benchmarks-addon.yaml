@@ -3051,8 +3051,7 @@
     email: "unknown"
   cite:
   - |
-      @inproceedings{
-      zhang2024empowering,
+      @inproceedings{zhang2024empowering,
       title={Empowering and Assessing the Utility of Large Language Models in Crop Science},
       author={Hang Zhang and Jiawei Sun and Renqi Chen and Wei Liu and Zhonghang Yuan and Xinzhe Zheng and Zhefan Wang and Zhiyuan Yang and Hang Yan and Han-Sen Zhong and Xiqing Wang and Wanli Ouyang and Fan Yang and Nanqing Dong},
       booktitle={The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track},

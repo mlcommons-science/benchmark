@@ -2520,101 +2520,6 @@
         Strong front-end documentation and metadata on benchmarks, tasks, and models; however, some benchmark-specific
         instructions are sparse or dependent on external paper links.
 
-- date: "2022-01-01"
-  version: "v1.0"
-  last_updated: "2025-03"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2022-01-01"
-  name: "Codabench"
-  url: "https://www.codabench.org/"
-  doi: "https://doi.org/10.1016/j.patter.2022.100543"
-  domain: "General ML; Multiple"
-  focus: "Open-source platform for organizing reproducible AI benchmarks and competitions"
-  keywords:
-  - "benchmark platform"
-  - "code submission"
-  - "competitions"
-  - "meta-benchmark"
-  summary: |
-    Codabench (successor to CodaLab) is a flexible, easy-to-use, reproducible API platform for hosting AI benchmarks
-    and code-submission challenges. It supports custom scoring, inverted benchmarks, and scalable public or private queues .
-  licensing: "https://github.com/codalab/codalab-competitions/wiki/Privacy"
-  task_types:
-  - "Multiple"
-  ai_capability_measured:
-  - "Model reproducibility"
-  - "performance across datasets"
-  metrics:
-  - "Submission count"
-  - "Leaderboard ranking"
-  - "Task-specific metrics"
-  models:
-  - "Arbitrary code submissions"
-  ml_motif:
-  - "Multiple"
-  type: "Platform"
-  ml_task:
-  - "Multiple"
-  solutions: "Several"
-  notes: |
-    Hosts 51 public competitions, ~26 k users, 177 k submissions 
-  contact:
-    name: "Isabelle Guyon (Université Paris-Saclay)"
-    email: "unknown"
-  cite:
-  - |
-    @article{xu-2022,
-      author    = {Xu, Zhen and Escalera, Sergio and Pavão, Adrien and Richard, Magali and Tu, Wei-Wei and Yao, Quanming and Zhao, Huan and Guyon, Isabelle},
-      doi       = {10.1016/j.patter.2022.100543},
-      issn      = {2666-3899},
-      journal   = {Patterns},
-      month     = jul,
-      number    = {7},
-      pages     = {100543},
-      publisher = {Elsevier BV},
-      title     = {Codabench: Flexible, easy-to-use, and reproducible meta-benchmark platform},
-      url       = {http://dx.doi.org/10.1016/j.patter.2022.100543},
-      volume    = {3},
-      year      = {2022}
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1sIwNDCs01s790DApVt5leiG8UaBDFVINA4bOixZ1CUw/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 1
-      reason: |
-        This is a platform for posting benchmarks, not a benchmark in itself.
-    specification:
-      rating: 1
-      reason: |
-        This is a platform for posting benchmarks, not a benchmark in itself.
-    dataset:
-      rating: 1
-      reason: |
-        This is a platform for posting benchmarks, not a benchmark in itself.
-    metrics:
-      rating: 1
-      reason: |
-        This is a platform for posting benchmarks, not a benchmark in itself.
-    reference_solution:
-      rating: 1
-      reason: |
-        This is a platform for posting benchmarks, not a benchmark in itself.
-    documentation:
-      rating: 1
-      reason: |
-        This is a platform for posting benchmarks, not a benchmark in itself.
-
 - date: "2021-09-27"
   version: "v1.0"
   last_updated: "2023-07"
@@ -3096,15 +3001,15 @@
 
 
 
-- date: "2024-12-13"
+- date: "2024-11-13"
   version: "v1.0"
-  last_updated: "2024-12"
+  last_updated: "2024-11"
   expired: "unknown"
   valid: "yes"
-  valid_date: "2024-12-13"
+  valid_date: "2024-11-13"
   name: "LLMs for Crop Science"
-  url: "https://neurips.cc/virtual/2024/poster/97570"
-  doi: "10.48550/arXiv.2406.03085"
+  url: "https://openreview.net/forum?id=hMj6jZ6JWU#discussion"
+  doi: "N/A"
   domain: "Agricultural Science; NLP"
   focus: "Evaluating LLMs on crop trait QA and textual inference tasks with domain-specific
     prompts"
@@ -3114,8 +3019,8 @@
   - "domain adaptation"
   - "question answering"
   summary: |
-    Establishes a benchmark of 3,500 expert-annotated prompts and QA pairs covering crop traits, growth stages, and environmental interactions. Tests GPT-style LLMs on accuracy and domain reasoning using in-context, chain-of-thought, and retrieval-augmented prompts.
-  licensing: "unknown"
+    Establishes a benchmark of over 5000 expert-annotated QA pairs and prompts in Chinese and English, covering crop traits, growth stages, and environmental interactions. Tests GPT-style LLMs on accuracy and domain reasoning using in-context, chain-of-thought, and retrieval-augmented prompts.
+  licensing: "CC-BY-NC-4.0"
   task_types:
   - "Question Answering"
   - "Inference"
@@ -3126,9 +3031,13 @@
   - "Accuracy"
   - "F1 score"
   models:
-  - "GPT-4"
-  - "LLaMA-2-13B"
-  - "T5-XXL"
+  - 'GPT-3.5'
+  - 'GPT-4'
+  - 'Claude-3-opus'
+  - 'Qwen-max'
+  - 'LLama3-8B'
+  - 'InternLM2-7B'
+  - 'Qwen1.5-7B'
   ml_motif:
   - "NLP"
   type: "Dataset"
@@ -3142,51 +3051,52 @@
     email: "unknown"
   cite:
   - |
-    @misc{shen2024exploringuserretrievalintegration,
-      title={Exploring User Retrieval Integration towards Large Language Models for Cross-Domain Sequential Recommendation}, 
-      author={Tingjia Shen and Hao Wang and Jiaqing Zhang and Sirui Zhao and Liangyue Li and Zulong Chen and Defu Lian and Enhong Chen},
+      @inproceedings{
+      zhang2024empowering,
+      title={Empowering and Assessing the Utility of Large Language Models in Crop Science},
+      author={Hang Zhang and Jiawei Sun and Renqi Chen and Wei Liu and Zhonghang Yuan and Xinzhe Zheng and Zhefan Wang and Zhiyuan Yang and Hang Yan and Han-Sen Zhong and Xiqing Wang and Wanli Ouyang and Fan Yang and Nanqing Dong},
+      booktitle={The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
       year={2024},
-      eprint={2406.03085},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2406.03085}, 
-    }
+      url={https://openreview.net/forum?id=hMj6jZ6JWU}
+      }
   datasets:
-    links: []
+    links:
+     - name: CROP Dataset (Train Split)
+       url: "https://huggingface.co/datasets/AI4Agr/CROP-dataset"
+     - name: CROP Benchmark (Test Split)
+       url: "https://huggingface.co/datasets/AI4Agr/CROP-benchmark"]
   results:
     links:
-    - name: "Gemini LLM Deep Research"
-      url: ""
-    - name: "ChatGPT LLM"
-      url: ""
+    - name: "Empowering and Assessing the Utility of Large Language Models in Crop Science - Experiments"
+      url: "https://renqichen.github.io/The_Crop/"
   fair:
     reproducible: "Yes"
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 0
+      rating: 5
       reason: |
-        This is a model, not a benchmark.
+        Code for evaluation and training of multiple models is available and well documented. Environment details are provided.
     specification:
-      rating: 0
+      rating: 4
       reason: |
-        This is a model, not a benchmark.
+        Tasks are clearly defined (QA, inference) with structured input/output formats, though no system constraints are provided.
     dataset:
-      rating: 0
+      rating: 5
       reason: |
-        This is a model, not a benchmark.
+        Dataset adheres to all FAIR principles, is well-documented, and publicly available on Hugging Face. Train/Test splits are provided across two Huggingface datasets.
     metrics:
-      rating: 0
+      rating: 4
       reason: |
-        This is a model, not a benchmark.
+        Accuracy is mentioned in the README and webpage as an evaluation metric,
     reference_solution:
-      rating: 0
+      rating: 5
       reason: |
-        This is a model, not a benchmark.
+        A reference solution is available and well documented. Training code is provided for multiple open weight models.
     documentation:
-      rating: 0
+      rating: 5
       reason: |
-        This is a model, not a benchmark.
+        The benchmark is well documented with a detailed paper, README, and webpage. Instructions for reproducing results are clear.
 
 
 ################

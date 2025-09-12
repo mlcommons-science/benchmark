@@ -1310,14 +1310,14 @@
   metrics:
   - "Accuracy"
   models: 
-  - unkown
+  - unknown
   ml_motif:
   - "Math problem solving"
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
   solutions: "0"
-  notes: "Good"
+  notes: "More information available at https://epoch.ai/frontiermath/about"
   contact:
     name: "FrontierMath team"
     email: "math_evals@epochai.org"
@@ -1341,13 +1341,13 @@
     - name: "unknown"
       url: "unknown"
   fair:
-    reproducible: true
-    benchmark_ready: true
+    reproducible: false
+    benchmark_ready: false
   ratings:
     software:
       rating: 0
       reason: |
-        No link to code provided
+        No publicaly available code to run the benchmark
     specification:
       rating: 3
       reason: |
@@ -1355,19 +1355,19 @@
     dataset:
       rating: 0
       reason: |
-        Paper and website had no link to any dataset. It may still exist somewhere
+        Only samples of dataset exist, not publicly available
     metrics:
       rating: 5
       reason: |
-        (by default) All questions in the dataset have a correct answer
+        All questions in the dataset have a correct answer
     reference_solution:
       rating: 2
       reason: |
         Displays result of leading models on the benchmark, but none are trainable or list constraints
     documentation:
-      rating: 0
+      rating: 5
       reason: |
-        No specified way to reproduce the reference solution
+        All necessary information is in the paper and website
 
 - date: "2024-07-18"
   version: "1"
@@ -1521,35 +1521,35 @@
       reason: |
         No code available
     specification:
-      rating: 0
+      rating: 3
       reason: |
-        Obvious what the problems are, but not specified how to administer them to AI models. No HW constraints
+        Task and Inputs/Outputs are well specified. No system constraints or dataset format is mentioned
     dataset:
       rating: 4
       reason: |
         Easily accessible data with problems and solutions, but no splits
     metrics:
-      rating: 5
+      rating: 4
       reason: |
-        (by default) Answer is correct or it's not
+        Correctness is measured, but no grading guidelines are provided.
     reference_solution:
       rating: 0
       reason: |
         Not given. Human performance stats exist, but no mentions of AI performance
     documentation:
-      rating: 0
+      rating: 3
       reason: |
-        Not given
+        Some background and other information is provided, but it is not comprehensive. No info on how to run an evaluation
 
-- date: "2025-02-15"
+- date: "2023-05-30"
   version: "1"
-  last_updated: "2025-02-15"
+  last_updated: "2023-05-30"
   expired: "false"
   valid: "yes"
-  valid_date: "2025-02-15"
-  name: "MATH-500"
-  url: "https://huggingface.co/datasets/HuggingFaceH4/MATH-500"
-  doi: "unknown"
+  valid_date: "2023-05-30"
+  name: "PRM800K"
+  url: "https://github.com/openai/prm800k/tree/main"
+  doi: "N/A"
   domain: "Mathematics"
   focus: "Math reasoning generalization"
   keywords:
@@ -1558,9 +1558,7 @@
   - "number theory"
   - "geometry"
   summary: |
-    MATH-500 is a curated subset of 500 problems from the OpenAI MATH dataset, spanning
-    high-school to advanced levels, designed to evaluate LLMs mathematical reasoning and 
-    generalization.
+    PRM800K is a process supervision dataset containing 800,000 step-level correctness labels for model-generated solutions to problems from the MATH dataset.
   licensing: "MIT License"
   task_types:
   - "Problem solving"
@@ -1569,61 +1567,62 @@
   metrics:
   - "Accuracy"
   models:
-  - "unkown"
+  - "GPT-4"
   ml_motif:
   - "Math problem solving"
   type: "Benchmark"
   ml_task:
-  - "Supervised Learning"
+  - "Reasoning"
   solutions: "0"
-  notes: "Dataset hosted on Hugging Face. Data comes from a subset of OpenAI's dataset"
+  notes: "Math problems & Annotated reasoning steps based off of Dan Hendrycks' MATH dataset"
   contact:
-    name: "unknown"
-    email: "unknown"
+    name: "Karl Cobbe"
+    email: "karl@openai.com"
   cite:
   - |
-    @misc{huggingface2025math500,
-      title={MATH-500},
-      author={HuggingFaceH4},
-      year={2025},
-      url={https://huggingface.co/datasets/HuggingFaceH4/MATH-500}
+    @article{lightman2023lets,
+      title={Let's Verify Step by Step}, 
+      author={Lightman, Hunter and Kosaraju, Vineet and Burda, Yura and Edwards, Harri and Baker, Bowen and Lee, Teddy and Leike, Jan and Schulman, John and Sutskever, Ilya and Cobbe, Karl},
+      journal={arXiv preprint arXiv:2305.20050},
+      year={2023}
     }
   datasets:
     links:
-    - name: "Hugging Face"
-      url: "https://huggingface.co/datasets/HuggingFaceH4/MATH-500"
+    - name: "PRM800K: A Process Supervision Dataset"
+      url: "https://github.com/openai/prm800k/tree/main"
   results:
     links:
-    - name: "unknown"
-      url: "unknown"
+    - name: "Let's Verify Step by Step"
+      url: "https://arxiv.org/abs/2305.20050"
+
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
+      rating: 3
       reason: |
-        No code provided
+        Code is provided in the PRM800K Repo for evaluation and grading, documentation is present but no environment details, baseline model, or training code is given
     specification:
-      rating: 0
+      rating: 4
       reason: |
-        No method of presentation and evaluation is not stated. No constraints
+        Task is well specified, format, inputs, and outputs are mentioned. No system constraints are provided.
     dataset:
       rating: 5
       reason: |
-        Problems and solutions are easily downloaded. Could not find a way to download the data
+        Dataset follows all FAIR Principles. Train/Test splits are available in the PRM800K repo
     metrics:
+      rating: 4
+      reason: |
+        Correctness is used as the primary metric, with grading guidelines provided.
+    reference_solution:
       rating: 2
       reason: |
-        Problem spec states that all of the AI reasoning steps are subject to grading, but no specified way to evaluate the steps
-    reference_solution:
-      rating: 0
-      reason: |
-        Not given
+        A reference solution is mentioned in the "Lets Verify Step by Step" paper, but the model is not open-sourced.
     documentation:
-      rating: 0
+      rating: 5
       reason: |
-        Not given. Implicit instructions to download dataset.
+        Documentation is present in the PRM800K repo and "Lets Verify Step by Step" paper.
 
 - date: "2024-04-02"
   version: "1"
@@ -1980,7 +1979,7 @@
       reason: |
         Dataset and paper accessible; IPYNB files for setup are available on the github repo.
 
-- date: "2023-01-26"
+- date: "2024-12-17"
   version: "1"
   last_updated: "2023-01-26"
   expired: "false"
@@ -2010,6 +2009,7 @@
   - "Novelty%"
   - "QED"
   - "Docking score"
+  - "penalized logP"
   models:
   - "MolGen"
   ml_motif:
@@ -2018,10 +2018,10 @@
   ml_task:
   - "Supervised Learning"
   solutions: "0"
-  notes: "This is a model, not a benchmark"
+  notes: ""
   contact:
-    name: "unknown"
-    email: "unknown"
+    name: "fangyin@zju.edu.cn"
+    email: "Yin Fang"
   cite:
   - |
     @misc{fang2024domainagnosticmoleculargenerationchemical,
@@ -2035,40 +2035,40 @@
     }
   datasets:
     links:
-    - name: "unknown"
-      url: "unknown"
+    - name: "MolGen: A Pre-trained Molecular Language Model"
+      url: "https://github.com/zjunlp/MolGen/tree/main"
   results:
     links:
-    - name: "unknown"
-      url: "unknown"
+    - name: "Domain-Agnostic Molecular Generation with Chemical Feedback"
+      url: "https://arxiv.org/abs/2301.11259"
   fair:
     reproducible: true
     benchmark_ready: true
   ratings:
     software:
-      rating: 0
+      rating: 5
       reason: |
-        This is a pre-trained model
+        Code is available on the github repo, along with instructions to run the model and reproduce results.
     specification:
-      rating: 0
+      rating: 4
       reason: |
-        This is a pre-trained model
+        Task, datset format, and input/output formats are well specified. No system constraints are mentioned.
     dataset:
-      rating: 0
+      rating: 5
       reason: |
-        This is a pre-trained model
+        Dataset and train/test splits are available through the github repo, as well as mentions of source datasets in the paper.
     metrics:
-      rating: 0
+      rating: 5
       reason: |
-        This is a pre-trained model
+        Metrics are well defined and appropriate for the task
     reference_solution:
-      rating: 0
+      rating: 5
       reason: |
-        This is a pre-trained model
+        A pretrained model is provided, as well as training code and instructions
     documentation:
-      rating: 0
+      rating: 5
       reason: |
-        This is a pre-trained model
+        All necessary information is provided in the paper and github repo
 
 - date: "2020-05-02"
   version: "1"

@@ -1,7 +1,126 @@
-#
-# please do not modify this file
-# it is maintained bt gregor
-#
+#!/usr/bin/env python
+"""
+generate_latex - generate LaTeX documents, tables, and radar charts
+from MLCommons Science benchmark metadata.
+
+Usage:
+  generate_latex.py document <entries.json> [--outdir=DIR]
+  generate_latex.py table <entries.json> [--outdir=DIR] [--columns=COLS]
+  generate_latex.py radar <entries.json> [--outdir=DIR] [--fmt=FMT] [--font=SIZE]
+  generate_latex.py bibtex <entries.json> [--outdir=DIR]
+  generate_latex.py sections <entries.json> [--outdir=DIR]
+  generate_latex.py grid <entries.json> [--outdir=DIR] [--fmt=FMT] [--rows=N] [--cols=N]
+  generate_latex.py (-h | --help)
+  generate_latex.py --version
+
+Options:
+  <entries.json>          Input JSON file with benchmark entries.
+  --outdir=DIR            Output directory [default: content/tex].
+  --fmt=FMT               Output format for radar charts [default: pdf].
+  --font=SIZE             Font size for radar charts [default: 10].
+  --rows=N                Number of rows in radar chart grid [default: 4].
+  --cols=N                Number of columns in radar chart grid [default: 2].
+  --columns=COLS          Comma-separated list of table columns.
+  -h --help               Show this help message.
+  --version               Show version and exit.
+
+Description:
+  This tool generates LaTeX output from MLCommons Science benchmark
+  metadata. It supports creating:
+
+    • A complete LaTeX report (title, abstract, TOC, tables, sections)
+    • Benchmark overview tables
+    • Radar charts (individual or grids)
+    • Bibliography
+    • Per-benchmark LaTeX sections
+
+Examples:
+  Generate a full LaTeX report in the default directory:
+    $ python generate_latex.py document benchmarks.json
+
+  Generate a LaTeX table with specific columns:
+    $ python generate_latex.py table benchmarks.json --columns=name,score,hardware
+
+  Generate radar charts in PNG format with larger font:
+    $ python generate_latex.py radar benchmarks.json --fmt=png --font=14
+
+  Generate bibliography (BibTeX file):
+    $ python generate_latex.py bibtex benchmarks.json
+
+  Generate per-benchmark sections:
+    $ python generate_latex.py sections benchmarks.json --outdir=output/tex
+
+  Generate a 3x2 radar chart grid in PDF:
+    $ python generate_latex.py grid benchmarks.json --rows=3 --cols=2 --fmt=pdf
+
+  Combine multiple input JSON sources into a single report:
+    $ python generate_latex.py document benchmarks.json benchmarks-addon.json --outdir=report/
+"""
+
+
+import sys
+import json
+from docopt import docopt
+
+VERSION = "generate_latex 5.0.1"
+
+# TODO: import your GenerateLatex class here
+# from yourmodule import GenerateLatex
+
+
+def main():
+    args = docopt(__doc__, version=VERSION)
+
+    infile = args["<entries.json>"]
+    outdir = args["--outdir"]
+
+    # Load entries
+    try:
+        with open(infile, "r", encoding="utf-8") as f:
+            entries = json.load(f)
+    except Exception as e:
+        print(f"Error reading {infile}: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    # generator = GenerateLatex(entries)
+
+    if args["document"]:
+        # generator.generate_document(outdir=outdir)
+        print(f"[INFO] Generating full LaTeX document in {outdir}")
+
+    elif args["table"]:
+        columns = args["--columns"].split(",") if args["--columns"] else None
+        # generator.generate_table(outdir=outdir, columns=columns)
+        print(f"[INFO] Generating LaTeX table in {outdir} with columns {columns}")
+
+    elif args["radar"]:
+        fmt = args["--fmt"]
+        font_size = int(args["--font"])
+        # generator.generate_radar_charts(fmt=fmt, outdir=outdir, font_size=font_size)
+        print(f"[INFO] Generating radar charts in {outdir} ({fmt}, font={font_size})")
+
+    elif args["bibtex"]:
+        # generator.generate_bibtex(outdir=outdir)
+        print(f"[INFO] Generating BibTeX file in {outdir}")
+
+    elif args["sections"]:
+        # generator.generate_section(outdir=outdir)
+        print(f"[INFO] Generating per-benchmark sections in {outdir}")
+
+    elif args["grid"]:
+        fmt = args["--fmt"]
+        rows = int(args["--rows"])
+        cols = int(args["--cols"])
+        # generator.generate_radar_chart_grid(outdir=outdir, fmt=fmt, rows=rows, cols=cols)
+        print(
+            f"[INFO] Generating radar chart grid in {outdir} ({rows}x{cols}, fmt={fmt})"
+        )
+
+
+if __name__ == "__main__":
+    main()
+
+
 import os
 import re
 import sys

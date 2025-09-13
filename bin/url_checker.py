@@ -1,3 +1,64 @@
+#!/usr/bin/env python
+"""
+Check URLs, fetch web pages, convert HTML to Markdown, and fetch BibTeX citations.
+
+Usage:
+  check_bibtex fetch-html --url=<url> [--headless] [--wait=<seconds>]
+  check_bibtex fetch-markdown --url=<url> [--headless] [--wait=<seconds>]
+  check_bibtex fetch-bibtex --doi=<doi>
+  check_bibtex check-urls --file=<yaml_file> [--verbose]
+  check_bibtex (-h | --help)
+  check_bibtex --version
+
+Options:
+  -h --help             Show this help message.
+  --version             Show version.
+  --url=<url>           The URL of the web page to fetch.
+  --doi=<doi>           The DOI of the paper to fetch BibTeX for.
+  --file=<yaml_file>    YAML file containing entries with URLs to check.
+  --headless            Run Selenium in headless mode [default: True].
+  --wait=<seconds>      Maximum seconds to wait for page load [default: 10].
+  --verbose             Enable verbose output for URL checking.
+
+Description:
+  fetch-html       Fetches the raw HTML of a given URL using Selenium.
+  fetch-markdown   Fetches HTML and converts it to Markdown.
+  fetch-bibtex     Fetches a BibTeX citation from a DOI.
+  check-urls       Checks all URLs listed in a YAML file for validity.
+                   The script automatically skips URLs listed in 
+                   `source/verified_urls.yaml` under the 'urls' key.
+                   This file is optional; if missing, no URLs are ignored.
+
+Verified URLs:
+  The file `source/verified_urls.yaml` should be structured like this:
+
+    urls:
+      - https://example.com/special-page
+      - https://another.example.com/known-good
+
+  Any URL listed here will be skipped during the check-urls command.
+  We assume the url has been checked by hand and is known to be valid.
+
+Examples:
+  # Fetch HTML from a page
+  check_bibtex fetch-html --url=https://example.com --wait=15
+
+  # Fetch HTML and convert to Markdown
+  check_bibtex fetch-markdown --url=https://example.com
+
+  # Fetch BibTeX for a DOI
+  check_bibtex fetch-bibtex --doi=10.1021/acscatal.0c04525
+
+  # Check all URLs in a YAML file with verbose output
+  check_bibtex check-urls --file=source/entries.yaml --verbose
+
+  # Check URLs but skip those listed in verified_urls.yaml
+  # URLs in the verified list will not be re-checked
+  check_bibtex check-urls --file=source/entries.yaml
+"""
+__version__ = "url_checker 5.0.1"
+
+from docopt import docopt
 import yaml
 import re
 import sys
@@ -644,47 +705,39 @@ class URLChecker:
         return all_urls_valid
 
 
-# Example usage
-if __name__ == "__main__":
-    url = "https://pubs.acs.org/doi/10.1021/acscatal.0c04525"
-    doi = "10.1021/acscatal.0c04525"
+def main():
+    # Parse command-line arguments
+    arguments = docopt(__doc__, version="url_checker 5.0.1")
+
+    url = arguments["--url"]
+    doi = arguments["--doi"]
+    headless = arguments["--headless"]
+    limit = int(arguments["--limit"])
 
     # Create an instance of the SeleniumFetcher
-    fetcher = SeleniumFetcher(headless=True)  # Set to False to see the browser
+    fetcher = SeleniumFetcher(headless=headless)
 
     try:
         print(f"Attempting to fetch HTML from: {url}")
-        # Fetch HTML content
         html_content = fetcher.fetch_page_html(url, wait_time=15)
+
         if html_content:
             print("\nPage accessed successfully (HTML)!")
-            print("--- Full HTML Content (first 1000 chars) ---")
-            print(
-                html_content[:1000]
-            )  # Print first 1000 chars of HTML for brevity in example
-            print("-------------------------")
-            print("HTML content fetched and printed.")
+            print(f"--- Full HTML Content (first {limit} chars) ---")
+            print(html_content[:limit])
+            print("-------------------------\n")
 
-            print("\n" + "=" * 50 + "\n")  # Separator
-
-            # Convert HTML to Markdown and print
-            print(f"Converting fetched HTML to Markdown and printing...")
+            print(f"Converting fetched HTML to Markdown...")
             markdown_content = fetcher._convert_html_to_markdown(html_content)
-            print("\nPage content converted to Markdown!")
-            print("--- Full Markdown Content (first 1000 chars) ---")
-            print(
-                markdown_content[:1000]
-            )  # Print first 1000 chars of Markdown for brevity in example
-            print("-----------------------------")
-            print("Markdown content fetched and printed.")
+            print(f"\nPage content converted to Markdown!")
+            print(f"--- Markdown Content (first {limit} chars) ---")
+            print(markdown_content[:limit])
+            print("-----------------------------\n")
 
-            print("\n" + "=" * 50 + "\n")  # Separator
-
-            # Fetch BibTeX from DOI (now includes formatting)
             print(f"Attempting to fetch BibTeX for DOI: {doi}")
             bibtex_content = fetcher.fetch_bibtex_from_doi(doi)
             if bibtex_content:
-                print(bibtex_content)  # Print the already formatted content
+                print(bibtex_content)
             else:
                 print(f"\nFailed to fetch BibTeX for DOI: {doi}")
 
@@ -692,6 +745,62 @@ if __name__ == "__main__":
             print("\nFailed to fetch the page (HTML).")
 
     finally:
-        # Ensure the driver is closed even if an error occurs
         print("Closing Selenium WebDriver.")
         fetcher.close()
+
+
+if __name__ == "__main__":
+    main()
+
+
+# # Example usage
+# if __name__ == "__main__":
+#     url = "https://pubs.acs.org/doi/10.1021/acscatal.0c04525"
+#     doi = "10.1021/acscatal.0c04525"
+
+#     # Create an instance of the SeleniumFetcher
+#     fetcher = SeleniumFetcher(headless=True)  # Set to False to see the browser
+
+#     try:
+#         print(f"Attempting to fetch HTML from: {url}")
+#         # Fetch HTML content
+#         html_content = fetcher.fetch_page_html(url, wait_time=15)
+#         if html_content:
+#             print("\nPage accessed successfully (HTML)!")
+#             print("--- Full HTML Content (first 1000 chars) ---")
+#             print(
+#                 html_content[:1000]
+#             )  # Print first 1000 chars of HTML for brevity in example
+#             print("-------------------------")
+#             print("HTML content fetched and printed.")
+
+#             print("\n" + "=" * 50 + "\n")  # Separator
+
+#             # Convert HTML to Markdown and print
+#             print(f"Converting fetched HTML to Markdown and printing...")
+#             markdown_content = fetcher._convert_html_to_markdown(html_content)
+#             print("\nPage content converted to Markdown!")
+#             print("--- Full Markdown Content (first 1000 chars) ---")
+#             print(
+#                 markdown_content[:1000]
+#             )  # Print first 1000 chars of Markdown for brevity in example
+#             print("-----------------------------")
+#             print("Markdown content fetched and printed.")
+
+#             print("\n" + "=" * 50 + "\n")  # Separator
+
+#             # Fetch BibTeX from DOI (now includes formatting)
+#             print(f"Attempting to fetch BibTeX for DOI: {doi}")
+#             bibtex_content = fetcher.fetch_bibtex_from_doi(doi)
+#             if bibtex_content:
+#                 print(bibtex_content)  # Print the already formatted content
+#             else:
+#                 print(f"\nFailed to fetch BibTeX for DOI: {doi}")
+
+#         else:
+#             print("\nFailed to fetch the page (HTML).")
+
+#     finally:
+#         # Ensure the driver is closed even if an error occurs
+#         print("Closing Selenium WebDriver.")
+#         fetcher.close()

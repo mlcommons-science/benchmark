@@ -1,4 +1,5 @@
-#!/usr/bin/env python"""
+#!/usr/bin/env python
+"""
 Check and fix suspicious characters in BibTeX files.
 
 Usage:

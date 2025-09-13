@@ -1,26 +1,69 @@
 #!/usr/bin/env python
 """
-Get citation from DOI(s), arXiv ID(s), or various sources including IEEE, OpenAlex, CrossRef, Semantic Scholar, DBLP.
+getbib.py — Fetch citations from DOIs, arXiv IDs, and bibliographic databases
+============================================================================
+
+Get citation data in various formats (BibTeX, RIS, YAML, JSON, etc.) from one
+or more identifiers. Supported sources include DOI, arXiv, IEEE Xplore,
+OpenAlex, CrossRef, Semantic Scholar, and DBLP.
 
 Usage:
-  getbib.py [--source=<src>] [--indent=<n>] [--format=<fmt>] [--count=<n>] <identifier>...
+  getbib.py [--source=<src>] [--format=<fmt>] [--indent=<n>] [--count=<n>] <identifier>...
   getbib.py (-h | --help)
 
 Arguments:
-  <identifier>    One or more DOIs (e.g. 10.1007/978-3-031-23220-6\\_4), arXiv IDs (e.g. 2310.17013), 
-                  or search strings (for --source search)
+  <identifier>     One or more identifiers to look up:
+                     - DOI (e.g. 10.1007/978-3-031-23220-6_4)
+                     - arXiv ID (e.g. 2310.17013 or https://arxiv.org/abs/2310.17013)
+                     - Search string (when used with --source openalex, crossref,
+                       semanticscholar, or dblp)
 
 Options:
-  --source=<src>   Source to search from [default: doi]
-                   Options: doi, ieee, openalex, crossref, semanticscholar, dblp
-  --indent=<n>     Number of spaces to indent the entire output [default: 0]
-  --format=<fmt>   Output format [default: bibtex]
-                   Options: bibtex, ris, yaml, json, txt, tx
-  --count=<n>      Number of results to return (for sources that support it) [default: 1]
+  --source=<src>   Data source to query [default: doi].
+                   Choices:
+                     - doi            Resolve a DOI directly
+                     - arxiv          Fetch from arXiv
+                     - ieee           Search IEEE Xplore (*limited support, often unreliable*)
+                     - openalex       Search OpenAlex
+                     - crossref       Search CrossRef
+                     - semanticscholar Search Semantic Scholar
+                     - dblp           Search DBLP
+  --format=<fmt>   Output format [default: bibtex].
+                   Choices:
+                     - bibtex         Standard BibTeX
+                     - ris            RIS format
+                     - yaml           YAML structure
+                     - json           JSON structure
+                     - attributes     Key–value pairs
+                     - str            One-line reference string
+  --indent=<n>     Indentation in spaces for pretty-printing [default: 0].
+                   Applies to BibTeX, RIS, YAML, and attributes.
+  --count=<n>      Maximum number of results to return (only applies to
+                   searchable sources such as openalex, crossref,
+                   semanticscholar, and dblp) [default: 1].
   -h --help        Show this help message.
 
-Note:
-    - The function to fetch from ieee is not working properly.
+Notes:
+  - By default, identifiers are treated as DOIs unless they look like arXiv IDs.
+  - Some sources may not support returning multiple results.
+  - The IEEE Xplore integration is experimental and may fail.
+  - Output is printed to stdout; errors and warnings go to stderr.
+
+Examples:
+  # Fetch BibTeX for a DOI
+  getbib.py 10.1007/978-3-031-23220-6_4
+
+  # Fetch citation for an arXiv paper
+  getbib.py 2310.17013 --format=ris
+
+  # Search Semantic Scholar for a paper by title
+  getbib.py "Attention Is All You Need" --source=semanticscholar --count=3 --format=json
+
+  # Fetch a DBLP record and print as attributes
+  getbib.py "Graph Neural Networks" --source=dblp --format=attributes --indent=2
+
+  # Use OpenAlex with YAML output
+  getbib.py "Large Language Models" --source=openalex --format=yaml
 """
 
 from docopt import docopt

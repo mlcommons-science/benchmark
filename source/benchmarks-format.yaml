@@ -46,10 +46,11 @@
     #   We also recommend adding this to the citation.
     # condition: optional
 
-  domain: 'Particle Physics'
+  domain:
+      - Particle Physics
     # description: |
     #   The scientific domain this benchmark belongs to,  i.e. physics, biology, math, ...
-    # condition: required
+    # condition: ">=1"
 
   focus: 'Real-time classification of particle jets using HL-LHC simulation features'
     # description: |

@@ -122,7 +122,7 @@ DESCRIPTION_STYLE = (
 
 # Define all columns with their properties for clarity and consistency
 ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
-    "average_rating": {"width": 1.5, "label": "Average Rating"},
+    "average_rating": {"width": 1, "label": "Average Rating"},
     "date": {"width": 1.5, "label": "Date"},
     "expired": {"width": 1, "label": "Expired"},
     "valid": {"width": 0.7, "label": "Valid"},
@@ -136,6 +136,7 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
     "ai_capability_measured": {"width": "3", "label": "AI Capability"},
     "metrics": {"width": 2, "label": "Metrics"},
     "models": {"width": 2, "label": "Models"},
+    "ml_motif": {"width": 3, "label": "AI/ML Motif"},
     "notes": {"width": 3, "label": "Notes"},
     "cite": {"width": 1, "label": "Citation"},
     "ratings": {"width": 3, "label": "Ratings"},
@@ -160,24 +161,26 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
 }
 
 DEFAULT_COLUMNS = [
-    "cite",
-    # "ratings",
+    "ratings",
     # "date",
     # "expired",
     # "valid",
-    #"name",
+    "name",
     # "url",
     "domain",
     # "focus",
     # "keywords",
+    "focus",
+    "keywords",
     # "description",
     "task_types",
-    "average_rating",
-    # "ai_capability_measured",
-    # "metrics",
-    # "models",
+    # "ml_motif",
+    # "average_rating",
+    "ai_capability_measured",
+    "metrics",
+    "models",
     # "notes",
-    # "cite",
+    "cite",
 ]
 
 REQUIRED_FIELDS_BY_TYPE = {

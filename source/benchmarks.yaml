@@ -371,7 +371,7 @@
   url: "https://arxiv.org/abs/2307.01909"
   doi: "10.48550/arXiv.2307.01909"
   domain:
-  - Sequence Prediction/Forcasting
+  - Climate & Earth Science
   focus: "ML for weather and climate modeling"
   keywords:
   - "medium-range forecasting"
@@ -392,8 +392,8 @@
   - "CNN baselines"
   - "ResNet variants"
   ml_motif:
-  - "Forecasting"
-  - "Benchmarking"
+  - Anomaly Detection
+  - Regression
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"

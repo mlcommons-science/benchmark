@@ -431,7 +431,7 @@
   - "Keras DNN"
   - "QKeras quantized DNN"
   ml_motif:
-  - "Real-time"
+  - Classification
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"

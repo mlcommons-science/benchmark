@@ -78,14 +78,11 @@ mkdocs:
 	python ${SCRIPT} --files=${FILES}  --format=mkdocs --outdir=./content --columns ${COLUMNS}
 	mkdir -p ${DOCS}/tex/images
 	mkdir -p ${DOCS}/md
-	mkdir -p ${DOCS}
-	mkdir -p ${WWW}
-	
+	mkdir -p ${DOCS}/assets
 	cp -r content/md ${DOCS}
 	cp -r content/tex ${DOCS}
-	cp -r content/assets/* ${DOCS}
+	cp -r content/assets ${DOCS}
 	cp content/mkdocs.yml ${WWW}
-
 	cp source/index.md ${DOCS}/index.md
 	cp content/tex/benchmarks.pdf ${DOCS}/benchmarks.pdf
 	$(call BANNER, "CLEAN LaTeX")
@@ -149,4 +146,4 @@ structure:
 	python ${SCRIPT} --files=source/benchmarks-addon.yaml --check_structure 
 
 view-local:
-	cd www/science-ai-benchmarks; mkdocs serve
+	cd www/science-ai-benchmarks; mkdocs serve -a 0.0.0.0:8000

@@ -1,0 +1,2207 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../table/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Benchmark - Gregors Sample Site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+    
+      <link rel="stylesheet" href="../assets/css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#benchmarks-table" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Gregors Sample Site" class="md-header__button md-logo" aria-label="Gregors Sample Site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gregors Sample Site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Benchmark
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Gregors Sample Site" class="md-nav__button md-logo" aria-label="Gregors Sample Site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Gregors Sample Site
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Benchmark
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="benchmarks-table">Benchmarks (Table)</h1>
+<div class="datatable-wrapper" style="overflow-x:auto;">
+  <table id="myTable" class="display nowrap" style="width:100%">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Domain</th>
+        <th>Focus</th>
+        <th>Keywords</th>
+        <th>Task Types</th>
+        <th>Metrics</th>
+        <th>Models</th>
+        <th>Citation</th>
+        <th>Software Rating</th>
+        <th>Software Reason</th>
+        <th>Specification Rating</th>
+        <th>Specification Reason</th>
+        <th>Dataset Rating</th>
+        <th>Dataset Reason</th>
+        <th>Metrics Rating</th>
+        <th>Metrics Reason</th>
+        <th>Reference Solution Rating</th>
+        <th>Reference Solution Reason</th>
+        <th>Documentation Rating</th>
+        <th>Documentation Reason</th>
+        <th>Average Ratings</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2020-09-07</td>
+        <td><a href="benchmarks/mmlu_massive_multitask_language_understanding.md">MMLU (Massive Multitask Language Understanding)</a></td>
+        <td>Multidomain</td>
+        <td>Academic knowledge and reasoning across 57 subjects</td>
+        <td>multitask, multiple-choice, zero-shot, few-shot, knowledge probing</td>
+        <td>Multiple choice</td>
+        <td>Accuracy</td>
+        <td>GPT-4o, Gemini 1.5 Pro, o1, DeepSeek-R1</td>
+        <td>[^1]</td>
+        <td>0</td>
+        <td>No instructions to download or run data given on the site </td>
+        <td>4</td>
+        <td>No system constraints </td>
+        <td>5</td>
+        <td>Meets all FAIR principles and properly versioned. </td>
+        <td>5</td>
+        <td>Fully defined, represents a solution's performance. </td>
+        <td>2</td>
+        <td>Reference models are available (i.e. GPT-3), but are not trainable or publicly documented </td>
+        <td>5</td>
+        <td>Well-explained in a provided paper. </td>
+        <td>3.5</td>
+      </tr>
+      <tr>
+        <td>2019-11-20</td>
+        <td><a href="benchmarks/commonsenseqa.md">CommonSenseQA</a></td>
+        <td>NLP; Commonsense</td>
+        <td>Commonsense question answering</td>
+        <td>ConceptNet, multiple-choice, adversarial</td>
+        <td>Multiple choice</td>
+        <td>Accuracy</td>
+        <td>BERT-large, RoBERTa, GPT-3</td>
+        <td>[^2]</td>
+        <td>5</td>
+        <td>All code given on Github site </td>
+        <td>4</td>
+        <td>Task and format (multiple-choice QA with 5 options) are clearly defined; grounded in ConceptNet with consistent structure, though no hardware/system constraints are specified. </td>
+        <td>5</td>
+        <td>Public, versioned, and FAIR-compliant; includes metadata, splits, and licensing; well-integrated with HuggingFace and other ML libraries. </td>
+        <td>5</td>
+        <td>Accuracy is a simple, reproducible metric aligned with task goals; no ambiguity in evaluation. </td>
+        <td>4</td>
+        <td>Several baseline models (e.g., BERT, RoBERTa) are reported with scores; implementations exist in public repos, but not run with hardware constraints </td>
+        <td>5</td>
+        <td>Given in paper. </td>
+        <td>4.667</td>
+      </tr>
+      <tr>
+        <td>2019-07-24</td>
+        <td><a href="benchmarks/winogrande.md">Winogrande</a></td>
+        <td>NLP; Commonsense</td>
+        <td>Winograd Schema-style pronoun resolution</td>
+        <td>adversarial, pronoun resolution</td>
+        <td>Pronoun resolution</td>
+        <td>Accuracy, AUC</td>
+        <td>RoBERTa, BERT, GPT-2</td>
+        <td>[^3]</td>
+        <td>0</td>
+        <td>No template code provided </td>
+        <td>5</td>
+        <td>Task (pronoun/coreference resolution) is clearly defined in Winograd Schema style, with consistent input/output format; no system constraints included. </td>
+        <td>5</td>
+        <td>Public, versioned, and FAIR-compliant with AFLite-generated splits to reduce annotation artifacts; hosted by AllenAI with good metadata. </td>
+        <td>5</td>
+        <td>Accuracy and AUC are quantitative and well-aligned with disambiguation goals; standardized across evaluations. </td>
+        <td>4</td>
+        <td>Baseline results available, requiring users to submit their methods along with their submissions. Constraints are not required in submissions. </td>
+        <td>5</td>
+        <td>Dataset page and paper provide sufficient detail </td>
+        <td>4.0</td>
+      </tr>
+      <tr>
+        <td>2022-06-09</td>
+        <td><a href="benchmarks/big-bench_beyond_the_imitation_game_benchmark.md">BIG-Bench (Beyond the Imitation Game Benchmark)</a></td>
+        <td>NLP; AI Evaluation</td>
+        <td>Diverse reasoning and generalization tasks</td>
+        <td>few-shot, multi-task, bias analysis</td>
+        <td>Few-shot evaluation, Multi-task evaluation</td>
+        <td>Accuracy, Task-specific metrics</td>
+        <td>GPT-3, Dense Transformers, Sparse Transformers</td>
+        <td>[^4]</td>
+        <td>4.5</td>
+        <td>Quick start notebook provided, but instructions on how to run it are lacking. </td>
+        <td>4.5</td>
+        <td>Tasks are diverse and clearly described; input/output formats are usually defined but vary widely, and system constraints are not standardized. </td>
+        <td>5</td>
+        <td>Public, versioned, and well-documented; FAIR overall </td>
+        <td>5</td>
+        <td>Many tasks use standard quantitative metrics (accuracy, BLEU, F1). Others involve subjective ratings (e.g., Likert), which reduces cross-task comparability. </td>
+        <td>2</td>
+        <td>Human baselines and LLM performance results are included; however, runnable reference solutions are limited and setup is not fully turnkey. </td>
+        <td>5</td>
+        <td>Explained in the associated paper. </td>
+        <td>4.333</td>
+      </tr>
+      <tr>
+        <td>2023-07-19</td>
+        <td><a href="benchmarks/climatelearn.md">ClimateLearn</a></td>
+        <td>Climate Science; Forecasting</td>
+        <td>ML for weather and climate modeling</td>
+        <td>medium-range forecasting, ERA5, data-driven</td>
+        <td>Forecasting</td>
+        <td>RMSE, Anomaly correlation</td>
+        <td>CNN baselines, ResNet variants</td>
+        <td>[^5]</td>
+        <td>5</td>
+        <td>Quickstart notebook makes for easy usage </td>
+        <td>5</td>
+        <td>Task framing (medium-range climate forecasting), input/output formats, and evaluation windows are clearly defined; benchmark supports both physical and learned models with detailed constraints. </td>
+        <td>5</td>
+        <td>Provides standardized access to ERA5 and other reanalysis datasets, with ML-ready splits, metadata, and Xarray-compatible formats; versioned and fully FAIR-compliant. </td>
+        <td>5</td>
+        <td>ACC and RMSE are standard, quantitative, and appropriate for climate forecasting; well-integrated into the benchmark, though interpretation across domains may vary. </td>
+        <td>0</td>
+        <td>The benchmark is geared for CNN architectures, but no specific model was mentioned. </td>
+        <td>5</td>
+        <td>Explained in the benchmark's paper.  </td>
+        <td>4.167</td>
+      </tr>
+      <tr>
+        <td>2024-10-01</td>
+        <td><a href="benchmarks/cfdbench_fluid_dynamics.md">CFDBench (Fluid Dynamics)</a></td>
+        <td>Fluid Dynamics; Scientific ML</td>
+        <td>Neural operator surrogate modeling</td>
+        <td>neural operators, CFD, FNO, DeepONet</td>
+        <td>Surrogate modeling</td>
+        <td>L2 error, MAE</td>
+        <td>FNO, DeepONet, U-Net</td>
+        <td>[^6]</td>
+        <td>5</td>
+        <td>The benchmark provides Python scripts for data loading, preprocessing, and model training/evaluation </td>
+        <td>0</td>
+        <td>Not listed </td>
+        <td>0</td>
+        <td>Not given </td>
+        <td>5</td>
+        <td>Quantitative metrics (L2 error, MAE, relative error) are clearly defined and align with regression task objectives. </td>
+        <td>5</td>
+        <td>Baseline models like FNO and DeepONet are implemented, hardware specified. </td>
+        <td>5</td>
+        <td>Associated paper gives all necessary information. </td>
+        <td>3.333</td>
+      </tr>
+      <tr>
+        <td>2023-04-23</td>
+        <td><a href="benchmarks/satimgnet.md">SatImgNet</a></td>
+        <td>Remote Sensing</td>
+        <td>Satellite imagery classification</td>
+        <td>land-use, zero-shot, multi-task</td>
+        <td>Image classification</td>
+        <td>Accuracy</td>
+        <td>CLIP, BLIP, ALBEF</td>
+        <td>[^7]</td>
+        <td>0</td>
+        <td>No scripts or environment information provided </td>
+        <td>4</td>
+        <td>Tasks (image classification across 27 satellite datasets) are clearly defined with multi-task and zero-shot framing; input/output structure is mostly standard but some task-specific nuances require interpretation. </td>
+        <td>5</td>
+        <td>Hosted on Hugging Face, versioned, FAIR-compliant with rich metadata; covers many well-known remote sensing datasets unified under one metadataset, though documentation depth varies slightly across tasks. </td>
+        <td>5</td>
+        <td>Accuracy of classification is an appropriate metric </td>
+        <td>4</td>
+        <td>Baselines like CLIP, BLIP, ALBEF evaluated in the paper; no constraints specified </td>
+        <td>5</td>
+        <td>Paper provides all required information </td>
+        <td>3.833</td>
+      </tr>
+      <tr>
+        <td>2022-02-22</td>
+        <td><a href="benchmarks/quantum_computing_benchmarks_qml.md">Quantum Computing Benchmarks (QML)</a></td>
+        <td>Quantum Computing</td>
+        <td>Quantum algorithm performance evaluation</td>
+        <td>quantum circuits, state preparation, error correction</td>
+        <td>Circuit benchmarking, State classification</td>
+        <td>Fidelity, Success probability</td>
+        <td>IBM Q, IonQ, AQT@LBNL</td>
+        <td>[^8]</td>
+        <td>4</td>
+        <td>Run instructions exist, but are not easy to follow </td>
+        <td>3</td>
+        <td>No system constraints. Task clarity and dataset format are not clearly specified. </td>
+        <td>4</td>
+        <td>Datasets are accessible, but not split. </td>
+        <td>3</td>
+        <td>Partially defined, somewhat inferrable metrics. Unknown whether a system's performance is captured. </td>
+        <td>0</td>
+        <td>Not provided </td>
+        <td>1</td>
+        <td>Only the task is defined.  </td>
+        <td>2.5</td>
+      </tr>
+      <tr>
+        <td>2020-10-20</td>
+        <td><a href="benchmarks/ocp_open_catalyst_project.md">OCP (Open Catalyst Project)</a></td>
+        <td>Chemistry; Materials Science</td>
+        <td>Catalyst adsorption energy prediction</td>
+        <td>DFT relaxations, adsorption energy, graph neural networks</td>
+        <td>Energy prediction, Force prediction</td>
+        <td>MAE (energy), MAE (force)</td>
+        <td>CGCNN, SchNet, DimeNet++, GemNet-OC</td>
+        <td>[^9], [^10], [^11], [^12]</td>
+        <td>5</td>
+        <td>Data provided in Github links </td>
+        <td>5</td>
+        <td>Tasks (energy and force prediction) are clearly defined with explicit I/O specifications, constraints, and physical relevance for renewable energy. </td>
+        <td>5</td>
+        <td>Fully FAIR- OC20, per-adsorbate trajectories, and OC22 are versioned; datasets come with standardized splits, metadata, and are downloadable. </td>
+        <td>5</td>
+        <td>MAE (energy and force) are standard and reproducible. </td>
+        <td>4</td>
+        <td>Multiple baselines (GemNet-OC, DimeNet++, etc.) implemented and evaluated. No hardware listed. </td>
+        <td>1</td>
+        <td>Paper exists, but content is behind a paywall. </td>
+        <td>4.167</td>
+      </tr>
+      <tr>
+        <td>2020-09-28</td>
+        <td><a href="benchmarks/medqa.md">MedQA</a></td>
+        <td>Medical Question Answering</td>
+        <td>Medical board exam QA</td>
+        <td>USMLE, diagnostic QA, medical knowledge, multilingual</td>
+        <td>Multiple choice</td>
+        <td>Accuracy</td>
+        <td>Neural reader, Retrieval-based QA systems</td>
+        <td>[^13]</td>
+        <td>5</td>
+        <td>All code available on the github </td>
+        <td>3</td>
+        <td>Task is clearly defined as multiple-choice QA for medical board exams; input and output formats are explicit; task scope is rigorous and structured. System constraints not specified. </td>
+        <td>4</td>
+        <td>Dataset is publicly available (GitHub, paper, Hugging Face), well-structured. However, versioning and metadata could be more standardized to fully meet FAIR criteria. </td>
+        <td>5</td>
+        <td>Uses clear, quantitative metric (accuracy), standard for multiple-choice benchmarks; easily comparable across models. </td>
+        <td>0</td>
+        <td>No reference solution mentioned. </td>
+        <td>4</td>
+        <td>Paper is available. Evaluation criteria are not mentioned. </td>
+        <td>3.5</td>
+      </tr>
+      <tr>
+        <td>2011-10-01</td>
+        <td><a href="benchmarks/materials_project.md">Materials Project</a></td>
+        <td>Materials Science</td>
+        <td>DFT-based property prediction</td>
+        <td>DFT, materials genome, high-throughput</td>
+        <td>Property prediction</td>
+        <td>MAE, R^2</td>
+        <td>Automatminer, Crystal Graph Neural Networks</td>
+        <td>[^14]</td>
+        <td>0</td>
+        <td>No instructions available </td>
+        <td>1.5</td>
+        <td>The platform offers a wide range of material property prediction tasks, but task framing and I/O formats vary by API use and are not always standardized across use cases. </td>
+        <td>3</td>
+        <td>API key required to access data. No predefined splits. </td>
+        <td>5</td>
+        <td>Uses numerical metrics like MAE and $R^2$ </td>
+        <td>2</td>
+        <td>Numerous models (e.g., Automatminer, CGCNN) trained on the database, but no constraints or documentation listed. </td>
+        <td>0</td>
+        <td>No explanations or paper provided </td>
+        <td>1.917</td>
+      </tr>
+      <tr>
+        <td>2023-11-20</td>
+        <td><a href="benchmarks/gpqa_diamond.md">GPQA Diamond</a></td>
+        <td>Science</td>
+        <td>Graduate-level scientific reasoning</td>
+        <td>Google-proof, graduate-level, science QA, chemistry, physics</td>
+        <td>Multiple choice, Multi-step QA</td>
+        <td>Accuracy</td>
+        <td>o1, DeepSeek-R1</td>
+        <td>[^15]</td>
+        <td>5</td>
+        <td>Python version and requirements specified on Github site </td>
+        <td>2</td>
+        <td>No system constraints or I/O specified </td>
+        <td>5</td>
+        <td>Easily able to access dataset. Comes with predefined splits as mentioned in the paper </td>
+        <td>5</td>
+        <td>Each question has a correct answer, representing the tested model's performance. </td>
+        <td>1</td>
+        <td>Common models such as GPT-3.5 were compared. They are not open and don't provide requirements </td>
+        <td>5</td>
+        <td>All information is listed in the associated paper </td>
+        <td>3.833</td>
+      </tr>
+      <tr>
+        <td>2018-03-14</td>
+        <td><a href="benchmarks/arc-challenge_advanced_reasoning_challenge.md">ARC-Challenge (Advanced Reasoning Challenge)</a></td>
+        <td>Science</td>
+        <td>Grade-school science with reasoning emphasis</td>
+        <td>grade-school, science QA, challenge set, reasoning</td>
+        <td>Multiple choice</td>
+        <td>Accuracy</td>
+        <td>GPT-4, Claude</td>
+        <td>[^16]</td>
+        <td>0</td>
+        <td>No link to code or documentation </td>
+        <td>2</td>
+        <td>Task is clear, but no constraints or format is mentioned </td>
+        <td>4</td>
+        <td>Data accessible, offers instructions on how to download the data via CLI tools. No splits. </td>
+        <td>5</td>
+        <td>(by default) All questions in the dataset are multiple choice, all have a correct answer </td>
+        <td>1</td>
+        <td>There are over 300 models listed, but very few, if any, show performance on the dataset or list constraints </td>
+        <td>5</td>
+        <td>Explains all necessary information inside a paper </td>
+        <td>2.833</td>
+      </tr>
+      <tr>
+        <td>2025-01-24</td>
+        <td><a href="benchmarks/humanitys_last_exam.md">Humanity's Last Exam</a></td>
+        <td>Multidomain</td>
+        <td>Broad cross-domain academic reasoning</td>
+        <td>cross-domain, academic exam, multiple-choice, multidisciplinary</td>
+        <td>Multiple choice</td>
+        <td>Accuracy</td>
+        <td>unkown</td>
+        <td>[^17]</td>
+        <td>4</td>
+        <td>Code for testing models posted on the github. Unknown how to run a custom model. </td>
+        <td>2</td>
+        <td>Format of inputs (natural language) and outputs (multiple choice or natural language) specified. No HW constraints specified </td>
+        <td>2</td>
+        <td>Data accessible through Hugging Face, but requires giving contact information to access </td>
+        <td>5</td>
+        <td>(by default) All questions in the dataset are multiple choice, all have a correct answer </td>
+        <td>2</td>
+        <td>Performance for cutting-edge models listed, but does not specify exact version of the models or how to reproduce the result </td>
+        <td>5</td>
+        <td>Paper available with necessary information </td>
+        <td>3.333</td>
+      </tr>
+      <tr>
+        <td>2024-11-07</td>
+        <td><a href="benchmarks/frontiermath.md">FrontierMath</a></td>
+        <td>Mathematics</td>
+        <td>Challenging advanced mathematical reasoning</td>
+        <td>symbolic reasoning, number theory, algebraic geometry, category theory</td>
+        <td>Problem solving</td>
+        <td>Accuracy</td>
+        <td>unkown</td>
+        <td>[^18]</td>
+        <td>0</td>
+        <td>No link to code provided </td>
+        <td>3</td>
+        <td>Well-specified process for asking questions and receiving answers. No software or hardware constraints </td>
+        <td>0</td>
+        <td>Paper and website had no link to any dataset. It may still exist somewhere </td>
+        <td>5</td>
+        <td>(by default) All questions in the dataset have a correct answer </td>
+        <td>2</td>
+        <td>Displays result of leading models on the benchmark, but none are trainable or list constraints </td>
+        <td>0</td>
+        <td>No specified way to reproduce the reference solution </td>
+        <td>1.667</td>
+      </tr>
+      <tr>
+        <td>2024-07-18</td>
+        <td><a href="benchmarks/scicode.md">SciCode</a></td>
+        <td>Scientific Programming</td>
+        <td>Scientific code generation and problem solving</td>
+        <td>code synthesis, scientific computing, programming benchmark</td>
+        <td>Coding</td>
+        <td>Solve rate (%)</td>
+        <td>Claude3.5-Sonnet</td>
+        <td>[^19]</td>
+        <td>5</td>
+        <td>Code to run exists on github repo </td>
+        <td>4.5</td>
+        <td>Expected outputs and broad types of inputs stated. Few details on output grading. No HW constraints. </td>
+        <td>0</td>
+        <td>Paper and website had no link to any dataset. It may still exist somewhere </td>
+        <td>2</td>
+        <td>Metrics stated, but method of grading is not specified </td>
+        <td>1</td>
+        <td>Models presented with scores, but none are open or list constraints </td>
+        <td>4</td>
+        <td>Paper containing all needed info except for evlauation criteria </td>
+        <td>2.75</td>
+      </tr>
+      <tr>
+        <td>2025-03-13</td>
+        <td><a href="benchmarks/aime_american_invitational_mathematics_examination.md">AIME (American Invitational Mathematics Examination)</a></td>
+        <td>Mathematics</td>
+        <td>Pre-college advanced problem solving</td>
+        <td>algebra, combinatorics, number theory, geometry</td>
+        <td>Problem solving</td>
+        <td>Accuracy</td>
+        <td>unkown</td>
+        <td>[^20]</td>
+        <td>0</td>
+        <td>No code available </td>
+        <td>0</td>
+        <td>Obvious what the problems are, but not specified how to administer them to AI models. No HW constraints </td>
+        <td>4</td>
+        <td>Easily accessible data with problems and solutions, but no splits </td>
+        <td>5</td>
+        <td>(by default) Answer is correct or it's not </td>
+        <td>0</td>
+        <td>Not given. Human performance stats exist, but no mentions of AI performance </td>
+        <td>0</td>
+        <td>Not given </td>
+        <td>1.5</td>
+      </tr>
+      <tr>
+        <td>2025-02-15</td>
+        <td><a href="benchmarks/math-.md">MATH-500</a></td>
+        <td>Mathematics</td>
+        <td>Math reasoning generalization</td>
+        <td>calculus, algebra, number theory, geometry</td>
+        <td>Problem solving</td>
+        <td>Accuracy</td>
+        <td>unkown</td>
+        <td>[^21]</td>
+        <td>0</td>
+        <td>No code provided </td>
+        <td>0</td>
+        <td>No method of presentation and evaluation is not stated. No constraints </td>
+        <td>5</td>
+        <td>Problems and solutions are easily downloaded. Could not find a way to download the data </td>
+        <td>2</td>
+        <td>Problem spec states that all of the AI reasoning steps are subject to grading, but no specified way to evaluate the steps </td>
+        <td>0</td>
+        <td>Not given </td>
+        <td>0</td>
+        <td>Not given. Implicit instructions to download dataset. </td>
+        <td>1.167</td>
+      </tr>
+      <tr>
+        <td>2024-04-02</td>
+        <td><a href="benchmarks/curie_scientific_long-context_understanding_reasoning_and_information_extraction.md">CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction)</a></td>
+        <td>Multidomain Science</td>
+        <td>Long-context scientific reasoning</td>
+        <td>long-context, information extraction, multimodal</td>
+        <td>Information extraction, Reasoning, Concept tracking, Aggregation, Algebraic manipulation, Multimodal comprehension</td>
+        <td>Accuracy</td>
+        <td>unkown</td>
+        <td>[^22]</td>
+        <td>4</td>
+        <td>Code is available, but not well documented </td>
+        <td>1</td>
+        <td>Explains types of problems in detail, but does not state exactly how to administer them. </td>
+        <td>4</td>
+        <td>Dataset is available via Github, but hard to find </td>
+        <td>5</td>
+        <td>Quantitiative metrics such as ROUGE-L and F1 used. Metrics are tailored to the specific problem. </td>
+        <td>1</td>
+        <td>Exists, but is not open </td>
+        <td>5</td>
+        <td>Associated paper explains all criteria </td>
+        <td>3.333</td>
+      </tr>
+      <tr>
+        <td>2023-01-26</td>
+        <td><a href="benchmarks/feabench_finite_element_analysis_benchmark.md">FEABench (Finite Element Analysis Benchmark)</a></td>
+        <td>Computational Engineering</td>
+        <td>FEA simulation accuracy and performance</td>
+        <td>finite element, simulation, PDE</td>
+        <td>Simulation, Performance evaluation</td>
+        <td>Solve time, Error norm</td>
+        <td>FEniCS, deal.II</td>
+        <td>[^23]</td>
+        <td>4</td>
+        <td>Code is available, but poorly documented </td>
+        <td>1.5</td>
+        <td>Output is defined and task clarity is questionable </td>
+        <td>4</td>
+        <td>Available, but not split into sets </td>
+        <td>5</td>
+        <td>Fully defined metrics </td>
+        <td>4</td>
+        <td>Three open-source models were used. No system constraints. </td>
+        <td>5</td>
+        <td>In associated paper </td>
+        <td>3.917</td>
+      </tr>
+      <tr>
+        <td>2024-07-12</td>
+        <td><a href="benchmarks/spiqa_scientific_paper_image_question_answering.md">SPIQA (Scientific Paper Image Question Answering)</a></td>
+        <td>Computer Science</td>
+        <td>Multimodal QA on scientific figures</td>
+        <td>multimodal QA, figure understanding, table comprehension, chain-of-thought</td>
+        <td>Question answering, Multimodal QA, Chain-of-Thought evaluation</td>
+        <td>Accuracy, F1 score</td>
+        <td>Chain-of-Thought models, Multimodal QA systems</td>
+        <td>[^24]</td>
+        <td>0</td>
+        <td>Not provided </td>
+        <td>5</td>
+        <td>Task administration clearly defined; prompt instructions explicitly given, no ambiguity in format or scope. </td>
+        <td>4.5</td>
+        <td>Dataset is available (via paper/appendix), includes train/test/valid split. FAIR-compliant with minor gaps in versioning or access standardization. </td>
+        <td>5</td>
+        <td>Uses quantitative metrics (Accuracy, F1) aligned with the task </td>
+        <td>2</td>
+        <td>Multiple model results (e.g., GPT-4V, Gemini) reported; baselines exist, but full runnable code not confirmed for all. </td>
+        <td>5</td>
+        <td>All information provided in paper </td>
+        <td>3.583</td>
+      </tr>
+      <tr>
+        <td>2025-05-13</td>
+        <td><a href="benchmarks/baisbench_biological_ai_scientist_benchmark.md">BaisBench (Biological AI Scientist Benchmark)</a></td>
+        <td>Computational Biology</td>
+        <td>Omics-driven AI research tasks</td>
+        <td>single-cell annotation, biological QA, autonomous discovery</td>
+        <td>Cell type annotation, Multiple choice</td>
+        <td>Annotation accuracy, QA accuracy</td>
+        <td>LLM-based AI scientist agents</td>
+        <td>[^25]</td>
+        <td>5</td>
+        <td>Instructions for environment setup available </td>
+        <td>4</td>
+        <td>Task clearly defined-cell type annotation and biological QA; input/output formats are well-described; system constraints are not quantified. </td>
+        <td>5</td>
+        <td>Uses public scRNA-seq datasets linked in paper appendix; structured and accessible, though versioning and full metadata not formalized per FAIR standards. </td>
+        <td>5</td>
+        <td>Includes precise and interpretable metrics (annotation and QA accuracy); directly aligned with task outputs and benchmarking goals. </td>
+        <td>0</td>
+        <td>Model evaluations and LLM agent results discussed; however, no fully packaged, runnable baseline confirmed yet. </td>
+        <td>5</td>
+        <td>Dataset and paper accessible; IPYNB files for setup are available on the github repo. </td>
+        <td>4.0</td>
+      </tr>
+      <tr>
+        <td>2023-01-26</td>
+        <td><a href="benchmarks/molgen.md">MOLGEN</a></td>
+        <td>Computational Chemistry</td>
+        <td>Molecular generation and optimization</td>
+        <td>SELFIES, GAN, property optimization</td>
+        <td>Distribution learning, Goal-oriented generation</td>
+        <td>Validity%, Novelty%, QED, Docking score</td>
+        <td>MolGen</td>
+        <td>[^26]</td>
+        <td>0</td>
+        <td>This is a pre-trained model </td>
+        <td>0</td>
+        <td>This is a pre-trained model </td>
+        <td>0</td>
+        <td>This is a pre-trained model </td>
+        <td>0</td>
+        <td>This is a pre-trained model </td>
+        <td>0</td>
+        <td>This is a pre-trained model </td>
+        <td>0</td>
+        <td>This is a pre-trained model </td>
+        <td>0.0</td>
+      </tr>
+      <tr>
+        <td>2020-05-02</td>
+        <td><a href="benchmarks/open_graph_benchmark_ogb_-_biology.md">Open Graph Benchmark (OGB) - Biology</a></td>
+        <td>Graph ML</td>
+        <td>Biological graph property prediction</td>
+        <td>node prediction, link prediction, graph classification</td>
+        <td>Node property prediction, Link property prediction, Graph property prediction</td>
+        <td>Accuracy, ROC-AUC</td>
+        <td>GCN, GraphSAGE, GAT</td>
+        <td>[^27]</td>
+        <td>5</td>
+        <td>All necessary information is provided on the Github </td>
+        <td>4</td>
+        <td>Tasks (node/link/graph property prediction) are clearly specified with input/output formats and standardized protocols; constraints (e.g., splits) are well-defined. No constraints. </td>
+        <td>5</td>
+        <td>Fully FAIR- datasets are versioned, split, and accessible via a standardized API; extensive metadata and documentation are included. </td>
+        <td>5</td>
+        <td>Reproducible, quantitative metrics (e.g., ROC-AUC, accuracy) that are tightly aligned with the tasks. </td>
+        <td>3</td>
+        <td>Multiple baselines implemented and documented (GCN, GAT, GraphSAGE). No contraints. </td>
+        <td>5</td>
+        <td>All necessary information is included in a paper. </td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>2023-06-20</td>
+        <td><a href="benchmarks/jarvis-leaderboard.md">JARVIS-Leaderboard</a></td>
+        <td>Materials Science; Benchmarking</td>
+        <td>Comparative evaluation of materials design methods</td>
+        <td>leaderboards, materials methods, simulation</td>
+        <td>Method benchmarking, Leaderboard ranking</td>
+        <td>MAE, RMSE, Accuracy</td>
+        <td>unkown</td>
+        <td>[^28]</td>
+        <td>1</td>
+        <td>Setup script provided, but no code provided </td>
+        <td>1</td>
+        <td>Only dataset format is defined. </td>
+        <td>4</td>
+        <td>Data is public and adheres to FAIR principles across the NIST-hosted infrastructure; however, metadata completeness varies slightly across benchmarks. No splits. </td>
+        <td>5</td>
+        <td>Metrics stated for each benchmark. </td>
+        <td>4</td>
+        <td>Many baselines across tasks (CGCNN, ALIGNN, M3GNet, etc.); no constraints specified. </td>
+        <td>1</td>
+        <td>Only the task is specified. </td>
+        <td>2.667</td>
+      </tr>
+      <tr>
+        <td>2023-10-05</td>
+        <td><a href="benchmarks/nixtla_neural_forecast_timegpt.md">Nixtla Neural Forecast TimeGPT</a></td>
+        <td>Time-series; General ML</td>
+        <td>Time-series foundation model "TimeGPT" for forecasting and anomaly detection</td>
+        <td>TimeGPT, foundation model, time-series, generative model</td>
+        <td>Time-series forecasting, Anomaly detection</td>
+        <td>RMSE, Anomaly detection metrics</td>
+        <td>TimeGPT</td>
+        <td>[^29]</td>
+        <td>4</td>
+        <td>Fully open-source Apache 2.0 implementation integrated in NeuralForecast, supporting training and evaluation via API. Production-grade deployment available via Nixtla API and Azure. </td>
+        <td>3</td>
+        <td>Concept and forecasting goals are described, but formal input/output definitions and task constraints are not rigorously specified. </td>
+        <td>3</td>
+        <td>Evaluated on existing open datasets, but consolidated data release, splits, and FAIR metadata are not provided. </td>
+        <td>4</td>
+        <td>Uses standard forecasting metrics such as RMSE, MASE, SMAPE, and anomaly detection metrics consistently across evaluations. </td>
+        <td>3</td>
+        <td>TimeGPT implementation is available, but baseline comparisons and additional reference models are limited. </td>
+        <td>3</td>
+        <td>Basic README with installation and usage examples; more detailed API docs and tutorials would improve usability. </td>
+        <td>3.333</td>
+      </tr>
+      <tr>
+        <td>2023-06-01</td>
+        <td><a href="benchmarks/nixtla_neural_forecast_nhits.md">Nixtla Neural Forecast NHITS</a></td>
+        <td>Time-series; General ML</td>
+        <td>Official NHITS implementation for long-horizon time series forecasting</td>
+        <td>NHITS, long-horizon forecasting, neural interpolation, time-series</td>
+        <td>Time-series forecasting</td>
+        <td>RMSE, MAPE</td>
+        <td>NHITS</td>
+        <td>[^30]</td>
+        <td>5</td>
+        <td>Implemented within the open-source NeuralForecast library under Apache 2.0. Includes training, evaluation, and hyperparameter tuning pipelines. Actively maintained. </td>
+        <td>5</td>
+        <td>The NHITS forecasting task is clearly defined with structured input/output formats. Model design targets long-horizon accuracy and compute efficiency. </td>
+        <td>3</td>
+        <td>Uses standard benchmark datasets like M4, but does not bundle them directly. FAIR compliance depends on external dataset sources and user setup. </td>
+        <td>5</td>
+        <td>Evaluated using RMSE, MAPE, and other standard forecasting metrics, integrated into training and evaluation APIs. </td>
+        <td>4</td>
+        <td>Official NHITS implementation is fully reproducible with training/eval configs, though pretrained weights are not always provided. </td>
+        <td>4</td>
+        <td>Well-documented on GitHub and in AAAI paper, with code examples, training guidance, and usage tutorials. More model-specific docs could improve clarity further. </td>
+        <td>4.333</td>
+      </tr>
+      <tr>
+        <td>2023-10-03</td>
+        <td><a href="benchmarks/nixtla_neural_forecast_timellm.md">Nixtla Neural Forecast TimeLLM</a></td>
+        <td>Time-series; General ML</td>
+        <td>Reprogramming LLMs for time series forecasting</td>
+        <td>Time-LLM, language model, time-series, reprogramming</td>
+        <td>Time-series forecasting</td>
+        <td>RMSE, MAPE</td>
+        <td>Time-LLM</td>
+        <td>[^31]</td>
+        <td>4</td>
+        <td>Fully open-source under Apache 2.0, integrated into the NeuralForecast library. Includes Time-LLM implementation with example usage and training scripts. </td>
+        <td>3</td>
+        <td>High-level framing of forecasting as language modeling is clear, but detailed input/output specifications, constraints, and task formalization are minimal. </td>
+        <td>3</td>
+        <td>Evaluated on standard datasets like M4 and ETT, but dataset splits and versioning are not bundled or explicitly FAIR-compliant. </td>
+        <td>4</td>
+        <td>Standard forecasting metrics such as RMSE, MAPE, and SMAPE are reported. Evaluation is consistent, though deeper metric justification is limited. </td>
+        <td>3</td>
+        <td>Time-LLM implementation is open and reproducible, but limited baselines or comparative implementations are included directly. </td>
+        <td>3</td>
+        <td>GitHub README provides installation and quick usage examples, but lacks detailed API docs, training walkthroughs, or extended tutorials. </td>
+        <td>3.333</td>
+      </tr>
+      <tr>
+        <td>2022-04-01</td>
+        <td><a href="benchmarks/nixtla_neuralforecast.md">Nixtla NeuralForecast</a></td>
+        <td>Time-series forecasting; General ML</td>
+        <td>High-performance neural forecasting library with >30 models</td>
+        <td>time-series, neural forecasting, NBEATS, NHITS, TFT, probabilistic forecasting, usability</td>
+        <td>Time-series forecasting</td>
+        <td>RMSE, MAPE, CRPS</td>
+        <td>NBEATS, NHITS, TFT, DeepAR</td>
+        <td>[^32]</td>
+        <td>5</td>
+        <td>Actively maintained open-source library under Apache 2.0. Offers a clean API, extensive model zoo (>30 models), integration with Ray, Optuna, and supports scalable training and inference workflows. </td>
+        <td>5</td>
+        <td>Forecasting task is well-defined with clear input/output structures. Framework supports probabilistic and deterministic forecasting, with unified interfaces and support for batch evaluation. </td>
+        <td>3</td>
+        <td>NeuralForecast does not include its own datasets but supports standard datasets (e.g., M4, M5, ETT). FAIR compliance depends on user-supplied data. </td>
+        <td>5</td>
+        <td>RMSE, MAPE, CRPS, and other domain-relevant metrics are well supported and integrated into the evaluation loop. </td>
+        <td>4</td>
+        <td>Includes runnable model baselines and training scripts for all supported models. Some models have pretrained weights, but not all are fully benchmarked out-of-the-box. </td>
+        <td>5</td>
+        <td>Rich documentation with examples, API references, tutorials, notebooks, and CLI support. PyPI, GitHub, and official blog posts offer clear guidance for usage and extension. </td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>2022-06-22</td>
+        <td><a href="benchmarks/vllm_performance_dashboard.md">vLLM Performance Dashboard</a></td>
+        <td>LLM; HPC/inference</td>
+        <td>Interactive dashboard showing inference performance of vLLM</td>
+        <td>Dashboard, Throughput visualization, Latency analysis, Metric tracking</td>
+        <td>Performance visualization</td>
+        <td>Tokens/sec, TTFT, Memory usage</td>
+        <td>LLaMA-2, Mistral, Qwen</td>
+        <td>[^33]</td>
+        <td>4</td>
+        <td>Interactive dashboard built with ObservableHQ and linked to vLLM benchmarks. Source code is not fully open, but backend integration with vLLM is well-maintained. </td>
+        <td>4</td>
+        <td>While primarily a visualization tool, it includes benchmark configurations, metric definitions, and supports comparison across models and hardware. </td>
+        <td>2</td>
+        <td>No datasets are bundled; the dashboard visualizes metrics derived from model inference logs or external endpoints, not a formal dataset. </td>
+        <td>4</td>
+        <td>Tracks tokens/sec, TTFT, memory usage, and platform comparisons. Metrics are clear but focused on visualization rather than statistical robustness. </td>
+        <td>3</td>
+        <td>Dashboards include reproducible views of benchmarked models, but do not ship with runnable model code. Relies on external serving infrastructure. </td>
+        <td>4</td>
+        <td>Public dashboard with instructions and tooltips; documentation is clear, though access is restricted (login required) and backend setup is opaque to users. </td>
+        <td>3.5</td>
+      </tr>
+      <tr>
+        <td>2023-09-12</td>
+        <td><a href="benchmarks/vllm_inference_and_serving_engine.md">vLLM Inference and Serving Engine</a></td>
+        <td>LLM; HPC/inference</td>
+        <td>High-throughput, memory-efficient inference and serving engine for LLMs</td>
+        <td>LLM inference, PagedAttention, CUDA graph, streaming API, quantization</td>
+        <td>Inference Benchmarking</td>
+        <td>Tokens/sec, Time to First Token (TTFT), Memory footprint</td>
+        <td>LLaMA, Mixtral, FlashAttention-based models</td>
+        <td>[^34]</td>
+        <td>5</td>
+        <td>Actively maintained open-source project under Apache 2.0. GitHub repo includes full serving engine, benchmarking scripts, CUDA integration, and deployment examples. </td>
+        <td>5</td>
+        <td>Inference benchmarks are well-defined with clear input/output formats and platform-specific constraints. Covers multiple models, hardware backends, and batching configurations. </td>
+        <td>3</td>
+        <td>No traditional dataset is included. Instead, it uses structured configs and logs suitable for inference benchmarking. FAIR principles are only partially applicable. </td>
+        <td>5</td>
+        <td>Comprehensive performance metrics like tokens/sec, time-to-first-token (TTFT), and memory footprint are consistently applied and benchmarked across frameworks. </td>
+        <td>4</td>
+        <td>Provides runnable scripts and configs for several models (LLaMA, Mixtral, etc.) across platforms. Baselines are reproducible, though not all models are fully wrapped or hosted. </td>
+        <td>4</td>
+        <td>Well-structured GitHub documentation with setup instructions, config examples, benchmarking comparisons, and performance tuning guides. </td>
+        <td>4.333</td>
+      </tr>
+      <tr>
+        <td>2023-12-12</td>
+        <td><a href="benchmarks/sglang_framework.md">SGLang Framework</a></td>
+        <td>LLM Vision</td>
+        <td>Fast serving framework for LLMs and vision-language models</td>
+        <td>LLM serving, vision-language, RadixAttention, performance, JSON decoding</td>
+        <td>Model serving framework</td>
+        <td>Tokens/sec, Time-to-first-token, Throughput gain vs baseline</td>
+        <td>LLaVA, DeepSeek, Llama</td>
+        <td>[^35]</td>
+        <td>5</td>
+        <td>Actively maintained and production-deployed (e.g., xAI, NVIDIA); source code available under Apache 2.0. Includes efficient backends (RadixAttention, quantization, batching) and full serving infrastructure. </td>
+        <td>4</td>
+        <td>The framework clearly defines performance targets, serving logic, and model integration. Input/output expectations are consistent, but not all benchmarks are standardized. </td>
+        <td>2</td>
+        <td>Does not introduce new datasets; instead, it evaluates performance using existing model benchmarks. Only configuration files are included. </td>
+        <td>5</td>
+        <td>Serving-related metrics such as tokens/sec, time-to-first-token, and throughput gain vs. baselines are well-defined and consistently applied. </td>
+        <td>3</td>
+        <td>Provides benchmark configs and example integrations (e.g., with LLaVA, DeepSeek), but not all models or scripts are runnable out-of-the-box. </td>
+        <td>4</td>
+        <td>Strong GitHub documentation, install guides, and benchmarks. Some advanced topics (e.g., scaling, hardware tuning) could use deeper walkthroughs. </td>
+        <td>3.833</td>
+      </tr>
+      <tr>
+        <td>2024-05-01</td>
+        <td><a href="benchmarks/jet_classification.md">Jet Classification</a></td>
+        <td>Particle Physics</td>
+        <td>Real-time classification of particle jets using HL-LHC simulation features</td>
+        <td>classification, real-time ML, jet tagging, QKeras</td>
+        <td>Classification</td>
+        <td>Accuracy, AUC</td>
+        <td>Keras DNN, QKeras quantized DNN</td>
+        <td>[^36]</td>
+        <td>3</td>
+        <td>Not containerized; Setup automation/documentation could be improved </td>
+        <td>4</td>
+        <td>System constraints missing </td>
+        <td>5</td>
+        <td>None </td>
+        <td>5</td>
+        <td>None </td>
+        <td>4</td>
+        <td>HW/SW requirements missing; Reference not bundled as official starter kit </td>
+        <td>4</td>
+        <td>Full reproducibility requires manual setup </td>
+        <td>4.167</td>
+      </tr>
+      <tr>
+        <td>2024-05-01</td>
+        <td><a href="benchmarks/irregular_sensor_data_compression.md">Irregular Sensor Data Compression</a></td>
+        <td>Particle Physics</td>
+        <td>Real-time compression of sparse sensor data with autoencoders</td>
+        <td>compression, autoencoder, sparse data, irregular sampling</td>
+        <td>Compression</td>
+        <td>MSE, Compression ratio</td>
+        <td>Autoencoder, Quantized autoencoder</td>
+        <td>[^37]</td>
+        <td>3</td>
+        <td>Not containerized; Full automation and documentation could be improved </td>
+        <td>4</td>
+        <td>Exact latency or resource constraints not numerically specified </td>
+        <td>5</td>
+        <td>All criteria met </td>
+        <td>5</td>
+        <td>All criteria met </td>
+        <td>4</td>
+        <td>Not fully documented or automated for reproducibility </td>
+        <td>4</td>
+        <td>Setup for deployment (e.g., FPGA pipeline) requires familiarity with tooling </td>
+        <td>4.167</td>
+      </tr>
+      <tr>
+        <td>2024-05-01</td>
+        <td><a href="benchmarks/beam_control.md">Beam Control</a></td>
+        <td>Accelerators and Magnets</td>
+        <td>Reinforcement learning control of accelerator beam position</td>
+        <td>RL, beam stabilization, control systems, simulation</td>
+        <td>Control</td>
+        <td>Stability, Control loss</td>
+        <td>DDPG, PPO (planned)</td>
+        <td>[^38], [^39]</td>
+        <td>1</td>
+        <td>Code not documented; Incomplete setup and not containerized </td>
+        <td>4</td>
+        <td>Latency/resource constraints not fully quantified </td>
+        <td>3</td>
+        <td>Not findable (no DOI/indexing); Not interoperable (format/schema unspecified) </td>
+        <td>5</td>
+        <td>All criteria met </td>
+        <td>2</td>
+        <td>HW/SW requirements missing; Metrics not evaluated with reference; Baseline not trainable/open </td>
+        <td>3</td>
+        <td>Setup instructions and pretrained model details are missing </td>
+        <td>3.0</td>
+      </tr>
+      <tr>
+        <td>2024-07-08</td>
+        <td><a href="benchmarks/ultrafast_jet_classification_at_the_hl-lhc.md">Ultrafast jet classification at the HL-LHC</a></td>
+        <td>Particle Physics</td>
+        <td>FPGA-optimized real-time jet origin classification at the HL-LHC</td>
+        <td>jet classification, FPGA, quantization-aware training, Deep Sets, Interaction Networks</td>
+        <td>Classification</td>
+        <td>Accuracy, Latency, Resource utilization</td>
+        <td>MLP, Deep Sets, Interaction Network</td>
+        <td>[^40]</td>
+        <td>3</td>
+        <td>Not containerized; Setup and automation incomplete </td>
+        <td>4</td>
+        <td>Hardware constraints are referenced but not fully detailed or standardized </td>
+        <td>4</td>
+        <td>FAIR metadata limited; no clear mention of dataset format or splits </td>
+        <td>3</td>
+        <td>Metrics exist (accuracy, latency, utilization), but formal definitions and evaluation guidance are limited </td>
+        <td>2</td>
+        <td>Reference implementations not fully reproducible; no evaluation pipeline or training setup provided </td>
+        <td>3</td>
+        <td>No linked GitHub repo or setup instructions; paper provides partial guidance only </td>
+        <td>3.167</td>
+      </tr>
+      <tr>
+        <td>2024-10-15</td>
+        <td><a href="benchmarks/quench_detection.md">Quench detection</a></td>
+        <td>Accelerators and Magnets</td>
+        <td>Real-time detection of superconducting magnet quenches using ML</td>
+        <td>quench detection, autoencoder, anomaly detection, real-time</td>
+        <td>Anomaly detection, Quench localization</td>
+        <td>ROC-AUC, Detection latency</td>
+        <td>Autoencoder, RL agents (in development)</td>
+        <td>[^41]</td>
+        <td>1</td>
+        <td>Code not provided; no evidence of documentation or containerization </td>
+        <td>4</td>
+        <td>Real-time detection task is clearly described, but exact constraints, inputs/outputs, and evaluation protocol are only partially specified </td>
+        <td>2</td>
+        <td>Dataset URL is missing; FAIR principles largely unmet </td>
+        <td>3</td>
+        <td>ROC-AUC and latency are mentioned, but metric definitions and formal evaluation setup are missing </td>
+        <td>1</td>
+        <td>No baseline or reproducible model implementation available </td>
+        <td>2</td>
+        <td>Only a conference slide deck is available; lacks detailed instructions or repository for reproduction </td>
+        <td>2.167</td>
+      </tr>
+      <tr>
+        <td>2025-01-08</td>
+        <td><a href="benchmarks/intelligent_experiments_through_real-time_ai.md">Intelligent experiments through real-time AI</a></td>
+        <td>Instrumentation and Detectors; Nuclear Physics; Particle Physics</td>
+        <td>Real-time FPGA-based triggering and detector control for sPHENIX and future EIC</td>
+        <td>FPGA, Graph Neural Network, hls4ml, real-time inference, detector control</td>
+        <td>Trigger classification, Detector control, Real-time inference</td>
+        <td>Accuracy (charm and beauty detection), Latency (micros), Resource utilization (LUT/FF/BRAM/DSP)</td>
+        <td>Bipartite Graph Network with Set Transformers (BGN-ST), GarNet (edge-classifier)</td>
+        <td>[^42]</td>
+        <td>3</td>
+        <td>No containerized or open-source setup provided </td>
+        <td>4</td>
+        <td>Architectural/system specifications are incomplete </td>
+        <td>2</td>
+        <td>Dataset is internal and not publicly available or FAIR-compliant </td>
+        <td>3</td>
+        <td>Metrics relevant but not supported by evaluation scripts or baselines </td>
+        <td>3</td>
+        <td>No public or reproducible implementation released </td>
+        <td>3</td>
+        <td>No public GitHub or complete pipeline documentation </td>
+        <td>3.0</td>
+      </tr>
+      <tr>
+        <td>2025-01-09</td>
+        <td><a href="benchmarks/neural_architecture_codesign_for_fast_physics_applications.md">Neural Architecture Codesign for Fast Physics Applications</a></td>
+        <td>Physics; Materials Science; Particle Physics</td>
+        <td>Automated neural architecture search and hardware-efficient model codesign for fast physics applications</td>
+        <td>neural architecture search, FPGA deployment, quantization, pruning, hls4ml</td>
+        <td>Classification, Peak finding</td>
+        <td>Accuracy, Latency, Resource utilization</td>
+        <td>NAC-based BraggNN, NAC-optimized Deep Sets (jet)</td>
+        <td>[^43]</td>
+        <td>3</td>
+        <td>Toolchain (hls4ml, nac-opt) described but not yet containerized or fully packaged </td>
+        <td>5</td>
+        <td>Fully specified task with constraints and target deployment; includes hardware context </td>
+        <td>2</td>
+        <td>Simulated datasets referenced but not publicly available or FAIR-compliant </td>
+        <td>5</td>
+        <td>Clear, quantitative metrics aligned with task goals and hardware evaluation </td>
+        <td>4</td>
+        <td>Models tested on hardware with source code references; full training pipeline not yet released </td>
+        <td>4</td>
+        <td>Detailed paper and tools described; open repo planned but not yet complete </td>
+        <td>3.833</td>
+      </tr>
+      <tr>
+        <td>2024-06-24</td>
+        <td><a href="benchmarks/smart_pixels_for_lhc.md">Smart Pixels for LHC</a></td>
+        <td>Particle Physics; Instrumentation and Detectors</td>
+        <td>On-sensor, in-pixel ML filtering for high-rate LHC pixel detectors</td>
+        <td>smart pixel, on-sensor inference, data reduction, trigger</td>
+        <td>Image Classification, Data filtering</td>
+        <td>Data rejection rate, Power per pixel</td>
+        <td>2-layer pixel NN</td>
+        <td>[^44]</td>
+        <td>2</td>
+        <td>No packaged code or setup scripts available; replication depends on hardware description and paper </td>
+        <td>5</td>
+        <td>None </td>
+        <td>2</td>
+        <td>No dataset links; not publicly hosted or FAIR-compliant </td>
+        <td>5</td>
+        <td>None </td>
+        <td>3</td>
+        <td>In-pixel 2-layer NN described and evaluated, but reproducibility and source files are not released </td>
+        <td>3</td>
+        <td>Paper contains detailed descriptions, but no repo or external guide for reproducing results </td>
+        <td>3.333</td>
+      </tr>
+      <tr>
+        <td>2023-10-03</td>
+        <td><a href="benchmarks/hedm_braggnn.md">HEDM (BraggNN)</a></td>
+        <td>Material Science</td>
+        <td>Fast Bragg peak analysis using deep learning in diffraction microscopy</td>
+        <td>BraggNN, diffraction, peak finding, HEDM</td>
+        <td>Peak detection</td>
+        <td>Localization accuracy, Inference time</td>
+        <td>BraggNN</td>
+        <td>[^45]</td>
+        <td>2</td>
+        <td>No standalone code repository or setup instructions provided </td>
+        <td>5</td>
+        <td>None </td>
+        <td>2</td>
+        <td>No dataset links or FAIR metadata; unclear public access </td>
+        <td>4</td>
+        <td>Only localization accuracy and inference time mentioned; not formally benchmarked with scripts </td>
+        <td>3</td>
+        <td>BraggNN model is described and evaluated, but no direct implementation or inference scripts available </td>
+        <td>3</td>
+        <td>Paper is clear, but lacks a GitHub repo or full reproducibility pipeline </td>
+        <td>3.167</td>
+      </tr>
+      <tr>
+        <td>2023-12-03</td>
+        <td><a href="benchmarks/d-stem.md">4D-STEM</a></td>
+        <td>Material Science</td>
+        <td>Real-time ML for scanning transmission electron microscopy</td>
+        <td>4D-STEM, electron microscopy, real-time, image processing</td>
+        <td>Image Classification, Streamed data inference</td>
+        <td>Classification accuracy, Throughput</td>
+        <td>CNN models (prototype)</td>
+        <td>[^46]</td>
+        <td>2</td>
+        <td>No standalone code repository or setup instructions provided </td>
+        <td>5</td>
+        <td>None </td>
+        <td>2</td>
+        <td>No dataset links or FAIR metadata; unclear public access </td>
+        <td>4</td>
+        <td>Only localization accuracy and inference time mentioned; not formally benchmarked with scripts </td>
+        <td>3</td>
+        <td>BraggNN model is described and evaluated, but no direct implementation or inference scripts available </td>
+        <td>3</td>
+        <td>Paper is clear, but lacks a GitHub repo or full reproducibility pipeline </td>
+        <td>3.167</td>
+      </tr>
+      <tr>
+        <td>2023-12-05</td>
+        <td><a href="benchmarks/in-situ_high-speed_computer_vision.md">In-Situ High-Speed Computer Vision</a></td>
+        <td>Fusion/Plasma</td>
+        <td>Real-time image classification for in-situ plasma diagnostics</td>
+        <td>plasma, in-situ vision, real-time ML</td>
+        <td>Image Classification</td>
+        <td>Accuracy, FPS</td>
+        <td>CNN</td>
+        <td>[^47]</td>
+        <td>1</td>
+        <td>No public implementation or containerized setup released </td>
+        <td>3</td>
+        <td>No standardized I/O, latency constraint, or complete framing </td>
+        <td>0</td>
+        <td>Dataset not provided or described in any formal way </td>
+        <td>2</td>
+        <td>Throughput and accuracy mentioned, but not defined or benchmarked </td>
+        <td>1</td>
+        <td>Prototype CNNs described; no code, baseline, or training details available </td>
+        <td>2</td>
+        <td>Some insight via papers, but no working repo, setup, or replication path </td>
+        <td>1.5</td>
+      </tr>
+      <tr>
+        <td>2020-01-01</td>
+        <td><a href="benchmarks/benchcouncil_aibench.md">BenchCouncil AIBench</a></td>
+        <td>General</td>
+        <td>End-to-end AI benchmarking across micro, component, and application levels</td>
+        <td>benchmarking, AI systems, application-level evaluation</td>
+        <td>Training, Inference, End-to-end AI workloads</td>
+        <td>Throughput, Latency, Accuracy</td>
+        <td>ResNet, BERT, GANs, Recommendation systems</td>
+        <td>[^48]</td>
+        <td>3</td>
+        <td>No containerized or automated implementation provided for full benchmark suite </td>
+        <td>4</td>
+        <td>Task coverage is broad and well-scoped, but system constraints and expected outputs are not uniformly defined </td>
+        <td>3</td>
+        <td>Multiple datasets are mentioned, but not consistently FAIR-documented, versioned, or linked </td>
+        <td>4</td>
+        <td>Metrics are appropriate, but standardization and reproducibility across tasks vary </td>
+        <td>3</td>
+        <td>Reference models (e.g., ResNet, BERT) described; no turnkey implementation or results repository for all levels </td>
+        <td>3</td>
+        <td>Paper is comprehensive, but minimal user-facing documentation or structured reproduction guide </td>
+        <td>3.333</td>
+      </tr>
+      <tr>
+        <td>2020-01-01</td>
+        <td><a href="benchmarks/benchcouncil_bigdatabench.md">BenchCouncil BigDataBench</a></td>
+        <td>General</td>
+        <td>Big data and AI benchmarking across structured, semi-structured, and unstructured data workloads</td>
+        <td>big data, AI benchmarking, data analytics</td>
+        <td>Data preprocessing, Inference, End-to-end data pipelines</td>
+        <td>Data throughput, Latency, Accuracy</td>
+        <td>CNN, LSTM, SVM, XGBoost</td>
+        <td>[^49]</td>
+        <td>3</td>
+        <td>No automated setup across all tasks; some components require manual integration. </td>
+        <td>4</td>
+        <td>Specific I/O formats and hardware constraints are not uniformly detailed across all tasks. </td>
+        <td>4</td>
+        <td>Some datasets lack consistent versioning or rich metadata annotations. </td>
+        <td>5</td>
+        <td>None </td>
+        <td>4</td>
+        <td>Not all benchmark components have fully reproducible baselines; deployment across platforms is fragmented. </td>
+        <td>4</td>
+        <td>Setup requires manual steps; some task-specific instructions lack clarity. </td>
+        <td>4.0</td>
+      </tr>
+      <tr>
+        <td>2021-10-20</td>
+        <td><a href="benchmarks/mlperf_hpc.md">MLPerf HPC</a></td>
+        <td>Cosmology, Climate, Protein Structure, Catalysis</td>
+        <td>Scientific ML training and inference on HPC systems</td>
+        <td>HPC, training, inference, scientific ML</td>
+        <td>Training, Inference</td>
+        <td>Training time, Accuracy, GPU utilization</td>
+        <td>CosmoFlow, DeepCAM, OpenCatalyst</td>
+        <td>[^50]</td>
+        <td>3</td>
+        <td>Reference implementations exist but containerization and environment setup require manual effort across HPC systems. </td>
+        <td>4</td>
+        <td>Hardware constraints and I/O formats are not fully defined for all scenarios. </td>
+        <td>5</td>
+        <td>Not all data is independently versioned or comes with standardized FAIR metadata. </td>
+        <td>5</td>
+        <td>None </td>
+        <td>4</td>
+        <td>Reproducibility and environment tuning depend on system configuration; baseline models not uniformly bundled. </td>
+        <td>4</td>
+        <td>Central guidance is available but requires domain-specific effort to replicate results across systems. </td>
+        <td>4.167</td>
+      </tr>
+      <tr>
+        <td>2023-06-01</td>
+        <td><a href="benchmarks/mlcommons_science.md">MLCommons Science</a></td>
+        <td>Earthquake, Satellite Image, Drug Discovery, Electron Microscope, CFD</td>
+        <td>AI benchmarks for scientific applications including time-series, imaging, and simulation</td>
+        <td>science AI, benchmark, MLCommons, HPC</td>
+        <td>Time-series analysis, Image classification, Simulation surrogate modeling</td>
+        <td>MAE, Accuracy, Speedup vs simulation</td>
+        <td>CNN, GNN, Transformer</td>
+        <td>[^51]</td>
+        <td>5</td>
+        <td>Actively maintained GitHub repository available at https://github.com/mlcommons/science with implementations, scripts, and reproducibility support. </td>
+        <td>5</td>
+        <td>All five specification aspects are covered: system constraints, task, dataset format, benchmark inputs, and outputs. </td>
+        <td>5</td>
+        <td>Public scientific datasets are used with defined splits. At least 4 FAIR principles are followed. </td>
+        <td>5</td>
+        <td>Clearly defined metrics such as accuracy, training time, and GPU utilization are used. These metrics are explained and effectively capture solution performance. </td>
+        <td>5</td>
+        <td>A reference implementation is available, well-documented, trainable/open, and includes full metric evaluation and software/hardware details. </td>
+        <td>5</td>
+        <td>Thorough documentation exists covering the task, background, motivation, evaluation criteria, and includes a supporting paper. </td>
+        <td>5.0</td>
+      </tr>
+      <tr>
+        <td>2021-07-05</td>
+        <td><a href="benchmarks/lhc_new_physics_dataset.md">LHC New Physics Dataset</a></td>
+        <td>Particle Physics; Real-time Triggering</td>
+        <td>Real-time LHC event filtering for anomaly detection using proton collision data</td>
+        <td>anomaly detection, proton collision, real-time inference, event filtering, unsupervised ML</td>
+        <td>Anomaly detection, Event classification</td>
+        <td>ROC-AUC, Detection efficiency</td>
+        <td>Autoencoder, Variational autoencoder, Isolation forest</td>
+        <td>[^52]</td>
+        <td>3</td>
+        <td>While not formally evaluated in the previous version, Zenodo and paper links suggest available code for baseline models (e.g., autoencoders, GANs), though they are scattered and not unified in a single repository. </td>
+        <td>3</td>
+        <td>The task and context are clearly described, but system constraints and formal inputs/outputs are not fully specified. </td>
+        <td>5</td>
+        <td>Large-scale dataset hosted on Zenodo, publicly available, well-documented, with defined train/test structure. Appears to follow at least 4 FAIR principles. </td>
+        <td>4</td>
+        <td>Uses reasonable metrics (ROC-AUC, detection efficiency) that capture performance but lacks full explanation and standard evaluation tools. </td>
+        <td>2</td>
+        <td>Baselines are described across multiple papers but lack centralized, reproducible implementations and hardware/software setup details. </td>
+        <td>3</td>
+        <td>Some description in papers and dataset metadata exists, but lacks a unified guide, README, or training setup in a central location. </td>
+        <td>3.333</td>
+      </tr>
+      <tr>
+        <td>2023-07-17</td>
+        <td><a href="benchmarks/mlcommons_medical_ai.md">MLCommons Medical AI</a></td>
+        <td>Healthcare; Medical AI</td>
+        <td>Federated benchmarking and evaluation of medical AI models across diverse real-world clinical data</td>
+        <td>medical AI, federated evaluation, privacy-preserving, fairness, healthcare benchmarks</td>
+        <td>Federated evaluation, Model validation</td>
+        <td>ROC AUC, Accuracy, Fairness metrics</td>
+        <td>MedPerf-validated CNNs, GaNDLF workflows</td>
+        <td>[^53]</td>
+        <td>5</td>
+        <td>GitHub repository (https://github.com/mlcommons/medical) provides actively maintained open-source tools like MedPerf and GaNDLF for federated medical AI evaluation. </td>
+        <td>4</td>
+        <td>The platform defines federated tasks and model evaluation scenarios. Some clinical and system-level constraints are implied but not uniformly formalized across all use cases. </td>
+        <td>4</td>
+        <td>Multi-institutional datasets used in federated settings; real-world data is handled privately onsite, but some FAIR aspects (e.g., accessibility and metadata) are implicit. </td>
+        <td>5</td>
+        <td>Metrics such as ROC AUC, accuracy, and fairness are clearly specified and directly support goals like generalizability and equity. </td>
+        <td>3</td>
+        <td>GaNDLF workflows and MedPerf-validated CNNs are referenced, but not all baseline models are centrally documented or easily reproducible. </td>
+        <td>5</td>
+        <td>Extensive documentation, papers, and community support exist. Clear examples and usage instructions are provided in GitHub and publications. </td>
+        <td>4.333</td>
+      </tr>
+      <tr>
+        <td>2024-10-28</td>
+        <td><a href="benchmarks/calochallenge_.md">CaloChallenge 2022</a></td>
+        <td>LHC Calorimeter; Particle Physics</td>
+        <td>Fast generative-model-based calorimeter shower simulation evaluation</td>
+        <td>calorimeter simulation, generative models, surrogate modeling, LHC, fast simulation</td>
+        <td>Surrogate modeling</td>
+        <td>Histogram similarity, Classifier AUC, Generation latency</td>
+        <td>VAE variants, GAN variants, Normalizing flows, Diffusion models</td>
+        <td>[^54]</td>
+        <td>4</td>
+        <td>Community GitHub repos and model implementations are available for the 31 submissions. While not fully unified in one place, the software is accessible and reproducible. </td>
+        <td>5</td>
+        <td>The task—evaluating fast generative calorimeter simulations—is clearly defined with benchmarking protocols, constraints like latency and model complexity, and structured evaluation criteria. </td>
+        <td>5</td>
+        <td>Four well-structured calorimeter datasets are provided, with different voxel resolutions, open access, signal/background separation, and metadata. FAIR principles are well covered. </td>
+        <td>5</td>
+        <td>Metrics like histogram similarity, classifier AUC, and generation latency are well defined and relevant for simulation quality, fidelity, and performance. </td>
+        <td>4</td>
+        <td>Several baselines (GANs, VAEs, flows, diffusion models) are documented and evaluated. Some are available via community repos, though not all are fully standardized or bundled. </td>
+        <td>4</td>
+        <td>Accompanied by a detailed paper and dataset description. Reproduction of pipelines may require additional setup or familiarity with the model submissions. </td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>ongoing</td>
+        <td><a href="benchmarks/papers_with_code_sota_platform.md">Papers With Code (SOTA Platform)</a></td>
+        <td>General ML; All domains</td>
+        <td>Open platform tracking state-of-the-art results, benchmarks, and implementations across ML tasks and papers</td>
+        <td>leaderboard, benchmarking, reproducibility, open-source</td>
+        <td>Multiple (Classification, Detection, NLP, etc.)</td>
+        <td>Task-specific (Accuracy, F1, BLEU, etc.)</td>
+        <td>All published models with code</td>
+        <td>[^55]</td>
+        <td>5</td>
+        <td>Actively maintained open-source platform (https://paperswithcode.com) under Apache 2.0 license; includes automatic integration with GitHub, datasets, and models for reproducibility. </td>
+        <td>4</td>
+        <td>Task and benchmark structures are well organized and standardized, but due to its broad coverage, input/output formats vary significantly between tasks and are not always tightly controlled. </td>
+        <td>3</td>
+        <td>Relies on external datasets submitted by the community. While links are available, FAIR compliance is not guaranteed or systematically enforced across all benchmarks. </td>
+        <td>5</td>
+        <td>Tracks state-of-the-art using task-specific metrics like Accuracy, F1, BLEU, etc., with consistent aggregation and historical SOTA tracking. </td>
+        <td>3</td>
+        <td>Provides links to implementations of many SOTA models, but no single unified reference baseline is required or maintained per benchmark. </td>
+        <td>4</td>
+        <td>Strong front-end documentation and metadata on benchmarks, tasks, and models; however, some benchmark-specific instructions are sparse or dependent on external paper links. </td>
+        <td>4.0</td>
+      </tr>
+      <tr>
+        <td>2022-01-01</td>
+        <td><a href="benchmarks/codabench.md">Codabench</a></td>
+        <td>General ML; Multiple</td>
+        <td>Open-source platform for organizing reproducible AI benchmarks and competitions</td>
+        <td>benchmark platform, code submission, competitions, meta-benchmark</td>
+        <td>Multiple</td>
+        <td>Submission count, Leaderboard ranking, Task-specific metrics</td>
+        <td>Arbitrary code submissions</td>
+        <td>[^56]</td>
+        <td>1</td>
+        <td>This is a platform for posting benchmarks, not a benchmark in itself. </td>
+        <td>1</td>
+        <td>This is a platform for posting benchmarks, not a benchmark in itself. </td>
+        <td>1</td>
+        <td>This is a platform for posting benchmarks, not a benchmark in itself. </td>
+        <td>1</td>
+        <td>This is a platform for posting benchmarks, not a benchmark in itself. </td>
+        <td>1</td>
+        <td>This is a platform for posting benchmarks, not a benchmark in itself. </td>
+        <td>1</td>
+        <td>This is a platform for posting benchmarks, not a benchmark in itself. </td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>2021-09-27</td>
+        <td><a href="benchmarks/sabath_sbi-fair.md">Sabath (SBI-FAIR)</a></td>
+        <td>Systems; Metadata</td>
+        <td>FAIR metadata framework for ML-driven surrogate workflows in HPC systems</td>
+        <td>meta-benchmark, metadata, HPC, surrogate modeling</td>
+        <td>Systems benchmarking</td>
+        <td>Metadata completeness, FAIR compliance</td>
+        <td>NA</td>
+        <td>[^57]</td>
+        <td>4</td>
+        <td>Actively maintained GitHub repository (https://github.com/icl-utk-edu/slip/tree/sabath) with BSD-licensed tooling for FAIR metadata capture; integrates with existing surrogate modeling benchmarks. </td>
+        <td>4</td>
+        <td>FAIR metadata structure and logging goals are clearly described. Input/output definitions are implied through integrations (e.g., MiniWeatherML), though not always formalized. </td>
+        <td>4</td>
+        <td>Datasets used in surrogate benchmarks are publicly available, well-structured, and FAIR-aligned, but not independently hosted by Sabath itself. </td>
+        <td>4</td>
+        <td>Emphasizes metadata completeness and FAIR compliance. Metrics are clear and well-matched to its metadata-focused benchmarking context. </td>
+        <td>3</td>
+        <td>Includes integration with multiple surrogate benchmarks and models, though not all are fully documented or packaged as standardized reference solutions. </td>
+        <td>3</td>
+        <td>Basic instructions and code are provided on GitHub, but more detailed walkthroughs, use-case examples, or tutorials are limited. </td>
+        <td>3.667</td>
+      </tr>
+      <tr>
+        <td>2022-10-13</td>
+        <td><a href="benchmarks/pdebench.md">PDEBench</a></td>
+        <td>CFD; Weather Modeling</td>
+        <td>Benchmark suite for ML-based surrogates solving time-dependent PDEs</td>
+        <td>PDEs, CFD, scientific ML, surrogate modeling, NeurIPS</td>
+        <td>Supervised Learning</td>
+        <td>RMSE, boundary RMSE, Fourier RMSE</td>
+        <td>FNO, U-Net, PINN, Gradient-Based inverse methods</td>
+        <td>[^58]</td>
+        <td>5</td>
+        <td>GitHub repository (https://github.com/pdebench/PDEBench) is actively maintained and includes training pipelines, data loaders, and evaluation scripts. Installation and usage are well-documented. </td>
+        <td>5</td>
+        <td>Clearly defined tasks for forward and inverse PDE problems, with structured input/output formats, system constraints, and task specifications. </td>
+        <td>5</td>
+        <td>Diverse PDE datasets (synthetic and real-world) hosted on DaRUS with DOIs. Datasets are well-documented, structured, and follow FAIR practices. </td>
+        <td>4</td>
+        <td>Includes RMSE, boundary RMSE, and Fourier-domain RMSE. These are well-suited to PDE problems, though rationale behind metric choices could be expanded in some cases. </td>
+        <td>4</td>
+        <td>Baselines (FNO, U-Net, PINN, etc.) are available and documented, but not every model includes full training and evaluation reproducibility out-of-the-box. </td>
+        <td>4</td>
+        <td>Strong documentation on GitHub including examples, configs, and usage instructions. Some model-specific details and tutorials could be further expanded. </td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>2024-10-31</td>
+        <td><a href="benchmarks/llm-inference-bench.md">LLM-Inference-Bench</a></td>
+        <td>LLM; HPC/inference</td>
+        <td>Hardware performance benchmarking of LLMs on AI accelerators</td>
+        <td>LLM, inference benchmarking, GPU, accelerator, throughput</td>
+        <td>Inference Benchmarking</td>
+        <td>Token throughput (tok/s), Latency, Framework-hardware mix performance</td>
+        <td>LLaMA-2-7B, LLaMA-2-70B, Mistral-7B, Qwen-7B</td>
+        <td>[^59]</td>
+        <td>5</td>
+        <td>Public GitHub repository under BSD-3 license. Includes scripts, configurations, and dashboards for running and visualizing LLM inference benchmarks across multiple accelerator platforms. </td>
+        <td>5</td>
+        <td>Benchmark scope, models, accelerator targets, and supported frameworks are clearly specified. Input configurations and output metrics are standardized across hardware types. </td>
+        <td>2</td>
+        <td>No novel dataset is introduced; benchmark relies on pre-trained LLMs and synthetic inference inputs. Dataset structure and FAIR considerations are minimal. </td>
+        <td>5</td>
+        <td>Hardware-specific metrics (token throughput, latency, utilization) are well-defined, consistently measured, and aggregated in dashboards. </td>
+        <td>3</td>
+        <td>Inference configurations and baseline performance results are provided, but there are no full reference training pipelines or model implementations. </td>
+        <td>4</td>
+        <td>GitHub repo provides clear usage instructions, setup guides, and interactive dashboard tooling. Some areas like benchmarking extensions or advanced tuning are less detailed. </td>
+        <td>4.0</td>
+      </tr>
+      <tr>
+        <td>2024-12-13</td>
+        <td><a href="benchmarks/delta_squared-dft.md">Delta Squared-DFT</a></td>
+        <td>Computational Chemistry; Materials Science</td>
+        <td>Benchmarking machine-learning corrections to DFT using Delta Squared-trained models for reaction energies</td>
+        <td>density functional theory, Delta Squared-ML correction, reaction energetics, quantum chemistry</td>
+        <td>Regression</td>
+        <td>Mean Absolute Error (eV), Energy ranking accuracy</td>
+        <td>Delta Squared-ML correction networks, Kernel ridge regression</td>
+        <td>[^60]</td>
+        <td>3</td>
+        <td>Source code and baseline models available for ML correction to DFT; framework maturity is moderate. </td>
+        <td>4</td>
+        <td>Benchmark focuses on reaction energy prediction with clear goals, though some task specifics could be formalized further. </td>
+        <td>4.5</td>
+        <td>Multi-modal quantum chemistry datasets are standardized and accessible; repository available. </td>
+        <td>4</td>
+        <td>Uses standard regression metrics like MAE and energy ranking accuracy; appropriate for task. </td>
+        <td>3.5</td>
+        <td>Includes baseline regression and kernel ridge models; implementations are reproducible. </td>
+        <td>4</td>
+        <td>Source code supports pipeline reuse, but formal evaluation splits may vary. </td>
+        <td>3.833</td>
+      </tr>
+      <tr>
+        <td>2024-12-13</td>
+        <td><a href="benchmarks/urban_data_layer_udl.md">Urban Data Layer (UDL)</a></td>
+        <td>Urban Computing; Data Engineering</td>
+        <td>Unified data pipeline for multi-modal urban science research</td>
+        <td>data pipeline, urban science, multi-modal, benchmark</td>
+        <td>Prediction, Classification</td>
+        <td>Task-specific accuracy or RMSE</td>
+        <td>Baseline regression/classification pipelines</td>
+        <td>[^61]</td>
+        <td>3</td>
+        <td>Source code is publicly available on GitHub; baseline regression and classification pipelines are included but framework maturity is moderate. </td>
+        <td>5</td>
+        <td>Multiple urban science tasks like prediction and classification are well specified with clear input/output and evaluation criteria. </td>
+        <td>5</td>
+        <td>Large, multi-modal urban datasets are open-source, well-documented, and support reproducible research. </td>
+        <td>5</td>
+        <td>Uses task-specific accuracy and RMSE metrics appropriate for prediction and classification. </td>
+        <td>4</td>
+        <td>Baseline models available but not exhaustive; community adoption and extensions expected. </td>
+        <td>5</td>
+        <td>GitHub repository and conference poster provide comprehensive code and reproducibility instructions. </td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>2024-12-13</td>
+        <td><a href="benchmarks/llms_for_crop_science.md">LLMs for Crop Science</a></td>
+        <td>Agricultural Science; NLP</td>
+        <td>Evaluating LLMs on crop trait QA and textual inference tasks with domain-specific prompts</td>
+        <td>crop science, prompt engineering, domain adaptation, question answering</td>
+        <td>Question Answering, Inference</td>
+        <td>Accuracy, F1 score</td>
+        <td>GPT-4, LLaMA-2-13B, T5-XXL</td>
+        <td>[^62]</td>
+        <td>0</td>
+        <td>This is a model, not a benchmark. </td>
+        <td>0</td>
+        <td>This is a model, not a benchmark. </td>
+        <td>0</td>
+        <td>This is a model, not a benchmark. </td>
+        <td>0</td>
+        <td>This is a model, not a benchmark. </td>
+        <td>0</td>
+        <td>This is a model, not a benchmark. </td>
+        <td>0</td>
+        <td>This is a model, not a benchmark. </td>
+        <td>0.0</td>
+      </tr>
+      <tr>
+        <td>2024-10-15</td>
+        <td><a href="benchmarks/dune.md">DUNE</a></td>
+        <td>Particle Physics</td>
+        <td>Real-time ML for DUNE DAQ time-series data</td>
+        <td>DUNE, time-series, real-time, trigger</td>
+        <td>Trigger selection, Time-series anomaly detection</td>
+        <td>Detection efficiency, Latency</td>
+        <td>CNN, LSTM (planned)</td>
+        <td>[^63]</td>
+        <td>1</td>
+        <td>Code not available; no containerization or setup provided </td>
+        <td>4</td>
+        <td>Constraints like latency thresholds are described qualitatively but not numerically defined </td>
+        <td>3</td>
+        <td>Dataset lacks a public URL; FAIR metadata and versioning are missing </td>
+        <td>4</td>
+        <td>Metrics are relevant but no benchmark baseline or detailed evaluation guidance is provided </td>
+        <td>2</td>
+        <td>Autoencoder prototype exists but is not reproducible; RL model still in development </td>
+        <td>3</td>
+        <td>Documentation exists only in slides/GDocs; no implementation guide or structured release </td>
+        <td>2.833</td>
+      </tr>
+      <tr>
+        <td>2024-12-13</td>
+        <td><a href="benchmarks/massspecgym.md">MassSpecGym</a></td>
+        <td>Cheminformatics; Molecular Discovery</td>
+        <td>Benchmark suite for discovery and identification of molecules via MS/MS</td>
+        <td>mass spectrometry, molecular structure, de novo generation, retrieval, dataset</td>
+        <td>De novo generation, Retrieval, Simulation</td>
+        <td>Structure accuracy, Retrieval precision, Simulation MSE</td>
+        <td>Graph-based generative models, Retrieval baselines</td>
+        <td>[^64]</td>
+        <td>3</td>
+        <td>Open-source GitHub repository available; baseline models and training code partially provided but overall framework maturity is moderate. </td>
+        <td>5</td>
+        <td>Clearly defined tasks including molecule generation, retrieval, and spectrum simulation, scoped for MS/MS molecular identification. </td>
+        <td>5</td>
+        <td>Largest public MS/MS dataset with extensive annotations; minor point deducted for lack of explicit train/validation/test splits. </td>
+        <td>5</td>
+        <td>Well-defined metrics such as structure accuracy, retrieval precision, and simulation MSE used consistently. </td>
+        <td>3.5</td>
+        <td>CNN-based baselines are referenced, but pretrained weights and comprehensive training pipelines are not fully documented. </td>
+        <td>1</td>
+        <td>Paper and poster describe benchmark goals and design, but documentation and user guides are minimal and repo status uncertain. </td>
+        <td>3.75</td>
+      </tr>
+      <tr>
+        <td>2025-03-03</td>
+        <td><a href="benchmarks/hdr_ml_anomaly_challenge_gravitational_waves.md">HDR ML Anomaly Challenge (Gravitational Waves)</a></td>
+        <td>Astrophysics; Time-series</td>
+        <td>Detecting anomalous gravitational-wave signals from LIGO/Virgo datasets</td>
+        <td>anomaly detection, gravitational waves, astrophysics, time-series</td>
+        <td>Anomaly detection</td>
+        <td>ROC-AUC, Precision/Recall</td>
+        <td>Deep latent CNNs, Autoencoders</td>
+        <td>[^65]</td>
+        <td>4</td>
+        <td>Benchmark platform provided on Codabench with starter kits and submission infrastructure. Code and baseline models are publicly accessible but not extensively maintained beyond the challenge. </td>
+        <td>4</td>
+        <td>Well-defined anomaly detection task on gravitational-wave time series with clear input/output expectations and challenge constraints. </td>
+        <td>5</td>
+        <td>Uses preprocessed LIGO/Virgo time series data at 4096 Hz, publicly available and standard in astrophysics. </td>
+        <td>4</td>
+        <td>ROC-AUC, precision, and recall metrics are clearly specified and appropriate for anomaly detection. </td>
+        <td>4</td>
+        <td>Baseline deep latent CNNs and autoencoders are provided and reproducible, but not extensively documented. </td>
+        <td>4</td>
+        <td>Documentation includes challenge instructions, starter kit details, and baseline descriptions, but could benefit from more thorough tutorials and code walkthroughs. </td>
+        <td>4.167</td>
+      </tr>
+      <tr>
+        <td>2025-03-03</td>
+        <td><a href="benchmarks/hdr_ml_anomaly_challenge_butterfly.md">HDR ML Anomaly Challenge (Butterfly)</a></td>
+        <td>Genomics; Image/CV</td>
+        <td>Detecting hybrid butterflies via image anomaly detection in genomic-informed dataset</td>
+        <td>anomaly detection, computer vision, genomics, butterfly hybrids</td>
+        <td>Anomaly detection</td>
+        <td>Classification accuracy, F1 score</td>
+        <td>CNN-based detectors</td>
+        <td>[^66]</td>
+        <td>3</td>
+        <td>Codabench platform provides submission infrastructure but no fully maintained code repository or reproducible baseline implementations. </td>
+        <td>4</td>
+        <td>Task is clearly described with domain-specific anomaly detection objectives and relevant physics motivation. </td>
+        <td>3</td>
+        <td>Dataset consists of real detector data with synthetic anomaly injections; access is restricted and requires NDA, limiting openness and FAIR compliance. </td>
+        <td>3</td>
+        <td>Standard metrics (ROC, F1, precision) are used; evaluation protocols are clear but not deeply elaborated. </td>
+        <td>2</td>
+        <td>Baselines are partially described but lack public code or reproducible execution scripts. </td>
+        <td>3</td>
+        <td>Challenge website provides basic descriptions and evaluation metrics but lacks comprehensive tutorials or example workflows. </td>
+        <td>3.0</td>
+      </tr>
+      <tr>
+        <td>2025-03-03</td>
+        <td><a href="benchmarks/hdr_ml_anomaly_challenge_sea_level_rise.md">HDR ML Anomaly Challenge (Sea Level Rise)</a></td>
+        <td>Climate Science; Time-series, Image/CV</td>
+        <td>Detecting anomalous sea-level rise and flooding events via time-series and satellite imagery</td>
+        <td>anomaly detection, climate science, sea-level rise, time-series, remote sensing</td>
+        <td>Anomaly detection</td>
+        <td>ROC-AUC, Precision/Recall</td>
+        <td>CNNs, RNNs, Transformers</td>
+        <td>[^67]</td>
+        <td>2</td>
+        <td>Benchmark platform exists on Codabench, but no baseline code or maintained repository for reference solutions provided yet. </td>
+        <td>5</td>
+        <td>Well-defined anomaly detection task combining satellite imagery and time-series data, with clear physical and domain-specific framing. </td>
+        <td>5</td>
+        <td>Uses preprocessed, public, and well-structured sensor and satellite data for the North Atlantic sea-level rise region. </td>
+        <td>5</td>
+        <td>Standard metrics such as ROC-AUC, precision, and recall are specified and suitable for the anomaly detection tasks. </td>
+        <td>1</td>
+        <td>No starter models or baseline implementations linked or provided publicly. </td>
+        <td>5</td>
+        <td>Challenge page, starter kits, and related papers offer strong guidance for participants. </td>
+        <td>3.833</td>
+      </tr>
+      <tr>
+        <td>2025-01-24</td>
+        <td><a href="benchmarks/single_qubit_readout_on_qick_system.md">Single Qubit Readout on QICK System</a></td>
+        <td>Quantum Computing</td>
+        <td>Real-time single-qubit state classification using FPGA firmware</td>
+        <td>qubit readout, hls4ml, FPGA, QICK</td>
+        <td>Classification</td>
+        <td>Accuracy, Latency</td>
+        <td>hls4ml quantized NN</td>
+        <td>[^68]</td>
+        <td>3</td>
+        <td>Code and FPGA firmware available on GitHub; integration with hls4ml demonstrated. Some deployment details and examples are provided but overall software maturity is moderate. </td>
+        <td>4</td>
+        <td>Task clearly defined: real-time single-qubit state classification with latency and fidelity constraints. Labeling and ground truth definitions could be more explicit. </td>
+        <td>4</td>
+        <td>Dataset hosted on Zenodo with structured data; however, detailed documentation on image acquisition and labeling pipeline is limited. </td>
+        <td>5</td>
+        <td>Standard classification metrics (accuracy, latency) are used and directly relevant to the quantum readout task. </td>
+        <td>1</td>
+        <td>No baseline or starter models with runnable code are linked publicly. </td>
+        <td>4</td>
+        <td>Codabench task page and GitHub repo provide descriptions and usage instructions, but detailed API or deployment tutorials are limited. </td>
+        <td>3.5</td>
+      </tr>
+      <tr>
+        <td>2023-11-20</td>
+        <td><a href="benchmarks/gpqa_a_graduate-level_google-proof_question_and_answer_benchmark.md">GPQA: A Graduate-Level Google-Proof Question and Answer Benchmark</a></td>
+        <td>Science (Biology, Physics, Chemistry)</td>
+        <td>Graduate-level, expert-validated multiple-choice questions hard even with web access</td>
+        <td>Google-proof, multiple-choice, expert reasoning, science QA</td>
+        <td>Multiple choice</td>
+        <td>Accuracy</td>
+        <td>GPT-4 baseline</td>
+        <td>[^69]</td>
+        <td>3</td>
+        <td>Dataset and benchmark materials are publicly available via HuggingFace and GitHub, but no integrated runnable code or software framework is provided. </td>
+        <td>5</td>
+        <td>Task is clearly defined as a multiple-choice benchmark requiring expert-level scientific reasoning. Input/output formats and evaluation criteria are well described. </td>
+        <td>5</td>
+        <td>The GPQA dataset is publicly released, well curated, with metadata and clearly documented splits. </td>
+        <td>5</td>
+        <td>Accuracy is the primary metric and is clearly defined and appropriate for multiple-choice QA. </td>
+        <td>1</td>
+        <td>No baseline implementations or starter code are linked or provided for reproduction. </td>
+        <td>3</td>
+        <td>Documentation includes dataset description and benchmark instructions, but lacks detailed usage tutorials or pipelines. </td>
+        <td>3.667</td>
+      </tr>
+      <tr>
+        <td>2024-12-13</td>
+        <td><a href="benchmarks/seafloorai.md">SeafloorAI</a></td>
+        <td>Marine Science; Vision-Language</td>
+        <td>Large-scale vision-language dataset for seafloor mapping and geological classification</td>
+        <td>sonar imagery, vision-language, seafloor mapping, segmentation, QA</td>
+        <td>Image segmentation, Vision-language QA</td>
+        <td>Segmentation pixel accuracy, QA accuracy</td>
+        <td>SegFormer, ViLT-style multimodal models</td>
+        <td>[^70]</td>
+        <td>3</td>
+        <td>Data processing code is publicly available, but no full benchmark framework or runnable model implementations are provided yet. </td>
+        <td>5</td>
+        <td>Tasks (image segmentation and vision-language QA) are clearly defined with geospatial and multimodal objectives well specified. </td>
+        <td>5</td>
+        <td>Large-scale, well-annotated sonar imagery dataset with segmentation masks and natural language descriptions; curated with domain experts. </td>
+        <td>5</td>
+        <td>Standard segmentation pixel accuracy and QA accuracy metrics are clearly specified and appropriate for the tasks. </td>
+        <td>4</td>
+        <td>Some baseline models (e.g., SegFormer, ViLT-style) are mentioned, but reproducible code or pretrained weights are not fully available yet. </td>
+        <td>4</td>
+        <td>Dataset description and data processing instructions are provided, but tutorials and benchmark usage guides are limited. </td>
+        <td>4.333</td>
+      </tr>
+      <tr>
+        <td>2024-12-13</td>
+        <td><a href="benchmarks/supercond.md">SuperCon3D</a></td>
+        <td>Materials Science; Superconductivity</td>
+        <td>Dataset and models for predicting and generating high-Tc superconductors using 3D crystal structures</td>
+        <td>superconductivity, crystal structures, equivariant GNN, generative models</td>
+        <td>Regression (Tc prediction), Generative modeling</td>
+        <td>MAE (Tc), Validity of generated structures</td>
+        <td>SODNet, DiffCSP-SC</td>
+        <td>[^71]</td>
+        <td>3</td>
+        <td>Baseline models (SODNet, DiffCSP-SC) are described in the paper; however, fully reproducible code and pretrained models are not publicly available yet. </td>
+        <td>5</td>
+        <td>Tasks for regression (Tc prediction) and generative modeling with clear input/output structures and domain constraints are well defined. </td>
+        <td>5</td>
+        <td>Dataset contains 3D crystal structures and associated properties; well-curated but not fully released publicly at this time. </td>
+        <td>4</td>
+        <td>Metrics such as MAE for Tc prediction and validity checks for generated structures are appropriate and clearly described. </td>
+        <td>4</td>
+        <td>Paper provides model architecture details and some training insights, but no complete open-source reference implementations yet. </td>
+        <td>4</td>
+        <td>Paper and GitHub provide good metadata and data processing descriptions; tutorials and user guides could be expanded. </td>
+        <td>4.167</td>
+      </tr>
+      <tr>
+        <td>2024-12-13</td>
+        <td><a href="benchmarks/gess.md">GeSS</a></td>
+        <td>Scientific ML; Geometric Deep Learning</td>
+        <td>Benchmark suite evaluating geometric deep learning models under real-world distribution shifts</td>
+        <td>geometric deep learning, distribution shift, OOD robustness, scientific applications</td>
+        <td>Classification, Regression</td>
+        <td>Accuracy, RMSE, OOD robustness delta</td>
+        <td>GCN, EGNN, DimeNet++</td>
+        <td>[^72]</td>
+        <td>3</td>
+        <td>Reference code expected post-conference; current public software availability limited. Benchmark infrastructure partially described but not fully released yet. </td>
+        <td>5</td>
+        <td>Benchmark clearly defines OOD robustness scenarios with classification and regression tasks in scientific domains, though no explicit hardware constraints are given. </td>
+        <td>5</td>
+        <td>Curated datasets of 3D crystal structures and material properties are included and publicly available for reproducible research. </td>
+        <td>5</td>
+        <td>Uses well-established metrics such as MAE and structural validity for materials modeling, plus accuracy and OOD robustness deltas. </td>
+        <td>4</td>
+        <td>Two reference models (SODNet, DiffCSP-SC) are reported with results, code expected to be released soon. </td>
+        <td>4</td>
+        <td>Paper and poster provide solid explanation of benchmarks and scientific motivation; more extensive user documentation forthcoming. </td>
+        <td>4.333</td>
+      </tr>
+      <tr>
+        <td>2024-12-13</td>
+        <td><a href="benchmarks/vocal_call_locator_vcl.md">Vocal Call Locator (VCL)</a></td>
+        <td>Neuroscience; Bioacoustics</td>
+        <td>Benchmarking sound-source localization of rodent vocalizations from multi-channel audio</td>
+        <td>source localization, bioacoustics, time-series, SSL</td>
+        <td>Sound source localization</td>
+        <td>Localization error (cm), Recall/Precision</td>
+        <td>CNN-based SSL models</td>
+        <td>[^73]</td>
+        <td>3</td>
+        <td>Some baseline CNN models for sound source localization are reported, but no publicly available or fully integrated runnable codebase yet. </td>
+        <td>5</td>
+        <td>Well-defined localization tasks with multiple scenarios and real-world environment conditions; input/output formats clearly described. </td>
+        <td>4</td>
+        <td>Large-scale audio dataset covering real and simulated data with standardized splits, though exact data formats are not fully detailed. </td>
+        <td>5</td>
+        <td>Includes localization error, precision, recall, and other relevant metrics for robust evaluation. </td>
+        <td>5</td>
+        <td>Multiple baselines evaluated over diverse models and architectures, supporting reproducibility of benchmark comparisons. </td>
+        <td>1</td>
+        <td>Methodology and paper are thorough, but setup instructions and runnable code are not publicly provided, limiting user onboarding. </td>
+        <td>3.833</td>
+      </tr>
+      <tr>
+        <td>2024-12-13</td>
+        <td><a href="benchmarks/spiqa_llm.md">SPIQA (LLM)</a></td>
+        <td>Multimodal Scientific QA; Computer Vision</td>
+        <td>Evaluating LLMs on image-based scientific paper figure QA tasks (LLM Adapter performance)</td>
+        <td>multimodal QA, scientific figures, image+text, chain-of-thought prompting</td>
+        <td>Multimodal QA</td>
+        <td>Accuracy, F1 score</td>
+        <td>LLaVA, MiniGPT-4, Owl-LLM adapter variants</td>
+        <td>[^74]</td>
+        <td>5</td>
+        <td>Well-documented codebase available on Github </td>
+        <td>3.5</td>
+        <td>Task of QA over scientific figures is sufficient but not fully formalized in input/output terms. No hawrdware constraints. </td>
+        <td>5</td>
+        <td>Full dataset available on Hugging Face with train/test/valid splits. </td>
+        <td>4</td>
+        <td>Reports accuracy and F1; fair but no visual reasoning-specific metric. </td>
+        <td>4</td>
+        <td>10 LLM adapter baselines; results included without constraints. </td>
+        <td>5</td>
+        <td>Full paper available </td>
+        <td>4.417</td>
+      </tr>
+      <tr>
+        <td>2024-12-03</td>
+        <td><a href="benchmarks/the_well.md">The Well</a></td>
+        <td>biological systems, fluid dynamics, acoustic scattering, astrophysical MHD</td>
+        <td>Foundation model + surrogate dataset spanning 16 physical simulation domains</td>
+        <td>surrogate modeling, foundation model, physics simulations, spatiotemporal dynamics</td>
+        <td>Supervised Learning</td>
+        <td>Dataset size, Domain breadth</td>
+        <td>FNO baselines, U-Net baselines</td>
+        <td>[^75]</td>
+        <td>5</td>
+        <td>BSD-licensed software and unified API are available via GitHub and PyPI. Supports loading and manipulating large HDF5 datasets across 16 domains. </td>
+        <td>4</td>
+        <td>The benchmark includes clearly defined surrogate modeling tasks, data structure, and metadata. However, constraints and formal task specs vary slightly across domains. </td>
+        <td>5</td>
+        <td>15 TB of ML-ready HDF5 datasets across 16 physics domains. Public, well-structured, richly annotated, and designed with FAIR principles in mind. </td>
+        <td>3</td>
+        <td>Domain breadth and dataset size are emphasized. Standardized quantitative metrics for model evaluation (e.g., RMSE, accuracy) are not uniformly applied across all domains. </td>
+        <td>3</td>
+        <td>Includes FNO and U-Net baselines, but does not yet provide fully trained, reproducible models or scripts across all datasets. </td>
+        <td>4</td>
+        <td>The GitHub repo and NeurIPS paper provide detailed guidance on dataset use, structure, and training setup. Tutorials and walkthroughs could be expanded further. </td>
+        <td>4.0</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>[^1]: Dan Hendrycks, Collin Burns, and Saurav Kadavath. Measuring massive multitask language understanding. 2021. URL: https://arxiv.org/abs/2009.03300.
+[^2]: Alon Talmor, Jonathan Herzig, Nicholas Lourie, and Jonathan Berant. Commonsenseqa: a question answering challenge targeting commonsense knowledge. 2019. URL: https://arxiv.org/abs/1811.00937, arXiv:1811.00937.
+[^3]: Keisuke Sakaguchi, Ronan Le Bras, Chandra Bhagavatula, and Yejin Choi. Winogrande: an adversarial winograd schema challenge at scale. 2019. URL: https://arxiv.org/abs/1907.10641, arXiv:1907.10641.
+[^4]: Aarohi Srivastava, Abhinav Rastogi, Abhishek Rao, Abu Awal Md Shoeb, Abubakar Abid, Adam Fisch, Adam R. Brown, Adam Santoro, Aditya Gupta, Adrià Garriga-Alonso, Agnieszka Kluska, Aitor Lewkowycz, Akshat Agarwal, Alethea Power, Alex Ray, Alex Warstadt, Alexander W. Kocurek, Ali Safaya, Ali Tazarv, Alice Xiang, Alicia Parrish, Allen Nie, Aman Hussain, Amanda Askell, Amanda Dsouza, Ambrose Slone, Ameet Rahane, Anantharaman S. Iyer, Anders Andreassen, Andrea Madotto, Andrea Santilli, Andreas Stuhlmüller, Andrew Dai, Andrew La, Andrew Lampinen, Andy Zou, Angela Jiang, Angelica Chen, Anh Vuong, Animesh Gupta, Anna Gottardi, Antonio Norelli, Anu Venkatesh, Arash Gholamidavoodi, Arfa Tabassum, Arul Menezes, Arun Kirubarajan, Asher Mullokandov, Ashish Sabharwal, Austin Herrick, Avia Efrat, Aykut Erdem, Ayla Karakaş, B. Ryan Roberts, Bao Sheng Loe, Barret Zoph, Bart\lomiej  Bojanowski, Batuhan Özyurt, Behnam Hedayatnia, Behnam Neyshabur, Benjamin Inden, Benno Stein, Berk Ekmekci, Bill Yuchen Lin, Blake Howald, Bryan Orinion, Cameron Diao, Cameron Dour, Catherine Stinson, Cedrick Argueta, César Ferri Ramírez, Chandan Singh, Charles Rathkopf, Chenlin Meng, Chitta Baral, Chiyu Wu, Chris Callison-Burch, Chris Waites, Christian Voigt, Christopher D. Manning, Christopher Potts, Cindy Ramirez, Clara E. Rivera, Clemencia Siro, Colin Raffel, Courtney Ashcraft, Cristina Garbacea, Damien Sileo, Dan Garrette, Dan Hendrycks, Dan Kilman, Dan Roth, Daniel Freeman, Daniel Khashabi, Daniel Levy, Daniel Moseguí González, Danielle Perszyk, Danny Hernandez, Danqi Chen, Daphne Ippolito, Dar Gilboa, David Dohan, David Drakard, David Jurgens, Debajyoti Datta, Deep Ganguli, Denis Emelin, Denis Kleyko, Deniz Yuret, Derek Chen, Derek Tam, Dieuwke Hupkes, Diganta Misra, Dilyar Buzan, Dimitri Coelho Mollo, Diyi Yang, Dong-Ho Lee, Dylan Schrader, Ekaterina Shutova, Ekin Dogus Cubuk, Elad Segal, Eleanor Hagerman, Elizabeth Barnes, Elizabeth Donoway, Ellie Pavlick, Emanuele Rodola, Emma Lam, Eric Chu, Eric Tang, Erkut Erdem, Ernie Chang, Ethan A. Chi, Ethan Dyer, Ethan Jerzak, Ethan Kim, Eunice Engefu Manyasi, Evgenii Zheltonozhskii, Fanyue Xia, Fatemeh Siar, Fernando Martínez-Plumed, Francesca Happé, Francois Chollet, Frieda Rong, Gaurav Mishra, Genta Indra Winata, Gerard de Melo, Germán Kruszewski, Giambattista Parascandolo, Giorgio Mariani, Gloria Wang, Gonzalo Jaimovitch-López, Gregor Betz, Guy Gur-Ari, Hana Galijasevic, Hannah Kim, Hannah Rashkin, Hannaneh Hajishirzi, Harsh Mehta, Hayden Bogar, Henry Shevlin, Hinrich Schütze, Hiromu Yakura, Hongming Zhang, Hugh Mee Wong, Ian Ng, Isaac Noble, Jaap Jumelet, Jack Geissinger, Jackson Kernion, Jacob Hilton, Jaehoon Lee, Jaime Fernández Fisac, James B. Simon, James Koppel, James Zheng, James Zou, Jan Kocoń, Jana Thompson, Janelle Wingfield, Jared Kaplan, Jarema Radom, Jascha Sohl-Dickstein, Jason Phang, Jason Wei, Jason Yosinski, Jekaterina Novikova, Jelle Bosscher, Jennifer Marsh, Jeremy Kim, Jeroen Taal, Jesse Engel, Jesujoba Alabi, Jiacheng Xu, Jiaming Song, Jillian Tang, Joan Waweru, John Burden, John Miller, John U. Balis, Jonathan Batchelder, Jonathan Berant, Jörg Frohberg, Jos Rozen, Jose Hernandez-Orallo, Joseph Boudeman, Joseph Guerr, Joseph Jones, Joshua B. Tenenbaum, Joshua S. Rule, Joyce Chua, Kamil Kanclerz, Karen Livescu, Karl Krauth, Karthik Gopalakrishnan, Katerina Ignatyeva, Katja Markert, Kaustubh D. Dhole, Kevin Gimpel, Kevin Omondi, Kory Mathewson, Kristen Chiafullo, Ksenia Shkaruta, Kumar Shridhar, Kyle McDonell, Kyle Richardson, Laria Reynolds, Leo Gao, Li Zhang, Liam Dugan, Lianhui Qin, Lidia Contreras-Ochando, Louis-Philippe Morency, Luca Moschella, Lucas Lam, Lucy Noble, Ludwig Schmidt, Luheng He, Luis Oliveros Colón, Luke Metz, Lütfi Kerem Şenel, Maarten Bosma, Maarten Sap, Maartje ter Hoeve, Maheen Farooqi, Manaal Faruqui, Mantas Mazeika, Marco Baturan, Marco Marelli, Marco Maru, Maria Jose Ramírez Quintana, Marie Tolkiehn, Mario Giulianelli, Martha Lewis, Martin Potthast, Matthew L. Leavitt, Matthias Hagen, Mátyás Schubert, Medina Orduna Baitemirova, Melody Arnaud, Melvin McElrath, Michael A. Yee, Michael Cohen, Michael Gu, Michael Ivanitskiy, Michael Starritt, Michael Strube, Michał Swędrowski, Michele Bevilacqua, Michihiro Yasunaga, Mihir Kale, Mike Cain, Mimee Xu, Mirac Suzgun, Mitch Walker, Mo Tiwari, Mohit Bansal, Moin Aminnaseri, Mor Geva, Mozhdeh Gheini, Mukund Varma T, Nanyun Peng, Nathan A. Chi, Nayeon Lee, Neta Gur-Ari Krakover, Nicholas Cameron, Nicholas Roberts, Nick Doiron, Nicole Martinez, Nikita Nangia, Niklas Deckers, Niklas Muennighoff, Nitish Shirish Keskar, Niveditha S. Iyer, Noah Constant, Noah Fiedel, Nuan Wen, Oliver Zhang, Omar Agha, Omar Elbaghdadi, Omer Levy, Owain Evans, Pablo Antonio Moreno Casares, Parth Doshi, Pascale Fung, Paul Pu Liang, Paul Vicol, Pegah Alipoormolabashi, Peiyuan Liao, Percy Liang, Peter Chang, Peter Eckersley, Phu Mon Htut, Pinyu Hwang, Piotr Mi\lkowski , Piyush Patil, Pouya Pezeshkpour, Priti Oli, Qiaozhu Mei, Qing Lyu, Qinlang Chen, Rabin Banjade, Rachel Etta Rudolph, Raefer Gabriel, Rahel Habacker, Ramon Risco, Raphaël Millière, Rhythm Garg, Richard Barnes, Rif A. Saurous, Riku Arakawa, Robbe Raymaekers, Robert Frank, Rohan Sikand, Roman Novak, Roman Sitelew, Ronan LeBras, Rosanne Liu, Rowan Jacobs, Rui Zhang, Ruslan Salakhutdinov, Ryan Chi, Ryan Lee, Ryan Stovall, Ryan Teehan, Rylan Yang, Sahib Singh, Saif M. Mohammad, Sajant Anand, Sam Dillavou, Sam Shleifer, Sam Wiseman, Samuel Gruetter, Samuel R. Bowman, Samuel S. Schoenholz, Sanghyun Han, Sanjeev Kwatra, Sarah A. Rous, Sarik Ghazarian, Sayan Ghosh, Sean Casey, Sebastian Bischoff, Sebastian Gehrmann, Sebastian Schuster, Sepideh Sadeghi, Shadi Hamdan, Sharon Zhou, Shashank Srivastava, Sherry Shi, Shikhar Singh, Shima Asaadi, Shixiang Shane Gu, Shubh Pachchigar, Shubham Toshniwal, Shyam Upadhyay, Shyamolima, Debnath, Siamak Shakeri, Simon Thormeyer, Simone Melzi, Siva Reddy, Sneha Priscilla Makini, Soo-Hwan Lee, Spencer Torene, Sriharsha Hatwar, Stanislas Dehaene, Stefan Divic, Stefano Ermon, Stella Biderman, Stephanie Lin, Stephen Prasad, Steven T. Piantadosi, Stuart M. Shieber, Summer Misherghi, Svetlana Kiritchenko, Swaroop Mishra, Tal Linzen, Tal Schuster, Tao Li, Tao Yu, Tariq Ali, Tatsu Hashimoto, Te-Lin Wu, Théo Desbordes, Theodore Rothschild, Thomas Phan, Tianle Wang, Tiberius Nkinyili, Timo Schick, Timofei Kornev, Titus Tunduny, Tobias Gerstenberg, Trenton Chang, Trishala Neeraj, Tushar Khot, Tyler Shultz, Uri Shaham, Vedant Misra, Vera Demberg, Victoria Nyamai, Vikas Raunak, Vinay Ramasesh, Vinay Uday Prabhu, Vishakh Padmakumar, Vivek Srikumar, William Fedus, William Saunders, William Zhang, Wout Vossen, Xiang Ren, Xiaoyu Tong, Xinran Zhao, Xinyi Wu, Xudong Shen, Yadollah Yaghoobzadeh, Yair Lakretz, Yangqiu Song, Yasaman Bahri, Yejin Choi, Yichi Yang, Yiding Hao, Yifu Chen, Yonatan Belinkov, Yu Hou, Yufang Hou, Yuntao Bai, Zachary Seid, Zhuoye Zhao, Zijian Wang, Zijie J. Wang, Zirui Wang, and Ziyi Wu. Beyond the imitation game: quantifying and extrapolating the capabilities of language models. 2023. URL: https://arxiv.org/abs/2206.04615, arXiv:2206.04615.
+[^5]: Tung Nguyen, Jason Jewik, Hritik Bansal, Prakhar Sharma, and Aditya Grover. Climatelearn: benchmarking machine learning for weather and climate modeling. 2023. URL: https://arxiv.org/abs/2307.01909, arXiv:2307.01909.
+[^6]: Yining Luo, Yingfa Chen, and Zhen Zhang. Cfdbench: a large-scale benchmark for machine learning methods in fluid dynamics. 2024. URL: https://arxiv.org/abs/2310.05963.
+[^7]: Jonathan Roberts, Kai Han, and Samuel Albanie. Satin: a multi-task metadataset for classifying satellite imagery using vision-language models. 2023. URL: https://huggingface.co/datasets/saral-ai/satimagnet.
+[^8]: Florian J. Kiwit, Marwa Marso, Philipp Ross, Carlos A. Riofrío, Johannes Klepsch, and Andre Luckow. Application-oriented benchmarking of quantum generative learning using quark. In 2023 IEEE International Conference on Quantum Computing and Engineering (QCE), 475 484. IEEE, September 2023. URL: http://dx.doi.org/10.1109/QCE57702.2023.00061, doi:10.1109/qce57702.2023.00061.
+[^9]: Lowik Chanussot, Abhishek Das, Siddharth Goyal, Thibaut Lavril, Muhammed Shuaibi, Morgane Riviere, Kevin Tran, Javier Heras-Domingo, Caleb Ho, Weihua Hu, Aini Palizhati, Anuroop Sriram, Brandon Wood, Junwoong Yoon, Devi Parikh, C. Lawrence Zitnick, and Zachary Ulissi. The open catalyst 2020 (oc20) dataset and community challenges. ACS Catalysis, 11(10):6059–6072, 2021. URL: https://pubs.acs.org/doi/10.1021/acscatal.0c04525, doi:10.1021/acscatal.0c04525.
+[^10]: Richard Tran, Janice Lan, Muhammed Shuaibi, Brandon M. Wood, Siddharth Goyal, Abhishek Das, Javier Heras-Domingo, Adeesh Kolluru, Ammar Rizvi, Nima Shoghi, Anuroop Sriram, Félix Therrien, Jehad Abed, Oleksandr Voznyy, Edward H. Sargent, Zachary Ulissi, and C. Lawrence Zitnick. The open catalyst 2022 (oc22) dataset and challenges for oxide electrocatalysts. ACS Catalysis, 13(5):3066–3084, 2023. URL: https://pubs.acs.org/doi/10.1021/acscatal.2c05426, doi:10.1021/acscatal.2c05426.
+[^11]: Lowik Chanussot, Abhishek Das, Siddharth Goyal, Thibaut Lavril, Muhammed Shuaibi, Morgane Riviere, Kevin Tran, Javier Heras-Domingo, Caleb Ho, Weihua Hu, Aini Palizhati, Anuroop Sriram, Brandon Wood, Junwoong Yoon, Devi Parikh, C. Lawrence Zitnick, and Zachary Ulissi. Open catalyst 2020 (oc20) dataset and community challenges. ACS Catalysis, 11(10):6059 6072, 2021. URL: https://doi.org/10.1021/acscatal.0c04525, arXiv:https://doi.org/10.1021/acscatal.0c04525, doi:10.1021/acscatal.0c04525.
+[^12]: Richard Tran, Janice Lan, Muhammed Shuaibi, Brandon M. Wood, Siddharth Goyal, Abhishek Das, Javier Heras-Domingo, Adeesh Kolluru, Ammar Rizvi, Nima Shoghi, Anuroop Sriram, Félix Therrien, Jehad Abed, Oleksandr Voznyy, Edward H. Sargent, Zachary Ulissi, and C. Lawrence Zitnick. The open catalyst 2022 (oc22) dataset and challenges for oxide electrocatalysts. ACS Catalysis, 13(5):3066 3084, February 2023. URL: http://dx.doi.org/10.1021/acscatal.2c05426, doi:10.1021/acscatal.2c05426.
+[^13]: Di Jin, Eileen Pan, Nassim Oufattole, Wei-Hung Weng, Hanyi Fang, and Peter Szolovits. What disease does this patient have? a large-scale open domain question answering dataset from medical exams. 2020. URL: https://arxiv.org/abs/2009.13081, arXiv:2009.13081.
+[^14]: Anubhav Jain, Shyue Ping Ong, Geoffroy Hautier, Wei Chen, William Davidson Richards, Stephen Dacek, Shreyas Cholia, Dan Gunter, David Skinner, Gerbrand Ceder, and Kristin A. Persson. The materials project: a materials genome approach. APL Materials, 2013. URL: https://materialsproject.org/, doi:10.1063/1.4812323.
+[^15]: David Rein, Betty Li Hou, and Asa Cooper Stickland. Gpqa: a graduate-level google-proof q and a benchmark. 2023. URL: https://arxiv.org/abs/2311.12022.
+[^16]: Peter Clark, Isaac Cowhey, and Oren Etzioni. Think you have solved question answering? try arc, the ai2 reasoning challenge. In EMNLP 2018, 237 248. 2018. URL: https://allenai.org/data/arc.
+[^17]: Long Phan, Alice Gatti, Ziwen Han, Nathaniel Li, Josephina Hu, Hugh Zhang, Chen Bo Calvin Zhang, Mohamed Shaaban, John Ling, Sean Shi, Michael Choi, Anish Agrawal, Arnav Chopra, Adam Khoja, Ryan Kim, Richard Ren, Jason Hausenloy, Oliver Zhang, Mantas Mazeika, Dmitry Dodonov, Tung Nguyen, Jaeho Lee, Daron Anderson, Mikhail Doroshenko, Alun Cennyth Stokes, Mobeen Mahmood, Oleksandr Pokutnyi, Oleg Iskra, Jessica P. Wang, John-Clark Levin, Mstyslav Kazakov, Fiona Feng, Steven Y. Feng, Haoran Zhao, Michael Yu, Varun Gangal, Chelsea Zou, Zihan Wang, Serguei Popov, Robert Gerbicz, Geoff Galgon, Johannes Schmitt, Will Yeadon, Yongki Lee, Scott Sauers, Alvaro Sanchez, Fabian Giska, Marc Roth, S\oren  Riis, Saiteja Utpala, Noah Burns, Gashaw M. Goshu, Mohinder Maheshbhai Naiya, Chidozie Agu, Zachary Giboney, Antrell Cheatom, Francesco Fournier-Facio, Sarah-Jane Crowson, Lennart Finke, Zerui Cheng, Jennifer Zampese, Ryan G. Hoerr, Mark Nandor, Hyunwoo Park, Tim Gehrunger, Jiaqi Cai, Ben McCarty, Alexis C Garretson, Edwin Taylor, Damien Sileo, Qiuyu Ren, Usman Qazi, Lianghui Li, Jungbae Nam, John B. Wydallis, Pavel Arkhipov, Jack Wei Lun Shi, Aras Bacho, Chris G. Willcocks, Hangrui Cao, Sumeet Motwani, Emily de Oliveira Santos, Johannes Veith, Edward Vendrow, Doru Cojoc, Kengo Zenitani, Joshua Robinson, Longke Tang, Yuqi Li, Joshua Vendrow, Natanael Wildner Fraga, Vladyslav Kuchkin, Andrey Pupasov Maksimov, Pierre Marion, Denis Efremov, Jayson Lynch, Kaiqu Liang, Aleksandar Mikov, Andrew Gritsevskiy, Julien Guillod, Gözdenur Demir, Dakotah Martinez, Ben Pageler, Kevin Zhou, Saeed Soori, Ori Press, Henry Tang, Paolo Rissone, Sean R. Green, Lina Brüssel, Moon Twayana, Aymeric Dieuleveut, Joseph Marvin Imperial, Ameya Prabhu, Jinzhou Yang, Nick Crispino, Arun Rao, Dimitri Zvonkine, Gabriel Loiseau, Mikhail Kalinin, Marco Lukas, Ciprian Manolescu, Nate Stambaugh, Subrata Mishra, Tad Hogg, Carlo Bosio, Brian P Coppola, Julian Salazar, Jaehyeok Jin, Rafael Sayous, Stefan Ivanov, Philippe Schwaller, Shaipranesh Senthilkuma, Andres M Bran, Andres Algaba, Kelsey Van den Houte, Lynn Van Der Sypt, Brecht Verbeken, David Noever, Alexei Kopylov, Benjamin Myklebust, Bikun Li, Lisa Schut, Evgenii Zheltonozhskii, Qiaochu Yuan, Derek Lim, Richard Stanley, Tong Yang, John Maar, Julian Wykowski, Martí Oller, Anmol Sahu, Cesare Giulio Ardito, Yuzheng Hu, Ariel Ghislain Kemogne Kamdoum, Alvin Jin, Tobias Garcia Vilchis, Yuexuan Zu, Martin Lackner, James Koppel, Gongbo Sun, Daniil S. Antonenko, Steffi Chern, Bingchen Zhao, Pierrot Arsene, Joseph M Cavanagh, Daofeng Li, Jiawei Shen, Donato Crisostomi, Wenjin Zhang, Ali Dehghan, Sergey Ivanov, David Perrella, Nurdin Kaparov, Allen Zang, Ilia Sucholutsky, Arina Kharlamova, Daniil Orel, Vladislav Poritski, Shalev Ben-David, Zachary Berger, Parker Whitfill, Michael Foster, Daniel Munro, Linh Ho, Shankar Sivarajan, Dan Bar Hava, Aleksey Kuchkin, David Holmes, Alexandra Rodriguez-Romero, Frank Sommerhage, Anji Zhang, Richard Moat, Keith Schneider, Zakayo Kazibwe, Don Clarke, Dae Hyun Kim, Felipe Meneguitti Dias, Sara Fish, Veit Elser, Tobias Kreiman, Victor Efren Guadarrama Vilchis, Immo Klose, Ujjwala Anantheswaran, Adam Zweiger, Kaivalya Rawal, Jeffery Li, Jeremy Nguyen, Nicolas Daans, Haline Heidinger, Maksim Radionov, Václav Rozhoň, Vincent Ginis, Christian Stump, Niv Cohen, Rafał Poświata, Josef Tkadlec, Alan Goldfarb, Chenguang Wang, Piotr Padlewski, Stanislaw Barzowski, Kyle Montgomery, Ryan Stendall, Jamie Tucker-Foltz, Jack Stade, T. Ryan Rogers, Tom Goertzen, Declan Grabb, Abhishek Shukla, Alan Givré, John Arnold Ambay, Archan Sen, Muhammad Fayez Aziz, Mark H Inlow, Hao He, Ling Zhang, Younesse Kaddar, Ivar Ängquist, Yanxu Chen, Harrison K Wang, Kalyan Ramakrishnan, Elliott Thornley, Antonio Terpin, Hailey Schoelkopf, Eric Zheng, Avishy Carmi, Ethan D. L. Brown, Kelin Zhu, Max Bartolo, Richard Wheeler, Martin Stehberger, Peter Bradshaw, JP Heimonen, Kaustubh Sridhar, Ido Akov, Jennifer Sandlin, Yury Makarychev, Joanna Tam, Hieu Hoang, David M. Cunningham, Vladimir Goryachev, Demosthenes Patramanis, Michael Krause, Andrew Redenti, David Aldous, Jesyin Lai, Shannon Coleman, Jiangnan Xu, Sangwon Lee, Ilias Magoulas, Sandy Zhao, Ning Tang, Michael K. Cohen, Orr Paradise, Jan Hendrik Kirchner, Maksym Ovchynnikov, Jason O. Matos, Adithya Shenoy, Michael Wang, Yuzhou Nie, Anna Sztyber-Betley, Paolo Faraboschi, Robin Riblet, Jonathan Crozier, Shiv Halasyamani, Shreyas Verma, Prashant Joshi, Eli Meril, Ziqiao Ma, Jérémy Andréoletti, Raghav Singhal, Jacob Platnick, Volodymyr Nevirkovets, Luke Basler, Alexander Ivanov, Seri Khoury, Nils Gustafsson, Marco Piccardo, Hamid Mostaghimi, Qijia Chen, Virendra Singh, Tran Quoc Khánh, Paul Rosu, Hannah Szlyk, Zachary Brown, Himanshu Narayan, Aline Menezes, Jonathan Roberts, William Alley, Kunyang Sun, Arkil Patel, Max Lamparth, Anka Reuel, Linwei Xin, Hanmeng Xu, Jacob Loader, Freddie Martin, Zixuan Wang, Andrea Achilleos, Thomas Preu, Tomek Korbak, Ida Bosio, Fereshteh Kazemi, Ziye Chen, Biró Bálint, Eve J. Y. Lo, Jiaqi Wang, Maria Inês S. Nunes, Jeremiah Milbauer, M Saiful Bari, Zihao Wang, Behzad Ansarinejad, Yewen Sun, Stephane Durand, Hossam Elgnainy, Guillaume Douville, Daniel Tordera, George Balabanian, Hew Wolff, Lynna Kvistad, Hsiaoyun Milliron, Ahmad Sakor, Murat Eron, Andrew Favre D. O., Shailesh Shah, Xiaoxiang Zhou, Firuz Kamalov, Sherwin Abdoli, Tim Santens, Shaul Barkan, Allison Tee, Robin Zhang, Alessandro Tomasiello, G. Bruno De Luca, Shi-Zhuo Looi, Vinh-Kha Le, Noam Kolt, Jiayi Pan, Emma Rodman, Jacob Drori, Carl J Fossum, Niklas Muennighoff, Milind Jagota, Ronak Pradeep, Honglu Fan, Jonathan Eicher, Michael Chen, Kushal Thaman, William Merrill, Moritz Firsching, Carter Harris, Stefan Ciobâcă, Jason Gross, Rohan Pandey, Ilya Gusev, Adam Jones, Shashank Agnihotri, Pavel Zhelnov, Mohammadreza Mofayezi, Alexander Piperski, David K. Zhang, Kostiantyn Dobarskyi, Roman Leventov, Ignat Soroko, Joshua Duersch, Vage Taamazyan, Andrew Ho, Wenjie Ma, William Held, Ruicheng Xian, Armel Randy Zebaze, Mohanad Mohamed, Julian Noah Leser, Michelle X Yuan, Laila Yacar, Johannes Lengler, Katarzyna Olszewska, Claudio Di Fratta, Edson Oliveira, Joseph W. Jackson, Andy Zou, Muthu Chidambaram, Timothy Manik, Hector Haffenden, Dashiell Stander, Ali Dasouqi, Alexander Shen, Bita Golshani, David Stap, Egor Kretov, Mikalai Uzhou, Alina Borisovna Zhidkovskaya, Nick Winter, Miguel Orbegozo Rodriguez, Robert Lauff, Dustin Wehr, Colin Tang, Zaki Hossain, Shaun Phillips, Fortuna Samuele, Fredrik Ekström, Angela Hammon, Oam Patel, Faraz Farhidi, George Medley, Forough Mohammadzadeh, Madellene Peñaflor, Haile Kassahun, Alena Friedrich, Rayner Hernandez Perez, Daniel Pyda, Taom Sakal, Omkar Dhamane, Ali Khajegili Mirabadi, Eric Hallman, Kenchi Okutsu, Mike Battaglia, Mohammad Maghsoudimehrabani, Alon Amit, Dave Hulbert, Roberto Pereira, Simon Weber, Handoko, Anton Peristyy, Stephen Malina, Mustafa Mehkary, Rami Aly, Frank Reidegeld, Anna-Katharina Dick, Cary Friday, Mukhwinder Singh, Hassan Shapourian, Wanyoung Kim, Mariana Costa, Hubeyb Gurdogan, Harsh Kumar, Chiara Ceconello, Chao Zhuang, Haon Park, Micah Carroll, Andrew R. Tawfeek, Stefan Steinerberger, Daattavya Aggarwal, Michael Kirchhof, Linjie Dai, Evan Kim, Johan Ferret, Jainam Shah, Yuzhou Wang, Minghao Yan, Krzysztof Burdzy, Lixin Zhang, Antonio Franca, Diana T. Pham, Kang Yong Loh, Joshua Robinson, Abram Jackson, Paolo Giordano, Philipp Petersen, Adrian Cosma, Jesus Colino, Colin White, Jacob Votava, Vladimir Vinnikov, Ethan Delaney, Petr Spelda, Vit Stritecky, Syed M. Shahid, Jean-Christophe Mourrat, Lavr Vetoshkin, Koen Sponselee, Renas Bacho, Zheng-Xin Yong, Florencia de la Rosa, Nathan Cho, Xiuyu Li, Guillaume Malod, Orion Weller, Guglielmo Albani, Leon Lang, Julien Laurendeau, Dmitry Kazakov, Fatimah Adesanya, Julien Portier, Lawrence Hollom, Victor Souza, Yuchen Anna Zhou, Julien Degorre, Yiğit Yalin, Gbenga Daniel Obikoya, Rai, Filippo Bigi, M. C. Boscá, Oleg Shumar, Kaniuar Bacho, Gabriel Recchia, Mara Popescu, Nikita Shulga, Ngefor Mildred Tanwie, Thomas C. H. Lux, Ben Rank, Colin Ni, Matthew Brooks, Alesia Yakimchyk, Huanxu, Liu, Stefano Cavalleri, Olle Häggström, Emil Verkama, Joshua Newbould, Hans Gundlach, Leonor Brito-Santana, Brian Amaro, Vivek Vajipey, Rynaa Grover, Ting Wang, Yosi Kratish, Wen-Ding Li, Sivakanth Gopi, Andrea Caciolai, Christian Schroeder de Witt, Pablo Hernández-Cámara, Emanuele Rodolà, Jules Robins, Dominic Williamson, Vincent Cheng, Brad Raynor, Hao Qi, Ben Segev, Jingxuan Fan, Sarah Martinson, Erik Y. Wang, Kaylie Hausknecht, Michael P. Brenner, Mao Mao, Christoph Demian, Peyman Kassani, Xinyu Zhang, David Avagian, Eshawn Jessica Scipio, Alon Ragoler, Justin Tan, Blake Sims, Rebeka Plecnik, Aaron Kirtland, Omer Faruk Bodur, D. P. Shinde, Yan Carlos Leyva Labrador, Zahra Adoul, Mohamed Zekry, Ali Karakoc, Tania C. B. Santos, Samir Shamseldeen, Loukmane Karim, Anna Liakhovitskaia, Nate Resman, Nicholas Farina, Juan Carlos Gonzalez, Gabe Maayan, Earth Anderson, Rodrigo De Oliveira Pena, Elizabeth Kelley, Hodjat Mariji, Rasoul Pouriamanesh, Wentao Wu, Ross Finocchio, Ismail Alarab, Joshua Cole, Danyelle Ferreira, Bryan Johnson, Mohammad Safdari, Liangti Dai, Siriphan Arthornthurasuk, Isaac C. McAlister, Alejandro José Moyano, Alexey Pronin, Jing Fan, Angel Ramirez-Trinidad, Yana Malysheva, Daphiny Pottmaier, Omid Taheri, Stanley Stepanic, Samuel Perry, Luke Askew, Raúl Adrián Huerta Rodríguez, Ali M. R. Minissi, Ricardo Lorena, Krishnamurthy Iyer, Arshad Anil Fasiludeen, Ronald Clark, Josh Ducey, Matheus Piza, Maja Somrak, Eric Vergo, Juehang Qin, Benjámin Borbás, Eric Chu, Jack Lindsey, Antoine Jallon, I. M. J. McInnis, Evan Chen, Avi Semler, Luk Gloor, Tej Shah, Marc Carauleanu, Pascal Lauer, Tran \DJuc  Huy, Hossein Shahrtash, Emilien Duc, Lukas Lewark, Assaf Brown, Samuel Albanie, Brian Weber, Warren S. Vaz, Pierre Clavier, Yiyang Fan, Gabriel Poesia Reis e Silva, Long, Lian, Marcus Abramovitch, Xi Jiang, Sandra Mendoza, Murat Islam, Juan Gonzalez, Vasilios Mavroudis, Justin Xu, Pawan Kumar, Laxman Prasad Goswami, Daniel Bugas, Nasser Heydari, Ferenc Jeanplong, Thorben Jansen, Antonella Pinto, Archimedes Apronti, Abdallah Galal, Ng Ze-An, Ankit Singh, Tong Jiang, Joan of Arc Xavier, Kanu Priya Agarwal, Mohammed Berkani, Gang Zhang, Zhehang Du, Benedito Alves de Oliveira Junior, Dmitry Malishev, Nicolas Remy, Taylor D. Hartman, Tim Tarver, Stephen Mensah, Gautier Abou Loume, Wiktor Morak, Farzad Habibi, Sarah Hoback, Will Cai, Javier Gimenez, Roselynn Grace Montecillo, Jakub \Lucki , Russell Campbell, Asankhaya Sharma, Khalida Meer, Shreen Gul, Daniel Espinosa Gonzalez, Xavier Alapont, Alex Hoover, Gunjan Chhablani, Freddie Vargus, Arunim Agarwal, Yibo Jiang, Deepakkumar Patil, David Outevsky, Kevin Joseph Scaria, Rajat Maheshwari, Abdelkader Dendane, Priti Shukla, Ashley Cartwright, Sergei Bogdanov, Niels Mündler, Sören Möller, Luca Arnaboldi, Kunvar Thaman, Muhammad Rehan Siddiqi, Prajvi Saxena, Himanshu Gupta, Tony Fruhauff, Glen Sherman, Mátyás Vincze, Siranut Usawasutsakorn, Dylan Ler, Anil Radhakrishnan, Innocent Enyekwe, Sk Md Salauddin, Jiang Muzhen, Aleksandr Maksapetyan, Vivien Rossbach, Chris Harjadi, Mohsen Bahaloohoreh, Claire Sparrow, Jasdeep Sidhu, Sam Ali, Song Bian, John Lai, Eric Singer, Justine Leon Uro, Greg Bateman, Mohamed Sayed, Ahmed Menshawy, Darling Duclosel, Dario Bezzi, Yashaswini Jain, Ashley Aaron, Murat Tiryakioglu, Sheeshram Siddh, Keith Krenek, Imad Ali Shah, Jun Jin, Scott Creighton, Denis Peskoff, Zienab EL-Wasif, Ragavendran P V, Michael Richmond, Joseph McGowan, Tejal Patwardhan, Hao-Yu Sun, Ting Sun, Nikola Zubić, Samuele Sala, Stephen Ebert, Jean Kaddour, Manuel Schottdorf, Dianzhuo Wang, Gerol Petruzella, Alex Meiburg, Tilen Medved, Ali ElSheikh, S Ashwin Hebbar, Lorenzo Vaquero, Xianjun Yang, Jason Poulos, Vilém Zouhar, Sergey Bogdanik, Mingfang Zhang, Jorge Sanz-Ros, David Anugraha, Yinwei Dai, Anh N. Nhu, Xue Wang, Ali Anil Demircali, Zhibai Jia, Yuyin Zhou, Juncheng Wu, Mike He, Nitin Chandok, Aarush Sinha, Gaoxiang Luo, Long Le, Mickaël Noyé, Michał Pere\lkiewicz , Ioannis Pantidis, Tianbo Qi, Soham Sachin Purohit, Letitia Parcalabescu, Thai-Hoa Nguyen, Genta Indra Winata, Edoardo M. Ponti, Hanchen Li, Kaustubh Dhole, Jongee Park, Dario Abbondanza, Yuanli Wang, Anupam Nayak, Diogo M. Caetano, Antonio A. W. L. Wong, Maria del Rio-Chanona, Dániel Kondor, Pieter Francois, Ed Chalstrey, Jakob Zsambok, Dan Hoyer, Jenny Reddish, Jakob Hauser, Francisco-Javier Rodrigo-Ginés, Suchandra Datta, Maxwell Shepherd, Thom Kamphuis, Qizheng Zhang, Hyunjun Kim, Ruiji Sun, Jianzhu Yao, Franck Dernoncourt, Satyapriya Krishna, Sina Rismanchian, Bonan Pu, Francesco Pinto, Yingheng Wang, Kumar Shridhar, Kalon J. Overholt, Glib Briia, Hieu Nguyen, David, Soler Bartomeu, Tony CY Pang, Adam Wecker, Yifan Xiong, Fanfei Li, Lukas S. Huber, Joshua Jaeger, Romano De Maddalena, Xing Han Lù, Yuhui Zhang, Claas Beger, Patrick Tser Jern Kon, Sean Li, Vivek Sanker, Ming Yin, Yihao Liang, Xinlu Zhang, Ankit Agrawal, Li S. Yifei, Zechen Zhang, Mu Cai, Yasin Sonmez, Costin Cozianu, Changhao Li, Alex Slen, Shoubin Yu, Hyun Kyu Park, Gabriele Sarti, Marcin Briański, Alessandro Stolfo, Truong An Nguyen, Mike Zhang, Yotam Perlitz, Jose Hernandez-Orallo, Runjia Li, Amin Shabani, Felix Juefei-Xu, Shikhar Dhingra, Orr Zohar, My Chiffon Nguyen, Alexander Pondaven, Abdurrahim Yilmaz, Xuandong Zhao, Chuanyang Jin, Muyan Jiang, Stefan Todoran, Xinyao Han, Jules Kreuer, Brian Rabern, Anna Plassart, Martino Maggetti, Luther Yap, Robert Geirhos, Jonathon Kean, Dingsu Wang, Sina Mollaei, Chenkai Sun, Yifan Yin, Shiqi Wang, Rui Li, Yaowen Chang, Anjiang Wei, Alice Bizeul, Xiaohan Wang, Alexandre Oliveira Arrais, Kushin Mukherjee, Jorge Chamorro-Padial, Jiachen Liu, Xingyu Qu, Junyi Guan, Adam Bouyamourn, Shuyu Wu, Martyna Plomecka, Junda Chen, Mengze Tang, Jiaqi Deng, Shreyas Subramanian, Haocheng Xi, Haoxuan Chen, Weizhi Zhang, Yinuo Ren, Haoqin Tu, Sejong Kim, Yushun Chen, Sara Vera Marjanović, Junwoo Ha, Grzegorz Luczyna, Jeff J. Ma, Zewen Shen, Dawn Song, Cedegao E. Zhang, Zhun Wang, Gaël Gendron, Yunze Xiao, Leo Smucker, Erica Weng, Kwok Hao Lee, Zhe Ye, Stefano Ermon, Ignacio D. Lopez-Miguel, Theo Knights, Anthony Gitter, Namkyu Park, Boyi Wei, Hongzheng Chen, Kunal Pai, Ahmed Elkhanany, Han Lin, Philipp D. Siedler, Jichao Fang, Ritwik Mishra, Károly Zsolnai-Fehér, Xilin Jiang, Shadab Khan, Jun Yuan, Rishab Kumar Jain, Xi Lin, Mike Peterson, Zhe Wang, Aditya Malusare, Maosen Tang, Isha Gupta, Ivan Fosin, Timothy Kang, Barbara Dworakowska, Kazuki Matsumoto, Guangyao Zheng, Gerben Sewuster, Jorge Pretel Villanueva, Ivan Rannev, Igor Chernyavsky, Jiale Chen, Deepayan Banik, Ben Racz, Wenchao Dong, Jianxin Wang, Laila Bashmal, Duarte V. Gonçalves, Wei Hu, Kaushik Bar, Ondrej Bohdal, Atharv Singh Patlan, Shehzaad Dhuliawala, Caroline Geirhos, Julien Wist, Yuval Kansal, Bingsen Chen, Kutay Tire, Atak Talay Yücel, Brandon Christof, Veerupaksh Singla, Zijian Song, Sanxing Chen, Jiaxin Ge, Kaustubh Ponkshe, Isaac Park, Tianneng Shi, Martin Q. Ma, Joshua Mak, Sherwin Lai, Antoine Moulin, Zhuo Cheng, Zhanda Zhu, Ziyi Zhang, Vaidehi Patil, Ketan Jha, Qiutong Men, Jiaxuan Wu, Tianchi Zhang, Bruno Hebling Vieira, Alham Fikri Aji, Jae-Won Chung, Mohammed Mahfoud, Ha Thi Hoang, Marc Sperzel, Wei Hao, Kristof Meding, Sihan Xu, Vassilis Kostakos, Davide Manini, Yueying Liu, Christopher Toukmaji, Jay Paek, Eunmi Yu, Arif Engin Demircali, Zhiyi Sun, Ivan Dewerpe, Hongsen Qin, Roman Pflugfelder, James Bailey, Johnathan Morris, Ville Heilala, Sybille Rosset, Zishun Yu, Peter E. Chen, Woongyeong Yeo, Eeshaan Jain, Ryan Yang, Sreekar Chigurupati, Julia Chernyavsky, Sai Prajwal Reddy, Subhashini Venugopalan, Hunar Batra, Core Francisco Park, Hieu Tran, Guilherme Maximiano, Genghan Zhang, Yizhuo Liang, Hu Shiyu, Rongwu Xu, Rui Pan, Siddharth Suresh, Ziqi Liu, Samaksh Gulati, Songyang Zhang, Peter Turchin, Christopher W. Bartlett, Christopher R. Scotese, Phuong M. Cao, Aakaash Nattanmai, Gordon McKellips, Anish Cheraku, Asim Suhail, Ethan Luo, Marvin Deng, Jason Luo, Ashley Zhang, Kavin Jindel, Jay Paek, Kasper Halevy, Allen Baranov, Michael Liu, Advaith Avadhanam, David Zhang, Vincent Cheng, Brad Ma, Evan Fu, Liam Do, Joshua Lass, Hubert Yang, Surya Sunkari, Vishruth Bharath, Violet Ai, James Leung, Rishit Agrawal, Alan Zhou, Kevin Chen, Tejas Kalpathi, Ziqi Xu, Gavin Wang, Tyler Xiao, Erik Maung, Sam Lee, Ryan Yang, Roy Yue, Ben Zhao, Julia Yoon, Sunny Sun, Aryan Singh, Ethan Luo, Clark Peng, Tyler Osbey, Taozhi Wang, Daryl Echeazu, Hubert Yang, Timothy Wu, Spandan Patel, Vidhi Kulkarni, Vijaykaarti Sundarapandiyan, Ashley Zhang, Andrew Le, Zafir Nasim, Srikar Yalam, Ritesh Kasamsetty, Soham Samal, Hubert Yang, David Sun, Nihar Shah, Abhijeet Saha, Alex Zhang, Leon Nguyen, Laasya Nagumalli, Kaixin Wang, Alan Zhou, Aidan Wu, Jason Luo, Anwith Telluri, Summer Yue, Alexandr Wang, and Dan Hendrycks. Humanity's last exam. 2025. URL: https://arxiv.org/abs/2501.14249, arXiv:2501.14249.
+[^18]: Elliot Glazer, Ege Erdil, Tamay Besiroglu, Diego Chicharro, Evan Chen, Alex Gunning, Caroline Falkman Olsson, Jean-Stanislas Denain, Anson Ho, Emily de Oliveira Santos, Olli Järviniemi, Matthew Barnett, Robert Sandler, Matej Vrzala, Jaime Sevilla, Qiuyu Ren, Elizabeth Pratt, Lionel Levine, Grant Barkley, Natalie Stewart, Bogdan Grechuk, Tetiana Grechuk, Shreepranav Varma Enugandla, and Mark Wildon. Frontiermath: a benchmark for evaluating advanced mathematical reasoning in ai. 2024. URL: https://arxiv.org/abs/2411.04872, arXiv:2411.04872.
+[^19]: Minyang Tian, Luyu Gao, Shizhuo Dylan Zhang, Xinan Chen, Cunwei Fan, Xuefei Guo, Roland Haas, Pan Ji, Kittithat Krongchon, Yao Li, Shengyan Liu, Di Luo, Yutao Ma, Hao Tong, Kha Trinh, Chenyu Tian, Zihan Wang, Bohao Wu, Yanyu Xiong, Shengzhu Yin, Minhui Zhu, Kilian Lieret, Yanxin Lu, Genglin Liu, Yufeng Du, Tianhua Tao, Ofir Press, Jamie Callan, Eliu Huerta, and Hao Peng. Scicode: a research coding benchmark curated by scientists. 2024. URL: https://arxiv.org/abs/2407.13168, arXiv:2407.13168.
+[^20]: TBD. Aime. March 2025. [Online accessed 2025-06-24]. URL: https://www.vals.ai/benchmarks/aime-2025-03-13.
+[^21]: HuggingFaceH4. Math-500. 2025. URL: https://huggingface.co/datasets/HuggingFaceH4/MATH-500.
+[^22]: Hao Cui, Zahra Shamsi, Gowoon Cheon, Xuejian Ma, Shutong Li, Maria Tikhanovskaya, Peter Norgaard, Nayantara Mudur, Martyna Plomecka, Paul Raccuglia, Yasaman Bahri, Victor V. Albert, Pranesh Srinivasan, Haining Pan, Philippe Faist, Brian Rohr, Ekin Dogus Cubuk, Muratahan Aykol, Amil Merchant, Michael J. Statt, Dan Morris, Drew Purves, Elise Kleeman, Ruth Alcantara, Matthew Abraham, Muqthar Mohammad, Ean Phing VanLee, Chenfei Jiang, Elizabeth Dorfman, Eun-Ah Kim, Michael P Brenner, Viren Jain, Sameera Ponda, and Subhashini Venugopalan. Curie: evaluating llms on multitask scientific long context understanding and reasoning. 2025. URL: https://arxiv.org/abs/2503.13517, arXiv:2503.13517.
+[^23]: Nayantara Mudur, Hao Cui, Subhashini Venugopalan, Paul Raccuglia, Michael P. Brenner, and Peter Norgaard. Feabench: evaluating language models on multiphysics reasoning ability. 2025. URL: https://arxiv.org/abs/2504.06260, arXiv:2504.06260.
+[^24]: Xiaoyan Zhong, Yijian Gao, and Suchin Gururangan. Spiqa: scientific paper image question answering. 2024. URL: https://arxiv.org/abs/2407.09413.
+[^25]: Erpai Luo, Jinmeng Jia, Yifan Xiong, Xiangyu Li, Xiaobo Guo, Baoqi Yu, Lei Wei, and Xuegong Zhang. Benchmarking ai scientists in omics data-driven biological research. 2025. URL: https://arxiv.org/abs/2505.08341, arXiv:2505.08341.
+[^26]: Yin Fang, Ningyu Zhang, Zhuo Chen, Lingbing Guo, Xiaohui Fan, and Huajun Chen. Domain-agnostic molecular generation with chemical feedback. 2024. URL: https://arxiv.org/abs/2301.11259, arXiv:2301.11259.
+[^27]: Weihua Hu, Matthias Fey, Marinka Zitnik, Yuxiao Dong, Hongyu Ren, Bowen Liu, Michele Catasta, and Jure Leskovec. Open graph benchmark: datasets for machine learning on graphs. 2021. URL: https://arxiv.org/abs/2005.00687, arXiv:2005.00687.
+[^28]: Kamal Choudhary, Daniel Wines, Kangming Li, Kevin F. Garrity, Vishu Gupta, Aldo H. Romero, Jaron T. Krogel, Kayahan Saritas, Addis Fuhr, Panchapakesan Ganesh, Paul R. C. Kent, Keqiang Yan, Yuchao Lin, Shuiwang Ji, Ben Blaiszik, Patrick Reiser, Pascal Friederich, Ankit Agrawal, Pratyush Tiwary, Eric Beyerle, Peter Minch, Trevor D. Rhone, Ichiro Takeuchi, Robert B. Wexler, Arun Mannodi-Kanakkithodi, Elif Ertekin, Avanish Mishra, Nithin Mathew, Mitchell Wood, Andrew D. Rohskopf, Jason Hattrick-Simpers, Shih-Han Wang, Luke E. K. Achenie, Hongliang Xin, Maureen Williams, Adam J. Biacchi, and Francesca Tavazza. JARVIS-Leaderboard: a large scale benchmark of materials design methods. npj Computational Materials, 10(1):93, 2024. URL: https://doi.org/10.1038/s41524-024-01259-w, doi:10.1038/s41524-024-01259-w.
+[^29]: Azul Garza, Cristian Challu, and Max Mergenthaler-Canseco. Timegpt-1. 2024. URL: https://arxiv.org/abs/2310.03589, arXiv:2310.03589.
+[^30]: Cristian Challu, Kin G Olivares, Boris N Oreshkin, Federico Garza Ramirez, Max Mergenthaler Canseco, and Artur Dubrawski. Nhits: neural hierarchical interpolation for time series forecasting. In Proceedings of the AAAI conference on artificial intelligence, volume 37, 6989–6997. 2023.
+[^31]: Ming Jin, Shiyu Wang, Lintao Ma, Zhixuan Chu, James Y. Zhang, Xiaoming Shi, Pin-Yu Chen, Yuxuan Liang, Yuan-Fang Li, Shirui Pan, and Qingsong Wen. Time-llm: time series forecasting by reprogramming large language models. 2024. URL: https://arxiv.org/abs/2310.01728, arXiv:2310.01728.
+[^32]: Kin G. Olivares, Cristian Challú, Federico Garza, Max Mergenthaler Canseco, and Artur Dubrawski. Neuralforecast: user friendly state-of-the-art neural forecasting models. PyCon Salt Lake City, Utah, US 2022, 2022. URL: https://github.com/Nixtla/neuralforecast.
+[^33]: Simon Mo. Vllm performance dashboard. 2024. URL: https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/.
+[^34]: Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph Gonzalez, Hao Zhang, and Ion Stoica. Efficient memory management for large language model serving with pagedattention. In Proceedings of the 29th Symposium on Operating Systems Principles, SOSP '23, 611 626. New York, NY, USA, 2023. Association for Computing Machinery. URL: https://doi.org/10.1145/3600006.3613165, doi:10.1145/3600006.3613165.
+[^35]: Lianmin Zheng, Liangsheng Yin, Zhiqiang Xie, Chuyue Sun, Jeff Huang, Cody Hao Yu, Shiyi Cao, Christos Kozyrakis, Ion Stoica, Joseph E. Gonzalez, Clark Barrett, and Ying Sheng. Sglang: efficient execution of structured language model programs. 2024. URL: https://arxiv.org/abs/2312.07104, arXiv:2312.07104.
+[^36]: Javier Duarte, Nhan Tran, Ben Hawks, Christian Herwig, Jules Muhizi, Shvetank Prakash, and Vijay Janapa Reddi. Fastml science benchmarks: accelerating real-time scientific edge machine learning. 2022. URL: https://arxiv.org/abs/2207.07958, arXiv:2207.07958.
+[^37]: Javier Duarte, Nhan Tran, Ben Hawks, Christian Herwig, Jules Muhizi, Shvetank Prakash, and Vijay Janapa Reddi. Fastml science benchmarks: accelerating real-time scientific edge machine learning. 2022. URL: https://arxiv.org/abs/2207.07958, arXiv:2207.07958.
+[^38]: Javier Duarte, Nhan Tran, Ben Hawks, Christian Herwig, Jules Muhizi, Shvetank Prakash, and Vijay Janapa Reddi. Fastml science benchmarks: accelerating real-time scientific edge machine learning. 2022. URL: https://arxiv.org/abs/2207.07958, arXiv:2207.07958.
+[^39]: Diana Kafkes and Jason St. John. Boostr: a dataset for accelerator control systems. 2021. URL: https://arxiv.org/abs/2101.08359, arXiv:2101.08359.
+[^40]: Patrick Odagiu, Zhiqiang Que, Javier Duarte, Johannes Haller, Gregor Kasieczka, Artur Lobanov, Vladimir Loncar, Wayne Luk, Jennifer Ngadiuba, Maurizio Pierini, Philipp Rincke, Arpita Seksaria, Sioni Summers, Andre Sznajder, Alexander Tapper, and Thea K. Aarrestad. Ultrafast jet classification on fpgas for the hl-lhc. 2024. URL: https://arxiv.org/abs/2402.01876, arXiv:2402.01876, doi:https://doi.org/10.1088/2632-2153/ad5f10.
+[^41]: Maira Khan, Steve Krave, Vittorio Marinozzi, Jennifer Ngadiuba, Stoyan Stoynev, and Nhan Tran. Benchmarking and interpreting real time quench detection algorithms. In Fast Machine Learning for Science Conference 2024. Purdue University, IN, October 2024. indico.cern.ch. URL: https://indico.cern.ch/event/1387540/contributions/6153618/attachments/2948441/5182077/fast_ml_magnets_2024_final.pdf.
+[^42]: J. Kvapil, G. Borca-Tasciuc, H. Bossi, K. Chen, Y. Chen, Y. Corrales Morales, H. Da Costa, C. Da Silva, C. Dean, J. Durham, S. Fu, C. Hao, P. Harris, O. Hen, H. Jheng, Y. Lee, P. Li, X. Li, Y. Lin, M. X. Liu, V. Loncar, J. P. Mitrevski, A. Olvera, M. L. Purschke, J. S. Renck, G. Roland, J. Schambach, Z. Shi, N. Tran, N. Wuerfel, B. Xu, D. Yu, and H. Zhang. Intelligent experiments through real-time ai: fast data processing and autonomous detector control for sphenix and future eic detectors. 2025. URL: https://arxiv.org/abs/2501.04845, arXiv:2501.04845.
+[^43]: Jason Weitz, Dmitri Demler, Luke McDermott, Nhan Tran, and Javier Duarte. Neural architecture codesign for fast physics applications. 2025. URL: https://arxiv.org/abs/2501.05515, arXiv:2501.05515.
+[^44]: Benjamin Parpillon, Chinar Syal, Jieun Yoo, Jennet Dickinson, Morris Swartz, Giuseppe Di Guglielmo, Alice Bean, Douglas Berry, Manuel Blanco Valentin, Karri DiPetrillo, Anthony Badea, Lindsey Gray, Petar Maksimovic, Corrinne Mills, Mark S. Neubauer, Gauri Pradhan, Nhan Tran, Dahai Wen, and Farah Fahim. Smart pixels: in-pixel ai for on-sensor data filtering. 2024. URL: https://arxiv.org/abs/2406.14860, arXiv:2406.14860.
+[^45]: Zhengchun Liu, Hemant Sharma, Jun-Sang Park, Peter Kenesei, Antonino Miceli, Jonathan Almer, Rajkumar Kettimuthu, and Ian Foster. Braggnn: fast x-ray bragg peak analysis using deep learning. 2021. URL: https://arxiv.org/abs/2008.08198, arXiv:2008.08198.
+[^46]: Shuyu Qin, Joshua Agar, and Nhan Tran. Extremely noisy 4d-tem strain mapping using cycle consistent spatial transforming autoencoders. In AI for Accelerated Materials Design - NeurIPS 2023 Workshop. 2023. URL: https://openreview.net/forum?id=7yt3N0o0W9.
+[^47]: Yumou Wei, Ryan F. Forelli, Chris Hansen, Jeffrey P. Levesque, Nhan Tran, Joshua C. Agar, Giuseppe Di Guglielmo, Michael E. Mauel, and Gerald A. Navratil. Low latency optical-based mode tracking with machine learning deployed on fpgas on a tokamak. 2024. URL: https://arxiv.org/abs/2312.00128, arXiv:2312.00128, doi:https://doi.org/10.1063/5.0190354.
+[^48]: Wanling Gao, Fei Tang, Lei Wang, Jianfeng Zhan, Chunxin Lan, Chunjie Luo, Yunyou Huang, Chen Zheng, Jiahui Dai, Zheng Cao, Daoyi Zheng, Haoning Tang, Kunlin Zhan, Biao Wang, Defei Kong, Tong Wu, Minghe Yu, Chongkang Tan, Huan Li, Xinhui Tian, Yatao Li, Junchao Shao, Zhenyu Wang, Xiaoyu Wang, and Hainan Ye. Aibench: an industry standard internet service ai benchmark suite. 2019. URL: https://arxiv.org/abs/1908.08998, arXiv:1908.08998.
+[^49]: Wanling Gao, Jianfeng Zhan, Lei Wang, Chunjie Luo, Daoyi Zheng, Xu Wen, Rui Ren, Chen Zheng, Xiwen He, Hainan Ye, Haoning Tang, Zheng Cao, Shujie Zhang, and Jiahui Dai. Bigdatabench: a scalable and unified big data and ai benchmark suite. 2018. URL: https://arxiv.org/abs/1802.08254, arXiv:1802.08254.
+[^50]: Steven Farrell, Murali Emani, Jacob Balma, Lukas Drescher, Aleksandr Drozd, Andreas Fink, Geoffrey Fox, David Kanter, Thorsten Kurth, Peter Mattson, Dawei Mu, Amit Ruhela, Kento Sato, Koichi Shirahata, Tsuguchika Tabaru, Aristeidis Tsaris, Jan Balewski, Ben Cumming, Takumi Danjo, Jens Domke, Takaaki Fukai, Naoto Fukumoto, Tatsuya Fukushi, Balazs Gerofi, Takumi Honda, Toshiyuki Imamura, Akihiko Kasagi, Kentaro Kawakami, Shuhei Kudo, Akiyoshi Kuroda, Maxime Martinasso, Satoshi Matsuoka, Henrique Mendonça, Kazuki Minami, Prabhat Ram, Takashi Sawada, Mallikarjun Shankar, Tom St. John, Akihiro Tabuchi, Venkatram Vishwanath, Mohamed Wahib, Masafumi Yamazaki, and Junqi Yin. Mlperf hpc: a holistic benchmark suite for scientific machine learning on hpc systems. 2021. URL: https://arxiv.org/abs/2110.11466, arXiv:2110.11466.
+[^51]: Jeyan Thiyagalingam, Gregor von Laszewski, Junqi Yin, Murali Emani, Juri Papay, Gregg Barrett, Piotr Luszczek, Aristeidis Tsaris, Christine Kirkpatrick, Feiyi Wang, Tom Gibbs, Venkatram Vishwanath, Mallikarjun Shankar, Geoffrey Fox, and Tony Hey. Ai benchmarking for science: efforts from the mlcommons science working group. In Hartwig Anzt, Amanda Bienz, Piotr Luszczek, and Marc Baboulin, editors, High Performance Computing. ISC High Performance 2022 International Workshops, 47–64. Cham, 2022. Springer International Publishing.
+[^52]: Thea Aarrestad, Ekaterina Govorkova, Jennifer Ngadiuba, Ema Puljak, Maurizio Pierini, and Kinga Anna Wozniak. Unsupervised new physics detection at 40 mhz: training dataset. 2021. URL: https://zenodo.org/record/5046389, doi:10.5281/ZENODO.5046389.
+[^53]: Alexandros Karargyris, Renato Umeton, Micah J. Sheller, Alejandro Aristizabal, Johnu George, Anna Wuest, Sarthak Pati, Hasan Kassem, Maximilian Zenk, Ujjwal Baid, Prakash Narayana Moorthy, Alexander Chowdhury, Junyi Guo, Sahil Nalawade, Jacob Rosenthal, David Kanter, Maria Xenochristou, Daniel J. Beutel, Verena Chung, Timothy Bergquist, James Eddy, Abubakar Abid, Lewis Tunstall, Omar Sanseviero, Dimitrios Dimitriadis, Yiming Qian, Xinxing Xu, Yong Liu, Rick Siow Mong Goh, Srini Bala, Victor Bittorf, Sreekar Reddy Puchala, Biagio Ricciuti, Soujanya Samineni, Eshna Sengupta, Akshay Chaudhari, Cody Coleman, Bala Desinghu, Gregory Diamos, Debo Dutta, Diane Feddema, Grigori Fursin, Xinyuan Huang, Satyananda Kashyap, Nicholas Lane, Indranil Mallick, Pietro Mascagni, Virendra Mehta, Cassiano Ferro Moraes, Vivek Natarajan, Nikola Nikolov, Nicolas Padoy, Gennady Pekhimenko, Vijay Janapa Reddi, G. Anthony Reina, Pablo Ribalta, Abhishek Singh, Jayaraman J. Thiagarajan, Jacob Albrecht, Thomas Wolf, Geralyn Miller, Huazhu Fu, Prashant Shah, Daguang Xu, Poonam Yadav, David Talby, Mark M. Awad, Jeremy P. Howard, Michael Rosenthal, Luigi Marchionni, Massimo Loda, Jason M. Johnson, Spyridon Bakas, Peter Mattson, FeTS Consortium, BraTS-2020 Consortium, and AI4SafeChole Consortium. Federated benchmarking of medical artificial intelligence with medperf. Nature Machine Intelligence, 5(7):799–810, July 2023. URL: https://doi.org/10.1038/s42256-023-00652-2, doi:10.1038/s42256-023-00652-2.
+[^54]: Claudius Krause, Michele Faucci Giannelli, Gregor Kasieczka, Benjamin Nachman, Dalila Salamani, David Shih, Anna Zaborowska, Oz Amram, Kerstin Borras, Matthew R. Buckley, Erik Buhmann, Thorsten Buss, Renato Paulo Da Costa Cardoso, Anthony L. Caterini, Nadezda Chernyavskaya, Federico A. G. Corchia, Jesse C. Cresswell, Sascha Diefenbacher, Etienne Dreyer, Vijay Ekambaram, Engin Eren, Florian Ernst, Luigi Favaro, Matteo Franchini, Frank Gaede, Eilam Gross, Shih-Chieh Hsu, Kristina Jaruskova, Benno Käch, Jayant Kalagnanam, Raghav Kansal, Taewoo Kim, Dmitrii Kobylianskii, Anatolii Korol, William Korcari, Dirk Krücker, Katja Krüger, Marco Letizia, Shu Li, Qibin Liu, Xiulong Liu, Gabriel Loaiza-Ganem, Thandikire Madula, Peter McKeown, Isabell-A. Melzer-Pellmann, Vinicius Mikuni, Nam Nguyen, Ayodele Ore, Sofia Palacios Schweitzer, Ian Pang, Kevin Pedro, Tilman Plehn, Witold Pokorski, Huilin Qu, Piyush Raikwar, John A. Raine, Humberto Reyes-Gonzalez, Lorenzo Rinaldi, Brendan Leigh Ross, Moritz A. W. Scham, Simon Schnake, Chase Shimmin, Eli Shlizerman, Nathalie Soybelman, Mudhakar Srivatsa, Kalliopi Tsolaki, Sofia Vallecorsa, Kyongmin Yeo, and Rui Zhang. Calochallenge 2022: a community challenge for fast calorimeter simulation. 2024. URL: https://arxiv.org/abs/2410.21611, arXiv:2410.21611.
+[^55]: Avrim Blum and Moritz Hardt. The ladder: a reliable leaderboard for machine learning competitions. In Francis Bach and David Blei, editors, Proceedings of the 32nd International Conference on Machine Learning, volume 37 of Proceedings of Machine Learning Research, 1006–1014. Lille, France, July 2015. PMLR. URL: https://proceedings.mlr.press/v37/blum15.html.
+[^56]: Zhen Xu, Sergio Escalera, Adrien Pavão, Magali Richard, Wei-Wei Tu, Quanming Yao, Huan Zhao, and Isabelle Guyon. Codabench: flexible, easy-to-use, and reproducible meta-benchmark platform. Patterns, 3(7):100543, July 2022. URL: http://dx.doi.org/10.1016/j.patter.2022.100543, doi:10.1016/j.patter.2022.100543.
+[^57]: Piotr Luszczek. Sabath: fair metadata technology for surrogate benchmarks. Technical Report, University of Tennessee, 2021. URL: https://github.com/icl-utk-edu/slip/tree/sabath.
+[^58]: Makoto Takamoto, Timothy Praditia, Raphael Leiteritz, Dan MacKinlay, Francesco Alesiani, Dirk Pflüger, and Mathias Niepert. Pdebench: an extensive benchmark for scientific machine learning. 2024. URL: https://arxiv.org/abs/2210.07182, arXiv:2210.07182.
+[^59]: Krishna Teja Chitty-Venkata, Siddhisanket Raskar, Bharat Kale, Farah Ferdaus, Aditya Tanikanti, Ken Raffenetti, Valerie Taylor, Murali Emani, and Venkatram Vishwanath. Llm-inference-bench: inference benchmarking of large language models on ai accelerators. In SC24-W: Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis, volume, 1362 1379. 2024. doi:10.1109/SCW63240.2024.00178.
+[^60]: Kuzma Khrabrov, Anton Ber, Artem Tsypin, Konstantin Ushenin, Egor Rumiantsev, Alexander Telepov, Dmitry Protasov, Ilya Shenbin, Anton Alekseev, Mikhail Shirokikh, Sergey Nikolenko, Elena Tutubalina, and Artur Kadurin. Delta-squared dft: a universal quantum chemistry dataset of drug-like molecules and a benchmark for neural network potentials. 2024. URL: https://arxiv.org/abs/2406.14347, arXiv:2406.14347.
+[^61]: Yiheng Wang, Tianyu Wang, Yuying Zhang, Hongji Zhang, Haoyu Zheng, Guanjie Zheng, and Linghe Kong. Urbandatalayer: a unified data pipeline for urban science. In A. Globerson, L. Mackey, D. Belgrave, A. Fan, U. Paquet, J. Tomczak, and C. Zhang, editors, Advances in Neural Information Processing Systems, volume 37, 7296–7310. Curran Associates, Inc., 2024. URL: https://proceedings.neurips.cc/paper_files/paper/2024/file/0db7f135f6991e8cec5e516ecc66bfba-Paper-Datasets_and_Benchmarks_Track.pdf.
+[^62]: Tingjia Shen, Hao Wang, Jiaqing Zhang, Sirui Zhao, Liangyue Li, Zulong Chen, Defu Lian, and Enhong Chen. Exploring user retrieval integration towards large language models for cross-domain sequential recommendation. 2024. URL: https://arxiv.org/abs/2406.03085, arXiv:2406.03085.
+[^63]: A. Abed Abud, B. Abi, R. Acciarri, M. A. Acero, G. Adamov, D. Adams, M. Adinolfi, A. Aduszkiewicz, Z. Ahmad, J. Ahmed, T. Alion, S. Alonso Monsalve, M. Alrashed, C. Alt, A. Alton, P. Amedo, J. Anderson, C. Andreopoulos, M. P. Andrews, F. Andrianala, S. Andringa, N. Anfimov, A. Ankowski, M. Antonova, S. Antusch, A. Aranda-Fernandez, A. Ariga, L. O. Arnold, M. A. Arroyave, J. Asaadi, A. Aurisano, V. Aushev, D. Autiero, M. Ayala-Torres, F. Azfar, H. Back, J. J. Back, C. Backhouse, P. Baesso, I. Bagaturia, L. Bagby, S. Balasubramanian, P. Baldi, B. Baller, B. Bambah, F. Barao, G. Barenboim, G. J. Barker, W. Barkhouse, C. Barnes, G. Barr, J. Barranco Monarca, N. Barros, J. L. Barrow, A. Basharina-Freshville, A. Bashyal, V. Basque, E. Belchior, J. B. R. Battat, F. Battisti, F. Bay, J. L. Bazo Alba, J. F. Beacom, E. Bechetoille, B. Behera, L. Bellantoni, G. Bellettini, V. Bellini, O. Beltramello, D. Belver, N. Benekos, F. Bento Neves, S. Berkman, P. Bernardini, R. M. Berner, H. Berns, S. Bertolucci, M. Betancourt, A. Betancur Rodríguez, M. Bhattacharjee, S. Bhuller, B. Bhuyan, S. Biagi, J. Bian, M. Biassoni, K. Biery, B. Bilki, M. Bishai, A. Bitadze, A. Blake, F. D. M. Blaszczyk, G. C. Blazey, E. Blucher, J. Boissevain, S. Bolognesi, T. Bolton, L. Bomben, M. Bonesini, M. Bongrand, F. Bonini, A. Booth, C. Booth, S. Bordoni, A. Borkum, T. Boschi, N. Bostan, P. Bour, C. Bourgeois, S. B. Boyd, D. Boyden, J. Bracinik, D. Braga, D. Brailsford, A. Brandt, J. Bremer, C. Brew, E. Brianne, S. J. Brice, C. Brizzolari, C. Bromberg, G. Brooijmans, J. Brooke, A. Bross, G. Brunetti, M. Brunetti, N. Buchanan, H. Budd, D. Caiulo, P. Calafiura, J. Calcutt, M. Calin, S. Calvez, E. Calvo, A. Caminata, M. Campanelli, K. Cankocak, D. Caratelli, G. Carini, B. Carlus, P. Carniti, I. Caro Terrazas, H. Carranza, T. Carroll, J. F. Castaño Forero, A. Castillo, C. Castromonte, E. Catano-Mur, C. Cattadori, F. Cavalier, F. Cavanna, S. Centro, G. Cerati, A. Cervelli, A. Cervera Villanueva, M. Chalifour, A. Chappell, E. Chardonnet, N. Charitonidis, A. Chatterjee, S. Chattopadhyay, H. Chen, M. Chen, Y. Chen, Z. Chen, D. Cherdack, C. Chi, S. Childress, A. Chiriacescu, G. Chisnall, K. Cho, S. Choate, D. Chokheli, S. Choubey, A. Christensen, D. Christian, G. Christodoulou, A. Chukanov, E. Church, P. Clarke, T. E. Coan, A. G. Cocco, J. A. B. Coelho, E. Conley, R. Conley, J. M. Conrad, M. Convery, S. Copello, L. Corwin, L. Cremaldi, L. Cremonesi, J. I. Crespo-Anadón, E. Cristaldo, R. Cross, A. Cudd, C. Cuesta, Y. Cui, D. Cussans, M. Dabrowski, O. Dalager, H. da Motta, L. Da Silva Peres, C. David, Q. David, G. S. Davies, S. Davini, J. Dawson, K. De, R. M. De Almeida, P. Debbins, I. De Bonis, M. P. Decowski, A. de Gouvêa, P. C. De Holanda, I. L. De Icaza Astiz, A. Deisting, P. De Jong, A. Delbart, D. Delepine, M. Delgado, A. Dell'Acqua, P. De Lurgio, J. R. T. de Mello Neto, D. M. DeMuth, S. Dennis, C. Densham, G. W. Deptuch, A. De Roeck, V. De Romeri, G. De Souza, R. Dharmapalan, F. Diaz, J. S. Díaz, S. Di Domizio, L. Di Giulio, P. Ding, L. Di Noto, C. Distefano, R. Diurba, M. Diwan, Z. Djurcic, N. Dokania, S. Dolan, M. J. Dolinski, L. Domine, D. Douglas, D. Douillet, G. Drake, F. Drielsma, D. Duchesneau, K. Duffy, P. Dunne, T. Durkin, H. Duyang, O. Dvornikov, D. A. Dwyer, A. S. Dyshkant, M. Eads, A. Earle, D. Edmunds, J. Eisch, L. Emberger, S. Emery, A. Ereditato, C. O. Escobar, G. Eurin, J. J. Evans, E. Ewart, A. C. Ezeribe, K. Fahey, A. Falcone, C. Farnese, Y. Farzan, J. Felix, M. Fernandes Carneiro da Silva, E. Fernandez-Martinez, P. Fernandez Menendez, F. Ferraro, L. Fields, F. Filthaut, A. Fiorentini, R. S. Fitzpatrick, W. Flanagan, B. Fleming, R. Flight, D. V. Forero, J. Fowler, W. Fox, J. Franc, K. Francis, D. Franco, J. Freeman, J. Freestone, J. Fried, A. Friedland, S. Fuess, I. Furic, A. P. Furmanski, A. Gago, H. Gallagher, A. Gallas, A. Gallego-Ros, N. Gallice, V. Galymov, E. Gamberini, T. Gamble, R. Gandhi, R. Gandrajula, F. Gao, S. Gao, D. Garcia-Gamez, M. Á García-Peris, S. Gardiner, D. Gastler, G. Ge, B. Gelli, A. Gendotti, S. Gent, Z. Ghorbani-Moghaddam, D. Gibin, I. Gil-Botella, S. Gilligan, C. Girerd, A. K. Giri, D. Gnani, O. Gogota, M. Gold, S. Gollapinni, K. Gollwitzer, R. A. Gomes, L. V. Gomez Bermeo, L. S. Gomez Fajardo, F. Gonnella, J. A. Gonzalez-Cuevas, D. Gonzalez-Diaz, M. Gonzalez-Lopez, M. C. Goodman, O. Goodwin, S. Goswami, C. Gotti, E. Goudzovski, C. Grace, M. Graham, R. Gran, E. Granados, P. Granger, A. Grant, C. Grant, D. Gratieri, P. Green, L. Greenler, J. Greer, W. C. Griffith, M. Groh, J. Grudzinski, K. Grzelak, W. Gu, V. Guarino, R. Guenette, E. Guerard, A. Guglielmi, B. Guo, K. K. Guthikonda, R. Gutierrez, P. Guzowski, M. M. Guzzo, S. Gwon, A. Habig, H. Hadavand, R. Haenni, A. Hahn, J. Haiston, P. Hamacher-Baumann, T. Hamernik, P. Hamilton, J. Han, D. A. Harris, J. Hartnell, J. Harton, T. Hasegawa, C. Hasnip, R. Hatcher, K. W. Hatfield, A. Hatzikoutelis, C. Hayes, E. Hazen, A. Heavey, K. M. Heeger, J. Heise, K. Hennessy, S. Henry, M. A. Hernandez Morquecho, K. Herner, L. Hertel, V Hewes, A. Higuera, T. Hill, S. J. Hillier, A. Himmel, J. Hoff, C. Hohl, A. Holin, E. Hoppe, G. A. Horton-Smith, M. Hostert, A. Hourlier, B. Howard, R. Howell, J. Huang, J. Huang, J. Hugon, G. Iles, N. Ilic, A. M. Iliescu, R. Illingworth, A. Ioannisian, L. Isenhower, R. Itay, A. Izmaylov, S. Jackson, V. Jain, E. James, B. Jargowsky, F. Jediny, D. Jena, Y. S. Jeong, C. Jesús-Valls, X. Ji, L. Jiang, S. Jiménez, A. Jipa, R. Johnson, B. Jones, S. B. Jones, M. Judah, C. K. Jung, T. Junk, Y. Jwa, M. Kabirnezhad, A. Kaboth, I. Kadenko, I. Kakorin, F. Kamiya, N. Kaneshige, G. Karagiorgi, G. Karaman, A. Karcher, M. Karolak, Y. Karyotakis, S. Kasai, S. P. Kasetti, L. Kashur, N. Kazaryan, E. Kearns, P. Keener, K. J. Kelly, E. Kemp, O. Kemularia, W. Ketchum, S. H. Kettell, M. Khabibullin, A. Khotjantsev, A. Khvedelidze, D. Kim, B. King, B. Kirby, M. Kirby, J. Klein, K. Koehler, L. W. Koerner, S. Kohn, P. P. Koller, L. Kolupaeva, M. Kordosky, T. Kosc, U. Kose, V. A. Kostelecký, K. Kothekar, F. Krennrich, I. Kreslo, Y. Kudenko, V. A. Kudryavtsev, S. Kulagin, J. Kumar, P. Kumar, P. Kunze, N. Kurita, C. Kuruppu, V. Kus, T. Kutter, A. Lambert, B. Land, K. Lande, C. E. Lane, K. Lang, T. Langford, J. Larkin, P. Lasorak, D. Last, C. Lastoria, A. Laundrie, A. Lawrence, I. Lazanu, R. LaZur, T. Le, S. Leardini, J. Learned, P. LeBrun, T. LeCompte, G. Lehmann Miotto, R. Lehnert, M. A. Leigui de Oliveira, M. Leitner, L. Li, S. W. Li, T. Li, Y. Li, H. Liao, C. S. Lin, Q. Lin, S. Lin, A. Lister, B. R. Littlejohn, J. Liu, S. Lockwitz, T. Loew, M. Lokajicek, I. Lomidze, K. Long, K. Loo, D. Lorca, T. Lord, J. M. LoSecco, W. C. Louis, X. -G. Lu, K. B. Luk, X. Luo, N. Lurkin, T. Lux, V. P. Luzio, D. MacFarlane, A. A. Machado, P. Machado, C. T. Macias, J. R. Macier, A. Maddalena, A. Madera, P. Madigan, S. Magill, K. Mahn, A. Maio, A. Major, J. A. Maloney, G. Mandrioli, R. C. Mandujano, J. Maneira, L. Manenti, S. Manly, A. Mann, K. Manolopoulos, M. Manrique Plata, V. N. Manyam, L. Manzanillas, M. Marchan, A. Marchionni, W. Marciano, D. Marfatia, C. Mariani, J. Maricic, R. Marie, F. Marinho, A. D. Marino, D. Marsden, M. Marshak, C. M. Marshall, J. Marshall, J. Marteau, J. Martin-Albo, N. Martinez, D. A. Martinez Caicedo, S. Martynenko, K. Mason, A. Mastbaum, M. Masud, S. Matsuno, J. Matthews, C. Mauger, N. Mauri, K. Mavrokoridis, I. Mawby, R. Mazza, A. Mazzacane, E. Mazzucato, T. McAskill, E. McCluskey, N. McConkey, K. S. McFarland, C. McGrew, A. McNab, A. Mefodiev, P. Mehta, P. Melas, O. Mena, S. Menary, H. Mendez, D. P. Méndez, A. Menegolli, G. Meng, M. D. Messier, W. Metcalf, T. Mettler, M. Mewes, H. Meyer, T. Miao, G. Michna, T. Miedema, J. Migenda, V. Mikola, R. Milincic, W. Miller, J. Mills, C. Milne, O. Mineev, O. G. Miranda, S. Miryala, C. S. Mishra, S. R. Mishra, A. Mislivec, D. Mladenov, I. Mocioiu, K. Moffat, N. Moggi, R. Mohanta, T. A. Mohayai, N. Mokhov, J. Molina, L. Molina Bueno, A. Montanari, C. Montanari, D. Montanari, L. M. Montano Zetina, J. Moon, M. Mooney, A. F. Moor, D. Moreno, C. Morris, C. Mossey, E. Motuk, C. A. Moura, J. Mousseau, W. Mu, L. Mualem, J. Mueller, M. Muether, S. Mufson, F. Muheim, A. Muir, M. Mulhearn, D. Munford, H. Muramatsu, S. Murphy, J. Musser, J. Nachtman, S. Nagu, M. Nalbandyan, R. Nandakumar, D. Naples, S. Narita, D. Navas-Nicolás, A. Navrer-Agasson, N. Nayak, M. Nebot-Guinot, K. Negishi, J. K. Nelson, J. Nesbit, M. Nessi, D. Newbold, M. Newcomer, D. Newhart, H. Newton, R. Nichol, F. Nicolas-Arnaldos, E. Niner, K. Nishimura, A. Norman, A. Norrick, R. Northrop, P. Novella, J. A. Nowak, M. Oberling, J. P. Ochoa-Ricoux, A. Olivares Del Campo, A. Olivier, A. Olshevskiy, Y. Onel, Y. Onishchuk, J. Ott, L. Pagani, S. Pakvasa, G. Palacio, O. Palamara, S. Palestini, J. M. Paley, M. Pallavicini, C. Palomares, J. L. Palomino-Gallo, E. Pantic, V. Paolone, V. Papadimitriou, R. Papaleo, A. Papanestis, S. Paramesvaran, S. Parke, Z. Parsa, M. Parvu, S. Pascoli, L. Pasqualini, J. Pasternak, J. Pater, C. Patrick, L. Patrizii, R. B. Patterson, S. J. Patton, T. Patzak, A. Paudel, B. Paulos, L. Paulucci, Z. Pavlovic, G. Pawloski, D. Payne, V. Pec, S. J. M. Peeters, E. Pennacchio, A. Penzo, O. L. G. Peres, J. Perry, D. Pershey, G. Pessina, G. Petrillo, C. Petta, R. Petti, F. Piastra, L. Pickering, F. Pietropaolo, R. Plunkett, R. Poling, X. Pons, N. Poonthottathil, S. Pordes, J. Porter, M. Potekhin, R. Potenza, B. V. K. S. Potukuchi, J. Pozimski, M. Pozzato, S. Prakash, T. Prakash, S. Prince, D. Pugnere, X. Qian, M. C. Queiroga Bazetto, J. L. Raaf, V. Radeka, J. Rademacker, B. Radics, A. Rafique, E. Raguzin, M. Rai, M. Rajaoalisoa, I. Rakhno, A. Rakotonandrasana, L. Rakotondravohitra, Y. A. Ramachers, R. Rameika, M. A. Ramirez Delgado, B. Ramson, A. Rappoldi, G. Raselli, P. Ratoff, S. Raut, R. F. Razakamiandra, J. S. Real, B. Rebel, M. Reggiani-Guzzo, T. Rehak, J. Reichenbacher, S. D. Reitzner, H. Rejeb Sfar, A. Renshaw, S. Rescia, F. Resnati, A. Reynolds, C. Riccio, G. Riccobene, L. C. J. Rice, J. Ricol, A. Rigamonti, Y. Rigaut, D. Rivera, L. Rochester, M. Roda, P. Rodrigues, M. J. Rodriguez Alonso, E. Rodriguez Bonilla, J. Rodriguez Rondon, S. Rosauro-Alcaraz, M. Rosenberg, P. Rosier, B. Roskovec, M. Rossella, J. Rout, P. Roy, S. Roy, A. Rubbia, C. Rubbia, F. C. Rubio, B. Russell, D. Ruterbories, R. Saakyan, S. Sacerdoti, T. Safford, R. Sahay, N. Sahu, P. Sala, N. Samios, O. Samoylov, M. C. Sanchez, D. A. Sanders, D. Sankey, S. Santana, M. Santos-Maldonado, N. Saoulidou, P. Sapienza, C. Sarasty, I. Sarcevic, G. Savage, V. Savinov, A. Scaramelli, A. Scarff, A. Scarpelli, T. Schaffer, H. Schellman, P. Schlabach, D. Schmitz, K. Scholberg, A. Schukraft, E. Segreto, J. Sensenig, I. Seong, A. Sergi, D. Sgalaberna, M. H. Shaevitz, S. Shafaq, M. Shamma, R. Sharankova, H. R. Sharma, R. Sharma, R. Kumar, T. Shaw, C. Shepherd-Themistocleous, S. Shin, D. Shooltz, R. Shrock, L. Simard, F. Simon, N. Simos, J. Sinclair, G. Sinev, J. Singh, J. Singh, V. Singh, R. Sipos, F. W. Sippach, G. Sirri, A. Sitraka, K. Siyeon, K. Skarpaas VIII, A. Smith, E. Smith, P. Smith, J. Smolik, M. Smy, E. L. Snider, P. Snopok, M. Soares Nunes, H. Sobel, M. Soderberg, C. J. Solano Salinas, S. Söldner-Rembold, N. Solomey, V. Solovov, W. E. Sondheim, M. Sorel, J. Soto-Oton, A. Sousa, K. Soustruznik, F. Spagliardi, M. Spanu, J. Spitz, N. J. C. Spooner, K. Spurgeon, R. Staley, M. Stancari, L. Stanco, R. Stanley, R. Stein, H. M. Steiner, J. Stewart, B. Stillwell, J. Stock, F. Stocker, T. Stokes, M. Strait, T. Strauss, S. Striganov, A. Stuart, J. G. Suarez, H. Sullivan, D. Summers, A. Surdo, V. Susic, L. Suter, C. M. Sutera, R. Svoboda, B. Szczerbinska, A. M. Szelc, R. Talaga, H. A. Tanaka, B. Tapia Oregui, A. Tapper, S. Tariq, E. Tatar, R. Tayloe, A. M. Teklu, M. Tenti, K. Terao, C. A. Ternes, F. Terranova, G. Testera, A. Thea, J. L. Thompson, C. Thorn, S. C. Timm, J. Todd, A. Tonazzo, D. Torbunov, M. Torti, M. Tortola, F. Tortorici, D. Totani, M. Toups, C. Touramanis, J. Trevor, S. Trilov, W. H. Trzaska, Y. T. Tsai, Z. Tsamalaidze, K. V. Tsang, N. Tsverava, S. Tufanli, C. Tull, E. Tyley, M. Tzanov, M. A. Uchida, J. Urheim, T. Usher, S. Uzunyan, M. R. Vagins, P. Vahle, G. A. Valdiviesso, E. Valencia, Z. Vallari, J. W. F. Valle, S. Vallecorsa, R. Van Berg, R. G. Van de Water, F. Varanini, D. Vargas, G. Varner, J. Vasel, S. Vasina, G. Vasseur, N. Vaughan, K. Vaziri, S. Ventura, A. Verdugo, S. Vergani, M. A. Vermeulen, M. Verzocchi, M. Vicenzi, H. Vieira de Souza, C. Vignoli, C. Vilela, B. Viren, T. Vrba, T. Wachala, A. V. Waldron, M. Wallbank, H. Wang, J. Wang, M. H. L. S. Wang, Y. Wang, Y. Wang, K. Warburton, D. Warner, M. Wascko, D. Waters, A. Watson, P. Weatherly, A. Weber, M. Weber, H. Wei, A. Weinstein, D. Wenman, M. Wetstein, A. White, L. H. Whitehead, D. Whittington, M. J. Wilking, C. Wilkinson, Z. Williams, F. Wilson, R. J. Wilson, J. Wolcott, T. Wongjirad, A. Wood, K. Wood, E. Worcester, M. Worcester, C. Wret, W. Wu, W. Wu, Y. Xiao, E. Yandel, G. Yang, K. Yang, S. Yang, T. Yang, A. Yankelevich, N. Yershov, K. Yonehara, T. Young, B. Yu, H. Yu, J. Yu, W. Yuan, R. Zaki, J. Zalesak, L. Zambelli, B. Zamorano, A. Zani, L. Zazueta, G. Zeit, G. P. Zeller, J. Zennamo, K. Zeug, C. Zhang, M. Zhao, E. Zhivun, G. Zhu, P. Zilberman, E. D. Zimmerman, M. Zito, S. Zucchelli, J. Zuklin, V. Zutshi, and R. Zwaska. Deep underground neutrino experiment (dune) near detector conceptual design report. 2021. URL: https://arxiv.org/abs/2103.13910, arXiv:2103.13910.
+[^64]: Roman Bushuiev, Anton Bushuiev, Niek F. de Jonge, Adamo Young, Fleming Kretschmer, Raman Samusevich, Janne Heirman, Fei Wang, Luke Zhang, Kai Dührkop, Marcus Ludwig, Nils A. Haupt, Apurva Kalia, Corinna Brungs, Robin Schmid, Russell Greiner, Bo Wang, David S. Wishart, Li-Ping Liu, Juho Rousu, Wout Bittremieux, Hannes Rost, Tytus D. Mak, Soha Hassoun, Florian Huber, Justin J.J. van der Hooft, Michael A. Stravs, Sebastian Böcker, Josef Sivic, and Tomáš Pluskal. Massspecgym: a benchmark for the discovery and identification of molecules. In A. Globerson, L. Mackey, D. Belgrave, A. Fan, U. Paquet, J. Tomczak, and C. Zhang, editors, Advances in Neural Information Processing Systems, volume 37, 110010–110027. Curran Associates, Inc., 2024. URL: https://proceedings.neurips.cc/paper_files/paper/2024/file/c6c31413d5c53b7d1c343c1498734b0f-Paper-Datasets_and_Benchmarks_Track.pdf.
+[^65]: Elizabeth G. Campolongo, Yuan-Tang Chou, Ekaterina Govorkova, Wahid Bhimji, Wei-Lun Chao, Chris Harris, Shih-Chieh Hsu, Hilmar Lapp, Mark S. Neubauer, Josephine Namayanja, Aneesh Subramanian, Philip Harris, Advaith Anand, David E. Carlyn, Subhankar Ghosh, Christopher Lawrence, Eric Moreno, Ryan Raikman, Jiaman Wu, Ziheng Zhang, Bayu Adhi, Mohammad Ahmadi Gharehtoragh, Saúl Alonso Monsalve, Marta Babicz, Furqan Baig, Namrata Banerji, William Bardon, Tyler Barna, Tanya Berger-Wolf, Adji Bousso Dieng, Micah Brachman, Quentin Buat, David C. Y. Hui, Phuong Cao, Franco Cerino, Yi-Chun Chang, Shivaji Chaulagain, An-Kai Chen, Deming Chen, Eric Chen, Chia-Jui Chou, Zih-Chen Ciou, Miles Cochran-Branson, Artur Cordeiro Oudot Choi, Michael Coughlin, Matteo Cremonesi, Maria Dadarlat, Peter Darch, Malina Desai, Daniel Diaz, Steven Dillmann, Javier Duarte, Isla Duporge, Urbas Ekka, Saba Entezari Heravi, Hao Fang, Rian Flynn, Geoffrey Fox, Emily Freed, Hang Gao, Jing Gao, Julia Gonski, Matthew Graham, Abolfazl Hashemi, Scott Hauck, James Hazelden, Joshua Henry Peterson, Duc Hoang, Wei Hu, Mirco Huennefeld, David Hyde, Vandana Janeja, Nattapon Jaroenchai, Haoyi Jia, Yunfan Kang, Maksim Kholiavchenko, Elham E. Khoda, Sangin Kim, Aditya Kumar, Bo-Cheng Lai, Trung Le, Chi-Wei Lee, JangHyeon Lee, Shaocheng Lee, Suzan van der Lee, Charles Lewis, Haitong Li, Haoyang Li, Henry Liao, Mia Liu, Xiaolin Liu, Xiulong Liu, Vladimir Loncar, Fangzheng Lyu, Ilya Makarov, Abhishikth Mallampalli Chen-Yu Mao, Alexander Michels, Alexander Migala, Farouk Mokhtar, Mathieu Morlighem, Min Namgung, Andrzej Novak, Andrew Novick, Amy Orsborn, Anand Padmanabhan, Jia-Cheng Pan, Sneh Pandya, Zhiyuan Pei, Ana Peixoto, George Percivall, Alex Po Leung, Sanjay Purushotham, Zhiqiang Que, Melissa Quinnan, Arghya Ranjan, Dylan Rankin, Christina Reissel, Benedikt Riedel, Dan Rubenstein, Argyro Sasli, Eli Shlizerman, Arushi Singh, Kim Singh, Eric R. Sokol, Arturo Sorensen, Yu Su, Mitra Taheri, Vaibhav Thakkar, Ann Mariam Thomas, Eric Toberer, Chenghan Tsai, Rebecca Vandewalle, Arjun Verma, Ricco C. Venterea, He Wang, Jianwu Wang, Sam Wang, Shaowen Wang, Gordon Watts, Jason Weitz, Andrew Wildridge, Rebecca Williams, Scott Wolf, Yue Xu, Jianqi Yan, Jai Yu, Yulei Zhang, Haoran Zhao, Ying Zhao, and Yibo Zhong. Building machine learning challenges for anomaly detection in science. 2025. URL: https://arxiv.org/abs/2503.02112, arXiv:2503.02112.
+[^66]: Elizabeth G. Campolongo, Yuan-Tang Chou, Ekaterina Govorkova, Wahid Bhimji, Wei-Lun Chao, Chris Harris, Shih-Chieh Hsu, Hilmar Lapp, Mark S. Neubauer, Josephine Namayanja, Aneesh Subramanian, Philip Harris, Advaith Anand, David E. Carlyn, Subhankar Ghosh, Christopher Lawrence, Eric Moreno, Ryan Raikman, Jiaman Wu, Ziheng Zhang, Bayu Adhi, Mohammad Ahmadi Gharehtoragh, Saúl Alonso Monsalve, Marta Babicz, Furqan Baig, Namrata Banerji, William Bardon, Tyler Barna, Tanya Berger-Wolf, Adji Bousso Dieng, Micah Brachman, Quentin Buat, David C. Y. Hui, Phuong Cao, Franco Cerino, Yi-Chun Chang, Shivaji Chaulagain, An-Kai Chen, Deming Chen, Eric Chen, Chia-Jui Chou, Zih-Chen Ciou, Miles Cochran-Branson, Artur Cordeiro Oudot Choi, Michael Coughlin, Matteo Cremonesi, Maria Dadarlat, Peter Darch, Malina Desai, Daniel Diaz, Steven Dillmann, Javier Duarte, Isla Duporge, Urbas Ekka, Saba Entezari Heravi, Hao Fang, Rian Flynn, Geoffrey Fox, Emily Freed, Hang Gao, Jing Gao, Julia Gonski, Matthew Graham, Abolfazl Hashemi, Scott Hauck, James Hazelden, Joshua Henry Peterson, Duc Hoang, Wei Hu, Mirco Huennefeld, David Hyde, Vandana Janeja, Nattapon Jaroenchai, Haoyi Jia, Yunfan Kang, Maksim Kholiavchenko, Elham E. Khoda, Sangin Kim, Aditya Kumar, Bo-Cheng Lai, Trung Le, Chi-Wei Lee, JangHyeon Lee, Shaocheng Lee, Suzan van der Lee, Charles Lewis, Haitong Li, Haoyang Li, Henry Liao, Mia Liu, Xiaolin Liu, Xiulong Liu, Vladimir Loncar, Fangzheng Lyu, Ilya Makarov, Abhishikth Mallampalli Chen-Yu Mao, Alexander Michels, Alexander Migala, Farouk Mokhtar, Mathieu Morlighem, Min Namgung, Andrzej Novak, Andrew Novick, Amy Orsborn, Anand Padmanabhan, Jia-Cheng Pan, Sneh Pandya, Zhiyuan Pei, Ana Peixoto, George Percivall, Alex Po Leung, Sanjay Purushotham, Zhiqiang Que, Melissa Quinnan, Arghya Ranjan, Dylan Rankin, Christina Reissel, Benedikt Riedel, Dan Rubenstein, Argyro Sasli, Eli Shlizerman, Arushi Singh, Kim Singh, Eric R. Sokol, Arturo Sorensen, Yu Su, Mitra Taheri, Vaibhav Thakkar, Ann Mariam Thomas, Eric Toberer, Chenghan Tsai, Rebecca Vandewalle, Arjun Verma, Ricco C. Venterea, He Wang, Jianwu Wang, Sam Wang, Shaowen Wang, Gordon Watts, Jason Weitz, Andrew Wildridge, Rebecca Williams, Scott Wolf, Yue Xu, Jianqi Yan, Jai Yu, Yulei Zhang, Haoran Zhao, Ying Zhao, and Yibo Zhong. Building machine learning challenges for anomaly detection in science. 2025. URL: https://arxiv.org/abs/2503.02112, arXiv:2503.02112.
+[^67]: Elizabeth G. Campolongo, Yuan-Tang Chou, Ekaterina Govorkova, Wahid Bhimji, Wei-Lun Chao, Chris Harris, Shih-Chieh Hsu, Hilmar Lapp, Mark S. Neubauer, Josephine Namayanja, Aneesh Subramanian, Philip Harris, Advaith Anand, David E. Carlyn, Subhankar Ghosh, Christopher Lawrence, Eric Moreno, Ryan Raikman, Jiaman Wu, Ziheng Zhang, Bayu Adhi, Mohammad Ahmadi Gharehtoragh, Saúl Alonso Monsalve, Marta Babicz, Furqan Baig, Namrata Banerji, William Bardon, Tyler Barna, Tanya Berger-Wolf, Adji Bousso Dieng, Micah Brachman, Quentin Buat, David C. Y. Hui, Phuong Cao, Franco Cerino, Yi-Chun Chang, Shivaji Chaulagain, An-Kai Chen, Deming Chen, Eric Chen, Chia-Jui Chou, Zih-Chen Ciou, Miles Cochran-Branson, Artur Cordeiro Oudot Choi, Michael Coughlin, Matteo Cremonesi, Maria Dadarlat, Peter Darch, Malina Desai, Daniel Diaz, Steven Dillmann, Javier Duarte, Isla Duporge, Urbas Ekka, Saba Entezari Heravi, Hao Fang, Rian Flynn, Geoffrey Fox, Emily Freed, Hang Gao, Jing Gao, Julia Gonski, Matthew Graham, Abolfazl Hashemi, Scott Hauck, James Hazelden, Joshua Henry Peterson, Duc Hoang, Wei Hu, Mirco Huennefeld, David Hyde, Vandana Janeja, Nattapon Jaroenchai, Haoyi Jia, Yunfan Kang, Maksim Kholiavchenko, Elham E. Khoda, Sangin Kim, Aditya Kumar, Bo-Cheng Lai, Trung Le, Chi-Wei Lee, JangHyeon Lee, Shaocheng Lee, Suzan van der Lee, Charles Lewis, Haitong Li, Haoyang Li, Henry Liao, Mia Liu, Xiaolin Liu, Xiulong Liu, Vladimir Loncar, Fangzheng Lyu, Ilya Makarov, Abhishikth Mallampalli Chen-Yu Mao, Alexander Michels, Alexander Migala, Farouk Mokhtar, Mathieu Morlighem, Min Namgung, Andrzej Novak, Andrew Novick, Amy Orsborn, Anand Padmanabhan, Jia-Cheng Pan, Sneh Pandya, Zhiyuan Pei, Ana Peixoto, George Percivall, Alex Po Leung, Sanjay Purushotham, Zhiqiang Que, Melissa Quinnan, Arghya Ranjan, Dylan Rankin, Christina Reissel, Benedikt Riedel, Dan Rubenstein, Argyro Sasli, Eli Shlizerman, Arushi Singh, Kim Singh, Eric R. Sokol, Arturo Sorensen, Yu Su, Mitra Taheri, Vaibhav Thakkar, Ann Mariam Thomas, Eric Toberer, Chenghan Tsai, Rebecca Vandewalle, Arjun Verma, Ricco C. Venterea, He Wang, Jianwu Wang, Sam Wang, Shaowen Wang, Gordon Watts, Jason Weitz, Andrew Wildridge, Rebecca Williams, Scott Wolf, Yue Xu, Jianqi Yan, Jai Yu, Yulei Zhang, Haoran Zhao, Ying Zhao, and Yibo Zhong. Building machine learning challenges for anomaly detection in science. 2025. URL: https://arxiv.org/abs/2503.02112, arXiv:2503.02112.
+[^68]: Giuseppe Di Guglielmo, Botao Du, Javier Campos, Alexandra Boltasseva, Akash V. Dixit, Farah Fahim, Zhaxylyk Kudyshev, Santiago Lopez, Ruichao Ma, Gabriel N. Perdue, Nhan Tran, Omer Yesilyurt, and Daniel Bowring. End-to-end workflow for machine learning-based qubit readout with qick and hls4ml. 2025. URL: https://arxiv.org/abs/2501.14663, arXiv:2501.14663.
+[^69]: David Rein, Betty Li Hou, Asa Cooper Stickland, Jackson Petty, Richard Yuanzhe Pang, Julien Dirani, Julian Michael, and Samuel R. Bowman. Gpqa: a graduate-level google-proof q and a benchmark. 2023. URL: https://arxiv.org/abs/2311.12022, arXiv:2311.12022.
+[^70]: Kien X. Nguyen, Fengchun Qiao, Arthur Trembanis, and Xi Peng. Seafloorai: a large-scale vision-language dataset for seafloor geological survey. 2024. URL: https://arxiv.org/abs/2411.00172, arXiv:2411.00172.
+[^71]: Pin Chen, Luoxuan Peng, Rui Jiao, Qing Mo, Zhen Wang, Wenbing Huang, Yang Liu, and Yutong Lu. Learning superconductivity from ordered and disordered material structures. In A. Globerson, L. Mackey, D. Belgrave, A. Fan, U. Paquet, J. Tomczak, and C. Zhang, editors, Advances in Neural Information Processing Systems, volume 37, 108902–108928. Curran Associates, Inc., 2024. URL: https://proceedings.neurips.cc/paper_files/paper/2024/file/c4e3b55ed4ac9ba52d7df11f8bddbbf4-Paper-Datasets_and_Benchmarks_Track.pdf.
+[^72]: Deyu Zou, Shikun Liu, Siqi Miao, Victor Fung, Shiyu Chang, and Pan Li. Gess: benchmarking geometric deep learning under scientific applications with distribution shifts. In A. Globerson, L. Mackey, D. Belgrave, A. Fan, U. Paquet, J. Tomczak, and C. Zhang, editors, Advances in Neural Information Processing Systems, volume 37, 92499–92528. Curran Associates, Inc., 2024. URL: https://proceedings.neurips.cc/paper_files/paper/2024/file/a8063075b00168dc39bc81683619f1a8-Paper-Datasets_and_Benchmarks_Track.pdf.
+[^73]: Ralph E Peterson, Aramis Tanelus, Christopher Ick, Bartul Mimica, Niegil Francis, Violet J Ivan, Aman Choudhri, Annegret L Falkner, Mala Murthy, David M Schneider, Dan H Sanes, and Alex H Williams. Vocal call locator benchmark (vcl) for localizing rodent vocalizations from multi-channel audio. In A. Globerson, L. Mackey, D. Belgrave, A. Fan, U. Paquet, J. Tomczak, and C. Zhang, editors, Advances in Neural Information Processing Systems, volume 37, 106370–106382. Curran Associates, Inc., 2024. URL: https://proceedings.neurips.cc/paper_files/paper/2024/file/c00d37d6b04d73b870b963a4d70051c1-Paper-Datasets_and_Benchmarks_Track.pdf.
+[^74]: Shraman Pramanick, Rama Chellappa, and Subhashini Venugopalan. Spiqa: a dataset for multimodal question answering on scientific papers. 2025. URL: https://arxiv.org/abs/2407.09413, arXiv:2407.09413.
+[^75]: Ruben Ohana, Michael McCabe, Lucas Meyer, Rudy Morel, Fruzsina J. Agocs, Miguel Beneitez, Marsha Berger, Blakesley Burkhart, Stuart B. Dalziel, Drummond B. Fielding, Daniel Fortunato, Jared A. Goldberg, Keiya Hirashima, Yan-Fei Jiang, Rich R. Kerswell, Suryanarayana Maddu, Jonah Miller, Payel Mukhopadhyay, Stefan S. Nixon, Jeff Shen, Romain Watteaux, Bruno Régaldo-Saint Blancard, François Rozet, Liam H. Parker, Miles Cranmer, and Shirley Ho. The well: a large-scale collection of diverse physics simulations for machine learning. In A. Globerson, L. Mackey, D. Belgrave, A. Fan, U. Paquet, J. Tomczak, and C. Zhang, editors, Advances in Neural Information Processing Systems, volume 37, 44989–45037. Curran Associates, Inc., 2024. URL: https://proceedings.neurips.cc/paper_files/paper/2024/file/4f9a5acd91ac76569f2fe291b1f4772b-Paper-Datasets_and_Benchmarks_Track.pdf.</p>
+<!-- jQuery (required by DataTables) -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- DataTables core CSS & JS (latest stable 1.13.x) -->
+<p><link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"></p>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+<!-- DataTables Buttons extension (latest 2.4.1) -->
+<p><link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css"></p>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+
+<!-- jQuery UI for resizable columns -->
+<p><link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"></p>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+<!-- JS-YAML for YAML export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+
+<!-- Your custom table logic -->
+<script src="js/table.js"></script>
+
+<!-- allow fixed columns -->
+<p><link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/4.3.1/css/fixedColumns.dataTables.min.css"></p>
+<script src="https://cdn.datatables.net/fixedcolumns/4.3.1/js/dataTables.fixedColumns.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js"></script>
+      
+        <script src="../assets/js/table.js"></script>
+      
+    
+  </body>
+</html>

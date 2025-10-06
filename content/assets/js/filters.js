@@ -288,8 +288,6 @@
     return url.href;
   }
 
-<<<<<<< HEAD
-=======
   function computeReferrerHref() {
     const ref = document.referrer;
     if (!ref) return null;
@@ -302,22 +300,12 @@
     }
   }
 
->>>>>>> add-datatables
   function initDetail() {
     const back = document.querySelector(".back-link");
     if (!back || back.dataset.bound === "1") return;
     back.dataset.bound = "1";
 
     // Set href immediately so middle-click / long-press works
-<<<<<<< HEAD
-    back.setAttribute("href", computeIndexHrefWithSavedFilters());
-
-    // Click handler: always go to computed parent index with saved filters
-    back.addEventListener("click", (e) => {
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // allow new tab
-      e.preventDefault();
-      location.href = computeIndexHrefWithSavedFilters();
-=======
     const fallbackHref = computeIndexHrefWithSavedFilters();
     const referrerHref = computeReferrerHref();
     back.setAttribute("href", referrerHref || fallbackHref);
@@ -336,7 +324,6 @@
       }
       e.preventDefault();
       location.href = fallbackHref;
->>>>>>> add-datatables
     });
   }
 

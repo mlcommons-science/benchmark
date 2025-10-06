@@ -1,0 +1,375 @@
+- name: MMLU (Massive Multitask Language Understanding)
+  cite: hendrycks2021measuring
+  url: https://paperswithcode.com/dataset/mmlu
+  domain: Multidomain
+  focus: Academic knowledge and reasoning across 57 subjects
+  task_types:
+  - Multiple choice
+  ai_capability_measured: General reasoning, subject-matter understanding
+  notable_models:
+  - GPT-4o
+  - Gemini 1.5 Pro
+  - o1
+  - DeepSeek-R1
+  Notes: Good
+  Citations: "@article{hendrycks2021measuring,\n  title={Measuring Massive Multitask\
+    \ Language Understanding},\n  author={Hendrycks, Dan and Burns, Collin and Kadavath,\
+    \ Saurav and Arora, Akul and Basart, Steven and Zou, Eric and Lee, Dawn and Hall,\
+    \ Mantas and Ganguli, Deep and Tang, Danny and Song, Dawn and Steinhardt, Jacob\
+    \ and others},\n  journal={arXiv preprint arXiv:2009.03300},\n  year={2021},\n\
+    \  url={https://arxiv.org/abs/2009.03300}\n}\n"
+- name: GPQA Diamond
+  cite: add citation
+  url: https://arxiv.org/abs/2311.12022
+  domain: Science
+  focus: Graduate-level scientific reasoning
+  task_types:
+  - Multiple choice
+  - Multi-step QA
+  ai_capability_measured: Scientific reasoning, deep knowledge
+  notable_models:
+  - o1
+  - DeepSeek-R1
+  Notes: Good
+  Citations: "@misc{rein2023gpqagraduatelevelgoogleproofqa,\n  title={GPQA: A Graduate-Level\
+    \ Google-Proof Q&A Benchmark},\n  author={David Rein and Betty Li Hou and Asa\
+    \ Cooper Stickland and Jackson Petty and Richard Yuanzhe Pang and Julien Dirani\
+    \ and Julian Michael and Samuel R. Bowman},\n  year={2023},\n  eprint={2311.12022},\n\
+    \  archivePrefix={arXiv},\n  primaryClass={cs.AI},\n  url={https://arxiv.org/abs/2311.12022}\n\
+    }\n"
+- name: ARC-Challenge (Advanced Reasoning Challenge)
+  cite: clark2018think
+  url: https://allenai.org/data/arc
+  domain: Science
+  focus: Grade-school science with an emphasis on reasoning
+  task_types:
+  - Multiple choice
+  ai_capability_measured: Commonsense and scientific reasoning
+  notable_models:
+  - GPT-4
+  - Claude
+  Notes: Good
+  Citations: "@inproceedings{clark2018think,\n  title={Think you have solved question\
+    \ answering? Try ARC, the AI2 Reasoning Challenge},\n  author={Clark, Peter and\
+    \ Cowhey, Isaac and Etzioni, Oren and Khot, Tushar and Sabharwal, Ashish and Schoenick,\
+    \ Carissa and Tafjord, Oyvind},\n  booktitle={Proceedings of the 2018 Conference\
+    \ on Empirical Methods in Natural Language Processing (EMNLP)},\n  pages={237--248},\n\
+    \  year={2018},\n  organization={Association for Computational Linguistics},\n\
+    \  url={https://allenai.org/data/arc}\n}\n"
+- name: Humanity's Last Exam
+  cite: add citation
+  url: https://arxiv.org/abs/2501.14249
+  domain: Multidomain
+  focus: Broad academic evaluation to challenge top AI models
+  task_types:
+  - Multiple choice
+  ai_capability_measured: Cross-domain academic reasoning
+  notable_models: []
+  Notes: Good
+  Citations: "@misc{phan2025humanitys,\n  title={Humanity’s Last Exam},\n  author={Phan,\
+    \ Long and Gatti, Alice and Han, Ziwen and Li, Nathaniel and Hu, Josephina and\
+    \ Zhang, Hugh and Choi, Michael and Agrawal, Anish and Chopra, Arnav and Khoja,\
+    \ Adam and Kim, Ryan and Ren, Richard and Hausenloy, Jason and Zhang, Oliver and\
+    \ Mazeika, Mantas and Yue, Summer and Wang, Alexandr and Hendrycks, Dan and others},\n\
+    \  howpublished={arXiv preprint arXiv:2501.14249},\n  month={jan},\n  year={2025},\n\
+    \  url={https://arxiv.org/abs/2501.14249}\n}\n"
+- name: FrontierMath
+  cite: add citation
+  url: https://arxiv.org/abs/2411.04872
+  domain: Mathematics
+  focus: Challenging math problems for advanced reasoning
+  task_types:
+  - Problem solving
+  ai_capability_measured: Symbolic and abstract mathematical reasoning
+  notable_models: []
+  Notes: Good
+  Citations: "@misc{glazer2024frontiermath,\n  title={FrontierMath: A Benchmark for\
+    \ Evaluating Advanced Mathematical Reasoning in AI},\n  author={Glazer, Elliot\
+    \ and Erdil, Ege and Besiroglu, Tamay and Chicharro, Diego and Chen, Evan and\
+    \ Gunning, Alex and Falkman Olsson, Caroline and Denain, Jean-Stanislas and Ho,\
+    \ Anson and de Oliveira Santos, Emily and Järviniemi, Olli and Barnett, Matthew\
+    \ and Sandler, Robert and Vrzala, Matej and Sevilla, Jaime and Ren, Qiuyu and\
+    \ Pratt, Elizabeth and Levine, Lionel and Barkley, Grant and Stewart, Natalie\
+    \ and Grechuk, Bogdan and Grechuk, Tetiana and Enugandla, Shreepranav Varma and\
+    \ Wildon, Mark},\n  year={2024},\n  howpublished={arXiv preprint arXiv:2411.04872},\n\
+    \  month={nov},\n  note={Published 20 Dec 2024},\n  url={https://arxiv.org/abs/2411.04872}\n\
+    }\n"
+- name: SciCode
+  cite: add citation
+  url: https://arxiv.org/abs/2407.13168
+  domain: Scientific Programming
+  focus: Scientific programming and algorithmic problem-solving
+  task_types:
+  - Coding
+  ai_capability_measured: Program synthesis, scientific computing
+  notable_models: []
+  Notes: Good
+  Citations: "@misc{tian2024scicode,\n  title={SciCode: A Research Coding Benchmark\
+    \ Curated by Scientists},\n  author={Tian, Minyang and Gao, Luyu and Zhang, Shizhuo\
+    \ Dylan and Chen, Xinan and Fan, Cunwei and Guo, Xuefei and Haas, Roland and Ji,\
+    \ Pan and Krongchon, Kittithat and Li, Yao and Liu, Shengyan and Luo, Di and Ma,\
+    \ Yutao and Tong, Hao and Zhang, Chenyu and Wang, Zihan and Wu, Bohao and Xiong,\
+    \ Yanyu and Yin, Shengzhu and Zhu, Minhui and Lieret, Kilian and Lu, Yanxin and\
+    \ Liu, Genglin and Du, Yufeng and Tao, Tianhua and Press, Ofir and Callan, Jamie\
+    \ and Huerta, Eliu A. and Peng, Hao},\n  year={2024},\n  howpublished={arXiv preprint\
+    \ arXiv:2407.13168},\n  month={jul},\n  note={Submitted 18 July 2024},\n  url={https://arxiv.org/abs/2407.13168}\n\
+    }\n"
+- name: AIME (American Invitational Mathematics Examination)
+  cite: aime_website
+  url: https://artofproblemsolving.com/wiki/index.php/AIME_Problems_and_Solutions
+  domain: Mathematics
+  focus: Advanced problem-solving for pre-college students
+  task_types:
+  - Problem solving
+  ai_capability_measured: Mathematical problem solving and reasoning
+  notable_models: []
+  Notes: No paper available; summary at https://www.vals.ai/benchmarks/aime-2025-03-13
+  Citations: []
+- name: MATH-500
+  cite: add citation
+  url: https://huggingface.co/datasets/HuggingFaceH4/MATH-500
+  domain: Mathematics
+  focus: Diverse math problems from high school to advanced levels
+  task_types:
+  - Problem solving
+  ai_capability_measured: Math reasoning and generalization
+  notable_models: []
+  Notes: Dataset on Hugging Face
+  Citations: []
+- name: CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction)
+  cite: curie2024
+  url: https://arxiv.org/abs/2404.02029
+  domain: Multidomain Science
+  focus: Scientific problem-solving across six disciplines (e.g., materials science,
+    quantum computing)
+  task_types:
+  - Information extraction
+  - Reasoning
+  - Concept tracking
+  - Aggregation
+  - Algebraic manipulation
+  - Multimodal understanding
+  ai_capability_measured: Long-context understanding, scientific reasoning, cross-domain
+    knowledge
+  notable_models: []
+  Notes: Good
+  Citations: "@misc{curie2024,\n  title={Scientific Reasoning Benchmarks from the\
+    \ CURIE Dataset},\n  author={TODO: Add authors from arXiv:2404.02029},\n  year={2024},\n\
+    \  eprint={2404.02029},\n  archivePrefix={arXiv},\n  primaryClass={cs.CL},\n \
+    \ url={https://arxiv.org/abs/2404.02029}\n}\n"
+- name: FEABench (Finite Element Analysis Benchmark)
+  cite: zhu2024enhancingportfoliooptimizationtransformergan
+  url: https://arxiv.org/abs/2404.02029
+  domain: Engineering and Applied Physics
+  focus: FEA-based physics, mathematics, and engineering simulation and reasoning
+  task_types:
+  - Finite Element Analysis
+  - Simulation
+  - Reasoning
+  ai_capability_measured: Physics-informed simulation, mathematical modeling
+  notable_models: []
+  Notes: Good
+  Citations: "@misc{zhu2024enhancingportfoliooptimizationtransformergan,\n  title={Enhancing\
+    \ Portfolio Optimization via Transformer-GAN for Scientific Applications},\n \
+    \ author={Zhu, TODO: Add co-authors},\n  year={2024},\n  eprint={2404.02029},\n\
+    \  archivePrefix={arXiv},\n  primaryClass={cs.LG},\n  url={https://arxiv.org/abs/2404.02029}\n\
+    }\n"
+- name: SPIQA (Scientific Paper Image Question Answering)
+  cite: spiqa2024
+  url: https://arxiv.org/abs/2404.02029
+  domain: Scientific Multimodal Understanding
+  focus: Visual reasoning and question answering from scientific figures
+  task_types:
+  - Image-based QA
+  - Figure reasoning
+  - Long-context QA
+  ai_capability_measured: Multimodal reasoning, scientific comprehension
+  notable_models: []
+  Notes: Good
+  Citations: "@misc{spiqa2024,\n  title={SPIQA: Scientific Paper Image Question Answering},\n\
+    \  author={TODO: Add authors from arXiv:2404.02029},\n  year={2024},\n  eprint={2404.02029},\n\
+    \  archivePrefix={arXiv},\n  primaryClass={cs.CL},\n  url={https://arxiv.org/abs/2404.02029}\n\
+    }\n"
+- name: MedQA
+  cite: add citation
+  url: https://github.com/pubmedqa/MedQA
+  domain: Biomedical and Clinical Science
+  focus: Clinical knowledge and reasoning (based on USMLE-style questions)
+- name: BaisBench (Biological AI Scientist Benchmark)
+  notable_models: Current models substantially underperform human experts.
+  cite: \cite{@misc{luo2025benchmarkingaiscientistsomics, title={Benchmarking AI scientists
+    in omics data-driven biological research}, author={Erpai Luo and Jinmeng Jia and
+    Yifan Xiong and Xiangyu Li and Xiaobo Guo and Baoqi Yu and Lei Wei and Xuegong
+    Zhang}, year={2025}, eprint={2505.08341}, archivePrefix={arXiv}, primaryClass={cs.AI},
+    url={https://arxiv.org/abs/2505.08341}, }}
+  focus: Designed to assess AI scientists' ability to generate biological discoveries
+    through data analysis and reasoning with external knowledge in omics data-driven
+    research.
+  task_types:
+  - Cell type annotation on single-cell datasets
+  - Scientific discovery through multiple-choice questions derived from biological
+    insights of recent single-cell studies.
+  ai_capability_measured: Accuracy
+  url: https://arxiv.org/abs/2505.08341
+  Notes: null
+- name: MOLGEN
+  notable_models: (Various generative AI models are benchmarked)
+  cite: null
+  focus: A benchmark for molecular generation tasks in chemistry and drug discovery.
+  task_types:
+  - Generating novel molecules with desired properties.
+  ai_capability_measured: Diversity, Validity, Novelty, Property scores
+  url: (Often part of broader computational chemistry AI platforms)
+  Notes: No paper, only a github at https://github.com/zjunlp/MolGen
+- name: Open Graph Benchmark (OGB) - Biology
+  notable_models: (Various graph neural networks and other graph ML models)
+  cite: "@misc{hu2021opengraphbenchmarkdatasets,\n    title={Open Graph Benchmark:\
+    \ Datasets for Machine Learning on Graphs}, \n    author={Weihua Hu and Matthias\
+    \ Fey and Marinka Zitnik and Yuxiao Dong and Hongyu Ren and Bowen Liu and Michele\
+    \ Catasta and Jure Leskovec},\n    year={2021},\n    eprint={2005.00687},\n  \
+    \  archivePrefix={arXiv},\n    primaryClass={cs.LG},\n    url={https://arxiv.org/abs/2005.00687},\
+    \ \n}\n"
+  focus: Graph machine learning benchmarks for biological networks (e.g., protein-protein
+    interaction networks, drug-target interactions).
+  task_types:
+  - Node classification
+  - Link prediction
+  - Graph classification on biological graphs
+  ai_capability_measured: Accuracy, AUC
+  url: https://ogb.stanford.edu/docs/home/
+  Notes: Focuses on graph NNs
+- name: Materials Project
+  notable_models: MatGL, ALIGNN, MEGNet, etc.
+  cite: null
+  focus: A vast database of material properties, often used as a benchmark for AI
+    models predicting new materials.
+  task_types:
+  - Predicting material properties (e.g., bandgaps, formation energies, stability)
+    for inorganic compounds.
+  ai_capability_measured: Mean Absolute Error (MAE), R-squared
+  url: https://materialsproject.org/
+  Notes: More like a database than a purpose-built AI benchmark
+- name: OCP (Open Catalyst Project)
+  notable_models: (Various graph neural networks and physics-informed models)
+  cite: null
+  focus: Benchmarks for discovering new catalysts using AI, focusing on predicting
+    adsorption energies and forces.
+  task_types:
+  - Predicting catalyst properties and reaction outcomes.
+  ai_capability_measured: MAE on energies and forces
+  url: https://opencatalystproject.org/
+  Notes: Benchmark is from the Open Catalyst Challenge under the 'Datasets' subpage.
+- name: JARVIS-Leaderboard (Joint Automated Repository for Various Integrated Simulations)
+  notable_models: (Various models for materials design)
+  cite: null
+  focus: NIST-maintained leaderboards for AI models in materials science, covering
+    various properties and simulations.
+  task_types:
+  - Material property prediction (e.g., superconducting transition temperature)
+  - Image classification in STEM
+  - Force field prediction.
+  ai_capability_measured: Task-specific metrics (e.g., MAE, accuracy)
+  url: https://pages.nist.gov/jarvis_leaderboard/
+  Notes: Collection of 322 benchmarks. One of the categories is AI.
+- name: Quantum Computing Benchmarks (e.g., QML Benchmarks)
+  notable_models: (Emerging field with specialized benchmarks)
+  cite: null
+  focus: Evaluates AI models for tasks in quantum computing, such as quantum state
+    preparation, quantum control, and error correction.
+  task_types:
+  - Optimizing quantum circuits
+  - Classifying quantum states.
+  ai_capability_measured: Fidelity, Success probability
+  url:
+  - https://github.com/XanaduAI/qml-benchmarks
+  - https://pennylane.ai/datasets/collection/qml-benchmarks
+  Notes: The github link has a script for evaluation, Pennylane has datasets
+- name: Fluid Dynamics Benchmarks (e.g., based on CFD data)
+  notable_models: (Physics-informed neural networks, traditional ML models)
+  cite: "@misc{luo2024cfdbenchlargescalebenchmarkmachine,\n    title={CFDBench: A\
+    \ Large-Scale Benchmark for Machine Learning Methods in Fluid Dynamics}, \n  \
+    \  author={Yining Luo and Yingfa Chen and Zhen Zhang},\n    year={2024},\n   \
+    \ eprint={2310.05963},\n    archivePrefix={arXiv},\n    primaryClass={cs.LG},\n\
+    \    url={https://arxiv.org/abs/2310.05963}, \n}\n"
+  focus: Benchmarks for AI models in computational fluid dynamics (CFD), such as predicting
+    flow patterns or turbulence.
+  task_types:
+  - Solving Navier-Stokes equations
+  - Predicting aerodynamic forces.
+  ai_capability_measured: Error metrics (e.g., L2 error)
+  url: https://arxiv.org/abs/2310.05963
+  Notes: The link leads to a paper called CFDBench. Nowhere in the CFDBench paper
+    does the word 'aerodynamic' appear.
+- name: SatImgNet
+  notable_models: (Various computer vision models)
+  cite: null
+  focus: Benchmark for analyzing satellite imagery, relevant for climate science,
+    disaster monitoring, and urban planning.
+  task_types:
+  - Object detection
+  - Semantic segmentation
+  - Change detection in satellite images.
+  ai_capability_measured: mAP, IoU, Accuracy
+  url: null
+  Notes: Google search for 'satimgnet' and 'satimgnet benchmark' returned no ML-related
+    results.
+- name: Climate Model Benchmarks (e.g., forecasting)
+  notable_models: (Neural weather models, climate models)
+  cite: "@misc{nguyen2023climatelearnbenchmarkingmachinelearning,\n  title={ClimateLearn:\
+    \ Benchmarking Machine Learning for Weather and Climate Modeling}, \n  author={Tung\
+    \ Nguyen and Jason Jewik and Hritik Bansal and Prakhar Sharma and Aditya Grover},\n\
+    \  year={2023},\n  eprint={2307.01909},\n  archivePrefix={arXiv},\n  primaryClass={cs.LG},\n\
+    \  url={https://arxiv.org/abs/2307.01909}\n}\n"
+  focus: Evaluating AI models for climate forecasting, predicting weather patterns,
+    and understanding climate change.
+  task_types:
+  - Predicting temperature
+  - Precipitation
+  - Extreme weather events.
+  ai_capability_measured: RMSE, Bias
+  url: https://arxiv.org/abs/2307.01909
+  Notes: Closest result on Google is ClimateLearn, a framework for simplifying training/evaluation
+    for ML models
+- name: BIG-Bench (Beyond the Imitation Game Benchmark)
+  notable_models: (Many large language models are evaluated on BIG-Bench)
+  cite: "@article{srivastava2023beyond,\n  title={Beyond the Imitation Game: Quantifying\
+    \ and extrapolating the capabilities of language models},\n  author={BIG-bench\
+    \ authors},\n  journal={Transactions on Machine Learning Research},\n  issn={2835-8856},\n\
+    \  year={2023},\n  url={https://openreview.net/forum?id=uyTL5Bvosj},\n}\n"
+  focus: A very large and diverse benchmark that includes many tasks requiring scientific
+    reasoning and knowledge, often pushing the limits of language models.
+  task_types:
+  - Problem-solving
+  - Knowledge recall
+  - Common-sense reasoning across a wide array of topics, including scientific ones.
+  ai_capability_measured: Accuracy, Various task-specific metrics.
+  url: https://github.com/google/BIG-bench
+  Notes: The citation provided already appears in the Benchmark Carpentry paper's
+    bibliography, so the provided citation is copied from there.
+- name: CommonSenseQA
+  notable_models: (Evaluated across various LLMs)
+  cite: "@misc{alontalmor2019commonsenseqa,\n    title={CommonsenseQA: A Question\
+    \ Answering Challenge Targeting Commonsense Knowledge}, \n    author={Alon Talmor\
+    \ and Jonathan Herzig and Nicholas Lourie and Jonathan Berant},\n    year={2019},\n\
+    \    url={https://paperswithcode.com/paper/commonsenseqa-a-question-answering-challenge},\
+    \ \n}\n"
+  focus: Tests common sense reasoning, which is crucial for scientific understanding
+    and problem-solving.
+  task_types:
+  - Answering multiple-choice questions that require context utilization and human-like
+    language understanding.
+  ai_capability_measured: Accuracy
+  url: https://paperswithcode.com/paper/commonsenseqa-a-question-answering-challenge
+  Notes: This new link leads to the paper. No provided BibTex, so the BibTex citation
+    wa manually written.
+- name: Winogrande
+  notable_models: (Evaluated across various LLMs)
+  cite: null
+  focus: Assesses commonsense reasoning by resolving ambiguities in sentences that
+    require an understanding of context.
+  task_types:
+  - Disambiguating sentences based on contextual understanding.
+  ai_capability_measured: AUC
+  url: https://leaderboard.allenai.org/winogrande/submissions/public
+  Notes: The submission with an AUC of 1 is from a human. AUC is also listed as an
+    evaluation metric.

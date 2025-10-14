@@ -484,7 +484,7 @@
     author = "Roberts, Jonathan and Han, Kai and Albanie, Samuel",
     title = "Satin: A multi-task metadataset for classifying satellite imagery using vision-language models",
     year = "2023",
-    month = "March",
+    month = "3",
     journal = "ICCV Workshop: Towards the Next Generation of Computer Vision Datasets",
     doi = "10.48550/arXiv.2304.11619"
     }

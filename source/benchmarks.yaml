@@ -480,12 +480,13 @@
     email: "j.roberts@cs.ox.ac.uk"
   cite:
   - |
-    @article{Roberts2023Satin,
+    @article{roberts2023satin,
     author = "Roberts, Jonathan and Han, Kai and Albanie, Samuel",
     title = "Satin: A multi-task metadataset for classifying satellite imagery using vision-language models",
     year = "2023",
     month = "March",
-    journal = "ICCV Workshop: Towards the Next Generation of Computer Vision Datasets"
+    journal = "ICCV Workshop: Towards the Next Generation of Computer Vision Datasets",
+    doi = "10.48550/arXiv.2304.11619"
     }
   datasets:
     links:
@@ -1071,6 +1072,7 @@
       title     = {Think you have Solved Question Answering? Try ARC, the AI2 Reasoning Challenge},
       journal   = {arXiv:1803.05457v1},
       year      = {2018},
+      doi       = {10.48550/arXiv.1803.05457}
     }
   datasets:
     links:

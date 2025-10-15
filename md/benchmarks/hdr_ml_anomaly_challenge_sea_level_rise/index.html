@@ -44,7 +44,17 @@
       
     
     
+      <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.2.0/css/buttons.dataTables.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.5/css/responsive.dataTables.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/5.0.5/css/fixedColumns.dataTables.min.css">
+    
       <link rel="stylesheet" href="../../../assets/css/custom.css">
+    
+      <link rel="stylesheet" href="../../../assets/css/benchmarks-table.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -485,7 +495,7 @@
 
 
 <h1 id="hdr-ml-anomaly-challenge-sea-level-rise">HDR ML Anomaly Challenge (Sea Level Rise)</h1>
-<p><a class="md-button back-link" href="../">← Back to all benchmarks</a></p>
+<p><a class="md-button back-link" href="../cards/">← Back to all benchmarks</a></p>
 <div class="info-block meta-block">
   <p class="meta-row"><span class="meta-label">Date</span><span class="meta-sep">:</span> <span class="meta-value">2025-03-03</span></p>
   <p class="meta-row"><span class="meta-label">Name</span><span class="meta-sep">:</span> <span class="meta-value">HDR ML Anomaly Challenge  Sea Level Rise</span></p>
@@ -505,7 +515,32 @@
 </ul>
 <pre><code class="language-bibtex">@misc{campolongo2025buildingmachinelearningchallenges3,
   archiveprefix = {arXiv},
-  author        = {Elizabeth G. Campolongo and Yuan-Tang Chou and Ekaterina Govorkova and Wahid Bhimji and Wei-Lun Chao and Chris Harris and Shih-Chieh Hsu and Hilmar Lapp and Mark S. Neubauer and Josephine Namayanja and Aneesh Subramanian and Philip Harris and Advaith Anand and David E. Carlyn and Subhankar Ghosh and Christopher Lawrence and Eric Moreno and Ryan Raikman and Jiaman Wu and Ziheng Zhang and Bayu Adhi and Mohammad Ahmadi Gharehtoragh and Saúl Alonso Monsalve and Marta Babicz and Furqan Baig and Namrata Banerji and William Bardon and Tyler Barna and Tanya Berger-Wolf and Adji Bousso Dieng and Micah Brachman and Quentin Buat and David C. Y. Hui and Phuong Cao and Franco Cerino and Yi-Chun Chang and Shivaji Chaulagain and An-Kai Chen and Deming Chen and Eric Chen and Chia-Jui Chou and Zih-Chen Ciou and Miles Cochran-Branson and Artur Cordeiro Oudot Choi and Michael Coughlin and Matteo Cremonesi and Maria Dadarlat and Peter Darch and Malina Desai and Daniel Diaz and Steven Dillmann and Javier Duarte and Isla Duporge and Urbas Ekka and Saba Entezari Heravi and Hao Fang and Rian Flynn and Geoffrey Fox and Emily Freed and Hang Gao and Jing Gao and Julia Gonski and Matthew Graham and Abolfazl Hashemi and Scott Hauck and James Hazelden and Joshua Henry Peterson and Duc Hoang and Wei Hu and Mirco Huennefeld and David Hyde and Vandana Janeja and Nattapon Jaroenchai and Haoyi Jia and Yunfan Kang and Maksim Kholiavchenko and Elham E. Khoda and Sangin Kim and Aditya Kumar and Bo-Cheng Lai and Trung Le and Chi-Wei Lee and JangHyeon Lee and Shaocheng Lee and Suzan van der Lee and Charles Lewis and Haitong Li and Haoyang Li and Henry Liao and Mia Liu and Xiaolin Liu and Xiulong Liu and Vladimir Loncar and Fangzheng Lyu and Ilya Makarov and Abhishikth Mallampalli Chen-Yu Mao and Alexander Michels and Alexander Migala and Farouk Mokhtar and Mathieu Morlighem and Min Namgung and Andrzej Novak and Andrew Novick and Amy Orsborn and Anand Padmanabhan and Jia-Cheng Pan and Sneh Pandya and Zhiyuan Pei and Ana Peixoto and George Percivall and Alex Po Leung and Sanjay Purushotham and Zhiqiang Que and Melissa Quinnan and Arghya Ranjan and Dylan Rankin and Christina Reissel and Benedikt Riedel and Dan Rubenstein and Argyro Sasli and Eli Shlizerman and Arushi Singh and Kim Singh and Eric R. Sokol and Arturo Sorensen and Yu Su and Mitra Taheri and Vaibhav Thakkar and Ann Mariam Thomas and Eric Toberer and Chenghan Tsai and Rebecca Vandewalle and Arjun Verma and Ricco C. Venterea and He Wang and Jianwu Wang and Sam Wang and Shaowen Wang and Gordon Watts and Jason Weitz and Andrew Wildridge and Rebecca Williams and Scott Wolf and Yue Xu and Jianqi Yan and Jai Yu and Yulei Zhang and Haoran Zhao and Ying Zhao and Yibo Zhong},
+  author        = {Elizabeth G. Campolongo and Yuan-Tang Chou and Ekaterina Govorkova and 
+                   Wahid Bhimji and Wei-Lun Chao and Chris Harris and Shih-Chieh Hsu and 
+                   Hilmar Lapp and Mark S. Neubauer and Josephine Namayanja and 
+                   Aneesh Subramanian and Philip Harris and Advaith Anand and 
+                   David E. Carlyn and Subhankar Ghosh and Christopher Lawrence and 
+                   Eric Moreno and Ryan Raikman and Jiaman Wu and Ziheng Zhang and Bayu Adhi and 
+                   Mohammad Ahmadi Gharehtoragh and Saúl Alonso Monsalve and Marta Babicz and 
+                   Furqan Baig and Namrata Banerji and William Bardon and Tyler Barna and 
+                   Tanya Berger-Wolf and Adji Bousso Dieng and Micah Brachman and Quentin Buat and 
+                   David C. Y. Hui and Phuong Cao and Franco Cerino and Yi-Chun Chang and 
+                   Shivaji Chaulagain and An-Kai Chen and Deming Chen and Eric Chen and Chia-Jui Chou and 
+                   Zih-Chen Ciou and Miles Cochran-Branson and Artur Cordeiro Oudot Choi and 
+                   Michael Coughlin and Matteo Cremonesi and Maria Dadarlat and Peter Darch and 
+                   Malina Desai and Daniel Diaz and Steven Dillmann and Javier Duarte and Isla Duporge and 
+                   Urbas Ekka and Saba Entezari Heravi and Hao Fang and Rian Flynn and Geoffrey Fox and 
+                   Emily Freed and Hang Gao and Jing Gao and Julia Gonski and Matthew Graham and 
+                   Abolfazl Hashemi and Scott Hauck and James Hazelden and Joshua Henry Peterson and 
+                   Duc Hoang and Wei Hu and Mirco Huennefeld and David Hyde and Vandana Janeja and 
+                   Nattapon Jaroenchai and Haoyi Jia and Yunfan Kang and Maksim Kholiavchenko and 
+                   Elham E. Khoda and Sangin Kim and Aditya Kumar and Bo-Cheng Lai and Trung Le and 
+                   Chi-Wei Lee and JangHyeon Lee and Shaocheng Lee and Suzan van der Lee and Charles Lewis and 
+                   Haitong Li and Haoyang Li and Henry Liao and Mia Liu and Xiaolin Liu and Xiulong Liu and 
+                   Vladimir Loncar and Fangzheng Lyu and Ilya Makarov and Abhishikth Mallampalli Chen-Yu Mao and 
+                   Alexander Michels and Alexander Migala and Farouk Mokhtar and Mathieu Morlighem and 
+                   Min Namgung and Andrzej Novak and Andrew Novick and Amy Orsborn and Anand Padmanabhan and 
+                   Jia-Cheng Pan and Sneh Pandya and Zhiyuan Pei and Ana Peixoto and George Percivall and Alex Po Leung and Sanjay Purushotham and Zhiqiang Que and Melissa Quinnan and Arghya Ranjan and Dylan Rankin and Christina Reissel and Benedikt Riedel and Dan Rubenstein and Argyro Sasli and Eli Shlizerman and Arushi Singh and Kim Singh and Eric R. Sokol and Arturo Sorensen and Yu Su and Mitra Taheri and Vaibhav Thakkar and Ann Mariam Thomas and Eric Toberer and Chenghan Tsai and Rebecca Vandewalle and Arjun Verma and Ricco C. Venterea and He Wang and Jianwu Wang and Sam Wang and Shaowen Wang and Gordon Watts and Jason Weitz and Andrew Wildridge and Rebecca Williams and Scott Wolf and Yue Xu and Jianqi Yan and Jai Yu and Yulei Zhang and Haoran Zhao and Ying Zhao and Yibo Zhong},
   eprint        = {2503.02112},
   primaryclass  = {cs.LG},
   title         = {Building Machine Learning Challenges for Anomaly Detection in Science},
@@ -595,6 +630,24 @@ for the anomaly detection tasks.
       <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
       
         <script src="../../../assets/js/filters.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/buttons/3.2.0/js/dataTables.buttons.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.html5.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.colVis.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.print.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/responsive/3.0.5/js/dataTables.responsive.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/fixedcolumns/5.0.5/js/dataTables.fixedColumns.min.js"></script>
+      
+        <script src="../../../assets/js/benchmarks-table.js"></script>
       
     
   </body>

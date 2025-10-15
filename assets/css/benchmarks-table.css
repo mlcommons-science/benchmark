@@ -1,0 +1,204 @@
+/* Force table layout and prevent auto-sizing */
+#benchmarksTable {
+  table-layout: fixed !important;
+  width: 100% !important;
+}
+
+/* Ensure cells respect width constraints */
+#benchmarksTable th,
+#benchmarksTable td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  padding: 8px !important;
+  word-wrap: break-word;
+}
+
+/* Expandable cell base styles */
+.cell-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4em;
+  max-height: calc(var(--lines, 2) * 1.4em);
+  cursor: pointer;
+  transition: max-height 0.3s ease;
+  word-break: break-word;
+}
+
+.cell-clamp:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.cell-clamp.one-line {
+  white-space: nowrap;
+  -webkit-line-clamp: 1;
+  max-height: 1.4em;
+}
+
+.cell-clamp:not(.one-line) {
+  -webkit-line-clamp: var(--lines, 2);
+  white-space: normal;
+}
+
+/* Expanded state */
+.cell-clamp.expanded {
+  -webkit-line-clamp: unset;
+  max-height: none;
+  white-space: normal;
+  background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* Add visual indicator for expandable cells */
+.cell-clamp::after {
+  content: ' ⋯';
+  color: #666;
+  font-weight: bold;
+  display: none; /* Hidden by default */
+}
+
+/* Show indicator only when content is actually truncated */
+.cell-clamp.is-truncated::after {
+  display: inline;
+}
+
+.cell-clamp.expanded::after {
+  content: '';
+  display: none;
+}
+
+/* No indicator for cells that don't need expansion */
+.cell-clamp.one-line:not(.js-expandable)::after,
+.cell-clamp:not(.js-expandable)::after {
+  content: '';
+}
+
+/* Link styles within cells */
+.cell-clamp a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.cell-clamp a:hover {
+  color: #004499;
+}
+
+/* Name link styles */
+.name-link {
+  font-size: 0.9em;
+  margin-left: 4px;
+  text-decoration: none;
+  color: #666;
+  font-weight: bold;
+}
+
+.name-link:hover {
+  color: #0066cc;
+}
+
+/* Vertical header text - only affects the TH header, not TD cells */
+th.has-vertical-text {
+  height: 150px;
+  white-space: nowrap;
+  vertical-align: bottom !important;
+  padding: 4px !important;
+}
+
+th.has-vertical-text .vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  display: inline-block;
+  white-space: nowrap;
+  padding: 8px 0;
+}
+
+/* Ensure body cells remain horizontal */
+td {
+  writing-mode: horizontal-tb !important;
+  text-orientation: initial !important;
+}
+
+/* Copyable cells styling */
+.js-copyable {
+  cursor: copy !important;
+  position: relative;
+}
+
+.js-copyable:hover {
+  background-color: rgba(76, 175, 80, 0.1) !important;
+  border: 1px dashed #4CAF50;
+}
+
+.js-copyable::before {
+  content: '📋';
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.js-copyable:hover::before {
+  opacity: 0.6;
+}
+
+/* DataTables wrapper adjustments */
+.dataTables_wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.dataTables_scrollBody {
+  overflow-x: auto !important;
+}
+
+/* Fixed column styles */
+.DTFC_LeftWrapper table {
+  table-layout: fixed !important;
+}
+
+/* Center alignment for specific columns */
+.dt-center {
+  text-align: center !important;
+}
+
+.dt-right {
+  text-align: right !important;
+}
+
+.dt-nowrap {
+  white-space: nowrap !important;
+}
+
+/* Improve button toolbar */
+.dt-buttons {
+  margin-bottom: 10px;
+}
+
+.dt-button {
+  margin-right: 5px;
+  padding: 6px 12px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dt-button:hover {
+  background-color: #e9ecef;
+}
+
+/* Search box styling */
+.dataTables_filter input {
+  padding: 6px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+/* ===== MkDocs page width (optional) ===== */
+.md-main__inner.md-grid { max-width: initial; }

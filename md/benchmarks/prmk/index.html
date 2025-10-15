@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://mlcommons-science.github.io/benchmarks/md/benchmarks/math-/">
+        <link rel="canonical" href="https://mlcommons-science.github.io/benchmarks/md/benchmarks/prmk/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>MATH-500 - MLCommons Science Working Group AI Benchmarks Collection</title>
+        <title>PRM800K - MLCommons Science Working Group AI Benchmarks Collection</title>
       
     
     
@@ -44,7 +44,17 @@
       
     
     
+      <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.2.0/css/buttons.dataTables.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.5/css/responsive.dataTables.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/5.0.5/css/fixedColumns.dataTables.min.css">
+    
       <link rel="stylesheet" href="../../../assets/css/custom.css">
+    
+      <link rel="stylesheet" href="../../../assets/css/benchmarks-table.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -72,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#math-500" class="md-skip">
+        <a href="#prm800k" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MATH-500
+              PRM800K
             
           </span>
         </div>
@@ -484,16 +494,16 @@
   
 
 
-<h1 id="math-500">MATH-500</h1>
-<p><a class="md-button back-link" href="../">← Back to all benchmarks</a></p>
+<h1 id="prm800k">PRM800K</h1>
+<p><a class="md-button back-link" href="../cards/">← Back to all benchmarks</a></p>
 <div class="info-block meta-block">
-  <p class="meta-row"><span class="meta-label">Date</span><span class="meta-sep">:</span> <span class="meta-value">2025-02-15</span></p>
-  <p class="meta-row"><span class="meta-label">Name</span><span class="meta-sep">:</span> <span class="meta-value">MATH-500</span></p>
+  <p class="meta-row"><span class="meta-label">Date</span><span class="meta-sep">:</span> <span class="meta-value">2023-05-30</span></p>
+  <p class="meta-row"><span class="meta-label">Name</span><span class="meta-sep">:</span> <span class="meta-value">PRM800K</span></p>
   <p class="meta-row"><span class="meta-label">Domain</span><span class="meta-sep">:</span> <span class="meta-value">Mathematics</span></p>
   <p class="meta-row"><span class="meta-label">Focus</span><span class="meta-sep">:</span> <span class="meta-value">Math reasoning generalization</span></p>
   <p class="meta-row"><span class="meta-label">Task Types</span><span class="meta-sep">:</span> <span class="meta-value">Problem solving</span></p>
   <p class="meta-row"><span class="meta-label">Metrics</span><span class="meta-sep">:</span> <span class="meta-value">Accuracy</span></p>
-  <p class="meta-row"><span class="meta-label">Models</span><span class="meta-sep">:</span> <span class="meta-value">unkown</span></p>
+  <p class="meta-row"><span class="meta-label">Models</span><span class="meta-sep">:</span> <span class="meta-value">GPT-4</span></p>
 </div>
 <h3>Keywords</h3>
 
@@ -501,29 +511,31 @@
 <h3>Citation</h3>
 
 <ul>
-<li>HuggingFaceH4. Math-500. 2025. URL: https://huggingface.co/datasets/HuggingFaceH4/MATH-500.</li>
+<li>Hunter Lightman, Vineet Kosaraju, Yura Burda, Harri Edwards, Bowen Baker, Teddy Lee, Jan Leike, John Schulman, Ilya Sutskever, and Karl Cobbe. Let&#x27;s verify step by step. arXiv preprint arXiv:2305.20050, 2023. arXiv:arXiv:2305.20050, doi:10.48550/arXiv.2305.20050.</li>
 </ul>
-<pre><code class="language-bibtex">@misc{huggingface2025math500,
-  title={MATH-500},
-  author={HuggingFaceH4},
-  year={2025},
-  url={https://huggingface.co/datasets/HuggingFaceH4/MATH-500}
+<pre><code class="language-bibtex">@article{lightman2023lets,
+      title={Let&#x27;s Verify Step by Step}, 
+      author={Lightman, Hunter and Kosaraju, Vineet and Burda, Yura and Edwards, Harri and Baker, Bowen and Lee, Teddy and Leike, Jan and Schulman, John and Sutskever, Ilya and Cobbe, Karl},
+      journal={arXiv preprint arXiv:2305.20050},
+      year={2023},
+      Eprint = {arXiv:2305.20050},
+      doi = {10.48550/arXiv.2305.20050}
 }</code></pre>
 <h3>Ratings</h3>
 <div class="ratings-grid">
   <div class="ratings-head ratings-cell"><span>Category</span><span>Rating</span></div>
-  <div class="rating-item">  <div class="rating-cat">Software</div>  <div class="rating-badge">0.00</div>  <div class="rating-bar"><span style="width:0%"></span></div>  <div class="rating-reason">No code provided
-</div></div><div class="rating-item">  <div class="rating-cat">Specification</div>  <div class="rating-badge">0.00</div>  <div class="rating-bar"><span style="width:0%"></span></div>  <div class="rating-reason">No method of presentation and evaluation is not stated. No constraints
-</div></div><div class="rating-item">  <div class="rating-cat">Dataset</div>  <div class="rating-badge">5.00</div>  <div class="rating-bar"><span style="width:100%"></span></div>  <div class="rating-reason">Problems and solutions are easily downloaded. Could not find a way to download the data
-</div></div><div class="rating-item">  <div class="rating-cat">Metrics</div>  <div class="rating-badge">2.00</div>  <div class="rating-bar"><span style="width:40%"></span></div>  <div class="rating-reason">Problem spec states that all of the AI reasoning steps are subject to grading, but no specified way to evaluate the steps
-</div></div><div class="rating-item">  <div class="rating-cat">Reference Solution</div>  <div class="rating-badge">0.00</div>  <div class="rating-bar"><span style="width:0%"></span></div>  <div class="rating-reason">Not given
-</div></div><div class="rating-item">  <div class="rating-cat">Documentation</div>  <div class="rating-badge">0.00</div>  <div class="rating-bar"><span style="width:0%"></span></div>  <div class="rating-reason">Not given. Implicit instructions to download dataset.
+  <div class="rating-item">  <div class="rating-cat">Software</div>  <div class="rating-badge">3.00</div>  <div class="rating-bar"><span style="width:60%"></span></div>  <div class="rating-reason">Code is provided in the PRM800K Repo for evaluation and grading, documentation is present but no environment details, baseline model, or training code is given
+</div></div><div class="rating-item">  <div class="rating-cat">Specification</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">Task is well specified, format, inputs, and outputs are mentioned. No system constraints are provided.
+</div></div><div class="rating-item">  <div class="rating-cat">Dataset</div>  <div class="rating-badge">5.00</div>  <div class="rating-bar"><span style="width:100%"></span></div>  <div class="rating-reason">Dataset follows all FAIR Principles. Train/Test splits are available in the PRM800K repo
+</div></div><div class="rating-item">  <div class="rating-cat">Metrics</div>  <div class="rating-badge">4.00</div>  <div class="rating-bar"><span style="width:80%"></span></div>  <div class="rating-reason">Correctness is used as the primary metric, with grading guidelines provided.
+</div></div><div class="rating-item">  <div class="rating-cat">Reference Solution</div>  <div class="rating-badge">2.00</div>  <div class="rating-bar"><span style="width:40%"></span></div>  <div class="rating-reason">A reference solution is mentioned in the &quot;Lets Verify Step by Step&quot; paper, but the model is not open-sourced.
+</div></div><div class="rating-item">  <div class="rating-cat">Documentation</div>  <div class="rating-badge">5.00</div>  <div class="rating-bar"><span style="width:100%"></span></div>  <div class="rating-reason">Documentation is present in the PRM800K repo and &quot;Lets Verify Step by Step&quot; paper.
 </div></div>
 </div>
-<div class="avg-rating">  <strong>Average rating:</strong> <span class="badge badge--bad badge--sm">1.17/5</span></div>
+<div class="avg-rating">  <strong>Average rating:</strong> <span class="badge badge--meh badge--sm">3.83/5</span></div>
 <h3>Radar plot</h3>
 
-<div class="radar-wrap"><img class="radar-img" alt="MATH-500 radar" src="../../../tex/images/math-_radar.png" /></div>
+<div class="radar-wrap"><img class="radar-img" alt="PRM800K radar" src="../../../tex/images/prmk_radar.png" /></div>
 
 <p><strong>Edit:</strong> <a href="https://github.com/mlcommons-science/benchmark/tree/main/source">edit this entry</a></p>
 
@@ -588,6 +600,24 @@
       <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
       
         <script src="../../../assets/js/filters.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/buttons/3.2.0/js/dataTables.buttons.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.html5.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.colVis.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.print.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/responsive/3.0.5/js/dataTables.responsive.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/fixedcolumns/5.0.5/js/dataTables.fixedColumns.min.js"></script>
+      
+        <script src="../../../assets/js/benchmarks-table.js"></script>
       
     
   </body>

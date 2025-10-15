@@ -288,19 +288,42 @@
     return url.href;
   }
 
+  function computeReferrerHref() {
+    const ref = document.referrer;
+    if (!ref) return null;
+    try {
+      const url = new URL(ref, location.href);
+      if (url.origin !== location.origin) return null;
+      return url.href;
+    } catch {
+      return null;
+    }
+  }
+
   function initDetail() {
     const back = document.querySelector(".back-link");
     if (!back || back.dataset.bound === "1") return;
     back.dataset.bound = "1";
 
     // Set href immediately so middle-click / long-press works
-    back.setAttribute("href", computeIndexHrefWithSavedFilters());
+    const fallbackHref = computeIndexHrefWithSavedFilters();
+    const referrerHref = computeReferrerHref();
+    back.setAttribute("href", referrerHref || fallbackHref);
 
-    // Click handler: always go to computed parent index with saved filters
+    // Click handler: prefer referrer, fall back to computed parent index
     back.addEventListener("click", (e) => {
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // allow new tab
+      if (referrerHref) {
+        e.preventDefault();
+        if (history.length > 1) {
+          history.back();
+        } else {
+          location.href = referrerHref;
+        }
+        return;
+      }
       e.preventDefault();
-      location.href = computeIndexHrefWithSavedFilters();
+      location.href = fallbackHref;
     });
   }
 

@@ -6,7 +6,7 @@ to optimize properties such as logP, QED, and docking score.
 
 
 \begin{description}[labelwidth=4cm, labelsep=1em, leftmargin=4cm, itemsep=0.1em, parsep=0em]
-  \item[date:] 2023-01-26
+  \item[date:] 2024-12-17
   \item[version:] 1
   \item[last\_updated:] 2023-01-26
   \item[expired:] false
@@ -31,6 +31,7 @@ to optimize properties such as logP, QED, and docking score.
     - Novelty\%
     - QED
     - Docking score
+    - penalized logP
   \item[models:]
     - MolGen
   \item[ml\_motif:]
@@ -39,13 +40,13 @@ to optimize properties such as logP, QED, and docking score.
   \item[ml\_task:]
     - Supervised Learning
   \item[solutions:] 0
-  \item[notes:] This is a model, not a benchmark
-  \item[contact.name:] unknown
-  \item[contact.email:] unknown
-  \item[datasets.links.name:] unknown
-  \item[datasets.links.url:] \href{unknown}{unknown}
-  \item[results.links.name:] unknown
-  \item[results.links.url:] \href{unknown}{unknown}
+  \item[notes:] 
+  \item[contact.name:] zhangningyu@zju.edu.cn
+  \item[contact.email:] Ningyu Zhang
+  \item[datasets.links.name:] MolGen: A Pre-trained Molecular Language Model
+  \item[datasets.links.url:] \href{https://github.com/zjunlp/MolGen/tree/main}{https://github.com/zjunlp/MolGen/tree/main}
+  \item[results.links.name:] Domain-Agnostic Molecular Generation with Chemical Feedback
+  \item[results.links.url:] \href{https://arxiv.org/abs/2301.11259}{https://arxiv.org/abs/2301.11259}
   \item[fair.reproducible:] True
   \item[fair.benchmark\_ready:] True
   \item[id:] molgen
@@ -58,17 +59,17 @@ to optimize properties such as logP, QED, and docking score.
 \hline
 Rating & Value & Reason \\
 \hline
-dataset & 0 & This is a pre-trained model
+dataset & 5 & Dataset and train/test splits are available through the github repo, as well as mentions of source datasets in the paper.
  \\
-documentation & 0 & This is a pre-trained model
+documentation & 5 & All necessary information is provided in the paper and github repo
  \\
-metrics & 0 & This is a pre-trained model
+metrics & 5 & Metrics are well defined and appropriate for the task
  \\
-reference\_solution & 0 & This is a pre-trained model
+reference\_solution & 5 & A pretrained model is provided, as well as training code and instructions
  \\
-software & 0 & This is a pre-trained model
+software & 5 & Code is available on the github repo, along with instructions to run the model and reproduce results.
  \\
-specification & 0 & This is a pre-trained model
+specification & 4 & Task, datset format, and input/output formats are well specified. No system constraints are mentioned.
  \\
 \hline
 \end{tabular}

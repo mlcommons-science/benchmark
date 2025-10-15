@@ -1,17 +1,17 @@
 \subsection{LLMs for Crop Science}
 {{\footnotesize
-\noindent Establishes a benchmark of 3,500 expert-annotated prompts and QA pairs covering crop traits, growth stages, and environmental interactions. Tests GPT-style LLMs on accuracy and domain reasoning using in-context, chain-of-thought, and retrieval-augmented prompts.
+\noindent Establishes a benchmark of over 5000 expert-annotated QA pairs and prompts in Chinese and English, covering crop traits, growth stages, and environmental interactions. Tests GPT-style LLMs on accuracy and domain reasoning using in-context, chain-of-thought, and retrieval-augmented prompts.
 
 
 \begin{description}[labelwidth=4cm, labelsep=1em, leftmargin=4cm, itemsep=0.1em, parsep=0em]
-  \item[date:] 2024-12-13
+  \item[date:] 2024-11-13
   \item[version:] v1.0
-  \item[last\_updated:] 2024-12
+  \item[last\_updated:] 2024-11
   \item[expired:] unknown
   \item[valid:] yes
-  \item[valid\_date:] 2024-12-13
-  \item[url:] \href{https://neurips.cc/virtual/2024/poster/97570}{https://neurips.cc/virtual/2024/poster/97570}
-  \item[doi:] 10.48550/arXiv.2406.03085
+  \item[valid\_date:] 2024-11-13
+  \item[url:] \href{https://openreview.net/forum?id=hMj6jZ6JWU\#discussion}{https://openreview.net/forum?id=hMj6jZ6JWU\#discussion}
+  \item[doi:] N/A
   \item[domain:] Agricultural Science; NLP
   \item[focus:] Evaluating LLMs on crop trait QA and textual inference tasks with domain-specific prompts
   \item[keywords:]
@@ -19,7 +19,7 @@
     - prompt engineering
     - domain adaptation
     - question answering
-  \item[licensing:] unknown
+  \item[licensing:] CC-BY-NC-4.0
   \item[task\_types:]
     - Question Answering
     - Inference
@@ -30,9 +30,13 @@
     - Accuracy
     - F1 score
   \item[models:]
+    - GPT-3.5
     - GPT-4
-    - LLaMA-2-13B
-    - T5-XXL
+    - Claude-3-opus
+    - Qwen-max
+    - LLama3-8B
+    - InternLM2-7B
+    - Qwen1.5-7B
   \item[ml\_motif:]
     - NLP
   \item[type:] Dataset
@@ -43,11 +47,14 @@
 
   \item[contact.name:] Deepak Patel
   \item[contact.email:] unknown
-  \item[results.links.name:] ChatGPT LLM
+  \item[datasets.links.name:] CROP Benchmark (Test Split)
+  \item[datasets.links.url:] \href{https://huggingface.co/datasets/AI4Agr/CROP-benchmark}{https://huggingface.co/datasets/AI4Agr/CROP-benchmark}
+  \item[results.links.name:] Empowering and Assessing the Utility of Large Language Models in Crop Science - Experiments
+  \item[results.links.url:] \href{https://renqichen.github.io/The\_Crop/}{https://renqichen.github.io/The\_Crop/}
   \item[fair.reproducible:] Yes
   \item[fair.benchmark\_ready:] Yes
   \item[id:] llms\_for\_crop\_science
-  \item[Citations:] \cite{shen2024exploringuserretrievalintegration}
+  \item[Citations:] \cite{zhang2024empowering}
 \end{description}
 
 {\bf Ratings:} ~ \\
@@ -56,17 +63,17 @@
 \hline
 Rating & Value & Reason \\
 \hline
-dataset & 0 & This is a model, not a benchmark.
+dataset & 5 & Dataset adheres to all FAIR principles, is well-documented, and publicly available on Hugging Face. Train/Test splits are provided across two Huggingface datasets.
  \\
-documentation & 0 & This is a model, not a benchmark.
+documentation & 5 & The benchmark is well documented with a detailed paper, README, and webpage. Instructions for reproducing results are clear.
  \\
-metrics & 0 & This is a model, not a benchmark.
+metrics & 4 & Accuracy is mentioned in the README and webpage as an evaluation metric,
  \\
-reference\_solution & 0 & This is a model, not a benchmark.
+reference\_solution & 5 & A reference solution is available and well documented. Training code is provided for multiple open weight models.
  \\
-software & 0 & This is a model, not a benchmark.
+software & 5 & Code for evaluation and training of multiple models is available and well documented. Environment details are provided.
  \\
-specification & 0 & This is a model, not a benchmark.
+specification & 4 & Tasks are clearly defined (QA, inference) with structured input/output formats, though no system constraints are provided.
  \\
 \hline
 \end{tabular}

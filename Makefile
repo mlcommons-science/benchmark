@@ -1,4 +1,5 @@
 # makefile that will create all the content
+SUDO := $(shell command -v sudo >/dev/null 2>&1 && echo sudo || echo)
 
 BASE=.
 # BASE=../yaml3/benchmark
@@ -44,12 +45,12 @@ summary:
 	open content/tex/summary.pdf
 
 install_latex:
-	sudo apt-get update
-	sudo apt-get install texlive-full
-	sudo apt-get install latexmk
-	sudo apt-get install bibtool
-	sudo apt-get install biber
-	sudo apt-get update
+	$(SUDO) apt-get update
+	$(SUDO) apt-get install texlive-full
+	$(SUDO) apt-get install latexmk
+	$(SUDO) apt-get install bibtool
+	$(SUDO) apt-get install biber
+	$(SUDO) apt-get update
 	biber --version
 	latexmk --version
 	pdflatex --version
@@ -65,6 +66,8 @@ md:
 
 DOCS=www/science-ai-benchmarks/docs
 WWW=www/science-ai-benchmarks
+
+SERVE_HOST ?= 127.0.0.1
 
 
 publish: mkdocs
@@ -146,4 +149,4 @@ structure:
 	python ${SCRIPT} --files=source/benchmarks-addon.yaml --check_structure 
 
 view-local:
-	cd www/science-ai-benchmarks; mkdocs serve -a 0.0.0.0:8000
+	cd www/science-ai-benchmarks; mkdocs serve -a $(SERVE_HOST):8000

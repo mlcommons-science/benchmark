@@ -228,7 +228,9 @@ class MkdocsWriter:
 
     def _detail_href(self, id_: str) -> str:
         """Build the runtime URL for a detail page (MkDocs routing)."""
-        return f"{id_}/" if self.use_directory_urls else f"{id_}.html"
+        if self.use_directory_urls:
+            return f"../{id_}/"
+        return f"../{id_}.html"
 
     def _index_header_html(self) -> str:
         """Controls + container for cards; your DOM script wires the behavior."""
@@ -498,9 +500,10 @@ class MkdocsWriter:
         # Title
         parts.append(f"# {_esc(name)}\n")
 
-        # Back link
+        back_href = "../cards/" if self.use_directory_urls else "../cards.html"
         parts.append(
-            '\n<p><a class="md-button back-link" href="../">← Back to all benchmarks</a></p>\n'
+            f"\n<p><a class=\"md-button back-link\" href=\"{_esc(back_href)}\">"
+            "← Back to all benchmarks</a></p>\n"
         )
 
         # Meta subset
@@ -592,201 +595,11 @@ class MkdocsWriter:
         columns=DEFAULT_COLUMNS,
         average_ratings: bool = True,
     ) -> None:
-        # ... (existing code)
-
-        # New section for HTML table generation
-        html_table = f'<table id="benchmarksTable" class="display">\n'
-
-        # Generate the table header (<thead>)
-        html_table += "<thead>\n<tr>"
-        for col in columns:
-            html_table += f"<th>{self._colunm_label(col)}</th>"
-        if average_ratings:
-            html_table += "<th>Average Ratings</th>"
-        html_table += "</tr>\n</thead>\n"
-
-        # Generate the table body (<tbody>)
-        html_table += "<tbody>\n"
-        for entry in self.entries:
-            html_table += "<tr>"
-            ratings_average = 0
-
-            for col in columns:
-                val = entry.get(col, "")
-
-                # Simplified logic for creating HTML cells
-                cell_content = ""
-                if col == "name":
-                    title = self._escape_md(str(val))
-                    id_ = str(entry.get("id", "")).strip()
-                    if id_:
-                        target_md = f"benchmarks/{quote(id_)}.md"
-                        cell_content = f"<a href='{target_md}'>{title}</a>"
-                    else:
-                        cell_content = title
-                elif col == "cite":
-                    # Handle citations and footnotes in a more robust way
-                    # (You might need a separate function for this)
-                    citation_refs = []
-                    # ... (citation logic)
-                    cell_content = ", ".join(citation_refs)
-                elif isinstance(val, list):
-                    cell_content = ", ".join(map(self._escape_md, val))
-                else:
-                    if col.endswith("rating"):
-                        try:
-                            ratings_average += float(val)
-                        except ValueError:
-                            Console.error(f'Rating entry "{val}" must be a number')
-                    cell_content = self._escape_md(str(val))
-
-                html_table += f"<td>{cell_content}</td>"
-
-            # Add average rating column
-            if average_ratings:
-                avg_rating = round(ratings_average / 6, 3) if 6 > 0 else 0
-                html_table += f"<td>{avg_rating}</td>"
-
-            html_table += "</tr>\n"
-
-        html_table += "</tbody>\n</table>\n"
-
-        # Construct the final content with the HTML table
-        contents = html_table  # + footnote_contents + table_script
-
-        write_to_file(content=contents, filename=filename)
-
-    def write_table(
-        self,
-        filename="content/md/benchmarks_table.md",
-        columns=DEFAULT_COLUMNS,
-        average_ratings: bool = True,
-    ) -> None:
-        """
-        Write:
-          - index.md with a plain md table of all entries
-        """
-        headline = "# Benchmarks (Table)\n\n"
-        table_start = '<div class="page-data-table">\n'
-        table_end = textwrap.dedent(
-            """
-            </div>
-            """
+        
+        contents = (
+            "# Benchmarks Table\n\n"
+            "<table id=\"benchmarksTable\" class=\"display nowrap\" style=\"width:100%\"></table>\n"
         )
-
-        table_script = textwrap.dedent(
-            """
-
-            <script>
-            $(document).ready(function() {
-            if ($('.page-data-table table').length) {
-                $('.page-data-table table').DataTable({
-                scrollX: true,
-                fixedColumns: {
-                    left: 2
-                },
-                ordering: true
-                });
-            }
-            });
-            </script>
-            """
-        )
-
-        col_labels = []
-        col_widths = []
-
-        for col in columns:
-            col_labels.append(self._colunm_label(col))
-            col_widths.append(self._column_width_str(col))
-
-        section = f'<div id="bench-table-page"></div>\n\n{headline}'
-        header = " | " + " | ".join(col_labels) + " | "
-        if average_ratings:
-            header += " Average Ratings "
-        header += "\n"
-
-        divider = ""
-        for e in col_widths:
-            divider += "| " + str(e) + " "
-        if average_ratings:
-            divider += " | -------- "
-        divider += "|\n"
-
-        # Create the contents string
-        current_contents = ""
-        footnotes = []
-
-        # Write each entry to the table
-        for entry in self.entries:
-            row = ""
-            ratings_average = 0
-
-            # Write each cell to the table
-            for col in columns:
-                val = entry.get(col, "")
-
-                if col == "name":
-                    title = self._escape_md(str(val))
-                    id_ = str(entry.get("id", "")).strip()
-                    if id_:
-                        # Link to the source .md; MkDocs will rewrite to the correct output URL
-                        # regardless of use_directory_urls.
-                        target_md = f"benchmarks/{quote(id_)}.md"
-                        row += f"[{title}]({target_md})"
-                    else:
-                        row += title
-                # handle citations
-                elif col == "cite":
-                    citations = val if isinstance(val, list) else [val]
-                    citation_refs = []
-                    for c in citations:
-                        citation_text = _bibtex_to_text(c)
-                        if citation_text.startswith("Could not parse citation:"):
-                            footnotes.append(None)
-                        else:
-                            footnotes.append(self._escape_md(citation_text))
-                            citation_refs.append(f"[^{len(footnotes)}]")
-                    row += ", ".join(citation_refs)
-
-                elif isinstance(val, list):
-                    row += ", ".join(map(self._escape_md, val))
-
-                else:
-                    if col.endswith("rating"):
-                        try:
-                            ratings_average += float(val)
-                        except ValueError:
-                            Console.error(f'Rating entry "{val}" must be a number')
-
-                    row += self._escape_md(str(val))
-
-                row += " | "
-
-            # Calculate and add average
-            ratings_average /= 6
-            if average_ratings:
-                row += str(round(ratings_average, 3)) + " |"
-
-            current_contents += row + "\n"
-        current_contents = current_contents.strip()
-        current_contents += "\n\n"
-        footnote_contents = ""
-        for i, citation in enumerate(footnotes):
-            footnote_contents += f"[^{i + 1}]: {citation}\n" if citation else ""
-
-        contents = section + header + divider + current_contents + footnote_contents
-
-        # contents = (
-        #     section
-        #     + table_start
-        #     + header
-        #     + divider
-        #     + current_contents
-        #     + table_end
-        #     + footnote_contents
-        #     + table_script
-        # )
 
         write_to_file(content=contents, filename=filename)
 

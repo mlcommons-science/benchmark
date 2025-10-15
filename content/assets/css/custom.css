@@ -506,17 +506,3 @@
   padding-top: .5em;
   padding-bottom: .5em;
 }
-
-/* DataTables.js overrides */
-
-.page-data-table table.dataTable {
-  width: 100% !important;
-  border-collapse: collapse;
-}
-
-/* Make sure fixed columns look aligned */
-.page-data-table .dataTables_wrapper .DTFC_LeftWrapper,
-.page-data-table .dataTables_wrapper .DTFC_RightWrapper {
-  background: #fff; /* keep same background */
-  z-index: 2;
-}

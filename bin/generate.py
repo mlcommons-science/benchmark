@@ -42,6 +42,7 @@ Examples:
 
 import os
 import sys
+import json
 from docopt import docopt
 from yaml_manager import YamlManager
 from md_writer import MarkdownWriter
@@ -165,8 +166,14 @@ if __name__ == "__main__":
 
         converter = MkdocsWriter(entries, raw_entries=manager.data)
         converter.write_index_md()
-        converter.write_table(columns=columns)
+        converter.write_table_new(columns=columns)
         converter.write_individual_entries(columns=columns)
+        
+        # elif format_type == "json":
+        output_path = os.path.join(output_dir, "md/benchmarks.json")
+        manager.to_json_file(output_path, indent=2, ensure_ascii=False)
+        Console.ok(f"Wrote JSON output to {output_path}")
+        
 
     elif format_type == "tex":
         converter = GenerateLatex(entries)

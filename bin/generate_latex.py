@@ -161,25 +161,50 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
 }
 
 DEFAULT_COLUMNS = [
-    #"ratings",
+    "ratings",
+    # "date",
+    # "expired",
+    # "valid",
+    "name",
+    # "url",
+    "domain",
+    "focus",
+    "keywords",
+    # "description",
+    "task_types",
+    "ml_motif",
+    # "average_rating",
+    "ai_capability_measured",
+    "metrics",
+    "models",
+    "average_rating",
+    # "notes",
+    "cite",
+]
+
+"""
+Ontology Paper Table:
+DEFAULT_COLUMNS = [
+    # "ratings",
     # "date",
     # "expired",
     # "valid",
     "cite",
-    #"name",
+    # "name",
     # "url",
     "domain",
-    #"focus",
-    #"keywords",
+    # "focus",
+    # "keywords",
     # "description",
     #"task_types",
-     "ml_motif",
-     "average_rating",
+    "ml_motif",
+    "average_rating",
     # "ai_capability_measured",
-    #"metrics",
+    # "metrics",
     # "models",
     # "notes",
 ]
+"""
 
 REQUIRED_FIELDS_BY_TYPE = {
     "article": ["author", "title", "journal", "year", "doi"],

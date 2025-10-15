@@ -42,7 +42,7 @@ summary:
 	python bin/summary.py --file ${FILES} --graph=png
 	#cd content/summary; bibtool -s -i benchmarks.bib -o tmp.bib
 	cd content/tex; latexmk -pdf -silent summary.tex
-	open content/tex/summary.pdf 
+	open content/tex/summary.pdf
 
 install_latex:
 	$(SUDO) apt-get update
@@ -68,21 +68,21 @@ DOCS=www/science-ai-benchmarks/docs
 WWW=www/science-ai-benchmarks
 
 
-
 publish: mkdocs
 	$(call BANNER,"Publishing from ${DOCS}") 
 	-git commit -am "Update documentation"
 	-git push
 	cd ${WWW}; mkdocs gh-deploy
 
-
 mkdocs:
 	$(call BANNER,"Generating MkDocs content")
 	python ${SCRIPT} --files=${FILES}  --format=mkdocs --outdir=./content --columns ${COLUMNS}
 	mkdir -p ${DOCS}/tex/images
 	mkdir -p ${DOCS}/md
+	mkdir -p ${DOCS}/assets
 	cp -r content/md ${DOCS}
 	cp -r content/tex ${DOCS}
+	cp -r content/assets ${DOCS}
 	cp content/mkdocs.yml ${WWW}
 	cp source/index.md ${DOCS}/index.md
 	cp content/tex/benchmarks.pdf ${DOCS}/benchmarks.pdf
@@ -102,7 +102,6 @@ t:
 standalone:
 	python ${SCRIPT} --files=${FILES} --format=tex --standalone --out-dir ./content
 
-
 pdf: tex
 	cd content/tex; latexmk -pdf -silent benchmarks.tex
 
@@ -112,7 +111,6 @@ clean:
 	rm -rf content/md_pages
 	rm -rf content/tex
 	cd content/tex && latexmk -C
-
 
 view:
 	open content/tex/benchmarks.pdf
@@ -131,11 +129,8 @@ check_url:
 u:
 	python ${SCRIPT} --files ${CHECK_FILES} --check_url --url=https://pubs.acs.org/doi/10.1021/acscatal.2c05426
 
-
-
 log:
 	open -a Aquamacs content/tex/benchmarks.log
-
 
 publish-old:
 	mkdir -p docs/tex/images

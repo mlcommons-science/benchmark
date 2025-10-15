@@ -1,44 +1,43 @@
 # MLCommons Science Working Group AI Benchmarks Collection
 
+This site curates a collection of AI benchmarks.  
+The main artifact is the PDF report:
 
-This Web page is gathering a collection of AI benchmarks. The main document produced is a PDF report which is is avaiialble at:
+- **Report (PDF):** [benchmarks.pdf](benchmarks.pdf)
 
-* <https://mlcommons-science.github.io/benchmark/benchmarks.pdf>
+If you cite this work, please reference the PDF (not the Markdown pages). A BibTeX entry is provided below.
 
-The citation is:
-
-```
+```bibtex
 @misc{benchmark-collection,
-    title={MLCommons Science Working Group AI Benchmarks Collection}
-    author={Gregor von Laszewski and 
-            Reece Shiraishi and 
-            Anjay Krishnan and 
-            Nhan Tran and 
-            Benjamin Hawks and 
-            Geoffrey C. Fox}
-    url={https://mlcommons-science.github.io/benchmark/benchmarks.pdf}
-    howpublished={Github},
-    year={2025}
-    month=jul
+  title        = {MLCommons Science Working Group AI Benchmarks Collection},
+  author       = {Gregor von Laszewski and
+                  Reece Shiraishi and
+                  Anjay Krishnan and
+                  Nhan Tran and
+                  Benjamin Hawks and
+                  Marco Colombo and
+                  Geoffrey C. Fox},
+  year         = {2025},
+  month        = jul,
+  howpublished = {GitHub},
+  url          = {https://mlcommons-science.github.io/benchmark/benchmarks.pdf}
 }
 ```
 
-For online browsing we also have produced some html pages that are available at
+For online browsing, we provide two views:
 
-* List of benchmarks [link](md/benchmarks/index.html)
+- **[Benchmarks (cards)](md/benchmarks/)**: filterable and sortable index with detail pages.
+- **[Benchmarks (table)](md/benchmarks_table.md)**: compact Markdown table with links to the same detail pages.
 
-A table in html format is also available at 
+> **Note:** The Markdown pages are generated for web browsing and should **not** be cited. Please cite the PDF report above.
 
-* Markdown documents at the following [link](md/benchmarks.html)
+All pages are generated automatically, please don’t edit them directly.  
+To propose changes, update the source files here:
 
-Please note that the markdown documents should not be cited, but instead, use the PDF document.
+- <https://github.com/mlcommons-science/benchmark/tree/main/source>
 
-The documents ara all generated automatically, so please do not edit them directly. Inseatd change them at the source:
+For program improvements, please contact **Gregor von Laszewski** at `laszewski at gmail.com`.
 
-* <https://github.com/mlcommons-science/benchmark/tree/main/source>
+The project README is available at:
 
-For program improvements, please contact Gregor von Laszewski ar laszewski at gmail.com.
-
-The README is located at
-
-* <https://github.com/mlcommons-science/benchmark>
+- <https://github.com/mlcommons-science/benchmark>

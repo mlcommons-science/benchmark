@@ -1,3 +1,701 @@
+
+
+- date: "2023-10-05"
+  version: "v3.0.2"
+  last_updated: "2025-06"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-10-05"
+  name: "Nixtla Neural Forecast TimeGPT"
+  url: "https://github.com/Nixtla/neuralforecast"
+  doi: "10.48550/arXiv.2310.03589"
+  domain: "Time-series; General ML"
+  focus: "Time-series foundation model \"TimeGPT\" for forecasting and anomaly detection"
+  keywords:
+  - "TimeGPT"
+  - "foundation model"
+  - "time-series"
+  - "generative model"
+  summary: |
+    TimeGPT is a transformer-based generative pretrained model on 100B+ time series data for
+    zero-shot forecasting and anomaly detection via API .
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Time-series forecasting"
+  - "Anomaly detection"
+  ai_capability_measured:
+  - "Zero-shot forecasting"
+  - "anomaly detection"
+  metrics:
+  - "RMSE"
+  - "Anomaly detection metrics"
+  models:
+  - "TimeGPT"
+  ml_motif:
+  - "Time-series"
+  type: "Platform"
+  ml_task:
+  - "Forecasting"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Offered via Nixtla API and Azure Studio; enterprise-grade support available.
+  contact:
+    name: "Azul Garza (Nixtla)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{garza2024timegpt1,
+      archiveprefix = {arXiv},
+      author        = {Azul Garza and Cristian Challu and Max Mergenthaler-Canseco},
+      eprint        = {2310.03589},
+      primaryclass  = {cs.LG},
+      title         = {TimeGPT-1},
+      url           = {https://arxiv.org/abs/2310.03589},
+      year          = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1KmKs9JtcfpKe40fNuLrgdFcOmBnfj3ZG7AwcfTH4tXE/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 4
+      reason: |
+        Fully open-source Apache 2.0 implementation integrated in NeuralForecast,
+        supporting training and evaluation via API. Production-grade deployment available via Nixtla API and Azure.
+    specification:
+      rating: 3
+      reason: |
+        Concept and forecasting goals are described, but formal input/output definitions
+        and task constraints are not rigorously specified.
+    dataset:
+      rating: 3
+      reason: |
+        Evaluated on existing open datasets, but consolidated data release, splits, and FAIR
+        metadata are not provided.
+    metrics:
+      rating: 4
+      reason: |
+        Uses standard forecasting metrics such as RMSE, MASE, SMAPE, and anomaly detection
+        metrics consistently across evaluations.
+    reference_solution:
+      rating: 3
+      reason: |
+        TimeGPT implementation is available, but baseline comparisons and additional reference
+        models are limited.
+    documentation:
+      rating: 3
+      reason: |
+        Basic README with installation and usage examples; more detailed API docs and tutorials
+        would improve usability.
+
+- date: "2023-06-01"
+  version: "v3.0.2"
+  last_updated: "2025-06"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-06-01"
+  name: "Nixtla Neural Forecast NHITS"
+  url: "https://github.com/Nixtla/neuralforecast"
+  doi: "unknown"
+  domain: "Time-series; General ML"
+  focus: "Official NHITS implementation for long-horizon time series forecasting"
+  keywords:
+  - "NHITS"
+  - "long-horizon forecasting"
+  - "neural interpolation"
+  - "time-series"
+  summary: |
+    NHITS (Neural Hierarchical Interpolation for Time Series) is a state-of-the-art model that
+    improved accuracy by ~25% and reduced compute by 50x compared to Transformer baselines,
+    using hierarchical interpolation and multi-rate sampling .
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Time-series forecasting"
+  ai_capability_measured:
+  - "Accuracy"
+  - "compute efficiency for long series"
+  metrics:
+  - "RMSE"
+  - "MAPE"
+  models:
+  - "NHITS"
+  ml_motif:
+  - "Time-series"
+  type: "Platform"
+  ml_task:
+  - "Forecasting"
+  solutions: "0"
+  notes: |
+    Official implementation in NeuralForecast, included since its AAAI 2023 release.
+  contact:
+    name: "Kin G. Olivares (Nixtla)"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{challu2023nhits,
+     title={Nhits: Neural hierarchical interpolation for time series forecasting},
+     author={Challu, Cristian and Olivares, Kin G and Oreshkin, Boris N and Ramirez, Federico Garza and Canseco, Max Mergenthaler and Dubrawski, Artur},
+     booktitle={Proceedings of the AAAI conference on artificial intelligence},
+     volume={37},
+     number={6},
+     pages={6989--6997},
+     year={2023}
+     }
+  datasets:
+    links:
+    - name: "Standard forecast datasets, M4"
+      url: ""
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/15Hm5ekGu99aQWsdtiUIwX6JMoaoFpRbIhDylrWqSoHY/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Implemented within the open-source NeuralForecast library under Apache 2.0.
+        Includes training, evaluation, and hyperparameter tuning pipelines. Actively maintained.
+    specification:
+      rating: 5
+      reason: |
+        The NHITS forecasting task is clearly defined with structured input/output formats.
+        Model design targets long-horizon accuracy and compute efficiency.
+    dataset:
+      rating: 3
+      reason: |
+        Uses standard benchmark datasets like M4, but does not bundle them directly.
+        FAIR compliance depends on external dataset sources and user setup.
+    metrics:
+      rating: 5
+      reason: |
+        Evaluated using RMSE, MAPE, and other standard forecasting metrics, integrated
+        into training and evaluation APIs.
+    reference_solution:
+      rating: 4
+      reason: |
+        Official NHITS implementation is fully reproducible with training/eval configs,
+        though pretrained weights are not always provided.
+    documentation:
+      rating: 4
+      reason: |
+        Well-documented on GitHub and in AAAI paper, with code examples, training guidance,
+        and usage tutorials. More model-specific docs could improve clarity further.
+
+
+- date: "2023-10-03"
+  version: "v3.0.2"
+  last_updated: "2025-06"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-10-03"
+  name: "Nixtla Neural Forecast TimeLLM"
+  url: "https://github.com/Nixtla/neuralforecast"
+  doi: "10.48550/arXiv.2310.01728"
+  domain: "Time-series; General ML"
+  focus: "Reprogramming LLMs for time series forecasting"
+  keywords:
+  - "Time-LLM"
+  - "language model"
+  - "time-series"
+  - "reprogramming"
+  summary: |
+    Time-LLM uses reprogramming layers to adapt frozen LLMs for time series forecasting, treating
+    forecasting as a language task .
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Time-series forecasting"
+  ai_capability_measured:
+  - "Model reuse via LLM"
+  - "few-shot forecasting"
+  metrics:
+  - "RMSE"
+  - "MAPE"
+  models:
+  - "Time-LLM"
+  ml_motif:
+  - "Time-series"
+  type: "Platform"
+  ml_task:
+  - "Forecasting"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Fully open-source; transforms forecasting using LLM text reconstruction.
+  contact:
+    name: "Ming Jin (Nixtla)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{jin2024timellmtimeseriesforecasting,
+      title={Time-LLM: Time Series Forecasting by Reprogramming Large Language Models}, 
+      author={Ming Jin and Shiyu Wang and Lintao Ma and Zhixuan Chu and James Y. Zhang and Xiaoming Shi and Pin-Yu Chen and Yuxuan Liang and Yuan-Fang Li and Shirui Pan and Qingsong Wen},
+      year={2024},
+      eprint={2310.01728},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2310.01728}, 
+    }
+  datasets:
+    links:
+    - name: "Standard forecast datasets, M4"
+      url: ""
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1xXGzRt-qhUFTvnBGQi2IbcoBdYyo-ZrAn3IOkswd3fw/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 4
+      reason: |
+        Fully open-source under Apache 2.0, integrated into the NeuralForecast library.
+        Includes Time-LLM implementation with example usage and training scripts.
+    specification:
+      rating: 3
+      reason: |
+        High-level framing of forecasting as language modeling is clear, but detailed input/output
+        specifications, constraints, and task formalization are minimal.
+    dataset:
+      rating: 3
+      reason: |
+        Evaluated on standard datasets like M4 and ETT, but dataset splits and versioning are not
+        bundled or explicitly FAIR-compliant.
+    metrics:
+      rating: 4
+      reason: |
+        Standard forecasting metrics such as RMSE, MAPE, and SMAPE are reported.
+        Evaluation is consistent, though deeper metric justification is limited.
+    reference_solution:
+      rating: 3
+      reason: |
+        Time-LLM implementation is open and reproducible, but limited baselines or comparative
+        implementations are included directly.
+    documentation:
+      rating: 3
+      reason: |
+        GitHub README provides installation and quick usage examples, but lacks detailed API docs,
+        training walkthroughs, or extended tutorials.
+
+- date: "2022-04-01"
+  version: "v3.0.2"
+  last_updated: "2025-06"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2022-04-01"
+  name: "Nixtla NeuralForecast"
+  url: "https://github.com/Nixtla/neuralforecast"
+  doi: "unknown"
+  domain: "Time-series forecasting; General ML"
+  focus: "High-performance neural forecasting library with >30 models"
+  keywords:
+  - "time-series"
+  - "neural forecasting"
+  - "NBEATS, NHITS, TFT"
+  - "probabilistic forecasting"
+  - "usability"
+  summary: |
+    NeuralForecast offers scalable, user-friendly implementations of over 30 neural forecasting models (NBEATS, NHITS, TFT, DeepAR, etc.),
+    emphasizing quality, usability, interpretability, and performance.
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Time-series forecasting"
+  ai_capability_measured:
+  - "Forecast accuracy"
+  - "interpretability"
+  - "speed"
+  metrics:
+  - "RMSE"
+  - "MAPE"
+  - "CRPS"
+  models:
+  - "NBEATS"
+  - "NHITS"
+  - "TFT"
+  - "DeepAR"
+  ml_motif:
+  - "Time-series"
+  type: "Platform"
+  ml_task:
+  - "Forecasting"
+  solutions: "0"
+  notes: |
+    AutoModel supports hyperparameter tuning and distributed execution via Ray and Optuna. First official NHITS implementation. contentReference oaicite:4 ndex=4
+  contact:
+    name: "Kin G. Olivares (Nixtla)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{olivares2022library_neuralforecast,
+      author={Kin G. Olivares and Cristian Chall\'{u} and Federico Garza and Max Mergenthaler Canseco and Artur Dubrawski},
+      title = {NeuralForecast: User friendly state-of-the-art neural forecasting models.},
+      year={2022},
+      howpublished={PyCon Salt Lake City, Utah, US 2022},
+      url={https://github.com/Nixtla/neuralforecast}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1VzhaUubIm-SHK7cfKWyoi8GtykpCuOH2qPM-k_g8bKU/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Actively maintained open-source library under Apache 2.0. Offers a clean API,
+        extensive model zoo (>30 models), integration with Ray, Optuna, and supports
+        scalable training and inference workflows.
+    specification:
+      rating: 5
+      reason: |
+        Forecasting task is well-defined with clear input/output structures. Framework supports
+        probabilistic and deterministic forecasting, with unified interfaces and support for batch evaluation.
+    dataset:
+      rating: 3
+      reason: |
+        NeuralForecast does not include its own datasets but supports standard datasets (e.g., M4, M5, ETT).
+        FAIR compliance depends on user-supplied data.
+    metrics:
+      rating: 5
+      reason: |
+        RMSE, MAPE, CRPS, and other domain-relevant metrics are well supported and integrated into the evaluation loop.
+    reference_solution:
+      rating: 4
+      reason: |
+        Includes runnable model baselines and training scripts for all supported models.
+        Some models have pretrained weights, but not all are fully benchmarked out-of-the-box.
+    documentation:
+      rating: 5
+      reason: |
+        Rich documentation with examples, API references, tutorials, notebooks, and CLI support.
+        PyPI, GitHub, and official blog posts offer clear guidance for usage and extension.
+
+- date: "2022-06-22"
+  version: "v1.0"
+  last_updated: "2025-01"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2022-06-22"
+  name: "vLLM Performance Dashboard"
+  url: "https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/"
+  doi: "unknown"
+  domain: "LLM; HPC/inference"
+  focus: "Interactive dashboard showing inference performance of vLLM"
+  keywords:
+  - "Dashboard"
+  - "Throughput visualization"
+  - "Latency analysis"
+  - "Metric tracking"
+  summary: |
+    A live visual dashboard for vLLM showcasing throughput, latency, and other inference metrics across models and hardware configurations.
+  licensing: "unknown"
+  task_types:
+  - "Performance visualization"
+  ai_capability_measured:
+  - "Throughput"
+  - "latency"
+  - "hardware utilization"
+  metrics:
+  - "Tokens/sec"
+  - "TTFT"
+  - "Memory usage"
+  models:
+  - "LLaMA-2"
+  - "Mistral"
+  - "Qwen"
+  ml_motif:
+  - "HPC/inference"
+  type: "Framework"
+  ml_task:
+  - "Visualization"
+  solutions: "0"
+  notes: |
+    Built using ObservableHQ; integrates live data from vLLM benchmarks.
+    The URL requires a login to access the content.
+  contact:
+    name: "Simon Mo"
+    email: "unknown"
+  cite:
+  - |
+    @misc{mo2024vllm_dashboard,
+      title={vLLM Performance Dashboard},
+      author={Mo, Simon},
+      year={2024},
+      url={https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "(none)"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 4
+      reason: |
+        Interactive dashboard built with ObservableHQ and linked to vLLM benchmarks.
+        Source code is not fully open, but backend integration with vLLM is well-maintained.
+    specification:
+      rating: 4
+      reason: |
+        While primarily a visualization tool, it includes benchmark configurations,
+        metric definitions, and supports comparison across models and hardware.
+    dataset:
+      rating: 2
+      reason: |
+        No datasets are bundled; the dashboard visualizes metrics derived from model
+        inference logs or external endpoints, not a formal dataset.
+    metrics:
+      rating: 4
+      reason: |
+        Tracks tokens/sec, TTFT, memory usage, and platform comparisons. Metrics are clear
+        but focused on visualization rather than statistical robustness.
+    reference_solution:
+      rating: 3
+      reason: |
+        Dashboards include reproducible views of benchmarked models, but do not ship
+        with runnable model code. Relies on external serving infrastructure.
+    documentation:
+      rating: 4
+      reason: |
+        Public dashboard with instructions and tooltips; documentation is clear, though access
+        is restricted (login required) and backend setup is opaque to users.
+
+
+- date: "2023-09-12"
+  version: "v0.10.0"
+  last_updated: "2025-06"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-09-12"
+  name: "vLLM Inference and Serving Engine"
+  url: "https://github.com/vllm-project/vllm/tree/main/benchmarks"
+  doi: "unknown"
+  domain: "LLM; HPC/inference"
+  focus: "High-throughput, memory-efficient inference and serving engine for LLMs"
+  keywords:
+  - "LLM inference"
+  - "PagedAttention"
+  - "CUDA graph"
+  - "streaming API"
+  - "quantization"
+  summary: |
+    vLLM is a fast, high-throughput, memory-efficient inference and serving engine for large language models, 
+    featuring PagedAttention, continuous batching, and support for quantized and pipelined model execution. 
+    Benchmarks compare it to TensorRT-LLM, SGLang, and others. 
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Inference Benchmarking"
+  ai_capability_measured:
+  - "Throughput"
+  - "latency"
+  - "memory efficiency"
+  metrics:
+  - "Tokens/sec"
+  - "Time to First Token (TTFT)"
+  - "Memory footprint"
+  models:
+  - "LLaMA"
+  - "Mixtral"
+  - "FlashAttention-based models"
+  ml_motif:
+  - "HPC/inference"
+  type: "Framework"
+  ml_task:
+  - "Inference"
+  solutions: "0"
+  notes: |
+    Incubated by LF AI and Data; achieves up to 24x throughput over HuggingFace Transformers 
+  contact:
+    name: "Woosuk Kwon (vLLM Team)"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{10.1145/3600006.3613165,
+      author = {Kwon, Woosuk and Li, Zhuohan and Zhuang, Siyuan and Sheng, Ying and Zheng, Lianmin and Yu, Cody Hao and Gonzalez, Joseph and Zhang, Hao and Stoica, Ion},
+      title = {Efficient Memory Management for Large Language Model Serving with PagedAttention},
+      year = {2023},
+      publisher = {Association for Computing Machinery},
+      address = {New York, NY, USA},
+      url = {https://doi.org/10.1145/3600006.3613165},
+      doi = {10.1145/3600006.3613165},
+      abstract = {High throughput serving of large language models (LLMs) requires batching sufficiently many requests at a time. However, existing systems struggle because the key-value cache (KV cache) memory for each request is huge and grows and shrinks dynamically. When managed inefficiently, this memory can be significantly wasted by fragmentation and redundant duplication, limiting the batch size. To address this problem, we propose PagedAttention, an attention algorithm inspired by the classical virtual memory and paging techniques in operating systems. On top of it, we build vLLM, an LLM serving system that achieves (1) near-zero waste in KV cache memory and (2) flexible sharing of KV cache within and across requests to further reduce memory usage. Our evaluations show that vLLM improves the throughput of popular LLMs by 2--4\texttimes{} with the same level of latency compared to the state-of-the-art systems, such as FasterTransformer and Orca. The improvement is more pronounced with longer sequences, larger models, and more complex decoding algorithms. vLLM's source code is publicly available at https://github.com/vllm-project/vllm.},
+      booktitle = {Proceedings of the 29th Symposium on Operating Systems Principles},
+      pages = {611-626},
+      numpages = {16},
+      location = {Koblenz, Germany},
+      series = {SOSP '23}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1nPZyRZEZHciGXYNJShR9FCJbre7ImJLKf2MG6g4-3gQ/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Actively maintained open-source project under Apache 2.0. GitHub repo includes
+        full serving engine, benchmarking scripts, CUDA integration, and deployment examples.
+    specification:
+      rating: 5
+      reason: |
+        Inference benchmarks are well-defined with clear input/output formats and platform-specific constraints.
+        Covers multiple models, hardware backends, and batching configurations.
+    dataset:
+      rating: 3
+      reason: |
+        No traditional dataset is included. Instead, it uses structured configs and logs suitable for inference benchmarking.
+        FAIR principles are only partially applicable.
+    metrics:
+      rating: 5
+      reason: |
+        Comprehensive performance metrics like tokens/sec, time-to-first-token (TTFT), and memory footprint
+        are consistently applied and benchmarked across frameworks.
+    reference_solution:
+      rating: 4
+      reason: |
+        Provides runnable scripts and configs for several models (LLaMA, Mixtral, etc.) across platforms.
+        Baselines are reproducible, though not all models are fully wrapped or hosted.
+    documentation:
+      rating: 4
+      reason: |
+        Well-structured GitHub documentation with setup instructions, config examples, benchmarking comparisons,
+        and performance tuning guides.
+
+- date: "2023-12-12"
+  version: "v0.4.9"
+  last_updated: "2025-06"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-12-12"
+  name: "SGLang Framework"
+  url: "https://github.com/sgl-project/sglang/tree/main/benchmark"
+  doi: "10.48550/arXiv.2312.07104"
+  domain: "LLM Vision"
+  focus: "Fast serving framework for LLMs and vision-language models"
+  keywords:
+  - "LLM serving"
+  - "vision-language"
+  - "RadixAttention"
+  - "performance"
+  - "JSON decoding"
+  summary: |
+    A high-performance open-source serving framework combining efficient backend runtime (RadixAttention, batching, quantization) and expressive frontend language, boosting LLM/VLM inference throughput up to ~3x over alternatives. 
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Model serving framework"
+  ai_capability_measured:
+  - "Serving throughput"
+  - "JSON/task-specific latency"
+  metrics:
+  - "Tokens/sec"
+  - "Time-to-first-token"
+  - "Throughput gain vs baseline"
+  models:
+  - "LLaVA"
+  - "DeepSeek"
+  - "Llama"
+  ml_motif:
+  - "LLM Vision"
+  type: "Framework"
+  ml_task:
+  - "Model serving"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025. 
+  contact:
+    name: "SGLang Team"
+    email: "unknown"
+  cite:
+  - |
+    @misc{zheng2024sglangefficientexecutionstructured,
+      archiveprefix = {arXiv},
+      author        = {Lianmin Zheng and Liangsheng Yin and Zhiqiang Xie and Chuyue Sun and Jeff Huang and Cody Hao Yu and Shiyi Cao and Christos Kozyrakis and Ion Stoica and Joseph E. Gonzalez and Clark Barrett and Ying Sheng},
+      eprint        = {2312.07104},
+      primaryclass  = {cs.AI},
+      title         = {SGLang: Efficient Execution of Structured Language Model Programs},
+      url           = {https://arxiv.org/abs/2312.07104},
+      year          = {2024}
+    } 
+  datasets:
+    links:
+    - name: "Benchmark configs"
+      url: ""
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Actively maintained and production-deployed (e.g., xAI, NVIDIA); source code available under
+        Apache 2.0. Includes efficient backends (RadixAttention, quantization, batching) and full
+        serving infrastructure.
+    specification:
+      rating: 4
+      reason: |
+        The framework clearly defines performance targets, serving logic, and model integration.
+        Input/output expectations are consistent, but not all benchmarks are standardized.
+    dataset:
+      rating: 2
+      reason: |
+        Does not introduce new datasets; instead, it evaluates performance using existing model benchmarks.
+        Only configuration files are included.
+    metrics:
+      rating: 5
+      reason: |
+        Serving-related metrics such as tokens/sec, time-to-first-token, and throughput gain vs. baselines
+        are well-defined and consistently applied.
+    reference_solution:
+      rating: 3
+      reason: |
+        Provides benchmark configs and example integrations (e.g., with LLaVA, DeepSeek), but not all
+        models or scripts are runnable out-of-the-box.
+    documentation:
+      rating: 4
+      reason: |
+        Strong GitHub documentation, install guides, and benchmarks. Some advanced topics (e.g.,
+        scaling, hardware tuning) could use deeper walkthroughs.
+
 - date: "2024-05-01"
   version: "v0.2.0"
   last_updated: "2024-05"
@@ -285,6 +983,8 @@
       rating: 3
       reason: |
         Setup instructions and pretrained model details are missing
+
+
 - date: "2024-07-08"
   version: "v1.0"
   last_updated: "2024-07"
@@ -412,7 +1112,7 @@
   - "Real-time, RL"
   type: "Benchmark"
   ml_task:
-  - "Reinforcement + Unsupervised Learning"
+  - "Reinforcement, Unsupervised Learning"
   solutions: "0"
   notes: |
     Precursor detection in progress; multi-modal and dynamic weighting methods
@@ -469,96 +1169,7 @@
       rating: 2
       reason: |
         Only a conference slide deck is available; lacks detailed instructions or repository for reproduction
-- date: "2024-10-15"
-  version: "v1.0"
-  last_updated: "2024-10"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2024-10-15"
-  name: "DUNE"
-  url: "https://indico.fnal.gov/event/66520/contributions/301423/attachments/182439/250508/fast_ml_dunedaq_sonic_10_15_24.pdf"
-  doi: "10.48550/arXiv.2103.13910"
-  domain: "Particle Physics"
-  focus: "Real-time ML for DUNE DAQ time-series data"
-  keywords:
-  - "DUNE"
-  - "time-series"
-  - "real-time"
-  - "trigger"
-  summary: |
-    Applying real-time ML methods to time-series data from DUNE detectors, exploring trigger-level anomaly detection and event selection with low latency constraints.
-  licensing: "Via Fermilab"
-  task_types:
-  - "Trigger selection"
-  - "Time-series anomaly detection"
-  ai_capability_measured:
-  - "Low-latency event detection"
-  metrics:
-  - "Detection efficiency"
-  - "Latency"
-  models:
-  - "CNN"
-  - "LSTM (planned)"
-  ml_motif:
-  - "Real-time, Time-series"
-  type: "Benchmark (in progress)"
-  ml_task:
-  - "Supervised Learning"
-  solutions: "Solution details are described in the referenced paper or repository."
-  notes: |
-    Prototype models demonstrated on SONIC platform
-  contact:
-    name: "Andrew J. Morgan"
-    email: "unknown"
-  cite:
-  - |
-    @misc{abud2021deep,
-      title={Deep Underground Neutrino Experiment (DUNE) Near Detector Conceptual Design Report}, 
-      author={A. Abed Abud and B. Abi and R. Acciarri and M. A. Acero and G. Adamov and D. Adams and M. Adinolfi and A. Aduszkiewicz and Z. Ahmad and J. Ahmed and T. Alion and S. Alonso Monsalve and M. Alrashed and C. Alt and A. Alton and P. Amedo and J. Anderson and C. Andreopoulos and M. P. Andrews and F. Andrianala and S. Andringa and N. Anfimov and A. Ankowski and M. Antonova and S. Antusch and A. Aranda-Fernandez and A. Ariga and L. O. Arnold and M. A. Arroyave and J. Asaadi and A. Aurisano and V. Aushev and D. Autiero and M. Ayala-Torres and F. Azfar and H. Back and J. J. Back and C. Backhouse and P. Baesso and I. Bagaturia and L. Bagby and S. Balasubramanian and P. Baldi and B. Baller and B. Bambah and F. Barao and G. Barenboim and G. J. Barker and W. Barkhouse and C. Barnes and G. Barr and J. Barranco Monarca and N. Barros and J. L. Barrow and A. Basharina-Freshville and A. Bashyal and V. Basque and E. Belchior and J. B. R. Battat and F. Battisti and F. Bay and J. L. Bazo Alba and J. F. Beacom and E. Bechetoille and B. Behera and L. Bellantoni and G. Bellettini and V. Bellini and O. Beltramello and D. Belver and N. Benekos and F. Bento Neves and S. Berkman and P. Bernardini and R. M. Berner and H. Berns and S. Bertolucci and M. Betancourt and A. Betancur Rodríguez and M. Bhattacharjee and S. Bhuller and B. Bhuyan and S. Biagi and J. Bian and M. Biassoni and K. Biery and B. Bilki and M. Bishai and A. Bitadze and A. Blake and F. D. M. Blaszczyk and G. C. Blazey and E. Blucher and J. Boissevain and S. Bolognesi and T. Bolton and L. Bomben and M. Bonesini and M. Bongrand and F. Bonini and A. Booth and C. Booth and S. Bordoni and A. Borkum and T. Boschi and N. Bostan and P. Bour and C. Bourgeois and S. B. Boyd and D. Boyden and J. Bracinik and D. Braga and D. Brailsford and A. Brandt and J. Bremer and C. Brew and E. Brianne and S. J. Brice and C. Brizzolari and C. Bromberg and G. Brooijmans and J. Brooke and A. Bross and G. Brunetti and M. Brunetti and N. Buchanan and H. Budd and D. Caiulo and P. Calafiura and J. Calcutt and M. Calin and S. Calvez and E. Calvo and A. Caminata and M. Campanelli and K. Cankocak and D. Caratelli and G. Carini and B. Carlus and P. Carniti and I. Caro Terrazas and H. Carranza and T. Carroll and J. F. Castaño Forero and A. Castillo and C. Castromonte and E. Catano-Mur and C. Cattadori and F. Cavalier and F. Cavanna and S. Centro and G. Cerati and A. Cervelli and A. Cervera Villanueva and M. Chalifour and A. Chappell and E. Chardonnet and N. Charitonidis and A. Chatterjee and S. Chattopadhyay and H. Chen and M. Chen and Y. Chen and Z. Chen and D. Cherdack and C. Chi and S. Childress and A. Chiriacescu and G. Chisnall and K. Cho and S. Choate and D. Chokheli and S. Choubey and A. Christensen and D. Christian and G. Christodoulou and A. Chukanov and E. Church and P. Clarke and T. E. Coan and A. G. Cocco and J. A. B. Coelho and E. Conley and R. Conley and J. M. Conrad and M. Convery and S. Copello and L. Corwin and L. Cremaldi and L. Cremonesi and J. I. Crespo-Anadón and E. Cristaldo and R. Cross and A. Cudd and C. Cuesta and Y. Cui and D. Cussans and M. Dabrowski and O. Dalager and H. da Motta and L. Da Silva Peres and C. David and Q. David and G. S. Davies and S. Davini and J. Dawson and K. De and R. M. De Almeida and P. Debbins and I. De Bonis and M. P. Decowski and A. de Gouvêa and P. C. De Holanda and I. L. De Icaza Astiz and A. Deisting and P. De Jong and A. Delbart and D. Delepine and M. Delgado and A. Dell'Acqua and P. De Lurgio and J. R. T. de Mello Neto and D. M. DeMuth and S. Dennis and C. Densham and G. W. Deptuch and A. De Roeck and V. De Romeri and G. De Souza and R. Dharmapalan and F. Diaz and J. S. Díaz and S. Di Domizio and L. Di Giulio and P. Ding and L. Di Noto and C. Distefano and R. Diurba and M. Diwan and Z. Djurcic and N. Dokania and S. Dolan and M. J. Dolinski and L. Domine and D. Douglas and D. Douillet and G. Drake and F. Drielsma and D. Duchesneau and K. Duffy and P. Dunne and T. Durkin and H. Duyang and O. Dvornikov and D. A. Dwyer and A. S. Dyshkant and M. Eads and A. Earle and D. Edmunds and J. Eisch and L. Emberger and S. Emery and A. Ereditato and C. O. Escobar and G. Eurin and J. J. Evans and E. Ewart and A. C. Ezeribe and K. Fahey and A. Falcone and C. Farnese and Y. Farzan and J. Felix and M. Fernandes Carneiro da Silva and E. Fernandez-Martinez and P. Fernandez Menendez and F. Ferraro and L. Fields and F. Filthaut and A. Fiorentini and R. S. Fitzpatrick and W. Flanagan and B. Fleming and R. Flight and D. V. Forero and J. Fowler and W. Fox and J. Franc and K. Francis and D. Franco and J. Freeman and J. Freestone and J. Fried and A. Friedland and S. Fuess and I. Furic and A. P. Furmanski and A. Gago and H. Gallagher and A. Gallas and A. Gallego-Ros and N. Gallice and V. Galymov and E. Gamberini and T. Gamble and R. Gandhi and R. Gandrajula and F. Gao and S. Gao and D. Garcia-Gamez and M. Á García-Peris and S. Gardiner and D. Gastler and G. Ge and B. Gelli and A. Gendotti and S. Gent and Z. Ghorbani-Moghaddam and D. Gibin and I. Gil-Botella and S. Gilligan and C. Girerd and A. K. Giri and D. Gnani and O. Gogota and M. Gold and S. Gollapinni and K. Gollwitzer and R. A. Gomes and L. V. Gomez Bermeo and L. S. Gomez Fajardo and F. Gonnella and J. A. Gonzalez-Cuevas and D. Gonzalez-Diaz and M. Gonzalez-Lopez and M. C. Goodman and O. Goodwin and S. Goswami and C. Gotti and E. Goudzovski and C. Grace and M. Graham and R. Gran and E. Granados and P. Granger and A. Grant and C. Grant and D. Gratieri and P. Green and L. Greenler and J. Greer and W. C. Griffith and M. Groh and J. Grudzinski and K. Grzelak and W. Gu and V. Guarino and R. Guenette and E. Guerard and A. Guglielmi and B. Guo and K. K. Guthikonda and R. Gutierrez and P. Guzowski and M. M. Guzzo and S. Gwon and A. Habig and H. Hadavand and R. Haenni and A. Hahn and J. Haiston and P. Hamacher-Baumann and T. Hamernik and P. Hamilton and J. Han and D. A. Harris and J. Hartnell and J. Harton and T. Hasegawa and C. Hasnip and R. Hatcher and K. W. Hatfield and A. Hatzikoutelis and C. Hayes and E. Hazen and A. Heavey and K. M. Heeger and J. Heise and K. Hennessy and S. Henry and M. A. Hernandez Morquecho and K. Herner and L. Hertel and V Hewes and A. Higuera and T. Hill and S. J. Hillier and A. Himmel and J. Hoff and C. Hohl and A. Holin and E. Hoppe and G. A. Horton-Smith and M. Hostert and A. Hourlier and B. Howard and R. Howell and J. Huang and J. Huang and J. Hugon and G. Iles and N. Ilic and A. M. Iliescu and R. Illingworth and A. Ioannisian and L. Isenhower and R. Itay and A. Izmaylov and S. Jackson and V. Jain and E. James and B. Jargowsky and F. Jediny and D. Jena and Y. S. Jeong and C. Jesús-Valls and X. Ji and L. Jiang and S. Jiménez and A. Jipa and R. Johnson and B. Jones and S. B. Jones and M. Judah and C. K. Jung and T. Junk and Y. Jwa and M. Kabirnezhad and A. Kaboth and I. Kadenko and I. Kakorin and F. Kamiya and N. Kaneshige and G. Karagiorgi and G. Karaman and A. Karcher and M. Karolak and Y. Karyotakis and S. Kasai and S. P. Kasetti and L. Kashur and N. Kazaryan and E. Kearns and P. Keener and K. J. Kelly and E. Kemp and O. Kemularia and W. Ketchum and S. H. Kettell and M. Khabibullin and A. Khotjantsev and A. Khvedelidze and D. Kim and B. King and B. Kirby and M. Kirby and J. Klein and K. Koehler and L. W. Koerner and S. Kohn and P. P. Koller and L. Kolupaeva and M. Kordosky and T. Kosc and U. Kose and V. A. Kostelecký and K. Kothekar and F. Krennrich and I. Kreslo and Y. Kudenko and V. A. Kudryavtsev and S. Kulagin and J. Kumar and P. Kumar and P. Kunze and N. Kurita and C. Kuruppu and V. Kus and T. Kutter and A. Lambert and B. Land and K. Lande and C. E. Lane and K. Lang and T. Langford and J. Larkin and P. Lasorak and D. Last and C. Lastoria and A. Laundrie and A. Lawrence and I. Lazanu and R. LaZur and T. Le and S. Leardini and J. Learned and P. LeBrun and T. LeCompte and G. Lehmann Miotto and R. Lehnert and M. A. Leigui de Oliveira and M. Leitner and L. Li and S. W. Li and T. Li and Y. Li and H. Liao and C. S. Lin and Q. Lin and S. Lin and A. Lister and B. R. Littlejohn and J. Liu and S. Lockwitz and T. Loew and M. Lokajicek and I. Lomidze and K. Long and K. Loo and D. Lorca and T. Lord and J. M. LoSecco and W. C. Louis and X. -G. Lu and K. B. Luk and X. Luo and N. Lurkin and T. Lux and V. P. Luzio and D. MacFarlane and A. A. Machado and P. Machado and C. T. Macias and J. R. Macier and A. Maddalena and A. Madera and P. Madigan and S. Magill and K. Mahn and A. Maio and A. Major and J. A. Maloney and G. Mandrioli and R. C. Mandujano and J. Maneira and L. Manenti and S. Manly and A. Mann and K. Manolopoulos and M. Manrique Plata and V. N. Manyam and L. Manzanillas and M. Marchan and A. Marchionni and W. Marciano and D. Marfatia and C. Mariani and J. Maricic and R. Marie and F. Marinho and A. D. Marino and D. Marsden and M. Marshak and C. M. Marshall and J. Marshall and J. Marteau and J. Martin-Albo and N. Martinez and D. A. Martinez Caicedo and S. Martynenko and K. Mason and A. Mastbaum and M. Masud and S. Matsuno and J. Matthews and C. Mauger and N. Mauri and K. Mavrokoridis and I. Mawby and R. Mazza and A. Mazzacane and E. Mazzucato and T. McAskill and E. McCluskey and N. McConkey and K. S. McFarland and C. McGrew and A. McNab and A. Mefodiev and P. Mehta and P. Melas and O. Mena and S. Menary and H. Mendez and D. P. Méndez and A. Menegolli and G. Meng and M. D. Messier and W. Metcalf and T. Mettler and M. Mewes and H. Meyer and T. Miao and G. Michna and T. Miedema and J. Migenda and V. Mikola and R. Milincic and W. Miller and J. Mills and C. Milne and O. Mineev and O. G. Miranda and S. Miryala and C. S. Mishra and S. R. Mishra and A. Mislivec and D. Mladenov and I. Mocioiu and K. Moffat and N. Moggi and R. Mohanta and T. A. Mohayai and N. Mokhov and J. Molina and L. Molina Bueno and A. Montanari and C. Montanari and D. Montanari and L. M. Montano Zetina and J. Moon and M. Mooney and A. F. Moor and D. Moreno and C. Morris and C. Mossey and E. Motuk and C. A. Moura and J. Mousseau and W. Mu and L. Mualem and J. Mueller and M. Muether and S. Mufson and F. Muheim and A. Muir and M. Mulhearn and D. Munford and H. Muramatsu and S. Murphy and J. Musser and J. Nachtman and S. Nagu and M. Nalbandyan and R. Nandakumar and D. Naples and S. Narita and D. Navas-Nicolás and A. Navrer-Agasson and N. Nayak and M. Nebot-Guinot and K. Negishi and J. K. Nelson and J. Nesbit and M. Nessi and D. Newbold and M. Newcomer and D. Newhart and H. Newton and R. Nichol and F. Nicolas-Arnaldos and E. Niner and K. Nishimura and A. Norman and A. Norrick and R. Northrop and P. Novella and J. A. Nowak and M. Oberling and J. P. Ochoa-Ricoux and A. Olivares Del Campo and A. Olivier and A. Olshevskiy and Y. Onel and Y. Onishchuk and J. Ott and L. Pagani and S. Pakvasa and G. Palacio and O. Palamara and S. Palestini and J. M. Paley and M. Pallavicini and C. Palomares and J. L. Palomino-Gallo and E. Pantic and V. Paolone and V. Papadimitriou and R. Papaleo and A. Papanestis and S. Paramesvaran and S. Parke and Z. Parsa and M. Parvu and S. Pascoli and L. Pasqualini and J. Pasternak and J. Pater and C. Patrick and L. Patrizii and R. B. Patterson and S. J. Patton and T. Patzak and A. Paudel and B. Paulos and L. Paulucci and Z. Pavlovic and G. Pawloski and D. Payne and V. Pec and S. J. M. Peeters and E. Pennacchio and A. Penzo and O. L. G. Peres and J. Perry and D. Pershey and G. Pessina and G. Petrillo and C. Petta and R. Petti and F. Piastra and L. Pickering and F. Pietropaolo and R. Plunkett and R. Poling and X. Pons and N. Poonthottathil and S. Pordes and J. Porter and M. Potekhin and R. Potenza and B. V. K. S. Potukuchi and J. Pozimski and M. Pozzato and S. Prakash and T. Prakash and S. Prince and D. Pugnere and X. Qian and M. C. Queiroga Bazetto and J. L. Raaf and V. Radeka and J. Rademacker and B. Radics and A. Rafique and E. Raguzin and M. Rai and M. Rajaoalisoa and I. Rakhno and A. Rakotonandrasana and L. Rakotondravohitra and Y. A. Ramachers and R. Rameika and M. A. Ramirez Delgado and B. Ramson and A. Rappoldi and G. Raselli and P. Ratoff and S. Raut and R. F. Razakamiandra and J. S. Real and B. Rebel and M. Reggiani-Guzzo and T. Rehak and J. Reichenbacher and S. D. Reitzner and H. Rejeb Sfar and A. Renshaw and S. Rescia and F. Resnati and A. Reynolds and C. Riccio and G. Riccobene and L. C. J. Rice and J. Ricol and A. Rigamonti and Y. Rigaut and D. Rivera and L. Rochester and M. Roda and P. Rodrigues and M. J. Rodriguez Alonso and E. Rodriguez Bonilla and J. Rodriguez Rondon and S. Rosauro-Alcaraz and M. Rosenberg and P. Rosier and B. Roskovec and M. Rossella and J. Rout and P. Roy and S. Roy and A. Rubbia and C. Rubbia and F. C. Rubio and B. Russell and D. Ruterbories and R. Saakyan and S. Sacerdoti and T. Safford and R. Sahay and N. Sahu and P. Sala and N. Samios and O. Samoylov and M. C. Sanchez and D. A. Sanders and D. Sankey and S. Santana and M. Santos-Maldonado and N. Saoulidou and P. Sapienza and C. Sarasty and I. Sarcevic and G. Savage and V. Savinov and A. Scaramelli and A. Scarff and A. Scarpelli and T. Schaffer and H. Schellman and P. Schlabach and D. Schmitz and K. Scholberg and A. Schukraft and E. Segreto and J. Sensenig and I. Seong and A. Sergi and D. Sgalaberna and M. H. Shaevitz and S. Shafaq and M. Shamma and R. Sharankova and H. R. Sharma and R. Sharma and R. Kumar and T. Shaw and C. Shepherd-Themistocleous and S. Shin and D. Shooltz and R. Shrock and L. Simard and F. Simon and N. Simos and J. Sinclair and G. Sinev and J. Singh and J. Singh and V. Singh and R. Sipos and F. W. Sippach and G. Sirri and A. Sitraka and K. Siyeon and K. Skarpaas VIII and A. Smith and E. Smith and P. Smith and J. Smolik and M. Smy and E. L. Snider and P. Snopok and M. Soares Nunes and H. Sobel and M. Soderberg and C. J. Solano Salinas and S. Söldner-Rembold and N. Solomey and V. Solovov and W. E. Sondheim and M. Sorel and J. Soto-Oton and A. Sousa and K. Soustruznik and F. Spagliardi and M. Spanu and J. Spitz and N. J. C. Spooner and K. Spurgeon and R. Staley and M. Stancari and L. Stanco and R. Stanley and R. Stein and H. M. Steiner and J. Stewart and B. Stillwell and J. Stock and F. Stocker and T. Stokes and M. Strait and T. Strauss and S. Striganov and A. Stuart and J. G. Suarez and H. Sullivan and D. Summers and A. Surdo and V. Susic and L. Suter and C. M. Sutera and R. Svoboda and B. Szczerbinska and A. M. Szelc and R. Talaga and H. A. Tanaka and B. Tapia Oregui and A. Tapper and S. Tariq and E. Tatar and R. Tayloe and A. M. Teklu and M. Tenti and K. Terao and C. A. Ternes and F. Terranova and G. Testera and A. Thea and J. L. Thompson and C. Thorn and S. C. Timm and J. Todd and A. Tonazzo and D. Torbunov and M. Torti and M. Tortola and F. Tortorici and D. Totani and M. Toups and C. Touramanis and J. Trevor and S. Trilov and W. H. Trzaska and Y. T. Tsai and Z. Tsamalaidze and K. V. Tsang and N. Tsverava and S. Tufanli and C. Tull and E. Tyley and M. Tzanov and M. A. Uchida and J. Urheim and T. Usher and S. Uzunyan and M. R. Vagins and P. Vahle and G. A. Valdiviesso and E. Valencia and Z. Vallari and J. W. F. Valle and S. Vallecorsa and R. Van Berg and R. G. Van de Water and F. Varanini and D. Vargas and G. Varner and J. Vasel and S. Vasina and G. Vasseur and N. Vaughan and K. Vaziri and S. Ventura and A. Verdugo and S. Vergani and M. A. Vermeulen and M. Verzocchi and M. Vicenzi and H. Vieira de Souza and C. Vignoli and C. Vilela and B. Viren and T. Vrba and T. Wachala and A. V. Waldron and M. Wallbank and H. Wang and J. Wang and M. H. L. S. Wang and Y. Wang and Y. Wang and K. Warburton and D. Warner and M. Wascko and D. Waters and A. Watson and P. Weatherly and A. Weber and M. Weber and H. Wei and A. Weinstein and D. Wenman and M. Wetstein and A. White and L. H. Whitehead and D. Whittington and M. J. Wilking and C. Wilkinson and Z. Williams and F. Wilson and R. J. Wilson and J. Wolcott and T. Wongjirad and A. Wood and K. Wood and E. Worcester and M. Worcester and C. Wret and W. Wu and W. Wu and Y. Xiao and E. Yandel and G. Yang and K. Yang and S. Yang and T. Yang and A. Yankelevich and N. Yershov and K. Yonehara and T. Young and B. Yu and H. Yu and J. Yu and W. Yuan and R. Zaki and J. Zalesak and L. Zambelli and B. Zamorano and A. Zani and L. Zazueta and G. Zeit and G. P. Zeller and J. Zennamo and K. Zeug and C. Zhang and M. Zhao and E. Zhivun and G. Zhu and P. Zilberman and E. D. Zimmerman and M. Zito and S. Zucchelli and J. Zuklin and V. Zutshi and R. Zwaska},
-      year={2021},
-      eprint={2103.13910},
-      archivePrefix={arXiv},
-      primaryClass={physics.ins-det},
-      url={https://arxiv.org/abs/2103.13910}, 
-    }
-  datasets:
-    links:
-    - name: "DUNE SONIC data"
-      url: ""
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1_xI6kpeb3zSCMY_rzKV9s-MCMi7kHAdsLLV0eHxG9kM"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "in progress"
-    benchmark_ready: false
-  ratings:
-    software:
-      rating: 1
-      reason: |
-        Code not available; no containerization or setup provided
-    specification:
-      rating: 4
-      reason: |
-        Constraints like latency thresholds are described qualitatively but not numerically defined
-    dataset:
-      rating: 3
-      reason: |
-        Dataset lacks a public URL; FAIR metadata and versioning are missing
-    metrics:
-      rating: 4
-      reason: |
-        Metrics are relevant but no benchmark baseline or detailed evaluation guidance is provided
-    reference_solution:
-      rating: 2
-      reason: |
-        Autoencoder prototype exists but is not reproducible; RL model still in development
-    documentation:
-      rating: 3
-      reason: |
-        Documentation exists only in slides/GDocs; no implementation guide or structured release
+
 - date: "2025-01-08"
   version: "v1.0"
   last_updated: "2025-01"
@@ -747,6 +1358,8 @@
       rating: 4
       reason: |
         Detailed paper and tools described; open repo planned but not yet complete
+
+
 - date: "2024-06-24"
   version: "v1.0"
   last_updated: "2024-06"
@@ -1280,6 +1893,8 @@
       rating: 4
       reason: |
         Setup requires manual steps; some task-specific instructions lack clarity.
+
+
 - date: "2021-10-20"
   version: "v1.0"
   last_updated: "2021-10"
@@ -1905,101 +2520,6 @@
         Strong front-end documentation and metadata on benchmarks, tasks, and models; however, some benchmark-specific
         instructions are sparse or dependent on external paper links.
 
-- date: "2022-01-01"
-  version: "v1.0"
-  last_updated: "2025-03"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2022-01-01"
-  name: "Codabench"
-  url: "https://www.codabench.org/"
-  doi: "https://doi.org/10.1016/j.patter.2022.100543"
-  domain: "General ML; Multiple"
-  focus: "Open-source platform for organizing reproducible AI benchmarks and competitions"
-  keywords:
-  - "benchmark platform"
-  - "code submission"
-  - "competitions"
-  - "meta-benchmark"
-  summary: |
-    Codabench (successor to CodaLab) is a flexible, easy-to-use, reproducible API platform for hosting AI benchmarks
-    and code-submission challenges. It supports custom scoring, inverted benchmarks, and scalable public or private queues .
-  licensing: "https://github.com/codalab/codalab-competitions/wiki/Privacy"
-  task_types:
-  - "Multiple"
-  ai_capability_measured:
-  - "Model reproducibility"
-  - "performance across datasets"
-  metrics:
-  - "Submission count"
-  - "Leaderboard ranking"
-  - "Task-specific metrics"
-  models:
-  - "Arbitrary code submissions"
-  ml_motif:
-  - "Multiple"
-  type: "Platform"
-  ml_task:
-  - "Multiple"
-  solutions: "Several"
-  notes: |
-    Hosts 51 public competitions, ~26 k users, 177 k submissions 
-  contact:
-    name: "Isabelle Guyon (Université Paris-Saclay)"
-    email: "unknown"
-  cite:
-  - |
-    @article{xu-2022,
-      author    = {Xu, Zhen and Escalera, Sergio and Pavão, Adrien and Richard, Magali and Tu, Wei-Wei and Yao, Quanming and Zhao, Huan and Guyon, Isabelle},
-      doi       = {10.1016/j.patter.2022.100543},
-      issn      = {2666-3899},
-      journal   = {Patterns},
-      month     = jul,
-      number    = {7},
-      pages     = {100543},
-      publisher = {Elsevier BV},
-      title     = {Codabench: Flexible, easy-to-use, and reproducible meta-benchmark platform},
-      url       = {http://dx.doi.org/10.1016/j.patter.2022.100543},
-      volume    = {3},
-      year      = {2022}
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1sIwNDCs01s790DApVt5leiG8UaBDFVINA4bOixZ1CUw/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 1
-      reason: |
-        This is a platform for posting benchmarks, not a benchmark in itself.
-    specification:
-      rating: 1
-      reason: |
-        This is a platform for posting benchmarks, not a benchmark in itself.
-    dataset:
-      rating: 1
-      reason: |
-        This is a platform for posting benchmarks, not a benchmark in itself.
-    metrics:
-      rating: 1
-      reason: |
-        This is a platform for posting benchmarks, not a benchmark in itself.
-    reference_solution:
-      rating: 1
-      reason: |
-        This is a platform for posting benchmarks, not a benchmark in itself.
-    documentation:
-      rating: 1
-      reason: |
-        This is a platform for posting benchmarks, not a benchmark in itself.
-
 - date: "2021-09-27"
   version: "v1.0"
   last_updated: "2023-07"
@@ -2190,105 +2710,7 @@
       reason: |
         Strong documentation on GitHub including examples, configs, and usage instructions.
         Some model-specific details and tutorials could be further expanded.
-- date: "2024-12-03"
-  version: "v1.0"
-  last_updated: "2025-06"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2024-12-03"
-  name: "The Well"
-  url: "https://polymathic-ai.org/the_well/"
-  doi: "unknown"
-  domain: "biological systems, fluid dynamics, acoustic scattering, astrophysical
-    MHD"
-  focus: "Foundation model + surrogate dataset spanning 16 physical simulation domains"
-  keywords:
-  - "surrogate modeling"
-  - "foundation model"
-  - "physics simulations"
-  - "spatiotemporal dynamics"
-  summary: |
-    A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains-from biology to astrophysical magnetohydrodynamic simulations-with unified API and metadata. Ideal for training surrogate and foundation models on scientific data. 
-  licensing: "BSD 3-Clause License"
-  task_types:
-  - "Supervised Learning"
-  ai_capability_measured:
-  - "Surrogate modeling"
-  - "physics-based prediction"
-  metrics:
-  - "Dataset size"
-  - "Domain breadth"
-  models:
-  - "FNO baselines"
-  - "U-Net baselines"
-  ml_motif:
-  - "Foundation model, Surrogate"
-  type: "Dataset"
-  ml_task:
-  - "Supervised Learning"
-  solutions: "1"
-  notes: |
-    Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. 
-  contact:
-    name: "Ruben Ohana"
-    email: "rohana@flatironinstitute.org"
-  cite:
-  - |
-    @inproceedings{neurips2024_4f9a5acd,
-      author = {Ohana, Ruben and McCabe, Michael and Meyer, Lucas and Morel, Rudy and Agocs, Fruzsina J. and Beneitez, Miguel and Berger, Marsha and Burkhart, Blakesley and Dalziel, Stuart B. and Fielding, Drummond B. and Fortunato, Daniel and Goldberg, Jared A. and Hirashima, Keiya and Jiang, Yan-Fei and Kerswell, Rich R. and Maddu, Suryanarayana and Miller, Jonah and Mukhopadhyay, Payel and Nixon, Stefan S. and Shen, Jeff and Watteaux, Romain and Blancard, Bruno R\'{e}galdo-Saint and Rozet, Fran\c{c}ois and Parker, Liam H. and Cranmer, Miles and Ho, Shirley},
-      booktitle = {Advances in Neural Information Processing Systems},
-      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
-      pages = {44989--45037},
-      publisher = {Curran Associates, Inc.},
-      title = {The Well: a Large-Scale Collection of Diverse Physics Simulations for Machine Learning},
-      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/4f9a5acd91ac76569f2fe291b1f4772b-Paper-Datasets_and_Benchmarks_Track.pdf},
-      volume = {37},
-      year = {2024}
-    }
-  datasets:
-    links:
-    - name: "16 simulation datasets"
-      url: "HDF5) via PyPI/GitHub"
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1axQvD_aY9O71A2nxWaoFvsfE8HvZ4TmwDoZ4cQQwW58/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 5
-      reason: |
-        BSD-licensed software and unified API are available via GitHub and PyPI.
-        Supports loading and manipulating large HDF5 datasets across 16 domains.
-    specification:
-      rating: 4
-      reason: |
-        The benchmark includes clearly defined surrogate modeling tasks, data structure, and metadata.
-        However, constraints and formal task specs vary slightly across domains.
-    dataset:
-      rating: 5
-      reason: |
-        15 TB of ML-ready HDF5 datasets across 16 physics domains. Public, well-structured,
-        richly annotated, and designed with FAIR principles in mind.
-    metrics:
-      rating: 3
-      reason: |
-        Domain breadth and dataset size are emphasized. Standardized quantitative metrics for
-        model evaluation (e.g., RMSE, accuracy) are not uniformly applied across all domains.
-    reference_solution:
-      rating: 3
-      reason: |
-        Includes FNO and U-Net baselines, but does not yet provide fully trained, reproducible
-        models or scripts across all datasets.
-    documentation:
-      rating: 4
-      reason: |
-        The GitHub repo and NeurIPS paper provide detailed guidance on dataset use,
-        structure, and training setup. Tutorials and walkthroughs could be expanded further.
+
 - date: "2024-10-31"
   version: "v1.0"
   last_updated: "2024-11"
@@ -2308,7 +2730,7 @@
   - "throughput"
   summary: |
     A suite evaluating inference performance of LLMs (LLaMA, Mistral, Qwen) across diverse accelerators (NVIDIA, AMD, Intel, SambaNova) and frameworks (vLLM, DeepSpeed-MII, etc.), with an interactive dashboard and per-platform metrics. 
-  licensing: "BSD 3-Clause \"New\" or \"Revised\" License"
+  licensing: "BSD 3-Clause New or Revised License"
   task_types:
   - "Inference Benchmarking"
   ai_capability_measured:
@@ -2345,8 +2767,7 @@
       volume={},
       number={},
       pages={1362-1379},
-      keywords={Performance evaluation;Power demand;Computational modeling;Large language models;Scalability;High performance computing;AI accelerators;Benchmark testing;Propulsion;Throughput;Large Language Models;AI Accelerators;Inference Performance Evaluation;Benchmarking},
-      doi={10.1109/SCW63240.2024.00178}}
+      doi={10.1109/SCW63240.2024.00178}
     }
   datasets:
     links: []
@@ -2363,7 +2784,7 @@
     software:
       rating: 5
       reason: |
-        Public GitHub repository (https://github.com/argonne-lcf/LLM-Inference-Bench) under BSD-3 license.
+        Public GitHub repository under BSD-3 license.
         Includes scripts, configurations, and dashboards for running and visualizing LLM inference benchmarks
         across multiple accelerator platforms.
     specification:
@@ -2391,271 +2812,158 @@
       reason: |
         GitHub repo provides clear usage instructions, setup guides, and interactive dashboard tooling.
         Some areas like benchmarking extensions or advanced tuning are less detailed.
-- date: "2023-12-12"
-  version: "v0.4.9"
-  last_updated: "2025-06"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2023-12-12"
-  name: "SGLang Framework"
-  url: "https://github.com/sgl-project/sglang/tree/main/benchmark"
-  doi: "10.48550/arXiv.2312.07104"
-  domain: "LLM Vision"
-  focus: "Fast serving framework for LLMs and vision-language models"
-  keywords:
-  - "LLM serving"
-  - "vision-language"
-  - "RadixAttention"
-  - "performance"
-  - "JSON decoding"
-  summary: |
-    A high-performance open-source serving framework combining efficient backend runtime (RadixAttention, batching, quantization) and expressive frontend language, boosting LLM/VLM inference throughput up to ~3x over alternatives. 
-  licensing: "Apache License 2.0"
-  task_types:
-  - "Model serving framework"
-  ai_capability_measured:
-  - "Serving throughput"
-  - "JSON/task-specific latency"
-  metrics:
-  - "Tokens/sec"
-  - "Time-to-first-token"
-  - "Throughput gain vs baseline"
-  models:
-  - "LLaVA"
-  - "DeepSeek"
-  - "Llama"
-  ml_motif:
-  - "LLM Vision"
-  type: "Framework"
-  ml_task:
-  - "Model serving"
-  solutions: "Solution details are described in the referenced paper or repository."
-  notes: |
-    Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025. 
-  contact:
-    name: "SGLang Team"
-    email: "unknown"
-  cite:
-  - |
-    @misc{zheng2024sglangefficientexecutionstructured,
-      archiveprefix = {arXiv},
-      author        = {Lianmin Zheng and Liangsheng Yin and Zhiqiang Xie and Chuyue Sun and Jeff Huang and Cody Hao Yu and Shiyi Cao and Christos Kozyrakis and Ion Stoica and Joseph E. Gonzalez and Clark Barrett and Ying Sheng},
-      eprint        = {2312.07104},
-      primaryclass  = {cs.AI},
-      title         = {SGLang: Efficient Execution of Structured Language Model Programs},
-      url           = {https://arxiv.org/abs/2312.07104},
-      year          = {2024}
-    } 
-  datasets:
-    links:
-    - name: "Benchmark configs"
-      url: ""
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: ""
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 5
-      reason: |
-        Actively maintained and production-deployed (e.g., xAI, NVIDIA); source code available under
-        Apache 2.0. Includes efficient backends (RadixAttention, quantization, batching) and full
-        serving infrastructure.
-    specification:
-      rating: 4
-      reason: |
-        The framework clearly defines performance targets, serving logic, and model integration.
-        Input/output expectations are consistent, but not all benchmarks are standardized.
-    dataset:
-      rating: 2
-      reason: |
-        Does not introduce new datasets; instead, it evaluates performance using existing model benchmarks.
-        Only configuration files are included.
-    metrics:
-      rating: 5
-      reason: |
-        Serving-related metrics such as tokens/sec, time-to-first-token, and throughput gain vs. baselines
-        are well-defined and consistently applied.
-    reference_solution:
-      rating: 3
-      reason: |
-        Provides benchmark configs and example integrations (e.g., with LLaVA, DeepSeek), but not all
-        models or scripts are runnable out-of-the-box.
-    documentation:
-      rating: 4
-      reason: |
-        Strong GitHub documentation, install guides, and benchmarks. Some advanced topics (e.g.,
-        scaling, hardware tuning) could use deeper walkthroughs.
-- date: "2023-09-12"
-  version: "v0.10.0"
-  last_updated: "2025-06"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2023-09-12"
-  name: "vLLM Inference and Serving Engine"
-  url: "https://github.com/vllm-project/vllm/tree/main/benchmarks"
-  doi: "unknown"
-  domain: "LLM; HPC/inference"
-  focus: "High-throughput, memory-efficient inference and serving engine for LLMs"
-  keywords:
-  - "LLM inference"
-  - "PagedAttention"
-  - "CUDA graph"
-  - "streaming API"
-  - "quantization"
-  summary: |
-    vLLM is a fast, high-throughput, memory-efficient inference and serving engine for large language models, 
-    featuring PagedAttention, continuous batching, and support for quantized and pipelined model execution. 
-    Benchmarks compare it to TensorRT-LLM, SGLang, and others. 
-  licensing: "Apache License 2.0"
-  task_types:
-  - "Inference Benchmarking"
-  ai_capability_measured:
-  - "Throughput"
-  - "latency"
-  - "memory efficiency"
-  metrics:
-  - "Tokens/sec"
-  - "Time to First Token (TTFT)"
-  - "Memory footprint"
-  models:
-  - "LLaMA"
-  - "Mixtral"
-  - "FlashAttention-based models"
-  ml_motif:
-  - "HPC/inference"
-  type: "Framework"
-  ml_task:
-  - "Inference"
-  solutions: "0"
-  notes: |
-    Incubated by LF AI and Data; achieves up to 24x throughput over HuggingFace Transformers 
-  contact:
-    name: "Woosuk Kwon (vLLM Team)"
-    email: "unknown"
-  cite:
-  - |
-    @inproceedings{10.1145/3600006.3613165,
-      author = {Kwon, Woosuk and Li, Zhuohan and Zhuang, Siyuan and Sheng, Ying and Zheng, Lianmin and Yu, Cody Hao and Gonzalez, Joseph and Zhang, Hao and Stoica, Ion},
-      title = {Efficient Memory Management for Large Language Model Serving with PagedAttention},
-      year = {2023},
-      publisher = {Association for Computing Machinery},
-      address = {New York, NY, USA},
-      url = {https://doi.org/10.1145/3600006.3613165},
-      doi = {10.1145/3600006.3613165},
-      abstract = {High throughput serving of large language models (LLMs) requires batching sufficiently many requests at a time. However, existing systems struggle because the key-value cache (KV cache) memory for each request is huge and grows and shrinks dynamically. When managed inefficiently, this memory can be significantly wasted by fragmentation and redundant duplication, limiting the batch size. To address this problem, we propose PagedAttention, an attention algorithm inspired by the classical virtual memory and paging techniques in operating systems. On top of it, we build vLLM, an LLM serving system that achieves (1) near-zero waste in KV cache memory and (2) flexible sharing of KV cache within and across requests to further reduce memory usage. Our evaluations show that vLLM improves the throughput of popular LLMs by 2--4\texttimes{} with the same level of latency compared to the state-of-the-art systems, such as FasterTransformer and Orca. The improvement is more pronounced with longer sequences, larger models, and more complex decoding algorithms. vLLM's source code is publicly available at https://github.com/vllm-project/vllm.},
-      booktitle = {Proceedings of the 29th Symposium on Operating Systems Principles},
-      pages = {611-626},
-      numpages = {16},
-      location = {Koblenz, Germany},
-      series = {SOSP '23}
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1nPZyRZEZHciGXYNJShR9FCJbre7ImJLKf2MG6g4-3gQ/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 5
-      reason: |
-        Actively maintained open-source project under Apache 2.0. GitHub repo includes
-        full serving engine, benchmarking scripts, CUDA integration, and deployment examples.
-    specification:
-      rating: 5
-      reason: |
-        Inference benchmarks are well-defined with clear input/output formats and platform-specific constraints.
-        Covers multiple models, hardware backends, and batching configurations.
-    dataset:
-      rating: 3
-      reason: |
-        No traditional dataset is included. Instead, it uses structured configs and logs suitable for inference benchmarking.
-        FAIR principles are only partially applicable.
-    metrics:
-      rating: 5
-      reason: |
-        Comprehensive performance metrics like tokens/sec, time-to-first-token (TTFT), and memory footprint
-        are consistently applied and benchmarked across frameworks.
-    reference_solution:
-      rating: 4
-      reason: |
-        Provides runnable scripts and configs for several models (LLaMA, Mixtral, etc.) across platforms.
-        Baselines are reproducible, though not all models are fully wrapped or hosted.
-    documentation:
-      rating: 4
-      reason: |
-        Well-structured GitHub documentation with setup instructions, config examples, benchmarking comparisons,
-        and performance tuning guides.
-- date: "2022-06-22"
+
+
+- date: "2024-12-13"
   version: "v1.0"
-  last_updated: "2025-01"
+  last_updated: "2024-12"
   expired: "unknown"
   valid: "yes"
-  valid_date: "2022-06-22"
-  name: "vLLM Performance Dashboard"
-  url: "https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/"
-  doi: "unknown"
-  domain: "LLM; HPC/inference"
-  focus: "Interactive dashboard showing inference performance of vLLM"
+  valid_date: "2024-12-13"
+  name: "Delta Squared-DFT"
+  url: "https://neurips.cc/virtual/2024/poster/97788"
+  doi: "10.48550/arXiv.2406.14347"
+  domain: "Computational Chemistry; Materials Science"
+  focus: "Benchmarking machine-learning corrections to DFT using Delta Squared-trained
+    models for reaction energies"
   keywords:
-  - "Dashboard"
-  - "Throughput visualization"
-  - "Latency analysis"
-  - "Metric tracking"
+  - "density functional theory"
+  - "Delta Squared-ML correction"
+  - "reaction energetics"
+  - "quantum chemistry"
   summary: |
-    A live visual dashboard for vLLM showcasing throughput, latency, and other inference metrics across models and hardware configurations.
+    Introduces the Delta Squared-ML paradigm-using ML corrections to DFT to predict reaction energies with accuracy comparable to CCSD(T), while training on small CC datasets. Evaluated across 10 reaction datasets covering organic and organometallic transformations.
   licensing: "unknown"
   task_types:
-  - "Performance visualization"
+  - "Regression"
   ai_capability_measured:
-  - "Throughput"
-  - "latency"
-  - "hardware utilization"
+  - "High-accuracy energy prediction"
+  - "DFT correction"
   metrics:
-  - "Tokens/sec"
-  - "TTFT"
-  - "Memory usage"
+  - "Mean Absolute Error (eV)"
+  - "Energy ranking accuracy"
   models:
-  - "LLaMA-2"
-  - "Mistral"
-  - "Qwen"
+  - "Delta Squared-ML correction networks"
+  - "Kernel ridge regression"
   ml_motif:
-  - "HPC/inference"
+  - "Scientific ML"
+  type: "Dataset + Benchmark"
+  ml_task:
+  - "Regression"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Demonstrates CC-level accuracy with ~1% of high-level data. Benchmarks publicly included for reproducibility.
+  contact:
+    name: "Wei Liu"
+    email: "unknown"
+  cite:
+  - |
+    @misc{khrabrov2024nabla2dftuniversalquantumchemistry,
+      title={Delta-Squared DFT: A Universal Quantum Chemistry Dataset of Drug-Like Molecules and a Benchmark for Neural Network Potentials}, 
+      author={Kuzma Khrabrov and Anton Ber and Artem Tsypin and Konstantin Ushenin and Egor Rumiantsev and Alexander Telepov and Dmitry Protasov and Ilya Shenbin and Anton Alekseev and Mikhail Shirokikh and Sergey Nikolenko and Elena Tutubalina and Artur Kadurin},
+      year={2024},
+      eprint={2406.14347},
+      archivePrefix={arXiv},
+      primaryClass={physics.chem-ph},
+      url={https://arxiv.org/abs/2406.14347}, 
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Source code and baseline models available for ML correction to DFT; framework maturity is moderate.
+    specification:
+      rating: 4
+      reason: |
+        Benchmark focuses on reaction energy prediction with clear goals, though some task specifics could be formalized further.
+    dataset:
+      rating: 4.5
+      reason: |
+        Multi-modal quantum chemistry datasets are standardized and accessible; repository available.
+    metrics:
+      rating: 4
+      reason: |
+        Uses standard regression metrics like MAE and energy ranking accuracy; appropriate for task.
+    reference_solution:
+      rating: 3.5
+      reason: |
+        Includes baseline regression and kernel ridge models; implementations are reproducible.
+    documentation:
+      rating: 4
+      reason: |
+        Source code supports pipeline reuse, but formal evaluation splits may vary.
+
+
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "Urban Data Layer (UDL)"
+  url: "https://neurips.cc/virtual/2024/poster/97837"
+  doi: "unknown"
+  domain: "Urban Computing; Data Engineering"
+  focus: "Unified data pipeline for multi-modal urban science research"
+  keywords:
+  - "data pipeline"
+  - "urban science"
+  - "multi-modal"
+  - "benchmark"
+  summary: |
+    UrbanDataLayer standardizes heterogeneous urban data formats and provides pipelines for tasks like air quality prediction and land-use classification, enabling the rapid creation of multi-modal urban benchmarks .
+  licensing: "unknown"
+  task_types:
+  - "Prediction"
+  - "Classification"
+  ai_capability_measured:
+  - "Multi-modal urban inference"
+  - "standardization"
+  metrics:
+  - "Task-specific accuracy or RMSE"
+  models:
+  - "Baseline regression/classification pipelines"
+  ml_motif:
+  - "Data engineering"
   type: "Framework"
   ml_task:
-  - "Visualization"
+  - "Prediction, classification"
   solutions: "0"
   notes: |
-    Built using ObservableHQ; integrates live data from vLLM benchmarks.
-    The URL requires a login to access the content.
+    Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models .
   contact:
-    name: "Simon Mo"
+    name: "Yiheng Wang"
     email: "unknown"
   cite:
   - |
-    @misc{mo2024vllm_dashboard,
-      title={vLLM Performance Dashboard},
-      author={Mo, Simon},
-      year={2024},
-      url={https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/}
+    @inproceedings{neurips2024_0db7f135,
+      author = {Wang, Yiheng and Wang, Tianyu and Zhang, Yuying and Zhang, Hongji and Zheng, Haoyu and Zheng, Guanjie and Kong, Linghe},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {7296--7310},
+      publisher = {Curran Associates, Inc.},
+      title = {UrbanDataLayer: A Unified Data Pipeline for Urban Science},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/0db7f135f6991e8cec5e516ecc66bfba-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
     }
   datasets:
     links: []
   results:
     links:
     - name: "Gemini LLM Deep Research"
-      url: "(none)"
+      url: ""
     - name: "ChatGPT LLM"
       url: ""
   fair:
@@ -2663,97 +2971,297 @@
     benchmark_ready: "Yes"
   ratings:
     software:
+      rating: 3
+      reason: |
+        Source code is publicly available on GitHub; baseline regression and classification
+        pipelines are included but framework maturity is moderate.
+    specification:
+      rating: 5
+      reason: |
+        Multiple urban science tasks like prediction and classification are well specified
+        with clear input/output and evaluation criteria.
+    dataset:
+      rating: 5
+      reason: |
+        Large, multi-modal urban datasets are open-source, well-documented, and support
+        reproducible research.
+    metrics:
+      rating: 5
+      reason: |
+        Uses task-specific accuracy and RMSE metrics appropriate for prediction and classification.
+    reference_solution:
       rating: 4
       reason: |
-        Interactive dashboard built with ObservableHQ and linked to vLLM benchmarks.
-        Source code is not fully open, but backend integration with vLLM is well-maintained.
+        Baseline models available but not exhaustive; community adoption and extensions expected.
+    documentation:
+      rating: 5
+      reason: |
+        GitHub repository and conference poster provide comprehensive code and reproducibility
+        instructions.
+
+
+
+- date: "2024-11-13"
+  version: "v1.0"
+  last_updated: "2024-11"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-11-13"
+  name: "LLMs for Crop Science"
+  url: "https://openreview.net/forum?id=hMj6jZ6JWU#discussion"
+  doi: "N/A"
+  domain: "Agricultural Science; NLP"
+  focus: "Evaluating LLMs on crop trait QA and textual inference tasks with domain-specific
+    prompts"
+  keywords:
+  - "crop science"
+  - "prompt engineering"
+  - "domain adaptation"
+  - "question answering"
+  summary: |
+    Establishes a benchmark of over 5000 expert-annotated QA pairs and prompts in Chinese and English, covering crop traits, growth stages, and environmental interactions. Tests GPT-style LLMs on accuracy and domain reasoning using in-context, chain-of-thought, and retrieval-augmented prompts.
+  licensing: "CC-BY-NC-4.0"
+  task_types:
+  - "Question Answering"
+  - "Inference"
+  ai_capability_measured:
+  - "Scientific knowledge"
+  - "crop reasoning"
+  metrics:
+  - "Accuracy"
+  - "F1 score"
+  models:
+  - 'GPT-3.5'
+  - 'GPT-4'
+  - 'Claude-3-opus'
+  - 'Qwen-max'
+  - 'LLama3-8B'
+  - 'InternLM2-7B'
+  - 'Qwen1.5-7B'
+  ml_motif:
+  - "NLP"
+  type: "Dataset"
+  ml_task:
+  - "QA, inference"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Includes examples with retrieval-augmented and chain-of-thought prompt templates; supports few-shot adaptation.
+  contact:
+    name: "Deepak Patel"
+    email: "unknown"
+  cite:
+  - |
+      @inproceedings{zhang2024empowering,
+      title={Empowering and Assessing the Utility of Large Language Models in Crop Science},
+      author={Hang Zhang and Jiawei Sun and Renqi Chen and Wei Liu and Zhonghang Yuan and Xinzhe Zheng and Zhefan Wang and Zhiyuan Yang and Hang Yan and Han-Sen Zhong and Xiqing Wang and Wanli Ouyang and Fan Yang and Nanqing Dong},
+      booktitle={The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+      year={2024},
+      url={https://openreview.net/forum?id=hMj6jZ6JWU}
+      }
+  datasets:
+    links:
+     - name: CROP Dataset (Train Split)
+       url: "https://huggingface.co/datasets/AI4Agr/CROP-dataset"
+     - name: CROP Benchmark (Test Split)
+       url: "https://huggingface.co/datasets/AI4Agr/CROP-benchmark"
+  results:
+    links:
+    - name: "Empowering and Assessing the Utility of Large Language Models in Crop Science - Experiments"
+      url: "https://renqichen.github.io/The_Crop/"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Code for evaluation and training of multiple models is available and well documented. Environment details are provided.
     specification:
       rating: 4
       reason: |
-        While primarily a visualization tool, it includes benchmark configurations,
-        metric definitions, and supports comparison across models and hardware.
+        Tasks are clearly defined (QA, inference) with structured input/output formats, though no system constraints are provided.
     dataset:
+      rating: 5
+      reason: |
+        Dataset adheres to all FAIR principles, is well-documented, and publicly available on Hugging Face. Train/Test splits are provided across two Huggingface datasets.
+    metrics:
+      rating: 4
+      reason: |
+        Accuracy is mentioned in the README and webpage as an evaluation metric,
+    reference_solution:
+      rating: 5
+      reason: |
+        A reference solution is available and well documented. Training code is provided for multiple open weight models.
+    documentation:
+      rating: 5
+      reason: |
+        The benchmark is well documented with a detailed paper, README, and webpage. Instructions for reproducing results are clear.
+
+- date: "2024-10-15"
+  version: "v1.0"
+  last_updated: "2024-10"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-10-15"
+  name: "DUNE"
+  url: "https://indico.fnal.gov/event/66520/contributions/301423/attachments/182439/250508/fast_ml_dunedaq_sonic_10_15_24.pdf"
+  doi: "10.48550/arXiv.2103.13910"
+  domain: "Particle Physics"
+  focus: "Real-time ML for DUNE DAQ time-series data"
+  keywords:
+  - "DUNE"
+  - "time-series"
+  - "real-time"
+  - "trigger"
+  summary: |
+    Applying real-time ML methods to time-series data from DUNE detectors, exploring trigger-level anomaly detection and event selection with low latency constraints.
+  licensing: "Via Fermilab"
+  task_types:
+  - "Trigger selection"
+  - "Time-series anomaly detection"
+  ai_capability_measured:
+  - "Low-latency event detection"
+  metrics:
+  - "Detection efficiency"
+  - "Latency"
+  models:
+  - "CNN"
+  - "LSTM (planned)"
+  ml_motif:
+  - "Real-time, Time-series"
+  type: "Benchmark (in progress)"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Prototype models demonstrated on SONIC platform
+  contact:
+    name: "Andrew J. Morgan"
+    email: "unknown"
+  cite:
+  - |
+    @misc{abud2021deep,
+      title={Deep Underground Neutrino Experiment (DUNE) Near Detector Conceptual Design Report}, 
+      author={A. Abed Abud and B. Abi and R. Acciarri and M. A. Acero and G. Adamov and D. Adams and M. Adinolfi and A. Aduszkiewicz and Z. Ahmad and J. Ahmed and T. Alion and S. Alonso Monsalve and M. Alrashed and C. Alt and A. Alton and P. Amedo and J. Anderson and C. Andreopoulos and M. P. Andrews and F. Andrianala and S. Andringa and N. Anfimov and A. Ankowski and M. Antonova and S. Antusch and A. Aranda-Fernandez and A. Ariga and L. O. Arnold and M. A. Arroyave and J. Asaadi and A. Aurisano and V. Aushev and D. Autiero and M. Ayala-Torres and F. Azfar and H. Back and J. J. Back and C. Backhouse and P. Baesso and I. Bagaturia and L. Bagby and S. Balasubramanian and P. Baldi and B. Baller and B. Bambah and F. Barao and G. Barenboim and G. J. Barker and W. Barkhouse and C. Barnes and G. Barr and J. Barranco Monarca and N. Barros and J. L. Barrow and A. Basharina-Freshville and A. Bashyal and V. Basque and E. Belchior and J. B. R. Battat and F. Battisti and F. Bay and J. L. Bazo Alba and J. F. Beacom and E. Bechetoille and B. Behera and L. Bellantoni and G. Bellettini and V. Bellini and O. Beltramello and D. Belver and N. Benekos and F. Bento Neves and S. Berkman and P. Bernardini and R. M. Berner and H. Berns and S. Bertolucci and M. Betancourt and A. Betancur Rodr{\'i}guez and M. Bhattacharjee and S. Bhuller and B. Bhuyan and S. Biagi and J. Bian and M. Biassoni and K. Biery and B. Bilki and M. Bishai and A. Bitadze and A. Blake and F. D. M. Blaszczyk and G. C. Blazey and E. Blucher and J. Boissevain and S. Bolognesi and T. Bolton and L. Bomben and M. Bonesini and M. Bongrand and F. Bonini and A. Booth and C. Booth and S. Bordoni and A. Borkum and T. Boschi and N. Bostan and P. Bour and C. Bourgeois and S. B. Boyd and D. Boyden and J. Bracinik and D. Braga and D. Brailsford and A. Brandt and J. Bremer and C. Brew and E. Brianne and S. J. Brice and C. Brizzolari and C. Bromberg and G. Brooijmans and J. Brooke and A. Bross and G. Brunetti and M. Brunetti and N. Buchanan and H. Budd and D. Caiulo and P. Calafiura and J. Calcutt and M. Calin and S. Calvez and E. Calvo and A. Caminata and M. Campanelli and K. Cankocak and D. Caratelli and G. Carini and B. Carlus and P. Carniti and I. Caro Terrazas and H. Carranza and T. Carroll and J. F. Casta\~{n}o Forero and A. Castillo and C. Castromonte and E. Catano-Mur and C. Cattadori and F. Cavalier and F. Cavanna and S. Centro and G. Cerati and A. Cervelli and A. Cervera Villanueva and M. Chalifour and A. Chappell and E. Chardonnet and N. Charitonidis and A. Chatterjee and S. Chattopadhyay and H. Chen and M. Chen and Y. Chen and Z. Chen and D. Cherdack and C. Chi and S. Childress and A. Chiriacescu and G. Chisnall and K. Cho and S. Choate and D. Chokheli and S. Choubey and A. Christensen and D. Christian and G. Christodoulou and A. Chukanov and E. Church and P. Clarke and T. E. Coan and A. G. Cocco and J. A. B. Coelho and E. Conley and R. Conley and J. M. Conrad and M. Convery and S. Copello and L. Corwin and L. Cremaldi and L. Cremonesi and J. I. Crespo-Anad\'{o}n and E. Cristaldo and R. Cross and A. Cudd and C. Cuesta and Y. Cui and D. Cussans and M. Dabrowski and O. Dalager and H. da Motta and L. Da Silva Peres and C. David and Q. David and G. S. Davies and S. Davini and J. Dawson and K. De and R. M. De Almeida and P. Debbins and I. De Bonis and M. P. Decowski and A. de Gouv{\^e}a and P. C. De Holanda and I. L. De Icaza Astiz and A. Deisting and P. De Jong and A. Delbart and D. Delepine and M. Delgado and A. Dell'Acqua and P. De Lurgio and J. R. T. de Mello Neto and D. M. DeMuth and S. Dennis and C. Densham and G. W. Deptuch and A. De Roeck and V. De Romeri and G. De Souza and R. Dharmapalan and F. Diaz and J. S. D\'{i}az and S. Di Domizio and L. Di Giulio and P. Ding and L. Di Noto and C. Distefano and R. Diurba and M. Diwan and Z. Djurcic and N. Dokania and S. Dolan and M. J. Dolinski and L. Domine and D. Douglas and D. Douillet and G. Drake and F. Drielsma and D. Duchesneau and K. Duffy and P. Dunne and T. Durkin and H. Duyang and O. Dvornikov and D. A. Dwyer and A. S. Dyshkant and M. Eads and A. Earle and D. Edmunds and J. Eisch and L. Emberger and S. Emery and A. Ereditato and C. O. Escobar and G. Eurin and J. J. Evans and E. Ewart and A. C. Ezeribe and K. Fahey and A. Falcone and C. Farnese and Y. Farzan and J. Felix and M. Fernandes Carneiro da Silva and E. Fernandez-Martinez and P. Fernandez Menendez and F. Ferraro and L. Fields and F. Filthaut and A. Fiorentini and R. S. Fitzpatrick and W. Flanagan and B. Fleming and R. Flight and D. V. Forero and J. Fowler and W. Fox and J. Franc and K. Francis and D. Franco and J. Freeman and J. Freestone and J. Fried and A. Friedland and S. Fuess and I. Furic and A. P. Furmanski and A. Gago and H. Gallagher and A. Gallas and A. Gallego-Ros and N. Gallice and V. Galymov and E. Gamberini and T. Gamble and R. Gandhi and R. Gandrajula and F. Gao and S. Gao and D. Garcia-Gamez and M. \'{A} Garc\'{i}a-Peris and S. Gardiner and D. Gastler and G. Ge and B. Gelli and A. Gendotti and S. Gent and Z. Ghorbani-Moghaddam and D. Gibin and I. Gil-Botella and S. Gilligan and C. Girerd and A. K. Giri and D. Gnani and O. Gogota and M. Gold and S. Gollapinni and K. Gollwitzer and R. A. Gomes and L. V. Gomez Bermeo and L. S. Gomez Fajardo and F. Gonnella and J. A. Gonzalez-Cuevas and D. Gonzalez-Diaz and M. Gonzalez-Lopez and M. C. Goodman and O. Goodwin and S. Goswami and C. Gotti and E. Goudzovski and C. Grace and M. Graham and R. Gran and E. Granados and P. Granger and A. Grant and C. Grant and D. Gratieri and P. Green and L. Greenler and J. Greer and W. C. Griffith and M. Groh and J. Grudzinski and K. Grzelak and W. Gu and V. Guarino and R. Guenette and E. Guerard and A. Guglielmi and B. Guo and K. K. Guthikonda and R. Gutierrez and P. Guzowski and M. M. Guzzo and S. Gwon and A. Habig and H. Hadavand and R. Haenni and A. Hahn and J. Haiston and P. Hamacher-Baumann and T. Hamernik and P. Hamilton and J. Han and D. A. Harris and J. Hartnell and J. Harton and T. Hasegawa and C. Hasnip and R. Hatcher and K. W. Hatfield and A. Hatzikoutelis and C. Hayes and E. Hazen and A. Heavey and K. M. Heeger and J. Heise and K. Hennessy and S. Henry and M. A. Hernandez Morquecho and K. Herner and L. Hertel and V Hewes and A. Higuera and T. Hill and S. J. Hillier and A. Himmel and J. Hoff and C. Hohl and A. Holin and E. Hoppe and G. A. Horton-Smith and M. Hostert and A. Hourlier and B. Howard and R. Howell and J. Huang and J. Huang and J. Hugon and G. Iles and N. Ilic and A. M. Iliescu and R. Illingworth and A. Ioannisian and L. Isenhower and R. Itay and A. Izmaylov and S. Jackson and V. Jain and E. James and B. Jargowsky and F. Jediny and D. Jena and Y. S. Jeong and C. Jes\'{u}s-Valls and X. Ji and L. Jiang and S. Jim\'{e}nez and A. Jipa and R. Johnson and B. Jones and S. B. Jones and M. Judah and C. K. Jung and T. Junk and Y. Jwa and M. Kabirnezhad and A. Kaboth and I. Kadenko and I. Kakorin and F. Kamiya and N. Kaneshige and G. Karagiorgi and G. Karaman and A. Karcher and M. Karolak and Y. Karyotakis and S. Kasai and S. P. Kasetti and L. Kashur and N. Kazaryan and E. Kearns and P. Keener and K. J. Kelly and E. Kemp and O. Kemularia and W. Ketchum and S. H. Kettell and M. Khabibullin and A. Khotjantsev and A. Khvedelidze and D. Kim and B. King and B. Kirby and M. Kirby and J. Klein and K. Koehler and L. W. Koerner and S. Kohn and P. P. Koller and L. Kolupaeva and M. Kordosky and T. Kosc and U. Kose and V. A. Kosteleck\'{y} and K. Kothekar and F. Krennrich and I. Kreslo and Y. Kudenko and V. A. Kudryavtsev and S. Kulagin and J. Kumar and P. Kumar and P. Kunze and N. Kurita and C. Kuruppu and V. Kus and T. Kutter and A. Lambert and B. Land and K. Lande and C. E. Lane and K. Lang and T. Langford and J. Larkin and P. Lasorak and D. Last and C. Lastoria and A. Laundrie and A. Lawrence and I. Lazanu and R. LaZur and T. Le and S. Leardini and J. Learned and P. LeBrun and T. LeCompte and G. Lehmann Miotto and R. Lehnert and M. A. Leigui de Oliveira and M. Leitner and L. Li and S. W. Li and T. Li and Y. Li and H. Liao and C. S. Lin and Q. Lin and S. Lin and A. Lister and B. R. Littlejohn and J. Liu and S. Lockwitz and T. Loew and M. Lokajicek and I. Lomidze and K. Long and K. Loo and D. Lorca and T. Lord and J. M. LoSecco and W. C. Louis and X. -G. Lu and K. B. Luk and X. Luo and N. Lurkin and T. Lux and V. P. Luzio and D. MacFarlane and A. A. Machado and P. Machado and C. T. Macias and J. R. Macier and A. Maddalena and A. Madera and P. Madigan and S. Magill and K. Mahn and A. Maio and A. Major and J. A. Maloney and G. Mandrioli and R. C. Mandujano and J. Maneira and L. Manenti and S. Manly and A. Mann and K. Manolopoulos and M. Manrique Plata and V. N. Manyam and L. Manzanillas and M. Marchan and A. Marchionni and W. Marciano and D. Marfatia and C. Mariani and J. Maricic and R. Marie and F. Marinho and A. D. Marino and D. Marsden and M. Marshak and C. M. Marshall and J. Marshall and J. Marteau and J. Martin-Albo and N. Martinez and D. A. Martinez Caicedo and S. Martynenko and K. Mason and A. Mastbaum and M. Masud and S. Matsuno and J. Matthews and C. Mauger and N. Mauri and K. Mavrokoridis and I. Mawby and R. Mazza and A. Mazzacane and E. Mazzucato and T. McAskill and E. McCluskey and N. McConkey and K. S. McFarland and C. McGrew and A. McNab and A. Mefodiev and P. Mehta and P. Melas and O. Mena and S. Menary and H. Mendez and D. P. M{\'e}ndez and A. Menegolli and G. Meng and M. D. Messier and W. Metcalf and T. Mettler and M. Mewes and H. Meyer and T. Miao and G. Michna and T. Miedema and J. Migenda and V. Mikola and R. Milincic and W. Miller and J. Mills and C. Milne and O. Mineev and O. G. Miranda and S. Miryala and C. S. Mishra and S. R. Mishra and A. Mislivec and D. Mladenov and I. Mocioiu and K. Moffat and N. Moggi and R. Mohanta and T. A. Mohayai and N. Mokhov and J. Molina and L. Molina Bueno and A. Montanari and C. Montanari and D. Montanari and L. M. Montano Zetina and J. Moon and M. Mooney and A. F. Moor and D. Moreno and C. Morris and C. Mossey and E. Motuk and C. A. Moura and J. Mousseau and W. Mu and L. Mualem and J. Mueller and M. Muether and S. Mufson and F. Muheim and A. Muir and M. Mulhearn and D. Munford and H. Muramatsu and S. Murphy and J. Musser and J. Nachtman and S. Nagu and M. Nalbandyan and R. Nandakumar and D. Naples and S. Narita and D. Navas-Nicol\'{a}s and A. Navrer-Agasson and N. Nayak and M. Nebot-Guinot and K. Negishi and J. K. Nelson and J. Nesbit and M. Nessi and D. Newbold and M. Newcomer and D. Newhart and H. Newton and R. Nichol and F. Nicolas-Arnaldos and E. Niner and K. Nishimura and A. Norman and A. Norrick and R. Northrop and P. Novella and J. A. Nowak and M. Oberling and J. P. Ochoa-Ricoux and A. Olivares Del Campo and A. Olivier and A. Olshevskiy and Y. Onel and Y. Onishchuk and J. Ott and L. Pagani and S. Pakvasa and G. Palacio and O. Palamara and S. Palestini and J. M. Paley and M. Pallavicini and C. Palomares and J. L. Palomino-Gallo and E. Pantic and V. Paolone and V. Papadimitriou and R. Papaleo and A. Papanestis and S. Paramesvaran and S. Parke and Z. Parsa and M. Parvu and S. Pascoli and L. Pasqualini and J. Pasternak and J. Pater and C. Patrick and L. Patrizii and R. B. Patterson and S. J. Patton and T. Patzak and A. Paudel and B. Paulos and L. Paulucci and Z. Pavlovic and G. Pawloski and D. Payne and V. Pec and S. J. M. Peeters and E. Pennacchio and A. Penzo and O. L. G. Peres and J. Perry and D. Pershey and G. Pessina and G. Petrillo and C. Petta and R. Petti and F. Piastra and L. Pickering and F. Pietropaolo and R. Plunkett and R. Poling and X. Pons and N. Poonthottathil and S. Pordes and J. Porter and M. Potekhin and R. Potenza and B. V. K. S. Potukuchi and J. Pozimski and M. Pozzato and S. Prakash and T. Prakash and S. Prince and D. Pugnere and X. Qian and M. C. Queiroga Bazetto and J. L. Raaf and V. Radeka and J. Rademacker and B. Radics and A. Rafique and E. Raguzin and M. Rai and M. Rajaoalisoa and I. Rakhno and A. Rakotonandrasana and L. Rakotondravohitra and Y. A. Ramachers and R. Rameika and M. A. Ramirez Delgado and B. Ramson and A. Rappoldi and G. Raselli and P. Ratoff and S. Raut and R. F. Razakamiandra and J. S. Real and B. Rebel and M. Reggiani-Guzzo and T. Rehak and J. Reichenbacher and S. D. Reitzner and H. Rejeb Sfar and A. Renshaw and S. Rescia and F. Resnati and A. Reynolds and C. Riccio and G. Riccobene and L. C. J. Rice and J. Ricol and A. Rigamonti and Y. Rigaut and D. Rivera and L. Rochester and M. Roda and P. Rodrigues and M. J. Rodriguez Alonso and E. Rodriguez Bonilla and J. Rodriguez Rondon and S. Rosauro-Alcaraz and M. Rosenberg and P. Rosier and B. Roskovec and M. Rossella and J. Rout and P. Roy and S. Roy and A. Rubbia and C. Rubbia and F. C. Rubio and B. Russell and D. Ruterbories and R. Saakyan and S. Sacerdoti and T. Safford and R. Sahay and N. Sahu and P. Sala and N. Samios and O. Samoylov and M. C. Sanchez and D. A. Sanders and D. Sankey and S. Santana and M. Santos-Maldonado and N. Saoulidou and P. Sapienza and C. Sarasty and I. Sarcevic and G. Savage and V. Savinov and A. Scaramelli and A. Scarff and A. Scarpelli and T. Schaffer and H. Schellman and P. Schlabach and D. Schmitz and K. Scholberg and A. Schukraft and E. Segreto and J. Sensenig and I. Seong and A. Sergi and D. Sgalaberna and M. H. Shaevitz and S. Shafaq and M. Shamma and R. Sharankova and H. R. Sharma and R. Sharma and R. Kumar and T. Shaw and C. Shepherd-Themistocleous and S. Shin and D. Shooltz and R. Shrock and L. Simard and F. Simon and N. Simos and J. Sinclair and G. Sinev and J. Singh and J. Singh and V. Singh and R. Sipos and F. W. Sippach and G. Sirri and A. Sitraka and K. Siyeon and K. Skarpaas VIII and A. Smith and E. Smith and P. Smith and J. Smolik and M. Smy and E. L. Snider and P. Snopok and M. Soares Nunes and H. Sobel and M. Soderberg and C. J. Solano Salinas and S. S\"{o}ldner-Rembold and N. Solomey and V. Solovov and W. E. Sondheim and M. Sorel and J. Soto-Oton and A. Sousa and K. Soustruznik and F. Spagliardi and M. Spanu and J. Spitz and N. J. C. Spooner and K. Spurgeon and R. Staley and M. Stancari and L. Stanco and R. Stanley and R. Stein and H. M. Steiner and J. Stewart and B. Stillwell and J. Stock and F. Stocker and T. Stokes and M. Strait and T. Strauss and S. Striganov and A. Stuart and J. G. Suarez and H. Sullivan and D. Summers and A. Surdo and V. Susic and L. Suter and C. M. Sutera and R. Svoboda and B. Szczerbinska and A. M. Szelc and R. Talaga and H. A. Tanaka and B. Tapia Oregui and A. Tapper and S. Tariq and E. Tatar and R. Tayloe and A. M. Teklu and M. Tenti and K. Terao and C. A. Ternes and F. Terranova and G. Testera and A. Thea and J. L. Thompson and C. Thorn and S. C. Timm and J. Todd and A. Tonazzo and D. Torbunov and M. Torti and M. Tortola and F. Tortorici and D. Totani and M. Toups and C. Touramanis and J. Trevor and S. Trilov and W. H. Trzaska and Y. T. Tsai and Z. Tsamalaidze and K. V. Tsang and N. Tsverava and S. Tufanli and C. Tull and E. Tyley and M. Tzanov and M. A. Uchida and J. Urheim and T. Usher and S. Uzunyan and M. R. Vagins and P. Vahle and G. A. Valdiviesso and E. Valencia and Z. Vallari and J. W. F. Valle and S. Vallecorsa and R. Van Berg and R. G. Van de Water and F. Varanini and D. Vargas and G. Varner and J. Vasel and S. Vasina and G. Vasseur and N. Vaughan and K. Vaziri and S. Ventura and A. Verdugo and S. Vergani and M. A. Vermeulen and M. Verzocchi and M. Vicenzi and H. Vieira de Souza and C. Vignoli and C. Vilela and B. Viren and T. Vrba and T. Wachala and A. V. Waldron and M. Wallbank and H. Wang and J. Wang and M. H. L. S. Wang and Y. Wang and Y. Wang and K. Warburton and D. Warner and M. Wascko and D. Waters and A. Watson and P. Weatherly and A. Weber and M. Weber and H. Wei and A. Weinstein and D. Wenman and M. Wetstein and A. White and L. H. Whitehead and D. Whittington and M. J. Wilking and C. Wilkinson and Z. Williams and F. Wilson and R. J. Wilson and J. Wolcott and T. Wongjirad and A. Wood and K. Wood and E. Worcester and M. Worcester and C. Wret and W. Wu and W. Wu and Y. Xiao and E. Yandel and G. Yang and K. Yang and S. Yang and T. Yang and A. Yankelevich and N. Yershov and K. Yonehara and T. Young and B. Yu and H. Yu and J. Yu and W. Yuan and R. Zaki and J. Zalesak and L. Zambelli and B. Zamorano and A. Zani and L. Zazueta and G. Zeit and G. P. Zeller and J. Zennamo and K. Zeug and C. Zhang and M. Zhao and E. Zhivun and G. Zhu and P. Zilberman and E. D. Zimmerman and M. Zito and S. Zucchelli and J. Zuklin and V. Zutshi and R. Zwaska},
+      year={2021},
+      eprint={2103.13910},
+      archivePrefix={arXiv},
+      primaryClass={physics.ins-det},
+      url={https://arxiv.org/abs/2103.13910}, 
+    }
+  datasets:
+    links:
+    - name: "DUNE SONIC data"
+      url: ""
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1_xI6kpeb3zSCMY_rzKV9s-MCMi7kHAdsLLV0eHxG9kM"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "in progress"
+    benchmark_ready: false
+  ratings:
+    software:
+      rating: 1
+      reason: |
+        Code not available; no containerization or setup provided
+    specification:
+      rating: 4
+      reason: |
+        Constraints like latency thresholds are described qualitatively but not numerically defined
+    dataset:
+      rating: 3
+      reason: |
+        Dataset lacks a public URL; FAIR metadata and versioning are missing
+    metrics:
+      rating: 4
+      reason: |
+        Metrics are relevant but no benchmark baseline or detailed evaluation guidance is provided
+    reference_solution:
       rating: 2
       reason: |
-        No datasets are bundled; the dashboard visualizes metrics derived from model
-        inference logs or external endpoints, not a formal dataset.
-    metrics:
-      rating: 4
-      reason: |
-        Tracks tokens/sec, TTFT, memory usage, and platform comparisons. Metrics are clear
-        but focused on visualization rather than statistical robustness.
-    reference_solution:
+        Autoencoder prototype exists but is not reproducible; RL model still in development
+    documentation:
       rating: 3
       reason: |
-        Dashboards include reproducible views of benchmarked models, but do not ship
-        with runnable model code. Relies on external serving infrastructure.
-    documentation:
-      rating: 4
-      reason: |
-        Public dashboard with instructions and tooltips; documentation is clear, though access
-        is restricted (login required) and backend setup is opaque to users.
-- date: "2022-04-01"
-  version: "v3.0.2"
-  last_updated: "2025-06"
+        Documentation exists only in slides/GDocs; no implementation guide or structured release
+
+
+
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
   expired: "unknown"
   valid: "yes"
-  valid_date: "2022-04-01"
-  name: "Nixtla NeuralForecast"
-  url: "https://github.com/Nixtla/neuralforecast"
+  valid_date: "2024-12-13"
+  name: "MassSpecGym"
+  url: "https://neurips.cc/virtual/2024/poster/97823"
   doi: "unknown"
-  domain: "Time-series forecasting; General ML"
-  focus: "High-performance neural forecasting library with >30 models"
+  domain: "Cheminformatics; Molecular Discovery"
+  focus: "Benchmark suite for discovery and identification of molecules via MS/MS"
   keywords:
-  - "time-series"
-  - "neural forecasting"
-  - "NBEATS, NHITS, TFT"
-  - "probabilistic forecasting"
-  - "usability"
+  - "mass spectrometry"
+  - "molecular structure"
+  - "de novo generation"
+  - "retrieval"
+  - "dataset"
   summary: |
-    NeuralForecast offers scalable, user-friendly implementations of over 30 neural forecasting models (NBEATS, NHITS, TFT, DeepAR, etc.),
-    emphasizing quality, usability, interpretability, and performance.
-  licensing: "Apache License 2.0"
+    MassSpecGym curates the largest public MS/MS dataset with three standardized tasks-de novo structure 
+    generation, molecule retrieval, and spectrum simulation-using challenging generalization splits to 
+    propel ML-driven molecule discovery.
+  licensing: "unknown"
   task_types:
-  - "Time-series forecasting"
+  - "De novo generation"
+  - "Retrieval"
+  - "Simulation"
   ai_capability_measured:
-  - "Forecast accuracy"
-  - "interpretability"
-  - "speed"
+  - "Molecular identification and generation from spectral data"
   metrics:
-  - "RMSE"
-  - "MAPE"
-  - "CRPS"
+  - "Structure accuracy"
+  - "Retrieval precision"
+  - "Simulation MSE"
   models:
-  - "NBEATS"
-  - "NHITS"
-  - "TFT"
-  - "DeepAR"
+  - "Graph-based generative models"
+  - "Retrieval baselines"
   ml_motif:
-  - "Time-series"
-  type: "Platform"
+  - "Benchmark"
+  type: "Dataset, Benchmark"
   ml_task:
-  - "Forecasting"
+  - "Generation, retrieval, simulation"
   solutions: "0"
   notes: |
-    AutoModel supports hyperparameter tuning and distributed execution via Ray and Optuna. First official NHITS implementation. contentReference oaicite:4 ndex=4
+    Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks.
   contact:
-    name: "Kin G. Olivares (Nixtla)"
+    name: "Roman Bushuiev"
     email: "unknown"
   cite:
   - |
-    @misc{olivares2022library_neuralforecast,
-      author={Kin G. Olivares and Cristian Challú and Federico Garza and Max Mergenthaler Canseco and Artur Dubrawski},
-      title = {NeuralForecast: User friendly state-of-the-art neural forecasting models.},
-      year={2022},
-      howpublished={PyCon Salt Lake City, Utah, US 2022},
-      url={https://github.com/Nixtla/neuralforecast}
+    @inproceedings{neurips2024_c6c31413,
+      author = {Bushuiev, Roman and Bushuiev, Anton and de Jonge, Niek F. and 
+                Young, Adamo and Kretschmer, Fleming and Samusevich, Raman and 
+                Heirman, Janne and Wang, Fei and Zhang, Luke and D\"{u}hrkop, Kai and 
+                Ludwig, Marcus and Haupt, Nils A. and Kalia, Apurva and Brungs, Corinna and 
+                Schmid, Robin and Greiner, Russell and Wang, Bo and Wishart, David S. and 
+                Liu, Li-Ping and Rousu, Juho and Bittremieux, Wout and Rost, Hannes and 
+                Mak, Tytus D. and Hassoun, Soha and Huber, Florian and van der Hooft, Justin J.J. and 
+                Stravs, Michael A. and B\"{o}cker, Sebastian and Sivic, Josef and Pluskal, Tom\'{a}\v{s}},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {110010--110027},
+      publisher = {Curran Associates, Inc.},
+      title = {MassSpecGym: A benchmark for the discovery and identification of molecules},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/c6c31413d5c53b7d1c343c1498734b0f-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
     }
   datasets:
     links: []
   results:
     links:
     - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1VzhaUubIm-SHK7cfKWyoi8GtykpCuOH2qPM-k_g8bKU/edit?usp=sharing"
+      url: ""
     - name: "ChatGPT LLM"
       url: ""
   fair:
@@ -2761,323 +3269,37 @@
     benchmark_ready: "Yes"
   ratings:
     software:
-      rating: 5
+      rating: 3
       reason: |
-        Actively maintained open-source library under Apache 2.0. Offers a clean API,
-        extensive model zoo (>30 models), integration with Ray, Optuna, and supports
-        scalable training and inference workflows.
+        Open-source GitHub repository available; baseline models and training code partially
+        provided but overall framework maturity is moderate.
     specification:
       rating: 5
       reason: |
-        Forecasting task is well-defined with clear input/output structures. Framework supports
-        probabilistic and deterministic forecasting, with unified interfaces and support for batch evaluation.
+        Clearly defined tasks including molecule generation, retrieval, and spectrum simulation,
+        scoped for MS/MS molecular identification.
     dataset:
-      rating: 3
+      rating: 5
       reason: |
-        NeuralForecast does not include its own datasets but supports standard datasets (e.g., M4, M5, ETT).
-        FAIR compliance depends on user-supplied data.
+        Largest public MS/MS dataset with extensive annotations; minor point deducted for
+        lack of explicit train/validation/test splits.
     metrics:
       rating: 5
       reason: |
-        RMSE, MAPE, CRPS, and other domain-relevant metrics are well supported and integrated into the evaluation loop.
+        Well-defined metrics such as structure accuracy, retrieval precision, and simulation MSE
+        used consistently.
     reference_solution:
-      rating: 4
+      rating: 3.5
       reason: |
-        Includes runnable model baselines and training scripts for all supported models.
-        Some models have pretrained weights, but not all are fully benchmarked out-of-the-box.
+        CNN-based baselines are referenced, but pretrained weights and comprehensive training
+        pipelines are not fully documented.
     documentation:
-      rating: 5
+      rating: 1
       reason: |
-        Rich documentation with examples, API references, tutorials, notebooks, and CLI support.
-        PyPI, GitHub, and official blog posts offer clear guidance for usage and extension.
-- date: "2023-06-01"
-  version: "v3.0.2"
-  last_updated: "2025-06"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2023-06-01"
-  name: "Nixtla Neural Forecast NHITS"
-  url: "https://github.com/Nixtla/neuralforecast"
-  doi: "unknown"
-  domain: "Time-series; General ML"
-  focus: "Official NHITS implementation for long-horizon time series forecasting"
-  keywords:
-  - "NHITS"
-  - "long-horizon forecasting"
-  - "neural interpolation"
-  - "time-series"
-  summary: |
-    NHITS (Neural Hierarchical Interpolation for Time Series) is a state-of-the-art model that
-    improved accuracy by ~25% and reduced compute by 50x compared to Transformer baselines,
-    using hierarchical interpolation and multi-rate sampling .
-  licensing: "Apache License 2.0"
-  task_types:
-  - "Time-series forecasting"
-  ai_capability_measured:
-  - "Accuracy"
-  - "compute efficiency for long series"
-  metrics:
-  - "RMSE"
-  - "MAPE"
-  models:
-  - "NHITS"
-  ml_motif:
-  - "Time-series"
-  type: "Platform"
-  ml_task:
-  - "Forecasting"
-  solutions: "0"
-  notes: |
-    Official implementation in NeuralForecast, included since its AAAI 2023 release.
-  contact:
-    name: "Kin G. Olivares (Nixtla)"
-    email: "unknown"
-  cite:
-  - |
-    @inproceedings{challu2023nhits,
-     title={Nhits: Neural hierarchical interpolation for time series forecasting},
-     author={Challu, Cristian and Olivares, Kin G and Oreshkin, Boris N and Ramirez, Federico Garza and Canseco, Max Mergenthaler and Dubrawski, Artur},
-     booktitle={Proceedings of the AAAI conference on artificial intelligence},
-     volume={37},
-     number={6},
-     pages={6989--6997},
-     year={2023}
-     }
-  datasets:
-    links:
-    - name: "Standard forecast datasets, M4"
-      url: ""
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/15Hm5ekGu99aQWsdtiUIwX6JMoaoFpRbIhDylrWqSoHY/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 5
-      reason: |
-        Implemented within the open-source NeuralForecast library under Apache 2.0.
-        Includes training, evaluation, and hyperparameter tuning pipelines. Actively maintained.
-    specification:
-      rating: 5
-      reason: |
-        The NHITS forecasting task is clearly defined with structured input/output formats.
-        Model design targets long-horizon accuracy and compute efficiency.
-    dataset:
-      rating: 3
-      reason: |
-        Uses standard benchmark datasets like M4, but does not bundle them directly.
-        FAIR compliance depends on external dataset sources and user setup.
-    metrics:
-      rating: 5
-      reason: |
-        Evaluated using RMSE, MAPE, and other standard forecasting metrics, integrated
-        into training and evaluation APIs.
-    reference_solution:
-      rating: 4
-      reason: |
-        Official NHITS implementation is fully reproducible with training/eval configs,
-        though pretrained weights are not always provided.
-    documentation:
-      rating: 4
-      reason: |
-        Well-documented on GitHub and in AAAI paper, with code examples, training guidance,
-        and usage tutorials. More model-specific docs could improve clarity further.
-- date: "2023-10-03"
-  version: "v3.0.2"
-  last_updated: "2025-06"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2023-10-03"
-  name: "Nixtla Neural Forecast TimeLLM"
-  url: "https://github.com/Nixtla/neuralforecast"
-  doi: "10.48550/arXiv.2310.01728"
-  domain: "Time-series; General ML"
-  focus: "Reprogramming LLMs for time series forecasting"
-  keywords:
-  - "Time-LLM"
-  - "language model"
-  - "time-series"
-  - "reprogramming"
-  summary: |
-    Time-LLM uses reprogramming layers to adapt frozen LLMs for time series forecasting, treating
-    forecasting as a language task .
-  licensing: "Apache License 2.0"
-  task_types:
-  - "Time-series forecasting"
-  ai_capability_measured:
-  - "Model reuse via LLM"
-  - "few-shot forecasting"
-  metrics:
-  - "RMSE"
-  - "MAPE"
-  models:
-  - "Time-LLM"
-  ml_motif:
-  - "Time-series"
-  type: "Platform"
-  ml_task:
-  - "Forecasting"
-  solutions: "Solution details are described in the referenced paper or repository."
-  notes: |
-    Fully open-source; transforms forecasting using LLM text reconstruction.
-  contact:
-    name: "Ming Jin (Nixtla)"
-    email: "unknown"
-  cite:
-  - |
-    @misc{jin2024timellmtimeseriesforecasting,
-      title={Time-LLM: Time Series Forecasting by Reprogramming Large Language Models}, 
-      author={Ming Jin and Shiyu Wang and Lintao Ma and Zhixuan Chu and James Y. Zhang and Xiaoming Shi and Pin-Yu Chen and Yuxuan Liang and Yuan-Fang Li and Shirui Pan and Qingsong Wen},
-      year={2024},
-      eprint={2310.01728},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2310.01728}, 
-    }
-  datasets:
-    links:
-    - name: "Standard forecast datasets, M4"
-      url: ""
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1xXGzRt-qhUFTvnBGQi2IbcoBdYyo-ZrAn3IOkswd3fw/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 4
-      reason: |
-        Fully open-source under Apache 2.0, integrated into the NeuralForecast library.
-        Includes Time-LLM implementation with example usage and training scripts.
-    specification:
-      rating: 3
-      reason: |
-        High-level framing of forecasting as language modeling is clear, but detailed input/output
-        specifications, constraints, and task formalization are minimal.
-    dataset:
-      rating: 3
-      reason: |
-        Evaluated on standard datasets like M4 and ETT, but dataset splits and versioning are not
-        bundled or explicitly FAIR-compliant.
-    metrics:
-      rating: 4
-      reason: |
-        Standard forecasting metrics such as RMSE, MAPE, and SMAPE are reported.
-        Evaluation is consistent, though deeper metric justification is limited.
-    reference_solution:
-      rating: 3
-      reason: |
-        Time-LLM implementation is open and reproducible, but limited baselines or comparative
-        implementations are included directly.
-    documentation:
-      rating: 3
-      reason: |
-        GitHub README provides installation and quick usage examples, but lacks detailed API docs,
-        training walkthroughs, or extended tutorials.
-- date: "2023-10-05"
-  version: "v3.0.2"
-  last_updated: "2025-06"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2023-10-05"
-  name: "Nixtla Neural Forecast TimeGPT"
-  url: "https://github.com/Nixtla/neuralforecast"
-  doi: "10.48550/arXiv.2310.03589"
-  domain: "Time-series; General ML"
-  focus: "Time-series foundation model \"TimeGPT\" for forecasting and anomaly detection"
-  keywords:
-  - "TimeGPT"
-  - "foundation model"
-  - "time-series"
-  - "generative model"
-  summary: |
-    TimeGPT is a transformer-based generative pretrained model on 100B+ time series data for
-    zero-shot forecasting and anomaly detection via API .
-  licensing: "Apache License 2.0"
-  task_types:
-  - "Time-series forecasting"
-  - "Anomaly detection"
-  ai_capability_measured:
-  - "Zero-shot forecasting"
-  - "anomaly detection"
-  metrics:
-  - "RMSE"
-  - "Anomaly detection metrics"
-  models:
-  - "TimeGPT"
-  ml_motif:
-  - "Time-series"
-  type: "Platform"
-  ml_task:
-  - "Forecasting"
-  solutions: "Solution details are described in the referenced paper or repository."
-  notes: |
-    Offered via Nixtla API and Azure Studio; enterprise-grade support available.
-  contact:
-    name: "Azul Garza (Nixtla)"
-    email: "unknown"
-  cite:
-  - |
-    @misc{garza2024timegpt1,
-      archiveprefix = {arXiv},
-      author        = {Azul Garza and Cristian Challu and Max Mergenthaler-Canseco},
-      eprint        = {2310.03589},
-      primaryclass  = {cs.LG},
-      title         = {TimeGPT-1},
-      url           = {https://arxiv.org/abs/2310.03589},
-      year          = {2024}
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1KmKs9JtcfpKe40fNuLrgdFcOmBnfj3ZG7AwcfTH4tXE/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 4
-      reason: |
-        Fully open-source Apache 2.0 implementation integrated in NeuralForecast,
-        supporting training and evaluation via API. Production-grade deployment available via Nixtla API and Azure.
-    specification:
-      rating: 3
-      reason: |
-        Concept and forecasting goals are described, but formal input/output definitions
-        and task constraints are not rigorously specified.
-    dataset:
-      rating: 3
-      reason: |
-        Evaluated on existing open datasets, but consolidated data release, splits, and FAIR
-        metadata are not provided.
-    metrics:
-      rating: 4
-      reason: |
-        Uses standard forecasting metrics such as RMSE, MASE, SMAPE, and anomaly detection
-        metrics consistently across evaluations.
-    reference_solution:
-      rating: 3
-      reason: |
-        TimeGPT implementation is available, but baseline comparisons and additional reference
-        models are limited.
-    documentation:
-      rating: 3
-      reason: |
-        Basic README with installation and usage examples; more detailed API docs and tutorials
-        would improve usability.
+        Paper and poster describe benchmark goals and design, but documentation and user
+        guides are minimal and repo status uncertain.
+
+
 - date: "2025-03-03"
   version: "v1.0"
   last_updated: "2025-03"
@@ -3261,6 +3483,7 @@
       reason: |
         Challenge website provides basic descriptions and evaluation metrics but lacks
         comprehensive tutorials or example workflows.
+
 - date: "2025-03-03"
   version: "v1.0"
   last_updated: "2025-03"
@@ -3306,7 +3529,32 @@
   - |
     @misc{campolongo2025buildingmachinelearningchallenges3,
       archiveprefix = {arXiv},
-      author        = {Elizabeth G. Campolongo and Yuan-Tang Chou and Ekaterina Govorkova and Wahid Bhimji and Wei-Lun Chao and Chris Harris and Shih-Chieh Hsu and Hilmar Lapp and Mark S. Neubauer and Josephine Namayanja and Aneesh Subramanian and Philip Harris and Advaith Anand and David E. Carlyn and Subhankar Ghosh and Christopher Lawrence and Eric Moreno and Ryan Raikman and Jiaman Wu and Ziheng Zhang and Bayu Adhi and Mohammad Ahmadi Gharehtoragh and Saúl Alonso Monsalve and Marta Babicz and Furqan Baig and Namrata Banerji and William Bardon and Tyler Barna and Tanya Berger-Wolf and Adji Bousso Dieng and Micah Brachman and Quentin Buat and David C. Y. Hui and Phuong Cao and Franco Cerino and Yi-Chun Chang and Shivaji Chaulagain and An-Kai Chen and Deming Chen and Eric Chen and Chia-Jui Chou and Zih-Chen Ciou and Miles Cochran-Branson and Artur Cordeiro Oudot Choi and Michael Coughlin and Matteo Cremonesi and Maria Dadarlat and Peter Darch and Malina Desai and Daniel Diaz and Steven Dillmann and Javier Duarte and Isla Duporge and Urbas Ekka and Saba Entezari Heravi and Hao Fang and Rian Flynn and Geoffrey Fox and Emily Freed and Hang Gao and Jing Gao and Julia Gonski and Matthew Graham and Abolfazl Hashemi and Scott Hauck and James Hazelden and Joshua Henry Peterson and Duc Hoang and Wei Hu and Mirco Huennefeld and David Hyde and Vandana Janeja and Nattapon Jaroenchai and Haoyi Jia and Yunfan Kang and Maksim Kholiavchenko and Elham E. Khoda and Sangin Kim and Aditya Kumar and Bo-Cheng Lai and Trung Le and Chi-Wei Lee and JangHyeon Lee and Shaocheng Lee and Suzan van der Lee and Charles Lewis and Haitong Li and Haoyang Li and Henry Liao and Mia Liu and Xiaolin Liu and Xiulong Liu and Vladimir Loncar and Fangzheng Lyu and Ilya Makarov and Abhishikth Mallampalli Chen-Yu Mao and Alexander Michels and Alexander Migala and Farouk Mokhtar and Mathieu Morlighem and Min Namgung and Andrzej Novak and Andrew Novick and Amy Orsborn and Anand Padmanabhan and Jia-Cheng Pan and Sneh Pandya and Zhiyuan Pei and Ana Peixoto and George Percivall and Alex Po Leung and Sanjay Purushotham and Zhiqiang Que and Melissa Quinnan and Arghya Ranjan and Dylan Rankin and Christina Reissel and Benedikt Riedel and Dan Rubenstein and Argyro Sasli and Eli Shlizerman and Arushi Singh and Kim Singh and Eric R. Sokol and Arturo Sorensen and Yu Su and Mitra Taheri and Vaibhav Thakkar and Ann Mariam Thomas and Eric Toberer and Chenghan Tsai and Rebecca Vandewalle and Arjun Verma and Ricco C. Venterea and He Wang and Jianwu Wang and Sam Wang and Shaowen Wang and Gordon Watts and Jason Weitz and Andrew Wildridge and Rebecca Williams and Scott Wolf and Yue Xu and Jianqi Yan and Jai Yu and Yulei Zhang and Haoran Zhao and Ying Zhao and Yibo Zhong},
+      author        = {Elizabeth G. Campolongo and Yuan-Tang Chou and Ekaterina Govorkova and 
+                       Wahid Bhimji and Wei-Lun Chao and Chris Harris and Shih-Chieh Hsu and 
+                       Hilmar Lapp and Mark S. Neubauer and Josephine Namayanja and 
+                       Aneesh Subramanian and Philip Harris and Advaith Anand and 
+                       David E. Carlyn and Subhankar Ghosh and Christopher Lawrence and 
+                       Eric Moreno and Ryan Raikman and Jiaman Wu and Ziheng Zhang and Bayu Adhi and 
+                       Mohammad Ahmadi Gharehtoragh and Saúl Alonso Monsalve and Marta Babicz and 
+                       Furqan Baig and Namrata Banerji and William Bardon and Tyler Barna and 
+                       Tanya Berger-Wolf and Adji Bousso Dieng and Micah Brachman and Quentin Buat and 
+                       David C. Y. Hui and Phuong Cao and Franco Cerino and Yi-Chun Chang and 
+                       Shivaji Chaulagain and An-Kai Chen and Deming Chen and Eric Chen and Chia-Jui Chou and 
+                       Zih-Chen Ciou and Miles Cochran-Branson and Artur Cordeiro Oudot Choi and 
+                       Michael Coughlin and Matteo Cremonesi and Maria Dadarlat and Peter Darch and 
+                       Malina Desai and Daniel Diaz and Steven Dillmann and Javier Duarte and Isla Duporge and 
+                       Urbas Ekka and Saba Entezari Heravi and Hao Fang and Rian Flynn and Geoffrey Fox and 
+                       Emily Freed and Hang Gao and Jing Gao and Julia Gonski and Matthew Graham and 
+                       Abolfazl Hashemi and Scott Hauck and James Hazelden and Joshua Henry Peterson and 
+                       Duc Hoang and Wei Hu and Mirco Huennefeld and David Hyde and Vandana Janeja and 
+                       Nattapon Jaroenchai and Haoyi Jia and Yunfan Kang and Maksim Kholiavchenko and 
+                       Elham E. Khoda and Sangin Kim and Aditya Kumar and Bo-Cheng Lai and Trung Le and 
+                       Chi-Wei Lee and JangHyeon Lee and Shaocheng Lee and Suzan van der Lee and Charles Lewis and 
+                       Haitong Li and Haoyang Li and Henry Liao and Mia Liu and Xiaolin Liu and Xiulong Liu and 
+                       Vladimir Loncar and Fangzheng Lyu and Ilya Makarov and Abhishikth Mallampalli Chen-Yu Mao and 
+                       Alexander Michels and Alexander Migala and Farouk Mokhtar and Mathieu Morlighem and 
+                       Min Namgung and Andrzej Novak and Andrew Novick and Amy Orsborn and Anand Padmanabhan and 
+                       Jia-Cheng Pan and Sneh Pandya and Zhiyuan Pei and Ana Peixoto and George Percivall and Alex Po Leung and Sanjay Purushotham and Zhiqiang Que and Melissa Quinnan and Arghya Ranjan and Dylan Rankin and Christina Reissel and Benedikt Riedel and Dan Rubenstein and Argyro Sasli and Eli Shlizerman and Arushi Singh and Kim Singh and Eric R. Sokol and Arturo Sorensen and Yu Su and Mitra Taheri and Vaibhav Thakkar and Ann Mariam Thomas and Eric Toberer and Chenghan Tsai and Rebecca Vandewalle and Arjun Verma and Ricco C. Venterea and He Wang and Jianwu Wang and Sam Wang and Shaowen Wang and Gordon Watts and Jason Weitz and Andrew Wildridge and Rebecca Williams and Scott Wolf and Yue Xu and Jianqi Yan and Jai Yu and Yulei Zhang and Haoran Zhao and Ying Zhao and Yibo Zhong},
       eprint        = {2503.02112},
       primaryclass  = {cs.LG},
       title         = {Building Machine Learning Challenges for Anomaly Detection in Science},
@@ -3353,6 +3601,9 @@
       rating: 5
       reason: |
         Challenge page, starter kits, and related papers offer strong guidance for participants.
+
+
+
 - date: "2025-01-24"
   version: "v1.0"
   last_updated: "2025-02"
@@ -3929,379 +4180,6 @@
       reason: |
         Methodology and paper are thorough, but setup instructions and runnable
         code are not publicly provided, limiting user onboarding.
-- date: "2024-12-13"
-  version: "v1.0"
-  last_updated: "2024-12"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2024-12-13"
-  name: "MassSpecGym"
-  url: "https://neurips.cc/virtual/2024/poster/97823"
-  doi: "unknown"
-  domain: "Cheminformatics; Molecular Discovery"
-  focus: "Benchmark suite for discovery and identification of molecules via MS/MS"
-  keywords:
-  - "mass spectrometry"
-  - "molecular structure"
-  - "de novo generation"
-  - "retrieval"
-  - "dataset"
-  summary: |
-    MassSpecGym curates the largest public MS/MS dataset with three standardized tasks-de novo structure generation, molecule retrieval, and spectrum simulation-using challenging generalization splits to propel ML-driven molecule discovery .
-  licensing: "unknown"
-  task_types:
-  - "De novo generation"
-  - "Retrieval"
-  - "Simulation"
-  ai_capability_measured:
-  - "Molecular identification and generation from spectral data"
-  metrics:
-  - "Structure accuracy"
-  - "Retrieval precision"
-  - "Simulation MSE"
-  models:
-  - "Graph-based generative models"
-  - "Retrieval baselines"
-  ml_motif:
-  - "Benchmark"
-  type: "Dataset + Benchmark"
-  ml_task:
-  - "Generation, retrieval, simulation"
-  solutions: "0"
-  notes: |
-    Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks .
-  contact:
-    name: "Roman Bushuiev"
-    email: "unknown"
-  cite:
-  - |
-    @inproceedings{neurips2024_c6c31413,
-      author = {Bushuiev, Roman and Bushuiev, Anton and de Jonge, Niek F. and Young, Adamo and Kretschmer, Fleming and Samusevich, Raman and Heirman, Janne and Wang, Fei and Zhang, Luke and D\"{u}hrkop, Kai and Ludwig, Marcus and Haupt, Nils A. and Kalia, Apurva and Brungs, Corinna and Schmid, Robin and Greiner, Russell and Wang, Bo and Wishart, David S. and Liu, Li-Ping and Rousu, Juho and Bittremieux, Wout and Rost, Hannes and Mak, Tytus D. and Hassoun, Soha and Huber, Florian and van der Hooft, Justin J.J. and Stravs, Michael A. and B\"{o}cker, Sebastian and Sivic, Josef and Pluskal, Tom\'{a}\v{s}},
-      booktitle = {Advances in Neural Information Processing Systems},
-      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
-      pages = {110010--110027},
-      publisher = {Curran Associates, Inc.},
-      title = {MassSpecGym: A benchmark for the discovery and identification of molecules},
-      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/c6c31413d5c53b7d1c343c1498734b0f-Paper-Datasets_and_Benchmarks_Track.pdf},
-      volume = {37},
-      year = {2024}
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: ""
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 3
-      reason: |
-        Open-source GitHub repository available; baseline models and training code partially
-        provided but overall framework maturity is moderate.
-    specification:
-      rating: 5
-      reason: |
-        Clearly defined tasks including molecule generation, retrieval, and spectrum simulation,
-        scoped for MS/MS molecular identification.
-    dataset:
-      rating: 5
-      reason: |
-        Largest public MS/MS dataset with extensive annotations; minor point deducted for
-        lack of explicit train/validation/test splits.
-    metrics:
-      rating: 5
-      reason: |
-        Well-defined metrics such as structure accuracy, retrieval precision, and simulation MSE
-        used consistently.
-    reference_solution:
-      rating: 3.5
-      reason: |
-        CNN-based baselines are referenced, but pretrained weights and comprehensive training
-        pipelines are not fully documented.
-    documentation:
-      rating: 1
-      reason: |
-        Paper and poster describe benchmark goals and design, but documentation and user
-        guides are minimal and repo status uncertain.
-- date: "2024-12-13"
-  version: "v1.0"
-  last_updated: "2024-12"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2024-12-13"
-  name: "Urban Data Layer (UDL)"
-  url: "https://neurips.cc/virtual/2024/poster/97837"
-  doi: "unknown"
-  domain: "Urban Computing; Data Engineering"
-  focus: "Unified data pipeline for multi-modal urban science research"
-  keywords:
-  - "data pipeline"
-  - "urban science"
-  - "multi-modal"
-  - "benchmark"
-  summary: |
-    UrbanDataLayer standardizes heterogeneous urban data formats and provides pipelines for tasks like air quality prediction and land-use classification, enabling the rapid creation of multi-modal urban benchmarks .
-  licensing: "unknown"
-  task_types:
-  - "Prediction"
-  - "Classification"
-  ai_capability_measured:
-  - "Multi-modal urban inference"
-  - "standardization"
-  metrics:
-  - "Task-specific accuracy or RMSE"
-  models:
-  - "Baseline regression/classification pipelines"
-  ml_motif:
-  - "Data engineering"
-  type: "Framework"
-  ml_task:
-  - "Prediction, classification"
-  solutions: "0"
-  notes: |
-    Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models .
-  contact:
-    name: "Yiheng Wang"
-    email: "unknown"
-  cite:
-  - |
-    @inproceedings{neurips2024_0db7f135,
-      author = {Wang, Yiheng and Wang, Tianyu and Zhang, Yuying and Zhang, Hongji and Zheng, Haoyu and Zheng, Guanjie and Kong, Linghe},
-      booktitle = {Advances in Neural Information Processing Systems},
-      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
-      pages = {7296--7310},
-      publisher = {Curran Associates, Inc.},
-      title = {UrbanDataLayer: A Unified Data Pipeline for Urban Science},
-      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/0db7f135f6991e8cec5e516ecc66bfba-Paper-Datasets_and_Benchmarks_Track.pdf},
-      volume = {37},
-      year = {2024}
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: ""
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 3
-      reason: |
-        Source code is publicly available on GitHub; baseline regression and classification
-        pipelines are included but framework maturity is moderate.
-    specification:
-      rating: 5
-      reason: |
-        Multiple urban science tasks like prediction and classification are well specified
-        with clear input/output and evaluation criteria.
-    dataset:
-      rating: 5
-      reason: |
-        Large, multi-modal urban datasets are open-source, well-documented, and support
-        reproducible research.
-    metrics:
-      rating: 5
-      reason: |
-        Uses task-specific accuracy and RMSE metrics appropriate for prediction and classification.
-    reference_solution:
-      rating: 4
-      reason: |
-        Baseline models available but not exhaustive; community adoption and extensions expected.
-    documentation:
-      rating: 5
-      reason: |
-        GitHub repository and conference poster provide comprehensive code and reproducibility
-        instructions.
-- date: "2024-12-13"
-  version: "v1.0"
-  last_updated: "2024-12"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2024-12-13"
-  name: "Delta Squared-DFT"
-  url: "https://neurips.cc/virtual/2024/poster/97788"
-  doi: "10.48550/arXiv.2406.14347"
-  domain: "Computational Chemistry; Materials Science"
-  focus: "Benchmarking machine-learning corrections to DFT using Delta Squared-trained
-    models for reaction energies"
-  keywords:
-  - "density functional theory"
-  - "Delta Squared-ML correction"
-  - "reaction energetics"
-  - "quantum chemistry"
-  summary: |
-    Introduces the Delta Squared-ML paradigm-using ML corrections to DFT to predict reaction energies with accuracy comparable to CCSD(T), while training on small CC datasets. Evaluated across 10 reaction datasets covering organic and organometallic transformations.
-  licensing: "unknown"
-  task_types:
-  - "Regression"
-  ai_capability_measured:
-  - "High-accuracy energy prediction"
-  - "DFT correction"
-  metrics:
-  - "Mean Absolute Error (eV)"
-  - "Energy ranking accuracy"
-  models:
-  - "Delta Squared-ML correction networks"
-  - "Kernel ridge regression"
-  ml_motif:
-  - "Scientific ML"
-  type: "Dataset + Benchmark"
-  ml_task:
-  - "Regression"
-  solutions: "Solution details are described in the referenced paper or repository."
-  notes: |
-    Demonstrates CC-level accuracy with ~1% of high-level data. Benchmarks publicly included for reproducibility.
-  contact:
-    name: "Wei Liu"
-    email: "unknown"
-  cite:
-  - |
-    @misc{khrabrov2024nabla2dftuniversalquantumchemistry,
-      title={Delta-Squared DFT: A Universal Quantum Chemistry Dataset of Drug-Like Molecules and a Benchmark for Neural Network Potentials}, 
-      author={Kuzma Khrabrov and Anton Ber and Artem Tsypin and Konstantin Ushenin and Egor Rumiantsev and Alexander Telepov and Dmitry Protasov and Ilya Shenbin and Anton Alekseev and Mikhail Shirokikh and Sergey Nikolenko and Elena Tutubalina and Artur Kadurin},
-      year={2024},
-      eprint={2406.14347},
-      archivePrefix={arXiv},
-      primaryClass={physics.chem-ph},
-      url={https://arxiv.org/abs/2406.14347}, 
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: ""
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 3
-      reason: |
-        Source code and baseline models available for ML correction to DFT; framework maturity is moderate.
-    specification:
-      rating: 4
-      reason: |
-        Benchmark focuses on reaction energy prediction with clear goals, though some task specifics could be formalized further.
-    dataset:
-      rating: 4.5
-      reason: |
-        Multi-modal quantum chemistry datasets are standardized and accessible; repository available.
-    metrics:
-      rating: 4
-      reason: |
-        Uses standard regression metrics like MAE and energy ranking accuracy; appropriate for task.
-    reference_solution:
-      rating: 3.5
-      reason: |
-        Includes baseline regression and kernel ridge models; implementations are reproducible.
-    documentation:
-      rating: 4
-      reason: |
-        Source code supports pipeline reuse, but formal evaluation splits may vary.
-        
-- date: "2024-12-13"
-  version: "v1.0"
-  last_updated: "2024-12"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2024-12-13"
-  name: "LLMs for Crop Science"
-  url: "https://neurips.cc/virtual/2024/poster/97570"
-  doi: "10.48550/arXiv.2406.03085"
-  domain: "Agricultural Science; NLP"
-  focus: "Evaluating LLMs on crop trait QA and textual inference tasks with domain-specific
-    prompts"
-  keywords:
-  - "crop science"
-  - "prompt engineering"
-  - "domain adaptation"
-  - "question answering"
-  summary: |
-    Establishes a benchmark of 3,500 expert-annotated prompts and QA pairs covering crop traits, growth stages, and environmental interactions. Tests GPT-style LLMs on accuracy and domain reasoning using in-context, chain-of-thought, and retrieval-augmented prompts.
-  licensing: "unknown"
-  task_types:
-  - "Question Answering"
-  - "Inference"
-  ai_capability_measured:
-  - "Scientific knowledge"
-  - "crop reasoning"
-  metrics:
-  - "Accuracy"
-  - "F1 score"
-  models:
-  - "GPT-4"
-  - "LLaMA-2-13B"
-  - "T5-XXL"
-  ml_motif:
-  - "NLP"
-  type: "Dataset"
-  ml_task:
-  - "QA, inference"
-  solutions: "Solution details are described in the referenced paper or repository."
-  notes: |
-    Includes examples with retrieval-augmented and chain-of-thought prompt templates; supports few-shot adaptation.
-  contact:
-    name: "Deepak Patel"
-    email: "unknown"
-  cite:
-  - |
-    @misc{shen2024exploringuserretrievalintegration,
-      title={Exploring User Retrieval Integration towards Large Language Models for Cross-Domain Sequential Recommendation}, 
-      author={Tingjia Shen and Hao Wang and Jiaqing Zhang and Sirui Zhao and Liangyue Li and Zulong Chen and Defu Lian and Enhong Chen},
-      year={2024},
-      eprint={2406.03085},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2406.03085}, 
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: ""
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 0
-      reason: |
-        This is a model, not a benchmark.
-    specification:
-      rating: 0
-      reason: |
-        This is a model, not a benchmark.
-    dataset:
-      rating: 0
-      reason: |
-        This is a model, not a benchmark.
-    metrics:
-      rating: 0
-      reason: |
-        This is a model, not a benchmark.
-    reference_solution:
-      rating: 0
-      reason: |
-        This is a model, not a benchmark.
-    documentation:
-      rating: 0
-      reason: |
-        This is a model, not a benchmark.
 
 - date: "2024-12-13"
   version: "v1.0"
@@ -4393,3 +4271,103 @@
       rating: 5
       reason: |
         Full paper available
+
+- date: "2024-12-03"
+  version: "v1.0"
+  last_updated: "2025-06"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-03"
+  name: "The Well"
+  url: "https://polymathic-ai.org/the_well/"
+  doi: "unknown"
+  domain: "biological systems, fluid dynamics, acoustic scattering, astrophysical
+    MHD"
+  focus: "Foundation model + surrogate dataset spanning 16 physical simulation domains"
+  keywords:
+  - "surrogate modeling"
+  - "foundation model"
+  - "physics simulations"
+  - "spatiotemporal dynamics"
+  summary: |
+    A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains-from biology to astrophysical magnetohydrodynamic simulations-with unified API and metadata. Ideal for training surrogate and foundation models on scientific data. 
+  licensing: "BSD 3-Clause License"
+  task_types:
+  - "Supervised Learning"
+  ai_capability_measured:
+  - "Surrogate modeling"
+  - "physics-based prediction"
+  metrics:
+  - "Dataset size"
+  - "Domain breadth"
+  models:
+  - "FNO baselines"
+  - "U-Net baselines"
+  ml_motif:
+  - "Foundation model, Surrogate"
+  type: "Dataset"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "1"
+  notes: |
+    Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. 
+  contact:
+    name: "Ruben Ohana"
+    email: "rohana@flatironinstitute.org"
+  cite:
+  - |
+    @inproceedings{neurips2024_4f9a5acd,
+      author = {Ohana, Ruben and McCabe, Michael and Meyer, Lucas and Morel, Rudy and Agocs, Fruzsina J. and Beneitez, Miguel and Berger, Marsha and Burkhart, Blakesley and Dalziel, Stuart B. and Fielding, Drummond B. and Fortunato, Daniel and Goldberg, Jared A. and Hirashima, Keiya and Jiang, Yan-Fei and Kerswell, Rich R. and Maddu, Suryanarayana and Miller, Jonah and Mukhopadhyay, Payel and Nixon, Stefan S. and Shen, Jeff and Watteaux, Romain and Blancard, Bruno R\'{e}galdo-Saint and Rozet, Fran\c{c}ois and Parker, Liam H. and Cranmer, Miles and Ho, Shirley},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {44989--45037},
+      publisher = {Curran Associates, Inc.},
+      title = {The Well: a Large-Scale Collection of Diverse Physics Simulations for Machine Learning},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/4f9a5acd91ac76569f2fe291b1f4772b-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links:
+    - name: "16 simulation datasets"
+      url: "HDF5) via PyPI/GitHub"
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1axQvD_aY9O71A2nxWaoFvsfE8HvZ4TmwDoZ4cQQwW58/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        BSD-licensed software and unified API are available via GitHub and PyPI.
+        Supports loading and manipulating large HDF5 datasets across 16 domains.
+    specification:
+      rating: 4
+      reason: |
+        The benchmark includes clearly defined surrogate modeling tasks, data structure, and metadata.
+        However, constraints and formal task specs vary slightly across domains.
+    dataset:
+      rating: 5
+      reason: |
+        15 TB of ML-ready HDF5 datasets across 16 physics domains. Public, well-structured,
+        richly annotated, and designed with FAIR principles in mind.
+    metrics:
+      rating: 3
+      reason: |
+        Domain breadth and dataset size are emphasized. Standardized quantitative metrics for
+        model evaluation (e.g., RMSE, accuracy) are not uniformly applied across all domains.
+    reference_solution:
+      rating: 3
+      reason: |
+        Includes FNO and U-Net baselines, but does not yet provide fully trained, reproducible
+        models or scripts across all datasets.
+    documentation:
+      rating: 4
+      reason: |
+        The GitHub repo and NeurIPS paper provide detailed guidance on dataset use,
+        structure, and training setup. Tutorials and walkthroughs could be expanded further.

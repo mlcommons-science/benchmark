@@ -22,6 +22,7 @@ flat = manager.get_flat_dicts())
 """
 
 import yaml
+import json
 import re
 import sys
 import requests
@@ -831,3 +832,11 @@ class YamlManager(object):
                         f"Entry '{name}' has a single citation, but it must be formulated as a list (use a - in front of the multiline string)."
                     )
         return citations
+    
+    def to_json_file(
+        self, path: str, *, indent: int | None = 2, ensure_ascii: bool = False
+    ) -> str:
+        """Write the raw data as JSON to `path` and return the path."""
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(self._yaml_dicts, f, indent=indent, ensure_ascii=ensure_ascii)
+        return path

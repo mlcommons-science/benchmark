@@ -142,5 +142,5 @@ docker build -t benchmark .
 
 ## Run (shell in repo)
 ```bash
-docker run --rm -it -v "$PWD":/workspace -p 8000:8000 benchmark
+docker run --rm -it -v "$PWD":/workspace -e SERVE_HOST=0.0.0.0 -p 8000:8000 benchmark
 ```

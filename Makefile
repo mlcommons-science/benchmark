@@ -67,6 +67,8 @@ md:
 DOCS=www/science-ai-benchmarks/docs
 WWW=www/science-ai-benchmarks
 
+SERVE_HOST ?= 127.0.0.1
+
 
 publish: mkdocs
 	$(call BANNER,"Publishing from ${DOCS}") 
@@ -147,5 +149,4 @@ structure:
 	python ${SCRIPT} --files=source/benchmarks-addon.yaml --check_structure 
 
 view-local:
-	cd www/science-ai-benchmarks; mkdocs serve -a 0.0.0.0:8000
-
+	cd www/science-ai-benchmarks; mkdocs serve -a $(SERVE_HOST):8000

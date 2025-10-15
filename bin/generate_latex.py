@@ -161,26 +161,24 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
 }
 
 DEFAULT_COLUMNS = [
-    "ratings",
+    #"ratings",
     # "date",
     # "expired",
     # "valid",
-    "name",
+    "cite",
+    #"name",
     # "url",
     "domain",
-    # "focus",
-    # "keywords",
-    "focus",
-    "keywords",
+    #"focus",
+    #"keywords",
     # "description",
-    "task_types",
-    # "ml_motif",
-    # "average_rating",
-    "ai_capability_measured",
-    "metrics",
-    "models",
+    #"task_types",
+     "ml_motif",
+     "average_rating",
+    # "ai_capability_measured",
+    #"metrics",
+    # "models",
     # "notes",
-    "cite",
 ]
 
 REQUIRED_FIELDS_BY_TYPE = {
@@ -902,7 +900,7 @@ class GenerateLatex:
 
         for col in columns:
             content = ""
-
+            url_txt = self.get_url_ref(entry)
             if col == "average_rating":
                 # Calculate the average rating
                 ratings = [
@@ -916,6 +914,12 @@ class GenerateLatex:
                 else:
                     content = "N/A"
 
+            elif col == "ratings":
+                id = entry.get("id", "unknown")
+                image = f"{id}_radar.pdf"
+
+                content = f"\\includegraphics[width=0.15\\textwidth]{{{image}}}"
+
             elif col == "cite":
                 cite_entries = (
                     entry.get(col)
@@ -927,10 +931,10 @@ class GenerateLatex:
                     for c in cite_entries
                     if c and c.strip().startswith("@")
                 ]
-
                 # Exclude href link from citation
                 content = f"\\cite{{{','.join(cite_keys)}}}" if cite_keys else ""
-
+            elif col == "url":
+                content = url_txt
             else:
                 value = entry.get(col)
                 if isinstance(value, list):

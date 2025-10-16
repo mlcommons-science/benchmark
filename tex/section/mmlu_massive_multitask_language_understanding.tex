@@ -13,9 +13,10 @@ zero-shot and few-shot settings.
   \item[expired:] false
   \item[valid:] yes
   \item[valid\_date:] 2025-07-28
-  \item[url:] \href{https://paperswithcode.com/dataset/mmlu}{https://paperswithcode.com/dataset/mmlu}
+  \item[url:] \href{https://huggingface.co/datasets/cais/mmlu}{https://huggingface.co/datasets/cais/mmlu}
   \item[doi:] 10.48550/arXiv.2009.03300
-  \item[domain:] Multidomain
+  \item[domain:]
+    - Computational Science \& AI
   \item[focus:] Academic knowledge and reasoning across 57 subjects
   \item[keywords:]
     - multitask
@@ -36,7 +37,7 @@ zero-shot and few-shot settings.
     - o1
     - DeepSeek-R1
   \item[ml\_motif:]
-    - General knowledge
+    - Reasoning \& Generalization
   \item[type:] Benchmark
   \item[ml\_task:]
     - Supervised Learning
@@ -44,12 +45,12 @@ zero-shot and few-shot settings.
   \item[notes:] Good
   \item[contact.name:] Dan Hendrycks
   \item[contact.email:] dan (at) safe.ai
-  \item[datasets.links.name:] Papers with Code datasets
-  \item[datasets.links.url:] \href{https://github.com/paperswithcode/paperswithcode-data}{https://github.com/paperswithcode/paperswithcode-data}
-  \item[results.links.name:] Chinchilla
-  \item[results.links.url:] \href{https://arxiv.org/abs/2203.15556}{https://arxiv.org/abs/2203.15556}
-  \item[fair.reproducible:] True
-  \item[fair.benchmark\_ready:] True
+  \item[datasets.links.name:] Huggingface Dataset
+  \item[datasets.links.url:] \href{https://huggingface.co/datasets/cais/mmlu}{https://huggingface.co/datasets/cais/mmlu}
+  \item[results.links.name:] Measuring Massive Multitask Language Understanding - Test Leaderboard
+  \item[results.links.url:] \href{https://github.com/hendrycks/test?tab=readme-ov-file\#test-leaderboard}{https://github.com/hendrycks/test?tab=readme-ov-file\#test-leaderboard}
+  \item[fair.reproducible:] Yes
+  \item[fair.benchmark\_ready:] Yes
   \item[id:] mmlu\_massive\_multitask\_language\_understanding
   \item[Citations:] \cite{hendrycks2021measuring}
 \end{description}
@@ -68,7 +69,7 @@ metrics & 5 & Fully defined, represents a solution's performance.
  \\
 reference\_solution & 2 & Reference models are available (i.e. GPT-3), but are not trainable or publicly documented
  \\
-software & 0 & No instructions to download or run data given on the site
+software & 2 & Some code is available on github to reproduce results via OpenAI API, but not well documented
  \\
 specification & 4 & No system constraints
  \\

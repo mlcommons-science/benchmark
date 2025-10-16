@@ -13,8 +13,9 @@ requiring advanced reasoning over a 14-million-sentence corpus.
   \item[valid:] yes
   \item[valid\_date:] 2018-03-14
   \item[url:] \href{https://allenai.org/data/arc}{https://allenai.org/data/arc}
-  \item[doi:] NA
-  \item[domain:] Science
+  \item[doi:] 10.48550/arXiv.1803.05457
+  \item[domain:]
+    - Computational Science \& AI
   \item[focus:] Grade-school science with reasoning emphasis
   \item[keywords:]
     - grade-school
@@ -32,7 +33,7 @@ requiring advanced reasoning over a 14-million-sentence corpus.
     - GPT-4
     - Claude
   \item[ml\_motif:]
-    - Elementary science
+    - Reasoning \& Generalization
   \item[type:] Benchmark
   \item[ml\_task:]
     - Supervised Learning
@@ -42,12 +43,12 @@ requiring advanced reasoning over a 14-million-sentence corpus.
   \item[contact.email:] unknown
   \item[datasets.links.name:] Hugging Face
   \item[datasets.links.url:] \href{https://huggingface.co/datasets/allenai/ai2\_arc}{https://huggingface.co/datasets/allenai/ai2\_arc}
-  \item[results.links.name:] unknown
-  \item[results.links.url:] \href{unknown}{unknown}
-  \item[fair.reproducible:] True
-  \item[fair.benchmark\_ready:] True
+  \item[results.links.name:] ARC-Solvers
+  \item[results.links.url:] \href{https://github.com/allenai/arc-solvers}{https://github.com/allenai/arc-solvers}
+  \item[fair.reproducible:] Yes
+  \item[fair.benchmark\_ready:] Yes
   \item[id:] arc-challenge\_advanced\_reasoning\_challenge
-  \item[Citations:] \cite{clark2018think}
+  \item[Citations:] \cite{allenai:arc}
 \end{description}
 
 {\bf Ratings:} ~ \\
@@ -56,17 +57,17 @@ requiring advanced reasoning over a 14-million-sentence corpus.
 \hline
 Rating & Value & Reason \\
 \hline
-dataset & 4 & Data accessible, offers instructions on how to download the data via CLI tools. No splits.
+dataset & 5 & Data accessible, offers instructions on how to download the data via CLI tools. Splits provided on Huggingface
  \\
 documentation & 5 & Explains all necessary information inside a paper
  \\
-metrics & 5 & (by default) All questions in the dataset are multiple choice, all have a correct answer
+metrics & 5 & All questions in the dataset are multiple choice, all have a correct answer
  \\
-reference\_solution & 1 & There are over 300 models listed, but very few, if any, show performance on the dataset or list constraints
+reference\_solution & 5 & Reference solution is available and containerized
  \\
-software & 0 & No link to code or documentation
+software & 5 & Code is available and well documented for evaluation.
  \\
-specification & 2 & Task is clear, but no constraints or format is mentioned
+specification & 4 & Task is clear and inputs/outputs are provided along with format on dataset card.
  \\
 \hline
 \end{tabular}

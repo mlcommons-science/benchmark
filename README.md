@@ -12,9 +12,9 @@ All benchmark entries must follow the format as defined in `source/benchmarks-fo
 
 Make sure that yaml indentation is **2 spaces** and do not use tabs. 
 
-To rate benchmarks, use the [rating system](ratings_explanations.md). 
+To rate benchmarks, use the [rating system](README-ratings.md). 
 
-The yaml file is used to generate documents, that should only created with our programs while making cahnges to the yaml files. The produced files must not be changed by hand. 
+The yaml file is used to generate documents, that should only created with our programs while making changes to the yaml files. The produced files must not be changed by hand. 
 
 Intermediate files are produced in a content directory, while the officially published files are publisched in the docs directory. as we do not publish the content directory, we only refer to the docs directory documents. If you conduct development and use our programs please look at the comntent directory for intermediate documents. The most important document is the PDF report document we produce:
 
@@ -26,18 +26,19 @@ If you like to cite this report, please use the following:
 
 Text:
 
-Gregor von Laszewski, Reece Shiraishi, Anjay Krishnan, Nhan Tran, Benjamin Hawks, and Geoffrey C. Fox. AI Scientific Benchmarks Comparison. GitHub, July 2025. Available at: https://mlcommons-science.github.io/benchmark/benchmarks.pdf
+Gregor von Laszewski, Reece Shiraishi, Anjay Krishnan, Nhan Tran, Benjamin Hawks, Marco Colombo and Geoffrey C. Fox. AI Scientific Benchmarks Comparison. GitHub, July 2025. Available at: https://mlcommons-science.github.io/benchmark/benchmarks.pdf
 
 BibTex:
 
 ```
 @misc{benchmark-collection,
     title={MLCommons Science Working Group AI Benchmarks Collection}
-    author={Gregor von Laszewski and 
+    author={Gregor von Laszewski and  
             Reece Shiraishi and 
             Anjay Krishnan and 
             Nhan Tran and 
-            Benjamin Hawks and 
+            Benjamin Hawks and
+            Marco Colombo and 
             Geoffrey C. Fox}
     url={https://mlcommons-science.github.io/benchmark/benchmarks.pdf}
     howpublished={Github},
@@ -51,7 +52,7 @@ To have some quickly accessible information in a format that you can further man
 
 This includes an index file pointing you to all individual benchmarks
 
-* [benchmarks.md](https://mlcommons-science.github.io/benchmark/md/benchmarks.md)
+* [benchmarks.md](https://mlcommons-science.github.io/benchmark/md/benchmarks_table/)
 
 
 

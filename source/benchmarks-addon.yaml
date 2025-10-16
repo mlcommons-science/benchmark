@@ -1,701 +1,4 @@
 
-
-- date: "2023-10-05"
-  version: "v3.0.2"
-  last_updated: "2025-06"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2023-10-05"
-  name: "Nixtla Neural Forecast TimeGPT"
-  url: "https://github.com/Nixtla/neuralforecast"
-  doi: "10.48550/arXiv.2310.03589"
-  domain: "Time-series; General ML"
-  focus: "Time-series foundation model \"TimeGPT\" for forecasting and anomaly detection"
-  keywords:
-  - "TimeGPT"
-  - "foundation model"
-  - "time-series"
-  - "generative model"
-  summary: |
-    TimeGPT is a transformer-based generative pretrained model on 100B+ time series data for
-    zero-shot forecasting and anomaly detection via API .
-  licensing: "Apache License 2.0"
-  task_types:
-  - "Time-series forecasting"
-  - "Anomaly detection"
-  ai_capability_measured:
-  - "Zero-shot forecasting"
-  - "anomaly detection"
-  metrics:
-  - "RMSE"
-  - "Anomaly detection metrics"
-  models:
-  - "TimeGPT"
-  ml_motif:
-  - "Time-series"
-  type: "Platform"
-  ml_task:
-  - "Forecasting"
-  solutions: "Solution details are described in the referenced paper or repository."
-  notes: |
-    Offered via Nixtla API and Azure Studio; enterprise-grade support available.
-  contact:
-    name: "Azul Garza (Nixtla)"
-    email: "unknown"
-  cite:
-  - |
-    @misc{garza2024timegpt1,
-      archiveprefix = {arXiv},
-      author        = {Azul Garza and Cristian Challu and Max Mergenthaler-Canseco},
-      eprint        = {2310.03589},
-      primaryclass  = {cs.LG},
-      title         = {TimeGPT-1},
-      url           = {https://arxiv.org/abs/2310.03589},
-      year          = {2024}
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1KmKs9JtcfpKe40fNuLrgdFcOmBnfj3ZG7AwcfTH4tXE/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 4
-      reason: |
-        Fully open-source Apache 2.0 implementation integrated in NeuralForecast,
-        supporting training and evaluation via API. Production-grade deployment available via Nixtla API and Azure.
-    specification:
-      rating: 3
-      reason: |
-        Concept and forecasting goals are described, but formal input/output definitions
-        and task constraints are not rigorously specified.
-    dataset:
-      rating: 3
-      reason: |
-        Evaluated on existing open datasets, but consolidated data release, splits, and FAIR
-        metadata are not provided.
-    metrics:
-      rating: 4
-      reason: |
-        Uses standard forecasting metrics such as RMSE, MASE, SMAPE, and anomaly detection
-        metrics consistently across evaluations.
-    reference_solution:
-      rating: 3
-      reason: |
-        TimeGPT implementation is available, but baseline comparisons and additional reference
-        models are limited.
-    documentation:
-      rating: 3
-      reason: |
-        Basic README with installation and usage examples; more detailed API docs and tutorials
-        would improve usability.
-
-- date: "2023-06-01"
-  version: "v3.0.2"
-  last_updated: "2025-06"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2023-06-01"
-  name: "Nixtla Neural Forecast NHITS"
-  url: "https://github.com/Nixtla/neuralforecast"
-  doi: "unknown"
-  domain: "Time-series; General ML"
-  focus: "Official NHITS implementation for long-horizon time series forecasting"
-  keywords:
-  - "NHITS"
-  - "long-horizon forecasting"
-  - "neural interpolation"
-  - "time-series"
-  summary: |
-    NHITS (Neural Hierarchical Interpolation for Time Series) is a state-of-the-art model that
-    improved accuracy by ~25% and reduced compute by 50x compared to Transformer baselines,
-    using hierarchical interpolation and multi-rate sampling .
-  licensing: "Apache License 2.0"
-  task_types:
-  - "Time-series forecasting"
-  ai_capability_measured:
-  - "Accuracy"
-  - "compute efficiency for long series"
-  metrics:
-  - "RMSE"
-  - "MAPE"
-  models:
-  - "NHITS"
-  ml_motif:
-  - "Time-series"
-  type: "Platform"
-  ml_task:
-  - "Forecasting"
-  solutions: "0"
-  notes: |
-    Official implementation in NeuralForecast, included since its AAAI 2023 release.
-  contact:
-    name: "Kin G. Olivares (Nixtla)"
-    email: "unknown"
-  cite:
-  - |
-    @inproceedings{challu2023nhits,
-     title={Nhits: Neural hierarchical interpolation for time series forecasting},
-     author={Challu, Cristian and Olivares, Kin G and Oreshkin, Boris N and Ramirez, Federico Garza and Canseco, Max Mergenthaler and Dubrawski, Artur},
-     booktitle={Proceedings of the AAAI conference on artificial intelligence},
-     volume={37},
-     number={6},
-     pages={6989--6997},
-     year={2023}
-     }
-  datasets:
-    links:
-    - name: "Standard forecast datasets, M4"
-      url: ""
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/15Hm5ekGu99aQWsdtiUIwX6JMoaoFpRbIhDylrWqSoHY/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 5
-      reason: |
-        Implemented within the open-source NeuralForecast library under Apache 2.0.
-        Includes training, evaluation, and hyperparameter tuning pipelines. Actively maintained.
-    specification:
-      rating: 5
-      reason: |
-        The NHITS forecasting task is clearly defined with structured input/output formats.
-        Model design targets long-horizon accuracy and compute efficiency.
-    dataset:
-      rating: 3
-      reason: |
-        Uses standard benchmark datasets like M4, but does not bundle them directly.
-        FAIR compliance depends on external dataset sources and user setup.
-    metrics:
-      rating: 5
-      reason: |
-        Evaluated using RMSE, MAPE, and other standard forecasting metrics, integrated
-        into training and evaluation APIs.
-    reference_solution:
-      rating: 4
-      reason: |
-        Official NHITS implementation is fully reproducible with training/eval configs,
-        though pretrained weights are not always provided.
-    documentation:
-      rating: 4
-      reason: |
-        Well-documented on GitHub and in AAAI paper, with code examples, training guidance,
-        and usage tutorials. More model-specific docs could improve clarity further.
-
-
-- date: "2023-10-03"
-  version: "v3.0.2"
-  last_updated: "2025-06"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2023-10-03"
-  name: "Nixtla Neural Forecast TimeLLM"
-  url: "https://github.com/Nixtla/neuralforecast"
-  doi: "10.48550/arXiv.2310.01728"
-  domain: "Time-series; General ML"
-  focus: "Reprogramming LLMs for time series forecasting"
-  keywords:
-  - "Time-LLM"
-  - "language model"
-  - "time-series"
-  - "reprogramming"
-  summary: |
-    Time-LLM uses reprogramming layers to adapt frozen LLMs for time series forecasting, treating
-    forecasting as a language task .
-  licensing: "Apache License 2.0"
-  task_types:
-  - "Time-series forecasting"
-  ai_capability_measured:
-  - "Model reuse via LLM"
-  - "few-shot forecasting"
-  metrics:
-  - "RMSE"
-  - "MAPE"
-  models:
-  - "Time-LLM"
-  ml_motif:
-  - "Time-series"
-  type: "Platform"
-  ml_task:
-  - "Forecasting"
-  solutions: "Solution details are described in the referenced paper or repository."
-  notes: |
-    Fully open-source; transforms forecasting using LLM text reconstruction.
-  contact:
-    name: "Ming Jin (Nixtla)"
-    email: "unknown"
-  cite:
-  - |
-    @misc{jin2024timellmtimeseriesforecasting,
-      title={Time-LLM: Time Series Forecasting by Reprogramming Large Language Models}, 
-      author={Ming Jin and Shiyu Wang and Lintao Ma and Zhixuan Chu and James Y. Zhang and Xiaoming Shi and Pin-Yu Chen and Yuxuan Liang and Yuan-Fang Li and Shirui Pan and Qingsong Wen},
-      year={2024},
-      eprint={2310.01728},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2310.01728}, 
-    }
-  datasets:
-    links:
-    - name: "Standard forecast datasets, M4"
-      url: ""
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1xXGzRt-qhUFTvnBGQi2IbcoBdYyo-ZrAn3IOkswd3fw/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 4
-      reason: |
-        Fully open-source under Apache 2.0, integrated into the NeuralForecast library.
-        Includes Time-LLM implementation with example usage and training scripts.
-    specification:
-      rating: 3
-      reason: |
-        High-level framing of forecasting as language modeling is clear, but detailed input/output
-        specifications, constraints, and task formalization are minimal.
-    dataset:
-      rating: 3
-      reason: |
-        Evaluated on standard datasets like M4 and ETT, but dataset splits and versioning are not
-        bundled or explicitly FAIR-compliant.
-    metrics:
-      rating: 4
-      reason: |
-        Standard forecasting metrics such as RMSE, MAPE, and SMAPE are reported.
-        Evaluation is consistent, though deeper metric justification is limited.
-    reference_solution:
-      rating: 3
-      reason: |
-        Time-LLM implementation is open and reproducible, but limited baselines or comparative
-        implementations are included directly.
-    documentation:
-      rating: 3
-      reason: |
-        GitHub README provides installation and quick usage examples, but lacks detailed API docs,
-        training walkthroughs, or extended tutorials.
-
-- date: "2022-04-01"
-  version: "v3.0.2"
-  last_updated: "2025-06"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2022-04-01"
-  name: "Nixtla NeuralForecast"
-  url: "https://github.com/Nixtla/neuralforecast"
-  doi: "unknown"
-  domain: "Time-series forecasting; General ML"
-  focus: "High-performance neural forecasting library with >30 models"
-  keywords:
-  - "time-series"
-  - "neural forecasting"
-  - "NBEATS, NHITS, TFT"
-  - "probabilistic forecasting"
-  - "usability"
-  summary: |
-    NeuralForecast offers scalable, user-friendly implementations of over 30 neural forecasting models (NBEATS, NHITS, TFT, DeepAR, etc.),
-    emphasizing quality, usability, interpretability, and performance.
-  licensing: "Apache License 2.0"
-  task_types:
-  - "Time-series forecasting"
-  ai_capability_measured:
-  - "Forecast accuracy"
-  - "interpretability"
-  - "speed"
-  metrics:
-  - "RMSE"
-  - "MAPE"
-  - "CRPS"
-  models:
-  - "NBEATS"
-  - "NHITS"
-  - "TFT"
-  - "DeepAR"
-  ml_motif:
-  - "Time-series"
-  type: "Platform"
-  ml_task:
-  - "Forecasting"
-  solutions: "0"
-  notes: |
-    AutoModel supports hyperparameter tuning and distributed execution via Ray and Optuna. First official NHITS implementation. contentReference oaicite:4 ndex=4
-  contact:
-    name: "Kin G. Olivares (Nixtla)"
-    email: "unknown"
-  cite:
-  - |
-    @misc{olivares2022library_neuralforecast,
-      author={Kin G. Olivares and Cristian Chall\'{u} and Federico Garza and Max Mergenthaler Canseco and Artur Dubrawski},
-      title = {NeuralForecast: User friendly state-of-the-art neural forecasting models.},
-      year={2022},
-      howpublished={PyCon Salt Lake City, Utah, US 2022},
-      url={https://github.com/Nixtla/neuralforecast}
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1VzhaUubIm-SHK7cfKWyoi8GtykpCuOH2qPM-k_g8bKU/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 5
-      reason: |
-        Actively maintained open-source library under Apache 2.0. Offers a clean API,
-        extensive model zoo (>30 models), integration with Ray, Optuna, and supports
-        scalable training and inference workflows.
-    specification:
-      rating: 5
-      reason: |
-        Forecasting task is well-defined with clear input/output structures. Framework supports
-        probabilistic and deterministic forecasting, with unified interfaces and support for batch evaluation.
-    dataset:
-      rating: 3
-      reason: |
-        NeuralForecast does not include its own datasets but supports standard datasets (e.g., M4, M5, ETT).
-        FAIR compliance depends on user-supplied data.
-    metrics:
-      rating: 5
-      reason: |
-        RMSE, MAPE, CRPS, and other domain-relevant metrics are well supported and integrated into the evaluation loop.
-    reference_solution:
-      rating: 4
-      reason: |
-        Includes runnable model baselines and training scripts for all supported models.
-        Some models have pretrained weights, but not all are fully benchmarked out-of-the-box.
-    documentation:
-      rating: 5
-      reason: |
-        Rich documentation with examples, API references, tutorials, notebooks, and CLI support.
-        PyPI, GitHub, and official blog posts offer clear guidance for usage and extension.
-
-- date: "2022-06-22"
-  version: "v1.0"
-  last_updated: "2025-01"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2022-06-22"
-  name: "vLLM Performance Dashboard"
-  url: "https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/"
-  doi: "unknown"
-  domain: "LLM; HPC/inference"
-  focus: "Interactive dashboard showing inference performance of vLLM"
-  keywords:
-  - "Dashboard"
-  - "Throughput visualization"
-  - "Latency analysis"
-  - "Metric tracking"
-  summary: |
-    A live visual dashboard for vLLM showcasing throughput, latency, and other inference metrics across models and hardware configurations.
-  licensing: "unknown"
-  task_types:
-  - "Performance visualization"
-  ai_capability_measured:
-  - "Throughput"
-  - "latency"
-  - "hardware utilization"
-  metrics:
-  - "Tokens/sec"
-  - "TTFT"
-  - "Memory usage"
-  models:
-  - "LLaMA-2"
-  - "Mistral"
-  - "Qwen"
-  ml_motif:
-  - "HPC/inference"
-  type: "Framework"
-  ml_task:
-  - "Visualization"
-  solutions: "0"
-  notes: |
-    Built using ObservableHQ; integrates live data from vLLM benchmarks.
-    The URL requires a login to access the content.
-  contact:
-    name: "Simon Mo"
-    email: "unknown"
-  cite:
-  - |
-    @misc{mo2024vllm_dashboard,
-      title={vLLM Performance Dashboard},
-      author={Mo, Simon},
-      year={2024},
-      url={https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/}
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "(none)"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 4
-      reason: |
-        Interactive dashboard built with ObservableHQ and linked to vLLM benchmarks.
-        Source code is not fully open, but backend integration with vLLM is well-maintained.
-    specification:
-      rating: 4
-      reason: |
-        While primarily a visualization tool, it includes benchmark configurations,
-        metric definitions, and supports comparison across models and hardware.
-    dataset:
-      rating: 2
-      reason: |
-        No datasets are bundled; the dashboard visualizes metrics derived from model
-        inference logs or external endpoints, not a formal dataset.
-    metrics:
-      rating: 4
-      reason: |
-        Tracks tokens/sec, TTFT, memory usage, and platform comparisons. Metrics are clear
-        but focused on visualization rather than statistical robustness.
-    reference_solution:
-      rating: 3
-      reason: |
-        Dashboards include reproducible views of benchmarked models, but do not ship
-        with runnable model code. Relies on external serving infrastructure.
-    documentation:
-      rating: 4
-      reason: |
-        Public dashboard with instructions and tooltips; documentation is clear, though access
-        is restricted (login required) and backend setup is opaque to users.
-
-
-- date: "2023-09-12"
-  version: "v0.10.0"
-  last_updated: "2025-06"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2023-09-12"
-  name: "vLLM Inference and Serving Engine"
-  url: "https://github.com/vllm-project/vllm/tree/main/benchmarks"
-  doi: "unknown"
-  domain: "LLM; HPC/inference"
-  focus: "High-throughput, memory-efficient inference and serving engine for LLMs"
-  keywords:
-  - "LLM inference"
-  - "PagedAttention"
-  - "CUDA graph"
-  - "streaming API"
-  - "quantization"
-  summary: |
-    vLLM is a fast, high-throughput, memory-efficient inference and serving engine for large language models, 
-    featuring PagedAttention, continuous batching, and support for quantized and pipelined model execution. 
-    Benchmarks compare it to TensorRT-LLM, SGLang, and others. 
-  licensing: "Apache License 2.0"
-  task_types:
-  - "Inference Benchmarking"
-  ai_capability_measured:
-  - "Throughput"
-  - "latency"
-  - "memory efficiency"
-  metrics:
-  - "Tokens/sec"
-  - "Time to First Token (TTFT)"
-  - "Memory footprint"
-  models:
-  - "LLaMA"
-  - "Mixtral"
-  - "FlashAttention-based models"
-  ml_motif:
-  - "HPC/inference"
-  type: "Framework"
-  ml_task:
-  - "Inference"
-  solutions: "0"
-  notes: |
-    Incubated by LF AI and Data; achieves up to 24x throughput over HuggingFace Transformers 
-  contact:
-    name: "Woosuk Kwon (vLLM Team)"
-    email: "unknown"
-  cite:
-  - |
-    @inproceedings{10.1145/3600006.3613165,
-      author = {Kwon, Woosuk and Li, Zhuohan and Zhuang, Siyuan and Sheng, Ying and Zheng, Lianmin and Yu, Cody Hao and Gonzalez, Joseph and Zhang, Hao and Stoica, Ion},
-      title = {Efficient Memory Management for Large Language Model Serving with PagedAttention},
-      year = {2023},
-      publisher = {Association for Computing Machinery},
-      address = {New York, NY, USA},
-      url = {https://doi.org/10.1145/3600006.3613165},
-      doi = {10.1145/3600006.3613165},
-      abstract = {High throughput serving of large language models (LLMs) requires batching sufficiently many requests at a time. However, existing systems struggle because the key-value cache (KV cache) memory for each request is huge and grows and shrinks dynamically. When managed inefficiently, this memory can be significantly wasted by fragmentation and redundant duplication, limiting the batch size. To address this problem, we propose PagedAttention, an attention algorithm inspired by the classical virtual memory and paging techniques in operating systems. On top of it, we build vLLM, an LLM serving system that achieves (1) near-zero waste in KV cache memory and (2) flexible sharing of KV cache within and across requests to further reduce memory usage. Our evaluations show that vLLM improves the throughput of popular LLMs by 2--4\texttimes{} with the same level of latency compared to the state-of-the-art systems, such as FasterTransformer and Orca. The improvement is more pronounced with longer sequences, larger models, and more complex decoding algorithms. vLLM's source code is publicly available at https://github.com/vllm-project/vllm.},
-      booktitle = {Proceedings of the 29th Symposium on Operating Systems Principles},
-      pages = {611-626},
-      numpages = {16},
-      location = {Koblenz, Germany},
-      series = {SOSP '23}
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1nPZyRZEZHciGXYNJShR9FCJbre7ImJLKf2MG6g4-3gQ/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 5
-      reason: |
-        Actively maintained open-source project under Apache 2.0. GitHub repo includes
-        full serving engine, benchmarking scripts, CUDA integration, and deployment examples.
-    specification:
-      rating: 5
-      reason: |
-        Inference benchmarks are well-defined with clear input/output formats and platform-specific constraints.
-        Covers multiple models, hardware backends, and batching configurations.
-    dataset:
-      rating: 3
-      reason: |
-        No traditional dataset is included. Instead, it uses structured configs and logs suitable for inference benchmarking.
-        FAIR principles are only partially applicable.
-    metrics:
-      rating: 5
-      reason: |
-        Comprehensive performance metrics like tokens/sec, time-to-first-token (TTFT), and memory footprint
-        are consistently applied and benchmarked across frameworks.
-    reference_solution:
-      rating: 4
-      reason: |
-        Provides runnable scripts and configs for several models (LLaMA, Mixtral, etc.) across platforms.
-        Baselines are reproducible, though not all models are fully wrapped or hosted.
-    documentation:
-      rating: 4
-      reason: |
-        Well-structured GitHub documentation with setup instructions, config examples, benchmarking comparisons,
-        and performance tuning guides.
-
-- date: "2023-12-12"
-  version: "v0.4.9"
-  last_updated: "2025-06"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2023-12-12"
-  name: "SGLang Framework"
-  url: "https://github.com/sgl-project/sglang/tree/main/benchmark"
-  doi: "10.48550/arXiv.2312.07104"
-  domain: "LLM Vision"
-  focus: "Fast serving framework for LLMs and vision-language models"
-  keywords:
-  - "LLM serving"
-  - "vision-language"
-  - "RadixAttention"
-  - "performance"
-  - "JSON decoding"
-  summary: |
-    A high-performance open-source serving framework combining efficient backend runtime (RadixAttention, batching, quantization) and expressive frontend language, boosting LLM/VLM inference throughput up to ~3x over alternatives. 
-  licensing: "Apache License 2.0"
-  task_types:
-  - "Model serving framework"
-  ai_capability_measured:
-  - "Serving throughput"
-  - "JSON/task-specific latency"
-  metrics:
-  - "Tokens/sec"
-  - "Time-to-first-token"
-  - "Throughput gain vs baseline"
-  models:
-  - "LLaVA"
-  - "DeepSeek"
-  - "Llama"
-  ml_motif:
-  - "LLM Vision"
-  type: "Framework"
-  ml_task:
-  - "Model serving"
-  solutions: "Solution details are described in the referenced paper or repository."
-  notes: |
-    Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025. 
-  contact:
-    name: "SGLang Team"
-    email: "unknown"
-  cite:
-  - |
-    @misc{zheng2024sglangefficientexecutionstructured,
-      archiveprefix = {arXiv},
-      author        = {Lianmin Zheng and Liangsheng Yin and Zhiqiang Xie and Chuyue Sun and Jeff Huang and Cody Hao Yu and Shiyi Cao and Christos Kozyrakis and Ion Stoica and Joseph E. Gonzalez and Clark Barrett and Ying Sheng},
-      eprint        = {2312.07104},
-      primaryclass  = {cs.AI},
-      title         = {SGLang: Efficient Execution of Structured Language Model Programs},
-      url           = {https://arxiv.org/abs/2312.07104},
-      year          = {2024}
-    } 
-  datasets:
-    links:
-    - name: "Benchmark configs"
-      url: ""
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: ""
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 5
-      reason: |
-        Actively maintained and production-deployed (e.g., xAI, NVIDIA); source code available under
-        Apache 2.0. Includes efficient backends (RadixAttention, quantization, batching) and full
-        serving infrastructure.
-    specification:
-      rating: 4
-      reason: |
-        The framework clearly defines performance targets, serving logic, and model integration.
-        Input/output expectations are consistent, but not all benchmarks are standardized.
-    dataset:
-      rating: 2
-      reason: |
-        Does not introduce new datasets; instead, it evaluates performance using existing model benchmarks.
-        Only configuration files are included.
-    metrics:
-      rating: 5
-      reason: |
-        Serving-related metrics such as tokens/sec, time-to-first-token, and throughput gain vs. baselines
-        are well-defined and consistently applied.
-    reference_solution:
-      rating: 3
-      reason: |
-        Provides benchmark configs and example integrations (e.g., with LLaVA, DeepSeek), but not all
-        models or scripts are runnable out-of-the-box.
-    documentation:
-      rating: 4
-      reason: |
-        Strong GitHub documentation, install guides, and benchmarks. Some advanced topics (e.g.,
-        scaling, hardware tuning) could use deeper walkthroughs.
-
 - date: "2024-05-01"
   version: "v0.2.0"
   last_updated: "2024-05"
@@ -705,7 +8,8 @@
   name: "Jet Classification"
   url: "https://github.com/fastmachinelearning/fastml-science/tree/main/jet-classify"
   doi: "10.48550/arXiv.2207.07958"
-  domain: "Particle Physics"
+  domain:
+  - High Energy Physics
   focus: "Real-time classification of particle jets using HL-LHC simulation features"
   keywords:
   - "classification"
@@ -718,7 +22,7 @@
     includes both full-precision and quantized models optimized for FPGA deployment.
   licensing: "Apache License 2.0"
   task_types:
-  - "Classification"
+  - Classification
   ai_capability_measured:
   - "Real-time inference"
   - "model compression performance"
@@ -729,7 +33,7 @@
   - "Keras DNN"
   - "QKeras quantized DNN"
   ml_motif:
-  - "Real-time"
+  - Classification
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
@@ -758,13 +62,11 @@
       url: "https://zenodo.org/record/6619768"
   results:
     links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1Mr7J4F8PDAIBXJ2vrfVssxLekEVW7ahJ4wpSe6FN5yw"
-    - name: "ChatGPT LLM"
-      url: "https://docs.google.com/document/d/1runrcij-eoH3_lgGZ8wm2z1YbL1Qf5cSNbVbHyWFDs4"
+    - name: "unknown"
+      url: "unknown"
   fair:
-    reproducible: true
-    benchmark_ready: true
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
   ratings:
     software:
       rating: 3
@@ -800,7 +102,8 @@
   name: "Irregular Sensor Data Compression"
   url: "https://github.com/fastmachinelearning/fastml-science/tree/main/sensor-data-compression"
   doi: "10.48550/arXiv.2207.07958"
-  domain: "Particle Physics"
+  domain:
+  - High Energy Physics
   focus: "Real-time compression of sparse sensor data with autoencoders"
   keywords:
   - "compression"
@@ -824,7 +127,7 @@
   - "Autoencoder"
   - "Quantized autoencoder"
   ml_motif:
-  - "Real-time, Image/CV"
+  - Generative
   type: "Benchmark"
   ml_task:
   - "Unsupervised Learning"
@@ -856,8 +159,8 @@
     - name: "ChatGPT LLM"
       url: ""
   fair:
-    reproducible: true
-    benchmark_ready: true
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
   ratings:
     software:
       rating: 3
@@ -893,7 +196,8 @@
   name: "Beam Control"
   url: "https://github.com/fastmachinelearning/fastml-science/tree/main/beam-control"
   doi: "10.48550/arXiv.2207.07958"
-  domain: "Accelerators and Magnets"
+  domain:
+  - High Energy Physics
   focus: "Reinforcement learning control of accelerator beam position"
   keywords:
   - "RL"
@@ -916,7 +220,7 @@
   - "DDPG"
   - "PPO (planned)"
   ml_motif:
-  - "Real-time, RL"
+  - Reinforcement Learning/Control
   type: "Benchmark"
   ml_task:
   - "Reinforcement Learning"
@@ -994,7 +298,8 @@
   name: "Ultrafast jet classification at the HL-LHC"
   url: "https://arxiv.org/pdf/2402.01876"
   doi: "10.48550/arXiv.2402.01876"
-  domain: "Particle Physics"
+  domain:
+  - High Energy Physics
   focus: "FPGA-optimized real-time jet origin classification at the HL-LHC"
   keywords:
   - "jet classification"
@@ -1018,7 +323,7 @@
   - "Deep Sets"
   - "Interaction Network"
   ml_motif:
-  - "Real-time"
+  - Classification
   type: "Model"
   ml_task:
   - "Supervised Learning"
@@ -1051,8 +356,8 @@
     - name: "ChatGPT LLM"
       url: "https://docs.google.com/document/d/1gDf1CIYtfmfZ9urv1jCRZMYz_3WwEETkugUC65OZBdw"
   fair:
-    reproducible: true
-    benchmark_ready: false
+    reproducible: "Yes"
+    benchmark_ready: "No"
   ratings:
     software:
       rating: 3
@@ -1087,7 +392,8 @@
   name: "Quench detection"
   url: "https://indico.cern.ch/event/1387540/contributions/6153618/attachments/2948441/5182077/fast_ml_magnets_2024_final.pdf"
   doi: "NA"
-  domain: "Accelerators and Magnets"
+  domain:
+  - High Energy Physics
   focus: "Real-time detection of superconducting magnet quenches using ML"
   keywords:
   - "quench detection"
@@ -1098,7 +404,7 @@
     Exploration of real-time quench detection using unsupervised and RL approaches, combining multi-modal sensor data (BPM, power supply, acoustic), operating on kHz-MHz streams with anomaly detection and frequency-domain features.
   licensing: "Via Fermilab"
   task_types:
-  - "Anomaly detection"
+  - "Anomaly Detection"
   - "Quench localization"
   ai_capability_measured:
   - "Real-time anomaly detection with multi-modal sensors"
@@ -1109,7 +415,7 @@
   - "Autoencoder"
   - "RL agents (in development)"
   ml_motif:
-  - "Real-time, RL"
+  - Anomaly Detection
   type: "Benchmark"
   ml_task:
   - "Reinforcement, Unsupervised Learning"
@@ -1143,7 +449,7 @@
       url: ""
   fair:
     reproducible: "in progress"
-    benchmark_ready: false
+    benchmark_ready: "No"
   ratings:
     software:
       rating: 1
@@ -1179,7 +485,8 @@
   name: "Intelligent experiments through real-time AI"
   url: "https://arxiv.org/pdf/2501.04845"
   doi: "10.48550/arXiv.2501.04845"
-  domain: "Instrumentation and Detectors; Nuclear Physics; Particle Physics"
+  domain:
+  - High Energy Physics
   focus: "Real-time FPGA-based triggering and detector control for sPHENIX and future
     EIC"
   keywords:
@@ -1205,7 +512,7 @@
   - "Bipartite Graph Network with Set Transformers (BGN-ST)"
   - "GarNet (edge-classifier)"
   ml_motif:
-  - "Real-time"
+  - Classification
   type: "Model"
   ml_task:
   - "Supervised Learning"
@@ -1237,8 +544,8 @@
     - name: "ChatGPT LLM"
       url: ""
   fair:
-    reproducible: true
-    benchmark_ready: false
+    reproducible: "Yes"
+    benchmark_ready: "No"
   ratings:
     software:
       rating: 3
@@ -1273,7 +580,8 @@
   name: "Neural Architecture Codesign for Fast Physics Applications"
   url: "https://arxiv.org/abs/2501.05515"
   doi: "10.48550/arXiv.2501.05515"
-  domain: "Physics; Materials Science; Particle Physics"
+  domain:
+  - High Energy Physics
   focus: "Automated neural architecture search and hardware-efficient model codesign
     for fast physics applications"
   keywords:
@@ -1301,7 +609,7 @@
   - "NAC-based BraggNN"
   - "NAC-optimized Deep Sets (jet)"
   ml_motif:
-  - "Real-time, Image/CV"
+  - Classification
   type: "Framework"
   ml_task:
   - "Supervised Learning"
@@ -1332,7 +640,7 @@
       url: ""
   fair:
     reproducible: "Yes (nac-opt, hls4ml)"
-    benchmark_ready: false
+    benchmark_ready: "No"
   ratings:
     software:
       rating: 3
@@ -1369,7 +677,8 @@
   name: "Smart Pixels for LHC"
   url: "https://arxiv.org/abs/2406.14860"
   doi: "10.48550/arXiv.2406.14860"
-  domain: "Particle Physics; Instrumentation and Detectors"
+  domain:
+  - High Energy Physics
   focus: "On-sensor, in-pixel ML filtering for high-rate LHC pixel detectors"
   keywords:
   - "smart pixel"
@@ -1393,7 +702,7 @@
   models:
   - "2-layer pixel NN"
   ml_motif:
-  - "Real-time, Image/CV"
+  - Classification
   type: "Benchmark"
   ml_task:
   - "Image Classification"
@@ -1423,7 +732,7 @@
     - name: "ChatGPT LLM"
       url: ""
   fair:
-    reproducible: true
+    reproducible: "Yes"
     benchmark_ready: "Yes (Zenodo:7331128)"
   ratings:
     software:
@@ -1459,7 +768,8 @@
   name: "HEDM (BraggNN)"
   url: "https://arxiv.org/abs/2008.08198"
   doi: "10.48550/arXiv.2008.08198"
-  domain: "Material Science"
+  domain:
+  - Materials Science
   focus: "Fast Bragg peak analysis using deep learning in diffraction microscopy"
   keywords:
   - "BraggNN"
@@ -1481,7 +791,7 @@
   models:
   - "BraggNN"
   ml_motif:
-  - "Real-time, Image/CV"
+  - Classification
   type: "Framework"
   ml_task:
   - "Peak finding"
@@ -1511,8 +821,8 @@
     - name: "ChatGPT LLM"
       url: ""
   fair:
-    reproducible: true
-    benchmark_ready: true
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
   ratings:
     software:
       rating: 2
@@ -1547,7 +857,8 @@
   name: "4D-STEM"
   url: "https://openreview.net/pdf?id=7yt3N0o0W9"
   doi: "unknown"
-  domain: "Material Science"
+  domain:
+  - Materials Science
   focus: "Real-time ML for scanning transmission electron microscopy"
   keywords:
   - "4D-STEM"
@@ -1569,7 +880,7 @@
   models:
   - "CNN models (prototype)"
   ml_motif:
-  - "Real-time, Image/CV"
+  - Classification
   type: "Model"
   ml_task:
   - "Image Classification"
@@ -1598,7 +909,7 @@
       url: ""
   fair:
     reproducible: "in progress"
-    benchmark_ready: false
+    benchmark_ready: "No"
   ratings:
     software:
       rating: 2
@@ -1633,7 +944,8 @@
   name: "In-Situ High-Speed Computer Vision"
   url: "https://arxiv.org/abs/2312.00128"
   doi: "10.48550/arXiv.2312.00128"
-  domain: "Fusion/Plasma"
+  domain:
+  - High Energy Physics
   focus: "Real-time image classification for in-situ plasma diagnostics"
   keywords:
   - "plasma"
@@ -1652,7 +964,7 @@
   models:
   - "CNN"
   ml_motif:
-  - "Real-time, Image/CV"
+  - Classification
   type: "Model"
   ml_task:
   - "Image Classification"
@@ -1684,7 +996,7 @@
       url: "https://docs.google.com/document/d/1EqkRHuQs1yQqMvZs_L6p9JAy2vKX5OCTubzttFBuRoQ/edit?usp=sharing"
   fair:
     reproducible: "in progress"
-    benchmark_ready: false
+    benchmark_ready: "No"
   ratings:
     software:
       rating: 1
@@ -1710,190 +1022,7 @@
       rating: 2
       reason: |
         Some insight via papers, but no working repo, setup, or replication path
-- date: "2020-01-01"
-  version: "v1.0"
-  last_updated: "2020-01"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2020-01-01"
-  name: "BenchCouncil AIBench"
-  url: "https://www.benchcouncil.org/AIBench/"
-  doi: "10.48550/arXiv.1908.08998"
-  domain: "General"
-  focus: "End-to-end AI benchmarking across micro, component, and application levels"
-  keywords:
-  - "benchmarking"
-  - "AI systems"
-  - "application-level evaluation"
-  summary: |
-    AIBench is a comprehensive benchmark suite that evaluates AI workloads at different levels (micro, component, application) across hardware systems-covering image generation, object detection, translation, recommendation, video prediction, etc.
-  licensing: "Apache License 2.0"
-  task_types:
-  - "Training"
-  - "Inference"
-  - "End-to-end AI workloads"
-  ai_capability_measured:
-  - "System-level AI workload performance"
-  metrics:
-  - "Throughput"
-  - "Latency"
-  - "Accuracy"
-  models:
-  - "ResNet"
-  - "BERT"
-  - "GANs"
-  - "Recommendation systems"
-  ml_motif:
-  - "General"
-  type: "Benchmark"
-  ml_task:
-  - "NA"
-  solutions: "Solution details are described in the referenced paper or repository."
-  notes: |
-    Covers scenario-distilling, micro, component, and end-to-end benchmarks.
-  contact:
-    name: "Wanling Gao (BenchCouncil)"
-    email: "unknown"
-  cite:
-  - |
-    @misc{gao2019aibenchindustrystandardinternet,
-      archiveprefix = {arXiv},
-      author        = {Wanling Gao and Fei Tang and Lei Wang and Jianfeng Zhan and Chunxin Lan and Chunjie Luo and Yunyou Huang and Chen Zheng and Jiahui Dai and Zheng Cao and Daoyi Zheng and Haoning Tang and Kunlin Zhan and Biao Wang and Defei Kong and Tong Wu and Minghe Yu and Chongkang Tan and Huan Li and Xinhui Tian and Yatao Li and Junchao Shao and Zhenyu Wang and Xiaoyu Wang and Hainan Ye},
-      eprint        = {1908.08998},
-      primaryclass  = {cs.CV},
-      title         = {AIBench: An Industry Standard Internet Service AI Benchmark Suite},
-      url           = {https://arxiv.org/abs/1908.08998},
-      year          = {2019}
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1scxhARd4vzEaWpVfwKPF_nTSxv4DirlQqcGlSG0yzJc/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 3
-      reason: |
-        No containerized or automated implementation provided for full benchmark suite
-    specification:
-      rating: 4
-      reason: |
-        Task coverage is broad and well-scoped, but system constraints and expected outputs are not uniformly defined
-    dataset:
-      rating: 3
-      reason: |
-        Multiple datasets are mentioned, but not consistently FAIR-documented, versioned, or linked
-    metrics:
-      rating: 4
-      reason: |
-        Metrics are appropriate, but standardization and reproducibility across tasks vary
-    reference_solution:
-      rating: 3
-      reason: |
-        Reference models (e.g., ResNet, BERT) described; no turnkey implementation or results repository for all levels
-    documentation:
-      rating: 3
-      reason: |
-        Paper is comprehensive, but minimal user-facing documentation or structured reproduction guide
-- date: "2020-01-01"
-  version: "v1.0"
-  last_updated: "2020-01"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2020-01-01"
-  name: "BenchCouncil BigDataBench"
-  url: "https://www.benchcouncil.org/BigDataBench/"
-  doi: "10.48550/arXiv.1802.08254"
-  domain: "General"
-  focus: "Big data and AI benchmarking across structured, semi-structured, and unstructured
-    data workloads"
-  keywords:
-  - "big data"
-  - "AI benchmarking"
-  - "data analytics"
-  summary: |
-    BigDataBench provides benchmarks for evaluating big data and AI workloads with realistic datasets (13 sources) and pipelines across analytics, graph, warehouse, NoSQL, streaming, and AI.
-  licensing: "Apache License 2.0"
-  task_types:
-  - "Data preprocessing"
-  - "Inference"
-  - "End-to-end data pipelines"
-  ai_capability_measured:
-  - "Data processing and AI model inference performance at scale"
-  metrics:
-  - "Data throughput"
-  - "Latency"
-  - "Accuracy"
-  models:
-  - "CNN"
-  - "LSTM"
-  - "SVM"
-  - "XGBoost"
-  ml_motif:
-  - "General"
-  type: "Benchmark"
-  ml_task:
-  - "NA"
-  solutions: "Solution details are described in the referenced paper or repository."
-  notes: |
-    Built on eight data motifs; provides Hadoop, Spark, Flink, MPI implementations.
-  contact:
-    name: "Jianfeng Zhan (BenchCouncil)"
-    email: "unknown"
-  cite:
-  - |
-    @misc{gao2018bigdatabenchscalableunifiedbig,
-      archiveprefix = {arXiv},
-      author        = {Wanling Gao and Jianfeng Zhan and Lei Wang and Chunjie Luo and Daoyi Zheng and Xu Wen and Rui Ren and Chen Zheng and Xiwen He and Hainan Ye and Haoning Tang and Zheng Cao and Shujie Zhang and Jiahui Dai},
-      eprint        = {1802.08254},
-      primaryclass  = {cs.DC},
-      title         = {BigDataBench: A Scalable and Unified Big Data and AI Benchmark Suite},
-      url           = {https://arxiv.org/abs/1802.08254},
-      year          = {2018}
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1FlvWeGm_J5QabOL7J0RWN3udzl0QFDs7wafptXx8sRU/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: "https://docs.google.com/document/d/1VFRxhR2G5A83S8PqKBrP99LLVgcCGvX2WW4vTtwxmQ4/edit?usp=sharing"
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 3
-      reason: |
-        No automated setup across all tasks; some components require manual integration.
-    specification:
-      rating: 4
-      reason: |
-        Specific I/O formats and hardware constraints are not uniformly detailed across all tasks.
-    dataset:
-      rating: 4
-      reason: |
-        Some datasets lack consistent versioning or rich metadata annotations.
-    metrics:
-      rating: 5
-      reason: |
-        None
-    reference_solution:
-      rating: 4
-      reason: |
-        Not all benchmark components have fully reproducible baselines; deployment across platforms is fragmented.
-    documentation:
-      rating: 4
-      reason: |
-        Setup requires manual steps; some task-specific instructions lack clarity.
-
+        
 
 - date: "2021-10-20"
   version: "v1.0"
@@ -1901,10 +1030,11 @@
   expired: "unknown"
   valid: "yes"
   valid_date: "2021-10-20"
-  name: "MLPerf HPC"
+  name: "MLPerf HPC - Cosmoflow"
   url: "https://github.com/mlcommons/hpc"
   doi: "10.48550/arXiv.2110.11466"
-  domain: "Cosmology, Climate, Protein Structure, Catalysis"
+  domain:
+  - High Energy Physics
   focus: "Scientific ML training and inference on HPC systems"
   keywords:
   - "HPC"
@@ -1930,7 +1060,7 @@
   - "DeepCAM"
   - "OpenCatalyst"
   ml_motif:
-  - "HPC/inference, HPC/training"
+  - Regression
   type: "Framework"
   ml_task:
   - "NA"
@@ -1987,16 +1117,294 @@
       rating: 4
       reason: |
         Central guidance is available but requires domain-specific effort to replicate results across systems.
+
+- date: "2021-10-20"
+  version: "v1.0"
+  last_updated: "2021-10"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2021-10-20"
+  name: "MLPerf HPC - DeepCAM"
+  url: "https://github.com/mlcommons/hpc"
+  doi: "10.48550/arXiv.2110.11466"
+  domain:
+  - Climate & Earth Science
+  focus: "Scientific ML training and inference on HPC systems"
+  keywords:
+  - "HPC"
+  - "training"
+  - "inference"
+  - "scientific ML"
+  summary: |
+    MLPerf HPC introduces scientific model benchmarks (e.g., CosmoFlow, DeepCAM) aimed at large-scale HPC evaluation with >10x performance scaling through system-level optimizations.
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Training"
+  - "Inference"
+  ai_capability_measured:
+  - "Scaling efficiency"
+  - "training time"
+  - "model accuracy on HPC"
+  metrics:
+  - "Training time"
+  - "Accuracy"
+  - "GPU utilization"
+  models:
+  - "DeepCAM"
+  ml_motif:
+  - Classification
+  type: "Framework"
+  ml_task:
+  - "NA"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Shared framework with MLCommons Science; reference implementations included.
+  contact:
+    name: "Steven Farrell (MLCommons)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{farrell2021mlperfhpcholisticbenchmark,
+      archiveprefix = {arXiv},
+      author        = {Steven Farrell and Murali Emani and Jacob Balma and Lukas Drescher and Aleksandr Drozd and Andreas Fink and Geoffrey Fox and David Kanter and Thorsten Kurth and Peter Mattson and Dawei Mu and Amit Ruhela and Kento Sato and Koichi Shirahata and Tsuguchika Tabaru and Aristeidis Tsaris and Jan Balewski and Ben Cumming and Takumi Danjo and Jens Domke and Takaaki Fukai and Naoto Fukumoto and Tatsuya Fukushi and Balazs Gerofi and Takumi Honda and Toshiyuki Imamura and Akihiko Kasagi and Kentaro Kawakami and Shuhei Kudo and Akiyoshi Kuroda and Maxime Martinasso and Satoshi Matsuoka and Henrique Mendonça and Kazuki Minami and Prabhat Ram and Takashi Sawada and Mallikarjun Shankar and Tom St. John and Akihiro Tabuchi and Venkatram Vishwanath and Mohamed Wahib and Masafumi Yamazaki and Junqi Yin},
+      eprint        = {2110.11466},
+      primaryclass  = {cs.LG},
+      title         = {MLPerf HPC: A Holistic Benchmark Suite for Scientific Machine Learning on HPC Systems},
+      url           = {https://arxiv.org/abs/2110.11466},
+      year          = {2021}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "See MLCommons Science entry below"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Reference implementations exist but containerization and environment setup require manual effort across HPC systems.
+    specification:
+      rating: 4
+      reason: |
+        Hardware constraints and I/O formats are not fully defined for all scenarios.
+    dataset:
+      rating: 5
+      reason: |
+        Not all data is independently versioned or comes with standardized FAIR metadata.
+    metrics:
+      rating: 5
+      reason: |
+        None
+    reference_solution:
+      rating: 4
+      reason: |
+        Reproducibility and environment tuning depend on system configuration; baseline models not uniformly bundled.
+    documentation:
+      rating: 4
+      reason: |
+        Central guidance is available but requires domain-specific effort to replicate results across systems.
+
+- date: "2021-10-20"
+  version: "v1.0"
+  last_updated: "2021-10"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2021-10-20"
+  name: "MLPerf HPC - Open Catalyst Project DimeNet++ "
+  url: "https://github.com/mlcommons/hpc"
+  doi: "10.48550/arXiv.2110.11466"
+  domain:
+  - Chemistry
+  focus: "Scientific ML training and inference on HPC systems"
+  keywords:
+  - "HPC"
+  - "training"
+  - "inference"
+  - "scientific ML"
+  summary: |
+    MLPerf HPC introduces scientific model benchmarks (e.g., CosmoFlow, DeepCAM) aimed at large-scale HPC evaluation with >10x performance scaling through system-level optimizations.
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Training"
+  - "Inference"
+  ai_capability_measured:
+  - "Scaling efficiency"
+  - "training time"
+  - "model accuracy on HPC"
+  metrics:
+  - "Training time"
+  - "Accuracy"
+  - "GPU utilization"
+  models:
+  - "DeepCAM"
+  ml_motif:
+  - Regression
+  type: "Framework"
+  ml_task:
+  - "NA"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Shared framework with MLCommons Science; reference implementations included.
+  contact:
+    name: "Steven Farrell (MLCommons)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{farrell2021mlperfhpcholisticbenchmark,
+      archiveprefix = {arXiv},
+      author        = {Steven Farrell and Murali Emani and Jacob Balma and Lukas Drescher and Aleksandr Drozd and Andreas Fink and Geoffrey Fox and David Kanter and Thorsten Kurth and Peter Mattson and Dawei Mu and Amit Ruhela and Kento Sato and Koichi Shirahata and Tsuguchika Tabaru and Aristeidis Tsaris and Jan Balewski and Ben Cumming and Takumi Danjo and Jens Domke and Takaaki Fukai and Naoto Fukumoto and Tatsuya Fukushi and Balazs Gerofi and Takumi Honda and Toshiyuki Imamura and Akihiko Kasagi and Kentaro Kawakami and Shuhei Kudo and Akiyoshi Kuroda and Maxime Martinasso and Satoshi Matsuoka and Henrique Mendonça and Kazuki Minami and Prabhat Ram and Takashi Sawada and Mallikarjun Shankar and Tom St. John and Akihiro Tabuchi and Venkatram Vishwanath and Mohamed Wahib and Masafumi Yamazaki and Junqi Yin},
+      eprint        = {2110.11466},
+      primaryclass  = {cs.LG},
+      title         = {MLPerf HPC: A Holistic Benchmark Suite for Scientific Machine Learning on HPC Systems},
+      url           = {https://arxiv.org/abs/2110.11466},
+      year          = {2021}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "See MLCommons Science entry below"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Reference implementations exist but containerization and environment setup require manual effort across HPC systems.
+    specification:
+      rating: 4
+      reason: |
+        Hardware constraints and I/O formats are not fully defined for all scenarios.
+    dataset:
+      rating: 5
+      reason: |
+        Not all data is independently versioned or comes with standardized FAIR metadata.
+    metrics:
+      rating: 5
+      reason: |
+        None
+    reference_solution:
+      rating: 4
+      reason: |
+        Reproducibility and environment tuning depend on system configuration; baseline models not uniformly bundled.
+    documentation:
+      rating: 4
+      reason: |
+        Central guidance is available but requires domain-specific effort to replicate results across systems.
+
+- date: "2021-10-20"
+  version: "v1.0"
+  last_updated: "2021-10"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2021-10-20"
+  name: "MLPerf HPC - OpenFold"
+  url: "https://github.com/mlcommons/hpc"
+  doi: "10.48550/arXiv.2110.11466"
+  domain:
+  - Biology & Medicine
+  focus: "Scientific ML training and inference on HPC systems"
+  keywords:
+  - "HPC"
+  - "training"
+  - "inference"
+  - "scientific ML"
+  summary: |
+    MLPerf HPC introduces scientific model benchmarks (e.g., CosmoFlow, DeepCAM) aimed at large-scale HPC evaluation with >10x performance scaling through system-level optimizations.
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Training"
+  - "Inference"
+  ai_capability_measured:
+  - "Scaling efficiency"
+  - "training time"
+  - "model accuracy on HPC"
+  metrics:
+  - "Training time"
+  - "Accuracy"
+  - "GPU utilization"
+  models:
+  - "DeepCAM"
+  ml_motif:
+  - Sequence Prediction/Forecasting
+  type: "Framework"
+  ml_task:
+  - "NA"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Shared framework with MLCommons Science; reference implementations included.
+  contact:
+    name: "Steven Farrell (MLCommons)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{farrell2021mlperfhpcholisticbenchmark,
+      archiveprefix = {arXiv},
+      author        = {Steven Farrell and Murali Emani and Jacob Balma and Lukas Drescher and Aleksandr Drozd and Andreas Fink and Geoffrey Fox and David Kanter and Thorsten Kurth and Peter Mattson and Dawei Mu and Amit Ruhela and Kento Sato and Koichi Shirahata and Tsuguchika Tabaru and Aristeidis Tsaris and Jan Balewski and Ben Cumming and Takumi Danjo and Jens Domke and Takaaki Fukai and Naoto Fukumoto and Tatsuya Fukushi and Balazs Gerofi and Takumi Honda and Toshiyuki Imamura and Akihiko Kasagi and Kentaro Kawakami and Shuhei Kudo and Akiyoshi Kuroda and Maxime Martinasso and Satoshi Matsuoka and Henrique Mendonça and Kazuki Minami and Prabhat Ram and Takashi Sawada and Mallikarjun Shankar and Tom St. John and Akihiro Tabuchi and Venkatram Vishwanath and Mohamed Wahib and Masafumi Yamazaki and Junqi Yin},
+      eprint        = {2110.11466},
+      primaryclass  = {cs.LG},
+      title         = {MLPerf HPC: A Holistic Benchmark Suite for Scientific Machine Learning on HPC Systems},
+      url           = {https://arxiv.org/abs/2110.11466},
+      year          = {2021}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "See MLCommons Science entry below"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Reference implementations exist but containerization and environment setup require manual effort across HPC systems.
+    specification:
+      rating: 4
+      reason: |
+        Hardware constraints and I/O formats are not fully defined for all scenarios.
+    dataset:
+      rating: 5
+      reason: |
+        Not all data is independently versioned or comes with standardized FAIR metadata.
+    metrics:
+      rating: 5
+      reason: |
+        None
+    reference_solution:
+      rating: 4
+      reason: |
+        Reproducibility and environment tuning depend on system configuration; baseline models not uniformly bundled.
+    documentation:
+      rating: 4
+      reason: |
+        Central guidance is available but requires domain-specific effort to replicate results across systems.
+
 - date: "2023-06-01"
   version: "v1.0"
   last_updated: "2023-06"
-  expired: "unknown"
+  expired: "no"
   valid: "yes"
   valid_date: "2023-06-01"
-  name: "MLCommons Science"
+  name: "MLCommons Science - CloudMask"
   url: "https://github.com/mlcommons/science"
-  doi: "unknown"
-  domain: "Earthquake, Satellite Image, Drug Discovery, Electron Microscope, CFD"
+  doi: "10.1007/978-3-031-23220-6_4"
+  domain:
+  - Climate & Earth Science
   focus: "AI benchmarks for scientific applications including time-series, imaging,
     and simulation"
   keywords:
@@ -2024,16 +1432,16 @@
   - "GNN"
   - "Transformer"
   ml_motif:
-  - "Time-series, Image/CV, HPC/inference"
+  - Classification
   type: "Framework"
   ml_task:
   - "NA"
   solutions: "0"
   notes: |
-    Joint national-lab effort under Apache-2.0 license.
+    Joint effort under Apache-2.0 license.
   contact:
     name: "MLCommons Science Working Group"
-    email: "unknown"
+    email: "science-chairs@mlcommons.org"
   cite:
   - |
     @InProceedings{10.1007/978-3-031-23220-6_4,
@@ -2066,7 +1474,15 @@
       isbn="978-3-031-23220-6"
     }
   datasets:
-    links: []
+    links:
+    - name: "CloudMask Benchmark"
+      url: "https://github.com/mlcommons/science/tree/main/benchmarks/cloudmask#data"
+    - name: "MLCommons Data Earthquake"
+      url: "https://github.com/laszewsk/mlcommons-data-earthquake"
+    - name: "A Database of Convergent Beam Electron Diffraction Patterns for Machine Learning of the Structural Properties of Materials"
+      url: "https://doi.ccs.ornl.gov/dataset/7aed61eb-e44c-5b14-82ea-07917d1b2d3b"
+    - name: "CANDLE UNO"
+      url: "https://github.com/mlcommons/science/tree/main/benchmarks/uno#data-description"
   results:
     links:
     - name: "Gemini LLM Deep Research"
@@ -2107,6 +1523,391 @@
       reason: |
         Thorough documentation exists covering the task, background, motivation, evaluation
         criteria, and includes a supporting paper.
+
+- date: "2023-06-01"
+  version: "v1.0"
+  last_updated: "2023-06"
+  expired: "no"
+  valid: "yes"
+  valid_date: "2023-06-01"
+  name: "MLCommons Science - Earthquake"
+  url: "https://github.com/mlcommons/science"
+  doi: "10.1007/978-3-031-23220-6_4"
+  domain:
+  - Climate & Earth Science
+  focus: "AI benchmarks for scientific applications including time-series, imaging,
+    and simulation"
+  keywords:
+  - "science AI"
+  - "benchmark"
+  - "MLCommons"
+  - "HPC"
+  summary: |
+    MLCommons Science assembles benchmark tasks with datasets, targets, and implementations across earthquake forecasting, satellite imagery, drug screening, electron microscopy, and CFD to drive scientific ML reproducibility.
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Time-series analysis"
+  - "Image classification"
+  - "Simulation surrogate modeling"
+  ai_capability_measured:
+  - "Inference accuracy"
+  - "simulation speed-up"
+  - "generalization"
+  metrics:
+  - "MAE"
+  - "Accuracy"
+  - "Speedup vs simulation"
+  models:
+  - "CNN"
+  - "GNN"
+  - "Transformer"
+  ml_motif:
+  - Sequence Prediction/Forecasting
+  type: "Framework"
+  ml_task:
+  - "NA"
+  solutions: "0"
+  notes: |
+    Joint effort under Apache-2.0 license.
+  contact:
+    name: "MLCommons Science Working Group"
+    email: "science-chairs@mlcommons.org"
+  cite:
+  - |
+    @InProceedings{10.1007/978-3-031-23220-6_4,
+      author="Thiyagalingam, Jeyan
+      and von Laszewski, Gregor
+      and Yin, Junqi
+      and Emani, Murali
+      and Papay, Juri
+      and Barrett, Gregg
+      and Luszczek, Piotr
+      and Tsaris, Aristeidis
+      and Kirkpatrick, Christine
+      and Wang, Feiyi
+      and Gibbs, Tom
+      and Vishwanath, Venkatram
+      and Shankar, Mallikarjun
+      and Fox, Geoffrey
+      and Hey, Tony",
+      editor="Anzt, Hartwig
+      and Bienz, Amanda
+      and Luszczek, Piotr
+      and Baboulin, Marc",
+      title="AI Benchmarking for Science: Efforts from the MLCommons Science Working Group",
+      booktitle="High Performance Computing. ISC High Performance 2022 International Workshops",
+      year="2022",
+      publisher="Springer International Publishing",
+      address="Cham",
+      pages="47--64",
+      abstract="With machine learning (ML) becoming a transformative tool for science, the scientific community needs a clear catalogue of ML techniques, and their relative benefits on various scientific problems, if they were to make significant advances in science using AI. Although this comes under the purview of benchmarking, conventional benchmarking initiatives are focused on performance, and as such, science, often becomes a secondary criteria.",
+      isbn="978-3-031-23220-6"
+    }
+  datasets:
+    links:
+    - name: "CloudMask Benchmark"
+      url: "https://github.com/mlcommons/science/tree/main/benchmarks/cloudmask#data"
+    - name: "MLCommons Data Earthquake"
+      url: "https://github.com/laszewsk/mlcommons-data-earthquake"
+    - name: "A Database of Convergent Beam Electron Diffraction Patterns for Machine Learning of the Structural Properties of Materials"
+      url: "https://doi.ccs.ornl.gov/dataset/7aed61eb-e44c-5b14-82ea-07917d1b2d3b"
+    - name: "CANDLE UNO"
+      url: "https://github.com/mlcommons/science/tree/main/benchmarks/uno#data-description"
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1UuDwy7ATzyYBqVDmvjQpxHt33FKws6hjcP8FFD1m1GI/edit?usp=chatgpt.com"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Actively maintained GitHub repository available at https://github.com/mlcommons/science
+        with implementations, scripts, and reproducibility support.
+    specification:
+      rating: 5
+      reason: |
+        All five specification aspects are covered: system constraints, task, dataset format,
+        benchmark inputs, and outputs.
+    dataset:
+      rating: 5
+      reason: |
+        Public scientific datasets are used with defined splits. At least 4 FAIR principles
+        are followed.
+    metrics:
+      rating: 5
+      reason: |
+        Clearly defined metrics such as accuracy, training time, and GPU utilization are
+        used. These metrics are explained and effectively capture solution performance.
+    reference_solution:
+      rating: 5
+      reason: |
+        A reference implementation is available, well-documented, trainable/open, and includes
+        full metric evaluation and software/hardware details.
+    documentation:
+      rating: 5
+      reason: |
+        Thorough documentation exists covering the task, background, motivation, evaluation
+        criteria, and includes a supporting paper.
+
+- date: "2023-06-01"
+  version: "v1.0"
+  last_updated: "2023-06"
+  expired: "no"
+  valid: "yes"
+  valid_date: "2023-06-01"
+  name: "MLCommons Science - Candle UNO"
+  url: "https://github.com/mlcommons/science"
+  doi: "10.1007/978-3-031-23220-6_4"
+  domain:
+  - Biology & Medicine
+  focus: "AI benchmarks for scientific applications including time-series, imaging,
+    and simulation"
+  keywords:
+  - "science AI"
+  - "benchmark"
+  - "MLCommons"
+  - "HPC"
+  summary: |
+    MLCommons Science assembles benchmark tasks with datasets, targets, and implementations across earthquake forecasting, satellite imagery, drug screening, electron microscopy, and CFD to drive scientific ML reproducibility.
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Time-series analysis"
+  - "Image classification"
+  - "Simulation surrogate modeling"
+  ai_capability_measured:
+  - "Inference accuracy"
+  - "simulation speed-up"
+  - "generalization"
+  metrics:
+  - "MAE"
+  - "Accuracy"
+  - "Speedup vs simulation"
+  models:
+  - "CNN"
+  - "GNN"
+  - "Transformer"
+  ml_motif:
+  - Classification
+  type: "Framework"
+  ml_task:
+  - "NA"
+  solutions: "0"
+  notes: |
+    Joint effort under Apache-2.0 license.
+  contact:
+    name: "MLCommons Science Working Group"
+    email: "science-chairs@mlcommons.org"
+  cite:
+  - |
+    @InProceedings{10.1007/978-3-031-23220-6_4,
+      author="Thiyagalingam, Jeyan
+      and von Laszewski, Gregor
+      and Yin, Junqi
+      and Emani, Murali
+      and Papay, Juri
+      and Barrett, Gregg
+      and Luszczek, Piotr
+      and Tsaris, Aristeidis
+      and Kirkpatrick, Christine
+      and Wang, Feiyi
+      and Gibbs, Tom
+      and Vishwanath, Venkatram
+      and Shankar, Mallikarjun
+      and Fox, Geoffrey
+      and Hey, Tony",
+      editor="Anzt, Hartwig
+      and Bienz, Amanda
+      and Luszczek, Piotr
+      and Baboulin, Marc",
+      title="AI Benchmarking for Science: Efforts from the MLCommons Science Working Group",
+      booktitle="High Performance Computing. ISC High Performance 2022 International Workshops",
+      year="2022",
+      publisher="Springer International Publishing",
+      address="Cham",
+      pages="47--64",
+      abstract="With machine learning (ML) becoming a transformative tool for science, the scientific community needs a clear catalogue of ML techniques, and their relative benefits on various scientific problems, if they were to make significant advances in science using AI. Although this comes under the purview of benchmarking, conventional benchmarking initiatives are focused on performance, and as such, science, often becomes a secondary criteria.",
+      isbn="978-3-031-23220-6"
+    }
+  datasets:
+    links:
+    - name: "CloudMask Benchmark"
+      url: "https://github.com/mlcommons/science/tree/main/benchmarks/cloudmask#data"
+    - name: "MLCommons Data Earthquake"
+      url: "https://github.com/laszewsk/mlcommons-data-earthquake"
+    - name: "A Database of Convergent Beam Electron Diffraction Patterns for Machine Learning of the Structural Properties of Materials"
+      url: "https://doi.ccs.ornl.gov/dataset/7aed61eb-e44c-5b14-82ea-07917d1b2d3b"
+    - name: "CANDLE UNO"
+      url: "https://github.com/mlcommons/science/tree/main/benchmarks/uno#data-description"
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1UuDwy7ATzyYBqVDmvjQpxHt33FKws6hjcP8FFD1m1GI/edit?usp=chatgpt.com"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Actively maintained GitHub repository available at https://github.com/mlcommons/science
+        with implementations, scripts, and reproducibility support.
+    specification:
+      rating: 5
+      reason: |
+        All five specification aspects are covered: system constraints, task, dataset format,
+        benchmark inputs, and outputs.
+    dataset:
+      rating: 5
+      reason: |
+        Public scientific datasets are used with defined splits. At least 4 FAIR principles
+        are followed.
+    metrics:
+      rating: 5
+      reason: |
+        Clearly defined metrics such as accuracy, training time, and GPU utilization are
+        used. These metrics are explained and effectively capture solution performance.
+    reference_solution:
+      rating: 5
+      reason: |
+        A reference implementation is available, well-documented, trainable/open, and includes
+        full metric evaluation and software/hardware details.
+    documentation:
+      rating: 5
+      reason: |
+        Thorough documentation exists covering the task, background, motivation, evaluation
+        criteria, and includes a supporting paper.
+
+- date: "2023-06-01"
+  version: "v1.0"
+  last_updated: "2023-06"
+  expired: "no"
+  valid: "yes"
+  valid_date: "2023-06-01"
+  name: "MLCommons Science - STEMDL"
+  url: "https://github.com/mlcommons/science"
+  doi: "10.1007/978-3-031-23220-6_4"
+  domain:
+  - Materials Science
+  focus: "AI benchmarks for scientific applications including time-series, imaging,
+    and simulation"
+  keywords:
+  - "science AI"
+  - "benchmark"
+  - "MLCommons"
+  - "HPC"
+  summary: |
+    MLCommons Science assembles benchmark tasks with datasets, targets, and implementations across earthquake forecasting, satellite imagery, drug screening, electron microscopy, and CFD to drive scientific ML reproducibility.
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Time-series analysis"
+  - "Image classification"
+  - "Simulation surrogate modeling"
+  ai_capability_measured:
+  - "Inference accuracy"
+  - "simulation speed-up"
+  - "generalization"
+  metrics:
+  - "MAE"
+  - "Accuracy"
+  - "Speedup vs simulation"
+  models:
+  - "CNN"
+  - "GNN"
+  - "Transformer"
+  ml_motif:
+  - Classification
+  type: "Framework"
+  ml_task:
+  - "NA"
+  solutions: "0"
+  notes: |
+    Joint effort under Apache-2.0 license.
+  contact:
+    name: "MLCommons Science Working Group"
+    email: "science-chairs@mlcommons.org"
+  cite:
+  - |
+    @InProceedings{10.1007/978-3-031-23220-6_4,
+      author="Thiyagalingam, Jeyan
+      and von Laszewski, Gregor
+      and Yin, Junqi
+      and Emani, Murali
+      and Papay, Juri
+      and Barrett, Gregg
+      and Luszczek, Piotr
+      and Tsaris, Aristeidis
+      and Kirkpatrick, Christine
+      and Wang, Feiyi
+      and Gibbs, Tom
+      and Vishwanath, Venkatram
+      and Shankar, Mallikarjun
+      and Fox, Geoffrey
+      and Hey, Tony",
+      editor="Anzt, Hartwig
+      and Bienz, Amanda
+      and Luszczek, Piotr
+      and Baboulin, Marc",
+      title="AI Benchmarking for Science: Efforts from the MLCommons Science Working Group",
+      booktitle="High Performance Computing. ISC High Performance 2022 International Workshops",
+      year="2022",
+      publisher="Springer International Publishing",
+      address="Cham",
+      pages="47--64",
+      abstract="With machine learning (ML) becoming a transformative tool for science, the scientific community needs a clear catalogue of ML techniques, and their relative benefits on various scientific problems, if they were to make significant advances in science using AI. Although this comes under the purview of benchmarking, conventional benchmarking initiatives are focused on performance, and as such, science, often becomes a secondary criteria.",
+      isbn="978-3-031-23220-6"
+    }
+  datasets:
+    links:
+    - name: "A Database of Convergent Beam Electron Diffraction Patterns for Machine Learning of the Structural Properties of Materials"
+      url: "https://doi.ccs.ornl.gov/dataset/7aed61eb-e44c-5b14-82ea-07917d1b2d3b"
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1UuDwy7ATzyYBqVDmvjQpxHt33FKws6hjcP8FFD1m1GI/edit?usp=chatgpt.com"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Actively maintained GitHub repository available at https://github.com/mlcommons/science
+        with implementations, scripts, and reproducibility support.
+    specification:
+      rating: 5
+      reason: |
+        All five specification aspects are covered: system constraints, task, dataset format,
+        benchmark inputs, and outputs.
+    dataset:
+      rating: 5
+      reason: |
+        Public scientific datasets are used with defined splits. At least 4 FAIR principles
+        are followed.
+    metrics:
+      rating: 5
+      reason: |
+        Clearly defined metrics such as accuracy, training time, and GPU utilization are
+        used. These metrics are explained and effectively capture solution performance.
+    reference_solution:
+      rating: 5
+      reason: |
+        A reference implementation is available, well-documented, trainable/open, and includes
+        full metric evaluation and software/hardware details.
+    documentation:
+      rating: 5
+      reason: |
+        Thorough documentation exists covering the task, background, motivation, evaluation
+        criteria, and includes a supporting paper.
+
 - date: "2021-07-05"
   version: "v1.0"
   last_updated: "2021-07"
@@ -2116,7 +1917,8 @@
   name: "LHC New Physics Dataset"
   url: "https://arxiv.org/pdf/2107.02157"
   doi: "unknown"
-  domain: "Particle Physics; Real-time Triggering"
+  domain:
+  - High Energy Physics
   focus: "Real-time LHC event filtering for anomaly detection using proton collision
     data"
   keywords:
@@ -2129,7 +1931,7 @@
     A dataset of proton-proton collision events emulating a 40 MHz real-time data stream from LHC detectors, pre-filtered on electron or muon presence. Designed for unsupervised new-physics detection algorithms under latency/bandwidth constraints.
   licensing: "unknown"
   task_types:
-  - "Anomaly detection"
+  - "Anomaly Detection"
   - "Event classification"
   ai_capability_measured:
   - "Unsupervised signal detection under latency and bandwidth constraints"
@@ -2141,7 +1943,7 @@
   - "Variational autoencoder"
   - "Isolation forest"
   ml_motif:
-  - "Multiple"
+  - Anomaly Detection
   type: "Framework"
   ml_task:
   - "NA"
@@ -2149,8 +1951,8 @@
   notes: |
     Includes electron/muon-filtered background and black-box signal benchmarks; 1M events per black box.
   contact:
-    name: "Ema Puljak (ema.puljak@cern.ch)"
-    email: "unknown"
+    name: "Ema Puljak"
+    email: "ema.puljak@cern.ch"
   cite:
   - |
     @misc{https://doi.org/10.5281/zenodo.5046389,
@@ -2211,10 +2013,11 @@
   expired: "unknown"
   valid: "yes"
   valid_date: "2023-07-17"
-  name: "MLCommons Medical AI"
+  name: "MLCommons Medical AI - Pancreas Segmentation (DFCI)"
   url: "https://github.com/mlcommons/medical"
-  doi: "unknown"
-  domain: "Healthcare; Medical AI"
+  doi: "10.1038/s42256-023-00652-2"
+  domain:
+  - Biology & Medicine
   focus: "Federated benchmarking and evaluation of medical AI models across diverse
     real-world clinical data"
   keywords:
@@ -2244,7 +2047,7 @@
   - "MedPerf-validated CNNs"
   - "GaNDLF workflows"
   ml_motif:
-  - "Multiple"
+  - Classification
   type: "Platform"
   ml_task:
   - "NA"
@@ -2312,6 +2115,225 @@
       reason: |
         Extensive documentation, papers, and community support exist. Clear examples and usage
         instructions are provided in GitHub and publications.
+
+- date: "2023-07-17"
+  version: "v1.0"
+  last_updated: "2023-07"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-07-17"
+  name: "MLCommons Medical AI - Brain Tumor Segmentation (BraTS)"
+  url: "https://github.com/mlcommons/medical"
+  doi: "10.1038/s42256-023-00652-2"
+  domain:
+  - Biology & Medicine
+  focus: "Federated benchmarking and evaluation of medical AI models across diverse
+    real-world clinical data"
+  keywords:
+  - "medical AI"
+  - "federated evaluation"
+  - "privacy-preserving"
+  - "fairness"
+  - "healthcare benchmarks"
+  summary: |
+    The MLCommons Medical AI working group develops benchmarks, best practices, and platforms (MedPerf, GaNDLF, COFE)
+    to accelerate robust, privacy-preserving AI development for healthcare. MedPerf enables federated testing of clinical
+    models on diverse datasets, improving generalizability and equity while keeping data onsite .
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Federated evaluation"
+  - "Model validation"
+  ai_capability_measured:
+  - "Clinical accuracy"
+  - "fairness"
+  - "generalizability"
+  - "privacy compliance"
+  metrics:
+  - "ROC AUC"
+  - "Accuracy"
+  - "Fairness metrics"
+  models:
+  - "MedPerf-validated CNNs"
+  - "GaNDLF workflows"
+  ml_motif:
+  - Classification
+  type: "Platform"
+  ml_task:
+  - "NA"
+  solutions: "0"
+  notes: |
+    Open-source platform under Apache-2.0; used across 20+ institutions and hospitals .
+  contact:
+    name: "Alex Karargyris (MLCommons Medical AI)"
+    email: "unknown"
+  cite:
+  - |
+    @article{karargyris2023federated,
+      author = {Karargyris, Alexandros and Umeton, Renato and Sheller, Micah J. and Aristizabal, Alejandro and George, Johnu and Wuest, Anna and Pati, Sarthak and Kassem, Hasan and Zenk, Maximilian and Baid, Ujjwal and Narayana Moorthy, Prakash and Chowdhury, Alexander and Guo, Junyi and Nalawade, Sahil and Rosenthal, Jacob and Kanter, David and Xenochristou, Maria and Beutel, Daniel J. and Chung, Verena and Bergquist, Timothy and Eddy, James and Abid, Abubakar and Tunstall, Lewis and Sanseviero, Omar and Dimitriadis, Dimitrios and Qian, Yiming and Xu, Xinxing and Liu, Yong and Goh, Rick Siow Mong and Bala, Srini and Bittorf, Victor and Puchala, Sreekar Reddy and Ricciuti, Biagio and Samineni, Soujanya and Sengupta, Eshna and Chaudhari, Akshay and Coleman, Cody and Desinghu, Bala and Diamos, Gregory and Dutta, Debo and Feddema, Diane and Fursin, Grigori and Huang, Xinyuan and Kashyap, Satyananda and Lane, Nicholas and Mallick, Indranil and Mascagni, Pietro and Mehta, Virendra and Moraes, Cassiano Ferro and Natarajan, Vivek and Nikolov, Nikola and Padoy, Nicolas and Pekhimenko, Gennady and Reddi, Vijay Janapa and Reina, G. Anthony and Ribalta, Pablo and Singh, Abhishek and Thiagarajan, Jayaraman J. and Albrecht, Jacob and Wolf, Thomas and Miller, Geralyn and Fu, Huazhu and Shah, Prashant and Xu, Daguang and Yadav, Poonam and Talby, David and Awad, Mark M. and Howard, Jeremy P. and Rosenthal, Michael and Marchionni, Luigi and Loda, Massimo and Johnson, Jason M. and Bakas, Spyridon and Mattson, Peter and FeTS Consortium and BraTS-2020 Consortium and AI4SafeChole Consortium},
+      month = jul,
+      doi = {10.1038/s42256-023-00652-2},
+      journal = {Nature Machine Intelligence},
+      number = {7},
+      pages = {799--810},
+      title = {Federated benchmarking of medical artificial intelligence with MedPerf},
+      url = {https://doi.org/10.1038/s42256-023-00652-2},
+      volume = {5},
+      year = {2023},
+    }
+  datasets:
+    links:
+    - name: "Multi-institutional clinical datasets, radiology"
+      url: ""
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/17dgw85X7wVRUt-ylrQsNOYTWrN15lE9bx0BxA-vcPhM/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        GitHub repository (https://github.com/mlcommons/medical) provides actively maintained
+        open-source tools like MedPerf and GaNDLF for federated medical AI evaluation.
+    specification:
+      rating: 4
+      reason: |
+        The platform defines federated tasks and model evaluation scenarios. Some clinical and
+        system-level constraints are implied but not uniformly formalized across all use cases.
+    dataset:
+      rating: 4
+      reason: |
+        Multi-institutional datasets used in federated settings; real-world data is handled
+        privately onsite, but some FAIR aspects (e.g., accessibility and metadata) are implicit.
+    metrics:
+      rating: 5
+      reason: |
+        Metrics such as ROC AUC, accuracy, and fairness are clearly specified and directly
+        support goals like generalizability and equity.
+    reference_solution:
+      rating: 3
+      reason: |
+        GaNDLF workflows and MedPerf-validated CNNs are referenced, but not all baseline models
+        are centrally documented or easily reproducible.
+    documentation:
+      rating: 5
+      reason: |
+        Extensive documentation, papers, and community support exist. Clear examples and usage
+        instructions are provided in GitHub and publications.
+
+- date: "2023-07-17"
+  version: "v1.0"
+  last_updated: "2023-07"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-07-17"
+  name: "MLCommons Medical AI -  Surgical Workflow Phase Recognition (SurgMLCube)"
+  url: "https://github.com/mlcommons/medical"
+  doi: "10.1038/s42256-023-00652-2"
+  domain:
+  - Biology & Medicine
+  focus: "Federated benchmarking and evaluation of medical AI models across diverse
+    real-world clinical data"
+  keywords:
+  - "medical AI"
+  - "federated evaluation"
+  - "privacy-preserving"
+  - "fairness"
+  - "healthcare benchmarks"
+  summary: |
+    The MLCommons Medical AI working group develops benchmarks, best practices, and platforms (MedPerf, GaNDLF, COFE)
+    to accelerate robust, privacy-preserving AI development for healthcare. MedPerf enables federated testing of clinical
+    models on diverse datasets, improving generalizability and equity while keeping data onsite .
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Federated evaluation"
+  - "Model validation"
+  ai_capability_measured:
+  - "Clinical accuracy"
+  - "fairness"
+  - "generalizability"
+  - "privacy compliance"
+  metrics:
+  - "ROC AUC"
+  - "Accuracy"
+  - "Fairness metrics"
+  models:
+  - "MedPerf-validated CNNs"
+  - "GaNDLF workflows"
+  ml_motif:
+  - Classification
+  type: "Platform"
+  ml_task:
+  - "NA"
+  solutions: "0"
+  notes: |
+    Open-source platform under Apache-2.0; used across 20+ institutions and hospitals .
+  contact:
+    name: "Alex Karargyris (MLCommons Medical AI)"
+    email: "unknown"
+  cite:
+  - |
+    @article{karargyris2023federated,
+      author = {Karargyris, Alexandros and Umeton, Renato and Sheller, Micah J. and Aristizabal, Alejandro and George, Johnu and Wuest, Anna and Pati, Sarthak and Kassem, Hasan and Zenk, Maximilian and Baid, Ujjwal and Narayana Moorthy, Prakash and Chowdhury, Alexander and Guo, Junyi and Nalawade, Sahil and Rosenthal, Jacob and Kanter, David and Xenochristou, Maria and Beutel, Daniel J. and Chung, Verena and Bergquist, Timothy and Eddy, James and Abid, Abubakar and Tunstall, Lewis and Sanseviero, Omar and Dimitriadis, Dimitrios and Qian, Yiming and Xu, Xinxing and Liu, Yong and Goh, Rick Siow Mong and Bala, Srini and Bittorf, Victor and Puchala, Sreekar Reddy and Ricciuti, Biagio and Samineni, Soujanya and Sengupta, Eshna and Chaudhari, Akshay and Coleman, Cody and Desinghu, Bala and Diamos, Gregory and Dutta, Debo and Feddema, Diane and Fursin, Grigori and Huang, Xinyuan and Kashyap, Satyananda and Lane, Nicholas and Mallick, Indranil and Mascagni, Pietro and Mehta, Virendra and Moraes, Cassiano Ferro and Natarajan, Vivek and Nikolov, Nikola and Padoy, Nicolas and Pekhimenko, Gennady and Reddi, Vijay Janapa and Reina, G. Anthony and Ribalta, Pablo and Singh, Abhishek and Thiagarajan, Jayaraman J. and Albrecht, Jacob and Wolf, Thomas and Miller, Geralyn and Fu, Huazhu and Shah, Prashant and Xu, Daguang and Yadav, Poonam and Talby, David and Awad, Mark M. and Howard, Jeremy P. and Rosenthal, Michael and Marchionni, Luigi and Loda, Massimo and Johnson, Jason M. and Bakas, Spyridon and Mattson, Peter and FeTS Consortium and BraTS-2020 Consortium and AI4SafeChole Consortium},
+      month = jul,
+      doi = {10.1038/s42256-023-00652-2},
+      journal = {Nature Machine Intelligence},
+      number = {7},
+      pages = {799--810},
+      title = {Federated benchmarking of medical artificial intelligence with MedPerf},
+      url = {https://doi.org/10.1038/s42256-023-00652-2},
+      volume = {5},
+      year = {2023},
+    }
+  datasets:
+    links:
+    - name: "Multi-institutional clinical datasets, radiology"
+      url: ""
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/17dgw85X7wVRUt-ylrQsNOYTWrN15lE9bx0BxA-vcPhM/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        GitHub repository (https://github.com/mlcommons/medical) provides actively maintained
+        open-source tools like MedPerf and GaNDLF for federated medical AI evaluation.
+    specification:
+      rating: 4
+      reason: |
+        The platform defines federated tasks and model evaluation scenarios. Some clinical and
+        system-level constraints are implied but not uniformly formalized across all use cases.
+    dataset:
+      rating: 4
+      reason: |
+        Multi-institutional datasets used in federated settings; real-world data is handled
+        privately onsite, but some FAIR aspects (e.g., accessibility and metadata) are implicit.
+    metrics:
+      rating: 5
+      reason: |
+        Metrics such as ROC AUC, accuracy, and fairness are clearly specified and directly
+        support goals like generalizability and equity.
+    reference_solution:
+      rating: 3
+      reason: |
+        GaNDLF workflows and MedPerf-validated CNNs are referenced, but not all baseline models
+        are centrally documented or easily reproducible.
+    documentation:
+      rating: 5
+      reason: |
+        Extensive documentation, papers, and community support exist. Clear examples and usage
+        instructions are provided in GitHub and publications.
+
 - date: "2024-10-28"
   version: "v1.0"
   last_updated: "2024-10"
@@ -2321,7 +2343,8 @@
   name: "CaloChallenge 2022"
   url: "http://arxiv.org/abs/2410.21611"
   doi: "10.48550/arXiv.2410.21611"
-  domain: "LHC Calorimeter; Particle Physics"
+  domain:
+  - High Energy Physics
   focus: "Fast generative-model-based calorimeter shower simulation evaluation"
   keywords:
   - "calorimeter simulation"
@@ -2349,7 +2372,7 @@
   - "Normalizing flows"
   - "Diffusion models"
   ml_motif:
-  - "Surrogate"
+  - Generative
   type: "Dataset"
   ml_task:
   - "Surrogate Modeling"
@@ -2415,204 +2438,8 @@
       reason: |
         Accompanied by a detailed paper and dataset description. Reproduction of pipelines may require
         additional setup or familiarity with the model submissions.
-        
-- date: "ongoing"
-  version: "v1.0"
-  last_updated: "2025-06"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "ongoing"
-  name: "Papers With Code (SOTA Platform)"
-  url: "https://paperswithcode.com/sota"
-  doi: "unknown"
-  domain: "General ML; All domains"
-  focus: "Open platform tracking state-of-the-art results, benchmarks, and implementations
-    across ML tasks and papers"
-  keywords:
-  - "leaderboard"
-  - "benchmarking"
-  - "reproducibility"
-  - "open-source"
-  summary: |
-    Papers With Code (PWC) aggregates benchmark suites, tasks, and code across ML research:
-    12,423 benchmarks, 5,358 unique tasks, and 154,766 papers with code links. It tracks SOTA metrics and fosters reproducibility.
-  licensing: "Apache License 2.0"
-  task_types:
-  - "Multiple (Classification, Detection, NLP, etc.)"
-  ai_capability_measured:
-  - "Model performance across tasks (accuracy"
-  - "F1"
-  - "BLEU"
-  - "etc.)"
-  metrics:
-  - "Task-specific (Accuracy, F1, BLEU, etc.)"
-  models:
-  - "All published models with code"
-  ml_motif:
-  - "Multiple"
-  type: "Platform"
-  ml_task:
-  - "Multiple"
-  solutions: "0"
-  notes: |
-    Community-driven open platform; automatic data extraction and versioning.
-  contact:
-    name: "Papers With Code Team"
-    email: "unknown"
-  cite:
-  - |
-    @InProceedings{pmlr-v37-blum15,
-      title =    {The Ladder: A Reliable Leaderboard for Machine Learning Competitions},
-      author =   {Blum, Avrim and Hardt, Moritz},
-      booktitle =        {Proceedings of the 32nd International Conference on Machine Learning},
-      pages =    {1006--1014},
-      year =     {2015},
-      editor =   {Bach, Francis and Blei, David},
-      volume =   {37},
-      series =   {Proceedings of Machine Learning Research},
-      address =          {Lille, France},
-      month =    jul,
-      publisher =    {PMLR},
-      pdf =      {http://proceedings.mlr.press/v37/blum15.pdf},
-      url =      {https://proceedings.mlr.press/v37/blum15.html},
-      abstract =         {The organizer of a machine learning competition faces the problem of maintaining an accurate leaderboard that faithfully represents the quality of the best submission of each competing team. What makes this estimation problem particularly challenging is its sequential and adaptive nature. As participants are allowed to repeatedly evaluate their submissions on the leaderboard, they may begin to overfit to the holdout data that supports the leaderboard. Few theoretical results give actionable advice on how to design a reliable leaderboard. Existing approaches therefore often resort to poorly understood heuristics such as limiting the bit precision of answers and the rate of re-submission. In this work, we introduce a notion of leaderboard accuracy tailored to the format of a competition. We introduce a natural algorithm called the Ladder and demonstrate that it simultaneously supports strong theoretical guarantees in a fully adaptive model of estimation, withstands practical adversarial attacks, and achieves high utility on real submission files from a Kaggle competition. Notably, we are able to sidestep a powerful recent hardness result for adaptive risk estimation that rules out algorithms such as ours under a seemingly very similar notion of accuracy. On a practical note, we provide a completely parameter-free variant of our algorithm that can be deployed in a real competition with no tuning required whatsoever.}
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1pbn_K20t6Kr0zxdUSAL68ChruOu6B_x5sZbp-dcrG_g/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 5
-      reason: |
-        Actively maintained open-source platform (https://paperswithcode.com) under Apache 2.0 license;
-        includes automatic integration with GitHub, datasets, and models for reproducibility.
-    specification:
-      rating: 4
-      reason: |
-        Task and benchmark structures are well organized and standardized, but due to its broad coverage,
-        input/output formats vary significantly between tasks and are not always tightly controlled.
-    dataset:
-      rating: 3
-      reason: |
-        Relies on external datasets submitted by the community. While links are available, FAIR compliance
-        is not guaranteed or systematically enforced across all benchmarks.
-    metrics:
-      rating: 5
-      reason: |
-        Tracks state-of-the-art using task-specific metrics like Accuracy, F1, BLEU, etc., with consistent
-        aggregation and historical SOTA tracking.
-    reference_solution:
-      rating: 3
-      reason: |
-        Provides links to implementations of many SOTA models, but no single unified reference baseline
-        is required or maintained per benchmark.
-    documentation:
-      rating: 4
-      reason: |
-        Strong front-end documentation and metadata on benchmarks, tasks, and models; however, some benchmark-specific
-        instructions are sparse or dependent on external paper links.
 
-- date: "2021-09-27"
-  version: "v1.0"
-  last_updated: "2023-07"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2021-09-27"
-  name: "Sabath (SBI-FAIR)"
-  url: "https://sbi-fair.github.io/docs/software/sabath/"
-  doi: "unknown"
-  domain: "Systems; Metadata"
-  focus: "FAIR metadata framework for ML-driven surrogate workflows in HPC systems"
-  keywords:
-  - "meta-benchmark"
-  - "metadata"
-  - "HPC"
-  - "surrogate modeling"
-  summary: |
-    Sabath is a metadata framework from the SBI-FAIR group (UTK, Argonne, Virginia) facilitating
-    FAIR-compliant benchmarking and surrogate execution logging across HPC systems .
-  licensing: "BSD 3-Clause License"
-  task_types:
-  - "Systems benchmarking"
-  ai_capability_measured:
-  - "Metadata tracking"
-  - "reproducible HPC workflows"
-  metrics:
-  - "Metadata completeness"
-  - "FAIR compliance"
-  models:
-  - "NA"
-  ml_motif:
-  - "Systems"
-  type: "Platform"
-  ml_task:
-  - "NA"
-  solutions: "0"
-  notes: |
-    Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc. 
-  contact:
-    name: "Piotr Luszczek"
-    email: "luszczek@utk.edu"
-  cite:
-  - |
-    @techreport{luszczek2021sabath,
-      title={SABATH: FAIR Metadata Technology for Surrogate Benchmarks},
-      author={Luszczek, Piotr},
-      year={2021},
-      institution={University of Tennessee},
-      url={https://github.com/icl-utk-edu/slip/tree/sabath}
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "(none)"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "N/A"
-  ratings:
-    software:
-      rating: 4
-      reason: |
-        Actively maintained GitHub repository (https://github.com/icl-utk-edu/slip/tree/sabath)
-        with BSD-licensed tooling for FAIR metadata capture; integrates with existing surrogate
-        modeling benchmarks.
-    specification:
-      rating: 4
-      reason: |
-        FAIR metadata structure and logging goals are clearly described. Input/output definitions
-        are implied through integrations (e.g., MiniWeatherML), though not always formalized.
-    dataset:
-      rating: 4
-      reason: |
-        Datasets used in surrogate benchmarks are publicly available, well-structured, and
-        FAIR-aligned, but not independently hosted by Sabath itself.
-    metrics:
-      rating: 4
-      reason: |
-        Emphasizes metadata completeness and FAIR compliance. Metrics are clear and well-matched
-        to its metadata-focused benchmarking context.
-    reference_solution:
-      rating: 3
-      reason: |
-        Includes integration with multiple surrogate benchmarks and models, though not all are
-        fully documented or packaged as standardized reference solutions.
-    documentation:
-      rating: 3
-      reason: |
-        Basic instructions and code are provided on GitHub, but more detailed walkthroughs,
-        use-case examples, or tutorials are limited.
+
 - date: "2022-10-13"
   version: "v0.1.0"
   last_updated: "2025-05"
@@ -2622,7 +2449,10 @@
   name: "PDEBench"
   url: "https://github.com/pdebench/PDEBench"
   doi: "10.48550/arXiv.2210.07182"
-  domain: "CFD; Weather Modeling"
+  domain:
+  - Computational Science & AI
+  - Climate & Earth Science
+  - Mathematics
   focus: "Benchmark suite for ML-based surrogates solving time-dependent PDEs"
   keywords:
   - "PDEs"
@@ -2647,7 +2477,7 @@
   - "PINN"
   - "Gradient-Based inverse methods"
   ml_motif:
-  - "Multiple"
+  - Regression
   type: "Framework"
   ml_task:
   - "Supervised Learning"
@@ -2711,109 +2541,6 @@
         Strong documentation on GitHub including examples, configs, and usage instructions.
         Some model-specific details and tutorials could be further expanded.
 
-- date: "2024-10-31"
-  version: "v1.0"
-  last_updated: "2024-11"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2024-10-31"
-  name: "LLM-Inference-Bench"
-  url: "https://github.com/argonne-lcf/LLM-Inference-Bench"
-  doi: "unknown"
-  domain: "LLM; HPC/inference"
-  focus: "Hardware performance benchmarking of LLMs on AI accelerators"
-  keywords:
-  - "LLM"
-  - "inference benchmarking"
-  - "GPU"
-  - "accelerator"
-  - "throughput"
-  summary: |
-    A suite evaluating inference performance of LLMs (LLaMA, Mistral, Qwen) across diverse accelerators (NVIDIA, AMD, Intel, SambaNova) and frameworks (vLLM, DeepSpeed-MII, etc.), with an interactive dashboard and per-platform metrics. 
-  licensing: "BSD 3-Clause New or Revised License"
-  task_types:
-  - "Inference Benchmarking"
-  ai_capability_measured:
-  - "Inference throughput"
-  - "latency"
-  - "hardware utilization"
-  metrics:
-  - "Token throughput (tok/s)"
-  - "Latency"
-  - "Framework-hardware mix performance"
-  models:
-  - "LLaMA-2-7B"
-  - "LLaMA-2-70B"
-  - "Mistral-7B"
-  - "Qwen-7B"
-  ml_motif:
-  - "HPC/inference"
-  type: "Dataset"
-  ml_task:
-  - "Inference Benchmarking"
-  solutions: "0"
-  notes: |
-    Licensed under BSD-3, maintained by Argonne; supports GPUs and accelerators. 
-  contact:
-    name: "Krishna Teja Chitty-Venkata (Argonne LCF)"
-    email: "unknown"
-  cite:
-  - |
-    @INPROCEEDINGS{10820566,
-      author={Chitty-Venkata, Krishna Teja and Raskar, Siddhisanket and Kale, Bharat and Ferdaus, Farah and Tanikanti, Aditya and Raffenetti, Ken and Taylor, Valerie and Emani, Murali and Vishwanath, Venkatram},
-      booktitle={SC24-W: Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis}, 
-      title={LLM-Inference-Bench: Inference Benchmarking of Large Language Models on AI Accelerators}, 
-      year={2024},
-      volume={},
-      number={},
-      pages={1362-1379},
-      doi={10.1109/SCW63240.2024.00178}
-    }
-  datasets:
-    links: []
-  results:
-    links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1I3UvByGn4KaruQC1pi6XcfoAOzt4iiA61S0nR9ovC94/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
-  fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes"
-  ratings:
-    software:
-      rating: 5
-      reason: |
-        Public GitHub repository under BSD-3 license.
-        Includes scripts, configurations, and dashboards for running and visualizing LLM inference benchmarks
-        across multiple accelerator platforms.
-    specification:
-      rating: 5
-      reason: |
-        Benchmark scope, models, accelerator targets, and supported frameworks are clearly specified.
-        Input configurations and output metrics are standardized across hardware types.
-    dataset:
-      rating: 2
-      reason: |
-        No novel dataset is introduced; benchmark relies on pre-trained LLMs and synthetic inference inputs.
-        Dataset structure and FAIR considerations are minimal.
-    metrics:
-      rating: 5
-      reason: |
-        Hardware-specific metrics (token throughput, latency, utilization) are well-defined, consistently measured,
-        and aggregated in dashboards.
-    reference_solution:
-      rating: 3
-      reason: |
-        Inference configurations and baseline performance results are provided, but there are no
-        full reference training pipelines or model implementations.
-    documentation:
-      rating: 4
-      reason: |
-        GitHub repo provides clear usage instructions, setup guides, and interactive dashboard tooling.
-        Some areas like benchmarking extensions or advanced tuning are less detailed.
-
-
 - date: "2024-12-13"
   version: "v1.0"
   last_updated: "2024-12"
@@ -2823,7 +2550,9 @@
   name: "Delta Squared-DFT"
   url: "https://neurips.cc/virtual/2024/poster/97788"
   doi: "10.48550/arXiv.2406.14347"
-  domain: "Computational Chemistry; Materials Science"
+  domain:
+  - Chemistry
+  - Materials Science
   focus: "Benchmarking machine-learning corrections to DFT using Delta Squared-trained
     models for reaction energies"
   keywords:
@@ -2846,7 +2575,7 @@
   - "Delta Squared-ML correction networks"
   - "Kernel ridge regression"
   ml_motif:
-  - "Scientific ML"
+  - Regression
   type: "Dataset + Benchmark"
   ml_task:
   - "Regression"
@@ -2911,10 +2640,11 @@
   expired: "unknown"
   valid: "yes"
   valid_date: "2024-12-13"
-  name: "Urban Data Layer (UDL)"
+  name: "Urban Data Layer (UDL) - PM2.5 Concentration Prediction"
   url: "https://neurips.cc/virtual/2024/poster/97837"
   doi: "unknown"
-  domain: "Urban Computing; Data Engineering"
+  domain:
+  - Climate & Earth Science
   focus: "Unified data pipeline for multi-modal urban science research"
   keywords:
   - "data pipeline"
@@ -2935,7 +2665,7 @@
   models:
   - "Baseline regression/classification pipelines"
   ml_motif:
-  - "Data engineering"
+  - Regression
   type: "Framework"
   ml_task:
   - "Prediction, classification"
@@ -2999,7 +2729,290 @@
         GitHub repository and conference poster provide comprehensive code and reproducibility
         instructions.
 
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "Urban Data Layer (UDL) - Built-up Area Classification"
+  url: "https://neurips.cc/virtual/2024/poster/97837"
+  doi: "unknown"
+  domain:
+  - Climate & Earth Science
+  focus: "Unified data pipeline for multi-modal urban science research"
+  keywords:
+  - "data pipeline"
+  - "urban science"
+  - "multi-modal"
+  - "benchmark"
+  summary: |
+    UrbanDataLayer standardizes heterogeneous urban data formats and provides pipelines for tasks like air quality prediction and land-use classification, enabling the rapid creation of multi-modal urban benchmarks .
+  licensing: "unknown"
+  task_types:
+  - "Prediction"
+  - "Classification"
+  ai_capability_measured:
+  - "Multi-modal urban inference"
+  - "standardization"
+  metrics:
+  - "Task-specific accuracy or RMSE"
+  models:
+  - "Baseline regression/classification pipelines"
+  ml_motif:
+  - Classification
+  type: "Framework"
+  ml_task:
+  - "Prediction, classification"
+  solutions: "0"
+  notes: |
+    Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models .
+  contact:
+    name: "Yiheng Wang"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{neurips2024_0db7f135,
+      author = {Wang, Yiheng and Wang, Tianyu and Zhang, Yuying and Zhang, Hongji and Zheng, Haoyu and Zheng, Guanjie and Kong, Linghe},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {7296--7310},
+      publisher = {Curran Associates, Inc.},
+      title = {UrbanDataLayer: A Unified Data Pipeline for Urban Science},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/0db7f135f6991e8cec5e516ecc66bfba-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Source code is publicly available on GitHub; baseline regression and classification
+        pipelines are included but framework maturity is moderate.
+    specification:
+      rating: 5
+      reason: |
+        Multiple urban science tasks like prediction and classification are well specified
+        with clear input/output and evaluation criteria.
+    dataset:
+      rating: 5
+      reason: |
+        Large, multi-modal urban datasets are open-source, well-documented, and support
+        reproducible research.
+    metrics:
+      rating: 5
+      reason: |
+        Uses task-specific accuracy and RMSE metrics appropriate for prediction and classification.
+    reference_solution:
+      rating: 4
+      reason: |
+        Baseline models available but not exhaustive; community adoption and extensions expected.
+    documentation:
+      rating: 5
+      reason: |
+        GitHub repository and conference poster provide comprehensive code and reproducibility
+        instructions.
 
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "Urban Data Layer (UDL) - Administrative Boundaries Identification"
+  url: "https://neurips.cc/virtual/2024/poster/97837"
+  doi: "unknown"
+  domain:
+  - Climate & Earth Science
+  focus: "Unified data pipeline for multi-modal urban science research"
+  keywords:
+  - "data pipeline"
+  - "urban science"
+  - "multi-modal"
+  - "benchmark"
+  summary: |
+    UrbanDataLayer standardizes heterogeneous urban data formats and provides pipelines for tasks like air quality prediction and land-use classification, enabling the rapid creation of multi-modal urban benchmarks .
+  licensing: "unknown"
+  task_types:
+  - "Prediction"
+  - "Classification"
+  ai_capability_measured:
+  - "Multi-modal urban inference"
+  - "standardization"
+  metrics:
+  - "Task-specific accuracy or RMSE"
+  models:
+  - "Baseline regression/classification pipelines"
+  ml_motif:
+  - Classification
+  type: "Framework"
+  ml_task:
+  - "Prediction, classification"
+  solutions: "0"
+  notes: |
+    Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models .
+  contact:
+    name: "Yiheng Wang"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{neurips2024_0db7f135,
+      author = {Wang, Yiheng and Wang, Tianyu and Zhang, Yuying and Zhang, Hongji and Zheng, Haoyu and Zheng, Guanjie and Kong, Linghe},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {7296--7310},
+      publisher = {Curran Associates, Inc.},
+      title = {UrbanDataLayer: A Unified Data Pipeline for Urban Science},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/0db7f135f6991e8cec5e516ecc66bfba-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Source code is publicly available on GitHub; baseline regression and classification
+        pipelines are included but framework maturity is moderate.
+    specification:
+      rating: 5
+      reason: |
+        Multiple urban science tasks like prediction and classification are well specified
+        with clear input/output and evaluation criteria.
+    dataset:
+      rating: 5
+      reason: |
+        Large, multi-modal urban datasets are open-source, well-documented, and support
+        reproducible research.
+    metrics:
+      rating: 5
+      reason: |
+        Uses task-specific accuracy and RMSE metrics appropriate for prediction and classification.
+    reference_solution:
+      rating: 4
+      reason: |
+        Baseline models available but not exhaustive; community adoption and extensions expected.
+    documentation:
+      rating: 5
+      reason: |
+        GitHub repository and conference poster provide comprehensive code and reproducibility
+        instructions.
+
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "Urban Data Layer (UDL) - El Nino Anomaly Detection"
+  url: "https://neurips.cc/virtual/2024/poster/97837"
+  doi: "unknown"
+  domain:
+  - Climate & Earth Science
+  focus: "Unified data pipeline for multi-modal urban science research"
+  keywords:
+  - "data pipeline"
+  - "urban science"
+  - "multi-modal"
+  - "benchmark"
+  summary: |
+    UrbanDataLayer standardizes heterogeneous urban data formats and provides pipelines for tasks like air quality prediction and land-use classification, enabling the rapid creation of multi-modal urban benchmarks .
+  licensing: "unknown"
+  task_types:
+  - "Prediction"
+  - "Classification"
+  ai_capability_measured:
+  - "Multi-modal urban inference"
+  - "standardization"
+  metrics:
+  - "Task-specific accuracy or RMSE"
+  models:
+  - "Baseline regression/classification pipelines"
+  ml_motif:
+  - Anomaly Detection
+  type: "Framework"
+  ml_task:
+  - "Prediction, classification"
+  solutions: "0"
+  notes: |
+    Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models .
+  contact:
+    name: "Yiheng Wang"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{neurips2024_0db7f135,
+      author = {Wang, Yiheng and Wang, Tianyu and Zhang, Yuying and Zhang, Hongji and Zheng, Haoyu and Zheng, Guanjie and Kong, Linghe},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {7296--7310},
+      publisher = {Curran Associates, Inc.},
+      title = {UrbanDataLayer: A Unified Data Pipeline for Urban Science},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/0db7f135f6991e8cec5e516ecc66bfba-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Source code is publicly available on GitHub; baseline regression and classification
+        pipelines are included but framework maturity is moderate.
+    specification:
+      rating: 5
+      reason: |
+        Multiple urban science tasks like prediction and classification are well specified
+        with clear input/output and evaluation criteria.
+    dataset:
+      rating: 5
+      reason: |
+        Large, multi-modal urban datasets are open-source, well-documented, and support
+        reproducible research.
+    metrics:
+      rating: 5
+      reason: |
+        Uses task-specific accuracy and RMSE metrics appropriate for prediction and classification.
+    reference_solution:
+      rating: 4
+      reason: |
+        Baseline models available but not exhaustive; community adoption and extensions expected.
+    documentation:
+      rating: 5
+      reason: |
+        GitHub repository and conference poster provide comprehensive code and reproducibility
+        instructions.
 
 - date: "2024-11-13"
   version: "v1.0"
@@ -3010,7 +3023,8 @@
   name: "LLMs for Crop Science"
   url: "https://openreview.net/forum?id=hMj6jZ6JWU#discussion"
   doi: "N/A"
-  domain: "Agricultural Science; NLP"
+  domain:
+  - Climate & Earth Science
   focus: "Evaluating LLMs on crop trait QA and textual inference tasks with domain-specific
     prompts"
   keywords:
@@ -3039,7 +3053,7 @@
   - 'InternLM2-7B'
   - 'Qwen1.5-7B'
   ml_motif:
-  - "NLP"
+  - Reasoning & Generalization
   type: "Dataset"
   ml_task:
   - "QA, inference"
@@ -3051,22 +3065,23 @@
     email: "unknown"
   cite:
   - |
-      @inproceedings{zhang2024empowering,
-      title={Empowering and Assessing the Utility of Large Language Models in Crop Science},
-      author={Hang Zhang and Jiawei Sun and Renqi Chen and Wei Liu and Zhonghang Yuan and Xinzhe Zheng and Zhefan Wang and Zhiyuan Yang and Hang Yan and Han-Sen Zhong and Xiqing Wang and Wanli Ouyang and Fan Yang and Nanqing Dong},
-      booktitle={The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
-      year={2024},
-      url={https://openreview.net/forum?id=hMj6jZ6JWU}
-      }
+    @inproceedings{zhang2024empowering,
+    title={Empowering and Assessing the Utility of Large Language Models in Crop Science},
+    author={Hang Zhang and Jiawei Sun and Renqi Chen and Wei Liu and Zhonghang Yuan and Xinzhe Zheng and Zhefan Wang and Zhiyuan Yang and Hang Yan and Han-Sen Zhong and Xiqing Wang and Wanli Ouyang and Fan Yang and Nanqing Dong},
+    booktitle={The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+    year={2024},
+    url={https://openreview.net/forum?id=hMj6jZ6JWU}
+    }
   datasets:
     links:
-     - name: CROP Dataset (Train Split)
-       url: "https://huggingface.co/datasets/AI4Agr/CROP-dataset"
-     - name: CROP Benchmark (Test Split)
-       url: "https://huggingface.co/datasets/AI4Agr/CROP-benchmark"
+    - name: CROP Dataset (Train Split)
+      url: "https://huggingface.co/datasets/AI4Agr/CROP-dataset"
+    - name: CROP Benchmark (Test Split)
+      url: "https://huggingface.co/datasets/AI4Agr/CROP-benchmark"
   results:
     links:
-    - name: "Empowering and Assessing the Utility of Large Language Models in Crop Science - Experiments"
+    - name: "Empowering and Assessing the Utility of Large Language Models in Crop
+        Science - Experiments"
       url: "https://renqichen.github.io/The_Crop/"
   fair:
     reproducible: "Yes"
@@ -3106,7 +3121,8 @@
   name: "DUNE"
   url: "https://indico.fnal.gov/event/66520/contributions/301423/attachments/182439/250508/fast_ml_dunedaq_sonic_10_15_24.pdf"
   doi: "10.48550/arXiv.2103.13910"
-  domain: "Particle Physics"
+  domain:
+  - High Energy Physics
   focus: "Real-time ML for DUNE DAQ time-series data"
   keywords:
   - "DUNE"
@@ -3128,7 +3144,7 @@
   - "CNN"
   - "LSTM (planned)"
   ml_motif:
-  - "Real-time, Time-series"
+  - Anomaly Detection
   type: "Benchmark (in progress)"
   ml_task:
   - "Supervised Learning"
@@ -3160,8 +3176,8 @@
     - name: "ChatGPT LLM"
       url: ""
   fair:
-    reproducible: "in progress"
-    benchmark_ready: false
+    reproducible: "no"
+    benchmark_ready: "No"
   ratings:
     software:
       rating: 1
@@ -3196,10 +3212,11 @@
   expired: "unknown"
   valid: "yes"
   valid_date: "2024-12-13"
-  name: "MassSpecGym"
+  name: "MassSpecGym - De novo molecule generation"
   url: "https://neurips.cc/virtual/2024/poster/97823"
   doi: "unknown"
-  domain: "Cheminformatics; Molecular Discovery"
+  domain:
+  - Chemistry
   focus: "Benchmark suite for discovery and identification of molecules via MS/MS"
   keywords:
   - "mass spectrometry"
@@ -3226,7 +3243,227 @@
   - "Graph-based generative models"
   - "Retrieval baselines"
   ml_motif:
-  - "Benchmark"
+  - Generative
+  type: "Dataset, Benchmark"
+  ml_task:
+  - "Generation, retrieval, simulation"
+  solutions: "0"
+  notes: |
+    Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks.
+  contact:
+    name: "Roman Bushuiev"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{neurips2024_c6c31413,
+      author = {Bushuiev, Roman and Bushuiev, Anton and de Jonge, Niek F. and 
+                Young, Adamo and Kretschmer, Fleming and Samusevich, Raman and 
+                Heirman, Janne and Wang, Fei and Zhang, Luke and D\"{u}hrkop, Kai and 
+                Ludwig, Marcus and Haupt, Nils A. and Kalia, Apurva and Brungs, Corinna and 
+                Schmid, Robin and Greiner, Russell and Wang, Bo and Wishart, David S. and 
+                Liu, Li-Ping and Rousu, Juho and Bittremieux, Wout and Rost, Hannes and 
+                Mak, Tytus D. and Hassoun, Soha and Huber, Florian and van der Hooft, Justin J.J. and 
+                Stravs, Michael A. and B\"{o}cker, Sebastian and Sivic, Josef and Pluskal, Tom\'{a}\v{s}},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {110010--110027},
+      publisher = {Curran Associates, Inc.},
+      title = {MassSpecGym: A benchmark for the discovery and identification of molecules},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/c6c31413d5c53b7d1c343c1498734b0f-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Open-source GitHub repository available; baseline models and training code partially
+        provided but overall framework maturity is moderate.
+    specification:
+      rating: 5
+      reason: |
+        Clearly defined tasks including molecule generation, retrieval, and spectrum simulation,
+        scoped for MS/MS molecular identification.
+    dataset:
+      rating: 5
+      reason: |
+        Largest public MS/MS dataset with extensive annotations; minor point deducted for
+        lack of explicit train/validation/test splits.
+    metrics:
+      rating: 5
+      reason: |
+        Well-defined metrics such as structure accuracy, retrieval precision, and simulation MSE
+        used consistently.
+    reference_solution:
+      rating: 3.5
+      reason: |
+        CNN-based baselines are referenced, but pretrained weights and comprehensive training
+        pipelines are not fully documented.
+    documentation:
+      rating: 1
+      reason: |
+        Paper and poster describe benchmark goals and design, but documentation and user
+        guides are minimal and repo status uncertain.
+
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "MassSpecGym - Molecule Retrieval"
+  url: "https://neurips.cc/virtual/2024/poster/97823"
+  doi: "unknown"
+  domain:
+  - Chemistry
+  focus: "Benchmark suite for discovery and identification of molecules via MS/MS"
+  keywords:
+  - "mass spectrometry"
+  - "molecular structure"
+  - "de novo generation"
+  - "retrieval"
+  - "dataset"
+  summary: |
+    MassSpecGym curates the largest public MS/MS dataset with three standardized tasks-de novo structure 
+    generation, molecule retrieval, and spectrum simulation-using challenging generalization splits to 
+    propel ML-driven molecule discovery.
+  licensing: "unknown"
+  task_types:
+  - "De novo generation"
+  - "Retrieval"
+  - "Simulation"
+  ai_capability_measured:
+  - "Molecular identification and generation from spectral data"
+  metrics:
+  - "Structure accuracy"
+  - "Retrieval precision"
+  - "Simulation MSE"
+  models:
+  - "Graph-based generative models"
+  - "Retrieval baselines"
+  ml_motif:
+  - Regression
+  type: "Dataset, Benchmark"
+  ml_task:
+  - "Generation, retrieval, simulation"
+  solutions: "0"
+  notes: |
+    Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks.
+  contact:
+    name: "Roman Bushuiev"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{neurips2024_c6c31413,
+      author = {Bushuiev, Roman and Bushuiev, Anton and de Jonge, Niek F. and 
+                Young, Adamo and Kretschmer, Fleming and Samusevich, Raman and 
+                Heirman, Janne and Wang, Fei and Zhang, Luke and D\"{u}hrkop, Kai and 
+                Ludwig, Marcus and Haupt, Nils A. and Kalia, Apurva and Brungs, Corinna and 
+                Schmid, Robin and Greiner, Russell and Wang, Bo and Wishart, David S. and 
+                Liu, Li-Ping and Rousu, Juho and Bittremieux, Wout and Rost, Hannes and 
+                Mak, Tytus D. and Hassoun, Soha and Huber, Florian and van der Hooft, Justin J.J. and 
+                Stravs, Michael A. and B\"{o}cker, Sebastian and Sivic, Josef and Pluskal, Tom\'{a}\v{s}},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {110010--110027},
+      publisher = {Curran Associates, Inc.},
+      title = {MassSpecGym: A benchmark for the discovery and identification of molecules},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/c6c31413d5c53b7d1c343c1498734b0f-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Open-source GitHub repository available; baseline models and training code partially
+        provided but overall framework maturity is moderate.
+    specification:
+      rating: 5
+      reason: |
+        Clearly defined tasks including molecule generation, retrieval, and spectrum simulation,
+        scoped for MS/MS molecular identification.
+    dataset:
+      rating: 5
+      reason: |
+        Largest public MS/MS dataset with extensive annotations; minor point deducted for
+        lack of explicit train/validation/test splits.
+    metrics:
+      rating: 5
+      reason: |
+        Well-defined metrics such as structure accuracy, retrieval precision, and simulation MSE
+        used consistently.
+    reference_solution:
+      rating: 3.5
+      reason: |
+        CNN-based baselines are referenced, but pretrained weights and comprehensive training
+        pipelines are not fully documented.
+    documentation:
+      rating: 1
+      reason: |
+        Paper and poster describe benchmark goals and design, but documentation and user
+        guides are minimal and repo status uncertain.
+
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "MassSpecGym - Spectrum Simulation"
+  url: "https://neurips.cc/virtual/2024/poster/97823"
+  doi: "unknown"
+  domain:
+  - Chemistry
+  focus: "Benchmark suite for discovery and identification of molecules via MS/MS"
+  keywords:
+  - "mass spectrometry"
+  - "molecular structure"
+  - "de novo generation"
+  - "retrieval"
+  - "dataset"
+  summary: |
+    MassSpecGym curates the largest public MS/MS dataset with three standardized tasks-de novo structure 
+    generation, molecule retrieval, and spectrum simulation-using challenging generalization splits to 
+    propel ML-driven molecule discovery.
+  licensing: "unknown"
+  task_types:
+  - "De novo generation"
+  - "Retrieval"
+  - "Simulation"
+  ai_capability_measured:
+  - "Molecular identification and generation from spectral data"
+  metrics:
+  - "Structure accuracy"
+  - "Retrieval precision"
+  - "Simulation MSE"
+  models:
+  - "Graph-based generative models"
+  - "Retrieval baselines"
+  ml_motif:
+  - Regression
   type: "Dataset, Benchmark"
   ml_task:
   - "Generation, retrieval, simulation"
@@ -3306,10 +3543,11 @@
   expired: "unknown"
   valid: "yes"
   valid_date: "2025-03-03"
-  name: "HDR ML Anomaly Challenge (Gravitational Waves)"
+  name: "HDR ML Anomaly Challenge - Gravitational Waves"
   url: "https://www.codabench.org/competitions/2626/"
   doi: "10.48550/arXiv.2503.02112"
-  domain: "Astrophysics; Time-series"
+  domain:
+  - High Energy Physics
   focus: "Detecting anomalous gravitational-wave signals from LIGO/Virgo datasets"
   keywords:
   - "anomaly detection"
@@ -3320,7 +3558,7 @@
     A benchmark for detecting anomalous transient gravitational-wave signals, including "unknown-unknowns," using preprocessed LIGO time-series at 4096 Hz. Competitors submit inference models on Codabench for continuous 50 ms segments from dual interferometers. 
   licensing: "NA"
   task_types:
-  - "Anomaly detection"
+  - "Anomaly Detection"
   ai_capability_measured:
   - "Novel event detection in physical signals"
   metrics:
@@ -3330,10 +3568,10 @@
   - "Deep latent CNNs"
   - "Autoencoders"
   ml_motif:
-  - "Time-series"
+  - Anomaly Detection
   type: "Dataset"
   ml_task:
-  - "Anomaly detection"
+  - "Anomaly Detection"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     NSF HDR A3D3 sponsored; prize pool and starter kit provided on Codabench.
@@ -3396,10 +3634,11 @@
   expired: "unknown"
   valid: "yes"
   valid_date: "2025-03-03"
-  name: "HDR ML Anomaly Challenge (Butterfly)"
+  name: "HDR ML Anomaly Challenge - Butterfly"
   url: "https://www.codabench.org/competitions/3764/"
   doi: "10.48550/arXiv.2503.02112"
-  domain: "Genomics; Image/CV"
+  domain:
+  - Biology & Medicine
   focus: "Detecting hybrid butterflies via image anomaly detection in genomic-informed
     dataset"
   keywords:
@@ -3411,7 +3650,7 @@
     Image-based challenge for detecting butterfly hybrids in microscopy-driven species data. Participants evaluate models on Codabench using image segmentation/classification. 
   licensing: "NA"
   task_types:
-  - "Anomaly detection"
+  - "Anomaly Detection"
   ai_capability_measured:
   - "Hybrid detection in biological systems"
   metrics:
@@ -3420,10 +3659,10 @@
   models:
   - "CNN-based detectors"
   ml_motif:
-  - "Image/CV"
+  - Anomaly Detection
   type: "Dataset"
   ml_task:
-  - "Anomaly detection"
+  - "Anomaly Detection"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Hybrid detection benchmarks hosted on Codabench
@@ -3490,10 +3729,11 @@
   expired: "unknown"
   valid: "yes"
   valid_date: "2025-03-03"
-  name: "HDR ML Anomaly Challenge (Sea Level Rise)"
+  name: "HDR ML Anomaly Challenge - Sea Level Rise"
   url: "https://www.codabench.org/competitions/3223/"
   doi: "10.48550/arXiv.2503.02112"
-  domain: "Climate Science; Time-series, Image/CV"
+  domain:
+    - Climate & Earth Science
   focus: "Detecting anomalous sea-level rise and flooding events via time-series and
     satellite imagery"
   keywords:
@@ -3506,7 +3746,7 @@
     A challenge combining North Atlantic sea-level time-series and satellite imagery to detect flooding anomalies. Models submitted via Codabench. 
   licensing: "NA"
   task_types:
-  - "Anomaly detection"
+  - "Anomaly Detection"
   ai_capability_measured:
   - "Detection of environmental anomalies"
   metrics:
@@ -3515,10 +3755,10 @@
   models:
   - "CNNs, RNNs, Transformers"
   ml_motif:
-  - "Time-series, Image/CV"
+  - Anomaly Detection
   type: "Dataset"
   ml_task:
-  - "Anomaly detection"
+  - "Anomaly Detection"
   solutions: "Solution details are described in the referenced paper or repository."
   notes: |
     Sponsored by NSF HDR; integrates sensor and satellite data. 
@@ -3613,7 +3853,8 @@
   name: "Single Qubit Readout on QICK System"
   url: "https://github.com/fastmachinelearning/ml-quantum-readout"
   doi: "10.48550/arXiv.2501.14663"
-  domain: "Quantum Computing"
+  domain:
+  - Computational Science & AI
   focus: "Real-time single-qubit state classification using FPGA firmware"
   keywords:
   - "qubit readout"
@@ -3634,7 +3875,7 @@
   models:
   - "hls4ml quantized NN"
   ml_motif:
-  - "Real-time"
+  - Classification
   type: "Benchmark"
   ml_task:
   - "Supervised Learning"
@@ -3707,7 +3948,10 @@
   name: "GPQA: A Graduate-Level Google-Proof Question and Answer Benchmark"
   url: "https://arxiv.org/abs/2311.12022"
   doi: "10.48550/arXiv.2311.12022"
-  domain: "Science (Biology, Physics, Chemistry)"
+  domain:
+  - Biology & Medicine
+  - High Energy Physics
+  - Chemistry
   focus: "Graduate-level, expert-validated multiple-choice questions hard even with
     web access"
   keywords:
@@ -3728,7 +3972,7 @@
   models:
   - "GPT-4 baseline"
   ml_motif:
-  - "Multiple choice"
+  - Reasoning & Generalization
   type: "Benchmark"
   ml_task:
   - "Multiple choice"
@@ -3798,7 +4042,8 @@
   name: "SeafloorAI"
   url: "https://neurips.cc/virtual/2024/poster/97432"
   doi: "10.48550/arXiv.2411.00172"
-  domain: "Marine Science; Vision-Language"
+  domain:
+  - Climate & Earth Science
   focus: "Large-scale vision-language dataset for seafloor mapping and geological
     classification"
   keywords:
@@ -3823,7 +4068,7 @@
   - "SegFormer"
   - "ViLT-style multimodal models"
   ml_motif:
-  - "Vision-Language"
+  - Classification
   type: "Dataset"
   ml_task:
   - "Segmentation, QA"
@@ -3888,16 +4133,119 @@
       reason: |
         Dataset description and data processing instructions are provided,
         but tutorials and benchmark usage guides are limited.
+
 - date: "2024-12-13"
   version: "v1.0"
   last_updated: "2024-12"
   expired: "unknown"
   valid: "yes"
   valid_date: "2024-12-13"
-  name: "SuperCon3D"
+  name: "SeafloorGenAI"
+  url: "https://neurips.cc/virtual/2024/poster/97432"
+  doi: "10.48550/arXiv.2411.00172"
+  domain:
+  - Climate & Earth Science
+  focus: "Large-scale vision-language dataset for seafloor mapping and geological
+    classification"
+  keywords:
+  - "sonar imagery"
+  - "vision-language"
+  - "seafloor mapping"
+  - "segmentation"
+  - "QA"
+  summary: |
+    A first-of-its-kind dataset covering 17,300 sq.km of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs-designed for both vision and language-based ML models in marine science
+  licensing: "unknown"
+  task_types:
+  - "Image segmentation"
+  - "Vision-language QA"
+  ai_capability_measured:
+  - "Geospatial understanding"
+  - "multimodal reasoning"
+  metrics:
+  - "Segmentation pixel accuracy"
+  - "QA accuracy"
+  models:
+  - "SegFormer"
+  - "ViLT-style multimodal models"
+  ml_motif:
+  - Reasoning & Generalization
+  type: "Dataset"
+  ml_task:
+  - "Segmentation, QA"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Data processing code publicly available, covering five geological layers; curated with marine scientists
+  contact:
+    name: "Kien X. Nguyen"
+    email: "unknown"
+  cite:
+  - |
+    @misc{nguyen2024seafloor,
+      archiveprefix = {arXiv},
+      author = {Kien X. Nguyen and Fengchun Qiao and Arthur Trembanis and Xi Peng},
+      eprint = {2411.00172},
+      primaryclass = {cs.CV},
+      title = {SeafloorAI: A Large-scale Vision-Language Dataset for Seafloor Geological Survey},
+      url = {https://arxiv.org/abs/2411.00172},
+      year=2024
+    }
+  datasets:
+    links:
+    - name: "Sonar imagery + annotations"
+      url: "unknown"
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "unknown"
+    - name: "ChatGPT LLM"
+      url: "unknown"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Data processing code is publicly available, but no full benchmark framework or
+        runnable model implementations are provided yet.
+    specification:
+      rating: 5
+      reason: |
+        Tasks (image segmentation and vision-language QA) are clearly defined with
+        geospatial and multimodal objectives well specified.
+    dataset:
+      rating: 5
+      reason: |
+        Large-scale, well-annotated sonar imagery dataset with segmentation masks
+        and natural language descriptions; curated with domain experts.
+    metrics:
+      rating: 5
+      reason: |
+        Standard segmentation pixel accuracy and QA accuracy metrics are clearly specified
+        and appropriate for the tasks.
+    reference_solution:
+      rating: 4
+      reason: |
+        Some baseline models (e.g., SegFormer, ViLT-style) are mentioned, but
+        reproducible code or pretrained weights are not fully available yet.
+    documentation:
+      rating: 4
+      reason: |
+        Dataset description and data processing instructions are provided,
+        but tutorials and benchmark usage guides are limited.
+
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "SuperCon3D - Property Prediction"
   url: "https://neurips.cc/virtual/2024/poster/97553"
   doi: "unknown"
-  domain: "Materials Science; Superconductivity"
+  domain:
+  - Materials Science
   focus: "Dataset and models for predicting and generating high-Tc superconductors
     using 3D crystal structures"
   keywords:
@@ -3921,7 +4269,7 @@
   - "SODNet"
   - "DiffCSP-SC"
   ml_motif:
-  - "Materials Modeling"
+  - Regression
   type: "Dataset + Models"
   ml_task:
   - "Regression, Generation"
@@ -3986,16 +4334,419 @@
       reason: |
         Paper and GitHub provide good metadata and data processing descriptions; tutorials
         and user guides could be expanded.
+
 - date: "2024-12-13"
   version: "v1.0"
   last_updated: "2024-12"
   expired: "unknown"
   valid: "yes"
   valid_date: "2024-12-13"
-  name: "GeSS"
+  name: "SuperCon3D -  Inverse Crystal Structure Generation"
+  url: "https://neurips.cc/virtual/2024/poster/97553"
+  doi: "unknown"
+  domain:
+  - Materials Science
+  focus: "Dataset and models for predicting and generating high-Tc superconductors
+    using 3D crystal structures"
+  keywords:
+  - "superconductivity"
+  - "crystal structures"
+  - "equivariant GNN"
+  - "generative models"
+  summary: |
+    SuperCon3D introduces 3D crystal structures with associated critical temperatures (Tc) and two deep-learning models: SODNet (equivariant graph model) and DiffCSP-SC (diffusion generator) designed to screen and synthesize high-Tc candidates .
+  licensing: "unknown"
+  task_types:
+  - "Regression (Tc prediction)"
+  - "Generative modeling"
+  ai_capability_measured:
+  - "Structure-to-property prediction"
+  - "structure generation"
+  metrics:
+  - "MAE (Tc)"
+  - "Validity of generated structures"
+  models:
+  - "SODNet"
+  - "DiffCSP-SC"
+  ml_motif:
+  - Generative
+  type: "Dataset + Models"
+  ml_task:
+  - "Regression, Generation"
+  solutions: "0"
+  notes: |
+    Demonstrates advantage of combining ordered and disordered structural data in model design .
+  contact:
+    name: "Zhong Zuo"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{neurips2024_c4e3b55e,
+      author = {Chen, Pin and Peng, Luoxuan and Jiao, Rui and Mo, Qing and Wang, Zhen and Huang, Wenbing and Liu, Yang and Lu, Yutong},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {108902--108928},
+      publisher = {Curran Associates, Inc.},
+      title = {Learning Superconductivity from Ordered and Disordered Material Structures},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/c4e3b55ed4ac9ba52d7df11f8bddbbf4-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Baseline models (SODNet, DiffCSP-SC) are described in the paper; however,
+        fully reproducible code and pretrained models are not publicly available yet.
+    specification:
+      rating: 5
+      reason: |
+        Tasks for regression (Tc prediction) and generative modeling with clear input/output
+        structures and domain constraints are well defined.
+    dataset:
+      rating: 5
+      reason: |
+        Dataset contains 3D crystal structures and associated properties; well-curated but
+        not fully released publicly at this time.
+    metrics:
+      rating: 4
+      reason: |
+        Metrics such as MAE for Tc prediction and validity checks for generated structures
+        are appropriate and clearly described.
+    reference_solution:
+      rating: 4
+      reason: |
+        Paper provides model architecture details and some training insights, but no
+        complete open-source reference implementations yet.
+    documentation:
+      rating: 4
+      reason: |
+        Paper and GitHub provide good metadata and data processing descriptions; tutorials
+        and user guides could be expanded.
+
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "GeSS - Track Pileup"
   url: "https://neurips.cc/virtual/2024/poster/97816"
   doi: "unknown"
-  domain: "Scientific ML; Geometric Deep Learning"
+  domain:
+  - High Energy Physics
+  focus: "Benchmark suite evaluating geometric deep learning models under real-world
+    distribution shifts"
+  keywords:
+  - "geometric deep learning"
+  - "distribution shift"
+  - "OOD robustness"
+  - "scientific applications"
+  summary: |
+    GeSS provides 30 benchmark scenarios across particle physics, materials science, and biochemistry, evaluating 3 GDL backbones and 11 algorithms under covariate, concept, and conditional shifts, with varied OOD access .
+  licensing: "unknown"
+  task_types:
+  - "Classification"
+  ai_capability_measured:
+  - "OOD performance in scientific settings"
+  metrics:
+  - "Accuracy"
+  - "RMSE"
+  - "OOD robustness delta"
+  models:
+  - "GCN"
+  - "EGNN"
+  - "DimeNet++"
+  ml_motif:
+  - Classification
+  type: "Benchmark"
+  ml_task:
+  - "Classification, Regression"
+  solutions: "0"
+  notes: |
+    Includes no-OOD, unlabeled-OOD, and few-label scenarios .
+  contact:
+    name: "Deyu Zou"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{neurips2024_a8063075,
+      author = {Zou, Deyu and Liu, Shikun and Miao, Siqi and Fung, Victor and Chang, Shiyu and Li, Pan},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {92499--92528},
+      publisher = {Curran Associates, Inc.},
+      title = {GeSS: Benchmarking Geometric Deep Learning under Scientific Applications with Distribution Shifts},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/a8063075b00168dc39bc81683619f1a8-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Reference code expected post-conference; current public software availability limited.
+        Benchmark infrastructure partially described but not fully released yet.
+    specification:
+      rating: 5
+      reason: |
+        Benchmark clearly defines OOD robustness scenarios with classification and regression
+        tasks in scientific domains, though no explicit hardware constraints are given.
+    dataset:
+      rating: 5
+      reason: |
+        Curated datasets of 3D crystal structures and material properties are included and
+        publicly available for reproducible research.
+    metrics:
+      rating: 5
+      reason: |
+        Uses well-established metrics such as MAE and structural validity for materials modeling,
+        plus accuracy and OOD robustness deltas.
+    reference_solution:
+      rating: 4
+      reason: |
+        Two reference models (SODNet, DiffCSP-SC) are reported with results, code expected
+        to be released soon.
+    documentation:
+      rating: 4
+      reason: |
+        Paper and poster provide solid explanation of benchmarks and scientific motivation;
+        more extensive user documentation forthcoming.
+        
+
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "GeSS - Track Signal"
+  url: "https://neurips.cc/virtual/2024/poster/97816"
+  doi: "unknown"
+  domain:
+  - High Energy Physics
+  focus: "Benchmark suite evaluating geometric deep learning models under real-world
+    distribution shifts"
+  keywords:
+  - "geometric deep learning"
+  - "distribution shift"
+  - "OOD robustness"
+  - "scientific applications"
+  summary: |
+    GeSS provides 30 benchmark scenarios across particle physics, materials science, and biochemistry, evaluating 3 GDL backbones and 11 algorithms under covariate, concept, and conditional shifts, with varied OOD access .
+  licensing: "unknown"
+  task_types:
+  - "Classification"
+  ai_capability_measured:
+  - "OOD performance in scientific settings"
+  metrics:
+  - "Accuracy"
+  - "RMSE"
+  - "OOD robustness delta"
+  models:
+  - "GCN"
+  - "EGNN"
+  - "DimeNet++"
+  ml_motif:
+  - Classification
+  type: "Benchmark"
+  ml_task:
+  - "Classification, Regression"
+  solutions: "0"
+  notes: |
+    Includes no-OOD, unlabeled-OOD, and few-label scenarios .
+  contact:
+    name: "Deyu Zou"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{neurips2024_a8063075,
+      author = {Zou, Deyu and Liu, Shikun and Miao, Siqi and Fung, Victor and Chang, Shiyu and Li, Pan},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {92499--92528},
+      publisher = {Curran Associates, Inc.},
+      title = {GeSS: Benchmarking Geometric Deep Learning under Scientific Applications with Distribution Shifts},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/a8063075b00168dc39bc81683619f1a8-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Reference code expected post-conference; current public software availability limited.
+        Benchmark infrastructure partially described but not fully released yet.
+    specification:
+      rating: 5
+      reason: |
+        Benchmark clearly defines OOD robustness scenarios with classification and regression
+        tasks in scientific domains, though no explicit hardware constraints are given.
+    dataset:
+      rating: 5
+      reason: |
+        Curated datasets of 3D crystal structures and material properties are included and
+        publicly available for reproducible research.
+    metrics:
+      rating: 5
+      reason: |
+        Uses well-established metrics such as MAE and structural validity for materials modeling,
+        plus accuracy and OOD robustness deltas.
+    reference_solution:
+      rating: 4
+      reason: |
+        Two reference models (SODNet, DiffCSP-SC) are reported with results, code expected
+        to be released soon.
+    documentation:
+      rating: 4
+      reason: |
+        Paper and poster provide solid explanation of benchmarks and scientific motivation;
+        more extensive user documentation forthcoming.
+
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "GeSS - DrugOOD"
+  url: "https://neurips.cc/virtual/2024/poster/97816"
+  doi: "unknown"
+  domain:
+  - Biology & Medicine
+  focus: "Benchmark suite evaluating geometric deep learning models under real-world
+    distribution shifts"
+  keywords:
+  - "geometric deep learning"
+  - "distribution shift"
+  - "OOD robustness"
+  - "scientific applications"
+  summary: |
+    GeSS provides 30 benchmark scenarios across particle physics, materials science, and biochemistry, evaluating 3 GDL backbones and 11 algorithms under covariate, concept, and conditional shifts, with varied OOD access .
+  licensing: "unknown"
+  task_types:
+  - "Classification"
+  ai_capability_measured:
+  - "OOD performance in scientific settings"
+  metrics:
+  - "Accuracy"
+  - "RMSE"
+  - "OOD robustness delta"
+  models:
+  - "GCN"
+  - "EGNN"
+  - "DimeNet++"
+  ml_motif:
+  - Classification
+  type: "Benchmark"
+  ml_task:
+  - "Classification, Regression"
+  solutions: "0"
+  notes: |
+    Includes no-OOD, unlabeled-OOD, and few-label scenarios .
+  contact:
+    name: "Deyu Zou"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{neurips2024_a8063075,
+      author = {Zou, Deyu and Liu, Shikun and Miao, Siqi and Fung, Victor and Chang, Shiyu and Li, Pan},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {92499--92528},
+      publisher = {Curran Associates, Inc.},
+      title = {GeSS: Benchmarking Geometric Deep Learning under Scientific Applications with Distribution Shifts},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/a8063075b00168dc39bc81683619f1a8-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Reference code expected post-conference; current public software availability limited.
+        Benchmark infrastructure partially described but not fully released yet.
+    specification:
+      rating: 5
+      reason: |
+        Benchmark clearly defines OOD robustness scenarios with classification and regression
+        tasks in scientific domains, though no explicit hardware constraints are given.
+    dataset:
+      rating: 5
+      reason: |
+        Curated datasets of 3D crystal structures and material properties are included and
+        publicly available for reproducible research.
+    metrics:
+      rating: 5
+      reason: |
+        Uses well-established metrics such as MAE and structural validity for materials modeling,
+        plus accuracy and OOD robustness deltas.
+    reference_solution:
+      rating: 4
+      reason: |
+        Two reference models (SODNet, DiffCSP-SC) are reported with results, code expected
+        to be released soon.
+    documentation:
+      rating: 4
+      reason: |
+        Paper and poster provide solid explanation of benchmarks and scientific motivation;
+        more extensive user documentation forthcoming.
+
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "GeSS - QMOF"
+  url: "https://neurips.cc/virtual/2024/poster/97816"
+  doi: "unknown"
+  domain:
+  - Materials Science
   focus: "Benchmark suite evaluating geometric deep learning models under real-world
     distribution shifts"
   keywords:
@@ -4020,7 +4771,7 @@
   - "EGNN"
   - "DimeNet++"
   ml_motif:
-  - "Geometric DL"
+  - Regression
   type: "Benchmark"
   ml_task:
   - "Classification, Regression"
@@ -4094,7 +4845,8 @@
   name: "Vocal Call Locator (VCL)"
   url: "https://neurips.cc/virtual/2024/poster/97470"
   doi: "unknown"
-  domain: "Neuroscience; Bioacoustics"
+  domain:
+  - Biology & Medicine
   focus: "Benchmarking sound-source localization of rodent vocalizations from multi-channel
     audio"
   keywords:
@@ -4115,10 +4867,10 @@
   models:
   - "CNN-based SSL models"
   ml_motif:
-  - "Real-time"
+  - Regression
   type: "Dataset"
   ml_task:
-  - "Anomaly detection / localization"
+  - "Anomaly Detection / localization"
   solutions: "0"
   notes: |
     Dataset spans real, simulated, and mixed audio; supports benchmarking across data types .
@@ -4190,7 +4942,8 @@
   name: "SPIQA (LLM)"
   url: "https://neurips.cc/virtual/2024/poster/97575"
   doi: "10.48550/arXiv.2407.09413"
-  domain: "Multimodal Scientific QA; Computer Vision"
+  domain:
+  - Computational Science & AI
   focus: "Evaluating LLMs on image-based scientific paper figure QA tasks (LLM Adapter
     performance)"
   keywords:
@@ -4214,7 +4967,7 @@
   - "MiniGPT-4"
   - "Owl-LLM adapter variants"
   ml_motif:
-  - "Multimodal QA"
+  - Multimodal Reasoning
   type: "Benchmark"
   ml_task:
   - "Multimodal QA"
@@ -4281,8 +5034,10 @@
   name: "The Well"
   url: "https://polymathic-ai.org/the_well/"
   doi: "unknown"
-  domain: "biological systems, fluid dynamics, acoustic scattering, astrophysical
-    MHD"
+  domain:
+  - Biology & Medicine
+  - Computational Science & AI
+  - High Energy Physics
   focus: "Foundation model + surrogate dataset spanning 16 physical simulation domains"
   keywords:
   - "surrogate modeling"
@@ -4304,13 +5059,13 @@
   - "FNO baselines"
   - "U-Net baselines"
   ml_motif:
-  - "Foundation model, Surrogate"
+  - Sequence Prediction/Forecasting
   type: "Dataset"
   ml_task:
   - "Supervised Learning"
   solutions: "1"
   notes: |
-    Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. 
+    Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. "Benchmarks" are nominally baseline models that were trained on different parts of the dataset, all of them being time series prediction tasks.
   contact:
     name: "Ruben Ohana"
     email: "rohana@flatironinstitute.org"

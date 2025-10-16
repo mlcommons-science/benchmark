@@ -630,7 +630,7 @@ class URLChecker:
 
                 Console.error(
                     f"Entry '{issue['name']}' has an issue with URL '{issue['url']}'"
-                    f"{f' (Status: {issue["status_code"]})' if issue['status_code'] else ''}: {error_detail}"
+                    f"{' (Status: ' + str(issue['status_code']) + ')' if issue['status_code'] else ''}: {error_detail}"
                 )
             print()
             count = len(issues)

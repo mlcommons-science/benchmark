@@ -457,12 +457,7 @@ class GenerateLatex:
                     )
                     fatal_errors = True
 
-                if label in found_labels:
-                    Console.error(
-                        f'Duplicate citation label "{label}" found. All labels must be unique.'
-                    )
-                    fatal_errors = True
-                else:
+                if label not in found_labels:
                     found_labels.add(label)
                     bib_entries.append(cite_entry)
 

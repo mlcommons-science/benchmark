@@ -206,3 +206,9 @@ cython_debug/
 
 # Misc
 bin/prompt.txt
+
+# Generated documentation artifacts
+www/
+content/md/
+content/tex/
+content/html/

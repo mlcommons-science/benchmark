@@ -1,19 +1,20 @@
-# ---------------------------------------------------------------------------
-# MkDocs writer that:
-# - Generates a filterable/sortable index page with pre-rendered cards.
-# - Generates one HTML-rich detail page per entry.
-# - No global table here (temporarily removed).
-# - Emits data-* attributes for DOM-only filters/sorting.
-# ---------------------------------------------------------------------------
+"""Utilities for generating MkDocs content from benchmark YAML data.
+
+The module centres around :class:`MkdocsWriter`, which produces:
+
+* ``cards.md`` — card grid with filter controls consumed by ``filters.js``.
+* ``{id}.md`` detail pages — rich information for each benchmark.
+* ``benchmarks_table.md`` — empty table shell hydrated by ``benchmarks-table.js``.
+"""
 
 from __future__ import annotations
 
 import html
 import os
 import re
-import sys
 import textwrap
-from typing import Any, Dict, List, Tuple
+from dataclasses import dataclass, field
+from typing import Any, Dict, Iterable, List, Sequence, Tuple
 from urllib.parse import quote
 
 from pybtex.database import parse_string
@@ -22,11 +23,90 @@ from pybtex.plugin import find_plugin
 from cloudmesh.common.console import Console
 from generate_latex import ALL_COLUMNS, DEFAULT_COLUMNS, write_to_file
 
+__all__ = ["MkdocsWriter"]
 
-# ----------------------------- configuration ---------------------------------
 
-# Hardcoded subset shown first on the detail page (skip missing values)
-_HARDCODED_DETAIL_FIELDS: List[str] = [
+# ---------------------------------------------------------------------------
+# Template fragments
+# ---------------------------------------------------------------------------
+
+INDEX_HEADER_TEMPLATE = textwrap.dedent(
+    """
+    # Index of Benchmarks
+
+    <div class="filter-bar">
+    <input type="search" id="f_q" placeholder="Search (name, focus, metrics…)" />
+    <select id="f_domain"><option value="">All domains</option></select>
+    <input type="text" id="f_keywords" placeholder="Keywords (comma-separated)" />
+    <input type="date" id="f_from" placeholder="From date" />
+    <input type="date" id="f_to" placeholder="To date" />
+    <input type="number" id="f_minrating" min="0" max="5" step="0.1" placeholder="Min avg rating" />
+    <select id="f_sort">
+      <option value="date_desc">Sort: Date ↓</option>
+      <option value="date_asc">Sort: Date ↑</option>
+      <option value="name_asc">Sort: Name A–Z</option>
+      <option value="rating_desc">Sort: Rating ↓</option>
+    </select>
+    <button id="f_reset" type="button">Reset</button>
+    </div>
+
+    <div id="cards-root" class="grid cards">
+    """
+).strip() + "\n"
+
+INDEX_FOOTER_TEMPLATE = "</div>\n{script}"
+
+CARD_TEMPLATE = textwrap.dedent(
+    """
+    <article class="benchmark-card"
+            data-id="{data_id}"
+            data-name="{data_name}"
+            data-date="{data_date}"
+            data-focus="{data_focus}"
+            data-domain="{data_domain}"
+            data-task-types="{data_task_types}"
+            data-metrics="{data_metrics}"
+            data-keywords="{data_keywords}"
+            data-ratings-avg="{data_ratings_avg}">
+        <h3>{title}</h3>
+        {subtitle_html}
+        {chips_html}
+        <p class="muted">Avg rating: {rating_badge}</p>
+        <p><a class="md-button md-button--primary" href="{detail_href}">Details</a></p>
+    </article>
+    """
+).strip()
+
+DETAIL_TEMPLATE = textwrap.dedent(
+    """
+    # {title}
+
+    {back_link}
+    {meta_block}{resource_block}{keywords_block}{citations_block}{ratings_block}{extra_block}{average_block}
+    {radar_block}
+    {edit_block}
+    """
+).strip() + "\n"
+
+BACK_LINK_TEMPLATE = '<p><a class="md-button back-link" href="{href}">← Back to all benchmarks</a></p>\n'
+
+RADAR_TEMPLATE = textwrap.dedent(
+    """
+    <h3>Radar plot</h3>
+
+    <div class="radar-wrap">
+        <img class="radar-img" alt="{alt}" src="../../../tex/images/{image_name}_radar.png" />
+    </div>
+    """
+).strip() + "\n"
+
+EDIT_LINK_HTML = (
+    "\n<p><strong>Edit:</strong> "
+    '<a href="https://github.com/mlcommons-science/benchmark/tree/main/source">'
+    "edit this entry</a></p>\n"
+)
+
+META_FIELDS: List[str] = [
     "date",
     "name",
     "domain",
@@ -37,45 +117,46 @@ _HARDCODED_DETAIL_FIELDS: List[str] = [
     "ml_motif",
 ]
 
-
-# ------------------------------- utilities -----------------------------------
-
-
-def _nonempty(v: Any) -> bool:
-    """Return True if v is a meaningful value for rendering/filtering."""
-    return not (v is None or v == "" or v == [])
+HTML = str
 
 
-def _listify(v: Any) -> List[str]:
-    """Coerce a value into a list of strings (used for domain/metrics/... on cards and meta)."""
-    if v is None or v == "":
+# ---------------------------------------------------------------------------
+# Utilities
+# ---------------------------------------------------------------------------
+
+def _esc(value: Any) -> HTML:
+    """Escape ``value`` for safe HTML embedding."""
+    return html.escape("" if value is None else str(value), quote=True)
+
+
+def _nonempty(value: Any) -> bool:
+    """Return ``True`` if ``value`` contains meaningful data."""
+    return value not in (None, "", [])
+
+
+def _as_list(value: Any) -> List[str]:
+    """Coerce scalars into a list of stripped strings."""
+    if value is None or value == "":
         return []
-    return v if isinstance(v, list) else [v]
+    if isinstance(value, list):
+        return [str(item).strip() for item in value]
+    return [str(value).strip()]
 
 
-def _extract_links(section: Any) -> List[Tuple[str, str]]:
-    """Return [(name, url), ...] from a nested section.links list of dicts."""
-    items: List[Tuple[str, str]] = []
-    if not isinstance(section, dict):
-        return items
-    links = section.get("links")
-    if not isinstance(links, list):
-        return items
-    for link in links:
-        if not isinstance(link, dict):
-            continue
-        url = link.get("url")
-        name = link.get("name") or link.get("title") or url
-        if not url or not name:
-            continue
-        items.append((str(name), str(url)))
-    return items
+def _flatten_text(value: Any) -> str:
+    """Flatten lists or structured strings into single-line text."""
+    if value is None:
+        return ""
+    text = str(value).replace("\n", " ").replace("['", "").replace("']", "")
+    text = text.replace("', '", ", ").replace("','", ", ").replace("[]", "")
+    text = text.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
+    return text.strip()
 
 
-def _raw_get(entry: Dict[str, Any], key: str) -> Any:
-    """Retrieve a nested value from the raw YAML entry using dot-separated keys."""
-    current: Any = entry
-    for part in key.split("."):
+def _dotted_get(data: Dict[str, Any], dotted_key: str) -> Any:
+    """Retrieve nested values using dot notation."""
+    current: Any = data
+    for part in dotted_key.split("."):
         if isinstance(current, dict):
             current = current.get(part)
         else:
@@ -83,512 +164,296 @@ def _raw_get(entry: Dict[str, Any], key: str) -> Any:
     return current
 
 
-def _val_to_str(val: Any) -> str:
-    """
-    Legacy-style flattening used for detail page values:
-      - remove brackets/quotes/parentheses,
-      - keep commas between items,
-      - collapse newlines.
-    """
-    if val is None:
-        return ""
-    s = str(val).replace("\n", " ").replace("['", "").replace("']", "")
-    s = s.replace("', '", ", ").replace("','", ", ").replace("[]", "")
-    s = s.replace("[", " ").replace("]", " ").replace("(", " ").replace(")", " ")
-    return s.strip()
+def _col_label(column: str) -> str:
+    """Return the human-readable label for ``column``."""
+    return str(ALL_COLUMNS[column]["label"])
 
 
-def _esc(v: Any) -> str:
-    """Escape text for safe HTML embedding."""
-    return html.escape("" if v is None else str(v), quote=True)
-
-
-def _col_label(col: str) -> str:
-    """Return the human label for a valid column."""
-    return str(ALL_COLUMNS[col]["label"])
-
-
-def _validate_columns(columns: List[str]) -> List[str]:
-    """
-    Validate `columns` against ALL_COLUMNS.
-    Returns a filtered list; logs a warning for unknown columns (does not hard-fail).
-    """
-    valid, invalid = [], []
-    for c in columns:
-        if c in ALL_COLUMNS:
-            valid.append(c)
+def _validate_columns(columns: Iterable[str]) -> List[str]:
+    """Filter ``columns`` to those defined in ``ALL_COLUMNS``."""
+    valid: List[str] = []
+    invalid: List[str] = []
+    for column in columns:
+        if column in ALL_COLUMNS:
+            valid.append(column)
         else:
-            invalid.append(c)
+            invalid.append(column)
     if invalid:
         Console.warning(f"Unknown columns skipped: {', '.join(invalid)}")
     return valid
 
 
 def _bibtex_to_text(entry: str) -> str:
-    """
-    Render a BibTeX entry to plain text.
-    Returns a readable error string if parsing fails (never raises).
-    """
+    """Render a BibTeX entry to plain text (best effort)."""
     try:
         if not isinstance(entry, str):
-            raise TypeError(
-                f"Expected string for BibTeX entry, got {type(entry).__name__}"
-            )
+            raise TypeError(f"Expected string for BibTeX entry, got {type(entry).__name__}")
         bib_data = parse_string(entry, bib_format="bibtex")
         style = find_plugin("pybtex.style.formatting", "plain")()
         formatted = next(style.format_entries(bib_data.entries.values()))
         return re.sub(r"<[^>]+>", " ", str(formatted.text)).strip()
-    except Exception as e:
-        return f"Could not parse citation: {e}"
+    except Exception as exc:  # pragma: no cover - defensive
+        return f"Could not parse citation: {exc}"
 
 
-def _collect_ratings(
-    entry: Dict[str, Any],
-) -> Tuple[List[Tuple[str, Dict[str, Any]]], float, int]:
-    """
-    Collect ratings.*.{rating,reason} grouped by category.
-    Returns:
-      - ordered list of (category, {rating, reason})
-      - sum of numeric ratings present
-      - count of numeric ratings present
-    Order: preferred categories first, then alphabetical.
-    """
-    groups: Dict[str, Dict[str, Any]] = {}
-    pat = re.compile(r"^ratings\.([^.]+)\.(rating|reason)$")
-
-    for k, v in entry.items():
-        m = pat.match(k)
-        if not m:
-            continue
-        cat, kind = m.group(1), m.group(2)
-        groups.setdefault(cat, {})[kind] = v
-
-    preferred = [
-        "software",
-        "specification",
-        "dataset",
-        "metrics",
-        "reference_solution",
-        "documentation",
-    ]
-    ordered_keys = [k for k in preferred if k in groups] + sorted(
-        [k for k in groups.keys() if k not in preferred]
-    )
-
-    items: List[Tuple[str, Dict[str, Any]]] = [(k, groups[k]) for k in ordered_keys]
-
-    s = 0.0
-    c = 0
-    for _, d in items:
-        r = d.get("rating")
-        try:
-            if _nonempty(r):
-                s += float(r)
-                c += 1
-        except (ValueError, TypeError):
-            Console.error(f'The rating "{r}" must be a number')
-
-    return items, s, c
+# ---------------------------------------------------------------------------
+# Normalised entry representation
+# ---------------------------------------------------------------------------
 
 
-def _requested_rating_aspects(columns: List[str]) -> Dict[str, set]:
-    """
-    From `columns`, extract which rating aspects are requested per category.
-    Example return: {"software": {"rating","reason"}, "documentation":{"reason"}}
-    """
-    req: Dict[str, set] = {}
-    for col in columns:
-        if not col.startswith("ratings."):
-            continue
-        parts = col.split(".")
-        if len(parts) >= 3:
-            _, cat, aspect = parts[0], parts[1], parts[2]
-            req.setdefault(cat, set()).add(aspect)
-    return req
+@dataclass
+class BenchmarkEntry:
+    """Value object wrapping a single benchmark for rendering."""
 
+    raw: Dict[str, Any]
+    id: str = field(init=False)
+    name: str = field(init=False)
+    date: str = field(init=False)
+    domains: List[str] = field(init=False)
+    metrics: List[str] = field(init=False)
+    task_types: List[str] = field(init=False)
+    keywords: List[str] = field(init=False)
+    focus: str = field(init=False)
 
-# ------------------------------- main writer ---------------------------------
+    def __post_init__(self) -> None:
+        entry_id = str(self.raw.get("id") or "").strip()
+        if not entry_id:
+            raise KeyError(
+                "Benchmark entry is missing an 'id'. Ensure YamlManager.clean_string ran before generation."
+            )
+        self.id = entry_id
+        self.name = str(self.raw.get("name") or self.id).strip()
+        self.date = str(self.raw.get("date") or "").strip()
+        self.domains = _as_list(self.raw.get("domain"))
+        self.metrics = _as_list(self.raw.get("metrics"))
+        self.task_types = _as_list(self.raw.get("task_types"))
+        self.keywords = _as_list(self.raw.get("keywords"))
+        self.focus = _flatten_text(self.raw.get("focus"))
 
+    # ------------------------------------------------------------------ cards
 
-class MkdocsWriter:
-    """
-    Writes:
-      - index.md with filter controls and pre-rendered cards (data-* attributes),
-      - one HTML-rich detail page per entry ({id}.md).
-    """
+    def card_html(self, ratings_average: float | None, use_directory_urls: bool) -> HTML:
+        """HTML card snippet for the MkDocs index page."""
+        rating_value = f"{ratings_average:.2f}" if ratings_average is not None else ""
+        badge = self._rating_badge(ratings_average)
+        subtitle_parts: List[str] = []
+        if self.domains:
+            subtitle_parts.append(", ".join(self.domains))
+        if self.metrics:
+            subtitle_parts.append(", ".join(self.metrics))
+        subtitle_html = (
+            f'<p class="muted">{_esc(" • ".join(subtitle_parts))}</p>'
+            if subtitle_parts
+            else "<!-- no subtitle -->"
+        )
+        chips_html = (
+            '<div class="chips">'
+            + " ".join(
+                f'<a class="chip chip-link" href="#kw={_esc(keyword)}">{_esc(keyword)}</a>'
+                for keyword in self.keywords[:5]
+            )
+            + "</div>"
+            if self.keywords
+            else "<!-- no keywords -->"
+        )
+        detail_href = f"../{self.id}/" if use_directory_urls else f"../{self.id}.html"
+        return CARD_TEMPLATE.format(
+            data_id=_esc(self.id),
+            data_name=_esc(self.name),
+            data_date=_esc(self.date),
+            data_focus=_esc(self.focus),
+            data_domain=_esc(", ".join(self.domains)),
+            data_task_types=_esc(", ".join(self.task_types)),
+            data_metrics=_esc(", ".join(self.metrics)),
+            data_keywords=_esc(", ".join(self.keywords)),
+            data_ratings_avg=_esc(rating_value),
+            title=_esc(self.name),
+            subtitle_html=subtitle_html,
+            chips_html=chips_html,
+            rating_badge=badge,
+            detail_href=_esc(detail_href),
+        )
 
-    def __init__(
+    # --------------------------------------------------------------- detail
+
+    def render_detail(
         self,
-        entries: List[Dict[str, Any]],
-        raw_entries: List[Dict[str, Any]] | None = None,
+        columns: Sequence[str],
         *,
-        use_directory_urls: bool = True,
-    ):
-        self.entries = entries
-        self.raw_entries = raw_entries
-        self.use_directory_urls = use_directory_urls
-        self._raw_by_id: Dict[str, Dict[str, Any]] = {}
-        self._raw_by_name: Dict[str, Dict[str, Any]] = {}
-        if isinstance(raw_entries, list):
-            self._collect_raw_entries(raw_entries)
-
-    # ----------------------- md table utilities ------------------------------
-
-    def _collect_raw_entries(self, data: List[Any]) -> None:
-        for item in data:
-            if isinstance(item, dict):
-                self._register_raw_entry(item)
-                for value in item.values():
-                    if isinstance(value, list):
-                        self._collect_raw_entries(value)
-                    elif isinstance(value, dict):
-                        self._collect_raw_entries([value])
-            elif isinstance(item, list):
-                self._collect_raw_entries(item)
-
-    def _register_raw_entry(self, entry: Dict[str, Any]) -> None:
-        id_val = entry.get("id")
-        name_val = entry.get("name")
-        if _nonempty(id_val):
-            self._raw_by_id[str(id_val).strip()] = entry
-            if _nonempty(name_val):
-                self._raw_by_name[str(name_val).strip()] = entry
-        elif _nonempty(name_val) and any(
-            key in entry for key in ("domain", "metrics", "task_types", "ml_motif")
-        ):
-            self._raw_by_name[str(name_val).strip()] = entry
-
-    def _get_raw_entry(self, entry: Dict[str, Any]) -> Dict[str, Any] | None:
-        id_val = entry.get("id")
-        if _nonempty(id_val):
-            raw = self._raw_by_id.get(str(id_val).strip())
-            if raw:
-                return raw
-        name_val = entry.get("name")
-        if _nonempty(name_val):
-            return self._raw_by_name.get(str(name_val).strip())
-        return None
-
-    def _escape_md(self, text) -> str:
-        if not isinstance(text, str):
-            text = str(text)
-        return text.replace("|", "\\|").replace("\n", " ")
-
-    def _colunm_label(self, col):
-        if col not in ALL_COLUMNS:
-            Console.error(f"Column '{col}' is not a valid column name.")
-            sys.exit(1)
-        content = ALL_COLUMNS[col]["label"]
-        return content
-
-    def _colunm_width(self, col):
-        if col not in ALL_COLUMNS:
-            Console.error(f"Column '{col}' is not a valid column name.")
-            sys.exit(1)
-        content = float(ALL_COLUMNS[col]["width"])
-        return content
-
-    def _column_width_str(self, col):
-        if col not in ALL_COLUMNS:
-            Console.error(f"Column '{col}' is not a valid column name.")
-            sys.exit(1)
-        content = "-" * int(self._colunm_width(col) * 10.0)
-        return content
-
-    # ----------------------- index page composition --------------------------
-
-    def _detail_href(self, id_: str) -> str:
-        """Build the runtime URL for a detail page (MkDocs routing)."""
-        if self.use_directory_urls:
-            return f"../{id_}/"
-        return f"../{id_}.html"
-
-    def _index_header_html(self) -> str:
-        """Controls + container for cards; your DOM script wires the behavior."""
-        return (
-            "# Index of Benchmarks\n\n"
-            '<div class="filter-bar">\n'
-            '<input type="search" id="f_q" placeholder="Search (name, focus, metrics…)" />\n'
-            '<select id="f_domain"><option value="">All domains</option></select>\n'
-            '<input type="text" id="f_keywords" placeholder="Keywords (comma-separated)" />\n'
-            '<input type="date" id="f_from" placeholder="From date" />\n'
-            '<input type="date" id="f_to" placeholder="To date" />\n'
-            '<input type="number" id="f_minrating" min="0" max="5" step="0.1" placeholder="Min avg rating" />\n'
-            '<select id="f_sort">\n'
-            '  <option value="date_desc">Sort: Date ↓</option>\n'
-            '  <option value="date_asc">Sort: Date ↑</option>\n'
-            '  <option value="name_asc">Sort: Name A–Z</option>\n'
-            '  <option value="rating_desc">Sort: Rating ↓</option>\n'
-            "</select>\n"
-            '<button id="f_reset" type="button">Reset</button>\n'
-            "</div>\n\n"
-            '<div id="cards-root" class="grid cards">\n'
-        )
-
-    def _index_footer_html(self, filters_js_src: str | None) -> str:
-        """
-        Close the cards container and (optionally) include your filters.js.
-        If you manage JS via theme, pass filters_js_src=None.
-        """
-        script = (
-            f'\n<script src="{_esc(filters_js_src)}"></script>\n'
-            if filters_js_src
-            else ""
-        )
-        return "</div>\n" + script
-
-    def _rating_badge(self, avg, size="sm"):
-        if avg is None:
-            return ""
-        color = "ok" if avg >= 4 else "meh" if avg >= 3 else "bad"
-        return f'<span class="badge badge--{color} badge--{size}">{avg:.2f}/5</span>'
-
-    def _index_card_html(
-        self,
-        entry: Dict[str, Any],
-        raw_entry: Dict[str, Any] | None,
-        ratings_avg: float | None,
-    ) -> str:
-        """
-        Generate one card with the data-* attributes needed for DOM filtering/sorting.
-        Only uses fields relevant to filtering/sorting; adding new YAML columns won’t break the UI.
-        """
-        if raw_entry is None:
-            raise KeyError("Raw entry is required for card rendering.")
-
-        if not raw_entry.get("id"):
-            raise KeyError("Raw entry missing required 'id' field.")
-
-        id_ = str(raw_entry.get("id"))
-        name = str(raw_entry.get("name", id_))
-        date = str(raw_entry.get("date", ""))
-
-        domain_list = _listify(raw_entry.get("domain"))
-        metrics_list = _listify(raw_entry.get("metrics"))
-        task_types_list = _listify(raw_entry.get("task_types"))
-        keywords_list = _listify(raw_entry.get("keywords"))
-        focus_val = raw_entry.get("focus")
-        focus_str = _val_to_str(focus_val)
-
-        # subtitle under the title (optional)
-        subs: List[str] = []
-        if domain_list:
-            subs.append(", ".join(str(d) for d in domain_list))
-        if metrics_list:
-            subs.append(", ".join(str(m) for m in metrics_list))
-        subtitle = " • ".join(subs)
-
-        # keyword chips (first few)
-        chips = ""
-        if keywords_list:
-            chips = (
-                '<div class="chips">'
-                + " ".join(
-                    f'<a class="chip chip-link" href="#kw={_esc(k)}">{_esc(k)}</a>'
-                    for k in keywords_list[:5]
-                )
-                + "</div>\n"
+        average_ratings: bool,
+        use_directory_urls: bool,
+    ) -> Tuple[HTML, float | None]:
+        """Return the detail page HTML and average rating."""
+        ratings_block, ratings_average = self._ratings_block(columns)
+        average_block = ""
+        if average_ratings and ratings_average is not None:
+            average_block = (
+                '<div class="avg-rating">'
+                "  <strong>Average rating:</strong> "
+                + self._rating_badge(ratings_average)
+                + "</div>"
             )
 
-        rating_val = None
-        try:
-            rating_val = None if ratings_avg is None else float(ratings_avg)
-        except (TypeError, ValueError):
-            rating_val = None
+        detail_html = DETAIL_TEMPLATE.format(
+            title=_esc(self.name),
+            back_link=BACK_LINK_TEMPLATE.format(
+                href=_esc("../cards/" if use_directory_urls else "../cards.html")
+            ),
+            meta_block=self._meta_block(),
+            resource_block=self._resources_block(),
+            keywords_block=self._keywords_block(),
+            citations_block=self._citations_block(columns),
+            ratings_block=ratings_block,
+            extra_block=self._extra_block(columns),
+            average_block=average_block,
+            radar_block=RADAR_TEMPLATE.format(
+                alt=_esc(f"{self.name} radar"), image_name=_esc(self.id)
+            ),
+            edit_block=EDIT_LINK_HTML,
+        )
+        return detail_html, ratings_average
 
-        rating_str = f"{rating_val:.2f}" if rating_val is not None else ""
-        badge_html = self._rating_badge(rating_val)  # DO NOT _esc()
+    # --------------------------------------------------------------- sections
 
-        detail_href = _esc(self._detail_href(id_))
-
-        # data-* attributes used by filters.js
-        return f"""
-            <article class="benchmark-card"
-                    data-id="{_esc(id_)}"
-                    data-name="{_esc(name)}"
-                    data-date="{_esc(date)}"
-                    data-focus="{_esc(focus_str)}"
-                    data-domain="{_esc(', '.join(map(str, domain_list)))}"
-                    data-task-types="{_esc(', '.join(map(str, task_types_list)))}"
-                    data-metrics="{_esc(', '.join(map(str, metrics_list)))}"
-                    data-keywords="{_esc(', '.join(map(str, keywords_list)))}"
-                    data-ratings-avg="{_esc(rating_str)}">
-                <h3>{_esc(name)}</h3>
-                {f'<p class="muted">{_esc(subtitle)}</p>' if subtitle else ''}
-                {chips}
-                <p class="muted">Avg rating: {badge_html}</p>
-                <p><a class="md-button md-button--primary" href="{detail_href}">Details</a></p>
-            </article>
-            """.strip()
-
-    # ---------------------- detail page composition --------------------------
-
-    def _meta_block_html(self, raw_entry: Dict[str, Any]) -> str:
-        """HTML meta block showing the hardcoded subset first (skip missing)."""
-        rows = ['<div class="info-block meta-block">\n']
-        for key in _HARDCODED_DETAIL_FIELDS:
+    def _meta_block(self) -> HTML:
+        rows: List[str] = ['<div class="info-block meta-block">\n']
+        for key in META_FIELDS:
             if key not in ALL_COLUMNS:
                 continue
-            val = _raw_get(raw_entry, key)
-            if not _nonempty(val):
+            value = _dotted_get(self.raw, key)
+            if not _nonempty(value):
                 continue
-            label = _esc(_col_label(key))
-            value = _esc(
-                ", ".join(map(str, _listify(val)))
-                if isinstance(val, (list, tuple))
-                else _val_to_str(val)
-            )
             rows.append(
-                f'  <p class="meta-row"><span class="meta-label">{label}</span>'
-                f'<span class="meta-sep">:</span> <span class="meta-value">{value}</span></p>\n'
+                f'  <p class="meta-row"><span class="meta-label">{_esc(_col_label(key))}</span>'
+                f'<span class="meta-sep">:</span> <span class="meta-value">{_esc(self._render_value(value))}</span></p>\n'
             )
         rows.append("</div>\n")
         return "".join(rows)
 
-    def _resource_links_html(self, raw_entry: Dict[str, Any]) -> str:
-        """Render benchmark url, dataset links, and result links as a resource block."""
-        benchmark_url = raw_entry.get("url")
-        dataset_links = _extract_links(raw_entry.get("datasets"))
-        result_links = _extract_links(raw_entry.get("results"))
+    def _resources_block(self) -> HTML:
+        benchmark_url = self.raw.get("url")
+        dataset_links = self._extract_links(self.raw.get("datasets"))
+        result_links = self._extract_links(self.raw.get("results"))
 
         if not (benchmark_url or dataset_links or result_links):
             return ""
 
-        parts: List[str] = ['<div class="info-block resource-block">\n', "<h3>Resources</h3>\n"]
         groups: List[str] = []
-
         if benchmark_url:
             groups.append(
                 '<div class="resource-group">'
                 '<span class="resource-label">Benchmark:</span> '
-                f'<a class="md-chip md-chip--primary" href="{_esc(benchmark_url)}" '
-                'target="_blank" rel="noopener">Visit</a>'
+                f'<a class="md-chip md-chip--primary" href="{_esc(benchmark_url)}" target="_blank" rel="noopener">Visit</a>'
                 "</div>"
             )
-
         if dataset_links:
-            dataset_links_html = ", ".join(
-                f'<a class="md-chip" href="{_esc(url)}" target="_blank" rel="noopener">{_esc(name)}</a>'
-                for name, url in dataset_links
-            )
             groups.append(
                 '<div class="resource-group">'
                 '<span class="resource-label">Datasets:</span> '
-                f"{dataset_links_html}"
-                "</div>"
+                + ", ".join(
+                    f'<a class="md-chip" href="{_esc(url)}" target="_blank" rel="noopener">{_esc(name)}</a>'
+                    for name, url in dataset_links
+                )
+                + "</div>"
             )
-
         if result_links:
-            result_links_html = ", ".join(
-                f'<a class="md-chip" href="{_esc(url)}" target="_blank" rel="noopener">{_esc(name)}</a>'
-                for name, url in result_links
-            )
             groups.append(
                 '<div class="resource-group">'
                 '<span class="resource-label">Results:</span> '
-                f"{result_links_html}"
-                "</div>"
+                + ", ".join(
+                    f'<a class="md-chip" href="{_esc(url)}" target="_blank" rel="noopener">{_esc(name)}</a>'
+                    for name, url in result_links
+                )
+                + "</div>"
             )
 
-        if groups:
-            parts.append("\n".join(groups) + "\n")
+        return (
+            '<div class="info-block resource-block">\n'
+            "<h3>Resources</h3>\n"
+            + "\n".join(groups)
+            + "\n</div>\n"
+        )
 
-        parts.append("</div>\n")
-        return "".join(parts)
-
-    def _keywords_html(self, raw_entry: Dict[str, Any], link_base: str) -> str:
-        """Clickable keyword chips linking back to index with prefilled hash."""
-        kws = _listify(raw_entry.get("keywords"))
-        if not kws:
+    def _keywords_block(self) -> HTML:
+        if not self.keywords:
             return ""
-        out = ['<h3>Keywords</h3>\n\n<div class="chips">']
-        for kw in kws:
-            safe = _esc(str(kw).strip().replace('"', "").replace("'", ""))
-            safe_href = (
-                f"{link_base}kw={quote(kw.strip())}"  # e.g. ./#kw=long%20context
-            )
-            out.append(f'<a class="chip chip-link" href="{safe_href}">{safe}</a> ')
-        out.append("</div>\n")
-        return "".join(out)
+        chips = " ".join(
+            f'<a class="chip chip-link" href="../#kw={quote(keyword)}">{_esc(keyword)}</a>'
+            for keyword in self.keywords
+        )
+        return "<h3>Keywords</h3>\n\n<div class=\"chips\">" + chips + "</div>\n"
 
-    def _citations_html(self, raw_entry: Dict[str, Any], columns: List[str]) -> str:
-        """Citations rendered only if 'cite' is included in `columns`."""
+    def _citations_block(self, columns: Sequence[str]) -> HTML:
         if "cite" not in columns:
             return ""
-        citations = _listify(raw_entry.get("cite"))
+        citations = _as_list(self.raw.get("cite"))
         if not citations:
             return ""
-        out: List[str] = [f"<h3>{_esc(_col_label('cite'))}</h3>\n\n"]
+        rendered: List[str] = [f"<h3>{_esc(_col_label('cite'))}</h3>\n\n"]
         for bib in citations:
             if not isinstance(bib, str):
-                out.append(
+                rendered.append(
                     f"- Could not parse citation: Expected BibTeX string, got {html.escape(type(bib).__name__)}\n"
                 )
                 continue
-            out.append(f"- {html.escape(_bibtex_to_text(bib))}\n\n")
-            out.append('<pre><code class="language-bibtex">')
-            out.append(html.escape(bib.strip()))
-            out.append("</code></pre>\n")
-        return "".join(out)
+            rendered.append(f"- {html.escape(_bibtex_to_text(bib))}\n\n")
+            rendered.append('<pre><code class="language-bibtex">')
+            rendered.append(html.escape(bib.strip()))
+            rendered.append("</code></pre>\n")
+        return "".join(rendered)
 
-    def _ratings_html(
-        self, entry: Dict[str, Any], columns: List[str]
-    ) -> Tuple[str, float | None]:
-        """
-        Render ratings as a compact, comparable grid (badge + bar + reason).
-        Shows only aspects requested in `columns`. Average = sum/count of present numeric ratings.
-        """
-        requested = _requested_rating_aspects(
-            columns
-        )  # {"software":{"rating","reason"}, ...}
-        items, s, c = _collect_ratings(entry)
-        if not items:
-            return "", None
+    def _ratings_block(self, columns: Sequence[str]) -> Tuple[HTML, float | None]:
+        ratings = self.raw.get("ratings")
+        if not isinstance(ratings, dict):
+            return "", self._ratings_average(ratings)
 
-        # If nothing requested, show nothing but still return the average
-        if not any(requested.get(cat) for cat, _ in items):
-            return "", (round(s / c, 3) if c else None)
+        requested = self._requested_rating_aspects(columns)
+        ordered_items = self._ordered_ratings(ratings)
+        if not ordered_items:
+            return "", self._ratings_average(ratings)
 
         rows: List[str] = []
-        for cat, d in items:
-            aspects = requested.get(cat)
+        total = 0.0
+        count = 0
+        for category, info in ordered_items:
+            rating_value = info.get("rating")
+            reason_value = info.get("reason")
+            aspects = requested.get(category)
+
+            rating_number: float | None = None
+            rating_label = "—"
+            if _nonempty(rating_value):
+                try:
+                    rating_number = float(rating_value)
+                    rating_label = f"{rating_number:.2f}"
+                    total += rating_number
+                    count += 1
+                except (ValueError, TypeError):
+                    Console.error(f'The rating "{rating_value}" must be a number')
+
             if not aspects:
                 continue
 
-            # rating number
-            r_val = d.get("rating")
-            r_num: float | None = None
-            r_str = "—"
-            if _nonempty(r_val):
-                try:
-                    r_num = float(r_val)
-                    r_str = f"{r_num:.2f}"
-                except (ValueError, TypeError):
-                    pass
-
-            # reason
-            reason = d.get("reason") if "reason" in aspects else None
-
-            # progress bar width (0–100) against a 0–5 scale
             width_pct = 0
-            if r_num is not None:
-                width_pct = max(0, min(100, int(round((r_num / 5.0) * 100))))
+            if rating_number is not None:
+                width_pct = max(0, min(100, int(round((rating_number / 5.0) * 100))))
 
             rows.append(
                 '<div class="rating-item">'
-                f'  <div class="rating-cat">{_esc(cat.replace("_", " ").title())}</div>'
-                f'  <div class="rating-badge">{_esc(r_str)}</div>'
+                f'  <div class="rating-cat">{_esc(category.replace("_", " ").title())}</div>'
+                f'  <div class="rating-badge">{_esc(rating_label)}</div>'
                 f'  <div class="rating-bar"><span style="width:{width_pct}%"></span></div>'
                 + (
-                    f'  <div class="rating-reason">{_esc(reason)}</div>'
-                    if _nonempty(reason)
+                    f'  <div class="rating-reason">{_esc(reason_value)}</div>'
+                    if _nonempty(reason_value) and "reason" in aspects
                     else ""
                 )
                 + "</div>"
             )
 
+        average = round(total / count, 3) if count else None
         if not rows:
-            return "", (round(s / c, 3) if c else None)
+            return "", average
 
         block = (
             "<h3>Ratings</h3>\n"
@@ -597,171 +462,176 @@ class MkdocsWriter:
             f'  {"".join(rows)}\n'
             "</div>\n"
         )
-        avg = round(s / c, 3) if c else None
-        return block, avg
+        return block, average
 
-    def _extra_fields_html(self, raw_entry: Dict[str, Any], columns: List[str]) -> str:
-        """
-        Append any additional fields from `columns` that are NOT:
-          - in the hardcoded subset,
-          - a ratings.* key,
-          - 'cite'.
-        """
-        out: List[str] = []
-        for col in columns:
-            if (
-                col in _HARDCODED_DETAIL_FIELDS
-                or col == "keywords"
-                or col == "cite"
-                or col.startswith("ratings.")
-            ):
+    def _extra_block(self, columns: Sequence[str]) -> HTML:
+        extras: List[str] = []
+        for column in columns:
+            if column in META_FIELDS or column in {"keywords", "cite"}:
                 continue
-            if col not in ALL_COLUMNS:
+            if column.startswith("ratings."):
                 continue
-            val = _raw_get(raw_entry, col)
-            if not _nonempty(val):
+            if column not in ALL_COLUMNS:
                 continue
-            out.append(
-                f"<p><strong>{_esc(_col_label(col))}</strong>: {_esc(_val_to_str(val))}</p>\n"
+            value = _dotted_get(self.raw, column)
+            if not _nonempty(value):
+                continue
+            extras.append(
+                f"<p><strong>{_esc(_col_label(column))}</strong>: {_esc(self._render_value(value))}</p>\n"
             )
-        return "".join(out)
+        return "".join(extras)
 
-    def _detail_page_html(
+    # ------------------------------------------------------------- rating utils
+
+    def _ratings_average(self, ratings: Any) -> float | None:
+        if not isinstance(ratings, dict):
+            return None
+        total = 0.0
+        count = 0
+        for info in ratings.values():
+            if not isinstance(info, dict):
+                continue
+            rating_value = info.get("rating")
+            if _nonempty(rating_value):
+                try:
+                    total += float(rating_value)
+                    count += 1
+                except (ValueError, TypeError):
+                    Console.error(f'The rating "{rating_value}" must be a number')
+        return round(total / count, 3) if count else None
+
+    def _requested_rating_aspects(self, columns: Sequence[str]) -> Dict[str, set]:
+        requested: Dict[str, set] = {}
+        for column in columns:
+            if column.startswith("ratings."):
+                _, category, aspect = column.split(".", 2)
+                requested.setdefault(category, set()).add(aspect)
+        return requested
+
+    def _ordered_ratings(self, ratings: Dict[str, Any]) -> List[Tuple[str, Dict[str, Any]]]:
+        preferred = [
+            "software",
+            "specification",
+            "dataset",
+            "metrics",
+            "reference_solution",
+            "documentation",
+        ]
+        items: Dict[str, Dict[str, Any]] = {}
+        for category, payload in ratings.items():
+            if isinstance(payload, dict):
+                items[str(category)] = {"rating": payload.get("rating"), "reason": payload.get("reason")}
+        ordered = [key for key in preferred if key in items] + sorted(
+            key for key in items.keys() if key not in preferred
+        )
+        return [(key, items[key]) for key in ordered]
+
+    def _rating_badge(self, average: float | None, size: str = "sm") -> str:
+        if average is None:
+            return ""
+        color = "ok" if average >= 4 else "meh" if average >= 3 else "bad"
+        return f'<span class="badge badge--{color} badge--{size}">{average:.2f}/5</span>'
+
+    # ------------------------------------------------------------- misc utils
+
+    def _render_value(self, value: Any) -> str:
+        if isinstance(value, (list, tuple)):
+            return ", ".join(map(str, value))
+        return _flatten_text(value)
+
+    def _extract_links(self, section: Any) -> List[Tuple[str, str]]:
+        if not isinstance(section, dict):
+            return []
+        links = section.get("links")
+        if not isinstance(links, list):
+            return []
+        result: List[Tuple[str, str]] = []
+        for entry in links:
+            if not isinstance(entry, dict):
+                continue
+            url = entry.get("url")
+            name = entry.get("name") or entry.get("title") or url
+            if url and name:
+                result.append((str(name), str(url)))
+        return result
+
+
+# ---------------------------------------------------------------------------
+# Public writer API
+# ---------------------------------------------------------------------------
+
+
+class MkdocsWriter:
+    """Generate MkDocs artefacts from raw benchmark entries."""
+
+    def __init__(
         self,
-        entry: Dict[str, Any],
-        raw_entry: Dict[str, Any] | None,
-        columns: List[str],
-        average_ratings: bool,
-    ) -> str:
-        """Compose one detail page as Markdown+HTML mix (works well in MkDocs)."""
-        if raw_entry is None:
-            raise KeyError("Raw entry is required for detail rendering.")
-        if not raw_entry.get("id"):
-            raise KeyError("Raw entry missing required 'id' field.")
+        benchmarks: Iterable[Dict[str, Any]] | None,
+        *,
+        use_directory_urls: bool = True,
+    ):
+        self.use_directory_urls = use_directory_urls
+        self.entries: List[BenchmarkEntry] = []
+        if benchmarks:
+            for raw in benchmarks:
+                try:
+                    self.entries.append(BenchmarkEntry(raw))
+                except Exception as exc:  # pragma: no cover - defensive
+                    raise ValueError(f"Invalid benchmark entry: {exc}") from exc
 
-        id_ = str(raw_entry.get("id"))
-        name = str(raw_entry.get("name", id_))
-        parts: List[str] = []
-
-        # Title
-        parts.append(f"# {_esc(name)}\n")
-
-        back_href = "../cards/" if self.use_directory_urls else "../cards.html"
-        parts.append(
-            f"\n<p><a class=\"md-button back-link\" href=\"{_esc(back_href)}\">"
-            "← Back to all benchmarks</a></p>\n"
-        )
-
-        # Meta subset
-        parts.append(self._meta_block_html(raw_entry))
-        parts.append(self._resource_links_html(raw_entry))
-
-        # Keywords
-        parts.append(self._keywords_html(raw_entry, link_base="../#"))
-
-        # Citations (if requested)
-        parts.append(self._citations_html(raw_entry, columns))
-
-        # Ratings (grid)
-        ratings_html, ratings_avg = self._ratings_html(entry, columns)
-        parts.append(ratings_html)
-
-        # Extra fields before image
-        parts.append(self._extra_fields_html(raw_entry, columns))
-
-        # Average line (sum/count across present numeric ratings)
-        if average_ratings and ratings_avg is not None:
-            parts.append(
-                '<div class="avg-rating">'
-                "  <strong>Average rating:</strong> "
-                + self._rating_badge(ratings_avg)
-                + "</div>"
-            )
-
-        # Radar image (correct relative path from content/md/benchmarks/{id}.md)
-        parts.append("<h3>Radar plot</h3>\n\n")
-        parts.append(
-            f'<div class="radar-wrap"><img class="radar-img" alt="{_esc(name)} radar" '
-            f'src="../../../tex/images/{_esc(id_)}_radar.png" /></div>\n'
-        )
-
-        # Edit link
-        parts.append(
-            "\n<p><strong>Edit:</strong> "
-            '<a href="https://github.com/mlcommons-science/benchmark/tree/main/source">'
-            "edit this entry</a></p>\n"
-        )
-
-        return "".join(parts)
-
-    # ------------------------------- public API ------------------------------
+    # ------------------------------------------------------------------ writers
 
     def write_individual_entries(
         self,
         output_dir: str = "content/md/benchmarks",
-        columns: List[str] = DEFAULT_COLUMNS,
-        author_trunc: int | None = None,  # API parity (unused)
+        columns: Iterable[str] = DEFAULT_COLUMNS,
+        author_trunc: int | None = None,  # kept for API parity
         average_ratings: bool = True,
         *,
-        filters_js_src: (
-            str | None
-        ) = None,  # optionally inject <script src="..."></script> into index.md
+        filters_js_src: str | None = None,
     ) -> None:
         """
-        Write:
-          - index.md with filter controls + pre-rendered cards (data-* attributes),
-          - {id}.md detail pages.
+        Write ``cards.md`` and one detail page per benchmark.
+
+        ``filters_js_src`` may point to the runtime script if the theme does not
+        already include ``assets/js/filters.js``.
         """
+
         valid_columns = _validate_columns(list(columns))
         os.makedirs(output_dir, exist_ok=True)
 
-        # Build index
-        index_lines: List[str] = [self._index_header_html()]
+        card_lines: List[str] = [INDEX_HEADER_TEMPLATE]
 
-        for i, entry in enumerate(self.entries):
-            # Compute ratings average over present numeric ratings (JS-compatible behavior)
-            _, s, c = _collect_ratings(entry)
-            ratings_avg = round(s / c, 3) if c else None
-
-            raw_entry = self._get_raw_entry(entry)
-            if raw_entry is None:
-                raise KeyError(
-                    f"Raw entry not found for benchmark "
-                    f"{entry.get('id') or entry.get('name') or f'index {i}'}"
-                )
-            if not raw_entry.get("id"):
-                raise KeyError(
-                    f"Raw entry missing required 'id' for "
-                    f"{entry.get('name') or f'index {i}'}"
-                )
-
-            # Detail page
-            id_ = str(raw_entry.get("id"))
-            filename = os.path.join(output_dir, f"{id_}.md")
-            page_html = self._detail_page_html(
-                entry, raw_entry, valid_columns, average_ratings
+        for entry in self.entries:
+            detail_html, ratings_average = entry.render_detail(
+                valid_columns,
+                average_ratings=average_ratings,
+                use_directory_urls=self.use_directory_urls,
             )
-            write_to_file(content=page_html, filename=filename)
+            write_to_file(
+                content=detail_html,
+                filename=os.path.join(output_dir, f"{entry.id}.md"),
+            )
+            card_lines.append(entry.card_html(ratings_average, self.use_directory_urls))
 
-            # Index card
-            index_lines.append(self._index_card_html(entry, raw_entry, ratings_avg))
-
-        index_lines.append(self._index_footer_html(filters_js_src))
-        index_filename = os.path.join(output_dir, "cards.md")
-        write_to_file(content="".join(index_lines), filename=index_filename)
-
-    def write_table_new(
-        self,
-        filename="content/md/benchmarks_table.md",
-        columns=DEFAULT_COLUMNS,
-        average_ratings: bool = True,
-    ) -> None:
-        
-        contents = (
-            "# Benchmarks Table\n\n"
-            "<table id=\"benchmarksTable\" class=\"display nowrap\" style=\"width:100%\"></table>\n"
+        card_lines.append(self._index_footer(filters_js_src))
+        write_to_file(
+            content="".join(card_lines),
+            filename=os.path.join(output_dir, "cards.md"),
         )
 
+    def write_table(
+        self,
+        filename: str = "content/md/benchmarks_table.md",
+        columns: Iterable[str] = DEFAULT_COLUMNS,
+        average_ratings: bool = True,
+    ) -> None:
+        """Emit the static table shell consumed by ``benchmarks-table.js``."""
+        _validate_columns(list(columns))
+        contents = (
+            "# Benchmarks Table\n\n"
+            '<table id="benchmarksTable" class="display nowrap" style="width:100%"></table>\n'
+        )
         write_to_file(content=contents, filename=filename)
 
     def write_index_md(
@@ -769,40 +639,30 @@ class MkdocsWriter:
         output_dir: str = "content/md/benchmarks",
         *,
         title: str = "Index of Benchmarks",
-        detail_base: str = ".",  # where detail pages live relative to this index
-        sort_by: str = "name",  # "name" | "id" | None
+        detail_base: str = ".",
+        sort_by: str = "name",
     ) -> None:
-        """
-        Writes ONLY an index file listing all benchmarks as links to their detail pages.
-        """
+        """Create a minimal Markdown index linking every detail page."""
         os.makedirs(output_dir, exist_ok=True)
-        index_filename = os.path.join(output_dir, "index.md")
-
-        # Prepare items (id, name)
-        items = []
-        for i, entry in enumerate(self.entries):
-            raw_entry = self._get_raw_entry(entry)
-            if raw_entry is None or not raw_entry.get("id"):
-                raise KeyError(
-                    f"Raw entry missing for benchmark "
-                    f"{entry.get('name') or entry.get('id') or f'index {i}'}"
-                )
-            id_ = str(raw_entry.get("id")).strip()
-            name = str(raw_entry.get("name", id_)).strip()
-            items.append((id_, name))
-
-        # Optional stable sort (case-insensitive)
+        items: List[Tuple[str, str]] = [(entry.id, entry.name) for entry in self.entries]
         if sort_by in {"name", "id"}:
             idx = 1 if sort_by == "name" else 0
-            items.sort(key=lambda t: (t[idx] or "").lower())
+            items.sort(key=lambda item: (item[idx] or "").lower())
 
-        # Build content
-        lines = []
-        lines.append(f"# {title}\n")
-        lines.append("\n")
-
-        for id_, name in items:
-            href = os.path.normpath(f"{detail_base}/{id_}").replace("\\", "/") + ".md"
+        lines: List[str] = [f"# {title}\n", "\n"]
+        for entry_id, name in items:
+            href = os.path.normpath(f"{detail_base}/{entry_id}").replace("\\", "/") + ".md"
             lines.append(f"- [{name}]({href})\n")
 
-        write_to_file(content="".join(lines), filename=index_filename)
+        write_to_file(
+            content="".join(lines),
+            filename=os.path.join(output_dir, "index.md"),
+        )
+
+    # ------------------------------------------------------------------ helpers
+
+    def _index_footer(self, filters_js_src: str | None) -> HTML:
+        script = (
+            f'\n<script src="{_esc(filters_js_src)}"></script>\n' if filters_js_src else ""
+        )
+        return INDEX_FOOTER_TEMPLATE.format(script=script)

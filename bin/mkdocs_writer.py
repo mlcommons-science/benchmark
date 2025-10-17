@@ -34,6 +34,7 @@ _HARDCODED_DETAIL_FIELDS: List[str] = [
     "task_types",
     "metrics",
     "models",
+    "ml_motif",
 ]
 
 
@@ -50,6 +51,36 @@ def _listify(v: Any) -> List[str]:
     if v is None or v == "":
         return []
     return v if isinstance(v, list) else [v]
+
+
+def _extract_links(section: Any) -> List[Tuple[str, str]]:
+    """Return [(name, url), ...] from a nested section.links list of dicts."""
+    items: List[Tuple[str, str]] = []
+    if not isinstance(section, dict):
+        return items
+    links = section.get("links")
+    if not isinstance(links, list):
+        return items
+    for link in links:
+        if not isinstance(link, dict):
+            continue
+        url = link.get("url")
+        name = link.get("name") or link.get("title") or url
+        if not url or not name:
+            continue
+        items.append((str(name), str(url)))
+    return items
+
+
+def _raw_get(entry: Dict[str, Any], key: str) -> Any:
+    """Retrieve a nested value from the raw YAML entry using dot-separated keys."""
+    current: Any = entry
+    for part in key.split("."):
+        if isinstance(current, dict):
+            current = current.get(part)
+        else:
+            return None
+    return current
 
 
 def _val_to_str(val: Any) -> str:
@@ -196,8 +227,48 @@ class MkdocsWriter:
         self.entries = entries
         self.raw_entries = raw_entries
         self.use_directory_urls = use_directory_urls
+        self._raw_by_id: Dict[str, Dict[str, Any]] = {}
+        self._raw_by_name: Dict[str, Dict[str, Any]] = {}
+        if isinstance(raw_entries, list):
+            self._collect_raw_entries(raw_entries)
 
     # ----------------------- md table utilities ------------------------------
+
+    def _collect_raw_entries(self, data: List[Any]) -> None:
+        for item in data:
+            if isinstance(item, dict):
+                self._register_raw_entry(item)
+                for value in item.values():
+                    if isinstance(value, list):
+                        self._collect_raw_entries(value)
+                    elif isinstance(value, dict):
+                        self._collect_raw_entries([value])
+            elif isinstance(item, list):
+                self._collect_raw_entries(item)
+
+    def _register_raw_entry(self, entry: Dict[str, Any]) -> None:
+        id_val = entry.get("id")
+        name_val = entry.get("name")
+        if _nonempty(id_val):
+            self._raw_by_id[str(id_val).strip()] = entry
+            if _nonempty(name_val):
+                self._raw_by_name[str(name_val).strip()] = entry
+        elif _nonempty(name_val) and any(
+            key in entry for key in ("domain", "metrics", "task_types", "ml_motif")
+        ):
+            self._raw_by_name[str(name_val).strip()] = entry
+
+    def _get_raw_entry(self, entry: Dict[str, Any]) -> Dict[str, Any] | None:
+        id_val = entry.get("id")
+        if _nonempty(id_val):
+            raw = self._raw_by_id.get(str(id_val).strip())
+            if raw:
+                return raw
+        name_val = entry.get("name")
+        if _nonempty(name_val):
+            return self._raw_by_name.get(str(name_val).strip())
+        return None
+
     def _escape_md(self, text) -> str:
         if not isinstance(text, str):
             text = str(text)
@@ -272,19 +343,32 @@ class MkdocsWriter:
         color = "ok" if avg >= 4 else "meh" if avg >= 3 else "bad"
         return f'<span class="badge badge--{color} badge--{size}">{avg:.2f}/5</span>'
 
-    def _index_card_html(self, entry: Dict[str, Any], ratings_avg: float | None) -> str:
+    def _index_card_html(
+        self,
+        entry: Dict[str, Any],
+        raw_entry: Dict[str, Any] | None,
+        ratings_avg: float | None,
+    ) -> str:
         """
         Generate one card with the data-* attributes needed for DOM filtering/sorting.
         Only uses fields relevant to filtering/sorting; adding new YAML columns won’t break the UI.
         """
-        id_ = entry.get("id", "")
-        name = entry.get("name", id_)
-        date = entry.get("date", "")
+        if raw_entry is None:
+            raise KeyError("Raw entry is required for card rendering.")
 
-        domain_list = _listify(entry.get("domain"))
-        metrics_list = _listify(entry.get("metrics"))
-        task_types_list = _listify(entry.get("task_types"))
-        keywords_list = _listify(entry.get("keywords"))
+        if not raw_entry.get("id"):
+            raise KeyError("Raw entry missing required 'id' field.")
+
+        id_ = str(raw_entry.get("id"))
+        name = str(raw_entry.get("name", id_))
+        date = str(raw_entry.get("date", ""))
+
+        domain_list = _listify(raw_entry.get("domain"))
+        metrics_list = _listify(raw_entry.get("metrics"))
+        task_types_list = _listify(raw_entry.get("task_types"))
+        keywords_list = _listify(raw_entry.get("keywords"))
+        focus_val = raw_entry.get("focus")
+        focus_str = _val_to_str(focus_val)
 
         # subtitle under the title (optional)
         subs: List[str] = []
@@ -315,13 +399,15 @@ class MkdocsWriter:
         rating_str = f"{rating_val:.2f}" if rating_val is not None else ""
         badge_html = self._rating_badge(rating_val)  # DO NOT _esc()
 
+        detail_href = _esc(self._detail_href(id_))
+
         # data-* attributes used by filters.js
         return f"""
             <article class="benchmark-card"
                     data-id="{_esc(id_)}"
                     data-name="{_esc(name)}"
                     data-date="{_esc(date)}"
-                    data-focus="{_esc(entry.get('focus', ''))}"
+                    data-focus="{_esc(focus_str)}"
                     data-domain="{_esc(', '.join(map(str, domain_list)))}"
                     data-task-types="{_esc(', '.join(map(str, task_types_list)))}"
                     data-metrics="{_esc(', '.join(map(str, metrics_list)))}"
@@ -331,19 +417,19 @@ class MkdocsWriter:
                 {f'<p class="muted">{_esc(subtitle)}</p>' if subtitle else ''}
                 {chips}
                 <p class="muted">Avg rating: {badge_html}</p>
-                <p><a class="md-button md-button--primary" href="{_esc(self._detail_href(id_))}">Details</a></p>
+                <p><a class="md-button md-button--primary" href="{detail_href}">Details</a></p>
             </article>
             """.strip()
 
     # ---------------------- detail page composition --------------------------
 
-    def _meta_block_html(self, entry: Dict[str, Any]) -> str:
+    def _meta_block_html(self, raw_entry: Dict[str, Any]) -> str:
         """HTML meta block showing the hardcoded subset first (skip missing)."""
         rows = ['<div class="info-block meta-block">\n']
         for key in _HARDCODED_DETAIL_FIELDS:
             if key not in ALL_COLUMNS:
                 continue
-            val = entry.get(key)
+            val = _raw_get(raw_entry, key)
             if not _nonempty(val):
                 continue
             label = _esc(_col_label(key))
@@ -359,9 +445,60 @@ class MkdocsWriter:
         rows.append("</div>\n")
         return "".join(rows)
 
-    def _keywords_html(self, entry: Dict[str, Any], link_base: str) -> str:
+    def _resource_links_html(self, raw_entry: Dict[str, Any]) -> str:
+        """Render benchmark url, dataset links, and result links as a resource block."""
+        benchmark_url = raw_entry.get("url")
+        dataset_links = _extract_links(raw_entry.get("datasets"))
+        result_links = _extract_links(raw_entry.get("results"))
+
+        if not (benchmark_url or dataset_links or result_links):
+            return ""
+
+        parts: List[str] = ['<div class="info-block resource-block">\n', "<h3>Resources</h3>\n"]
+        groups: List[str] = []
+
+        if benchmark_url:
+            groups.append(
+                '<div class="resource-group">'
+                '<span class="resource-label">Benchmark:</span> '
+                f'<a class="md-chip md-chip--primary" href="{_esc(benchmark_url)}" '
+                'target="_blank" rel="noopener">Visit</a>'
+                "</div>"
+            )
+
+        if dataset_links:
+            dataset_links_html = ", ".join(
+                f'<a class="md-chip" href="{_esc(url)}" target="_blank" rel="noopener">{_esc(name)}</a>'
+                for name, url in dataset_links
+            )
+            groups.append(
+                '<div class="resource-group">'
+                '<span class="resource-label">Datasets:</span> '
+                f"{dataset_links_html}"
+                "</div>"
+            )
+
+        if result_links:
+            result_links_html = ", ".join(
+                f'<a class="md-chip" href="{_esc(url)}" target="_blank" rel="noopener">{_esc(name)}</a>'
+                for name, url in result_links
+            )
+            groups.append(
+                '<div class="resource-group">'
+                '<span class="resource-label">Results:</span> '
+                f"{result_links_html}"
+                "</div>"
+            )
+
+        if groups:
+            parts.append("\n".join(groups) + "\n")
+
+        parts.append("</div>\n")
+        return "".join(parts)
+
+    def _keywords_html(self, raw_entry: Dict[str, Any], link_base: str) -> str:
         """Clickable keyword chips linking back to index with prefilled hash."""
-        kws = _listify(entry.get("keywords"))
+        kws = _listify(raw_entry.get("keywords"))
         if not kws:
             return ""
         out = ['<h3>Keywords</h3>\n\n<div class="chips">']
@@ -374,11 +511,11 @@ class MkdocsWriter:
         out.append("</div>\n")
         return "".join(out)
 
-    def _citations_html(self, entry: Dict[str, Any], columns: List[str]) -> str:
+    def _citations_html(self, raw_entry: Dict[str, Any], columns: List[str]) -> str:
         """Citations rendered only if 'cite' is included in `columns`."""
         if "cite" not in columns:
             return ""
-        citations = _listify(entry.get("cite"))
+        citations = _listify(raw_entry.get("cite"))
         if not citations:
             return ""
         out: List[str] = [f"<h3>{_esc(_col_label('cite'))}</h3>\n\n"]
@@ -463,7 +600,7 @@ class MkdocsWriter:
         avg = round(s / c, 3) if c else None
         return block, avg
 
-    def _extra_fields_html(self, entry: Dict[str, Any], columns: List[str]) -> str:
+    def _extra_fields_html(self, raw_entry: Dict[str, Any], columns: List[str]) -> str:
         """
         Append any additional fields from `columns` that are NOT:
           - in the hardcoded subset,
@@ -481,7 +618,7 @@ class MkdocsWriter:
                 continue
             if col not in ALL_COLUMNS:
                 continue
-            val = entry.get(col)
+            val = _raw_get(raw_entry, col)
             if not _nonempty(val):
                 continue
             out.append(
@@ -490,11 +627,20 @@ class MkdocsWriter:
         return "".join(out)
 
     def _detail_page_html(
-        self, entry: Dict[str, Any], columns: List[str], average_ratings: bool
+        self,
+        entry: Dict[str, Any],
+        raw_entry: Dict[str, Any] | None,
+        columns: List[str],
+        average_ratings: bool,
     ) -> str:
         """Compose one detail page as Markdown+HTML mix (works well in MkDocs)."""
-        name = entry.get("name", entry.get("id", ""))
-        id_ = entry.get("id", "")
+        if raw_entry is None:
+            raise KeyError("Raw entry is required for detail rendering.")
+        if not raw_entry.get("id"):
+            raise KeyError("Raw entry missing required 'id' field.")
+
+        id_ = str(raw_entry.get("id"))
+        name = str(raw_entry.get("name", id_))
         parts: List[str] = []
 
         # Title
@@ -507,20 +653,21 @@ class MkdocsWriter:
         )
 
         # Meta subset
-        parts.append(self._meta_block_html(entry))
+        parts.append(self._meta_block_html(raw_entry))
+        parts.append(self._resource_links_html(raw_entry))
 
         # Keywords
-        parts.append(self._keywords_html(entry, link_base="../#"))
+        parts.append(self._keywords_html(raw_entry, link_base="../#"))
 
         # Citations (if requested)
-        parts.append(self._citations_html(entry, columns))
+        parts.append(self._citations_html(raw_entry, columns))
 
         # Ratings (grid)
         ratings_html, ratings_avg = self._ratings_html(entry, columns)
         parts.append(ratings_html)
 
         # Extra fields before image
-        parts.append(self._extra_fields_html(entry, columns))
+        parts.append(self._extra_fields_html(raw_entry, columns))
 
         # Average line (sum/count across present numeric ratings)
         if average_ratings and ratings_avg is not None:
@@ -576,14 +723,28 @@ class MkdocsWriter:
             _, s, c = _collect_ratings(entry)
             ratings_avg = round(s / c, 3) if c else None
 
+            raw_entry = self._get_raw_entry(entry)
+            if raw_entry is None:
+                raise KeyError(
+                    f"Raw entry not found for benchmark "
+                    f"{entry.get('id') or entry.get('name') or f'index {i}'}"
+                )
+            if not raw_entry.get("id"):
+                raise KeyError(
+                    f"Raw entry missing required 'id' for "
+                    f"{entry.get('name') or f'index {i}'}"
+                )
+
             # Detail page
-            id_ = entry.get("id", f"entry-{i}")
+            id_ = str(raw_entry.get("id"))
             filename = os.path.join(output_dir, f"{id_}.md")
-            page_html = self._detail_page_html(entry, valid_columns, average_ratings)
+            page_html = self._detail_page_html(
+                entry, raw_entry, valid_columns, average_ratings
+            )
             write_to_file(content=page_html, filename=filename)
 
             # Index card
-            index_lines.append(self._index_card_html(entry, ratings_avg))
+            index_lines.append(self._index_card_html(entry, raw_entry, ratings_avg))
 
         index_lines.append(self._index_footer_html(filters_js_src))
         index_filename = os.path.join(output_dir, "cards.md")
@@ -620,8 +781,14 @@ class MkdocsWriter:
         # Prepare items (id, name)
         items = []
         for i, entry in enumerate(self.entries):
-            id_ = str(entry.get("id", f"entry-{i}")).strip()
-            name = str(entry.get("name", id_)).strip()
+            raw_entry = self._get_raw_entry(entry)
+            if raw_entry is None or not raw_entry.get("id"):
+                raise KeyError(
+                    f"Raw entry missing for benchmark "
+                    f"{entry.get('name') or entry.get('id') or f'index {i}'}"
+                )
+            id_ = str(raw_entry.get("id")).strip()
+            name = str(raw_entry.get("name", id_)).strip()
             items.append((id_, name))
 
         # Optional stable sort (case-insensitive)

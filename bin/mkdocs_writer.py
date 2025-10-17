@@ -331,7 +331,7 @@ class BenchmarkEntry:
         return "".join(rows)
 
     def _resources_block(self) -> HTML:
-        benchmark_url = self.raw.get("url")
+        benchmark_url = self._clean_link(self.raw.get("url"))
         dataset_links = self._extract_links(self.raw.get("datasets"))
         result_links = self._extract_links(self.raw.get("results"))
 
@@ -549,11 +549,21 @@ class BenchmarkEntry:
         for entry in links:
             if not isinstance(entry, dict):
                 continue
-            url = entry.get("url")
+            url = self._clean_link(entry.get("url"))
+            if not url:
+                continue
             name = entry.get("name") or entry.get("title") or url
-            if url and name:
-                result.append((str(name), str(url)))
+            if name:
+                result.append((str(name), url))
         return result
+
+    def _clean_link(self, value: Any) -> str | None:
+        if not value:
+            return None
+        text = str(value).strip()
+        if text.lower() == "unknown":
+            return None
+        return text
 
 
 # ---------------------------------------------------------------------------

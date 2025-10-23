@@ -25,6 +25,7 @@
   cursor: pointer;
   transition: max-height 0.3s ease;
   word-break: break-word;
+  position: relative;
 }
 
 .cell-clamp:hover {
@@ -32,9 +33,14 @@
 }
 
 .cell-clamp.one-line {
+  display: inline-block;
+  width: 100%;
+  max-width: 100%;
   white-space: nowrap;
   -webkit-line-clamp: 1;
   max-height: 1.4em;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .cell-clamp:not(.one-line) {
@@ -50,30 +56,6 @@
   background-color: rgba(0, 123, 255, 0.05);
 }
 
-/* Add visual indicator for expandable cells */
-.cell-clamp::after {
-  content: ' ⋯';
-  color: #666;
-  font-weight: bold;
-  display: none; /* Hidden by default */
-}
-
-/* Show indicator only when content is actually truncated */
-.cell-clamp.is-truncated::after {
-  display: inline;
-}
-
-.cell-clamp.expanded::after {
-  content: '';
-  display: none;
-}
-
-/* No indicator for cells that don't need expansion */
-.cell-clamp.one-line:not(.js-expandable)::after,
-.cell-clamp:not(.js-expandable)::after {
-  content: '';
-}
-
 /* Link styles within cells */
 .cell-clamp a {
   color: #0066cc;
@@ -85,17 +67,62 @@
 }
 
 /* Name link styles */
-.name-link {
-  font-size: 0.9em;
-  margin-left: 4px;
-  text-decoration: none;
-  color: #666;
-  font-weight: bold;
+.name-text {
+  display: block;
+  font-weight: 700;
+  white-space: normal;
+  word-break: break-word;
 }
 
-.name-link:hover {
-  color: #0066cc;
+.name-badges {
+  display: block;
+  margin-top: 0.35rem;
 }
+
+.name-link {
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: inherit;
+}
+
+.name-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  padding: 0.15rem 0.45rem;
+  margin-right: 0.35rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(0,0,0,0.04);
+  color: rgba(0,0,0,0.55);
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.name-badge--detail { }
+.name-badge--source {
+  color: var(--md-primary-fg-color);
+  border-color: color-mix(in srgb, var(--md-primary-fg-color) 30%, transparent);
+  background: color-mix(in srgb, var(--md-primary-fg-color) 8%, white 92%);
+}
+
+.name-badge:hover,
+.name-badge:focus {
+  background: rgba(0,0,0,0.12);
+  color: rgba(0,0,0,0.75);
+}
+
+.name-badge--source:hover,
+.name-badge--source:focus {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 16%, white 84%);
+  color: color-mix(in srgb, var(--md-primary-fg-color) 85%, black 15%);
+}
+
+.avg-rating-value {
+  font-weight: 700;
+}
+
 
 /* Vertical header text - only affects the TH header, not TD cells */
 th.has-vertical-text {
@@ -161,12 +188,20 @@ td {
 }
 
 /* Center alignment for specific columns */
-.dt-center {
+
+table.dataTable tbody td.dt-center,
+table.dataTable tbody th.dt-center {
   text-align: center !important;
 }
 
-.dt-right {
+table.dataTable tbody td.dt-right,
+table.dataTable tbody th.dt-right {
   text-align: right !important;
+}
+
+table.dataTable thead th.dt-center,
+table.dataTable thead th.dt-right {
+  text-align: left !important;
 }
 
 .dt-nowrap {
@@ -192,6 +227,28 @@ td {
   background-color: #e9ecef;
 }
 
+.dt-button-collection {
+  max-height: 320px;
+  overflow-y: auto !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.dt-button-collection .dt-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dt-button-collection .dt-button span.dt-column-title {
+  flex: 1;
+  text-align: left;
+}
+
+.dt-button-collection .dt-button span.dt-button-check {
+  margin-left: 0.75rem;
+}
+
 /* Search box styling */
 .dataTables_filter input {
   padding: 6px 12px;
@@ -200,5 +257,45 @@ td {
   margin-left: 8px;
 }
 
-/* ===== MkDocs page width (optional) ===== */
-.md-main__inner.md-grid { max-width: initial; }
+/* Layout: make the table page span full width */
+.md-main:has(#benchmarksTable) .md-sidebar,
+.md-main:has(#benchmarksTable) .md-sidebar--primary,
+.md-main:has(#benchmarksTable) .md-sidebar--secondary {
+  display: none !important;
+}
+
+.md-main:has(#benchmarksTable) .md-main__inner {
+  grid-template-columns: minmax(0, 1fr) !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.md-main:has(#benchmarksTable) .md-content,
+.md-main:has(#benchmarksTable) .md-content__inner,
+.md-main:has(#benchmarksTable) .md-typeset {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.md-main:has(#benchmarksTable) .md-content__inner {
+  padding: 0 1.5rem 1.5rem !important; /* add subtle horizontal gutter */
+}
+
+.md-typeset:has(#benchmarksTable) table {
+  table-layout: fixed;     /* let column widths apply and wrap inside cells */
+  width: 100%;
+}
+
+.md-typeset:has(#benchmarksTable) table th,
+.md-typeset:has(#benchmarksTable) table td {
+  /* Wrapping behavior */
+  white-space: normal;        /* allow line breaks */
+  word-break: normal;         /* do NOT split words by default */
+  overflow-wrap: break-word;  /* only break very long tokens if they overflow */
+  hyphens: auto;              /* soft hyphenation (needs html[lang] set, e.g. en) */
+  line-height: 1.25;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}

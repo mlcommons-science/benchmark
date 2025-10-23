@@ -6,9 +6,24 @@
   const DEFAULT_LINES = 2;
   const EXPORT_FILENAME = 'science-ai-benchmarks';
 
-  // -------- helpers (unchanged) --------
+  // Helpers
   const esc = s => String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const asList = v => Array.isArray(v) ? v.map(String) : (v == null ? [] : [String(v)]);
+  const dedupeStrings = values => {
+    const seen = new Set();
+    const out = [];
+    if (!Array.isArray(values)) return out;
+    for (const value of values) {
+      if (value == null) continue;
+      const str = String(value).trim();
+      if (!str) continue;
+      const key = str.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      out.push(str);
+    }
+    return out;
+  };
   const link = (href, text) => href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(text ?? href)}</a>` : '';
   const yesNo = v => {
     if (v === true || v === false) return v ? '✓' : '—';
@@ -86,16 +101,47 @@
   const RATING_CATS = ['software','specification','dataset','metrics','reference_solution','documentation'];
   const PRIMARY_COLUMN_TITLES = new Set([
     'Name',
+    'Avg Rating',
     'Date',
     'Domain',
     'Focus',
+    'AI / ML Motif',
+    'Models',
     'Summary',
     'Task Types',
     'AI Capability',
     'Metrics',
-    'Models',
-    'Average Ratings'
+    'ML Task',
+    'Keywords',
+    'Type',
+    'Solutions',
+    'Notes'
   ]);
+  const COLUMN_VISIBILITY_PRIORITY = [
+    'Name',
+    'Avg Rating',
+    'Date',
+    'Domain',
+    'Focus',
+    'AI / ML Motif',
+    'Models',
+    'Summary',
+    'Task Types',
+    'AI Capability',
+    'Metrics',
+    'ML Task',
+    'Keywords',
+    'Type',
+    'Solutions',
+    'Notes',
+    'Version',
+    'Updated',
+    'Valid',
+    'Valid Date',
+    'Expired',
+    'DOI',
+    'Licensing'
+  ];
   const avgRatings = ratings => {
     if (!ratings || typeof ratings !== 'object') return '';
     let sum = 0, c = 0;
@@ -107,39 +153,68 @@
     return c ? sum / c : '';
   };
 
-  // ----- columns definition (unchanged) -----
+  // Column definition
   const C = [
     col({
-      title: 'Name', width: '300px', className: 'dt-nowrap',
+      title: 'Name', width: '350px', className: 'dt-nowrap',
       data: r => r.name || r.id,
       render: (v, type, r) => {
+        if (type === 'export') {
+          return r.url ? `${v} (${r.url})` : v;
+        }
         if (type !== 'display') return v;
         const id = r.id ? encodeURIComponent(String(r.id)) : '';
         const detailPath = id ? `../benchmarks/${encodeURIComponent(String(id))}/` : '';
-        const goto = detailPath ? `<a class="name-link" href="${detailPath}" title="Open details">↗</a>` : '';
-        return `${clampSpan(v, { oneLine: true })} ${goto}`;
+        const badges = [];
+        if (detailPath) {
+          badges.push(`<a class="name-link name-badge name-badge--detail" href="${detailPath}" title="Open details page">Details</a>`);
+        }
+        if (r.url) {
+          badges.push(`<a class="name-link name-badge name-badge--source" href="${esc(r.url)}" title="Open original benchmark URL" target="_blank" rel="noopener">Source</a>`);
+        }
+        const titleText = esc(String(v ?? ''));
+        const title = `<strong class="name-text">${titleText}</strong>`;
+        const actions = badges.length ? `<div class="name-badges">${badges.join('')}</div>` : '';
+        return `${title}${actions}`;
       }
     }),
-    col({ title: 'Date',        width: '130px', className: 'dt-nowrap', oneLine: true, data: r => r.date }),
+    col({
+      title: 'Avg Rating', width: '130px', className: 'dt-head-left dt-body-center dt-nowrap average-rating-col', oneLine: true,
+      data: r => r.ratings,
+      render: (v, type) => {
+        const n = avgRatings(v);
+        if (!Number.isFinite(n)) return '';
+        if (type === 'display') {
+          return `<span class="avg-rating-value">${n.toFixed(1)}</span>`;
+        }
+        return n;
+      }
+    }),
+    col({ title: 'Date',        width: '130px', className: 'dt-head-left dt-nowrap', oneLine: true, data: r => r.date }),
+    col({ title: 'Domain',      width: '160px', oneLine: true, data: r => r.domain }),
+    col({ title: 'Focus',       width: '280px', lines: 2,      data: r => r.focus }),
+    col({
+      title: 'AI / ML Motif', width: '220px', lines: 2,
+      data: r => dedupeStrings([
+        ...asList(r.ai_capability_measured),
+        ...asList(r.ml_motif)
+      ])
+    }),
+    col({ title: 'Models',       width: '200px', lines: 2, data: r => asList(r.models) }),
+    col({ title: 'Summary',     width: '320px', lines: 3,      data: r => r.summary }),
+    col({ title: 'Task Types',   width: '180px', lines: 2, data: r => asList(r.task_types) }),
+    col({ title: 'AI Capability',width:'200px', lines: 2, data: r => asList(r.ai_capability_measured) }),
+    col({ title: 'Metrics',      width: '150px', lines: 2, data: r => asList(r.metrics) }),
+    col({ title: 'ML Task',      width: '180px', lines: 2, data: r => asList(r.ml_task) }),
+    col({ title: 'Keywords',     width: '200px', lines: 2, data: r => asList(r.keywords) }),
+    col({ title: 'Type',         width: '120px', oneLine: true, data: r => r.type }),
+    col({ title: 'Solutions',   width: '120px', oneLine: true, data: r => r.solutions }),
+    col({ title: 'Notes',       width: '200px', lines: 2,      data: r => r.notes }),
     col({ title: 'Version',     width: '90px',  className: 'dt-nowrap', oneLine: true, data: r => r.version }),
     col({ title: 'Updated',     width: '110px', className: 'dt-nowrap', oneLine: true, data: r => r.last_updated }),
     col({ title: 'Valid',       width: '70px',  className: 'dt-center dt-nowrap', oneLine: true, data: r => r.valid, render: v => yesNo(v) }),
     col({ title: 'Valid Date',  width: '110px', className: 'dt-nowrap', oneLine: true, data: r => r.valid_date }),
     col({ title: 'Expired',     width: '100px', className: 'dt-center dt-nowrap', oneLine: true, data: r => r.expired, render: v => yesNo(v) }),
-    col({ title: 'Domain',      width: '160px', oneLine: true, data: r => r.domain }),
-    col({ title: 'Focus',       width: '280px', lines: 2,      data: r => r.focus }),
-    col({ title: 'Summary',     width: '320px', lines: 3,      data: r => r.summary }),
-    col({ title: 'Task Types',   width: '180px', lines: 2, data: r => asList(r.task_types) }),
-    col({ title: 'AI Capability',width:'200px', lines: 2, data: r => asList(r.ai_capability_measured) }),
-    col({ title: 'Metrics',      width: '150px', lines: 2, data: r => asList(r.metrics) }),
-    col({ title: 'Models',       width: '200px', lines: 2, data: r => asList(r.models) }),
-    col({ title: 'ML Task',      width: '180px', lines: 2, data: r => asList(r.ml_task) }),
-    col({ title: 'ML Motif',     width: '180px', lines: 2, data: r => asList(r.ml_motif) }),
-    col({ title: 'Keywords',     width: '200px', lines: 2, data: r => asList(r.keywords) }),
-    col({ title: 'Type',         width: '120px', oneLine: true, data: r => r.type }),
-    col({ title: 'Solutions',   width: '120px', oneLine: true, data: r => r.solutions }),
-    col({ title: 'Notes',       width: '200px', lines: 2,      data: r => r.notes }),
-    col({ title: 'URL',         width: '220px', oneLine: true, data: r => r.url, render: v => (v ? link(v, v) : '') }),
     col({ title: 'DOI',         width: '200px', oneLine: true, data: r => r.doi,
       render: v => v ? link(`https://doi.org/${String(v).replace(/^https?:\/\/(dx\.)?doi\.org\//,'')}`, v) : '' }),
     col({ title: 'Licensing',   width: '150px', oneLine: true, data: r => r.licensing }),
@@ -174,13 +249,6 @@
     }),
     col({ title: 'FAIR Reproducible', width:'60px', className:'dt-center dt-nowrap', oneLine:true, verticalHeader: true, data: r => r.fair?.reproducible, render: v => yesNo(v) }),
     col({ title: 'FAIR Ready',        width:'60px', className:'dt-center dt-nowrap', oneLine:true, verticalHeader: true, data: r => r.fair?.benchmark_ready, render: v => yesNo(v) }),
-    col({ title: 'Average Ratings', width:'60px', className:'dt-right dt-nowrap', oneLine:true, verticalHeader: true,
-      data: r => r.ratings, render: (v, type) => {
-        const n = avgRatings(v);
-        if (type !== 'display') return n;
-        return Number.isFinite(n) ? n.toFixed(1) : '';
-      }
-    }),
     ...RATING_CATS.map(cat => col({
       title: `Rating ${cat.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}`,
       width: '60px', className:'dt-right dt-nowrap', oneLine: true, verticalHeader: true,
@@ -199,11 +267,28 @@
     col({ title: 'Cite', width:'360px', lines:3, data: r => asList(r.cite) }),
   ];
 
+  const COLUMN_INDEX_BY_TITLE = new Map(C.map((cfg, idx) => [cfg.title, idx]));
   const DEFAULT_HIDDEN_INDEXES = C
     .map((cfg, idx) => (PRIMARY_COLUMN_TITLES.has(cfg.title) ? null : idx))
     .filter(idx => idx != null);
+  const COLVIS_PRIORITY_INDEXES = (() => {
+    const seen = new Set();
+    const ordered = [];
+    for (const title of COLUMN_VISIBILITY_PRIORITY) {
+      const idx = COLUMN_INDEX_BY_TITLE.get(title);
+      if (idx == null || seen.has(idx)) continue;
+      seen.add(idx);
+      ordered.push(idx);
+    }
+    for (let idx = 0; idx < C.length; idx++) {
+      if (seen.has(idx)) continue;
+      seen.add(idx);
+      ordered.push(idx);
+    }
+    return ordered;
+  })();
 
-  // -------- idempotent initializer --------
+  // Initialise / re-initialise DataTable
   function initBenchmarks() {
     const el = document.getElementById(TABLE_ID);
     if (!el) return; // not on this page
@@ -243,25 +328,8 @@
       buttons: [
         { extend: 'copyHtml5', text: 'Copy', exportOptions: mkExportOptions() },
         { extend: 'csvHtml5', text: 'CSV', exportOptions: mkExportOptions(), filename: EXPORT_FILENAME },
-        {
-          text: 'JSON',
-          action: function (_, dtInstance) {
-            const data = dtInstance
-              .rows({ search: 'applied', order: 'applied', page: 'all' })
-              .data()
-              .toArray();
-            const rows = data.map(row => {
-              if (row && typeof row === 'object') {
-                try { return JSON.parse(JSON.stringify(row)); }
-                catch (_) { return row; }
-              }
-              return row;
-            });
-            downloadJson(rows, EXPORT_FILENAME);
-          }
-        },
-        { extend: 'print', text: 'Print', exportOptions: mkExportOptions(), title: exportTitle },
-        { extend: 'colvis', text: 'Columns' }
+        makeJsonButton(mkExportOptions),
+        makeColVisButton()
       ],
       pageLength: 25,
       order: (() => { 
@@ -301,25 +369,13 @@
       },
       initComplete: function () {
         const api = this.api();
-        api.columns().every(function (colIdx) {
-          const cfg = C[colIdx];
-          const w = cfg?.width;
-          if (w) {
-            $(this.nodes()).css({ 'width': w, 'min-width': w, 'max-width': w });
-          }
-        });
+        applyColumnWidths(api);
         api.columns.adjust();
         try { api.fixedColumns().relayout(); } catch (_) {}
       },
       drawCallback: function () {
         const api = this.api();
-        api.columns().every(function (colIdx) {
-          const cfg = C[colIdx];
-          const w = cfg?.width;
-          if (w) {
-            $(this.nodes()).css({ 'width': w, 'min-width': w, 'max-width': w });
-          }
-        });
+        applyColumnWidths(api);
         try { api.fixedColumns().relayout(); } catch (_) {}
         detectTruncatedCells();
       }
@@ -352,9 +408,82 @@
   function detectTruncatedCells() {
     const expandables = document.querySelectorAll('.js-expandable');
     expandables.forEach(el => {
-      if (el.scrollHeight > el.clientHeight + 1) el.classList.add('is-truncated');
-      else el.classList.remove('is-truncated');
+      const isOneLine = el.classList.contains('one-line');
+      let truncated = false;
+      if (isOneLine) {
+        const scrollW = Math.ceil(el.scrollWidth);
+        const clientW = Math.ceil(el.clientWidth);
+        truncated = scrollW > clientW;
+      } else {
+        const scrollH = Math.ceil(el.scrollHeight);
+        const clientH = Math.ceil(el.clientHeight);
+        truncated = scrollH > clientH;
+      }
+      if (truncated) {
+        el.classList.add('is-truncated');
+        el.setAttribute('data-truncated', 'true');
+      } else {
+        el.classList.remove('is-truncated');
+        el.removeAttribute('data-truncated');
+      }
     });
+  }
+  function applyColumnWidths(api) {
+    api.columns().every(function (colIdx) {
+      const width = C[colIdx]?.width;
+      if (!width) return;
+      $(this.nodes()).css({ width, 'min-width': width, 'max-width': width });
+    });
+  }
+  function makeJsonButton(exportOptionsFactory) {
+    return {
+      text: 'JSON',
+      action: function (_, dtInstance) {
+        const exportOptions = exportOptionsFactory();
+        const visibleColumns = dtInstance
+          .columns(exportOptions.columns)
+          .indexes()
+          .toArray();
+        const data = dtInstance
+          .rows({ search: 'applied', order: 'applied', page: 'all' })
+          .data()
+          .toArray();
+        const rows = data.map(row => pickVisibleFields(row, visibleColumns));
+        downloadJson(rows, EXPORT_FILENAME);
+      }
+    };
+  }
+  function makeColVisButton() {
+    return {
+      extend: 'colvis',
+      text: 'Columns',
+      columns: COLVIS_PRIORITY_INDEXES,
+      columnText: function (dtInstance, idx) {
+        const cfg = C[idx];
+        if (cfg?.title) return cfg.title;
+        const header = dtInstance.column(idx).header();
+        return header ? header.textContent.trim() : `Column ${idx + 1}`;
+      }
+    };
+  }
+  function pickVisibleFields(row, visibleIndexes) {
+    if (!row || typeof row !== 'object') return row;
+    if (Array.isArray(row)) {
+      return visibleIndexes.map(idx => row[idx]);
+    }
+    const out = {};
+    visibleIndexes.forEach(idx => {
+      const col = C[idx];
+      if (!col) return;
+      const key = col.title || col.data;
+      if (key == null) return;
+      let value = typeof col.data === 'function' ? col.data(row) : row[col.data];
+      if (col.render && typeof col.render === 'function') {
+        value = col.render(value, 'export', row);
+      }
+      out[key] = value;
+    });
+    return out;
   }
   function fallbackCopy(text, element) {
     const textarea = document.createElement('textarea');

@@ -75,14 +75,22 @@ Gregor von Laszewski, Reece Shiraishi, Anjay Krishnan, Nhan Tran, Benjamin Hawks
 BibTeX:
 
 ```
-@misc{benchmark-collection,
-  title={MLCommons Science Working Group AI Benchmarks Collection},
-  author={Gregor von Laszewski and Reece Shiraishi and Anjay Krishnan and Nhan Tran and Benjamin Hawks and Marco Colombo and Geoffrey C. Fox},
-  year={2025},
-  url={https://mlcommons-science.github.io/benchmark/benchmarks.pdf},
-  howpublished={Github},
-  month=jul
-}
+@misc{www-las-mlcommons-benchmark-coolection,
+      author = {
+        Gregor von Laszewski and 
+        Ben Hawks and 
+        Marco Colombo and
+        Reece Shiraishi and
+        Anjay Krishnan and
+        Nhan Tran and
+        Geoffrey C. Fox},
+      title = {MLCommons Science Working Group AI Benchmarks Collection},
+      url = {https://mlcommons-science.github.io/benchmark/benchmarks.pdf},
+      note = "Online Collection: \url={https://mlcommons-science.github.io/benchmark/}",
+      month = jun,
+      year = 2025,
+      howpublished = "GitHub"
+    } 
 ```
 
 ## License

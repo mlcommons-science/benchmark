@@ -8,19 +8,21 @@ The main artifact is the PDF report:
 If you cite this work, please reference the PDF (not the Markdown pages). A BibTeX entry is provided below.
 
 ```bibtex
-@misc{benchmark-collection,
-  title        = {MLCommons Science Working Group AI Benchmarks Collection},
-  author       = {Gregor von Laszewski and
-                  Reece Shiraishi and
-                  Anjay Krishnan and
-                  Nhan Tran and
-                  Benjamin Hawks and
-                  Marco Colombo and
-                  Geoffrey C. Fox},
-  year         = {2025},
-  month        = jul,
-  howpublished = {GitHub},
-  url          = {https://mlcommons-science.github.io/benchmark/benchmarks.pdf}
+@misc{www-las-mlcommons-benchmark-coolection,
+  author = {
+    Gregor von Laszewsk and 
+    Ben Hawks and 
+    Marco Colombo and
+    Reece Shiraishi and
+    Anjay Krishnan and
+    Nhan Tran and
+    Geoffrey C. Fox},
+  title = {MLCommons Science Working Group AI Benchmarks Collection},
+  url = {https://mlcommons-science.github.io/benchmark/benchmarks.pdf}
+  note = "Online Collection: \url={https://mlcommons-science.github.io/benchmark/}",
+  month = jun,
+  year = 2025,
+  howpublished = "GitHub"
 }
 ```
 

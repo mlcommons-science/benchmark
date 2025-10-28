@@ -30,8 +30,8 @@ make check_url           # optional, verifies external links
 If you want to preview the full site locally (not required for PRs), run:
 
 ```bash
-make all           # builds PDF, Markdown, and MkDocs outputs
-make view-local    # serves the MkDocs site locally for inspection
+make all           # builds PDF and MkDocs outputs
+make serve    # serves the MkDocs site locally for inspection
 ```
 
 Only YAML files (and any accompanying documentation updates) should be staged for commit. Avoid committing generated artifacts in `content/` or `www/`.

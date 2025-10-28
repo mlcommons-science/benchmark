@@ -46,11 +46,17 @@
       
     
     
-      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+      <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.min.css">
     
-      <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+      <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.2.0/css/buttons.dataTables.min.css">
     
-      <link rel="stylesheet" href="assets/css/extra.css">
+      <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.5/css/responsive.dataTables.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/5.0.5/css/fixedColumns.dataTables.min.css">
+    
+      <link rel="stylesheet" href="assets/css/custom.css">
+    
+      <link rel="stylesheet" href="assets/css/benchmarks-table.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -281,6 +287,25 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="md/benchmarks/cards/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cards
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -424,6 +449,28 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="md/benchmarks/cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cards
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -468,25 +515,27 @@ The main artifact is the PDF report:</p>
 <li><strong>Report (PDF):</strong> <a href="benchmarks.pdf">benchmarks.pdf</a></li>
 </ul>
 <p>If you cite this work, please reference the PDF (not the Markdown pages). A BibTeX entry is provided below.</p>
-<pre><code class="language-bibtex">@misc{benchmark-collection,
-  title        = {MLCommons Science Working Group AI Benchmarks Collection},
-  author       = {Gregor von Laszewski and
-                  Reece Shiraishi and
-                  Anjay Krishnan and
-                  Nhan Tran and
-                  Benjamin Hawks and
-                  Marco Colombo and
-                  Geoffrey C. Fox},
-  year         = {2025},
-  month        = jul,
-  howpublished = {GitHub},
-  url          = {https://mlcommons-science.github.io/benchmark/benchmarks.pdf}
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nc">@misc</span><span class="p">{</span><span class="nl">www-las-mlcommons-benchmark-coolection</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{</span>
+<span class="s">    Gregor von Laszewsk and </span>
+<span class="s">    Ben Hawks and </span>
+<span class="s">    Marco Colombo and</span>
+<span class="s">    Reece Shiraishi and</span>
+<span class="s">    Anjay Krishnan and</span>
+<span class="s">    Nhan Tran and</span>
+<span class="s">    Geoffrey C. Fox}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{MLCommons Science Working Group AI Benchmarks Collection}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://mlcommons-science.github.io/benchmark/benchmarks.pdf}</span>
+<span class="w">  </span><span class="nv">note</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">&quot;Online</span><span class="w"> </span><span class="err">Collection:</span><span class="w"> </span><span class="err">\url={https://mlcommons-science.github.io/benchmark/</span><span class="p">}</span><span class="c">&quot;,</span>
+<span class="w">  </span><span class="c">month = jun,</span>
+<span class="w">  </span><span class="c">year = 2025,</span>
+<span class="w">  </span><span class="c">howpublished = &quot;GitHub&quot;</span>
+<span class="c">}</span>
+</code></pre></div>
 <p>For online browsing, we provide two views:</p>
 <ul>
 <li><strong><a href="md/benchmarks/">Benchmarks (cards)</a></strong>: filterable and sortable index with detail pages.</li>
-<li><strong><a href="md/benchmarks_table/">Benchmarks (table)</a></strong>: compact Markdown table with links to the same detail pages.</li>
+<li><strong><a href="md/benchmarks_table">Benchmarks (table)</a></strong>: compact Markdown table with links to the same detail pages.</li>
 </ul>
 <blockquote>
 <p><strong>Note:</strong> The Markdown pages are generated for web browsing and should <strong>not</strong> be cited. Please cite the PDF report above.</p>
@@ -562,15 +611,25 @@ To propose changes, update the source files here:</p>
     
       <script src="assets/javascripts/bundle.50899def.min.js"></script>
       
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="assets/js/filters.js"></script>
       
-        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
       
-        <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
       
-        <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/3.2.0/js/dataTables.buttons.min.js"></script>
       
-        <script src="assets/js/table.js"></script>
+        <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.html5.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.colVis.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.print.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/responsive/3.0.5/js/dataTables.responsive.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/fixedcolumns/5.0.5/js/dataTables.fixedColumns.min.js"></script>
+      
+        <script src="assets/js/benchmarks-table.js"></script>
       
     
   </body>

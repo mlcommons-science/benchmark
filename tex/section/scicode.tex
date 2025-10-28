@@ -12,9 +12,10 @@ reasoning, and code synthesis for scientific computing tasks.
   \item[expired:] false
   \item[valid:] yes
   \item[valid\_date:] 2024-07-18
-  \item[url:] \href{https://arxiv.org/abs/2407.13168}{https://arxiv.org/abs/2407.13168}
+  \item[url:] \href{https://scicode-bench.github.io/}{https://scicode-bench.github.io/}
   \item[doi:] 10.48550/arXiv.2407.13168
-  \item[domain:] Scientific Programming
+  \item[domain:]
+    - Computational Science \& AI
   \item[focus:] Scientific code generation and problem solving
   \item[keywords:]
     - code synthesis
@@ -30,7 +31,7 @@ reasoning, and code synthesis for scientific computing tasks.
   \item[models:]
     - Claude3.5-Sonnet
   \item[ml\_motif:]
-    - Coding
+    - Generative
   \item[type:] Benchmark
   \item[ml\_task:]
     - Supervised Learning
@@ -38,12 +39,12 @@ reasoning, and code synthesis for scientific computing tasks.
   \item[notes:] Good
   \item[contact.name:] Minyang Tian
   \item[contact.email:] mtian8@illinois.edu
-  \item[datasets.links.name:] unknown
-  \item[datasets.links.url:] \href{unknown}{unknown}
-  \item[results.links.name:] unknown
-  \item[results.links.url:] \href{unknown}{unknown}
-  \item[fair.reproducible:] True
-  \item[fair.benchmark\_ready:] True
+  \item[datasets.links.name:] SciCode on Huggingface
+  \item[datasets.links.url:] \href{https://huggingface.co/datasets/SciCode1/SciCode}{https://huggingface.co/datasets/SciCode1/SciCode}
+  \item[results.links.name:] SciCode Learderboard
+  \item[results.links.url:] \href{https://scicode-bench.github.io/leaderboard/}{https://scicode-bench.github.io/leaderboard/}
+  \item[fair.reproducible:] Yes
+  \item[fair.benchmark\_ready:] Yes
   \item[id:] scicode
   \item[Citations:] \cite{tian2024scicoderesearchcodingbenchmark}
 \end{description}
@@ -54,17 +55,17 @@ reasoning, and code synthesis for scientific computing tasks.
 \hline
 Rating & Value & Reason \\
 \hline
-dataset & 0 & Paper and website had no link to any dataset. It may still exist somewhere
+dataset & 5 & Dataset meets all FAIR principles, test and validation splits are available (no train split)
  \\
 documentation & 4 & Paper containing all needed info except for evlauation criteria
  \\
-metrics & 2 & Metrics stated, but method of grading is not specified
+metrics & 4 & Metrics stated, grading guidelines are provided in repo (problems are pass/fail)
  \\
-reference\_solution & 1 & Models presented with scores, but none are open or list constraints
+reference\_solution & 5 & Code to evaluate is available and well documented. Baseline models include closed and open weight models
  \\
 software & 5 & Code to run exists on github repo
  \\
-specification & 4.5 & Expected outputs and broad types of inputs stated. Few details on output grading. No HW constraints.
+specification & 4 & Expected outputs and broad types of inputs stated. Few details on output grading. No HW constraints.
  \\
 \hline
 \end{tabular}

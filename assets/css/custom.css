@@ -1,0 +1,508 @@
+/* ==========================================================================
+   Benchmarks – MkDocs Material custom styles
+   ========================================================================== */
+
+/* ==========
+   Global tweaks (scoped to MkDocs Material content)
+   ========== */
+.md-typeset h1 { letter-spacing: -0.01em; }
+.md-typeset h2,
+.md-typeset h3 { margin-top: 1.4rem; }
+
+/* Headings: subtle emphasis */
+.md-typeset h2 {
+  font-weight: 750;
+  padding-bottom: .2rem;
+  border-bottom: 2px solid var(--md-primary-fg-color);
+}
+.md-typeset h3 {
+  font-weight: 700;
+  border-left: 3px solid var(--md-primary-fg-color);
+  padding-left: .5rem;
+}
+
+/* Muted helper text */
+.md-typeset .muted { color: var(--md-default-fg-color--light); }
+
+/* ==========================================================================
+   Sticky Filter Bar (opaque background + robust layout)
+   - Uses grid template AREAS to keep Reset visible & ergonomic
+   ========================================================================== */
+.md-typeset .filter-bar {
+  /* sticky behavior */
+  position: sticky;
+  top: calc(var(--md-header-height, 3.2rem) + 0.25rem);
+  z-index: 50;
+
+  /* appearance */
+  background: var(--md-default-bg-color);     /* opaque so content doesn't bleed through */
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: var(--md-shadow-z2);
+  border-radius: 12px;
+  padding: .6rem;
+  margin: .7rem 0 1rem;
+
+  /* layout */
+  display: grid;
+  grid-template-areas:
+    "q q domain keywords reset"
+    "from to minrating sort reset";
+  grid-template-columns:
+    minmax(260px, 2fr)     /* q (span 2 cols overall) */
+    minmax(160px, 1fr)
+    minmax(160px, 1fr)     /* domain */
+    minmax(220px, 1.4fr)   /* keywords */
+    auto;                  /* reset button */
+  gap: .6rem;
+  align-items: center;
+
+  /* gentle blur over page chrome (optional) */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Map controls to areas */
+#f_q         { grid-area: q; }
+#f_domain    { grid-area: domain; }
+#f_keywords  { grid-area: keywords; }
+#f_from      { grid-area: from; }
+#f_to        { grid-area: to; }
+#f_minrating { grid-area: minrating; }
+#f_sort      { grid-area: sort; }
+#f_reset {
+  grid-area: reset;
+  justify-self: end;
+  align-self: stretch;
+  padding-inline: .8rem;
+}
+
+/* Inputs look “Material-ish” without extra libs */
+.md-typeset .filter-bar input,
+.md-typeset .filter-bar select,
+.md-typeset .filter-bar button {
+  height: 2.25rem;
+  padding: .4rem .6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,.16);
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  box-shadow: var(--md-shadow-z1);
+}
+
+.md-typeset .filter-bar input:focus,
+.md-typeset .filter-bar select:focus {
+  outline: none;
+  border-color: var(--md-primary-fg-color);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--md-primary-fg-color) 24%, transparent);
+}
+
+/* Placeholder color closer to Material */
+.md-typeset .filter-bar ::placeholder { color: var(--md-default-fg-color--light); }
+
+/* Reset button styled like a secondary Material button */
+.md-typeset .filter-bar button#f_reset {
+  border-color: var(--md-primary-fg-color);
+  color: var(--md-primary-fg-color);
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+}
+.md-typeset .filter-bar button#f_reset:hover {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 12%, transparent);
+}
+
+/* Responsive: keep Reset visible & easy to tap */
+@media (max-width: 1100px) {
+  .md-typeset .filter-bar {
+    grid-template-areas:
+      "q q"
+      "domain keywords"
+      "from to"
+      "minrating sort"
+      "reset reset";
+    grid-template-columns: 1fr 1fr;
+  }
+  #f_reset { justify-self: start; align-self: center; }
+}
+@media (max-width: 640px) {
+  .md-typeset .filter-bar {
+    grid-template-areas:
+      "q"
+      "domain"
+      "keywords"
+      "from"
+      "to"
+      "minrating"
+      "sort"
+      "reset";
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Card grid (Index)
+   ========================================================================== */
+.md-typeset .grid.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.md-typeset .benchmark-card {
+  background: var(--md-default-bg-color);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  box-shadow: var(--md-shadow-z1);
+  border: 1px solid rgba(0,0,0,.06);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.md-typeset .benchmark-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--md-shadow-z2);
+  border-color: rgba(0,0,0,.12);
+}
+.md-typeset .benchmark-card h3 {
+  margin: 0 0 .25rem 0;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+.md-typeset .benchmark-card .muted {
+  margin: 0.15rem 0 0.4rem 0;
+  font-size: .9rem;
+}
+
+/* Utility: hidden cards (client-side filtering) */
+.benchmark-card.is-hidden { display: none; }
+
+/* ==========================================================================
+   Meta block on detail pages (one line per attribute)
+   ========================================================================== */
+.md-typeset .info-block.meta-block {
+  margin: .6rem 0 1.1rem;
+  padding: .8rem 1rem;
+  border-radius: 12px;
+  background: var(--md-default-bg-color);
+  box-shadow: var(--md-shadow-z1);
+  border: 1px solid rgba(0,0,0,.06);
+}
+.md-typeset .meta-row {
+  margin: .18rem 0;
+  display: flex;
+  gap: .5rem;
+  align-items: baseline;
+  line-height: 1.35;
+}
+.md-typeset .meta-label {
+  min-width: 8.5rem;            /* keeps labels aligned */
+  color: var(--md-default-fg-color--light);
+  font-weight: 600;
+}
+.md-typeset .meta-sep { opacity: .6; }
+.md-typeset .meta-value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  color: var(--md-default-fg-color);
+  word-break: break-word;
+}
+
+/* ==========================================================================
+   Chips (keywords)
+   ========================================================================== */
+.md-typeset .chips {
+  margin: .45rem 0 .9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .38rem .48rem;
+}
+.md-typeset .chip,
+.md-typeset .chip-btn {
+  display: inline-block;
+  padding: .24rem .62rem;
+  border-radius: 999px;
+  font-size: .86rem;
+  line-height: 1.1;
+  background: rgba(0,0,0,.06);
+  color: var(--md-default-fg-color);
+  border: 1px solid rgba(0,0,0,.08);
+  text-decoration: none; /* for anchor chips */
+  cursor: pointer;
+}
+.md-typeset .chip:hover,
+.md-typeset .chip-btn:hover {
+  background: rgba(0,0,0,.08);
+  border-color: rgba(0,0,0,.12);
+}
+
+/* ==========================================================================
+   Ratings matrix (comparable scores + explanations)
+   ========================================================================== */
+.md-typeset .ratings-grid {
+  display: grid;
+  grid-template-columns: 1fr;             /* header row + items as blocks */
+  gap: .5rem;
+  margin: .6rem 0 1rem;
+}
+.md-typeset .ratings-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .75rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color--light);
+  padding: .2rem .25rem;
+}
+.md-typeset .rating-item {
+  display: grid;
+  grid-template-columns: 1fr auto;        /* category | badge */
+  grid-template-rows: auto auto auto;     /* (name & badge), bar, reason */
+  gap: .3rem .75rem;
+  align-items: start;
+  padding: .6rem .7rem;
+  border-radius: 10px;
+  background: rgba(0,0,0,.03);
+  border: 1px solid rgba(0,0,0,.06);
+}
+.md-typeset .rating-cat { font-weight: 650; }
+.md-typeset .rating-badge {
+  justify-self: end;
+  min-width: 3.2ch;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  padding: .12rem .38rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: var(--md-default-bg-color);
+}
+.md-typeset .rating-bar {
+  grid-column: 1 / -1; /* full width under name+badge */
+  height: .45rem;
+  background: rgba(0,0,0,.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.md-typeset .rating-bar > span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: color-mix(in srgb, var(--md-primary-fg-color) 75%, transparent);
+}
+.md-typeset .rating-reason {
+  grid-column: 1 / -1;
+  color: var(--md-default-fg-color--light);
+  margin-top: .15rem;
+  line-height: 1.35;
+}
+/* Compact on small screens */
+@media (max-width: 520px) {
+  .md-typeset .rating-item { padding: .5rem .6rem; border-radius: 8px; }
+  .md-typeset .rating-badge { min-width: 2.8ch; }
+}
+
+/* (Legacy support) If older pages used a <ul class="rating-list"> structure */
+.md-typeset .rating-list { list-style: none; padding-left: 0; margin: .4rem 0 1rem; }
+.md-typeset .rating-list li {
+  margin: .45rem 0;
+  padding: .45rem .6rem;
+  border-left: 3px solid var(--md-primary-fg-color);
+  background: rgba(0,0,0,.03);
+  border-radius: 6px;
+}
+.md-typeset .rating-score { font-variant-numeric: tabular-nums; font-weight: 700; }
+.md-typeset .rating-list li em { display: inline-block; margin-top: .2rem; color: var(--md-default-fg-color--light); }
+
+/* ==========================================================================
+   Radar image
+   ========================================================================== */
+.md-typeset .radar-wrap {
+  margin: .6rem 0 1rem;
+  display: flex;
+  justify-content: center;
+}
+.md-typeset .radar-img {
+  width: 100%;
+  max-width: 540px;
+  border-radius: 10px;
+  box-shadow: var(--md-shadow-z2);
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+/* ==========================================================================
+   Code blocks (BibTeX)
+   ========================================================================== */
+.md-typeset pre code { font-size: .9rem; }
+
+/* ==========================================================================
+   Responsive refinements
+   ========================================================================== */
+@media (max-width: 480px) {
+  .md-typeset .meta-label { min-width: 7.2rem; }
+  .md-typeset .benchmark-card { padding: .85rem .95rem; }
+  .md-typeset .benchmark-card h3 { font-size: 1rem; }
+}
+
+/* ==========================================================================
+   Optional badges (spare)
+   ========================================================================== */
+.badge { display:inline-block; padding:.2rem .5rem; border-radius:.5rem; font-weight:600; }
+.badge--ok  { background:#e6f6ee; }
+.badge--meh { background:#fff6e5; }
+.badge--bad { background:#fdecea; }
+
+
+
+/* ============================================================
+   Benchmarks index ONLY (page that contains #cards-root)
+   - Expand layout width only here
+   - Use 2-up wide cards
+   - Pin "Details" button to bottom of each card
+   ============================================================ */
+
+/* 1) Full-width override ONLY on the index page */
+.md-grid:has(#cards-root) {
+  max-width: 100vw !important;
+  width: 100% !important;
+}
+.md-content:has(#cards-root),
+.md-content__inner:has(#cards-root),
+.md-typeset:has(#cards-root) {
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+/* 2) Filter bar stays full width on the index page */
+.md-typeset:has(#cards-root) .filter-bar {
+  position: sticky;
+  top: calc(var(--md-header-height, 3.2rem) + 0.25rem);
+  z-index: 50;
+  background: var(--md-default-bg-color);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: var(--md-shadow-z2);
+  border-radius: 12px;
+  padding: .6rem;
+  margin: .7rem 0 1rem;
+
+  display: grid;
+  grid-template-areas:
+    "q q domain keywords reset"
+    "from to minrating sort reset";
+  grid-template-columns:
+    minmax(320px, 2fr)
+    minmax(180px, 1fr)
+    minmax(240px, 1.4fr)
+    auto;
+  gap: .6rem;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+#f_q{grid-area:q} #f_domain{grid-area:domain} #f_keywords{grid-area:keywords}
+#f_from{grid-area:from} #f_to{grid-area:to} #f_minrating{grid-area:minrating}
+#f_sort{grid-area:sort}
+#f_reset{grid-area:reset; justify-self:end; align-self:stretch; padding-inline:.8rem}
+@media (max-width:1100px){
+  .md-typeset:has(#cards-root) .filter-bar{
+    grid-template-areas:
+      "q q"
+      "domain keywords"
+      "from to"
+      "minrating sort"
+      "reset reset";
+    grid-template-columns: 1fr 1fr;
+  }
+  #f_reset{justify-self:start; align-self:center}
+}
+@media (max-width:640px){
+  .md-typeset:has(#cards-root) .filter-bar{
+    grid-template-areas:
+      "q" "domain" "keywords" "from" "to" "minrating" "sort" "reset";
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 3) Cards: exactly TWO per row (wider), align bottoms */
+.md-typeset:has(#cards-root) .grid.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(420px, 1fr)); /* 2-up, nice and wide */
+  gap: 1.2rem;
+  align-items: stretch;   /* make all grid items same row height */
+  margin-top: .75rem;
+}
+
+/* On narrow screens, fall back to a single column */
+@media (max-width: 980px) {
+  .md-typeset:has(#cards-root) .grid.cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card styling + equal-height internals */
+.md-typeset:has(#cards-root) .benchmark-card {
+  display: flex;                /* vertical stacking inside card */
+  flex-direction: column;
+  height: 100%;                 /* stretch to match grid row height */
+  background: var(--md-default-bg-color);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  box-shadow: var(--md-shadow-z1);
+  border: 1px solid rgba(0,0,0,.06);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.md-typeset:has(#cards-root) .benchmark-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--md-shadow-z2);
+  border-color: rgba(0,0,0,.12);
+}
+.md-typeset:has(#cards-root) .benchmark-card h3 {
+  margin: 0 0 .25rem 0;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+.md-typeset:has(#cards-root) .benchmark-card .muted {
+  margin: 0.15rem 0 0.4rem 0;
+  font-size: .9rem;
+}
+
+/* Pin the button row to the bottom so cards align visually */
+.md-typeset:has(#cards-root) .benchmark-card > p:last-child {
+  margin-top: auto;             /* pushes the Details button to the bottom */
+}
+
+/* Ensure filtered cards actually hide (wins over flex rule) */
+.md-typeset:has(#cards-root) .benchmark-card.is-hidden {
+  display: none !important;
+}
+
+/* (optional global safety) */
+.benchmark-card.is-hidden {
+  display: none !important;
+}
+
+/* Benchmkark table page */
+.md-grid:has(#bench-table-page) {
+  max-width: 100vw !important;
+  width: 100% !important;
+}
+.md-content:has(#bench-table-page),
+.md-content__inner:has(#bench-table-page),
+.md-typeset:has(#bench-table-page) {
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.md-typeset:has(#bench-table-page) table {
+  table-layout: fixed;     /* let column widths apply and wrap inside cells */
+  width: 100%;
+}
+
+.md-typeset:has(#bench-table-page) table th,
+.md-typeset:has(#bench-table-page) table td {
+  /* Wrapping behavior */
+  white-space: normal;        /* allow line breaks */
+  word-break: normal;         /* do NOT split words by default */
+  overflow-wrap: break-word;  /* only break very long tokens if they overflow */
+  hyphens: auto;              /* soft hyphenation (needs html[lang] set, e.g. en) */
+  line-height: 1.25;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}

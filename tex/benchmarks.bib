@@ -27,62 +27,6 @@
   isbn		= "978-3-031-23220-6"
 }
 
-@InProceedings{	  10.1145/3600006.3613165,
-  author	= {Kwon, Woosuk and Li, Zhuohan and Zhuang, Siyuan and Sheng,
-		  Ying and Zheng, Lianmin and Yu, Cody Hao and Gonzalez,
-		  Joseph and Zhang, Hao and Stoica, Ion},
-  title		= {Efficient Memory Management for Large Language Model
-		  Serving with PagedAttention},
-  year		= {2023},
-  publisher	= {Association for Computing Machinery},
-  address	= {New York, NY, USA},
-  url		= {https://doi.org/10.1145/3600006.3613165},
-  doi		= {10.1145/3600006.3613165},
-  abstract	= {High throughput serving of large language models (LLMs)
-		  requires batching sufficiently many requests at a time.
-		  However, existing systems struggle because the key-value
-		  cache (KV cache) memory for each request is huge and grows
-		  and shrinks dynamically. When managed inefficiently, this
-		  memory can be significantly wasted by fragmentation and
-		  redundant duplication, limiting the batch size. To address
-		  this problem, we propose PagedAttention, an attention
-		  algorithm inspired by the classical virtual memory and
-		  paging techniques in operating systems. On top of it, we
-		  build vLLM, an LLM serving system that achieves (1)
-		  near-zero waste in KV cache memory and (2) flexible sharing
-		  of KV cache within and across requests to further reduce
-		  memory usage. Our evaluations show that vLLM improves the
-		  throughput of popular LLMs by 2--4\texttimes{} with the
-		  same level of latency compared to the state-of-the-art
-		  systems, such as FasterTransformer and Orca. The
-		  improvement is more pronounced with longer sequences,
-		  larger models, and more complex decoding algorithms. vLLM's
-		  source code is publicly available at
-		  https://github.com/vllm-project/vllm.},
-  booktitle	= {Proceedings of the 29th Symposium on Operating Systems
-		  Principles},
-  pages		= {611-626},
-  numpages	= {16},
-  location	= {Koblenz, Germany},
-  series	= {SOSP '23}
-}
-
-@InProceedings{	  10820566,
-  author	= {Chitty-Venkata, Krishna Teja and Raskar, Siddhisanket and
-		  Kale, Bharat and Ferdaus, Farah and Tanikanti, Aditya and
-		  Raffenetti, Ken and Taylor, Valerie and Emani, Murali and
-		  Vishwanath, Venkatram},
-  booktitle	= {SC24-W: Workshops of the International Conference for High
-		  Performance Computing, Networking, Storage and Analysis},
-  title		= {LLM-Inference-Bench: Inference Benchmarking of Large
-		  Language Models on AI Accelerators},
-  year		= {2024},
-  volume	= {},
-  number	= {},
-  pages		= {1362-1379},
-  doi		= {10.1109/SCW63240.2024.00178}
-}
-
 @Misc{		  abud2021deep,
   title		= {Deep Underground Neutrino Experiment (DUNE) Near Detector
 		  Conceptual Design Report},
@@ -383,6 +327,28 @@
   url		= {https://arxiv.org/abs/2103.13910}
 }
 
+@Article{	  allenai:arc,
+  author	= {Peter Clark and Isaac Cowhey and Oren Etzioni and Tushar
+		  Khot and Ashish Sabharwal and Carissa Schoenick and Oyvind
+		  Tafjord},
+  title		= {Think you have Solved Question Answering? Try ARC, the AI2
+		  Reasoning Challenge},
+  journal	= {arXiv:1803.05457v1},
+  year		= {2018},
+  doi		= {10.48550/arXiv.1803.05457}
+}
+
+@Misc{		  bowles2024betterclassicalsubtleart,
+  title		= {Better than classical? The subtle art of benchmarking
+		  quantum machine learning models},
+  author	= {Joseph Bowles and Shahnawaz Ahmed and Maria Schuld},
+  year		= {2024},
+  eprint	= {2403.07059},
+  archiveprefix	= {arXiv},
+  primaryclass	= {quant-ph},
+  url		= {https://arxiv.org/abs/2403.07059}
+}
+
 @Misc{		  campolongo2025buildingmachinelearningchallenges,
   archiveprefix	= {arXiv},
   author	= {Elizabeth G. Campolongo and Yuan-Tang Chou and Ekaterina
@@ -557,20 +523,6 @@
   year		= {2025}
 }
 
-@InProceedings{	  challu2023nhits,
-  title		= {Nhits: Neural hierarchical interpolation for time series
-		  forecasting},
-  author	= {Challu, Cristian and Olivares, Kin G and Oreshkin, Boris N
-		  and Ramirez, Federico Garza and Canseco, Max Mergenthaler
-		  and Dubrawski, Artur},
-  booktitle	= {Proceedings of the AAAI conference on artificial
-		  intelligence},
-  volume	= {37},
-  number	= {6},
-  pages		= {6989--6997},
-  year		= {2023}
-}
-
 @Article{	  chanussot2021oc20,
   title		= {The Open Catalyst 2020 (OC20) Dataset and Community
 		  Challenges},
@@ -587,42 +539,6 @@
   year		= {2021},
   doi		= {10.1021/acscatal.0c04525},
   url		= {https://pubs.acs.org/doi/10.1021/acscatal.0c04525}
-}
-
-@Article{	  choudhary2024jarvis,
-  title		= {{JARVIS-Leaderboard}: a large scale benchmark of materials
-		  design methods},
-  author	= {Choudhary, Kamal and Wines, Daniel and Li, Kangming and
-		  Garrity, Kevin F. and Gupta, Vishu and Romero, Aldo H. and
-		  Krogel, Jaron T. and Saritas, Kayahan and Fuhr, Addis and
-		  Ganesh, Panchapakesan and Kent, Paul R. C. and Yan, Keqiang
-		  and Lin, Yuchao and Ji, Shuiwang and Blaiszik, Ben and
-		  Reiser, Patrick and Friederich, Pascal and Agrawal, Ankit
-		  and Tiwary, Pratyush and Beyerle, Eric and Minch, Peter and
-		  Rhone, Trevor D. and Takeuchi, Ichiro and Wexler, Robert B.
-		  and Mannodi-Kanakkithodi, Arun and Ertekin, Elif and
-		  Mishra, Avanish and Mathew, Nithin and Wood, Mitchell and
-		  Rohskopf, Andrew D. and Hattrick-Simpers, Jason and Wang,
-		  Shih-Han and Achenie, Luke E. K. and Xin, Hongliang and
-		  Williams, Maureen and Biacchi, Adam J. and Tavazza,
-		  Francesca},
-  journal	= {npj Computational Materials},
-  volume	= {10},
-  number	= {1},
-  pages		= {93},
-  year		= {2024},
-  doi		= {10.1038/s41524-024-01259-w},
-  url		= {https://doi.org/10.1038/s41524-024-01259-w}
-}
-
-@InProceedings{	  clark2018think,
-  title		= {Think you have solved question answering? Try ARC, the AI2
-		  Reasoning Challenge},
-  author	= {Clark, Peter and Cowhey, Isaac and Etzioni, Oren},
-  booktitle	= {EMNLP 2018},
-  pages		= {237-248},
-  year		= {2018},
-  url		= {https://allenai.org/data/arc}
 }
 
 @Misc{		  cui2025curieevaluatingllmsmultitask,
@@ -756,48 +672,6 @@
   year		= {2021}
 }
 
-@Misc{		  gao2018bigdatabenchscalableunifiedbig,
-  archiveprefix	= {arXiv},
-  author	= {Wanling Gao and Jianfeng Zhan and Lei Wang and Chunjie Luo
-		  and Daoyi Zheng and Xu Wen and Rui Ren and Chen Zheng and
-		  Xiwen He and Hainan Ye and Haoning Tang and Zheng Cao and
-		  Shujie Zhang and Jiahui Dai},
-  eprint	= {1802.08254},
-  primaryclass	= {cs.DC},
-  title		= {BigDataBench: A Scalable and Unified Big Data and AI
-		  Benchmark Suite},
-  url		= {https://arxiv.org/abs/1802.08254},
-  year		= {2018}
-}
-
-@Misc{		  gao2019aibenchindustrystandardinternet,
-  archiveprefix	= {arXiv},
-  author	= {Wanling Gao and Fei Tang and Lei Wang and Jianfeng Zhan
-		  and Chunxin Lan and Chunjie Luo and Yunyou Huang and Chen
-		  Zheng and Jiahui Dai and Zheng Cao and Daoyi Zheng and
-		  Haoning Tang and Kunlin Zhan and Biao Wang and Defei Kong
-		  and Tong Wu and Minghe Yu and Chongkang Tan and Huan Li and
-		  Xinhui Tian and Yatao Li and Junchao Shao and Zhenyu Wang
-		  and Xiaoyu Wang and Hainan Ye},
-  eprint	= {1908.08998},
-  primaryclass	= {cs.CV},
-  title		= {AIBench: An Industry Standard Internet Service AI
-		  Benchmark Suite},
-  url		= {https://arxiv.org/abs/1908.08998},
-  year		= {2019}
-}
-
-@Misc{		  garza2024timegpt1,
-  archiveprefix	= {arXiv},
-  author	= {Azul Garza and Cristian Challu and Max
-		  Mergenthaler-Canseco},
-  eprint	= {2310.03589},
-  primaryclass	= {cs.LG},
-  title		= {TimeGPT-1},
-  url		= {https://arxiv.org/abs/2310.03589},
-  year		= {2024}
-}
-
 @Misc{		  glazer2024frontiermathbenchmarkevaluatingadvanced,
   archiveprefix	= {arXiv},
   author	= {Elliot Glazer and Ege Erdil and Tamay Besiroglu and Diego
@@ -851,13 +725,6 @@
   year		= {2021}
 }
 
-@Misc{		  huggingface2025math500,
-  title		= {MATH-500},
-  author	= {HuggingFaceH4},
-  year		= {2025},
-  url		= {https://huggingface.co/datasets/HuggingFaceH4/MATH-500}
-}
-
 @Article{	  jain2013materials,
   title		= {The Materials Project: A materials genome approach},
   author	= {Jain, Anubhav and Ong, Shyue Ping and Hautier, Geoffroy
@@ -882,19 +749,6 @@
 		  Domain Question Answering Dataset from Medical Exams},
   url		= {https://arxiv.org/abs/2009.13081},
   year		= {2020}
-}
-
-@Misc{		  jin2024timellmtimeseriesforecasting,
-  title		= {Time-LLM: Time Series Forecasting by Reprogramming Large
-		  Language Models},
-  author	= {Ming Jin and Shiyu Wang and Lintao Ma and Zhixuan Chu and
-		  James Y. Zhang and Xiaoming Shi and Pin-Yu Chen and Yuxuan
-		  Liang and Yuan-Fang Li and Shirui Pan and Qingsong Wen},
-  year		= {2024},
-  eprint	= {2310.01728},
-  archiveprefix	= {arXiv},
-  primaryclass	= {cs.LG},
-  url		= {https://arxiv.org/abs/2310.01728}
 }
 
 @Misc{		  kafkes2021boostrdatasetacceleratorcontrol,
@@ -965,22 +819,6 @@
   url		= {https://arxiv.org/abs/2406.14347}
 }
 
-@InProceedings{	  kiwit2023,
-  title		= {Application-Oriented Benchmarking of Quantum Generative
-		  Learning Using QUARK},
-  url		= {http://dx.doi.org/10.1109/QCE57702.2023.00061},
-  doi		= {10.1109/qce57702.2023.00061},
-  booktitle	= {2023 IEEE International Conference on Quantum Computing
-		  and Engineering (QCE)},
-  publisher	= {IEEE},
-  author	= {Kiwit, Florian J. and Marso, Marwa and Ross, Philipp and
-		  Riofr\'{i}o, Carlos A. and Klepsch, Johannes and Luckow,
-		  Andre},
-  year		= {2023},
-  month		= sep,
-  pages		= {475-484}
-}
-
 @Misc{		  krause2024calochallenge2022communitychallenge,
   archiveprefix	= {arXiv},
   author	= {Claudius Krause and Michele Faucci Giannelli and Gregor
@@ -1035,6 +873,18 @@
   year		= {2025}
 }
 
+@Article{	  lightman2023lets,
+  title		= {Let's Verify Step by Step},
+  author	= {Lightman, Hunter and Kosaraju, Vineet and Burda, Yura and
+		  Edwards, Harri and Baker, Bowen and Lee, Teddy and Leike,
+		  Jan and Schulman, John and Sutskever, Ilya and Cobbe,
+		  Karl},
+  journal	= {arXiv preprint arXiv:2305.20050},
+  year		= {2023},
+  eprint	= {arXiv:2305.20050},
+  doi		= {10.48550/arXiv.2305.20050}
+}
+
 @Misc{		  liu2021braggnnfastxraybragg,
   archiveprefix	= {arXiv},
   author	= {Zhengchun Liu and Hemant Sharma and Jun-Sang Park and
@@ -1066,22 +916,6 @@
 		  research},
   url		= {https://arxiv.org/abs/2505.08341},
   year		= {2025}
-}
-
-@TechReport{	  luszczek2021sabath,
-  title		= {SABATH: FAIR Metadata Technology for Surrogate
-		  Benchmarks},
-  author	= {Luszczek, Piotr},
-  year		= {2021},
-  institution	= {University of Tennessee},
-  url		= {https://github.com/icl-utk-edu/slip/tree/sabath}
-}
-
-@Misc{		  mo2024vllm_dashboard,
-  title		= {vLLM Performance Dashboard},
-  author	= {Mo, Simon},
-  year		= {2024},
-  url		= {https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/}
 }
 
 @Misc{		  mudur2025feabenchevaluatinglanguagemodels,
@@ -1248,16 +1082,6 @@
   year		= {2024}
 }
 
-@Misc{		  olivares2022library_neuralforecast,
-  author	= {Kin G. Olivares and Cristian Chall\'{u} and Federico Garza
-		  and Max Mergenthaler Canseco and Artur Dubrawski},
-  title		= {NeuralForecast: User friendly state-of-the-art neural
-		  forecasting models.},
-  year		= {2022},
-  howpublished	= {PyCon Salt Lake City, Utah, US 2022},
-  url		= {https://github.com/Nixtla/neuralforecast}
-}
-
 @Misc{		  parpillon2024smartpixelsinpixelai,
   archiveprefix	= {arXiv},
   author	= {Benjamin Parpillon and Chinar Syal and Jieun Yoo and
@@ -1272,420 +1096,6 @@
   title		= {Smart Pixels: In-pixel AI for on-sensor data filtering},
   url		= {https://arxiv.org/abs/2406.14860},
   year		= {2024}
-}
-
-@Misc{		  phan2025humanitysexam,
-  archiveprefix	= {arXiv},
-  author	= {Long Phan and Alice Gatti and Ziwen Han and Nathaniel Li
-		  and Josephina Hu and Hugh Zhang and Chen Bo Calvin Zhang
-		  and Mohamed Shaaban and John Ling and Sean Shi and Michael
-		  Choi and Anish Agrawal and Arnav Chopra and Adam Khoja and
-		  Ryan Kim and Richard Ren and Jason Hausenloy and Oliver
-		  Zhang and Mantas Mazeika and Dmitry Dodonov and Tung Nguyen
-		  and Jaeho Lee and Daron Anderson and Mikhail Doroshenko and
-		  Alun Cennyth Stokes and Mobeen Mahmood and Oleksandr
-		  Pokutnyi and Oleg Iskra and Jessica P. Wang and John-Clark
-		  Levin and Mstyslav Kazakov and Fiona Feng and Steven Y.
-		  Feng and Haoran Zhao and Michael Yu and Varun Gangal and
-		  Chelsea Zou and Zihan Wang and Serguei Popov and Robert
-		  Gerbicz and Geoff Galgon and Johannes Schmitt and Will
-		  Yeadon and Yongki Lee and Scott Sauers and Alvaro Sanchez
-		  and Fabian Giska and Marc Roth and S\oren Riis and Saiteja
-		  Utpala and Noah Burns and Gashaw M. Goshu and Mohinder
-		  Maheshbhai Naiya and Chidozie Agu and Zachary Giboney and
-		  Antrell Cheatom and Francesco Fournier-Facio and Sarah-Jane
-		  Crowson and Lennart Finke and Zerui Cheng and Jennifer
-		  Zampese and Ryan G. Hoerr and Mark Nandor and Hyunwoo Park
-		  and Tim Gehrunger and Jiaqi Cai and Ben McCarty and Alexis
-		  C Garretson and Edwin Taylor and Damien Sileo and Qiuyu Ren
-		  and Usman Qazi and Lianghui Li and Jungbae Nam and John B.
-		  Wydallis and Pavel Arkhipov and Jack Wei Lun Shi and Aras
-		  Bacho and Chris G. Willcocks and Hangrui Cao and Sumeet
-		  Motwani and Emily de Oliveira Santos and Johannes Veith and
-		  Edward Vendrow and Doru Cojoc and Kengo Zenitani and Joshua
-		  Robinson and Longke Tang and Yuqi Li and Joshua Vendrow and
-		  Natanael Wildner Fraga and Vladyslav Kuchkin and Andrey
-		  Pupasov Maksimov and Pierre Marion and Denis Efremov and
-		  Jayson Lynch and Kaiqu Liang and Aleksandar Mikov and
-		  Andrew Gritsevskiy and Julien Guillod and G\"{o}zdenur
-		  Demir and Dakotah Martinez and Ben Pageler and Kevin Zhou
-		  and Saeed Soori and Ori Press and Henry Tang and Paolo
-		  Rissone and Sean R. Green and Lina Br\"{u}ssel and Moon
-		  Twayana and Aymeric Dieuleveut and Joseph Marvin Imperial
-		  and Ameya Prabhu and Jinzhou Yang and Nick Crispino and
-		  Arun Rao and Dimitri Zvonkine and Gabriel Loiseau and
-		  Mikhail Kalinin and Marco Lukas and Ciprian Manolescu and
-		  Nate Stambaugh and Subrata Mishra and Tad Hogg and Carlo
-		  Bosio and Brian P Coppola and Julian Salazar and Jaehyeok
-		  Jin and Rafael Sayous and Stefan Ivanov and Philippe
-		  Schwaller and Shaipranesh Senthilkuma and Andres M Bran and
-		  Andres Algaba and Kelsey Van den Houte and Lynn Van Der
-		  Sypt and Brecht Verbeken and David Noever and Alexei
-		  Kopylov and Benjamin Myklebust and Bikun Li and Lisa Schut
-		  and Evgenii Zheltonozhskii and Qiaochu Yuan and Derek Lim
-		  and Richard Stanley and Tong Yang and John Maar and Julian
-		  Wykowski and Mart\'{i} Oller and Anmol Sahu and Cesare
-		  Giulio Ardito and Yuzheng Hu and Ariel Ghislain Kemogne
-		  Kamdoum and Alvin Jin and Tobias Garcia Vilchis and Yuexuan
-		  Zu and Martin Lackner and James Koppel and Gongbo Sun and
-		  Daniil S. Antonenko and Steffi Chern and Bingchen Zhao and
-		  Pierrot Arsene and Joseph M Cavanagh and Daofeng Li and
-		  Jiawei Shen and Donato Crisostomi and Wenjin Zhang and Ali
-		  Dehghan and Sergey Ivanov and David Perrella and Nurdin
-		  Kaparov and Allen Zang and Ilia Sucholutsky and Arina
-		  Kharlamova and Daniil Orel and Vladislav Poritski and
-		  Shalev Ben-David and Zachary Berger and Parker Whitfill and
-		  Michael Foster and Daniel Munro and Linh Ho and Shankar
-		  Sivarajan and Dan Bar Hava and Aleksey Kuchkin and David
-		  Holmes and Alexandra Rodriguez-Romero and Frank Sommerhage
-		  and Anji Zhang and Richard Moat and Keith Schneider and
-		  Zakayo Kazibwe and Don Clarke and Dae Hyun Kim and Felipe
-		  Meneguitti Dias and Sara Fish and Veit Elser and Tobias
-		  Kreiman and Victor Efren Guadarrama Vilchis and Immo Klose
-		  and Ujjwala Anantheswaran and Adam Zweiger and Kaivalya
-		  Rawal and Jeffery Li and Jeremy Nguyen and Nicolas Daans
-		  and Haline Heidinger and Maksim Radionov and V\'{a}clav
-		  Rozho\v{n} and Vincent Ginis and Christian Stump and Niv
-		  Cohen and Rafa\l Po\'{s}wiata and Josef Tkadlec and Alan
-		  Goldfarb and Chenguang Wang and Piotr Padlewski and
-		  Stanislaw Barzowski and Kyle Montgomery and Ryan Stendall
-		  and Jamie Tucker-Foltz and Jack Stade and T. Ryan Rogers
-		  and Tom Goertzen and Declan Grabb and Abhishek Shukla and
-		  Alan Givr\'{e} and John Arnold Ambay and Archan Sen and
-		  Muhammad Fayez Aziz and Mark H Inlow and Hao He and Ling
-		  Zhang and Younesse Kaddar and Ivar \"{A}ngquist and Yanxu
-		  Chen and Harrison K Wang and Kalyan Ramakrishnan and
-		  Elliott Thornley and Antonio Terpin and Hailey Schoelkopf
-		  and Eric Zheng and Avishy Carmi and Ethan D. L. Brown and
-		  Kelin Zhu and Max Bartolo and Richard Wheeler and Martin
-		  Stehberger and Peter Bradshaw and JP Heimonen and Kaustubh
-		  Sridhar and Ido Akov and Jennifer Sandlin and Yury
-		  Makarychev and Joanna Tam and Hieu Hoang and David M.
-		  Cunningham and Vladimir Goryachev and Demosthenes
-		  Patramanis and Michael Krause and Andrew Redenti and David
-		  Aldous and Jesyin Lai and Shannon Coleman and Jiangnan Xu
-		  and Sangwon Lee and Ilias Magoulas and Sandy Zhao and Ning
-		  Tang and Michael K. Cohen and Orr Paradise and Jan Hendrik
-		  Kirchner and Maksym Ovchynnikov and Jason O. Matos and
-		  Adithya Shenoy and Michael Wang and Yuzhou Nie and Anna
-		  Sztyber-Betley and Paolo Faraboschi and Robin Riblet and
-		  Jonathan Crozier and Shiv Halasyamani and Shreyas Verma and
-		  Prashant Joshi and Eli Meril and Ziqiao Ma and
-		  J\'{e}r\'{e}my Andr\'{e}oletti and Raghav Singhal and Jacob
-		  Platnick and Volodymyr Nevirkovets and Luke Basler and
-		  Alexander Ivanov and Seri Khoury and Nils Gustafsson and
-		  Marco Piccardo and Hamid Mostaghimi and Qijia Chen and
-		  Virendra Singh and Tran Quoc Kh\'{a}nh and Paul Rosu and
-		  Hannah Szlyk and Zachary Brown and Himanshu Narayan and
-		  Aline Menezes and Jonathan Roberts and William Alley and
-		  Kunyang Sun and Arkil Patel and Max Lamparth and Anka Reuel
-		  and Linwei Xin and Hanmeng Xu and Jacob Loader and Freddie
-		  Martin and Zixuan Wang and Andrea Achilleos and Thomas Preu
-		  and Tomek Korbak and Ida Bosio and Fereshteh Kazemi and
-		  Ziye Chen and Bir\'{o} B\'{a}lint and Eve J. Y. Lo and
-		  Jiaqi Wang and Maria In\^{e}s S. Nunes and Jeremiah
-		  Milbauer and M Saiful Bari and Zihao Wang and Behzad
-		  Ansarinejad and Yewen Sun and Stephane Durand and Hossam
-		  Elgnainy and Guillaume Douville and Daniel Tordera and
-		  George Balabanian and Hew Wolff and Lynna Kvistad and
-		  Hsiaoyun Milliron and Ahmad Sakor and Murat Eron and Andrew
-		  Favre D. O. and Shailesh Shah and Xiaoxiang Zhou and Firuz
-		  Kamalov and Sherwin Abdoli and Tim Santens and Shaul Barkan
-		  and Allison Tee and Robin Zhang and Alessandro Tomasiello
-		  and G. Bruno De Luca and Shi-Zhuo Looi and Vinh-Kha Le and
-		  Noam Kolt and Jiayi Pan and Emma Rodman and Jacob Drori and
-		  Carl J Fossum and Niklas Muennighoff and Milind Jagota and
-		  Ronak Pradeep and Honglu Fan and Jonathan Eicher and
-		  Michael Chen and Kushal Thaman and William Merrill and
-		  Moritz Firsching and Carter Harris and Stefan
-		  Ciob\^{a}c\u{a} and Jason Gross and Rohan Pandey and Ilya
-		  Gusev and Adam Jones and Shashank Agnihotri and Pavel
-		  Zhelnov and Mohammadreza Mofayezi and Alexander Piperski
-		  and David K. Zhang and Kostiantyn Dobarskyi and Roman
-		  Leventov and Ignat Soroko and Joshua Duersch and Vage
-		  Taamazyan and Andrew Ho and Wenjie Ma and William Held and
-		  Ruicheng Xian and Armel Randy Zebaze and Mohanad Mohamed
-		  and Julian Noah Leser and Michelle X Yuan and Laila Yacar
-		  and Johannes Lengler and Katarzyna Olszewska and Claudio Di
-		  Fratta and Edson Oliveira and Joseph W. Jackson and Andy
-		  Zou and Muthu Chidambaram and Timothy Manik and Hector
-		  Haffenden and Dashiell Stander and Ali Dasouqi and
-		  Alexander Shen and Bita Golshani and David Stap and Egor
-		  Kretov and Mikalai Uzhou and Alina Borisovna Zhidkovskaya
-		  and Nick Winter and Miguel Orbegozo Rodriguez and Robert
-		  Lauff and Dustin Wehr and Colin Tang and Zaki Hossain and
-		  Shaun Phillips and Fortuna Samuele and Fredrik Ekstr\"{o}m
-		  and Angela Hammon and Oam Patel and Faraz Farhidi and
-		  George Medley and Forough Mohammadzadeh and Madellene
-		  Pe\~{n}aflor and Haile Kassahun and Alena Friedrich and
-		  Rayner Hernandez Perez and Daniel Pyda and Taom Sakal and
-		  Omkar Dhamane and Ali Khajegili Mirabadi and Eric Hallman
-		  and Kenchi Okutsu and Mike Battaglia and Mohammad
-		  Maghsoudimehrabani and Alon Amit and Dave Hulbert and
-		  Roberto Pereira and Simon Weber and Handoko and Anton
-		  Peristyy and Stephen Malina and Mustafa Mehkary and Rami
-		  Aly and Frank Reidegeld and Anna-Katharina Dick and Cary
-		  Friday and Mukhwinder Singh and Hassan Shapourian and
-		  Wanyoung Kim and Mariana Costa and Hubeyb Gurdogan and
-		  Harsh Kumar and Chiara Ceconello and Chao Zhuang and Haon
-		  Park and Micah Carroll and Andrew R. Tawfeek and Stefan
-		  Steinerberger and Daattavya Aggarwal and Michael Kirchhof
-		  and Linjie Dai and Evan Kim and Johan Ferret and Jainam
-		  Shah and Yuzhou Wang and Minghao Yan and Krzysztof Burdzy
-		  and Lixin Zhang and Antonio Franca and Diana T. Pham and
-		  Kang Yong Loh and Joshua Robinson and Abram Jackson and
-		  Paolo Giordano and Philipp Petersen and Adrian Cosma and
-		  Jesus Colino and Colin White and Jacob Votava and Vladimir
-		  Vinnikov and Ethan Delaney and Petr Spelda and Vit
-		  Stritecky and Syed M. Shahid and Jean-Christophe Mourrat
-		  and Lavr Vetoshkin and Koen Sponselee and Renas Bacho and
-		  Zheng-Xin Yong and Florencia de la Rosa and Nathan Cho and
-		  Xiuyu Li and Guillaume Malod and Orion Weller and Guglielmo
-		  Albani and Leon Lang and Julien Laurendeau and Dmitry
-		  Kazakov and Fatimah Adesanya and Julien Portier and
-		  Lawrence Hollom and Victor Souza and Yuchen Anna Zhou and
-		  Julien Degorre and Yi\u{g}it Yalin and Gbenga Daniel
-		  Obikoya and Rai and Filippo Bigi and M. C. Bosc\'{a} and
-		  Oleg Shumar and Kaniuar Bacho and Gabriel Recchia and Mara
-		  Popescu and Nikita Shulga and Ngefor Mildred Tanwie and
-		  Thomas C. H. Lux and Ben Rank and Colin Ni and Matthew
-		  Brooks and Alesia Yakimchyk and Huanxu and Liu and Stefano
-		  Cavalleri and Olle H\"{a}ggstr\"{o}m and Emil Verkama and
-		  Joshua Newbould and Hans Gundlach and Leonor Brito-Santana
-		  and Brian Amaro and Vivek Vajipey and Rynaa Grover and Ting
-		  Wang and Yosi Kratish and Wen-Ding Li and Sivakanth Gopi
-		  and Andrea Caciolai and Christian Schroeder de Witt and
-		  Pablo Hern\'{a}ndez-C\'{a}mara and Emanuele Rodol\`{a} and
-		  Jules Robins and Dominic Williamson and Vincent Cheng and
-		  Brad Raynor and Hao Qi and Ben Segev and Jingxuan Fan and
-		  Sarah Martinson and Erik Y. Wang and Kaylie Hausknecht and
-		  Michael P. Brenner and Mao Mao and Christoph Demian and
-		  Peyman Kassani and Xinyu Zhang and David Avagian and Eshawn
-		  Jessica Scipio and Alon Ragoler and Justin Tan and Blake
-		  Sims and Rebeka Plecnik and Aaron Kirtland and Omer Faruk
-		  Bodur and D. P. Shinde and Yan Carlos Leyva Labrador and
-		  Zahra Adoul and Mohamed Zekry and Ali Karakoc and Tania C.
-		  B. Santos and Samir Shamseldeen and Loukmane Karim and Anna
-		  Liakhovitskaia and Nate Resman and Nicholas Farina and Juan
-		  Carlos Gonzalez and Gabe Maayan and Earth Anderson and
-		  Rodrigo De Oliveira Pena and Elizabeth Kelley and Hodjat
-		  Mariji and Rasoul Pouriamanesh and Wentao Wu and Ross
-		  Finocchio and Ismail Alarab and Joshua Cole and Danyelle
-		  Ferreira and Bryan Johnson and Mohammad Safdari and Liangti
-		  Dai and Siriphan Arthornthurasuk and Isaac C. McAlister and
-		  Alejandro Jos\'{e} Moyano and Alexey Pronin and Jing Fan
-		  and Angel Ramirez-Trinidad and Yana Malysheva and Daphiny
-		  Pottmaier and Omid Taheri and Stanley Stepanic and Samuel
-		  Perry and Luke Askew and Ra\'{u}l Adri\'{a}n Huerta
-		  Rodr\'{i}guez and Ali M. R. Minissi and Ricardo Lorena and
-		  Krishnamurthy Iyer and Arshad Anil Fasiludeen and Ronald
-		  Clark and Josh Ducey and Matheus Piza and Maja Somrak and
-		  Eric Vergo and Juehang Qin and Benj\'{a}min Borb\'{a}s and
-		  Eric Chu and Jack Lindsey and Antoine Jallon and I. M. J.
-		  McInnis and Evan Chen and Avi Semler and Luk Gloor and Tej
-		  Shah and Marc Carauleanu and Pascal Lauer and Tran \DJuc
-		  Huy and Hossein Shahrtash and Emilien Duc and Lukas Lewark
-		  and Assaf Brown and Samuel Albanie and Brian Weber and
-		  Warren S. Vaz and Pierre Clavier and Yiyang Fan and Gabriel
-		  Poesia Reis e Silva and Long and Lian and Marcus
-		  Abramovitch and Xi Jiang and Sandra Mendoza and Murat Islam
-		  and Juan Gonzalez and Vasilios Mavroudis and Justin Xu and
-		  Pawan Kumar and Laxman Prasad Goswami and Daniel Bugas and
-		  Nasser Heydari and Ferenc Jeanplong and Thorben Jansen and
-		  Antonella Pinto and Archimedes Apronti and Abdallah Galal
-		  and Ng Ze-An and Ankit Singh and Tong Jiang and Joan of Arc
-		  Xavier and Kanu Priya Agarwal and Mohammed Berkani and Gang
-		  Zhang and Zhehang Du and Benedito Alves de Oliveira Junior
-		  and Dmitry Malishev and Nicolas Remy and Taylor D. Hartman
-		  and Tim Tarver and Stephen Mensah and Gautier Abou Loume
-		  and Wiktor Morak and Farzad Habibi and Sarah Hoback and
-		  Will Cai and Javier Gimenez and Roselynn Grace Montecillo
-		  and Jakub \Lucki and Russell Campbell and Asankhaya Sharma
-		  and Khalida Meer and Shreen Gul and Daniel Espinosa
-		  Gonzalez and Xavier Alapont and Alex Hoover and Gunjan
-		  Chhablani and Freddie Vargus and Arunim Agarwal and Yibo
-		  Jiang and Deepakkumar Patil and David Outevsky and Kevin
-		  Joseph Scaria and Rajat Maheshwari and Abdelkader Dendane
-		  and Priti Shukla and Ashley Cartwright and Sergei Bogdanov
-		  and Niels M\"{u}ndler and S\"{o}ren M\"{o}ller and Luca
-		  Arnaboldi and Kunvar Thaman and Muhammad Rehan Siddiqi and
-		  Prajvi Saxena and Himanshu Gupta and Tony Fruhauff and Glen
-		  Sherman and M\'{a}ty\'{a}s Vincze and Siranut
-		  Usawasutsakorn and Dylan Ler and Anil Radhakrishnan and
-		  Innocent Enyekwe and Sk Md Salauddin and Jiang Muzhen and
-		  Aleksandr Maksapetyan and Vivien Rossbach and Chris Harjadi
-		  and Mohsen Bahaloohoreh and Claire Sparrow and Jasdeep
-		  Sidhu and Sam Ali and Song Bian and John Lai and Eric
-		  Singer and Justine Leon Uro and Greg Bateman and Mohamed
-		  Sayed and Ahmed Menshawy and Darling Duclosel and Dario
-		  Bezzi and Yashaswini Jain and Ashley Aaron and Murat
-		  Tiryakioglu and Sheeshram Siddh and Keith Krenek and Imad
-		  Ali Shah and Jun Jin and Scott Creighton and Denis Peskoff
-		  and Zienab EL-Wasif and Ragavendran P V and Michael
-		  Richmond and Joseph McGowan and Tejal Patwardhan and Hao-Yu
-		  Sun and Ting Sun and Nikola Zubi\'{c} and Samuele Sala and
-		  Stephen Ebert and Jean Kaddour and Manuel Schottdorf and
-		  Dianzhuo Wang and Gerol Petruzella and Alex Meiburg and
-		  Tilen Medved and Ali ElSheikh and S Ashwin Hebbar and
-		  Lorenzo Vaquero and Xianjun Yang and Jason Poulos and
-		  Vil\'{e}m Zouhar and Sergey Bogdanik and Mingfang Zhang and
-		  Jorge Sanz-Ros and David Anugraha and Yinwei Dai and Anh N.
-		  Nhu and Xue Wang and Ali Anil Demircali and Zhibai Jia and
-		  Yuyin Zhou and Juncheng Wu and Mike He and Nitin Chandok
-		  and Aarush Sinha and Gaoxiang Luo and Long Le and
-		  Micka\"{e}l Noy\'{e} and Micha\l Pere\lkiewicz and Ioannis
-		  Pantidis and Tianbo Qi and Soham Sachin Purohit and Letitia
-		  Parcalabescu and Thai-Hoa Nguyen and Genta Indra Winata and
-		  Edoardo M. Ponti and Hanchen Li and Kaustubh Dhole and
-		  Jongee Park and Dario Abbondanza and Yuanli Wang and Anupam
-		  Nayak and Diogo M. Caetano and Antonio A. W. L. Wong and
-		  Maria del Rio-Chanona and D\'{a}niel Kondor and Pieter
-		  Francois and Ed Chalstrey and Jakob Zsambok and Dan Hoyer
-		  and Jenny Reddish and Jakob Hauser and Francisco-Javier
-		  Rodrigo-Gin\'{e}s and Suchandra Datta and Maxwell Shepherd
-		  and Thom Kamphuis and Qizheng Zhang and Hyunjun Kim and
-		  Ruiji Sun and Jianzhu Yao and Franck Dernoncourt and
-		  Satyapriya Krishna and Sina Rismanchian and Bonan Pu and
-		  Francesco Pinto and Yingheng Wang and Kumar Shridhar and
-		  Kalon J. Overholt and Glib Briia and Hieu Nguyen and David
-		  and Soler Bartomeu and Tony CY Pang and Adam Wecker and
-		  Yifan Xiong and Fanfei Li and Lukas S. Huber and Joshua
-		  Jaeger and Romano De Maddalena and Xing Han L\`{u} and
-		  Yuhui Zhang and Claas Beger and Patrick Tser Jern Kon and
-		  Sean Li and Vivek Sanker and Ming Yin and Yihao Liang and
-		  Xinlu Zhang and Ankit Agrawal and Li S. Yifei and Zechen
-		  Zhang and Mu Cai and Yasin Sonmez and Costin Cozianu and
-		  Changhao Li and Alex Slen and Shoubin Yu and Hyun Kyu Park
-		  and Gabriele Sarti and Marcin Bria\'{n}ski and Alessandro
-		  Stolfo and Truong An Nguyen and Mike Zhang and Yotam
-		  Perlitz and Jose Hernandez-Orallo and Runjia Li and Amin
-		  Shabani and Felix Juefei-Xu and Shikhar Dhingra and Orr
-		  Zohar and My Chiffon Nguyen and Alexander Pondaven and
-		  Abdurrahim Yilmaz and Xuandong Zhao and Chuanyang Jin and
-		  Muyan Jiang and Stefan Todoran and Xinyao Han and Jules
-		  Kreuer and Brian Rabern and Anna Plassart and Martino
-		  Maggetti and Luther Yap and Robert Geirhos and Jonathon
-		  Kean and Dingsu Wang and Sina Mollaei and Chenkai Sun and
-		  Yifan Yin and Shiqi Wang and Rui Li and Yaowen Chang and
-		  Anjiang Wei and Alice Bizeul and Xiaohan Wang and Alexandre
-		  Oliveira Arrais and Kushin Mukherjee and Jorge
-		  Chamorro-Padial and Jiachen Liu and Xingyu Qu and Junyi
-		  Guan and Adam Bouyamourn and Shuyu Wu and Martyna Plomecka
-		  and Junda Chen and Mengze Tang and Jiaqi Deng and Shreyas
-		  Subramanian and Haocheng Xi and Haoxuan Chen and Weizhi
-		  Zhang and Yinuo Ren and Haoqin Tu and Sejong Kim and Yushun
-		  Chen and Sara Vera Marjanovi\'{c} and Junwoo Ha and
-		  Grzegorz Luczyna and Jeff J. Ma and Zewen Shen and Dawn
-		  Song and Cedegao E. Zhang and Zhun Wang and Ga\"{e}l
-		  Gendron and Yunze Xiao and Leo Smucker and Erica Weng and
-		  Kwok Hao Lee and Zhe Ye and Stefano Ermon and Ignacio D.
-		  Lopez-Miguel and Theo Knights and Anthony Gitter and Namkyu
-		  Park and Boyi Wei and Hongzheng Chen and Kunal Pai and
-		  Ahmed Elkhanany and Han Lin and Philipp D. Siedler and
-		  Jichao Fang and Ritwik Mishra and K\'{a}roly
-		  Zsolnai-Feh\'{e}r and Xilin Jiang and Shadab Khan and Jun
-		  Yuan and Rishab Kumar Jain and Xi Lin and Mike Peterson and
-		  Zhe Wang and Aditya Malusare and Maosen Tang and Isha Gupta
-		  and Ivan Fosin and Timothy Kang and Barbara Dworakowska and
-		  Kazuki Matsumoto and Guangyao Zheng and Gerben Sewuster and
-		  Jorge Pretel Villanueva and Ivan Rannev and Igor
-		  Chernyavsky and Jiale Chen and Deepayan Banik and Ben Racz
-		  and Wenchao Dong and Jianxin Wang and Laila Bashmal and
-		  Duarte V. Gon\c{c}alves and Wei Hu and Kaushik Bar and
-		  Ondrej Bohdal and Atharv Singh Patlan and Shehzaad
-		  Dhuliawala and Caroline Geirhos and Julien Wist and Yuval
-		  Kansal and Bingsen Chen and Kutay Tire and Atak Talay
-		  Y\"{u}cel and Brandon Christof and Veerupaksh Singla and
-		  Zijian Song and Sanxing Chen and Jiaxin Ge and Kaustubh
-		  Ponkshe and Isaac Park and Tianneng Shi and Martin Q. Ma
-		  and Joshua Mak and Sherwin Lai and Antoine Moulin and Zhuo
-		  Cheng and Zhanda Zhu and Ziyi Zhang and Vaidehi Patil and
-		  Ketan Jha and Qiutong Men and Jiaxuan Wu and Tianchi Zhang
-		  and Bruno Hebling Vieira and Alham Fikri Aji and Jae-Won
-		  Chung and Mohammed Mahfoud and Ha Thi Hoang and Marc
-		  Sperzel and Wei Hao and Kristof Meding and Sihan Xu and
-		  Vassilis Kostakos and Davide Manini and Yueying Liu and
-		  Christopher Toukmaji and Jay Paek and Eunmi Yu and Arif
-		  Engin Demircali and Zhiyi Sun and Ivan Dewerpe and Hongsen
-		  Qin and Roman Pflugfelder and James Bailey and Johnathan
-		  Morris and Ville Heilala and Sybille Rosset and Zishun Yu
-		  and Peter E. Chen and Woongyeong Yeo and Eeshaan Jain and
-		  Ryan Yang and Sreekar Chigurupati and Julia Chernyavsky and
-		  Sai Prajwal Reddy and Subhashini Venugopalan and Hunar
-		  Batra and Core Francisco Park and Hieu Tran and Guilherme
-		  Maximiano and Genghan Zhang and Yizhuo Liang and Hu Shiyu
-		  and Rongwu Xu and Rui Pan and Siddharth Suresh and Ziqi Liu
-		  and Samaksh Gulati and Songyang Zhang and Peter Turchin and
-		  Christopher W. Bartlett and Christopher R. Scotese and
-		  Phuong M. Cao and Aakaash Nattanmai and Gordon McKellips
-		  and Anish Cheraku and Asim Suhail and Ethan Luo and Marvin
-		  Deng and Jason Luo and Ashley Zhang and Kavin Jindel and
-		  Jay Paek and Kasper Halevy and Allen Baranov and Michael
-		  Liu and Advaith Avadhanam and David Zhang and Vincent Cheng
-		  and Brad Ma and Evan Fu and Liam Do and Joshua Lass and
-		  Hubert Yang and Surya Sunkari and Vishruth Bharath and
-		  Violet Ai and James Leung and Rishit Agrawal and Alan Zhou
-		  and Kevin Chen and Tejas Kalpathi and Ziqi Xu and Gavin
-		  Wang and Tyler Xiao and Erik Maung and Sam Lee and Ryan
-		  Yang and Roy Yue and Ben Zhao and Julia Yoon and Sunny Sun
-		  and Aryan Singh and Ethan Luo and Clark Peng and Tyler
-		  Osbey and Taozhi Wang and Daryl Echeazu and Hubert Yang and
-		  Timothy Wu and Spandan Patel and Vidhi Kulkarni and
-		  Vijaykaarti Sundarapandiyan and Ashley Zhang and Andrew Le
-		  and Zafir Nasim and Srikar Yalam and Ritesh Kasamsetty and
-		  Soham Samal and Hubert Yang and David Sun and Nihar Shah
-		  and Abhijeet Saha and Alex Zhang and Leon Nguyen and Laasya
-		  Nagumalli and Kaixin Wang and Alan Zhou and Aidan Wu and
-		  Jason Luo and Anwith Telluri and Summer Yue and Alexandr Wang and Dan Hendrycks},
-  eprint	= {2501.14249},
-  primaryclass	= {cs.LG},
-  title		= {Humanity's Last Exam},
-  url		= {https://arxiv.org/abs/2501.14249},
-  year		= {2025}
-}
-
-@InProceedings{	  pmlr-v37-blum15,
-  title		= {The Ladder: A Reliable Leaderboard for Machine Learning
-		  Competitions},
-  author	= {Blum, Avrim and Hardt, Moritz},
-  booktitle	= {Proceedings of the 32nd International Conference on
-		  Machine Learning},
-  pages		= {1006--1014},
-  year		= {2015},
-  editor	= {Bach, Francis and Blei, David},
-  volume	= {37},
-  series	= {Proceedings of Machine Learning Research},
-  address	= {Lille, France},
-  month		= jul,
-  publisher	= {PMLR},
-  pdf		= {http://proceedings.mlr.press/v37/blum15.pdf},
-  url		= {https://proceedings.mlr.press/v37/blum15.html},
-  abstract	= {The organizer of a machine learning competition faces the
-		  problem of maintaining an accurate leaderboard that
-		  faithfully represents the quality of the best submission of
-		  each competing team. What makes this estimation problem
-		  particularly challenging is its sequential and adaptive
-		  nature. As participants are allowed to repeatedly evaluate
-		  their submissions on the leaderboard, they may begin to
-		  overfit to the holdout data that supports the leaderboard.
-		  Few theoretical results give actionable advice on how to
-		  design a reliable leaderboard. Existing approaches
-		  therefore often resort to poorly understood heuristics such
-		  as limiting the bit precision of answers and the rate of
-		  re-submission. In this work, we introduce a notion of
-		  leaderboard accuracy tailored to the format of a
-		  competition. We introduce a natural algorithm called the
-		  Ladder and demonstrate that it simultaneously supports
-		  strong theoretical guarantees in a fully adaptive model of
-		  estimation, withstands practical adversarial attacks, and
-		  achieves high utility on real submission files from a
-		  Kaggle competition. Notably, we are able to sidestep a
-		  powerful recent hardness result for adaptive risk
-		  estimation that rules out algorithms such as ours under a
-		  seemingly very similar notion of accuracy. On a practical
-		  note, we provide a completely parameter-free variant of our
-		  algorithm that can be deployed in a real competition with
-		  no tuning required whatsoever.}
 }
 
 @Misc{		  pramanick2025spiqadatasetmultimodalquestion,
@@ -1742,197 +1152,15 @@
   year		= {2023}
 }
 
-@Misc{		  roberts2023satin,
-  title		= {SATIN: A multi-task metadataset for classifying satellite
-		  imagery using vision-language models},
-  author	= {Roberts, Jonathan and Han, Kai and Albanie, Samuel},
-  journal	= {arXiv preprint arXiv:2304.11619},
-  year		= {2023},
-  url		= {https://huggingface.co/datasets/saral-ai/satimagnet}
-}
-
-@Misc{		  sakaguchi2019winograndeadversarialwinogradschema,
-  archiveprefix	= {arXiv},
-  author	= {Keisuke Sakaguchi and Ronan Le Bras and Chandra
-		  Bhagavatula and Yejin Choi},
-  eprint	= {1907.10641},
-  primaryclass	= {cs.CL},
-  title		= {WinoGrande: An Adversarial Winograd Schema Challenge at
-		  Scale},
-  url		= {https://arxiv.org/abs/1907.10641},
-  year		= {2019}
-}
-
-@Misc{		  shen2024exploringuserretrievalintegration,
-  title		= {Exploring User Retrieval Integration towards Large
-		  Language Models for Cross-Domain Sequential
-		  Recommendation},
-  author	= {Tingjia Shen and Hao Wang and Jiaqing Zhang and Sirui Zhao
-		  and Liangyue Li and Zulong Chen and Defu Lian and Enhong
-		  Chen},
-  year		= {2024},
-  eprint	= {2406.03085},
-  archiveprefix	= {arXiv},
-  primaryclass	= {cs.LG},
-  url		= {https://arxiv.org/abs/2406.03085}
-}
-
-@Misc{		  srivastava2023imitationgamequantifyingextrapolating,
-  title		= {Beyond the Imitation Game: Quantifying and extrapolating
-		  the capabilities of language models},
-  author	= {Aarohi Srivastava and Abhinav Rastogi and Abhishek Rao and
-		  Abu Awal Md Shoeb and Abubakar Abid and Adam Fisch and Adam
-		  R. Brown and Adam Santoro and Aditya Gupta and Adri\`{a}
-		  Garriga-Alonso and Agnieszka Kluska and Aitor Lewkowycz and
-		  Akshat Agarwal and Alethea Power and Alex Ray and Alex
-		  Warstadt and Alexander W. Kocurek and Ali Safaya and Ali
-		  Tazarv and Alice Xiang and Alicia Parrish and Allen Nie and
-		  Aman Hussain and Amanda Askell and Amanda Dsouza and
-		  Ambrose Slone and Ameet Rahane and Anantharaman S. Iyer and
-		  Anders Andreassen and Andrea Madotto and Andrea Santilli
-		  and Andreas Stuhlm\"{u}ller and Andrew Dai and Andrew La
-		  and Andrew Lampinen and Andy Zou and Angela Jiang and
-		  Angelica Chen and Anh Vuong and Animesh Gupta and Anna
-		  Gottardi and Antonio Norelli and Anu Venkatesh and Arash
-		  Gholamidavoodi and Arfa Tabassum and Arul Menezes and Arun
-		  Kirubarajan and Asher Mullokandov and Ashish Sabharwal and
-		  Austin Herrick and Avia Efrat and Aykut Erdem and Ayla
-		  Karaka\c{s} and B. Ryan Roberts and Bao Sheng Loe and
-		  Barret Zoph and Bart\lomiej Bojanowski and Batuhan
-		  \"{O}zyurt and Behnam Hedayatnia and Behnam Neyshabur and
-		  Benjamin Inden and Benno Stein and Berk Ekmekci and Bill
-		  Yuchen Lin and Blake Howald and Bryan Orinion and Cameron
-		  Diao and Cameron Dour and Catherine Stinson and Cedrick
-		  Argueta and C\'{e}sar Ferri Ram\'{i}rez and Chandan Singh
-		  and Charles Rathkopf and Chenlin Meng and Chitta Baral and
-		  Chiyu Wu and Chris Callison-Burch and Chris Waites and
-		  Christian Voigt and Christopher D. Manning and Christopher
-		  Potts and Cindy Ramirez and Clara E. Rivera and Clemencia
-		  Siro and Colin Raffel and Courtney Ashcraft and Cristina
-		  Garbacea and Damien Sileo and Dan Garrette and Dan
-		  Hendrycks and Dan Kilman and Dan Roth and Daniel Freeman
-		  and Daniel Khashabi and Daniel Levy and Daniel Mosegu\'{i}
-		  Gonz\'{a}lez and Danielle Perszyk and Danny Hernandez and
-		  Danqi Chen and Daphne Ippolito and Dar Gilboa and David
-		  Dohan and David Drakard and David Jurgens and Debajyoti
-		  Datta and Deep Ganguli and Denis Emelin and Denis Kleyko
-		  and Deniz Yuret and Derek Chen and Derek Tam and Dieuwke
-		  Hupkes and Diganta Misra and Dilyar Buzan and Dimitri
-		  Coelho Mollo and Diyi Yang and Dong-Ho Lee and Dylan
-		  Schrader and Ekaterina Shutova and Ekin Dogus Cubuk and
-		  Elad Segal and Eleanor Hagerman and Elizabeth Barnes and
-		  Elizabeth Donoway and Ellie Pavlick and Emanuele Rodola and
-		  Emma Lam and Eric Chu and Eric Tang and Erkut Erdem and
-		  Ernie Chang and Ethan A. Chi and Ethan Dyer and Ethan
-		  Jerzak and Ethan Kim and Eunice Engefu Manyasi and Evgenii
-		  Zheltonozhskii and Fanyue Xia and Fatemeh Siar and Fernando
-		  Mart\'{i}nez-Plumed and Francesca Happ\'{e} and Francois
-		  Chollet and Frieda Rong and Gaurav Mishra and Genta Indra
-		  Winata and Gerard de Melo and Germ\'{a}n Kruszewski and
-		  Giambattista Parascandolo and Giorgio Mariani and Gloria
-		  Wang and Gonzalo Jaimovitch-L\'{o}pez and Gregor Betz and
-		  Guy Gur-Ari and Hana Galijasevic and Hannah Kim and Hannah
-		  Rashkin and Hannaneh Hajishirzi and Harsh Mehta and Hayden
-		  Bogar and Henry Shevlin and Hinrich Sch\"{u}tze and Hiromu
-		  Yakura and Hongming Zhang and Hugh Mee Wong and Ian Ng and
-		  Isaac Noble and Jaap Jumelet and Jack Geissinger and
-		  Jackson Kernion and Jacob Hilton and Jaehoon Lee and Jaime
-		  Fern\'{a}ndez Fisac and James B. Simon and James Koppel and
-		  James Zheng and James Zou and Jan Koco\'{n} and Jana
-		  Thompson and Janelle Wingfield and Jared Kaplan and Jarema
-		  Radom and Jascha Sohl-Dickstein and Jason Phang and Jason
-		  Wei and Jason Yosinski and Jekaterina Novikova and Jelle
-		  Bosscher and Jennifer Marsh and Jeremy Kim and Jeroen Taal
-		  and Jesse Engel and Jesujoba Alabi and Jiacheng Xu and
-		  Jiaming Song and Jillian Tang and Joan Waweru and John
-		  Burden and John Miller and John U. Balis and Jonathan
-		  Batchelder and Jonathan Berant and J\"{o}rg Frohberg and
-		  Jos Rozen and Jose Hernandez-Orallo and Joseph Boudeman and
-		  Joseph Guerr and Joseph Jones and Joshua B. Tenenbaum and
-		  Joshua S. Rule and Joyce Chua and Kamil Kanclerz and Karen
-		  Livescu and Karl Krauth and Karthik Gopalakrishnan and
-		  Katerina Ignatyeva and Katja Markert and Kaustubh D. Dhole
-		  and Kevin Gimpel and Kevin Omondi and Kory Mathewson and
-		  Kristen Chiafullo and Ksenia Shkaruta and Kumar Shridhar
-		  and Kyle McDonell and Kyle Richardson and Laria Reynolds
-		  and Leo Gao and Li Zhang and Liam Dugan and Lianhui Qin and
-		  Lidia Contreras-Ochando and Louis-Philippe Morency and Luca
-		  Moschella and Lucas Lam and Lucy Noble and Ludwig Schmidt
-		  and Luheng He and Luis Oliveros Col\'{o}n and Luke Metz and
-		  L\"{u}tfi Kerem \c{S}enel and Maarten Bosma and Maarten Sap
-		  and Maartje ter Hoeve and Maheen Farooqi and Manaal Faruqui
-		  and Mantas Mazeika and Marco Baturan and Marco Marelli and
-		  Marco Maru and Maria Jose Ram\'{i}rez Quintana and Marie
-		  Tolkiehn and Mario Giulianelli and Martha Lewis and Martin
-		  Potthast and Matthew L. Leavitt and Matthias Hagen and
-		  M\'{a}ty\'{a}s Schubert and Medina Orduna Baitemirova and
-		  Melody Arnaud and Melvin McElrath and Michael A. Yee and
-		  Michael Cohen and Michael Gu and Michael Ivanitskiy and
-		  Michael Starritt and Michael Strube and Micha\l
-		  Sw\k{e}drowski and Michele Bevilacqua and Michihiro
-		  Yasunaga and Mihir Kale and Mike Cain and Mimee Xu and
-		  Mirac Suzgun and Mitch Walker and Mo Tiwari and Mohit
-		  Bansal and Moin Aminnaseri and Mor Geva and Mozhdeh Gheini
-		  and Mukund Varma T and Nanyun Peng and Nathan A. Chi and
-		  Nayeon Lee and Neta Gur-Ari Krakover and Nicholas Cameron
-		  and Nicholas Roberts and Nick Doiron and Nicole Martinez
-		  and Nikita Nangia and Niklas Deckers and Niklas Muennighoff
-		  and Nitish Shirish Keskar and Niveditha S. Iyer and Noah
-		  Constant and Noah Fiedel and Nuan Wen and Oliver Zhang and
-		  Omar Agha and Omar Elbaghdadi and Omer Levy and Owain Evans
-		  and Pablo Antonio Moreno Casares and Parth Doshi and
-		  Pascale Fung and Paul Pu Liang and Paul Vicol and Pegah
-		  Alipoormolabashi and Peiyuan Liao and Percy Liang and Peter
-		  Chang and Peter Eckersley and Phu Mon Htut and Pinyu Hwang
-		  and Piotr Mi\lkowski and Piyush Patil and Pouya Pezeshkpour
-		  and Priti Oli and Qiaozhu Mei and Qing Lyu and Qinlang Chen
-		  and Rabin Banjade and Rachel Etta Rudolph and Raefer
-		  Gabriel and Rahel Habacker and Ramon Risco and Rapha\"{e}l
-		  Milli\`{e}re and Rhythm Garg and Richard Barnes and Rif A.
-		  Saurous and Riku Arakawa and Robbe Raymaekers and Robert
-		  Frank and Rohan Sikand and Roman Novak and Roman Sitelew
-		  and Ronan LeBras and Rosanne Liu and Rowan Jacobs and Rui
-		  Zhang and Ruslan Salakhutdinov and Ryan Chi and Ryan Lee
-		  and Ryan Stovall and Ryan Teehan and Rylan Yang and Sahib
-		  Singh and Saif M. Mohammad and Sajant Anand and Sam
-		  Dillavou and Sam Shleifer and Sam Wiseman and Samuel
-		  Gruetter and Samuel R. Bowman and Samuel S. Schoenholz and
-		  Sanghyun Han and Sanjeev Kwatra and Sarah A. Rous and Sarik
-		  Ghazarian and Sayan Ghosh and Sean Casey and Sebastian
-		  Bischoff and Sebastian Gehrmann and Sebastian Schuster and
-		  Sepideh Sadeghi and Shadi Hamdan and Sharon Zhou and
-		  Shashank Srivastava and Sherry Shi and Shikhar Singh and
-		  Shima Asaadi and Shixiang Shane Gu and Shubh Pachchigar and
-		  Shubham Toshniwal and Shyam Upadhyay and Shyamolima and
-		  Debnath and Siamak Shakeri and Simon Thormeyer and Simone
-		  Melzi and Siva Reddy and Sneha Priscilla Makini and
-		  Soo-Hwan Lee and Spencer Torene and Sriharsha Hatwar and
-		  Stanislas Dehaene and Stefan Divic and Stefano Ermon and
-		  Stella Biderman and Stephanie Lin and Stephen Prasad and
-		  Steven T. Piantadosi and Stuart M. Shieber and Summer
-		  Misherghi and Svetlana Kiritchenko and Swaroop Mishra and
-		  Tal Linzen and Tal Schuster and Tao Li and Tao Yu and Tariq
-		  Ali and Tatsu Hashimoto and Te-Lin Wu and Th\'{e}o
-		  Desbordes and Theodore Rothschild and Thomas Phan and
-		  Tianle Wang and Tiberius Nkinyili and Timo Schick and
-		  Timofei Kornev and Titus Tunduny and Tobias Gerstenberg and
-		  Trenton Chang and Trishala Neeraj and Tushar Khot and Tyler
-		  Shultz and Uri Shaham and Vedant Misra and Vera Demberg and
-		  Victoria Nyamai and Vikas Raunak and Vinay Ramasesh and
-		  Vinay Uday Prabhu and Vishakh Padmakumar and Vivek Srikumar
-		  and William Fedus and William Saunders and William Zhang
-		  and Wout Vossen and Xiang Ren and Xiaoyu Tong and Xinran
-		  Zhao and Xinyi Wu and Xudong Shen and Yadollah Yaghoobzadeh
-		  and Yair Lakretz and Yangqiu Song and Yasaman Bahri and
-		  Yejin Choi and Yichi Yang and Yiding Hao and Yifu Chen and
-		  Yonatan Belinkov and Yu Hou and Yufang Hou and Yuntao Bai
-		  and Zachary Seid and Zhuoye Zhao and Zijian Wang and Zijie
-		  J. Wang and Zirui Wang and Ziyi Wu},
-  year		= {2023},
-  eprint	= {2206.04615},
-  archiveprefix	= {arXiv},
-  primaryclass	= {cs.CL},
-  url		= {https://arxiv.org/abs/2206.04615}
+@Article{	  roberts2023satin,
+  author	= "Roberts, Jonathan and Han, Kai and Albanie, Samuel",
+  title		= "Satin: A multi-task metadataset for classifying satellite
+		  imagery using vision-language models",
+  year		= "2023",
+  month		= "3",
+  journal	= "ICCV Workshop: Towards the Next Generation of Computer
+		  Vision Datasets",
+  doi		= "10.48550/arXiv.2304.11619"
 }
 
 @Misc{		  takamoto2024pdebenchextensivebenchmarkscientific,
@@ -1946,18 +1174,6 @@
 		  Learning},
   url		= {https://arxiv.org/abs/2210.07182},
   year		= {2024}
-}
-
-@Misc{		  talmor2019commonsenseqaquestionansweringchallenge,
-  title		= {CommonsenseQA: A Question Answering Challenge Targeting
-		  Commonsense Knowledge},
-  author	= {Alon Talmor and Jonathan Herzig and Nicholas Lourie and
-		  Jonathan Berant},
-  year		= {2019},
-  eprint	= {1811.00937},
-  archiveprefix	= {arXiv},
-  primaryclass	= {cs.CL},
-  url		= {https://arxiv.org/abs/1811.00937}
 }
 
 @Misc{		  tian2024scicoderesearchcodingbenchmark,
@@ -2054,36 +1270,17 @@
   note		= {[Online accessed 2025-06-24]}
 }
 
-@Article{	  xu-2022,
-  author	= {Xu, Zhen and Escalera, Sergio and Pavão, Adrien and
-		  Richard, Magali and Tu, Wei-Wei and Yao, Quanming and Zhao,
-		  Huan and Guyon, Isabelle},
-  doi		= {10.1016/j.patter.2022.100543},
-  issn		= {2666-3899},
-  journal	= {Patterns},
-  month		= jul,
-  number	= {7},
-  pages		= {100543},
-  publisher	= {Elsevier BV},
-  title		= {Codabench: Flexible, easy-to-use, and reproducible
-		  meta-benchmark platform},
-  url		= {http://dx.doi.org/10.1016/j.patter.2022.100543},
-  volume	= {3},
-  year		= {2022}
-}
-
-@Misc{		  zheng2024sglangefficientexecutionstructured,
-  archiveprefix	= {arXiv},
-  author	= {Lianmin Zheng and Liangsheng Yin and Zhiqiang Xie and
-		  Chuyue Sun and Jeff Huang and Cody Hao Yu and Shiyi Cao and
-		  Christos Kozyrakis and Ion Stoica and Joseph E. Gonzalez
-		  and Clark Barrett and Ying Sheng},
-  eprint	= {2312.07104},
-  primaryclass	= {cs.AI},
-  title		= {SGLang: Efficient Execution of Structured Language Model
-		  Programs},
-  url		= {https://arxiv.org/abs/2312.07104},
-  year		= {2024}
+@InProceedings{	  zhang2024empowering,
+  title		= {Empowering and Assessing the Utility of Large Language
+		  Models in Crop Science},
+  author	= {Hang Zhang and Jiawei Sun and Renqi Chen and Wei Liu and
+		  Zhonghang Yuan and Xinzhe Zheng and Zhefan Wang and Zhiyuan
+		  Yang and Hang Yan and Han-Sen Zhong and Xiqing Wang and
+		  Wanli Ouyang and Fan Yang and Nanqing Dong},
+  booktitle	= {The Thirty-eight Conference on Neural Information
+		  Processing Systems Datasets and Benchmarks Track},
+  year		= {2024},
+  url		= {https://openreview.net/forum?id=hMj6jZ6JWU}
 }
 
 @Misc{		  zhong2024spiqa,

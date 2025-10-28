@@ -26,20 +26,14 @@ If you cite this work, please reference the PDF (not the Markdown pages). A BibT
 }
 ```
 
-For online browsing, we provide two views:
+For online browsing, we provide three views (each entry links to its detailed page):
 
-- **[Benchmarks (cards)](md/benchmarks/)**: filterable and sortable index with detail pages.
-- **[Benchmarks (table)](md/benchmarks_table)**: compact Markdown table with links to the same detail pages.
+- **[Cards view](md/benchmarks/cards/)**: richest UI with advanced filtering, tag-based quick filters, and interactive sorting controls.
+- **[Table view](md/benchmarks_table/)**: compact table where you can toggle visible columns and download the data as CSV or JSON.
+- **[List view](md/benchmarks/)**: straightforward alphabetical list of benchmark names.
 
 > **Note:** The Markdown pages are generated for web browsing and should **not** be cited. Please cite the PDF report above.
 
-All pages are generated automatically, please don’t edit them directly.  
-To propose changes, update the source files here:
+All pages are generated automatically; please don’t edit them directly. To propose changes, contributions, or corrections, follow the guidelines in the project repository: <https://github.com/mlcommons-science/benchmark>.  
 
-- <https://github.com/mlcommons-science/benchmark/tree/main/source>
-
-For program improvements, please contact **Gregor von Laszewski** at `laszewski at gmail.com`.
-
-The project README is available at:
-
-- <https://github.com/mlcommons-science/benchmark>
+For program-level improvements, contact **Gregor von Laszewski** at `laszewski at gmail.com`.

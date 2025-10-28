@@ -63,7 +63,7 @@ LATEX_PREFIX = textwrap.dedent(
     \begin{document}
     \sloppy
     \author{
-        Gregor von Laszewsk and 
+        Gregor von Laszewski and 
         Ben Hawks and 
         Marco Colombo and
         \\ Reece Shiraishi and
@@ -87,7 +87,7 @@ LATEX_PREFIX = textwrap.dedent(
     \begin{verbatim}
     @misc{www-las-mlcommons-benchmark-coolection,
       author = {
-        Gregor von Laszewsk and 
+        Gregor von Laszewski and 
         Ben Hawks and 
         Marco Colombo and
         Reece Shiraishi and

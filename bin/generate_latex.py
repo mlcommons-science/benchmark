@@ -95,7 +95,7 @@ LATEX_PREFIX = textwrap.dedent(
         Nhan Tran and
         Geoffrey C. Fox},
       title = {MLCommons Science Working Group AI Benchmarks Collection},
-      url = {https://mlcommons-science.github.io/benchmark/benchmarks.pdf}
+      url = {https://mlcommons-science.github.io/benchmark/benchmarks.pdf},
       note = "Online Collection: \url={https://mlcommons-science.github.io/benchmark/}",
       month = jun,
       year = 2025,

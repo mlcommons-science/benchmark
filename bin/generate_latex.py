@@ -62,12 +62,14 @@ LATEX_PREFIX = textwrap.dedent(
 
     \begin{document}
     \sloppy
-    \author{Gregor von Laszewski,
-              Reece Shiraishi, 
-              Anjay Krishnan, 
-              Nhan Tran, \\
-              Benjamin Hawks, and 
-              Geoffrey C. Fox}
+    \author{
+        Gregor von Laszewsk and 
+        Ben Hawks and 
+        Marco Colombo and
+        \\ Reece Shiraishi and
+        Anjay Krishnan and
+        \\ Nhan Tran and
+        Geoffrey C. Fox}
 
     \date{\today}
     \title{MLCommons Science Working Group AI Benchmarks Collection}
@@ -83,19 +85,22 @@ LATEX_PREFIX = textwrap.dedent(
 
     \begin{quote}
     \begin{verbatim}
-    @misc{benchmark-collection,
-      title={MLCommons Science Working Group AI Benchmarks Collection}
-      author={Gregor von Laszewski and 
-              Reece Shiraishi and 
-              Anjay Krishnan and 
-              Nhan Tran and 
-              Benjamin Hawks and 
-              Geoffrey C. Fox}
-      url={https://mlcommons-science.github.io/benchmark/benchmarks.pdf}
-      howpublished={Github},
-      year={2025}
-      month=jul
-    }
+    @misc{www-las-mlcommons-benchmark-coolection,
+      author = {
+        Gregor von Laszewsk and 
+        Ben Hawks and 
+        Marco Colombo and
+        Reece Shiraishi and
+        Anjay Krishnan and
+        Nhan Tran and
+        Geoffrey C. Fox},
+      title = {MLCommons Science Working Group AI Benchmarks Collection},
+      url = {https://mlcommons-science.github.io/benchmark/benchmarks.pdf}
+      note = "Online Collection: \url={https://mlcommons-science.github.io/benchmark/}",
+      month = jun,
+      year = 2025,
+      howpublished = "GitHub"
+    } 
     \end{verbatim}
     \end{quote}
     \clearpage

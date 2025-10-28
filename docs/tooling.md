@@ -37,7 +37,7 @@ The most frequently used targets are:
 - `make tex` – generates LaTeX assets (tables, bib, radar charts) into `content/tex/`.
 - `make pdf` – calls `latexmk` inside `content/tex/` to build `benchmarks.pdf`.
 - `make mkdocs` – renders MkDocs-friendly content and copies assets into `www/science-ai-benchmarks/`.
-- `make view-local` – serves the MkDocs site locally (`mkdocs serve -a $(SERVE_HOST):8000`).
+- `make serve` – serves the MkDocs site locally (`mkdocs serve -a $(SERVE_HOST):8000`).
 - `make publish` – commits generated site updates and runs `mkdocs gh-deploy` (maintainer use only).
 - `make clean` – removes generated folders under `content/`.
 

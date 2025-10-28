@@ -2,19 +2,12 @@
 SUDO := $(shell command -v sudo >/dev/null 2>&1 && echo sudo || echo)
 
 BASE=.
-# BASE=../yaml3/benchmark
 
-# FILES=${BASE}/source/benchmarks.yaml
-# FILES=${BASE}/source/benchmarks-addon.yaml
 FILES=${BASE}/source/benchmarks.yaml,${BASE}/source/benchmarks-addon.yaml 
 
 CHECK_FILES=${BASE}/source/benchmarks.yaml,${BASE}/source/benchmarks-addon.yaml 
 
-# FILES=source/benchmark-entry-comment-gregor.yaml
-
 SCRIPT=bin/generate.py
-
-#COLUMNS=date,name,domain,focus,keywords,task_types,metrics,models,cite,ratings.specification.rating,ratings.specification.reason,ratings.dataset.rating,ratings.dataset.reason,ratings.metrics.rating,ratings.metrics.reason,ratings.reference_solution.rating,ratings.reference_solution.reason,ratings.documentation.rating,ratings.documentation.reason
 
 COLUMNS=date,name,domain,focus,keywords,task_types,metrics,models,cite,ratings.software.rating,ratings.software.reason,ratings.specification.rating,ratings.specification.reason,ratings.dataset.rating,ratings.dataset.reason,ratings.metrics.rating,ratings.metrics.reason,ratings.reference_solution.rating,ratings.reference_solution.reason,ratings.documentation.rating,ratings.documentation.reason
 
@@ -27,22 +20,12 @@ define BANNER
     @echo "# =====================================================================\033[0m"
 endef
 
-all: pdf md publish
+all: pdf mkdocs
 	echo "If you see no errors it is finished."
 
 ls:
 	cd ${BASE}; pwd; ls
 	ls ${BASE}
-
-g:
-	python bin/test.py
-
-summary:
-	python bin/summary.py --file ${FILES} --graph=pdf
-	python bin/summary.py --file ${FILES} --graph=png
-	#cd content/summary; bibtool -s -i benchmarks.bib -o tmp.bib
-	cd content/tex; latexmk -pdf -silent summary.tex
-	open content/tex/summary.pdf
 
 install_latex:
 	$(SUDO) apt-get update
@@ -69,8 +52,7 @@ WWW=www/science-ai-benchmarks
 
 SERVE_HOST ?= 127.0.0.1
 
-
-publish: mkdocs
+publish: pdf mkdocs
 	$(call BANNER,"Publishing from ${DOCS}") 
 	-git commit -am "Update documentation"
 	-git push
@@ -97,10 +79,6 @@ tex:
 	sleep 1
 	cd content/tex; mv tmp.bib benchmarks.bib
 
-t:
-	python ${SCRIPT} --files=${FILES} --format=tex --outdir=./content --standalone --columns=${COLUMNS}
-	cd content/tex; latexmk -pdf benchmarks.tex
-
 standalone:
 	python ${SCRIPT} --files=${FILES} --format=tex --standalone --out-dir ./content
 
@@ -109,10 +87,7 @@ pdf: tex
 
 clean:
 	rm -rf content/md
-	rm -rf content/summary
-	rm -rf content/md_pages
 	rm -rf content/tex
-	cd content/tex && latexmk -C
 
 view:
 	open content/tex/benchmarks.pdf
@@ -122,10 +97,9 @@ debug: tex pdf view
 check:
 	python ${SCRIPT} --files ${CHECK_FILES} --check 
 
-check_urls: check_url
-	echo "DONE"
-
-check_url:
+check_urls:
+	python ${SCRIPT} --files ${CHECK_FILES} --check_url 
+check_urls:
 	python ${SCRIPT} --files ${CHECK_FILES} --check_url 
 
 u:
@@ -134,19 +108,10 @@ u:
 log:
 	open -a Aquamacs content/tex/benchmarks.log
 
-publish-old:
-	mkdir -p docs/tex/images
-	mkdir -p docs/md
-	cp -r content/md/* docs/md
-	cp source/index.md docs/index.md
-	cp content/tex/benchmarks.pdf docs/benchmarks.pdf
-	cp content/tex/images/* docs/tex/images
-	python bin/make-html.py docs
-
 structure:
 	python ${SCRIPT} --files=source/benchmarks.yaml --check_structure 
 	python ${SCRIPT} --files=source/benchmarks.yaml --check_structure --structure=source/benchmarks-addon.yaml
 	python ${SCRIPT} --files=source/benchmarks-addon.yaml --check_structure 
 
-view-local: mkdocs
+serve:
 	cd www/science-ai-benchmarks; mkdocs serve -a $(SERVE_HOST):8000

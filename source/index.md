@@ -10,7 +10,7 @@ If you cite this work, please reference the PDF (not the Markdown pages). A BibT
 ```bibtex
 @misc{www-las-mlcommons-benchmark-coolection,
   author = {
-    Gregor von Laszewsk and 
+    Gregor von Laszewski and 
     Ben Hawks and 
     Marco Colombo and
     Reece Shiraishi and

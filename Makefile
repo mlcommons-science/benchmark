@@ -49,6 +49,11 @@ md:
 
 DOCS=www/science-ai-benchmarks/docs
 WWW=www/science-ai-benchmarks
+LATEX_DIR=content/tex
+LATEX_EXCLUDE=content/latex-export.exclude
+LATEX_DOWNLOAD_DIR=content/downloads
+LATEX_ZIP_SRC=$(LATEX_DOWNLOAD_DIR)/benchmarks-latex.zip
+LATEX_ZIP_DEST=$(DOCS)/downloads/benchmarks-latex.zip
 
 SERVE_HOST ?= 127.0.0.1
 
@@ -58,20 +63,21 @@ publish: pdf mkdocs
 	-git push
 	cd ${WWW}; mkdocs gh-deploy
 
-mkdocs:
+mkdocs: latex-export
 	$(call BANNER,"Generating MkDocs content")
 	python ${SCRIPT} --files=${FILES}  --format=mkdocs --outdir=./content --columns ${COLUMNS}
 	mkdir -p ${DOCS}/tex/images
 	mkdir -p ${DOCS}/md
 	mkdir -p ${DOCS}/assets
+	mkdir -p ${DOCS}/downloads
 	cp -r content/md ${DOCS}
 	cp -r content/tex ${DOCS}
 	cp -r content/assets ${DOCS}
 	cp content/mkdocs.yml ${WWW}
 	cp source/index.md ${DOCS}/index.md
 	cp content/tex/benchmarks.pdf ${DOCS}/benchmarks.pdf
+	cp $(LATEX_ZIP_SRC) $(LATEX_ZIP_DEST)
 	$(call BANNER, "CLEAN LaTeX")
-	cd ${DOCS}/tex; rm -rf *.aux *.bcf *.blg *.fdb_latexmk *.fls *.log *.out *.run.xml *.toc table.texbanner 
 	
 tex:
 	python ${SCRIPT} --files=${FILES} --format=tex --outdir=./content --standalone --columns=${COLUMNS}
@@ -84,6 +90,10 @@ standalone:
 
 pdf: tex
 	cd content/tex; latexmk -pdf -silent benchmarks.tex
+
+latex-export:
+	mkdir -p $(LATEX_DOWNLOAD_DIR)
+	cd $(LATEX_DIR); zip -rq $(abspath $(LATEX_ZIP_SRC)) . -x@$(abspath $(LATEX_EXCLUDE))
 
 clean:
 	rm -rf content/md
@@ -113,5 +123,5 @@ structure:
 	python ${SCRIPT} --files=source/benchmarks.yaml --check_structure --structure=source/benchmarks-addon.yaml
 	python ${SCRIPT} --files=source/benchmarks-addon.yaml --check_structure 
 
-serve:
+serve: mkdocs
 	cd www/science-ai-benchmarks; mkdocs serve -a $(SERVE_HOST):8000

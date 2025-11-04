@@ -1,0 +1,3904 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.8.26)  4 NOV 2025 15:38
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**benchmarks.tex
+(./benchmarks.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/base
+/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (/usr/share/texlive/texmf-dist/tex/latex/preprint/fullpage.sty
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip49
+) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen139
+\ar@mcellbox=\box50
+\extrarowheight=\dimen140
+\NC@list=\toks18
+\extratabsurround=\skip50
+\backup@length=\skip51
+\ar@cellbox=\box51
+)
+\rotheadsize=\dimen141
+\c@nlinenum=\count193
+\TeXr@lab=\toks19
+) (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\enitkv@toks@=\toks20
+\labelindent=\skip52
+\enit@outerparindent=\dimen142
+\enit@toks=\toks21
+\enit@inbox=\box52
+\enit@count@id=\count194
+\enitdp@description=\count195
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+) (/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks22
+) (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+)
+\@linkdim=\dimen143
+\Hy@linkcounter=\count196
+\Hy@pagecounter=\count197
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
+File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
+nguages
+) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count198
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4445.
+\c@Hy@tempcnt=\count199
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4804.
+\XeTeXLinkMargin=\dimen144
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count266
+\Field@Width=\dimen145
+\Fld@charsize=\dimen146
+Package hyperref Info: Hyper figures OFF on input line 6076.
+Package hyperref Info: Link nesting OFF on input line 6081.
+Package hyperref Info: Hyper index ON on input line 6084.
+Package hyperref Info: backreferencing OFF on input line 6091.
+Package hyperref Info: Link coloring OFF on input line 6096.
+Package hyperref Info: Link coloring with OCG OFF on input line 6101.
+Package hyperref Info: PDF/A mode OFF on input line 6106.
+LaTeX Info: Redefining \ref on input line 6146.
+LaTeX Info: Redefining \pageref on input line 6150.
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count267
+\c@Item=\count268
+\c@Hfootnote=\count269
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count270
+\c@bookmark@seq@number=\count271
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip53
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip54
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks23
+\ex@=\dimen147
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen148
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count272
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count273
+\leftroot@=\count274
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count275
+\DOTSCASE@=\count276
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+\big@size=\dimen149
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count277
+\c@MaxMatrixCols=\count278
+\dotsspace@=\muskip17
+\c@parentequation=\count279
+\dspbrk@lvl=\count280
+\tag@help=\toks24
+\row@=\count281
+\column@=\count282
+\maxfields@=\count283
+\andhelp@=\toks25
+\eqnshift@=\dimen150
+\alignsep@=\dimen151
+\tagshift@=\dimen152
+\tagwidth@=\dimen153
+\totwidth@=\dimen154
+\lineht@=\dimen155
+\@envbody=\toks26
+\multlinegap=\skip55
+\multlinetaggap=\skip56
+\mathdisplay@stack=\toks27
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+) (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+)))
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+) (/usr/share/texlive/texmf-dist/tex/latex/wasysym/wasysym.sty
+Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
+\symwasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip57
+\LTright=\skip58
+\LTpre=\skip59
+\LTpost=\skip60
+\LTchunksize=\count284
+\LTcapwidth=\dimen156
+\LT@head=\box55
+\LT@firsthead=\box56
+\LT@foot=\box57
+\LT@lastfoot=\box58
+\LT@gbox=\box59
+\LT@cols=\count285
+\LT@rows=\count286
+\c@LT@tables=\count287
+\c@LT@chunks=\count288
+\LT@p@ftn=\toks28
+) (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2022/02/02 v3.17 programmable bibliographies (PK/MW)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count289
+) (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count290
+(/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@tabx@nest=\count291
+\c@listtotal=\count292
+\c@listcount=\count293
+\c@liststart=\count294
+\c@liststop=\count295
+\c@citecount=\count296
+\c@citetotal=\count297
+\c@multicitecount=\count298
+\c@multicitetotal=\count299
+\c@instcount=\count300
+\c@maxnames=\count301
+\c@minnames=\count302
+\c@maxitems=\count303
+\c@minitems=\count304
+\c@citecounter=\count305
+\c@maxcitecounter=\count306
+\c@savedcitecounter=\count307
+\c@uniquelist=\count308
+\c@uniquename=\count309
+\c@refsection=\count310
+\c@refsegment=\count311
+\c@maxextratitle=\count312
+\c@maxextratitleyear=\count313
+\c@maxextraname=\count314
+\c@maxextradate=\count315
+\c@maxextraalpha=\count316
+\c@abbrvpenalty=\count317
+\c@highnamepenalty=\count318
+\c@lownamepenalty=\count319
+\c@maxparens=\count320
+\c@parenlevel=\count321
+\blx@tempcnta=\count322
+\blx@tempcntb=\count323
+\blx@tempcntc=\count324
+\c@blx@maxsection=\count325
+\c@blx@maxsegment@0=\count326
+\blx@notetype=\count327
+\blx@parenlevel@text=\count328
+\blx@parenlevel@foot=\count329
+\c@blx@sectionciteorder@0=\count330
+\blx@entrysetcounter=\count331
+\blx@biblioinstance=\count332
+\labelnumberwidth=\skip61
+\labelalphawidth=\skip62
+\biblabelsep=\skip63
+\bibitemsep=\skip64
+\bibnamesep=\skip65
+\bibinitsep=\skip66
+\bibparsep=\skip67
+\bibhang=\skip68
+\blx@bcfin=\read2
+\blx@bcfout=\write3
+\blx@langwohyphens=\language87
+\c@mincomprange=\count333
+\c@maxcomprange=\count334
+\c@mincompwidth=\count335
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2022/02/02 v3.17 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'ieee.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count336
+\c@savedafterword=\count337
+\c@annotator=\count338
+\c@savedannotator=\count339
+\c@author=\count340
+\c@savedauthor=\count341
+\c@bookauthor=\count342
+\c@savedbookauthor=\count343
+\c@commentator=\count344
+\c@savedcommentator=\count345
+\c@editor=\count346
+\c@savededitor=\count347
+\c@editora=\count348
+\c@savededitora=\count349
+\c@editorb=\count350
+\c@savededitorb=\count351
+\c@editorc=\count352
+\c@savededitorc=\count353
+\c@foreword=\count354
+\c@savedforeword=\count355
+\c@holder=\count356
+\c@savedholder=\count357
+\c@introduction=\count358
+\c@savedintroduction=\count359
+\c@namea=\count360
+\c@savednamea=\count361
+\c@nameb=\count362
+\c@savednameb=\count363
+\c@namec=\count364
+\c@savednamec=\count365
+\c@translator=\count366
+\c@savedtranslator=\count367
+\c@shortauthor=\count368
+\c@savedshortauthor=\count369
+\c@shorteditor=\count370
+\c@savedshorteditor=\count371
+\c@labelname=\count372
+\c@savedlabelname=\count373
+\c@institution=\count374
+\c@savedinstitution=\count375
+\c@lista=\count376
+\c@savedlista=\count377
+\c@listb=\count378
+\c@savedlistb=\count379
+\c@listc=\count380
+\c@savedlistc=\count381
+\c@listd=\count382
+\c@savedlistd=\count383
+\c@liste=\count384
+\c@savedliste=\count385
+\c@listf=\count386
+\c@savedlistf=\count387
+\c@location=\count388
+\c@savedlocation=\count389
+\c@organization=\count390
+\c@savedorganization=\count391
+\c@origlocation=\count392
+\c@savedoriglocation=\count393
+\c@origpublisher=\count394
+\c@savedorigpublisher=\count395
+\c@publisher=\count396
+\c@savedpublisher=\count397
+\c@language=\count398
+\c@savedlanguage=\count399
+\c@origlanguage=\count400
+\c@savedoriglanguage=\count401
+\c@pageref=\count402
+\c@savedpageref=\count403
+\shorthandwidth=\skip69
+\shortjournalwidth=\skip70
+\shortserieswidth=\skip71
+\shorttitlewidth=\skip72
+\shortauthorwidth=\skip73
+\shorteditorwidth=\skip74
+\locallabelnumberwidth=\skip75
+\locallabelalphawidth=\skip76
+\localshorthandwidth=\skip77
+\localshortjournalwidth=\skip78
+\localshortserieswidth=\skip79
+\localshorttitlewidth=\skip80
+\localshortauthorwidth=\skip81
+\localshorteditorwidth=\skip82
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
+\c@textcitecount=\count404
+\c@textcitetotal=\count405
+\c@textcitemaxnames=\count406
+\c@biburlbigbreakpenalty=\count407
+\c@biburlbreakpenalty=\count408
+\c@biburlnumpenalty=\count409
+\c@biburlucpenalty=\count410
+\c@biburllcpenalty=\count411
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count412
+)
+Package biblatex Info: Trying to load bibliography style 'ieee'...
+Package biblatex Info: ... file 'ieee.bbx' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex-ieee/ieee.bbx
+File: ieee.bbx 2021/12/06 v1.3f biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
+File: numeric-comp.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count413
+\c@bbx:relatedtotal=\count414
+))))
+Package biblatex Info: Trying to load citation style 'ieee'...
+Package biblatex Info: ... file 'ieee.cbx' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex-ieee/ieee.cbx
+File: ieee.cbx 2021/12/06 v1.3f biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
+File: numeric-comp.cbx 2022/02/02 v3.17 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count415
+\c@cbx@tempcntb=\count416
+\c@cbx@tempcntc=\count417
+\c@cbx@tempcntd=\count418
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\cites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-01-21 L3 programming layer (loader) 
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count419
+\l__pdf_internal_box=\box60
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2022-01-21 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (/usr/shar
+e/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2022-01-12 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2022/02/02 v3.17 expl3 case changing code for biblatex
+)) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen157
+\captionmargin@=\dimen158
+\captionwidth=\dimen159
+\caption@tempdima=\dimen160
+\caption@indent=\dimen161
+\caption@parindent=\dimen162
+\caption@hangindent=\dimen163
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count420
+\c@continuedfloat=\count421
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
+)) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen164
+\Gin@req@width=\dimen165
+) (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/share/texlive/texmf-dist/tex/latex/eurosym/eurosym.sty
+Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
+\@eurobox=\box61
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
+Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
+LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+   defining Unicode char U+0394 (decimal 916)
+\@quotelevel=\count422
+\@quotereset=\count423
+(./benchmarks.aux)
+\openout1 = `benchmarks.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+Package hyperref Info: Link coloring OFF on input line 39.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count424
+)
+LaTeX Info: Redefining \ref on input line 39.
+LaTeX Info: Redefining \pageref on input line 39.
+LaTeX Info: Redefining \nameref on input line 39.
+(./benchmarks.out) (./benchmarks.out)
+\@outlinefile=\write4
+\openout4 = `benchmarks.out'.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count425
+\scratchdimen=\dimen166
+\scratchbox=\box62
+\nofMPsegments=\count426
+\nofMParguments=\count427
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count428
+\MPscratchDim=\dimen167
+\MPnumerator=\count429
+\makeMPintoPDFobject=\count430
+\everyMPtoPDFconversion=\toks30
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `benchmarks.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'benchmarks.bbl' found.
+(./benchmarks.bbl)
+Package biblatex Info: Reference section=0 on input line 39.
+Package biblatex Info: Reference segment=0 on input line 39.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 53
+.
+(/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 6
+3.
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./benchmarks.toc [2
+
+])
+\tf@toc=\write5
+\openout5 = `benchmarks.toc'.
+
+[3] (./table.tex [4
+
+]
+Overfull \hbox (0.60275pt too wide) in paragraph at lines 6--6
+[]|\T1/cmr/bx/n/8 Domain| 
+ []
+
+
+Overfull \hbox (15.08525pt too wide) in paragraph at lines 6--6
+[]|\T1/cmr/bx/n/8 Average
+ []
+
+
+Overfull \hbox (16.45714pt too wide) in paragraph at lines 6--6
+[]|\T1/cmr/bx/n/8 Citation| 
+ []
+
+
+Overfull \hbox (0.60275pt too wide) in paragraph at lines 9--9
+[]|\T1/cmr/bx/n/8 Domain| 
+ []
+
+
+Overfull \hbox (15.08525pt too wide) in paragraph at lines 9--9
+[]|\T1/cmr/bx/n/8 Average
+ []
+
+
+Overfull \hbox (16.45714pt too wide) in paragraph at lines 9--9
+[]|\T1/cmr/bx/n/8 Citation| 
+ []
+
+<images//climatelearn_-_weather_forcasting_radar.pdf, id=418, 449.03008pt x 418
+.81903pt>
+File: images//climatelearn_-_weather_forcasting_radar.pdf Graphic file (type pd
+f)
+<use images//climatelearn_-_weather_forcasting_radar.pdf>
+Package pdftex.def Info: images//climatelearn_-_weather_forcasting_radar.pdf  u
+sed on input line 16.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 16--16
+[]|[]| 
+ []
+
+
+Overfull \hbox (8.36002pt too wide) in paragraph at lines 16--16
+[]|\T1/cmr/m/n/8 ClimateLearn
+ []
+
+
+Overfull \hbox (9.39648pt too wide) in paragraph at lines 16--16
+\T1/cmr/m/n/8 tion/Forecasting| 
+ []
+
+
+Overfull \hbox (0.62497pt too wide) in paragraph at lines 16--16
+\T1/cmr/m/n/8 Anomaly
+ []
+
+<images//climatelearn_-_downscaling_radar.pdf, id=420, 449.03008pt x 396.33504p
+t>
+File: images//climatelearn_-_downscaling_radar.pdf Graphic file (type pdf)
+<use images//climatelearn_-_downscaling_radar.pdf>
+Package pdftex.def Info: images//climatelearn_-_downscaling_radar.pdf  used on 
+input line 17.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 17--17
+[]|[]| 
+ []
+
+
+Overfull \hbox (8.36002pt too wide) in paragraph at lines 17--17
+[]|\T1/cmr/m/n/8 ClimateLearn
+ []
+
+
+Overfull \hbox (0.62497pt too wide) in paragraph at lines 17--17
+\T1/cmr/m/n/8 Anomaly
+ []
+
+<images//climatelearn_-_climate_projection_radar.pdf, id=422, 449.03008pt x 418
+.81903pt>
+File: images//climatelearn_-_climate_projection_radar.pdf Graphic file (type pd
+f)
+<use images//climatelearn_-_climate_projection_radar.pdf>
+Package pdftex.def Info: images//climatelearn_-_climate_projection_radar.pdf  u
+sed on input line 18.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 18--18
+[]|[]| 
+ []
+
+
+Overfull \hbox (8.36002pt too wide) in paragraph at lines 18--18
+[]|\T1/cmr/m/n/8 ClimateLearn
+ []
+
+
+Overfull \hbox (0.62497pt too wide) in paragraph at lines 18--18
+\T1/cmr/m/n/8 Anomaly
+ []
+
+<images//mlcommons_science_-_cloudmask_radar.pdf, id=424, 449.03008pt x 396.335
+04pt>
+File: images//mlcommons_science_-_cloudmask_radar.pdf Graphic file (type pdf)
+<use images//mlcommons_science_-_cloudmask_radar.pdf>
+Package pdftex.def Info: images//mlcommons_science_-_cloudmask_radar.pdf  used 
+on input line 19.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 19--19
+[]|[]| 
+ []
+
+
+Overfull \hbox (7.68379pt too wide) in paragraph at lines 19--19
+[]|\T1/cmr/m/n/8 MLCommons
+ []
+
+<images//mlcommons_science_-_earthquake_radar.pdf, id=426, 449.03008pt x 396.33
+504pt>
+File: images//mlcommons_science_-_earthquake_radar.pdf Graphic file (type pdf)
+<use images//mlcommons_science_-_earthquake_radar.pdf>
+Package pdftex.def Info: images//mlcommons_science_-_earthquake_radar.pdf  used
+ on input line 20.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 20--20
+[]|[]| 
+ []
+
+
+Overfull \hbox (7.68379pt too wide) in paragraph at lines 20--20
+[]|\T1/cmr/m/n/8 MLCommons
+ []
+
+
+Overfull \hbox (9.39648pt too wide) in paragraph at lines 20--20
+\T1/cmr/m/n/8 tion/Forecasting| 
+ []
+
+<images//mlcommons_science_-_candle_uno_radar.pdf, id=428, 449.03008pt x 396.33
+504pt>
+File: images//mlcommons_science_-_candle_uno_radar.pdf Graphic file (type pdf)
+<use images//mlcommons_science_-_candle_uno_radar.pdf>
+Package pdftex.def Info: images//mlcommons_science_-_candle_uno_radar.pdf  used
+ on input line 21.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 21--21
+[]|[]| 
+ []
+
+
+Overfull \hbox (7.68379pt too wide) in paragraph at lines 21--21
+[]|\T1/cmr/m/n/8 MLCommons
+ []
+
+<images//mlcommons_science_-_stemdl_radar.pdf, id=430, 449.03008pt x 396.33504p
+t>
+File: images//mlcommons_science_-_stemdl_radar.pdf Graphic file (type pdf)
+<use images//mlcommons_science_-_stemdl_radar.pdf>
+Package pdftex.def Info: images//mlcommons_science_-_stemdl_radar.pdf  used on 
+input line 22.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 22--22
+[]|[]| 
+ []
+
+
+Overfull \hbox (7.68379pt too wide) in paragraph at lines 22--22
+[]|\T1/cmr/m/n/8 MLCommons
+ []
+
+
+Overfull \hbox (1.85939pt too wide) in paragraph at lines 22--22
+[]|\T1/cmr/m/n/8 Materials
+ []
+
+<images//arc-challenge_advanced_reasoning_challenge_radar.pdf, id=432, 449.0300
+8pt x 418.81903pt>
+File: images//arc-challenge_advanced_reasoning_challenge_radar.pdf Graphic file
+ (type pdf)
+<use images//arc-challenge_advanced_reasoning_challenge_radar.pdf>
+Package pdftex.def Info: images//arc-challenge_advanced_reasoning_challenge_rad
+ar.pdf  used on input line 23.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 23--23
+[]|[]| 
+ []
+
+
+Overfull \hbox (22.82233pt too wide) in paragraph at lines 23--23
+[]|\T1/cmr/m/n/8 Computational
+ []
+
+
+Overfull \hbox (0.82497pt too wide) in paragraph at lines 23--23
+[]|\T1/cmr/m/n/8 Commonsense
+ []
+
+
+Overfull \hbox (1.34007pt too wide) in paragraph at lines 23--23
+[]|\T1/cmr/m/n/8 Accuracy| 
+ []
+
+<images//molgen_radar.pdf, id=434, 449.03008pt x 396.33504pt>
+File: images//molgen_radar.pdf Graphic file (type pdf)
+<use images//molgen_radar.pdf>
+Package pdftex.def Info: images//molgen_radar.pdf  used on input line 24.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 24--24
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.64458pt too wide) in paragraph at lines 24--24
+[]|\T1/cmr/m/n/8 Chemistry| 
+ []
+
+
+Overfull \hbox (3.7006pt too wide) in paragraph at lines 24--24
+[]|\T1/cmr/m/n/8 Molecular
+ []
+
+
+Overfull \hbox (5.81815pt too wide) in paragraph at lines 24--24
+[]|\T1/cmr/m/n/8 Validity%,
+ []
+
+<images//open_graph_benchmark_ogb_-_biology_radar.pdf, id=436, 449.03008pt x 41
+8.81903pt>
+File: images//open_graph_benchmark_ogb_-_biology_radar.pdf Graphic file (type p
+df)
+<use images//open_graph_benchmark_ogb_-_biology_radar.pdf>
+Package pdftex.def Info: images//open_graph_benchmark_ogb_-_biology_radar.pdf  
+used on input line 25.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 25--25
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.34375pt too wide) in paragraph at lines 25--25
+[]|\T1/cmr/m/n/8 Biological
+ []
+
+
+Overfull \hbox (9.39648pt too wide) in paragraph at lines 25--25
+\T1/cmr/m/n/8 tion/Forecasting| 
+ []
+
+
+Overfull \hbox (2.99245pt too wide) in paragraph at lines 25--25
+[]|\T1/cmr/m/n/8 Accuracy,
+ []
+
+<images//llms_for_crop_science_radar.pdf, id=438, 449.03008pt x 396.33504pt>
+File: images//llms_for_crop_science_radar.pdf Graphic file (type pdf)
+<use images//llms_for_crop_science_radar.pdf>
+Package pdftex.def Info: images//llms_for_crop_science_radar.pdf  used on input
+ line 26.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 26--26
+[]|[]| 
+ []
+
+
+Overfull \hbox (7.1206pt too wide) in paragraph at lines 26--26
+[]|\T1/cmr/m/n/8 Evaluating
+ []
+
+
+Overfull \hbox (2.99245pt too wide) in paragraph at lines 26--26
+[]|\T1/cmr/m/n/8 Accuracy,
+ []
+
+
+Overfull \hbox (9.94353pt too wide) in paragraph at lines 26--26
+\T1/cmr/m/n/8 InternLM2-
+ []
+
+
+Overfull \hbox (1.81357pt too wide) in paragraph at lines 26--26
+\T1/cmr/m/n/8 Qwen1.5-
+ []
+
+<images//scicode_radar.pdf, id=440, 449.03008pt x 396.33504pt>
+File: images//scicode_radar.pdf Graphic file (type pdf)
+<use images//scicode_radar.pdf>
+Package pdftex.def Info: images//scicode_radar.pdf  used on input line 27.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 27--27
+[]|[]| 
+ []
+
+
+Overfull \hbox (22.82233pt too wide) in paragraph at lines 27--27
+[]|\T1/cmr/m/n/8 Computational
+ []
+
+
+Overfull \hbox (6.77069pt too wide) in paragraph at lines 27--27
+[]|\T1/cmr/m/n/8 Claude3.5-
+ []
+
+<images//calochallenge__radar.pdf, id=442, 449.03008pt x 396.33504pt>
+File: images//calochallenge__radar.pdf Graphic file (type pdf)
+<use images//calochallenge__radar.pdf>
+Package pdftex.def Info: images//calochallenge__radar.pdf  used on input line 2
+8.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 28--28
+[]|[]| 
+ []
+
+
+Overfull \hbox (11.07185pt too wide) in paragraph at lines 28--28
+[]|\T1/cmr/m/n/8 CaloChallenge
+ []
+
+
+Overfull \hbox (7.72185pt too wide) in paragraph at lines 28--28
+\T1/cmr/m/n/8 generative-
+ []
+
+
+Overfull \hbox (1.11235pt too wide) in paragraph at lines 28--28
+\T1/cmr/m/n/8 calorime-
+ []
+
+
+Overfull \hbox (5.63625pt too wide) in paragraph at lines 28--28
+[]|\T1/cmr/m/n/8 Histogram
+ []
+
+<images//pdebench_radar.pdf, id=444, 449.03008pt x 396.33504pt>
+File: images//pdebench_radar.pdf Graphic file (type pdf)
+<use images//pdebench_radar.pdf>
+Package pdftex.def Info: images//pdebench_radar.pdf  used on input line 29.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 29--29
+[]|[]| 
+ []
+
+
+Overfull \hbox (22.82233pt too wide) in paragraph at lines 29--29
+[]|\T1/cmr/m/n/8 Computational
+ []
+
+
+Overfull \hbox (9.01598pt too wide) in paragraph at lines 29--29
+[]|\T1/cmr/m/n/8 Benchmark
+ []
+
+
+Overfull \hbox (5.35437pt too wide) in paragraph at lines 29--29
+\T1/cmr/m/n/8 dependent
+ []
+
+
+Overfull \hbox (2.82166pt too wide) in paragraph at lines 29--29
+\T1/cmr/m/n/8 Gradient-
+ []
+
+<images//urban_data_layer_udl_-_pm_concentration_prediction_radar.pdf, id=446, 
+449.03008pt x 418.81903pt>
+File: images//urban_data_layer_udl_-_pm_concentration_prediction_radar.pdf Grap
+hic file (type pdf)
+<use images//urban_data_layer_udl_-_pm_concentration_prediction_radar.pdf>
+Package pdftex.def Info: images//urban_data_layer_udl_-_pm_concentration_predic
+tion_radar.pdf  used on input line 30.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 30--30
+[]|[]| 
+ []
+
+
+Overfull \hbox (32.8782pt too wide) in paragraph at lines 30--30
+\T1/cmr/m/n/8 sion/classification
+ []
+
+<images//urban_data_layer_udl_-_built-up_area_classification_radar.pdf, id=448,
+ 449.03008pt x 418.81903pt>
+File: images//urban_data_layer_udl_-_built-up_area_classification_radar.pdf Gra
+phic file (type pdf)
+<use images//urban_data_layer_udl_-_built-up_area_classification_radar.pdf>
+Package pdftex.def Info: images//urban_data_layer_udl_-_built-up_area_classific
+ation_radar.pdf  used on input line 31.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 31--31
+[]|[]| 
+ []
+
+
+Overfull \hbox (32.8782pt too wide) in paragraph at lines 31--31
+\T1/cmr/m/n/8 sion/classification
+ []
+
+<images//urban_data_layer_udl_-_administrative_boundaries_identification_radar.
+pdf, id=450, 449.03008pt x 441.30302pt>
+File: images//urban_data_layer_udl_-_administrative_boundaries_identification_r
+adar.pdf Graphic file (type pdf)
+<use images//urban_data_layer_udl_-_administrative_boundaries_identification_ra
+dar.pdf>
+Package pdftex.def Info: images//urban_data_layer_udl_-_administrative_boundari
+es_identification_radar.pdf  used on input line 32.
+(pdftex.def)             Requested size: 70.46037pt x 69.24297pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 32--32
+[]|[]| 
+ []
+
+
+Overfull \hbox (32.8782pt too wide) in paragraph at lines 32--32
+\T1/cmr/m/n/8 sion/classification
+ []
+
+<images//urban_data_layer_udl_-_el_nino_anomaly_detection_radar.pdf, id=452, 44
+9.03008pt x 418.81903pt>
+File: images//urban_data_layer_udl_-_el_nino_anomaly_detection_radar.pdf Graphi
+c file (type pdf)
+<use images//urban_data_layer_udl_-_el_nino_anomaly_detection_radar.pdf>
+Package pdftex.def Info: images//urban_data_layer_udl_-_el_nino_anomaly_detecti
+on_radar.pdf  used on input line 33.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 33--33
+[]|[]| 
+ []
+
+
+Overfull \hbox (32.8782pt too wide) in paragraph at lines 33--33
+\T1/cmr/m/n/8 sion/classification
+ []
+
+<images//spiqa_llm_radar.pdf, id=454, 449.03008pt x 396.33504pt>
+File: images//spiqa_llm_radar.pdf Graphic file (type pdf)
+<use images//spiqa_llm_radar.pdf>
+Package pdftex.def Info: images//spiqa_llm_radar.pdf  used on input line 34.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 34--34
+[]|[]| 
+ []
+
+
+Overfull \hbox (22.82233pt too wide) in paragraph at lines 34--34
+[]|\T1/cmr/m/n/8 Computational
+ []
+
+
+Overfull \hbox (7.1206pt too wide) in paragraph at lines 34--34
+[]|\T1/cmr/m/n/8 Evaluating
+ []
+
+
+Overfull \hbox (2.99245pt too wide) in paragraph at lines 34--34
+[]|\T1/cmr/m/n/8 Accuracy,
+ []
+
+
+Overfull \hbox (5.75288pt too wide) in paragraph at lines 34--34
+\T1/cmr/m/n/8 MiniGPT-
+ []
+
+<images//mlcommons_medical_ai_-_pancreas_segmentation_dfci_radar.pdf, id=456, 4
+49.03008pt x 418.81903pt>
+File: images//mlcommons_medical_ai_-_pancreas_segmentation_dfci_radar.pdf Graph
+ic file (type pdf)
+<use images//mlcommons_medical_ai_-_pancreas_segmentation_dfci_radar.pdf>
+Package pdftex.def Info: images//mlcommons_medical_ai_-_pancreas_segmentation_d
+fci_radar.pdf  used on input line 35.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 35--35
+[]|[]| 
+ []
+
+
+Overfull \hbox (7.68379pt too wide) in paragraph at lines 35--35
+[]|\T1/cmr/m/n/8 MLCommons
+ []
+
+
+Overfull \hbox (3.58675pt too wide) in paragraph at lines 35--35
+[]|\T1/cmr/m/n/8 Federated
+ []
+
+
+Overfull \hbox (1.45393pt too wide) in paragraph at lines 35--35
+[]|\T1/cmr/m/n/8 MedPerf-
+ []
+
+
+Overfull \hbox (0.86935pt too wide) in paragraph at lines 35--35
+\T1/cmr/m/n/8 validated
+ []
+
+<images//mlcommons_medical_ai_-_brain_tumor_segmentation_brats_radar.pdf, id=45
+8, 449.03008pt x 418.81903pt>
+File: images//mlcommons_medical_ai_-_brain_tumor_segmentation_brats_radar.pdf G
+raphic file (type pdf)
+<use images//mlcommons_medical_ai_-_brain_tumor_segmentation_brats_radar.pdf>
+Package pdftex.def Info: images//mlcommons_medical_ai_-_brain_tumor_segmentatio
+n_brats_radar.pdf  used on input line 36.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 36--36
+[]|[]| 
+ []
+
+
+Overfull \hbox (7.68379pt too wide) in paragraph at lines 36--36
+[]|\T1/cmr/m/n/8 MLCommons
+ []
+
+
+Overfull \hbox (3.58675pt too wide) in paragraph at lines 36--36
+[]|\T1/cmr/m/n/8 Federated
+ []
+
+
+Overfull \hbox (1.45393pt too wide) in paragraph at lines 36--36
+[]|\T1/cmr/m/n/8 MedPerf-
+ []
+
+
+Overfull \hbox (0.86935pt too wide) in paragraph at lines 36--36
+\T1/cmr/m/n/8 validated
+ []
+
+<images//mlcommons_medical_ai_-__surgical_workflow_phase_recognition_surgmlcube
+_radar.pdf, id=460, 449.03008pt x 441.30302pt>
+File: images//mlcommons_medical_ai_-__surgical_workflow_phase_recognition_surgm
+lcube_radar.pdf Graphic file (type pdf)
+<use images//mlcommons_medical_ai_-__surgical_workflow_phase_recognition_surgml
+cube_radar.pdf>
+Package pdftex.def Info: images//mlcommons_medical_ai_-__surgical_workflow_phas
+e_recognition_surgmlcube_radar.pdf  used on input line 37.
+(pdftex.def)             Requested size: 70.46037pt x 69.24297pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 37--37
+[]|[]| 
+ []
+
+
+Overfull \hbox (7.68379pt too wide) in paragraph at lines 37--37
+[]|\T1/cmr/m/n/8 MLCommons
+ []
+
+
+Overfull \hbox (3.58675pt too wide) in paragraph at lines 37--37
+[]|\T1/cmr/m/n/8 Federated
+ []
+
+
+Overfull \hbox (1.45393pt too wide) in paragraph at lines 37--37
+[]|\T1/cmr/m/n/8 MedPerf-
+ []
+
+
+Overfull \hbox (0.86935pt too wide) in paragraph at lines 37--37
+\T1/cmr/m/n/8 validated
+ []
+
+<images//seafloorai_radar.pdf, id=462, 449.03008pt x 396.33504pt>
+File: images//seafloorai_radar.pdf Graphic file (type pdf)
+<use images//seafloorai_radar.pdf>
+Package pdftex.def Info: images//seafloorai_radar.pdf  used on input line 38.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 38--38
+[]|[]| 
+ []
+
+
+Overfull \hbox (17.3931pt too wide) in paragraph at lines 38--38
+[]|\T1/cmr/m/n/8 Segmentation
+ []
+
+
+Overfull \hbox (8.78687pt too wide) in paragraph at lines 38--38
+[]|\T1/cmr/m/n/8 SegFormer,
+ []
+
+<images//seafloorgenai_radar.pdf, id=464, 449.03008pt x 396.33504pt>
+File: images//seafloorgenai_radar.pdf Graphic file (type pdf)
+<use images//seafloorgenai_radar.pdf>
+Package pdftex.def Info: images//seafloorgenai_radar.pdf  used on input line 39
+.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 39--39
+[]|[]| 
+ []
+
+
+Overfull \hbox (11.82722pt too wide) in paragraph at lines 39--39
+[]|\T1/cmr/m/n/8 SeafloorGenAI| 
+ []
+
+
+Overfull \hbox (17.3931pt too wide) in paragraph at lines 39--39
+[]|\T1/cmr/m/n/8 Segmentation
+ []
+
+
+Overfull \hbox (8.78687pt too wide) in paragraph at lines 39--39
+[]|\T1/cmr/m/n/8 SegFormer,
+ []
+
+<images//gess_-_track_pileup_radar.pdf, id=466, 449.03008pt x 396.33504pt>
+File: images//gess_-_track_pileup_radar.pdf Graphic file (type pdf)
+<use images//gess_-_track_pileup_radar.pdf>
+Package pdftex.def Info: images//gess_-_track_pileup_radar.pdf  used on input l
+ine 40.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 40--40
+[]|[]| 
+ []
+
+
+Overfull \hbox (9.01598pt too wide) in paragraph at lines 40--40
+[]|\T1/cmr/m/n/8 Benchmark
+ []
+
+
+Overfull \hbox (2.99245pt too wide) in paragraph at lines 40--40
+[]|\T1/cmr/m/n/8 Accuracy,
+ []
+
+
+Overfull \hbox (13.48572pt too wide) in paragraph at lines 40--40
+\T1/cmr/m/n/8 DimeNet++| 
+ []
+
+<images//gess_-_track_signal_radar.pdf, id=468, 449.03008pt x 396.33504pt>
+File: images//gess_-_track_signal_radar.pdf Graphic file (type pdf)
+<use images//gess_-_track_signal_radar.pdf>
+Package pdftex.def Info: images//gess_-_track_signal_radar.pdf  used on input l
+ine 41.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 41--41
+[]|[]| 
+ []
+
+
+Overfull \hbox (9.01598pt too wide) in paragraph at lines 41--41
+[]|\T1/cmr/m/n/8 Benchmark
+ []
+
+
+Overfull \hbox (2.99245pt too wide) in paragraph at lines 41--41
+[]|\T1/cmr/m/n/8 Accuracy,
+ []
+
+
+Overfull \hbox (13.48572pt too wide) in paragraph at lines 41--41
+\T1/cmr/m/n/8 DimeNet++| 
+ []
+
+<images//gess_-_drugood_radar.pdf, id=470, 449.03008pt x 396.33504pt>
+File: images//gess_-_drugood_radar.pdf Graphic file (type pdf)
+<use images//gess_-_drugood_radar.pdf>
+Package pdftex.def Info: images//gess_-_drugood_radar.pdf  used on input line 4
+2.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 42--42
+[]|[]| 
+ []
+
+
+Overfull \hbox (9.01598pt too wide) in paragraph at lines 42--42
+[]|\T1/cmr/m/n/8 Benchmark
+ []
+
+
+Overfull \hbox (2.99245pt too wide) in paragraph at lines 42--42
+[]|\T1/cmr/m/n/8 Accuracy,
+ []
+
+
+Overfull \hbox (13.48572pt too wide) in paragraph at lines 42--42
+\T1/cmr/m/n/8 DimeNet++| 
+ []
+
+<images//gess_-_qmof_radar.pdf, id=472, 449.03008pt x 396.33504pt>
+File: images//gess_-_qmof_radar.pdf Graphic file (type pdf)
+<use images//gess_-_qmof_radar.pdf>
+Package pdftex.def Info: images//gess_-_qmof_radar.pdf  used on input line 43.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 43--43
+[]|[]| 
+ []
+
+
+Overfull \hbox (1.85939pt too wide) in paragraph at lines 43--43
+[]|\T1/cmr/m/n/8 Materials
+ []
+
+
+Overfull \hbox (9.01598pt too wide) in paragraph at lines 43--43
+[]|\T1/cmr/m/n/8 Benchmark
+ []
+
+
+Overfull \hbox (2.99245pt too wide) in paragraph at lines 43--43
+[]|\T1/cmr/m/n/8 Accuracy,
+ []
+
+
+Overfull \hbox (13.48572pt too wide) in paragraph at lines 43--43
+\T1/cmr/m/n/8 DimeNet++| 
+ []
+
+<images//ocp_open_catalyst_project_radar.pdf, id=474, 449.03008pt x 396.33504pt
+>
+File: images//ocp_open_catalyst_project_radar.pdf Graphic file (type pdf)
+<use images//ocp_open_catalyst_project_radar.pdf>
+Package pdftex.def Info: images//ocp_open_catalyst_project_radar.pdf  used on i
+nput line 44.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 44--44
+[]|[]| 
+ []
+
+
+Overfull \hbox (7.29695pt too wide) in paragraph at lines 44--44
+[]|\T1/cmr/m/n/8 Chemistry,
+ []
+
+
+Overfull \hbox (1.14568pt too wide) in paragraph at lines 44--44
+[]|\T1/cmr/m/n/8 CGCNN,
+ []
+
+
+Overfull \hbox (15.84625pt too wide) in paragraph at lines 44--44
+\T1/cmr/m/n/8 DimeNet++,
+ []
+
+
+Overfull \hbox (0.91795pt too wide) in paragraph at lines 44--44
+\T1/cmr/m/n/8 GemNet-
+ []
+
+<images//jet_classification_radar.pdf, id=477, 449.03008pt x 396.33504pt>
+File: images//jet_classification_radar.pdf Graphic file (type pdf)
+<use images//jet_classification_radar.pdf>
+Package pdftex.def Info: images//jet_classification_radar.pdf  used on input li
+ne 45.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 45--45
+[]|[]| 
+ []
+
+
+Overfull \hbox (6.91731pt too wide) in paragraph at lines 45--45
+[]|\T1/cmr/m/n/8 classification,
+ []
+
+
+Overfull \hbox (2.99245pt too wide) in paragraph at lines 45--45
+[]|\T1/cmr/m/n/8 Accuracy,
+ []
+
+<images//irregular_sensor_data_compression_radar.pdf, id=479, 449.03008pt x 418
+.81903pt>
+File: images//irregular_sensor_data_compression_radar.pdf Graphic file (type pd
+f)
+<use images//irregular_sensor_data_compression_radar.pdf>
+Package pdftex.def Info: images//irregular_sensor_data_compression_radar.pdf  u
+sed on input line 46.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 46--46
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.03583pt too wide) in paragraph at lines 46--46
+[]|\T1/cmr/m/n/8 compression,
+ []
+
+
+Overfull \hbox (4.20331pt too wide) in paragraph at lines 46--46
+[]|\T1/cmr/m/n/8 Reconstruction
+ []
+
+
+Overfull \hbox (16.9196pt too wide) in paragraph at lines 46--46
+[]|\T1/cmr/m/n/8 Autoencoder,
+ []
+
+<images//mlperf_hpc_-_cosmoflow_radar.pdf, id=481, 449.03008pt x 396.33504pt>
+File: images//mlperf_hpc_-_cosmoflow_radar.pdf Graphic file (type pdf)
+<use images//mlperf_hpc_-_cosmoflow_radar.pdf>
+Package pdftex.def Info: images//mlperf_hpc_-_cosmoflow_radar.pdf  used on inpu
+t line 47.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 47--47
+[]|[]| 
+ []
+
+
+Overfull \hbox (12.59705pt too wide) in paragraph at lines 47--47
+[]|\T1/cmr/m/n/8 CosmoFlow,
+ []
+
+<images//mlperf_hpc_-_deepcam_radar.pdf, id=483, 449.03008pt x 396.33504pt>
+File: images//mlperf_hpc_-_deepcam_radar.pdf Graphic file (type pdf)
+<use images//mlperf_hpc_-_deepcam_radar.pdf>
+Package pdftex.def Info: images//mlperf_hpc_-_deepcam_radar.pdf  used on input 
+line 48.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 48--48
+[]|[]| 
+ []
+
+
+Overfull \hbox (6.15973pt too wide) in paragraph at lines 48--48
+[]|\T1/cmr/m/n/8 DeepCAM| 
+ []
+
+<images//mlperf_hpc_-_open_catalyst_project_dimenet__radar.pdf, id=485, 449.030
+08pt x 418.81903pt>
+File: images//mlperf_hpc_-_open_catalyst_project_dimenet__radar.pdf Graphic fil
+e (type pdf)
+<use images//mlperf_hpc_-_open_catalyst_project_dimenet__radar.pdf>
+Package pdftex.def Info: images//mlperf_hpc_-_open_catalyst_project_dimenet__ra
+dar.pdf  used on input line 49.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 49--49
+[]|[]| 
+ []
+
+
+Overfull \hbox (4.09578pt too wide) in paragraph at lines 49--49
+\T1/cmr/m/n/8 DimeNet++| 
+ []
+
+
+Overfull \hbox (5.64458pt too wide) in paragraph at lines 49--49
+[]|\T1/cmr/m/n/8 Chemistry| 
+ []
+
+
+Overfull \hbox (6.15973pt too wide) in paragraph at lines 49--49
+[]|\T1/cmr/m/n/8 DeepCAM| 
+ []
+
+<images//mlperf_hpc_-_openfold_radar.pdf, id=487, 449.03008pt x 396.33504pt>
+File: images//mlperf_hpc_-_openfold_radar.pdf Graphic file (type pdf)
+<use images//mlperf_hpc_-_openfold_radar.pdf>
+Package pdftex.def Info: images//mlperf_hpc_-_openfold_radar.pdf  used on input
+ line 50.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 50--50
+[]|[]| 
+ []
+
+
+Overfull \hbox (9.39648pt too wide) in paragraph at lines 50--50
+\T1/cmr/m/n/8 tion/Forecasting| 
+ []
+
+
+Overfull \hbox (6.15973pt too wide) in paragraph at lines 50--50
+[]|\T1/cmr/m/n/8 DeepCAM| 
+ []
+
+<images//hdr_ml_anomaly_challenge_-_gravitational_waves_radar.pdf, id=489, 449.
+03008pt x 418.81903pt>
+File: images//hdr_ml_anomaly_challenge_-_gravitational_waves_radar.pdf Graphic 
+file (type pdf)
+<use images//hdr_ml_anomaly_challenge_-_gravitational_waves_radar.pdf>
+Package pdftex.def Info: images//hdr_ml_anomaly_challenge_-_gravitational_waves
+_radar.pdf  used on input line 51.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 51--51
+[]|[]| 
+ []
+
+
+Overfull \hbox (2.87164pt too wide) in paragraph at lines 51--51
+[]|\T1/cmr/m/n/8 Detecting
+ []
+
+
+Overfull \hbox (17.16399pt too wide) in paragraph at lines 51--51
+\T1/cmr/m/n/8 gravitational-
+ []
+
+
+Overfull \hbox (13.54126pt too wide) in paragraph at lines 51--51
+\T1/cmr/m/n/8 LIGO/Virgo
+ []
+
+
+Overfull \hbox (8.82019pt too wide) in paragraph at lines 51--51
+\T1/cmr/m/n/8 sion/Recall| 
+ []
+
+<images//supercond_-_property_prediction_radar.pdf, id=491, 449.03008pt x 418.8
+1903pt>
+File: images//supercond_-_property_prediction_radar.pdf Graphic file (type pdf)
+
+<use images//supercond_-_property_prediction_radar.pdf>
+Package pdftex.def Info: images//supercond_-_property_prediction_radar.pdf  use
+d on input line 52.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 52--52
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.05527pt too wide) in paragraph at lines 52--52
+[]|\T1/cmr/m/n/8 SuperCon3D
+ []
+
+
+Overfull \hbox (1.85939pt too wide) in paragraph at lines 52--52
+[]|\T1/cmr/m/n/8 Materials
+ []
+
+
+Overfull \hbox (25.52527pt too wide) in paragraph at lines 52--52
+[]|\T1/cmr/m/n/8 superconductivity,
+ []
+
+
+Overfull \hbox (0.73883pt too wide) in paragraph at lines 52--52
+[]|\T1/cmr/m/n/8 SODNet,
+ []
+
+<images//supercond_-__inverse_crystal_structure_generation_radar.pdf, id=493, 4
+49.03008pt x 418.81903pt>
+File: images//supercond_-__inverse_crystal_structure_generation_radar.pdf Graph
+ic file (type pdf)
+<use images//supercond_-__inverse_crystal_structure_generation_radar.pdf>
+Package pdftex.def Info: images//supercond_-__inverse_crystal_structure_generat
+ion_radar.pdf  used on input line 53.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 53--53
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.05527pt too wide) in paragraph at lines 53--53
+[]|\T1/cmr/m/n/8 SuperCon3D
+ []
+
+
+Overfull \hbox (1.85939pt too wide) in paragraph at lines 53--53
+[]|\T1/cmr/m/n/8 Materials
+ []
+
+
+Overfull \hbox (25.52527pt too wide) in paragraph at lines 53--53
+[]|\T1/cmr/m/n/8 superconductivity,
+ []
+
+
+Overfull \hbox (0.73883pt too wide) in paragraph at lines 53--53
+[]|\T1/cmr/m/n/8 SODNet,
+ []
+
+<images//baisbench_biological_ai_scientist_benchmark_-_question_answering_radar
+.pdf, id=495, 449.03008pt x 441.30302pt>
+File: images//baisbench_biological_ai_scientist_benchmark_-_question_answering_
+radar.pdf Graphic file (type pdf)
+<use images//baisbench_biological_ai_scientist_benchmark_-_question_answering_r
+adar.pdf>
+Package pdftex.def Info: images//baisbench_biological_ai_scientist_benchmark_-_
+question_answering_radar.pdf  used on input line 54.
+(pdftex.def)             Requested size: 70.46037pt x 69.24297pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 54--54
+[]|[]| 
+ []
+
+
+Overfull \hbox (9.35895pt too wide) in paragraph at lines 54--54
+[]|\T1/cmr/m/n/8 Annotation
+ []
+
+<images//baisbench_biological_ai_scientist_benchmark_-_cell_type_annotation_rad
+ar.pdf, id=497, 449.03008pt x 441.30302pt>
+File: images//baisbench_biological_ai_scientist_benchmark_-_cell_type_annotatio
+n_radar.pdf Graphic file (type pdf)
+<use images//baisbench_biological_ai_scientist_benchmark_-_cell_type_annotation
+_radar.pdf>
+Package pdftex.def Info: images//baisbench_biological_ai_scientist_benchmark_-_
+cell_type_annotation_radar.pdf  used on input line 55.
+(pdftex.def)             Requested size: 70.46037pt x 69.24297pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 55--55
+[]|[]| 
+ []
+
+
+Overfull \hbox (9.35895pt too wide) in paragraph at lines 55--55
+[]|\T1/cmr/m/n/8 Annotation
+ []
+
+<images//the_well_radar.pdf, id=499, 449.03008pt x 396.33504pt>
+File: images//the_well_radar.pdf Graphic file (type pdf)
+<use images//the_well_radar.pdf>
+Package pdftex.def Info: images//the_well_radar.pdf  used on input line 56.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 56--56
+[]|[]| 
+ []
+
+
+Overfull \hbox (2.74945pt too wide) in paragraph at lines 56--56
+\T1/cmr/m/n/8 Medicine,
+ []
+
+
+Overfull \hbox (9.24509pt too wide) in paragraph at lines 56--56
+[]|\T1/cmr/m/n/8 Foundation
+ []
+
+
+Overfull \hbox (9.39648pt too wide) in paragraph at lines 56--56
+\T1/cmr/m/n/8 tion/Forecasting| 
+ []
+
+<images//mmlu_massive_multitask_language_understanding_radar.pdf, id=501, 449.0
+3008pt x 418.81903pt>
+File: images//mmlu_massive_multitask_language_understanding_radar.pdf Graphic f
+ile (type pdf)
+<use images//mmlu_massive_multitask_language_understanding_radar.pdf>
+Package pdftex.def Info: images//mmlu_massive_multitask_language_understanding_
+radar.pdf  used on input line 57.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 57--57
+[]|[]| 
+ []
+
+
+Overfull \hbox (22.82233pt too wide) in paragraph at lines 57--57
+[]|\T1/cmr/m/n/8 Computational
+ []
+
+
+Overfull \hbox (2.9855pt too wide) in paragraph at lines 57--57
+[]|\T1/cmr/m/n/8 Academic
+ []
+
+
+Overfull \hbox (1.34007pt too wide) in paragraph at lines 57--57
+[]|\T1/cmr/m/n/8 Accuracy| 
+ []
+
+
+Overfull \hbox (5.46823pt too wide) in paragraph at lines 57--57
+\T1/cmr/m/n/8 DeepSeek-
+ []
+
+<images//satimgnet_radar.pdf, id=503, 449.03008pt x 396.33504pt>
+File: images//satimgnet_radar.pdf Graphic file (type pdf)
+<use images//satimgnet_radar.pdf>
+Package pdftex.def Info: images//satimgnet_radar.pdf  used on input line 58.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 58--58
+[]|[]| 
+ []
+
+
+Overfull \hbox (1.34007pt too wide) in paragraph at lines 58--58
+[]|\T1/cmr/m/n/8 Accuracy| 
+ []
+
+<images//gpqa_diamond_radar.pdf, id=505, 449.03008pt x 396.33504pt>
+File: images//gpqa_diamond_radar.pdf Graphic file (type pdf)
+<use images//gpqa_diamond_radar.pdf>
+Package pdftex.def Info: images//gpqa_diamond_radar.pdf  used on input line 59.
+
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 59--59
+[]|[]| 
+ []
+
+
+Overfull \hbox (2.74945pt too wide) in paragraph at lines 59--59
+\T1/cmr/m/n/8 Medicine,
+ []
+
+
+Overfull \hbox (4.94614pt too wide) in paragraph at lines 59--59
+[]|\T1/cmr/m/n/8 Graduate-
+ []
+
+
+Overfull \hbox (1.34007pt too wide) in paragraph at lines 59--59
+[]|\T1/cmr/m/n/8 Accuracy| 
+ []
+
+
+Overfull \hbox (5.46823pt too wide) in paragraph at lines 59--59
+\T1/cmr/m/n/8 DeepSeek-
+ []
+
+<images//prmk_radar.pdf, id=507, 449.03008pt x 396.33504pt>
+File: images//prmk_radar.pdf Graphic file (type pdf)
+<use images//prmk_radar.pdf>
+Package pdftex.def Info: images//prmk_radar.pdf  used on input line 60.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 60--60
+[]|[]| 
+ []
+
+
+Overfull \hbox (15.07144pt too wide) in paragraph at lines 60--60
+[]|\T1/cmr/m/n/8 Mathematics| 
+ []
+
+
+Overfull \hbox (1.34007pt too wide) in paragraph at lines 60--60
+[]|\T1/cmr/m/n/8 Accuracy| 
+ []
+
+<images//feabench_finite_element_analysis_benchmark_evaluating_language_models_
+on_multiphysics_reasoning_ability_radar.pdf, id=509, 449.03008pt x 463.78702pt>
+
+File: images//feabench_finite_element_analysis_benchmark_evaluating_language_mo
+dels_on_multiphysics_reasoning_ability_radar.pdf Graphic file (type pdf)
+<use images//feabench_finite_element_analysis_benchmark_evaluating_language_mod
+els_on_multiphysics_reasoning_ability_radar.pdf>
+Package pdftex.def Info: images//feabench_finite_element_analysis_benchmark_eva
+luating_language_models_on_multiphysics_reasoning_ability_radar.pdf  used on in
+put line 61.
+(pdftex.def)             Requested size: 70.46037pt x 72.77084pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 61--61
+[]|[]| 
+ []
+
+
+Overfull \hbox (15.07144pt too wide) in paragraph at lines 61--61
+[]|\T1/cmr/m/n/8 Mathematics| 
+ []
+
+<images//neural_architecture_codesign_for_fast_physics_applications_radar.pdf, 
+id=511, 449.03008pt x 418.81903pt>
+File: images//neural_architecture_codesign_for_fast_physics_applications_radar.
+pdf Graphic file (type pdf)
+<use images//neural_architecture_codesign_for_fast_physics_applications_radar.p
+df>
+Package pdftex.def Info: images//neural_architecture_codesign_for_fast_physics_
+applications_radar.pdf  used on input line 62.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 62--62
+[]|[]| 
+ []
+
+
+Overfull \hbox (8.88684pt too wide) in paragraph at lines 62--62
+[]|\T1/cmr/m/n/8 Automated
+ []
+
+
+Overfull \hbox (4.18799pt too wide) in paragraph at lines 62--62
+\T1/cmr/m/n/8 hardware-
+ []
+
+
+Overfull \hbox (2.99245pt too wide) in paragraph at lines 62--62
+[]|\T1/cmr/m/n/8 Accuracy,
+ []
+
+
+Overfull \hbox (3.46594pt too wide) in paragraph at lines 62--62
+\T1/cmr/m/n/8 optimized
+ []
+
+<images//delta_squared-dft_radar.pdf, id=513, 449.03008pt x 396.33504pt>
+File: images//delta_squared-dft_radar.pdf Graphic file (type pdf)
+<use images//delta_squared-dft_radar.pdf>
+Package pdftex.def Info: images//delta_squared-dft_radar.pdf  used on input lin
+e 63.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 63--63
+[]|[]| 
+ []
+
+
+Overfull \hbox (7.29695pt too wide) in paragraph at lines 63--63
+[]|\T1/cmr/m/n/8 Chemistry,
+ []
+
+
+Overfull \hbox (20.34654pt too wide) in paragraph at lines 63--63
+[]|\T1/cmr/m/n/8 Benchmarking
+ []
+
+<images//hdr_ml_anomaly_challenge_-_sea_level_rise_radar.pdf, id=515, 449.03008
+pt x 418.81903pt>
+File: images//hdr_ml_anomaly_challenge_-_sea_level_rise_radar.pdf Graphic file 
+(type pdf)
+<use images//hdr_ml_anomaly_challenge_-_sea_level_rise_radar.pdf>
+Package pdftex.def Info: images//hdr_ml_anomaly_challenge_-_sea_level_rise_rada
+r.pdf  used on input line 64.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 64--64
+[]|[]| 
+ []
+
+
+Overfull \hbox (2.87164pt too wide) in paragraph at lines 64--64
+[]|\T1/cmr/m/n/8 Detecting
+ []
+
+
+Overfull \hbox (8.82019pt too wide) in paragraph at lines 64--64
+\T1/cmr/m/n/8 sion/Recall| 
+ []
+
+<images//vocal_call_locator_vcl_radar.pdf, id=517, 449.03008pt x 396.33504pt>
+File: images//vocal_call_locator_vcl_radar.pdf Graphic file (type pdf)
+<use images//vocal_call_locator_vcl_radar.pdf>
+Package pdftex.def Info: images//vocal_call_locator_vcl_radar.pdf  used on inpu
+t line 65.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 65--65
+[]|[]| 
+ []
+
+
+Overfull \hbox (20.34654pt too wide) in paragraph at lines 65--65
+[]|\T1/cmr/m/n/8 Benchmarking
+ []
+
+
+Overfull \hbox (12.31378pt too wide) in paragraph at lines 65--65
+[]|\T1/cmr/m/n/8 Localization
+ []
+
+
+Overfull \hbox (17.79716pt too wide) in paragraph at lines 65--65
+\T1/cmr/m/n/8 call/Precision| 
+ []
+
+<images//massspecgym_-_de_novo_molecule_generation_radar.pdf, id=519, 449.03008
+pt x 418.81903pt>
+File: images//massspecgym_-_de_novo_molecule_generation_radar.pdf Graphic file 
+(type pdf)
+<use images//massspecgym_-_de_novo_molecule_generation_radar.pdf>
+Package pdftex.def Info: images//massspecgym_-_de_novo_molecule_generation_rada
+r.pdf  used on input line 66.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 66--66
+[]|[]| 
+ []
+
+
+Overfull \hbox (11.92303pt too wide) in paragraph at lines 66--66
+[]|\T1/cmr/m/n/8 MassSpecGym
+ []
+
+
+Overfull \hbox (5.64458pt too wide) in paragraph at lines 66--66
+[]|\T1/cmr/m/n/8 Chemistry| 
+ []
+
+
+Overfull \hbox (9.01598pt too wide) in paragraph at lines 66--66
+[]|\T1/cmr/m/n/8 Benchmark
+ []
+
+
+Overfull \hbox (2.56894pt too wide) in paragraph at lines 66--66
+\T1/cmr/m/n/8 molecules
+ []
+
+
+Overfull \hbox (2.0635pt too wide) in paragraph at lines 66--66
+[]|\T1/cmr/m/n/8 Structure
+ []
+
+<images//massspecgym_-_molecule_retrieval_radar.pdf, id=521, 449.03008pt x 418.
+81903pt>
+File: images//massspecgym_-_molecule_retrieval_radar.pdf Graphic file (type pdf
+)
+<use images//massspecgym_-_molecule_retrieval_radar.pdf>
+Package pdftex.def Info: images//massspecgym_-_molecule_retrieval_radar.pdf  us
+ed on input line 67.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 67--67
+[]|[]| 
+ []
+
+
+Overfull \hbox (11.92303pt too wide) in paragraph at lines 67--67
+[]|\T1/cmr/m/n/8 MassSpecGym
+ []
+
+
+Overfull \hbox (5.64458pt too wide) in paragraph at lines 67--67
+[]|\T1/cmr/m/n/8 Chemistry| 
+ []
+
+
+Overfull \hbox (9.01598pt too wide) in paragraph at lines 67--67
+[]|\T1/cmr/m/n/8 Benchmark
+ []
+
+
+Overfull \hbox (2.56894pt too wide) in paragraph at lines 67--67
+\T1/cmr/m/n/8 molecules
+ []
+
+
+Overfull \hbox (2.0635pt too wide) in paragraph at lines 67--67
+[]|\T1/cmr/m/n/8 Structure
+ []
+
+<images//massspecgym_-_spectrum_simulation_radar.pdf, id=523, 449.03008pt x 418
+.81903pt>
+File: images//massspecgym_-_spectrum_simulation_radar.pdf Graphic file (type pd
+f)
+<use images//massspecgym_-_spectrum_simulation_radar.pdf>
+Package pdftex.def Info: images//massspecgym_-_spectrum_simulation_radar.pdf  u
+sed on input line 68.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 68--68
+[]|[]| 
+ []
+
+
+Overfull \hbox (11.92303pt too wide) in paragraph at lines 68--68
+[]|\T1/cmr/m/n/8 MassSpecGym
+ []
+
+
+Overfull \hbox (5.64458pt too wide) in paragraph at lines 68--68
+[]|\T1/cmr/m/n/8 Chemistry| 
+ []
+
+
+Overfull \hbox (9.01598pt too wide) in paragraph at lines 68--68
+[]|\T1/cmr/m/n/8 Benchmark
+ []
+
+
+Overfull \hbox (2.56894pt too wide) in paragraph at lines 68--68
+\T1/cmr/m/n/8 molecules
+ []
+
+
+Overfull \hbox (2.0635pt too wide) in paragraph at lines 68--68
+[]|\T1/cmr/m/n/8 Structure
+ []
+
+<images//spiqa_scientific_paper_image_question_answering_radar.pdf, id=525, 449
+.03008pt x 418.81903pt>
+File: images//spiqa_scientific_paper_image_question_answering_radar.pdf Graphic
+ file (type pdf)
+<use images//spiqa_scientific_paper_image_question_answering_radar.pdf>
+Package pdftex.def Info: images//spiqa_scientific_paper_image_question_answerin
+g_radar.pdf  used on input line 69.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 69--69
+[]|[]| 
+ []
+
+
+Overfull \hbox (22.82233pt too wide) in paragraph at lines 69--69
+[]|\T1/cmr/m/n/8 Computational
+ []
+
+
+Overfull \hbox (10.53922pt too wide) in paragraph at lines 69--69
+[]|\T1/cmr/m/n/8 Multimodal
+ []
+
+
+Overfull \hbox (2.99245pt too wide) in paragraph at lines 69--69
+[]|\T1/cmr/m/n/8 Accuracy,
+ []
+
+<images//gpqa_a_graduate-level_google-proof_question_and_answer_benchmark_radar
+.pdf, id=527, 449.03008pt x 441.30302pt>
+File: images//gpqa_a_graduate-level_google-proof_question_and_answer_benchmark_
+radar.pdf Graphic file (type pdf)
+<use images//gpqa_a_graduate-level_google-proof_question_and_answer_benchmark_r
+adar.pdf>
+Package pdftex.def Info: images//gpqa_a_graduate-level_google-proof_question_an
+d_answer_benchmark_radar.pdf  used on input line 70.
+(pdftex.def)             Requested size: 70.46037pt x 69.24297pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 70--70
+[]|[]| 
+ []
+
+
+Overfull \hbox (2.74945pt too wide) in paragraph at lines 70--70
+\T1/cmr/m/n/8 Medicine,
+ []
+
+
+Overfull \hbox (4.94614pt too wide) in paragraph at lines 70--70
+[]|\T1/cmr/m/n/8 Graduate-
+ []
+
+
+Overfull \hbox (0.86935pt too wide) in paragraph at lines 70--70
+\T1/cmr/m/n/8 validated
+ []
+
+
+Overfull \hbox (1.34007pt too wide) in paragraph at lines 70--70
+[]|\T1/cmr/m/n/8 Accuracy| 
+ []
+
+<images//medqa_radar.pdf, id=529, 449.03008pt x 396.33504pt>
+File: images//medqa_radar.pdf Graphic file (type pdf)
+<use images//medqa_radar.pdf>
+Package pdftex.def Info: images//medqa_radar.pdf  used on input line 71.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 71--71
+[]|[]| 
+ []
+
+
+Overfull \hbox (1.34007pt too wide) in paragraph at lines 71--71
+[]|\T1/cmr/m/n/8 Accuracy| 
+ []
+
+
+Overfull \hbox (3.3507pt too wide) in paragraph at lines 71--71
+\T1/cmr/m/n/8 Retrieval-
+ []
+
+<images//single_qubit_readout_on_qick_system_radar.pdf, id=531, 449.03008pt x 4
+18.81903pt>
+File: images//single_qubit_readout_on_qick_system_radar.pdf Graphic file (type 
+pdf)
+<use images//single_qubit_readout_on_qick_system_radar.pdf>
+Package pdftex.def Info: images//single_qubit_readout_on_qick_system_radar.pdf 
+ used on input line 72.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 72--72
+[]|[]| 
+ []
+
+
+Overfull \hbox (22.82233pt too wide) in paragraph at lines 72--72
+[]|\T1/cmr/m/n/8 Computational
+ []
+
+
+Overfull \hbox (2.99245pt too wide) in paragraph at lines 72--72
+[]|\T1/cmr/m/n/8 Accuracy,
+ []
+
+<images//cfdbench_fluid_dynamics_radar.pdf, id=533, 449.03008pt x 396.33504pt>
+File: images//cfdbench_fluid_dynamics_radar.pdf Graphic file (type pdf)
+<use images//cfdbench_fluid_dynamics_radar.pdf>
+Package pdftex.def Info: images//cfdbench_fluid_dynamics_radar.pdf  used on inp
+ut line 73.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 73--73
+[]|[]| 
+ []
+
+
+Overfull \hbox (15.07144pt too wide) in paragraph at lines 73--73
+[]|\T1/cmr/m/n/8 Mathematics| 
+ []
+
+
+Overfull \hbox (2.21074pt too wide) in paragraph at lines 73--73
+[]|\T1/cmr/m/n/8 Generalization
+ []
+
+<images//curie_scientific_long-context_understanding_reasoning_and_information_
+extraction_radar.pdf, id=535, 449.03008pt x 441.30302pt>
+File: images//curie_scientific_long-context_understanding_reasoning_and_informa
+tion_extraction_radar.pdf Graphic file (type pdf)
+<use images//curie_scientific_long-context_understanding_reasoning_and_informat
+ion_extraction_radar.pdf>
+Package pdftex.def Info: images//curie_scientific_long-context_understanding_re
+asoning_and_information_extraction_radar.pdf  used on input line 74.
+(pdftex.def)             Requested size: 70.46037pt x 69.24297pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 74--74
+[]|[]| 
+ []
+
+
+Overfull \hbox (1.85939pt too wide) in paragraph at lines 74--74
+[]|\T1/cmr/m/n/8 Materials
+ []
+
+
+Overfull \hbox (2.74945pt too wide) in paragraph at lines 74--74
+\T1/cmr/m/n/8 Medicine,
+ []
+
+
+Overfull \hbox (1.34007pt too wide) in paragraph at lines 74--74
+[]|\T1/cmr/m/n/8 Accuracy| 
+ []
+
+<images//smart_pixels_for_lhc_radar.pdf, id=537, 449.03008pt x 396.33504pt>
+File: images//smart_pixels_for_lhc_radar.pdf Graphic file (type pdf)
+<use images//smart_pixels_for_lhc_radar.pdf>
+Package pdftex.def Info: images//smart_pixels_for_lhc_radar.pdf  used on input 
+line 75.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 75--75
+[]|[]| 
+ []
+
+<images//lhc_new_physics_dataset_radar.pdf, id=539, 449.03008pt x 396.33504pt>
+File: images//lhc_new_physics_dataset_radar.pdf Graphic file (type pdf)
+<use images//lhc_new_physics_dataset_radar.pdf>
+Package pdftex.def Info: images//lhc_new_physics_dataset_radar.pdf  used on inp
+ut line 76.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 76--76
+[]|[]| 
+ []
+
+
+Overfull \hbox (16.9196pt too wide) in paragraph at lines 76--76
+[]|\T1/cmr/m/n/8 Autoencoder,
+ []
+
+<images//quantum_computing_benchmarks_qml_radar.pdf, id=541, 449.03008pt x 418.
+81903pt>
+File: images//quantum_computing_benchmarks_qml_radar.pdf Graphic file (type pdf
+)
+<use images//quantum_computing_benchmarks_qml_radar.pdf>
+Package pdftex.def Info: images//quantum_computing_benchmarks_qml_radar.pdf  us
+ed on input line 77.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 77--77
+[]|[]| 
+ []
+
+
+Overfull \hbox (22.82233pt too wide) in paragraph at lines 77--77
+[]|\T1/cmr/m/n/8 Computational
+ []
+
+
+Overfull \hbox (2.28568pt too wide) in paragraph at lines 77--77
+[]|\T1/cmr/m/n/8 Quantum
+ []
+
+
+Overfull \hbox (15.59354pt too wide) in paragraph at lines 77--77
+\T1/cmr/m/n/8 AQT@LBNL| 
+ []
+
+<images//ultrafast_jet_classification_at_the_hl-lhc_radar.pdf, id=543, 449.0300
+8pt x 418.81903pt>
+File: images//ultrafast_jet_classification_at_the_hl-lhc_radar.pdf Graphic file
+ (type pdf)
+<use images//ultrafast_jet_classification_at_the_hl-lhc_radar.pdf>
+Package pdftex.def Info: images//ultrafast_jet_classification_at_the_hl-lhc_rad
+ar.pdf  used on input line 78.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 78--78
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.46594pt too wide) in paragraph at lines 78--78
+\T1/cmr/m/n/8 optimized
+ []
+
+
+Overfull \hbox (6.82289pt too wide) in paragraph at lines 78--78
+\T1/cmr/m/n/8 quantization-
+ []
+
+
+Overfull \hbox (2.99245pt too wide) in paragraph at lines 78--78
+[]|\T1/cmr/m/n/8 Accuracy,
+ []
+
+<images//hedm_braggnn_radar.pdf, id=545, 449.03008pt x 396.33504pt>
+File: images//hedm_braggnn_radar.pdf Graphic file (type pdf)
+<use images//hedm_braggnn_radar.pdf>
+Package pdftex.def Info: images//hedm_braggnn_radar.pdf  used on input line 79.
+
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 79--79
+[]|[]| 
+ []
+
+
+Overfull \hbox (1.85939pt too wide) in paragraph at lines 79--79
+[]|\T1/cmr/m/n/8 Materials
+ []
+
+
+Overfull \hbox (12.31378pt too wide) in paragraph at lines 79--79
+[]|\T1/cmr/m/n/8 Localization
+ []
+
+
+Overfull \hbox (1.91771pt too wide) in paragraph at lines 79--79
+[]|\T1/cmr/m/n/8 BraggNN| 
+ []
+
+<images//d-stem_radar.pdf, id=547, 449.03008pt x 396.33504pt>
+File: images//d-stem_radar.pdf Graphic file (type pdf)
+<use images//d-stem_radar.pdf>
+Package pdftex.def Info: images//d-stem_radar.pdf  used on input line 80.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 80--80
+[]|[]| 
+ []
+
+
+Overfull \hbox (1.85939pt too wide) in paragraph at lines 80--80
+[]|\T1/cmr/m/n/8 Materials
+ []
+
+
+Overfull \hbox (16.30725pt too wide) in paragraph at lines 80--80
+[]|\T1/cmr/m/n/8 Classification
+ []
+
+
+Overfull \hbox (2.05656pt too wide) in paragraph at lines 80--80
+\T1/cmr/m/n/8 Through-
+ []
+
+<images//beam_control_radar.pdf, id=549, 449.03008pt x 396.33504pt>
+File: images//beam_control_radar.pdf Graphic file (type pdf)
+<use images//beam_control_radar.pdf>
+Package pdftex.def Info: images//beam_control_radar.pdf  used on input line 81.
+
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 81--81
+[]|[]| 
+ []
+
+
+Overfull \hbox (20.5826pt too wide) in paragraph at lines 81--81
+[]|\T1/cmr/m/n/8 Reinforcement
+ []
+
+
+Overfull \hbox (1.79556pt too wide) in paragraph at lines 81--81
+[]|\T1/cmr/m/n/8 Reinforcement
+ []
+
+
+Overfull \hbox (2.99384pt too wide) in paragraph at lines 81--81
+\T1/cmr/m/n/8 (planned)| 
+ []
+
+<images//intelligent_experiments_through_real-time_ai_radar.pdf, id=552, 449.03
+008pt x 418.81903pt>
+File: images//intelligent_experiments_through_real-time_ai_radar.pdf Graphic fi
+le (type pdf)
+<use images//intelligent_experiments_through_real-time_ai_radar.pdf>
+Package pdftex.def Info: images//intelligent_experiments_through_real-time_ai_r
+adar.pdf  used on input line 82.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 82--82
+[]|[]| 
+ []
+
+
+Overfull \hbox (4.17966pt too wide) in paragraph at lines 82--82
+\T1/cmr/m/n/8 sPHENIX
+ []
+
+
+Overfull \hbox (1.34007pt too wide) in paragraph at lines 82--82
+[]|\T1/cmr/m/n/8 Accuracy
+ []
+
+
+Overfull \hbox (58.76633pt too wide) in paragraph at lines 82--82
+\T1/cmr/m/n/8 (LUT/FF/BRAM/DSP)| 
+ []
+
+
+Overfull \hbox (0.51805pt too wide) in paragraph at lines 82--82
+[]|\T1/cmr/m/n/8 Bipartite
+ []
+
+
+Overfull \hbox (1.67888pt too wide) in paragraph at lines 82--82
+\T1/cmr/m/n/8 classifier)| 
+ []
+
+<images//hdr_ml_anomaly_challenge_-_butterfly_radar.pdf, id=554, 449.03008pt x 
+418.81903pt>
+File: images//hdr_ml_anomaly_challenge_-_butterfly_radar.pdf Graphic file (type
+ pdf)
+<use images//hdr_ml_anomaly_challenge_-_butterfly_radar.pdf>
+Package pdftex.def Info: images//hdr_ml_anomaly_challenge_-_butterfly_radar.pdf
+  used on input line 83.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 83--83
+[]|[]| 
+ []
+
+
+Overfull \hbox (2.87164pt too wide) in paragraph at lines 83--83
+[]|\T1/cmr/m/n/8 Detecting
+ []
+
+
+Overfull \hbox (16.30725pt too wide) in paragraph at lines 83--83
+[]|\T1/cmr/m/n/8 Classification
+ []
+
+<images//dune_radar.pdf, id=556, 449.03008pt x 396.33504pt>
+File: images//dune_radar.pdf Graphic file (type pdf)
+<use images//dune_radar.pdf>
+Package pdftex.def Info: images//dune_radar.pdf  used on input line 84.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 84--84
+[]|[]| 
+ []
+
+
+Overfull \hbox (2.87164pt too wide) in paragraph at lines 84--84
+[]|\T1/cmr/m/n/8 Detection
+ []
+
+
+Overfull \hbox (2.99384pt too wide) in paragraph at lines 84--84
+\T1/cmr/m/n/8 (planned)| 
+ []
+
+<images//frontiermath_radar.pdf, id=558, 449.03008pt x 396.33504pt>
+File: images//frontiermath_radar.pdf Graphic file (type pdf)
+<use images//frontiermath_radar.pdf>
+Package pdftex.def Info: images//frontiermath_radar.pdf  used on input line 85.
+
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 85--85
+[]|[]| 
+ []
+
+
+Overfull \hbox (7.41441pt too wide) in paragraph at lines 85--85
+[]|\T1/cmr/m/n/8 FrontierMath| 
+ []
+
+
+Overfull \hbox (15.07144pt too wide) in paragraph at lines 85--85
+[]|\T1/cmr/m/n/8 Mathematics| 
+ []
+
+
+Overfull \hbox (11.01965pt too wide) in paragraph at lines 85--85
+[]|\T1/cmr/m/n/8 Challenging
+ []
+
+
+Overfull \hbox (1.34007pt too wide) in paragraph at lines 85--85
+[]|\T1/cmr/m/n/8 Accuracy| 
+ []
+
+
+Overfull \hbox (0.6333pt too wide) in paragraph at lines 85--85
+[]|\T1/cmr/m/n/8 unknown| 
+ []
+
+<images//aime_american_invitational_mathematics_examination_radar.pdf, id=560, 
+449.03008pt x 418.81903pt>
+File: images//aime_american_invitational_mathematics_examination_radar.pdf Grap
+hic file (type pdf)
+<use images//aime_american_invitational_mathematics_examination_radar.pdf>
+Package pdftex.def Info: images//aime_american_invitational_mathematics_examina
+tion_radar.pdf  used on input line 86.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 86--86
+[]|[]| 
+ []
+
+
+Overfull \hbox (15.07144pt too wide) in paragraph at lines 86--86
+[]|\T1/cmr/m/n/8 Mathematics| 
+ []
+
+
+Overfull \hbox (1.34007pt too wide) in paragraph at lines 86--86
+[]|\T1/cmr/m/n/8 Accuracy| 
+ []
+
+
+Overfull \hbox (0.6333pt too wide) in paragraph at lines 86--86
+[]|\T1/cmr/m/n/8 unknown| 
+ []
+
+<images//quench_detection_radar.pdf, id=562, 449.03008pt x 396.33504pt>
+File: images//quench_detection_radar.pdf Graphic file (type pdf)
+<use images//quench_detection_radar.pdf>
+Package pdftex.def Info: images//quench_detection_radar.pdf  used on input line
+ 87.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 87--87
+[]|[]| 
+ []
+
+
+Overfull \hbox (16.9196pt too wide) in paragraph at lines 87--87
+[]|\T1/cmr/m/n/8 Autoencoder,
+ []
+
+<images//materials_project_radar.pdf, id=564, 449.03008pt x 396.33504pt>
+File: images//materials_project_radar.pdf Graphic file (type pdf)
+<use images//materials_project_radar.pdf>
+Package pdftex.def Info: images//materials_project_radar.pdf  used on input lin
+e 88.
+(pdftex.def)             Requested size: 70.46037pt x 62.18724pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 88--88
+[]|[]| 
+ []
+
+
+Overfull \hbox (1.85939pt too wide) in paragraph at lines 88--88
+[]|\T1/cmr/m/n/8 Materials
+ []
+
+
+Overfull \hbox (24.0012pt too wide) in paragraph at lines 88--88
+[]|\T1/cmr/m/n/8 Automatminer,
+ []
+
+<images//in-situ_high-speed_computer_vision_radar.pdf, id=566, 449.03008pt x 41
+8.81903pt>
+File: images//in-situ_high-speed_computer_vision_radar.pdf Graphic file (type p
+df)
+<use images//in-situ_high-speed_computer_vision_radar.pdf>
+Package pdftex.def Info: images//in-situ_high-speed_computer_vision_radar.pdf  
+used on input line 89.
+(pdftex.def)             Requested size: 70.46037pt x 65.7151pt.
+
+Overfull \hbox (18.78705pt too wide) in paragraph at lines 89--89
+[]|[]| 
+ []
+
+
+Overfull \hbox (2.99245pt too wide) in paragraph at lines 89--89
+[]|\T1/cmr/m/n/8 Accuracy,
+ []
+
+[5
+
+ <./images//climatelearn_-_weather_forcasting_radar.pdf> <./images//climatelear
+n_-_downscaling_radar.pdf> <./images//climatelearn_-_climate_projection_radar.p
+df>] [6 <./images//mlcommons_science_-_cloudmask_radar.pdf> <./images//mlcommon
+s_science_-_earthquake_radar.pdf>] [7 <./images//mlcommons_science_-_candle_uno
+_radar.pdf> <./images//mlcommons_science_-_stemdl_radar.pdf>] [8 <./images//arc
+-challenge_advanced_reasoning_challenge_radar.pdf> <./images//molgen_radar.pdf>
+ <./images//open_graph_benchmark_ogb_-_biology_radar.pdf>] [9 <./images//llms_f
+or_crop_science_radar.pdf> <./images//scicode_radar.pdf>] [10 <./images//caloch
+allenge__radar.pdf> <./images//pdebench_radar.pdf>] [11 <./images//urban_data_l
+ayer_udl_-_pm_concentration_prediction_radar.pdf> <./images//urban_data_layer_u
+dl_-_built-up_area_classification_radar.pdf>] [12 <./images//urban_data_layer_u
+dl_-_administrative_boundaries_identification_radar.pdf> <./images//urban_data_
+layer_udl_-_el_nino_anomaly_detection_radar.pdf>] [13 <./images//spiqa_llm_rada
+r.pdf> <./images//mlcommons_medical_ai_-_pancreas_segmentation_dfci_radar.pdf>]
+[14 <./images//mlcommons_medical_ai_-_brain_tumor_segmentation_brats_radar.pdf>
+ <./images//mlcommons_medical_ai_-__surgical_workflow_phase_recognition_surgmlc
+ube_radar.pdf>] [15 <./images//seafloorai_radar.pdf> <./images//seafloorgenai_r
+adar.pdf>] [16 <./images//gess_-_track_pileup_radar.pdf> <./images//gess_-_trac
+k_signal_radar.pdf>] [17 <./images//gess_-_drugood_radar.pdf> <./images//gess_-
+_qmof_radar.pdf>] [18 <./images//ocp_open_catalyst_project_radar.pdf> <./images
+//jet_classification_radar.pdf>] [19 <./images//irregular_sensor_data_compressi
+on_radar.pdf> <./images//mlperf_hpc_-_cosmoflow_radar.pdf> <./images//mlperf_hp
+c_-_deepcam_radar.pdf>] [20 <./images//mlperf_hpc_-_open_catalyst_project_dimen
+et__radar.pdf> <./images//mlperf_hpc_-_openfold_radar.pdf> <./images//hdr_ml_an
+omaly_challenge_-_gravitational_waves_radar.pdf>] [21 <./images//supercond_-_pr
+operty_prediction_radar.pdf> <./images//supercond_-__inverse_crystal_structure_
+generation_radar.pdf>] [22 <./images//baisbench_biological_ai_scientist_benchma
+rk_-_question_answering_radar.pdf> <./images//baisbench_biological_ai_scientist
+_benchmark_-_cell_type_annotation_radar.pdf>] [23 <./images//the_well_radar.pdf
+> <./images//mmlu_massive_multitask_language_understanding_radar.pdf> <./images
+//satimgnet_radar.pdf>] [24 <./images//gpqa_diamond_radar.pdf> <./images//prmk_
+radar.pdf> <./images//feabench_finite_element_analysis_benchmark_evaluating_lan
+guage_models_on_multiphysics_reasoning_ability_radar.pdf>] [25 <./images//neura
+l_architecture_codesign_for_fast_physics_applications_radar.pdf> <./images//del
+ta_squared-dft_radar.pdf>] [26 <./images//hdr_ml_anomaly_challenge_-_sea_level_
+rise_radar.pdf> <./images//vocal_call_locator_vcl_radar.pdf>] [27 <./images//ma
+ssspecgym_-_de_novo_molecule_generation_radar.pdf> <./images//massspecgym_-_mol
+ecule_retrieval_radar.pdf>] [28 <./images//massspecgym_-_spectrum_simulation_ra
+dar.pdf> <./images//spiqa_scientific_paper_image_question_answering_radar.pdf>]
+[29 <./images//gpqa_a_graduate-level_google-proof_question_and_answer_benchmark
+_radar.pdf> <./images//medqa_radar.pdf>] [30 <./images//single_qubit_readout_on
+_qick_system_radar.pdf> <./images//cfdbench_fluid_dynamics_radar.pdf>] [31 <./i
+mages//curie_scientific_long-context_understanding_reasoning_and_information_ex
+traction_radar.pdf> <./images//smart_pixels_for_lhc_radar.pdf>] [32 <./images//
+lhc_new_physics_dataset_radar.pdf> <./images//quantum_computing_benchmarks_qml_
+radar.pdf>] [33 <./images//ultrafast_jet_classification_at_the_hl-lhc_radar.pdf
+> <./images//hedm_braggnn_radar.pdf>] [34 <./images//d-stem_radar.pdf> <./image
+s//beam_control_radar.pdf>] [35 <./images//intelligent_experiments_through_real
+-time_ai_radar.pdf> <./images//hdr_ml_anomaly_challenge_-_butterfly_radar.pdf>]
+[36 <./images//dune_radar.pdf> <./images//frontiermath_radar.pdf> <./images//ai
+me_american_invitational_mathematics_examination_radar.pdf>] [37 <./images//que
+nch_detection_radar.pdf> <./images//materials_project_radar.pdf> <./images//in-
+situ_high-speed_computer_vision_radar.pdf>]) (./radar_grid.tex
+<images/mmlu_massive_multitask_language_understanding_radar.pdf, id=3024, 449.0
+3008pt x 418.81903pt>
+File: images/mmlu_massive_multitask_language_understanding_radar.pdf Graphic fi
+le (type pdf)
+<use images/mmlu_massive_multitask_language_understanding_radar.pdf>
+Package pdftex.def Info: images/mmlu_massive_multitask_language_understanding_r
+adar.pdf  used on input line 4.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/climatelearn_-_weather_forcasting_radar.pdf, id=3025, 449.03008pt x 418
+.81903pt>
+File: images/climatelearn_-_weather_forcasting_radar.pdf Graphic file (type pdf
+)
+<use images/climatelearn_-_weather_forcasting_radar.pdf>
+Package pdftex.def Info: images/climatelearn_-_weather_forcasting_radar.pdf  us
+ed on input line 5.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/climatelearn_-_downscaling_radar.pdf, id=3026, 449.03008pt x 396.33504p
+t>
+File: images/climatelearn_-_downscaling_radar.pdf Graphic file (type pdf)
+<use images/climatelearn_-_downscaling_radar.pdf>
+Package pdftex.def Info: images/climatelearn_-_downscaling_radar.pdf  used on i
+nput line 6.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/climatelearn_-_climate_projection_radar.pdf, id=3027, 449.03008pt x 418
+.81903pt>
+File: images/climatelearn_-_climate_projection_radar.pdf Graphic file (type pdf
+)
+<use images/climatelearn_-_climate_projection_radar.pdf>
+Package pdftex.def Info: images/climatelearn_-_climate_projection_radar.pdf  us
+ed on input line 7.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/cfdbench_fluid_dynamics_radar.pdf, id=3028, 449.03008pt x 396.33504pt>
+File: images/cfdbench_fluid_dynamics_radar.pdf Graphic file (type pdf)
+<use images/cfdbench_fluid_dynamics_radar.pdf>
+Package pdftex.def Info: images/cfdbench_fluid_dynamics_radar.pdf  used on inpu
+t line 8.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/satimgnet_radar.pdf, id=3029, 449.03008pt x 396.33504pt>
+File: images/satimgnet_radar.pdf Graphic file (type pdf)
+<use images/satimgnet_radar.pdf>
+Package pdftex.def Info: images/satimgnet_radar.pdf  used on input line 10.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/quantum_computing_benchmarks_qml_radar.pdf, id=3030, 449.03008pt x 418.
+81903pt>
+File: images/quantum_computing_benchmarks_qml_radar.pdf Graphic file (type pdf)
+
+<use images/quantum_computing_benchmarks_qml_radar.pdf>
+Package pdftex.def Info: images/quantum_computing_benchmarks_qml_radar.pdf  use
+d on input line 11.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/ocp_open_catalyst_project_radar.pdf, id=3031, 449.03008pt x 396.33504pt
+>
+File: images/ocp_open_catalyst_project_radar.pdf Graphic file (type pdf)
+<use images/ocp_open_catalyst_project_radar.pdf>
+Package pdftex.def Info: images/ocp_open_catalyst_project_radar.pdf  used on in
+put line 12.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/medqa_radar.pdf, id=3032, 449.03008pt x 396.33504pt>
+File: images/medqa_radar.pdf Graphic file (type pdf)
+<use images/medqa_radar.pdf>
+Package pdftex.def Info: images/medqa_radar.pdf  used on input line 13.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/materials_project_radar.pdf, id=3033, 449.03008pt x 396.33504pt>
+File: images/materials_project_radar.pdf Graphic file (type pdf)
+<use images/materials_project_radar.pdf>
+Package pdftex.def Info: images/materials_project_radar.pdf  used on input line
+ 14.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/gpqa_diamond_radar.pdf, id=3034, 449.03008pt x 396.33504pt>
+File: images/gpqa_diamond_radar.pdf Graphic file (type pdf)
+<use images/gpqa_diamond_radar.pdf>
+Package pdftex.def Info: images/gpqa_diamond_radar.pdf  used on input line 16.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/arc-challenge_advanced_reasoning_challenge_radar.pdf, id=3035, 449.0300
+8pt x 418.81903pt>
+File: images/arc-challenge_advanced_reasoning_challenge_radar.pdf Graphic file 
+(type pdf)
+<use images/arc-challenge_advanced_reasoning_challenge_radar.pdf>
+Package pdftex.def Info: images/arc-challenge_advanced_reasoning_challenge_rada
+r.pdf  used on input line 17.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/frontiermath_radar.pdf, id=3036, 449.03008pt x 396.33504pt>
+File: images/frontiermath_radar.pdf Graphic file (type pdf)
+<use images/frontiermath_radar.pdf>
+Package pdftex.def Info: images/frontiermath_radar.pdf  used on input line 18.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/scicode_radar.pdf, id=3037, 449.03008pt x 396.33504pt>
+File: images/scicode_radar.pdf Graphic file (type pdf)
+<use images/scicode_radar.pdf>
+Package pdftex.def Info: images/scicode_radar.pdf  used on input line 19.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/aime_american_invitational_mathematics_examination_radar.pdf, id=3038, 
+449.03008pt x 418.81903pt>
+File: images/aime_american_invitational_mathematics_examination_radar.pdf Graph
+ic file (type pdf)
+<use images/aime_american_invitational_mathematics_examination_radar.pdf>
+Package pdftex.def Info: images/aime_american_invitational_mathematics_examinat
+ion_radar.pdf  used on input line 20.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/prmk_radar.pdf, id=3039, 449.03008pt x 396.33504pt>
+File: images/prmk_radar.pdf Graphic file (type pdf)
+<use images/prmk_radar.pdf>
+Package pdftex.def Info: images/prmk_radar.pdf  used on input line 22.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/curie_scientific_long-context_understanding_reasoning_and_information_e
+xtraction_radar.pdf, id=3040, 449.03008pt x 441.30302pt>
+File: images/curie_scientific_long-context_understanding_reasoning_and_informat
+ion_extraction_radar.pdf Graphic file (type pdf)
+<use images/curie_scientific_long-context_understanding_reasoning_and_informati
+on_extraction_radar.pdf>
+Package pdftex.def Info: images/curie_scientific_long-context_understanding_rea
+soning_and_information_extraction_radar.pdf  used on input line 23.
+(pdftex.def)             Requested size: 89.2546pt x 87.71361pt.
+<images/feabench_finite_element_analysis_benchmark_evaluating_language_models_o
+n_multiphysics_reasoning_ability_radar.pdf, id=3041, 449.03008pt x 463.78702pt>
+
+File: images/feabench_finite_element_analysis_benchmark_evaluating_language_mod
+els_on_multiphysics_reasoning_ability_radar.pdf Graphic file (type pdf)
+<use images/feabench_finite_element_analysis_benchmark_evaluating_language_mode
+ls_on_multiphysics_reasoning_ability_radar.pdf>
+Package pdftex.def Info: images/feabench_finite_element_analysis_benchmark_eval
+uating_language_models_on_multiphysics_reasoning_ability_radar.pdf  used on inp
+ut line 24.
+(pdftex.def)             Requested size: 89.2546pt x 92.18253pt.
+<images/spiqa_scientific_paper_image_question_answering_radar.pdf, id=3042, 449
+.03008pt x 418.81903pt>
+File: images/spiqa_scientific_paper_image_question_answering_radar.pdf Graphic 
+file (type pdf)
+<use images/spiqa_scientific_paper_image_question_answering_radar.pdf>
+Package pdftex.def Info: images/spiqa_scientific_paper_image_question_answering
+_radar.pdf  used on input line 25.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/baisbench_biological_ai_scientist_benchmark_-_question_answering_radar.
+pdf, id=3043, 449.03008pt x 441.30302pt>
+File: images/baisbench_biological_ai_scientist_benchmark_-_question_answering_r
+adar.pdf Graphic file (type pdf)
+<use images/baisbench_biological_ai_scientist_benchmark_-_question_answering_ra
+dar.pdf>
+Package pdftex.def Info: images/baisbench_biological_ai_scientist_benchmark_-_q
+uestion_answering_radar.pdf  used on input line 26.
+(pdftex.def)             Requested size: 89.2546pt x 87.71361pt.
+<images/baisbench_biological_ai_scientist_benchmark_-_cell_type_annotation_rada
+r.pdf, id=3044, 449.03008pt x 441.30302pt>
+File: images/baisbench_biological_ai_scientist_benchmark_-_cell_type_annotation
+_radar.pdf Graphic file (type pdf)
+<use images/baisbench_biological_ai_scientist_benchmark_-_cell_type_annotation_
+radar.pdf>
+Package pdftex.def Info: images/baisbench_biological_ai_scientist_benchmark_-_c
+ell_type_annotation_radar.pdf  used on input line 28.
+(pdftex.def)             Requested size: 89.2546pt x 87.71361pt.
+<images/molgen_radar.pdf, id=3045, 449.03008pt x 396.33504pt>
+File: images/molgen_radar.pdf Graphic file (type pdf)
+<use images/molgen_radar.pdf>
+Package pdftex.def Info: images/molgen_radar.pdf  used on input line 29.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/open_graph_benchmark_ogb_-_biology_radar.pdf, id=3046, 449.03008pt x 41
+8.81903pt>
+File: images/open_graph_benchmark_ogb_-_biology_radar.pdf Graphic file (type pd
+f)
+<use images/open_graph_benchmark_ogb_-_biology_radar.pdf>
+Package pdftex.def Info: images/open_graph_benchmark_ogb_-_biology_radar.pdf  u
+sed on input line 30.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/jet_classification_radar.pdf, id=3047, 449.03008pt x 396.33504pt>
+File: images/jet_classification_radar.pdf Graphic file (type pdf)
+<use images/jet_classification_radar.pdf>
+Package pdftex.def Info: images/jet_classification_radar.pdf  used on input lin
+e 31.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/irregular_sensor_data_compression_radar.pdf, id=3048, 449.03008pt x 418
+.81903pt>
+File: images/irregular_sensor_data_compression_radar.pdf Graphic file (type pdf
+)
+<use images/irregular_sensor_data_compression_radar.pdf>
+Package pdftex.def Info: images/irregular_sensor_data_compression_radar.pdf  us
+ed on input line 32.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+[38
+
+
+ <./images/mmlu_massive_multitask_language_understanding_radar.pdf> <./images/c
+limatelearn_-_weather_forcasting_radar.pdf> <./images/climatelearn_-_downscalin
+g_radar.pdf> <./images/climatelearn_-_climate_projection_radar.pdf> <./images/c
+fdbench_fluid_dynamics_radar.pdf> <./images/satimgnet_radar.pdf> <./images/quan
+tum_computing_benchmarks_qml_radar.pdf> <./images/ocp_open_catalyst_project_rad
+ar.pdf> <./images/medqa_radar.pdf> <./images/materials_project_radar.pdf> <./im
+ages/gpqa_diamond_radar.pdf> <./images/arc-challenge_advanced_reasoning_challen
+ge_radar.pdf> <./images/frontiermath_radar.pdf> <./images/scicode_radar.pdf> <.
+/images/aime_american_invitational_mathematics_examination_radar.pdf> <./images
+/prmk_radar.pdf> <./images/curie_scientific_long-context_understanding_reasonin
+g_and_information_extraction_radar.pdf> <./images/feabench_finite_element_analy
+sis_benchmark_evaluating_language_models_on_multiphysics_reasoning_ability_rada
+r.pdf> <./images/spiqa_scientific_paper_image_question_answering_radar.pdf> <./
+images/baisbench_biological_ai_scientist_benchmark_-_question_answering_radar.p
+df> <./images/baisbench_biological_ai_scientist_benchmark_-_cell_type_annotatio
+n_radar.pdf> <./images/molgen_radar.pdf> <./images/open_graph_benchmark_ogb_-_b
+iology_radar.pdf> <./images/jet_classification_radar.pdf> <./images/irregular_s
+ensor_data_compression_radar.pdf>]
+<images/beam_control_radar.pdf, id=3803, 449.03008pt x 396.33504pt>
+File: images/beam_control_radar.pdf Graphic file (type pdf)
+<use images/beam_control_radar.pdf>
+Package pdftex.def Info: images/beam_control_radar.pdf  used on input line 42.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/ultrafast_jet_classification_at_the_hl-lhc_radar.pdf, id=3804, 449.0300
+8pt x 418.81903pt>
+File: images/ultrafast_jet_classification_at_the_hl-lhc_radar.pdf Graphic file 
+(type pdf)
+<use images/ultrafast_jet_classification_at_the_hl-lhc_radar.pdf>
+Package pdftex.def Info: images/ultrafast_jet_classification_at_the_hl-lhc_rada
+r.pdf  used on input line 43.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/quench_detection_radar.pdf, id=3805, 449.03008pt x 396.33504pt>
+File: images/quench_detection_radar.pdf Graphic file (type pdf)
+<use images/quench_detection_radar.pdf>
+Package pdftex.def Info: images/quench_detection_radar.pdf  used on input line 
+44.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/intelligent_experiments_through_real-time_ai_radar.pdf, id=3806, 449.03
+008pt x 418.81903pt>
+File: images/intelligent_experiments_through_real-time_ai_radar.pdf Graphic fil
+e (type pdf)
+<use images/intelligent_experiments_through_real-time_ai_radar.pdf>
+Package pdftex.def Info: images/intelligent_experiments_through_real-time_ai_ra
+dar.pdf  used on input line 45.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/neural_architecture_codesign_for_fast_physics_applications_radar.pdf, i
+d=3807, 449.03008pt x 418.81903pt>
+File: images/neural_architecture_codesign_for_fast_physics_applications_radar.p
+df Graphic file (type pdf)
+<use images/neural_architecture_codesign_for_fast_physics_applications_radar.pd
+f>
+Package pdftex.def Info: images/neural_architecture_codesign_for_fast_physics_a
+pplications_radar.pdf  used on input line 46.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/smart_pixels_for_lhc_radar.pdf, id=3808, 449.03008pt x 396.33504pt>
+File: images/smart_pixels_for_lhc_radar.pdf Graphic file (type pdf)
+<use images/smart_pixels_for_lhc_radar.pdf>
+Package pdftex.def Info: images/smart_pixels_for_lhc_radar.pdf  used on input l
+ine 48.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/hedm_braggnn_radar.pdf, id=3809, 449.03008pt x 396.33504pt>
+File: images/hedm_braggnn_radar.pdf Graphic file (type pdf)
+<use images/hedm_braggnn_radar.pdf>
+Package pdftex.def Info: images/hedm_braggnn_radar.pdf  used on input line 49.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/d-stem_radar.pdf, id=3810, 449.03008pt x 396.33504pt>
+File: images/d-stem_radar.pdf Graphic file (type pdf)
+<use images/d-stem_radar.pdf>
+Package pdftex.def Info: images/d-stem_radar.pdf  used on input line 50.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/in-situ_high-speed_computer_vision_radar.pdf, id=3811, 449.03008pt x 41
+8.81903pt>
+File: images/in-situ_high-speed_computer_vision_radar.pdf Graphic file (type pd
+f)
+<use images/in-situ_high-speed_computer_vision_radar.pdf>
+Package pdftex.def Info: images/in-situ_high-speed_computer_vision_radar.pdf  u
+sed on input line 51.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/mlperf_hpc_-_cosmoflow_radar.pdf, id=3812, 449.03008pt x 396.33504pt>
+File: images/mlperf_hpc_-_cosmoflow_radar.pdf Graphic file (type pdf)
+<use images/mlperf_hpc_-_cosmoflow_radar.pdf>
+Package pdftex.def Info: images/mlperf_hpc_-_cosmoflow_radar.pdf  used on input
+ line 52.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/mlperf_hpc_-_deepcam_radar.pdf, id=3813, 449.03008pt x 396.33504pt>
+File: images/mlperf_hpc_-_deepcam_radar.pdf Graphic file (type pdf)
+<use images/mlperf_hpc_-_deepcam_radar.pdf>
+Package pdftex.def Info: images/mlperf_hpc_-_deepcam_radar.pdf  used on input l
+ine 54.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/mlperf_hpc_-_open_catalyst_project_dimenet__radar.pdf, id=3814, 449.030
+08pt x 418.81903pt>
+File: images/mlperf_hpc_-_open_catalyst_project_dimenet__radar.pdf Graphic file
+ (type pdf)
+<use images/mlperf_hpc_-_open_catalyst_project_dimenet__radar.pdf>
+Package pdftex.def Info: images/mlperf_hpc_-_open_catalyst_project_dimenet__rad
+ar.pdf  used on input line 55.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/mlperf_hpc_-_openfold_radar.pdf, id=3815, 449.03008pt x 396.33504pt>
+File: images/mlperf_hpc_-_openfold_radar.pdf Graphic file (type pdf)
+<use images/mlperf_hpc_-_openfold_radar.pdf>
+Package pdftex.def Info: images/mlperf_hpc_-_openfold_radar.pdf  used on input 
+line 56.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/mlcommons_science_-_cloudmask_radar.pdf, id=3816, 449.03008pt x 396.335
+04pt>
+File: images/mlcommons_science_-_cloudmask_radar.pdf Graphic file (type pdf)
+<use images/mlcommons_science_-_cloudmask_radar.pdf>
+Package pdftex.def Info: images/mlcommons_science_-_cloudmask_radar.pdf  used o
+n input line 57.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/mlcommons_science_-_earthquake_radar.pdf, id=3817, 449.03008pt x 396.33
+504pt>
+File: images/mlcommons_science_-_earthquake_radar.pdf Graphic file (type pdf)
+<use images/mlcommons_science_-_earthquake_radar.pdf>
+Package pdftex.def Info: images/mlcommons_science_-_earthquake_radar.pdf  used 
+on input line 58.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/mlcommons_science_-_candle_uno_radar.pdf, id=3818, 449.03008pt x 396.33
+504pt>
+File: images/mlcommons_science_-_candle_uno_radar.pdf Graphic file (type pdf)
+<use images/mlcommons_science_-_candle_uno_radar.pdf>
+Package pdftex.def Info: images/mlcommons_science_-_candle_uno_radar.pdf  used 
+on input line 60.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/mlcommons_science_-_stemdl_radar.pdf, id=3819, 449.03008pt x 396.33504p
+t>
+File: images/mlcommons_science_-_stemdl_radar.pdf Graphic file (type pdf)
+<use images/mlcommons_science_-_stemdl_radar.pdf>
+Package pdftex.def Info: images/mlcommons_science_-_stemdl_radar.pdf  used on i
+nput line 61.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/lhc_new_physics_dataset_radar.pdf, id=3820, 449.03008pt x 396.33504pt>
+File: images/lhc_new_physics_dataset_radar.pdf Graphic file (type pdf)
+<use images/lhc_new_physics_dataset_radar.pdf>
+Package pdftex.def Info: images/lhc_new_physics_dataset_radar.pdf  used on inpu
+t line 62.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/mlcommons_medical_ai_-_pancreas_segmentation_dfci_radar.pdf, id=3821, 4
+49.03008pt x 418.81903pt>
+File: images/mlcommons_medical_ai_-_pancreas_segmentation_dfci_radar.pdf Graphi
+c file (type pdf)
+<use images/mlcommons_medical_ai_-_pancreas_segmentation_dfci_radar.pdf>
+Package pdftex.def Info: images/mlcommons_medical_ai_-_pancreas_segmentation_df
+ci_radar.pdf  used on input line 63.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/mlcommons_medical_ai_-_brain_tumor_segmentation_brats_radar.pdf, id=382
+2, 449.03008pt x 418.81903pt>
+File: images/mlcommons_medical_ai_-_brain_tumor_segmentation_brats_radar.pdf Gr
+aphic file (type pdf)
+<use images/mlcommons_medical_ai_-_brain_tumor_segmentation_brats_radar.pdf>
+Package pdftex.def Info: images/mlcommons_medical_ai_-_brain_tumor_segmentation
+_brats_radar.pdf  used on input line 64.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/mlcommons_medical_ai_-__surgical_workflow_phase_recognition_surgmlcube_
+radar.pdf, id=3823, 449.03008pt x 441.30302pt>
+File: images/mlcommons_medical_ai_-__surgical_workflow_phase_recognition_surgml
+cube_radar.pdf Graphic file (type pdf)
+<use images/mlcommons_medical_ai_-__surgical_workflow_phase_recognition_surgmlc
+ube_radar.pdf>
+Package pdftex.def Info: images/mlcommons_medical_ai_-__surgical_workflow_phase
+_recognition_surgmlcube_radar.pdf  used on input line 66.
+(pdftex.def)             Requested size: 89.2546pt x 87.71361pt.
+<images/calochallenge__radar.pdf, id=3824, 449.03008pt x 396.33504pt>
+File: images/calochallenge__radar.pdf Graphic file (type pdf)
+<use images/calochallenge__radar.pdf>
+Package pdftex.def Info: images/calochallenge__radar.pdf  used on input line 67
+.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/pdebench_radar.pdf, id=3825, 449.03008pt x 396.33504pt>
+File: images/pdebench_radar.pdf Graphic file (type pdf)
+<use images/pdebench_radar.pdf>
+Package pdftex.def Info: images/pdebench_radar.pdf  used on input line 68.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/delta_squared-dft_radar.pdf, id=3826, 449.03008pt x 396.33504pt>
+File: images/delta_squared-dft_radar.pdf Graphic file (type pdf)
+<use images/delta_squared-dft_radar.pdf>
+Package pdftex.def Info: images/delta_squared-dft_radar.pdf  used on input line
+ 69.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/urban_data_layer_udl_-_pm_concentration_prediction_radar.pdf, id=3827, 
+449.03008pt x 418.81903pt>
+File: images/urban_data_layer_udl_-_pm_concentration_prediction_radar.pdf Graph
+ic file (type pdf)
+<use images/urban_data_layer_udl_-_pm_concentration_prediction_radar.pdf>
+Package pdftex.def Info: images/urban_data_layer_udl_-_pm_concentration_predict
+ion_radar.pdf  used on input line 70.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+[39
+
+ <./images/beam_control_radar.pdf> <./images/ultrafast_jet_classification_at_th
+e_hl-lhc_radar.pdf> <./images/quench_detection_radar.pdf> <./images/intelligent
+_experiments_through_real-time_ai_radar.pdf> <./images/neural_architecture_code
+sign_for_fast_physics_applications_radar.pdf> <./images/smart_pixels_for_lhc_ra
+dar.pdf> <./images/hedm_braggnn_radar.pdf> <./images/d-stem_radar.pdf> <./image
+s/in-situ_high-speed_computer_vision_radar.pdf> <./images/mlperf_hpc_-_cosmoflo
+w_radar.pdf> <./images/mlperf_hpc_-_deepcam_radar.pdf> <./images/mlperf_hpc_-_o
+pen_catalyst_project_dimenet__radar.pdf> <./images/mlperf_hpc_-_openfold_radar.
+pdf> <./images/mlcommons_science_-_cloudmask_radar.pdf> <./images/mlcommons_sci
+ence_-_earthquake_radar.pdf> <./images/mlcommons_science_-_candle_uno_radar.pdf
+> <./images/mlcommons_science_-_stemdl_radar.pdf> <./images/lhc_new_physics_dat
+aset_radar.pdf> <./images/mlcommons_medical_ai_-_pancreas_segmentation_dfci_rad
+ar.pdf> <./images/mlcommons_medical_ai_-_brain_tumor_segmentation_brats_radar.p
+df> <./images/mlcommons_medical_ai_-__surgical_workflow_phase_recognition_surgm
+lcube_radar.pdf> <./images/calochallenge__radar.pdf> <./images/pdebench_radar.p
+df> <./images/delta_squared-dft_radar.pdf> <./images/urban_data_layer_udl_-_pm_
+concentration_prediction_radar.pdf>]
+<images/urban_data_layer_udl_-_built-up_area_classification_radar.pdf, id=4606,
+ 449.03008pt x 418.81903pt>
+File: images/urban_data_layer_udl_-_built-up_area_classification_radar.pdf Grap
+hic file (type pdf)
+<use images/urban_data_layer_udl_-_built-up_area_classification_radar.pdf>
+Package pdftex.def Info: images/urban_data_layer_udl_-_built-up_area_classifica
+tion_radar.pdf  used on input line 80.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/urban_data_layer_udl_-_administrative_boundaries_identification_radar.p
+df, id=4607, 449.03008pt x 441.30302pt>
+File: images/urban_data_layer_udl_-_administrative_boundaries_identification_ra
+dar.pdf Graphic file (type pdf)
+<use images/urban_data_layer_udl_-_administrative_boundaries_identification_rad
+ar.pdf>
+Package pdftex.def Info: images/urban_data_layer_udl_-_administrative_boundarie
+s_identification_radar.pdf  used on input line 81.
+(pdftex.def)             Requested size: 89.2546pt x 87.71361pt.
+<images/urban_data_layer_udl_-_el_nino_anomaly_detection_radar.pdf, id=4608, 44
+9.03008pt x 418.81903pt>
+File: images/urban_data_layer_udl_-_el_nino_anomaly_detection_radar.pdf Graphic
+ file (type pdf)
+<use images/urban_data_layer_udl_-_el_nino_anomaly_detection_radar.pdf>
+Package pdftex.def Info: images/urban_data_layer_udl_-_el_nino_anomaly_detectio
+n_radar.pdf  used on input line 82.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/llms_for_crop_science_radar.pdf, id=4609, 449.03008pt x 396.33504pt>
+File: images/llms_for_crop_science_radar.pdf Graphic file (type pdf)
+<use images/llms_for_crop_science_radar.pdf>
+Package pdftex.def Info: images/llms_for_crop_science_radar.pdf  used on input 
+line 83.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/dune_radar.pdf, id=4610, 449.03008pt x 396.33504pt>
+File: images/dune_radar.pdf Graphic file (type pdf)
+<use images/dune_radar.pdf>
+Package pdftex.def Info: images/dune_radar.pdf  used on input line 84.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/massspecgym_-_de_novo_molecule_generation_radar.pdf, id=4611, 449.03008
+pt x 418.81903pt>
+File: images/massspecgym_-_de_novo_molecule_generation_radar.pdf Graphic file (
+type pdf)
+<use images/massspecgym_-_de_novo_molecule_generation_radar.pdf>
+Package pdftex.def Info: images/massspecgym_-_de_novo_molecule_generation_radar
+.pdf  used on input line 86.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/massspecgym_-_molecule_retrieval_radar.pdf, id=4612, 449.03008pt x 418.
+81903pt>
+File: images/massspecgym_-_molecule_retrieval_radar.pdf Graphic file (type pdf)
+
+<use images/massspecgym_-_molecule_retrieval_radar.pdf>
+Package pdftex.def Info: images/massspecgym_-_molecule_retrieval_radar.pdf  use
+d on input line 87.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/massspecgym_-_spectrum_simulation_radar.pdf, id=4613, 449.03008pt x 418
+.81903pt>
+File: images/massspecgym_-_spectrum_simulation_radar.pdf Graphic file (type pdf
+)
+<use images/massspecgym_-_spectrum_simulation_radar.pdf>
+Package pdftex.def Info: images/massspecgym_-_spectrum_simulation_radar.pdf  us
+ed on input line 88.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/hdr_ml_anomaly_challenge_-_gravitational_waves_radar.pdf, id=4614, 449.
+03008pt x 418.81903pt>
+File: images/hdr_ml_anomaly_challenge_-_gravitational_waves_radar.pdf Graphic f
+ile (type pdf)
+<use images/hdr_ml_anomaly_challenge_-_gravitational_waves_radar.pdf>
+Package pdftex.def Info: images/hdr_ml_anomaly_challenge_-_gravitational_waves_
+radar.pdf  used on input line 89.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/hdr_ml_anomaly_challenge_-_butterfly_radar.pdf, id=4615, 449.03008pt x 
+418.81903pt>
+File: images/hdr_ml_anomaly_challenge_-_butterfly_radar.pdf Graphic file (type 
+pdf)
+<use images/hdr_ml_anomaly_challenge_-_butterfly_radar.pdf>
+Package pdftex.def Info: images/hdr_ml_anomaly_challenge_-_butterfly_radar.pdf 
+ used on input line 90.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/hdr_ml_anomaly_challenge_-_sea_level_rise_radar.pdf, id=4616, 449.03008
+pt x 418.81903pt>
+File: images/hdr_ml_anomaly_challenge_-_sea_level_rise_radar.pdf Graphic file (
+type pdf)
+<use images/hdr_ml_anomaly_challenge_-_sea_level_rise_radar.pdf>
+Package pdftex.def Info: images/hdr_ml_anomaly_challenge_-_sea_level_rise_radar
+.pdf  used on input line 92.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/single_qubit_readout_on_qick_system_radar.pdf, id=4617, 449.03008pt x 4
+18.81903pt>
+File: images/single_qubit_readout_on_qick_system_radar.pdf Graphic file (type p
+df)
+<use images/single_qubit_readout_on_qick_system_radar.pdf>
+Package pdftex.def Info: images/single_qubit_readout_on_qick_system_radar.pdf  
+used on input line 93.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/gpqa_a_graduate-level_google-proof_question_and_answer_benchmark_radar.
+pdf, id=4618, 449.03008pt x 441.30302pt>
+File: images/gpqa_a_graduate-level_google-proof_question_and_answer_benchmark_r
+adar.pdf Graphic file (type pdf)
+<use images/gpqa_a_graduate-level_google-proof_question_and_answer_benchmark_ra
+dar.pdf>
+Package pdftex.def Info: images/gpqa_a_graduate-level_google-proof_question_and
+_answer_benchmark_radar.pdf  used on input line 94.
+(pdftex.def)             Requested size: 89.2546pt x 87.71361pt.
+<images/seafloorai_radar.pdf, id=4619, 449.03008pt x 396.33504pt>
+File: images/seafloorai_radar.pdf Graphic file (type pdf)
+<use images/seafloorai_radar.pdf>
+Package pdftex.def Info: images/seafloorai_radar.pdf  used on input line 95.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/seafloorgenai_radar.pdf, id=4620, 449.03008pt x 396.33504pt>
+File: images/seafloorgenai_radar.pdf Graphic file (type pdf)
+<use images/seafloorgenai_radar.pdf>
+Package pdftex.def Info: images/seafloorgenai_radar.pdf  used on input line 96.
+
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/supercond_-_property_prediction_radar.pdf, id=4621, 449.03008pt x 418.8
+1903pt>
+File: images/supercond_-_property_prediction_radar.pdf Graphic file (type pdf)
+<use images/supercond_-_property_prediction_radar.pdf>
+Package pdftex.def Info: images/supercond_-_property_prediction_radar.pdf  used
+ on input line 98.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/supercond_-__inverse_crystal_structure_generation_radar.pdf, id=4622, 4
+49.03008pt x 418.81903pt>
+File: images/supercond_-__inverse_crystal_structure_generation_radar.pdf Graphi
+c file (type pdf)
+<use images/supercond_-__inverse_crystal_structure_generation_radar.pdf>
+Package pdftex.def Info: images/supercond_-__inverse_crystal_structure_generati
+on_radar.pdf  used on input line 99.
+(pdftex.def)             Requested size: 89.2546pt x 83.24467pt.
+<images/gess_-_track_pileup_radar.pdf, id=4623, 449.03008pt x 396.33504pt>
+File: images/gess_-_track_pileup_radar.pdf Graphic file (type pdf)
+<use images/gess_-_track_pileup_radar.pdf>
+Package pdftex.def Info: images/gess_-_track_pileup_radar.pdf  used on input li
+ne 100.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/gess_-_track_signal_radar.pdf, id=4624, 449.03008pt x 396.33504pt>
+File: images/gess_-_track_signal_radar.pdf Graphic file (type pdf)
+<use images/gess_-_track_signal_radar.pdf>
+Package pdftex.def Info: images/gess_-_track_signal_radar.pdf  used on input li
+ne 101.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/gess_-_drugood_radar.pdf, id=4625, 449.03008pt x 396.33504pt>
+File: images/gess_-_drugood_radar.pdf Graphic file (type pdf)
+<use images/gess_-_drugood_radar.pdf>
+Package pdftex.def Info: images/gess_-_drugood_radar.pdf  used on input line 10
+2.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/gess_-_qmof_radar.pdf, id=4626, 449.03008pt x 396.33504pt>
+File: images/gess_-_qmof_radar.pdf Graphic file (type pdf)
+<use images/gess_-_qmof_radar.pdf>
+Package pdftex.def Info: images/gess_-_qmof_radar.pdf  used on input line 104.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/vocal_call_locator_vcl_radar.pdf, id=4627, 449.03008pt x 396.33504pt>
+File: images/vocal_call_locator_vcl_radar.pdf Graphic file (type pdf)
+<use images/vocal_call_locator_vcl_radar.pdf>
+Package pdftex.def Info: images/vocal_call_locator_vcl_radar.pdf  used on input
+ line 105.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/spiqa_llm_radar.pdf, id=4628, 449.03008pt x 396.33504pt>
+File: images/spiqa_llm_radar.pdf Graphic file (type pdf)
+<use images/spiqa_llm_radar.pdf>
+Package pdftex.def Info: images/spiqa_llm_radar.pdf  used on input line 106.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+<images/the_well_radar.pdf, id=4629, 449.03008pt x 396.33504pt>
+File: images/the_well_radar.pdf Graphic file (type pdf)
+<use images/the_well_radar.pdf>
+Package pdftex.def Info: images/the_well_radar.pdf  used on input line 107.
+(pdftex.def)             Requested size: 89.2546pt x 78.77574pt.
+) [40
+
+ <./images/urban_data_layer_udl_-_built-up_area_classification_radar.pdf> <./im
+ages/urban_data_layer_udl_-_administrative_boundaries_identification_radar.pdf>
+ <./images/urban_data_layer_udl_-_el_nino_anomaly_detection_radar.pdf> <./image
+s/llms_for_crop_science_radar.pdf> <./images/dune_radar.pdf> <./images/massspec
+gym_-_de_novo_molecule_generation_radar.pdf> <./images/massspecgym_-_molecule_r
+etrieval_radar.pdf> <./images/massspecgym_-_spectrum_simulation_radar.pdf> <./i
+mages/hdr_ml_anomaly_challenge_-_gravitational_waves_radar.pdf> <./images/hdr_m
+l_anomaly_challenge_-_butterfly_radar.pdf> <./images/hdr_ml_anomaly_challenge_-
+_sea_level_rise_radar.pdf> <./images/single_qubit_readout_on_qick_system_radar.
+pdf> <./images/gpqa_a_graduate-level_google-proof_question_and_answer_benchmark
+_radar.pdf> <./images/seafloorai_radar.pdf> <./images/seafloorgenai_radar.pdf> 
+<./images/supercond_-_property_prediction_radar.pdf> <./images/supercond_-__inv
+erse_crystal_structure_generation_radar.pdf> <./images/gess_-_track_pileup_rada
+r.pdf> <./images/gess_-_track_signal_radar.pdf> <./images/gess_-_drugood_radar.
+pdf> <./images/gess_-_qmof_radar.pdf> <./images/vocal_call_locator_vcl_radar.pd
+f> <./images/spiqa_llm_radar.pdf> <./images/the_well_radar.pdf>] (./section/cli
+matelearn_-_weather_forcasting.tex
+File: images//climatelearn_-_weather_forcasting_radar.pdf Graphic file (type pd
+f)
+<use images//climatelearn_-_weather_forcasting_radar.pdf>
+Package pdftex.def Info: images//climatelearn_-_weather_forcasting_radar.pdf  u
+sed on input line 74.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[41
+
+]) (./section/climatelearn_-_downscaling.tex
+File: images//climatelearn_-_downscaling_radar.pdf Graphic file (type pdf)
+<use images//climatelearn_-_downscaling_radar.pdf>
+Package pdftex.def Info: images//climatelearn_-_downscaling_radar.pdf  used on 
+input line 74.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[42
+
+]) (./section/climatelearn_-_climate_projection.tex
+File: images//climatelearn_-_climate_projection_radar.pdf Graphic file (type pd
+f)
+<use images//climatelearn_-_climate_projection_radar.pdf>
+Package pdftex.def Info: images//climatelearn_-_climate_projection_radar.pdf  u
+sed on input line 74.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[43
+
+]) (./section/mlcommons_science_-_cloudmask.tex
+File: images//mlcommons_science_-_cloudmask_radar.pdf Graphic file (type pdf)
+<use images//mlcommons_science_-_cloudmask_radar.pdf>
+Package pdftex.def Info: images//mlcommons_science_-_cloudmask_radar.pdf  used 
+on input line 86.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[44
+
+]) (./section/mlcommons_science_-_earthquake.tex
+File: images//mlcommons_science_-_earthquake_radar.pdf Graphic file (type pdf)
+<use images//mlcommons_science_-_earthquake_radar.pdf>
+Package pdftex.def Info: images//mlcommons_science_-_earthquake_radar.pdf  used
+ on input line 86.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[45
+
+]) (./section/mlcommons_science_-_candle_uno.tex
+File: images//mlcommons_science_-_candle_uno_radar.pdf Graphic file (type pdf)
+<use images//mlcommons_science_-_candle_uno_radar.pdf>
+Package pdftex.def Info: images//mlcommons_science_-_candle_uno_radar.pdf  used
+ on input line 86.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[46
+
+]) (./section/mlcommons_science_-_stemdl.tex
+File: images//mlcommons_science_-_stemdl_radar.pdf Graphic file (type pdf)
+<use images//mlcommons_science_-_stemdl_radar.pdf>
+Package pdftex.def Info: images//mlcommons_science_-_stemdl_radar.pdf  used on 
+input line 86.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[47
+
+]) (./section/arc-challenge_advanced_reasoning_challenge.tex
+File: images//arc-challenge_advanced_reasoning_challenge_radar.pdf Graphic file
+ (type pdf)
+<use images//arc-challenge_advanced_reasoning_challenge_radar.pdf>
+Package pdftex.def Info: images//arc-challenge_advanced_reasoning_challenge_rad
+ar.pdf  used on input line 75.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[48
+
+]) (./section/molgen.tex
+File: images//molgen_radar.pdf Graphic file (type pdf)
+<use images//molgen_radar.pdf>
+Package pdftex.def Info: images//molgen_radar.pdf  used on input line 78.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[49
+
+]) (./section/open_graph_benchmark_ogb_-_biology.tex
+File: images//open_graph_benchmark_ogb_-_biology_radar.pdf Graphic file (type p
+df)
+<use images//open_graph_benchmark_ogb_-_biology_radar.pdf>
+Package pdftex.def Info: images//open_graph_benchmark_ogb_-_biology_radar.pdf  
+used on input line 78.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[50
+
+]) (./section/llms_for_crop_science.tex
+File: images//llms_for_crop_science_radar.pdf Graphic file (type pdf)
+<use images//llms_for_crop_science_radar.pdf>
+Package pdftex.def Info: images//llms_for_crop_science_radar.pdf  used on input
+ line 82.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[51
+
+]) (./section/scicode.tex
+File: images//scicode_radar.pdf Graphic file (type pdf)
+<use images//scicode_radar.pdf>
+Package pdftex.def Info: images//scicode_radar.pdf  used on input line 73.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[52
+
+]) (./section/calochallenge_.tex
+File: images//calochallenge__radar.pdf Graphic file (type pdf)
+<use images//calochallenge__radar.pdf>
+Package pdftex.def Info: images//calochallenge__radar.pdf  used on input line 8
+8.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[53
+
+]) (./section/pdebench.tex
+File: images//pdebench_radar.pdf Graphic file (type pdf)
+<use images//pdebench_radar.pdf>
+Package pdftex.def Info: images//pdebench_radar.pdf  used on input line 84.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[54
+
+]) (./section/urban_data_layer_udl_-_pm_concentration_prediction.tex
+File: images//urban_data_layer_udl_-_pm_concentration_prediction_radar.pdf Grap
+hic file (type pdf)
+<use images//urban_data_layer_udl_-_pm_concentration_prediction_radar.pdf>
+Package pdftex.def Info: images//urban_data_layer_udl_-_pm_concentration_predic
+tion_radar.pdf  used on input line 76.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[55
+
+]) (./section/urban_data_layer_udl_-_built-up_area_classification.tex
+File: images//urban_data_layer_udl_-_built-up_area_classification_radar.pdf Gra
+phic file (type pdf)
+<use images//urban_data_layer_udl_-_built-up_area_classification_radar.pdf>
+Package pdftex.def Info: images//urban_data_layer_udl_-_built-up_area_classific
+ation_radar.pdf  used on input line 76.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[56
+
+]) (./section/urban_data_layer_udl_-_administrative_boundaries_identification.t
+ex
+File: images//urban_data_layer_udl_-_administrative_boundaries_identification_r
+adar.pdf Graphic file (type pdf)
+<use images//urban_data_layer_udl_-_administrative_boundaries_identification_ra
+dar.pdf>
+Package pdftex.def Info: images//urban_data_layer_udl_-_administrative_boundari
+es_identification_radar.pdf  used on input line 76.
+(pdftex.def)             Requested size: 93.94957pt x 92.33295pt.
+[57
+
+]) (./section/urban_data_layer_udl_-_el_nino_anomaly_detection.tex
+File: images//urban_data_layer_udl_-_el_nino_anomaly_detection_radar.pdf Graphi
+c file (type pdf)
+<use images//urban_data_layer_udl_-_el_nino_anomaly_detection_radar.pdf>
+Package pdftex.def Info: images//urban_data_layer_udl_-_el_nino_anomaly_detecti
+on_radar.pdf  used on input line 76.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[58
+
+]) (./section/spiqa_llm.tex
+File: images//spiqa_llm_radar.pdf Graphic file (type pdf)
+<use images//spiqa_llm_radar.pdf>
+Package pdftex.def Info: images//spiqa_llm_radar.pdf  used on input line 74.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[59
+
+]) (./section/mlcommons_medical_ai_-_pancreas_segmentation_dfci.tex
+File: images//mlcommons_medical_ai_-_pancreas_segmentation_dfci_radar.pdf Graph
+ic file (type pdf)
+<use images//mlcommons_medical_ai_-_pancreas_segmentation_dfci_radar.pdf>
+Package pdftex.def Info: images//mlcommons_medical_ai_-_pancreas_segmentation_d
+fci_radar.pdf  used on input line 87.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[60
+
+]) (./section/mlcommons_medical_ai_-_brain_tumor_segmentation_brats.tex
+File: images//mlcommons_medical_ai_-_brain_tumor_segmentation_brats_radar.pdf G
+raphic file (type pdf)
+<use images//mlcommons_medical_ai_-_brain_tumor_segmentation_brats_radar.pdf>
+Package pdftex.def Info: images//mlcommons_medical_ai_-_brain_tumor_segmentatio
+n_brats_radar.pdf  used on input line 87.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[61
+
+])
+(./section/mlcommons_medical_ai_-__surgical_workflow_phase_recognition_surgmlcu
+be.tex
+File: images//mlcommons_medical_ai_-__surgical_workflow_phase_recognition_surgm
+lcube_radar.pdf Graphic file (type pdf)
+<use images//mlcommons_medical_ai_-__surgical_workflow_phase_recognition_surgml
+cube_radar.pdf>
+Package pdftex.def Info: images//mlcommons_medical_ai_-__surgical_workflow_phas
+e_recognition_surgmlcube_radar.pdf  used on input line 87.
+(pdftex.def)             Requested size: 93.94957pt x 92.33295pt.
+[62
+
+]) (./section/seafloorai.tex
+File: images//seafloorai_radar.pdf Graphic file (type pdf)
+<use images//seafloorai_radar.pdf>
+Package pdftex.def Info: images//seafloorai_radar.pdf  used on input line 84.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[63
+
+]) (./section/seafloorgenai.tex
+File: images//seafloorgenai_radar.pdf Graphic file (type pdf)
+<use images//seafloorgenai_radar.pdf>
+Package pdftex.def Info: images//seafloorgenai_radar.pdf  used on input line 84
+.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[64
+
+]) (./section/gess_-_track_pileup.tex
+File: images//gess_-_track_pileup_radar.pdf Graphic file (type pdf)
+<use images//gess_-_track_pileup_radar.pdf>
+Package pdftex.def Info: images//gess_-_track_pileup_radar.pdf  used on input l
+ine 80.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[65
+
+]) (./section/gess_-_track_signal.tex
+File: images//gess_-_track_signal_radar.pdf Graphic file (type pdf)
+<use images//gess_-_track_signal_radar.pdf>
+Package pdftex.def Info: images//gess_-_track_signal_radar.pdf  used on input l
+ine 80.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[66
+
+]) (./section/gess_-_drugood.tex
+File: images//gess_-_drugood_radar.pdf Graphic file (type pdf)
+<use images//gess_-_drugood_radar.pdf>
+Package pdftex.def Info: images//gess_-_drugood_radar.pdf  used on input line 8
+0.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[67
+
+]) (./section/gess_-_qmof.tex
+File: images//gess_-_qmof_radar.pdf Graphic file (type pdf)
+<use images//gess_-_qmof_radar.pdf>
+Package pdftex.def Info: images//gess_-_qmof_radar.pdf  used on input line 81.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[68
+
+]) (./section/ocp_open_catalyst_project.tex
+File: images//ocp_open_catalyst_project_radar.pdf Graphic file (type pdf)
+<use images//ocp_open_catalyst_project_radar.pdf>
+Package pdftex.def Info: images//ocp_open_catalyst_project_radar.pdf  used on i
+nput line 79.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[69
+
+]) (./section/jet_classification.tex
+File: images//jet_classification_radar.pdf Graphic file (type pdf)
+<use images//jet_classification_radar.pdf>
+Package pdftex.def Info: images//jet_classification_radar.pdf  used on input li
+ne 78.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[70
+
+]) (./section/irregular_sensor_data_compression.tex
+File: images//irregular_sensor_data_compression_radar.pdf Graphic file (type pd
+f)
+<use images//irregular_sensor_data_compression_radar.pdf>
+Package pdftex.def Info: images//irregular_sensor_data_compression_radar.pdf  u
+sed on input line 77.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[71
+
+]) (./section/mlperf_hpc_-_cosmoflow.tex
+File: images//mlperf_hpc_-_cosmoflow_radar.pdf Graphic file (type pdf)
+<use images//mlperf_hpc_-_cosmoflow_radar.pdf>
+Package pdftex.def Info: images//mlperf_hpc_-_cosmoflow_radar.pdf  used on inpu
+t line 77.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[72
+
+]) (./section/mlperf_hpc_-_deepcam.tex
+File: images//mlperf_hpc_-_deepcam_radar.pdf Graphic file (type pdf)
+<use images//mlperf_hpc_-_deepcam_radar.pdf>
+Package pdftex.def Info: images//mlperf_hpc_-_deepcam_radar.pdf  used on input 
+line 75.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[73
+
+]) (./section/mlperf_hpc_-_open_catalyst_project_dimenet_.tex
+File: images//mlperf_hpc_-_open_catalyst_project_dimenet__radar.pdf Graphic fil
+e (type pdf)
+<use images//mlperf_hpc_-_open_catalyst_project_dimenet__radar.pdf>
+Package pdftex.def Info: images//mlperf_hpc_-_open_catalyst_project_dimenet__ra
+dar.pdf  used on input line 75.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[74
+
+]) (./section/mlperf_hpc_-_openfold.tex
+File: images//mlperf_hpc_-_openfold_radar.pdf Graphic file (type pdf)
+<use images//mlperf_hpc_-_openfold_radar.pdf>
+Package pdftex.def Info: images//mlperf_hpc_-_openfold_radar.pdf  used on input
+ line 75.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[75
+
+]) (./section/hdr_ml_anomaly_challenge_-_gravitational_waves.tex
+File: images//hdr_ml_anomaly_challenge_-_gravitational_waves_radar.pdf Graphic 
+file (type pdf)
+<use images//hdr_ml_anomaly_challenge_-_gravitational_waves_radar.pdf>
+Package pdftex.def Info: images//hdr_ml_anomaly_challenge_-_gravitational_waves
+_radar.pdf  used on input line 75.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[76
+
+]) (./section/supercond_-_property_prediction.tex
+File: images//supercond_-_property_prediction_radar.pdf Graphic file (type pdf)
+
+<use images//supercond_-_property_prediction_radar.pdf>
+Package pdftex.def Info: images//supercond_-_property_prediction_radar.pdf  use
+d on input line 80.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[77
+
+]) (./section/supercond_-__inverse_crystal_structure_generation.tex
+File: images//supercond_-__inverse_crystal_structure_generation_radar.pdf Graph
+ic file (type pdf)
+<use images//supercond_-__inverse_crystal_structure_generation_radar.pdf>
+Package pdftex.def Info: images//supercond_-__inverse_crystal_structure_generat
+ion_radar.pdf  used on input line 80.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[78
+
+])
+(./section/baisbench_biological_ai_scientist_benchmark_-_question_answering.tex
+File: images//baisbench_biological_ai_scientist_benchmark_-_question_answering_
+radar.pdf Graphic file (type pdf)
+<use images//baisbench_biological_ai_scientist_benchmark_-_question_answering_r
+adar.pdf>
+Package pdftex.def Info: images//baisbench_biological_ai_scientist_benchmark_-_
+question_answering_radar.pdf  used on input line 75.
+(pdftex.def)             Requested size: 93.94957pt x 92.33295pt.
+[79
+
+])
+(./section/baisbench_biological_ai_scientist_benchmark_-_cell_type_annotation.t
+ex
+File: images//baisbench_biological_ai_scientist_benchmark_-_cell_type_annotatio
+n_radar.pdf Graphic file (type pdf)
+<use images//baisbench_biological_ai_scientist_benchmark_-_cell_type_annotation
+_radar.pdf>
+Package pdftex.def Info: images//baisbench_biological_ai_scientist_benchmark_-_
+cell_type_annotation_radar.pdf  used on input line 75.
+(pdftex.def)             Requested size: 93.94957pt x 92.33295pt.
+[80
+
+]) (./section/the_well.tex
+File: images//the_well_radar.pdf Graphic file (type pdf)
+<use images//the_well_radar.pdf>
+Package pdftex.def Info: images//the_well_radar.pdf  used on input line 83.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[81
+
+]) (./section/mmlu_massive_multitask_language_understanding.tex
+File: images//mmlu_massive_multitask_language_understanding_radar.pdf Graphic f
+ile (type pdf)
+<use images//mmlu_massive_multitask_language_understanding_radar.pdf>
+Package pdftex.def Info: images//mmlu_massive_multitask_language_understanding_
+radar.pdf  used on input line 79.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[82
+
+]) (./section/satimgnet.tex
+File: images//satimgnet_radar.pdf Graphic file (type pdf)
+<use images//satimgnet_radar.pdf>
+Package pdftex.def Info: images//satimgnet_radar.pdf  used on input line 75.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[83
+
+]) (./section/gpqa_diamond.tex
+File: images//gpqa_diamond_radar.pdf Graphic file (type pdf)
+<use images//gpqa_diamond_radar.pdf>
+Package pdftex.def Info: images//gpqa_diamond_radar.pdf  used on input line 80.
+
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[84
+
+]) (./section/prmk.tex
+File: images//prmk_radar.pdf Graphic file (type pdf)
+<use images//prmk_radar.pdf>
+Package pdftex.def Info: images//prmk_radar.pdf  used on input line 72.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[85
+
+])
+(./section/feabench_finite_element_analysis_benchmark_evaluating_language_model
+s_on_multiphysics_reasoning_ability.tex
+Overfull \hbox (85.06497pt too wide) in paragraph at lines 49--50
+[]\T1/cmr/m/n/8 feabench_finite_element_analysis_benchmark_evaluating_language_
+models_on_multiphysics_reasoning_ability 
+ []
+
+File: images//feabench_finite_element_analysis_benchmark_evaluating_language_mo
+dels_on_multiphysics_reasoning_ability_radar.pdf Graphic file (type pdf)
+<use images//feabench_finite_element_analysis_benchmark_evaluating_language_mod
+els_on_multiphysics_reasoning_ability_radar.pdf>
+Package pdftex.def Info: images//feabench_finite_element_analysis_benchmark_eva
+luating_language_models_on_multiphysics_reasoning_ability_radar.pdf  used on in
+put line 74.
+(pdftex.def)             Requested size: 93.94957pt x 97.03723pt.
+[86
+
+]) (./section/neural_architecture_codesign_for_fast_physics_applications.tex
+File: images//neural_architecture_codesign_for_fast_physics_applications_radar.
+pdf Graphic file (type pdf)
+<use images//neural_architecture_codesign_for_fast_physics_applications_radar.p
+df>
+Package pdftex.def Info: images//neural_architecture_codesign_for_fast_physics_
+applications_radar.pdf  used on input line 78.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[87
+
+]) (./section/delta_squared-dft.tex
+File: images//delta_squared-dft_radar.pdf Graphic file (type pdf)
+<use images//delta_squared-dft_radar.pdf>
+Package pdftex.def Info: images//delta_squared-dft_radar.pdf  used on input lin
+e 74.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[88
+
+]) (./section/hdr_ml_anomaly_challenge_-_sea_level_rise.tex
+File: images//hdr_ml_anomaly_challenge_-_sea_level_rise_radar.pdf Graphic file 
+(type pdf)
+<use images//hdr_ml_anomaly_challenge_-_sea_level_rise_radar.pdf>
+Package pdftex.def Info: images//hdr_ml_anomaly_challenge_-_sea_level_rise_rada
+r.pdf  used on input line 76.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[89
+
+]) (./section/vocal_call_locator_vcl.tex
+File: images//vocal_call_locator_vcl_radar.pdf Graphic file (type pdf)
+<use images//vocal_call_locator_vcl_radar.pdf>
+Package pdftex.def Info: images//vocal_call_locator_vcl_radar.pdf  used on inpu
+t line 77.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[90
+
+]) (./section/massspecgym_-_de_novo_molecule_generation.tex
+File: images//massspecgym_-_de_novo_molecule_generation_radar.pdf Graphic file 
+(type pdf)
+<use images//massspecgym_-_de_novo_molecule_generation_radar.pdf>
+Package pdftex.def Info: images//massspecgym_-_de_novo_molecule_generation_rada
+r.pdf  used on input line 84.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[91
+
+]) (./section/massspecgym_-_molecule_retrieval.tex
+File: images//massspecgym_-_molecule_retrieval_radar.pdf Graphic file (type pdf
+)
+<use images//massspecgym_-_molecule_retrieval_radar.pdf>
+Package pdftex.def Info: images//massspecgym_-_molecule_retrieval_radar.pdf  us
+ed on input line 84.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[92
+
+]) (./section/massspecgym_-_spectrum_simulation.tex
+File: images//massspecgym_-_spectrum_simulation_radar.pdf Graphic file (type pd
+f)
+<use images//massspecgym_-_spectrum_simulation_radar.pdf>
+Package pdftex.def Info: images//massspecgym_-_spectrum_simulation_radar.pdf  u
+sed on input line 84.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[93
+
+]) (./section/spiqa_scientific_paper_image_question_answering.tex
+File: images//spiqa_scientific_paper_image_question_answering_radar.pdf Graphic
+ file (type pdf)
+<use images//spiqa_scientific_paper_image_question_answering_radar.pdf>
+Package pdftex.def Info: images//spiqa_scientific_paper_image_question_answerin
+g_radar.pdf  used on input line 78.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[94
+
+])
+(./section/gpqa_a_graduate-level_google-proof_question_and_answer_benchmark.tex
+File: images//gpqa_a_graduate-level_google-proof_question_and_answer_benchmark_
+radar.pdf Graphic file (type pdf)
+<use images//gpqa_a_graduate-level_google-proof_question_and_answer_benchmark_r
+adar.pdf>
+Package pdftex.def Info: images//gpqa_a_graduate-level_google-proof_question_an
+d_answer_benchmark_radar.pdf  used on input line 77.
+(pdftex.def)             Requested size: 93.94957pt x 92.33295pt.
+[95
+
+]) (./section/medqa.tex
+File: images//medqa_radar.pdf Graphic file (type pdf)
+<use images//medqa_radar.pdf>
+Package pdftex.def Info: images//medqa_radar.pdf  used on input line 75.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[96
+
+]) (./section/single_qubit_readout_on_qick_system.tex
+File: images//single_qubit_readout_on_qick_system_radar.pdf Graphic file (type 
+pdf)
+<use images//single_qubit_readout_on_qick_system_radar.pdf>
+Package pdftex.def Info: images//single_qubit_readout_on_qick_system_radar.pdf 
+ used on input line 79.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[97
+
+]) (./section/cfdbench_fluid_dynamics.tex
+File: images//cfdbench_fluid_dynamics_radar.pdf Graphic file (type pdf)
+<use images//cfdbench_fluid_dynamics_radar.pdf>
+Package pdftex.def Info: images//cfdbench_fluid_dynamics_radar.pdf  used on inp
+ut line 76.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[98
+
+])
+(./section/curie_scientific_long-context_understanding_reasoning_and_informatio
+n_extraction.tex
+File: images//curie_scientific_long-context_understanding_reasoning_and_informa
+tion_extraction_radar.pdf Graphic file (type pdf)
+<use images//curie_scientific_long-context_understanding_reasoning_and_informat
+ion_extraction_radar.pdf>
+Package pdftex.def Info: images//curie_scientific_long-context_understanding_re
+asoning_and_information_extraction_radar.pdf  used on input line 83.
+(pdftex.def)             Requested size: 93.94957pt x 92.33295pt.
+[99
+
+]) (./section/smart_pixels_for_lhc.tex
+File: images//smart_pixels_for_lhc_radar.pdf Graphic file (type pdf)
+<use images//smart_pixels_for_lhc_radar.pdf>
+Package pdftex.def Info: images//smart_pixels_for_lhc_radar.pdf  used on input 
+line 75.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[100
+
+]) (./section/lhc_new_physics_dataset.tex
+File: images//lhc_new_physics_dataset_radar.pdf Graphic file (type pdf)
+<use images//lhc_new_physics_dataset_radar.pdf>
+Package pdftex.def Info: images//lhc_new_physics_dataset_radar.pdf  used on inp
+ut line 81.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[101
+
+]) (./section/quantum_computing_benchmarks_qml.tex
+File: images//quantum_computing_benchmarks_qml_radar.pdf Graphic file (type pdf
+)
+<use images//quantum_computing_benchmarks_qml_radar.pdf>
+Package pdftex.def Info: images//quantum_computing_benchmarks_qml_radar.pdf  us
+ed on input line 76.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[102
+
+]) (./section/ultrafast_jet_classification_at_the_hl-lhc.tex
+Overfull \hbox (18.34932pt too wide) in paragraph at lines 50--51
+[][]\T1/cmr/m/n/8 https://docs.google.com/document/d/1gDf1CIYtfmfZ9urv1jCRZMYz_
+3WwEETkugUC65OZBdw[] 
+ []
+
+File: images//ultrafast_jet_classification_at_the_hl-lhc_radar.pdf Graphic file
+ (type pdf)
+<use images//ultrafast_jet_classification_at_the_hl-lhc_radar.pdf>
+Package pdftex.def Info: images//ultrafast_jet_classification_at_the_hl-lhc_rad
+ar.pdf  used on input line 78.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[103
+
+]) (./section/hedm_braggnn.tex
+File: images//hedm_braggnn_radar.pdf Graphic file (type pdf)
+<use images//hedm_braggnn_radar.pdf>
+Package pdftex.def Info: images//hedm_braggnn_radar.pdf  used on input line 73.
+
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[104
+
+]) (./section/d-stem.tex
+File: images//d-stem_radar.pdf Graphic file (type pdf)
+<use images//d-stem_radar.pdf>
+Package pdftex.def Info: images//d-stem_radar.pdf  used on input line 73.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[105
+
+]) (./section/beam_control.tex
+File: images//beam_control_radar.pdf Graphic file (type pdf)
+<use images//beam_control_radar.pdf>
+Package pdftex.def Info: images//beam_control_radar.pdf  used on input line 74.
+
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[106
+
+]) (./section/intelligent_experiments_through_real-time_ai.tex
+File: images//intelligent_experiments_through_real-time_ai_radar.pdf Graphic fi
+le (type pdf)
+<use images//intelligent_experiments_through_real-time_ai_radar.pdf>
+Package pdftex.def Info: images//intelligent_experiments_through_real-time_ai_r
+adar.pdf  used on input line 77.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[107
+
+]) (./section/hdr_ml_anomaly_challenge_-_butterfly.tex
+File: images//hdr_ml_anomaly_challenge_-_butterfly_radar.pdf Graphic file (type
+ pdf)
+<use images//hdr_ml_anomaly_challenge_-_butterfly_radar.pdf>
+Package pdftex.def Info: images//hdr_ml_anomaly_challenge_-_butterfly_radar.pdf
+  used on input line 77.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[108
+
+]) (./section/dune.tex
+Overfull \hbox (134.346pt too wide) in paragraph at lines 13--14
+[][]\T1/cmr/m/n/8 https://indico.fnal.gov/event/66520/contributions/301423/atta
+chments/182439/250508/fast_ml_dunedaq_sonic_10_15_24.pdf[] 
+ []
+
+File: images//dune_radar.pdf Graphic file (type pdf)
+<use images//dune_radar.pdf>
+Package pdftex.def Info: images//dune_radar.pdf  used on input line 74.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[109
+
+]) (./section/frontiermath.tex
+File: images//frontiermath_radar.pdf Graphic file (type pdf)
+<use images//frontiermath_radar.pdf>
+Package pdftex.def Info: images//frontiermath_radar.pdf  used on input line 74.
+
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[110
+
+]) (./section/aime_american_invitational_mathematics_examination.tex
+File: images//aime_american_invitational_mathematics_examination_radar.pdf Grap
+hic file (type pdf)
+<use images//aime_american_invitational_mathematics_examination_radar.pdf>
+Package pdftex.def Info: images//aime_american_invitational_mathematics_examina
+tion_radar.pdf  used on input line 74.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[111
+
+]) (./section/quench_detection.tex
+Overfull \hbox (127.97949pt too wide) in paragraph at lines 13--14
+[][]\T1/cmr/m/n/8 https://indico.cern.ch/event/1387540/contributions/6153618/at
+tachments/2948441/5182077/fast_ml_magnets_2024_final.pdf[] 
+ []
+
+File: images//quench_detection_radar.pdf Graphic file (type pdf)
+<use images//quench_detection_radar.pdf>
+Package pdftex.def Info: images//quench_detection_radar.pdf  used on input line
+ 74.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[112
+
+]) (./section/materials_project.tex
+File: images//materials_project_radar.pdf Graphic file (type pdf)
+<use images//materials_project_radar.pdf>
+Package pdftex.def Info: images//materials_project_radar.pdf  used on input lin
+e 75.
+(pdftex.def)             Requested size: 93.94957pt x 82.92438pt.
+[113
+
+]) (./section/in-situ_high-speed_computer_vision.tex
+Overfull \hbox (88.64604pt too wide) in paragraph at lines 43--44
+[][]\T1/cmr/m/n/8 https://docs.google.com/document/d/1EqkRHuQs1yQqMvZs_L6p9JAy2
+vKX5OCTubzttFBuRoQ/edit?usp=sharing[] 
+ []
+
+File: images//in-situ_high-speed_computer_vision_radar.pdf Graphic file (type p
+df)
+<use images//in-situ_high-speed_computer_vision_radar.pdf>
+Package pdftex.def Info: images//in-situ_high-speed_computer_vision_radar.pdf  
+used on input line 71.
+(pdftex.def)             Requested size: 93.94957pt x 87.62866pt.
+[114
+
+]) [115
+
+
+] [116] [117] [118] (./benchmarks.aux)
+Package rerunfilecheck Info: File `benchmarks.out' has not changed.
+(rerunfilecheck)             Checksum: 107611BB7FEBB1AAA0B9FF0D1B025B5D;17445.
+Package logreq Info: Writing requests to 'benchmarks.run.xml'.
+\openout1 = `benchmarks.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 21615 strings out of 478287
+ 434006 string characters out of 5849289
+ 1772262 words of memory out of 5000000
+ 38982 multiletter control sequences out of 15000+600000
+ 487751 words of font info for 76 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 70i,9n,76p,1062b,1353s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf/fonts/type1/pub
+lic/cm-super/sfbx0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx090
+0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/te
+xmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/publ
+ic/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000
+.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/tex
+mf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/publi
+c/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.
+pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texm
+f/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public
+/cm-super/sftt1000.pfb>
+Output written on benchmarks.pdf (118 pages, 2056060 bytes).
+PDF statistics:
+ 6195 PDF objects out of 7423 (max. 8388607)
+ 2105 compressed objects within 22 object streams
+ 259 named destinations out of 1000 (max. 500000)
+ 1357 words of extra memory for PDF output out of 10000 (max. 10000000)
+

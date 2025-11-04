@@ -1,0 +1,15 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'benchmarks.blg'
+[32] biber:340> INFO - === Tue Nov  4, 2025, 15:38:21
+[38] Biber.pm:418> INFO - Reading 'benchmarks.bcf'
+[80] Biber.pm:972> INFO - Found 57 citekeys in bib section 0
+[87] Biber.pm:4383> INFO - Processing section 0
+[91] Biber.pm:4574> INFO - Looking for bibtex file 'benchmarks.bib' for section 0
+[95] bibtex.pm:1713> INFO - LaTeX decoding ...
+[122] bibtex.pm:1518> INFO - Found BibTeX data source 'benchmarks.bib'
+[4007] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[4007] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[4007] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[4007] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[4047] bbl.pm:654> INFO - Writing 'benchmarks.bbl' with encoding 'UTF-8'
+[5874] bbl.pm:757> INFO - Output to benchmarks.bbl

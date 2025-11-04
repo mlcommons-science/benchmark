@@ -1,0 +1,77 @@
+\contentsline {section}{\numberline {1}Benchmark Overview Table}{4}{section.1}%
+\contentsline {section}{\numberline {2}Radar Chart Table}{38}{section.2}%
+\contentsline {section}{\numberline {3}Benchmark Details}{41}{section.3}%
+\contentsline {subsection}{\numberline {3.1}ClimateLearn - Weather Forcasting}{41}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}ClimateLearn - Downscaling}{42}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}ClimateLearn - Climate Projection}{43}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}MLCommons Science - CloudMask}{44}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}MLCommons Science - Earthquake}{45}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}MLCommons Science - Candle UNO}{46}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}MLCommons Science - STEMDL}{47}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}ARC-Challenge (Advanced Reasoning Challenge)}{48}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}MOLGEN}{49}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Open Graph Benchmark (OGB) - Biology}{50}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}LLMs for Crop Science}{51}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}SciCode}{52}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}CaloChallenge 2022}{53}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}PDEBench}{54}{subsection.3.14}%
+\contentsline {subsection}{\numberline {3.15}Urban Data Layer (UDL) - PM2.5 Concentration Prediction}{55}{subsection.3.15}%
+\contentsline {subsection}{\numberline {3.16}Urban Data Layer (UDL) - Built-up Area Classification}{56}{subsection.3.16}%
+\contentsline {subsection}{\numberline {3.17}Urban Data Layer (UDL) - Administrative Boundaries Identification}{57}{subsection.3.17}%
+\contentsline {subsection}{\numberline {3.18}Urban Data Layer (UDL) - El Nino Anomaly Detection}{58}{subsection.3.18}%
+\contentsline {subsection}{\numberline {3.19}SPIQA (LLM)}{59}{subsection.3.19}%
+\contentsline {subsection}{\numberline {3.20}MLCommons Medical AI - Pancreas Segmentation (DFCI)}{60}{subsection.3.20}%
+\contentsline {subsection}{\numberline {3.21}MLCommons Medical AI - Brain Tumor Segmentation (BraTS)}{61}{subsection.3.21}%
+\contentsline {subsection}{\numberline {3.22}MLCommons Medical AI - Surgical Workflow Phase Recognition (SurgMLCube)}{62}{subsection.3.22}%
+\contentsline {subsection}{\numberline {3.23}SeafloorAI}{63}{subsection.3.23}%
+\contentsline {subsection}{\numberline {3.24}SeafloorGenAI}{64}{subsection.3.24}%
+\contentsline {subsection}{\numberline {3.25}GeSS - Track Pileup}{65}{subsection.3.25}%
+\contentsline {subsection}{\numberline {3.26}GeSS - Track Signal}{66}{subsection.3.26}%
+\contentsline {subsection}{\numberline {3.27}GeSS - DrugOOD}{67}{subsection.3.27}%
+\contentsline {subsection}{\numberline {3.28}GeSS - QMOF}{68}{subsection.3.28}%
+\contentsline {subsection}{\numberline {3.29}OCP (Open Catalyst Project)}{69}{subsection.3.29}%
+\contentsline {subsection}{\numberline {3.30}Jet Classification}{70}{subsection.3.30}%
+\contentsline {subsection}{\numberline {3.31}Irregular Sensor Data Compression}{71}{subsection.3.31}%
+\contentsline {subsection}{\numberline {3.32}MLPerf HPC - Cosmoflow}{72}{subsection.3.32}%
+\contentsline {subsection}{\numberline {3.33}MLPerf HPC - DeepCAM}{73}{subsection.3.33}%
+\contentsline {subsection}{\numberline {3.34}MLPerf HPC - Open Catalyst Project DimeNet++ }{74}{subsection.3.34}%
+\contentsline {subsection}{\numberline {3.35}MLPerf HPC - OpenFold}{75}{subsection.3.35}%
+\contentsline {subsection}{\numberline {3.36}HDR ML Anomaly Challenge - Gravitational Waves}{76}{subsection.3.36}%
+\contentsline {subsection}{\numberline {3.37}SuperCon3D - Property Prediction}{77}{subsection.3.37}%
+\contentsline {subsection}{\numberline {3.38}SuperCon3D - Inverse Crystal Structure Generation}{78}{subsection.3.38}%
+\contentsline {subsection}{\numberline {3.39}BaisBench (Biological AI Scientist Benchmark) - Question Answering}{79}{subsection.3.39}%
+\contentsline {subsection}{\numberline {3.40}BaisBench (Biological AI Scientist Benchmark) - Cell Type Annotation}{80}{subsection.3.40}%
+\contentsline {subsection}{\numberline {3.41}The Well}{81}{subsection.3.41}%
+\contentsline {subsection}{\numberline {3.42}MMLU (Massive Multitask Language Understanding)}{82}{subsection.3.42}%
+\contentsline {subsection}{\numberline {3.43}SatImgNet}{83}{subsection.3.43}%
+\contentsline {subsection}{\numberline {3.44}GPQA Diamond}{84}{subsection.3.44}%
+\contentsline {subsection}{\numberline {3.45}PRM800K}{85}{subsection.3.45}%
+\contentsline {subsection}{\numberline {3.46}FEABench (Finite Element Analysis Benchmark): Evaluating Language Models on Multiphysics Reasoning Ability}{86}{subsection.3.46}%
+\contentsline {subsection}{\numberline {3.47}Neural Architecture Codesign for Fast Physics Applications}{87}{subsection.3.47}%
+\contentsline {subsection}{\numberline {3.48}Delta Squared-DFT}{88}{subsection.3.48}%
+\contentsline {subsection}{\numberline {3.49}HDR ML Anomaly Challenge - Sea Level Rise}{89}{subsection.3.49}%
+\contentsline {subsection}{\numberline {3.50}Vocal Call Locator (VCL)}{90}{subsection.3.50}%
+\contentsline {subsection}{\numberline {3.51}MassSpecGym - De novo molecule generation}{91}{subsection.3.51}%
+\contentsline {subsection}{\numberline {3.52}MassSpecGym - Molecule Retrieval}{92}{subsection.3.52}%
+\contentsline {subsection}{\numberline {3.53}MassSpecGym - Spectrum Simulation}{93}{subsection.3.53}%
+\contentsline {subsection}{\numberline {3.54}SPIQA (Scientific Paper Image Question Answering)}{94}{subsection.3.54}%
+\contentsline {subsection}{\numberline {3.55}GPQA: A Graduate-Level Google-Proof Question and Answer Benchmark}{95}{subsection.3.55}%
+\contentsline {subsection}{\numberline {3.56}MedQA}{96}{subsection.3.56}%
+\contentsline {subsection}{\numberline {3.57}Single Qubit Readout on QICK System}{97}{subsection.3.57}%
+\contentsline {subsection}{\numberline {3.58}CFDBench (Fluid Dynamics)}{98}{subsection.3.58}%
+\contentsline {subsection}{\numberline {3.59}CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction)}{99}{subsection.3.59}%
+\contentsline {subsection}{\numberline {3.60}Smart Pixels for LHC}{100}{subsection.3.60}%
+\contentsline {subsection}{\numberline {3.61}LHC New Physics Dataset}{101}{subsection.3.61}%
+\contentsline {subsection}{\numberline {3.62}Quantum Computing Benchmarks (QML)}{102}{subsection.3.62}%
+\contentsline {subsection}{\numberline {3.63}Ultrafast jet classification at the HL-LHC}{103}{subsection.3.63}%
+\contentsline {subsection}{\numberline {3.64}HEDM (BraggNN)}{104}{subsection.3.64}%
+\contentsline {subsection}{\numberline {3.65}4D-STEM}{105}{subsection.3.65}%
+\contentsline {subsection}{\numberline {3.66}Beam Control}{106}{subsection.3.66}%
+\contentsline {subsection}{\numberline {3.67}Intelligent experiments through real-time AI}{107}{subsection.3.67}%
+\contentsline {subsection}{\numberline {3.68}HDR ML Anomaly Challenge - Butterfly}{108}{subsection.3.68}%
+\contentsline {subsection}{\numberline {3.69}DUNE}{109}{subsection.3.69}%
+\contentsline {subsection}{\numberline {3.70}FrontierMath}{110}{subsection.3.70}%
+\contentsline {subsection}{\numberline {3.71}AIME (American Invitational Mathematics Examination)}{111}{subsection.3.71}%
+\contentsline {subsection}{\numberline {3.72}Quench detection}{112}{subsection.3.72}%
+\contentsline {subsection}{\numberline {3.73}Materials Project}{113}{subsection.3.73}%
+\contentsline {subsection}{\numberline {3.74}In-Situ High-Speed Computer Vision}{114}{subsection.3.74}%

@@ -56,18 +56,23 @@
     return str.replace(/<[^>]*>/g, ' ').replace(/[\s\u00A0\u200B]+/g, ' ').trim();
   }
 
+  function triggerDownload(href, { filename = '', revoke = false } = {}) {
+    const link = document.createElement('a');
+    link.href = href;
+    link.rel = 'noopener';
+    if (filename) link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    if (revoke) URL.revokeObjectURL(href);
+  }
+
   function downloadJson(data, filename) {
     try {
       const payload = JSON.stringify(data, null, 2);
       const blob = new Blob([payload], { type: 'application/json' });
       const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `${filename}.json`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
+      triggerDownload(url, { filename: `${filename}.json`, revoke: true });
     } catch (err) {
       console.error('JSON export failed:', err);
     }
@@ -329,6 +334,7 @@
         { extend: 'copyHtml5', text: 'Copy', exportOptions: mkExportOptions() },
         { extend: 'csvHtml5', text: 'CSV', exportOptions: mkExportOptions(), filename: EXPORT_FILENAME },
         makeJsonButton(mkExportOptions),
+        makeLatexButton(),
         makeColVisButton()
       ],
       pageLength: 25,
@@ -450,6 +456,20 @@
           .toArray();
         const rows = data.map(row => pickVisibleFields(row, visibleColumns));
         downloadJson(rows, EXPORT_FILENAME);
+      }
+    };
+  }
+  function makeLatexButton() {
+    return {
+      text: 'LaTeX',
+      action: function () {
+        const href = new URL('../../downloads/benchmarks-latex.zip', document.baseURI).toString();
+        try {
+          triggerDownload(href);
+        } catch (err) {
+          console.error('Download trigger failed:', err);
+          window.location.href = href;
+        }
       }
     };
   }

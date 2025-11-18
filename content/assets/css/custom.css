@@ -477,3 +477,15 @@
 .benchmark-card.is-hidden {
   display: none !important;
 }
+
+/* ============================================================
+   Index page width tweak
+   - widen landing page similar to cards view
+   - target the unique h1 slug produced by MkDocs
+   ============================================================ */
+.md-grid:has(#mlcommons-science-working-group-ai-benchmarks-collection) {
+  max-width: min(82rem, 98vw);
+}
+.md-content__inner:has(#mlcommons-science-working-group-ai-benchmarks-collection) {
+  max-width: min(76rem, 96vw);
+}

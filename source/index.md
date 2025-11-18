@@ -36,7 +36,9 @@ If you use this repository, the benchmark collection, or any derived artifacts, 
 
 Gregor von Laszewski, Ben Hawks, Marco Colombo, Reece Shiraishi, Anjay Krishnan, Nhan Tran, and Geoffrey C. Fox. 2025. *MLCommons Science Working Group AI Benchmarks Collection.* MLCommons Science Working Group. Available at: https://mlcommons-science.github.io/benchmark/benchmarks.pdf
 
-**BibTeX**
+<details class="bibtex">
+<summary>BibTeX entry</summary>
+
 ```bibtex
 @misc{mlcommons-benchmarks-collection,
   author = {
@@ -57,11 +59,15 @@ Gregor von Laszewski, Ben Hawks, Marco Colombo, Reece Shiraishi, Anjay Krishnan,
 }
 ```
 
+</details>
+
 ### An MLCommons Scientific Benchmarks Ontology
 
 Ben Hawks, Gregor von Laszewski, Matthew D. Sinclair, Marco Colombo, Shivaram Venkataraman, Rutwik Jain, Yiwei Jiang, Nhan Tran, and Geoffrey Fox. 2025. *An MLCommons Scientific Benchmarks Ontology.* arXiv:2511.05614.
 
-**BibTeX**
+<details class="bibtex">
+<summary>BibTeX entry</summary>
+
 ```bibtex
 @misc{hawks2025mlcommonsscientificbenchmarksontology,
       title={An MLCommons Scientific Benchmarks Ontology}, 
@@ -74,11 +80,15 @@ Ben Hawks, Gregor von Laszewski, Matthew D. Sinclair, Marco Colombo, Shivaram Ve
 }
 ```
 
+</details>
+
 ### AI Benchmarks Carpentry and Democratization
 
 Authors. 2025. *AI Benchmarks Carpentry and Democratization.* To appear.
 
-**BibTeX**
+<details class="bibtex">
+<summary>BibTeX entry</summary>
+
 ```bibtex
 @article{mlcommons2025carpentry,
   author = {Authors},
@@ -88,5 +98,7 @@ Authors. 2025. *AI Benchmarks Carpentry and Democratization.* To appear.
   note = {Forthcoming publication}
 }
 ```
+
+</details>
 
 For program-level improvements, contact **Gregor von Laszewski** at `laszewski at gmail.com`.

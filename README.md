@@ -53,6 +53,7 @@ You can execute the Makefile targets and scripts inside the container.
    make check          # ensures required fields are present and flags non-ASCII characters
    make check_url      # optional; validates that referenced URLs resolve
    ```
+   If a site blocks automated requests (so the URL works in your browser but still fails in the script), follow the “URL verification workflow” in `docs/tooling.md`.
 5. Review your diff so the pull request contains only YAML and documentation updates. Avoid committing changes under `content/` or `www/`.
 6. Open a pull request. Maintainers will regenerate Markdown, LaTeX, and MkDocs outputs during review before publishing.
 

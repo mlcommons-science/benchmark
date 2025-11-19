@@ -182,6 +182,67 @@ td {
   overflow-x: auto !important;
 }
 
+.benchmarks-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.benchmarks-toolbar__left,
+.benchmarks-toolbar__right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.benchmarks-toolbar__left .dt-buttons {
+  margin-bottom: 0;
+}
+
+.benchmarks-toolbar__right {
+  margin-left: auto;
+}
+
+.benchmarks-toolbar__right .dataTables_filter {
+  margin: 0;
+}
+
+.benchmarks-toolbar__right .dataTables_filter label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.benchmarks-toolbar__right .dataTables_filter input {
+  margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  .benchmarks-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .benchmarks-toolbar__right {
+    width: 100%;
+    margin-left: 0;
+  }
+  .benchmarks-toolbar__right .dataTables_filter {
+    width: 100%;
+  }
+  .benchmarks-toolbar__right .dataTables_filter label {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .benchmarks-toolbar__right .dataTables_filter input {
+    flex: 1;
+  }
+}
+
 /* Fixed column styles */
 .DTFC_LeftWrapper table {
   table-layout: fixed !important;

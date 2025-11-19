@@ -5,6 +5,11 @@
   const DEFAULT_WIDTH = '240px';
   const DEFAULT_LINES = 2;
   const EXPORT_FILENAME = 'science-ai-benchmarks';
+  const PAGE_LENGTH_ALL = -1;
+  const PAGE_LENGTH_MENU = [
+    [PAGE_LENGTH_ALL, 25, 50, 100],
+    ['All rows', '25 rows', '50 rows', '100 rows']
+  ];
 
   // Helpers
   const esc = s => String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
@@ -311,6 +316,11 @@
     const mkExportOptions = () => ({
       columns: ':visible',
       orthogonal: 'export',
+      modifier: {
+        page: 'current',
+        search: 'applied',
+        order: 'applied'
+      },
       format: {
         body: (data, row, column, node) => {
           const fallback = node ? node.textContent || node.innerText || '' : '';
@@ -329,7 +339,7 @@
       scrollCollapse: true,
       deferRender: true,
       fixedColumns: { left: 1 },
-      dom: 'Bfrtip',
+      dom: "<'benchmarks-toolbar'<'benchmarks-toolbar__left'Bl><'benchmarks-toolbar__right'f>>rtip",
       buttons: [
         { extend: 'copyHtml5', text: 'Copy', exportOptions: mkExportOptions() },
         { extend: 'csvHtml5', text: 'CSV', exportOptions: mkExportOptions(), filename: EXPORT_FILENAME },
@@ -337,7 +347,8 @@
         makeLatexButton(),
         makeColVisButton()
       ],
-      pageLength: 25,
+      pageLength: PAGE_LENGTH_ALL,
+      lengthMenu: PAGE_LENGTH_MENU,
       order: (() => { 
         const i = C.findIndex(c => c.title === 'Date'); 
         return i >= 0 ? [[i, 'desc']] : []; 
@@ -451,7 +462,7 @@
           .indexes()
           .toArray();
         const data = dtInstance
-          .rows({ search: 'applied', order: 'applied', page: 'all' })
+          .rows({ search: 'applied', order: 'applied', page: 'current' })
           .data()
           .toArray();
         const rows = data.map(row => pickVisibleFields(row, visibleColumns));

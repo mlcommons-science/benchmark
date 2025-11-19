@@ -30,18 +30,27 @@ LATEX_PREFIX = textwrap.dedent(
     \usepackage[T1]{fontenc}
     
     \usepackage{makecell}
+    \usepackage[english]{babel}
     \usepackage{enumitem}
     \usepackage{hyperref}
     \usepackage{amsmath}
     \usepackage{pdflscape}
     \usepackage{wasysym}
     \usepackage{longtable}
+    \usepackage{array}
+    \usepackage{ragged2e}
+    \usepackage{xurl}
     \usepackage[style=ieee, url=true]{biblatex}
     \addbibresource{benchmarks.bib} 
     \usepackage{caption}
     \usepackage{url}
     \usepackage{graphicx}
     \graphicspath{{images/}}
+    
+    \newcolumntype{P}[1]{>{\RaggedRight\arraybackslash\hspace{0pt}}p{#1}}
+    \newcolumntype{Q}[1]{>{\RaggedRight\arraybackslash\hspace{0pt}}p{#1}}
+    \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+    \setlength{\tabcolsep}{2pt}
     
     
     \usepackage{textcomp}
@@ -57,7 +66,6 @@ LATEX_PREFIX = textwrap.dedent(
     \hfuzz=100pt
     \emergencystretch=3em
     \hbadness=10000
-    
     \setlength{\parindent}{0pt}
 
     \begin{document}
@@ -127,7 +135,7 @@ DESCRIPTION_STYLE = (
 
 # Define all columns with their properties for clarity and consistency
 ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
-    "average_rating": {"width": 1, "label": "Average Rating"},
+    "average_rating": {"width": 1, "label": "Avg Rating"},
     "date": {"width": 1.5, "label": "Date"},
     "expired": {"width": 1, "label": "Expired"},
     "valid": {"width": 0.7, "label": "Valid"},
@@ -144,7 +152,7 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
     "ml_motif": {"width": 3, "label": "AI/ML Motif"},
     "notes": {"width": 3, "label": "Notes"},
     "cite": {"width": 1, "label": "Citation"},
-    "ratings": {"width": 3, "label": "Ratings"},
+    "ratings": {"width": 4, "label": "Ratings"},
     "ratings.software.rating": {"width": 1, "label": "Software Rating"},
     "ratings.software.reason": {"width": 3, "label": "Software Reason"},
     "ratings.specification.rating": {"width": 1, "label": "Specification Rating"},
@@ -163,6 +171,12 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
     },
     "ratings.documentation.rating": {"width": "1", "label": "Documentation Rating"},
     "ratings.documentation.reason": {"width": "3", "label": "Documentation Reason"},
+}
+
+COLUMN_TYPE_OVERRIDES = {
+    "ratings": "M",
+    "cite": "Q",
+    "url": "Q",
 }
 
 DEFAULT_COLUMNS = [
@@ -276,6 +290,19 @@ def escape_latex(text: Any) -> str:
     if not isinstance(text, str):
         text = str(text)
     return unicode_to_latex(text, non_ascii_only=False)
+
+
+def pad_slashes_and_hyphens(text: str) -> str:
+    """Adds spaces around '/' and '-' so LaTeX can break near compound terms."""
+    if not text:
+        return text
+
+    text = re.sub(r"(?<!\s)(?<!\\)/", r" /", text)
+    text = re.sub(r"(?<!\\)/(?!\s)", r"/ ", text)
+    text = re.sub(r"(?<!\s)(?<!\\)-", r" -", text)
+    text = re.sub(r"(?<!\\)-(?!\s)", r"- ", text)
+
+    return text
 
 
 def validate_bibtex_entries(bibtex_str):
@@ -943,7 +970,11 @@ class GenerateLatex:
                 id = entry.get("id", "unknown")
                 image = f"{id}_radar.pdf"
 
-                content = f"\\includegraphics[width=0.15\\textwidth]{{{image}}}"
+                content = (
+                    r"\raisebox{-0.5\height}{\includegraphics[width=0.85\linewidth]{"
+                    + image
+                    + "}}"
+                )
 
             elif col == "cite":
                 cite_entries = (
@@ -970,7 +1001,13 @@ class GenerateLatex:
             # Ensure content is not empty
             if not content.strip():
                 content = "N/A"
-
+            else:
+                special = col in {"ratings", "cite"} or content.lstrip().startswith(
+                    ("\\includegraphics", "\\cite")
+                )
+                if not special:
+                    content = pad_slashes_and_hyphens(content)
+            
             row.append(content)
 
         result = " & ".join(row) + r" \\ \hline"
@@ -1006,12 +1043,14 @@ class GenerateLatex:
 
             width = []
             names = []
+            column_order = []
             total_width = 0
             for col in columns:
                 if col in ALL_COLUMNS:
                     total_width += float(ALL_COLUMNS[col]["width"])
                     width.append(ALL_COLUMNS[col]["width"])
                     names.append(ALL_COLUMNS[col]["label"])
+                    column_order.append(col)
 
             # #add ratings
             # if average_ratings:
@@ -1029,7 +1068,11 @@ class GenerateLatex:
 
             formatted_names = [f"\\textbf{{{escape_latex(name)}}}" for name in names]
             formatted_names_str = " & ".join(formatted_names) + r" "
-            formatted_width = "{|" + "|".join([f"p{{{x}}}" for x in width]) + "|}"
+            column_specs = []
+            for idx, col in enumerate(column_order):
+                col_type = COLUMN_TYPE_OVERRIDES.get(col, "P")
+                column_specs.append(f"{col_type}{{{width[idx]}}}")
+            formatted_width = "{|" + "|".join(column_specs) + "|}"
 
             return formatted_width, formatted_names_str
 

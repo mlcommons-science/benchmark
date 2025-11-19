@@ -295,6 +295,8 @@ def _canonicalize_doi(doi: str) -> str:
 
 def _canonicalize_url(url: str) -> str:
     url = url.strip()
+    url = re.sub(r"^https?://", "", url, flags=re.IGNORECASE)
+    url = re.sub(r"^www\.", "", url, flags=re.IGNORECASE)
     # Trailing slash differences shouldn't impact deduplication
     url = url.rstrip("/")
     return url.lower()

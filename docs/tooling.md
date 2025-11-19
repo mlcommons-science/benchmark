@@ -41,6 +41,15 @@ The most frequently used targets are:
 - `make publish` – commits generated site updates and runs `mkdocs gh-deploy` (maintainer use only).
 - `make clean` – removes generated folders under `content/`.
 
+### URL verification workflow
+
+Contributors should run `make check_url` locally before opening a pull request. Some publishers block automated scraping, which causes the checker to fail even though the URL is healthy. When this happens:
+
+1. Open the URL in a regular browser (or use another manual method) to confirm that the link is reachable.
+2. Append the URL to the `urls` list in `source/verified_urls.yaml` and, if appropriate, refresh the `date` field in that file so we know when the entry was last validated.
+3. Mention the manual verification in your PR description so reviewers understand why the checker was bypassed.
+
+The URL checker automatically reads this allowlist and will skip re-checking the listed entries. This keeps the automated tests green without losing track of the links that need special handling.
 
 ## Core Scripts (`bin/`)
 

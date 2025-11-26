@@ -6,7 +6,7 @@ import os
 import re
 import sys
 import textwrap
-from typing import List, Dict, Union, Any
+from typing import List, Dict, Union, Any, Optional, Tuple
 
 from pybtex.database import parse_string
 from pybtex.plugin import find_plugin
@@ -305,6 +305,78 @@ def pad_slashes_and_hyphens(text: str) -> str:
     return text
 
 
+def _normalize_whitespace(text: str) -> str:
+    return re.sub(r"\s+", " ", text).strip().lower()
+
+
+def _strip_braces(text: str) -> str:
+    return text.replace("{", "").replace("}", "")
+
+
+def _canonicalize_doi(doi: str) -> str:
+    doi = doi.strip()
+    doi = re.sub(r"^https?://(dx\.)?doi\.org/", "", doi, flags=re.IGNORECASE)
+    doi = re.sub(r"^doi:\s*", "", doi, flags=re.IGNORECASE)
+    return doi.strip().lower()
+
+
+def _canonicalize_url(url: str) -> str:
+    url = url.strip()
+    url = re.sub(r"^https?://", "", url, flags=re.IGNORECASE)
+    url = re.sub(r"^www\.", "", url, flags=re.IGNORECASE)
+    # Trailing slash differences shouldn't impact deduplication
+    url = url.rstrip("/")
+    return url.lower()
+
+
+def _canonicalize_title(title: str) -> str:
+    title = _strip_braces(title)
+    return _normalize_whitespace(title)
+
+
+def _parse_single_bibtex_entry(entry: str) -> Dict[str, Any]:
+    """
+    Parses a single BibTeX entry string and returns the first entry dictionary.
+    """
+    try:
+        bib_db = bibtexparser.loads(entry)
+        if bib_db.entries:
+            return bib_db.entries[0]
+    except Exception:
+        pass
+    return {}
+
+
+def _get_duplicate_key(entry: Dict[str, Any]) -> Optional[Tuple[str, str]]:
+    """
+    Returns a tuple describing how to detect duplicates for a BibTeX entry.
+    The tuple structure is (key_type, canonical_value).
+    """
+    if not entry:
+        return None
+
+    doi = entry.get("doi")
+    if isinstance(doi, str) and doi.strip():
+        return ("doi", _canonicalize_doi(doi))
+
+    # Prefer arXiv IDs if available
+    eprint = entry.get("eprint")
+    if isinstance(eprint, str) and eprint.strip():
+        archive = entry.get("archiveprefix", "")
+        if not archive or archive.lower() == "arxiv":
+            return ("arxiv", _normalize_whitespace(eprint))
+
+    url = entry.get("url")
+    if isinstance(url, str) and url.strip():
+        return ("url", _canonicalize_url(url))
+
+    title = entry.get("title")
+    if isinstance(title, str) and title.strip():
+        return ("title", _canonicalize_title(title))
+
+    return None
+
+
 def validate_bibtex_entries(bibtex_str):
     try:
         bib_database = bibtexparser.loads(bibtex_str)
@@ -434,6 +506,7 @@ class GenerateLatex:
         """
         bib_entries = []
         found_labels = set()
+        seen_papers: Dict[Tuple[str, str], Tuple[str, str]] = {}
         fatal_errors = False
 
         for entry in self.entries:
@@ -489,15 +562,29 @@ class GenerateLatex:
                     )
                     fatal_errors = True
 
+                entry_data = _parse_single_bibtex_entry(cite_entry)
+                duplicate_key = _get_duplicate_key(entry_data)
+                if duplicate_key:
+                    existing = seen_papers.get(duplicate_key)
+                    if existing and existing[0] != label:
+                        duplicate_kind = duplicate_key[0]
+                        Console.error(
+                            f"Entry '{name}' citation '{label}' matches the same {duplicate_kind} as "
+                            f"entry '{existing[1]}' citation '{existing[0]}'. Please consolidate duplicate BibTeX entries."
+                        )
+                        fatal_errors = True
+                    else:
+                        seen_papers.setdefault(duplicate_key, (label, name))
+
                 if label not in found_labels:
                     found_labels.add(label)
                     bib_entries.append(cite_entry)
 
-        # if fatal_errors:
-        #     print()
-        #     Console.error("BibTeX entries contain errors. Please fix them to proceed.")
-        #     print()
-        #     sys.exit(1)
+        if fatal_errors:
+            print()
+            Console.error("BibTeX entries contain errors. Please fix them to proceed.")
+            print()
+            sys.exit(1)
 
         content = "\n\n".join(bib_entries)
 

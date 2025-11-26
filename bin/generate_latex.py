@@ -6,7 +6,7 @@ import os
 import re
 import sys
 import textwrap
-from typing import List, Dict, Union, Any
+from typing import List, Dict, Union, Any, Optional, Tuple
 
 from pybtex.database import parse_string
 from pybtex.plugin import find_plugin
@@ -30,18 +30,27 @@ LATEX_PREFIX = textwrap.dedent(
     \usepackage[T1]{fontenc}
     
     \usepackage{makecell}
+    \usepackage[english]{babel}
     \usepackage{enumitem}
     \usepackage{hyperref}
     \usepackage{amsmath}
     \usepackage{pdflscape}
     \usepackage{wasysym}
     \usepackage{longtable}
+    \usepackage{array}
+    \usepackage{ragged2e}
+    \usepackage{xurl}
     \usepackage[style=ieee, url=true]{biblatex}
     \addbibresource{benchmarks.bib} 
     \usepackage{caption}
     \usepackage{url}
     \usepackage{graphicx}
     \graphicspath{{images/}}
+    
+    \newcolumntype{P}[1]{>{\RaggedRight\arraybackslash\hspace{0pt}}p{#1}}
+    \newcolumntype{Q}[1]{>{\RaggedRight\arraybackslash\hspace{0pt}}p{#1}}
+    \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+    \setlength{\tabcolsep}{2pt}
     
     
     \usepackage{textcomp}
@@ -57,7 +66,6 @@ LATEX_PREFIX = textwrap.dedent(
     \hfuzz=100pt
     \emergencystretch=3em
     \hbadness=10000
-    
     \setlength{\parindent}{0pt}
 
     \begin{document}
@@ -127,7 +135,7 @@ DESCRIPTION_STYLE = (
 
 # Define all columns with their properties for clarity and consistency
 ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
-    "average_rating": {"width": 1, "label": "Average Rating"},
+    "average_rating": {"width": 1, "label": "Avg Rating"},
     "date": {"width": 1.5, "label": "Date"},
     "expired": {"width": 1, "label": "Expired"},
     "valid": {"width": 0.7, "label": "Valid"},
@@ -144,7 +152,7 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
     "ml_motif": {"width": 3, "label": "AI/ML Motif"},
     "notes": {"width": 3, "label": "Notes"},
     "cite": {"width": 1, "label": "Citation"},
-    "ratings": {"width": 3, "label": "Ratings"},
+    "ratings": {"width": 4, "label": "Ratings"},
     "ratings.software.rating": {"width": 1, "label": "Software Rating"},
     "ratings.software.reason": {"width": 3, "label": "Software Reason"},
     "ratings.specification.rating": {"width": 1, "label": "Specification Rating"},
@@ -163,6 +171,12 @@ ALL_COLUMNS: Dict[str, Dict[str, Union[str, float]]] = {
     },
     "ratings.documentation.rating": {"width": "1", "label": "Documentation Rating"},
     "ratings.documentation.reason": {"width": "3", "label": "Documentation Reason"},
+}
+
+COLUMN_TYPE_OVERRIDES = {
+    "ratings": "M",
+    "cite": "Q",
+    "url": "Q",
 }
 
 DEFAULT_COLUMNS = [
@@ -276,6 +290,91 @@ def escape_latex(text: Any) -> str:
     if not isinstance(text, str):
         text = str(text)
     return unicode_to_latex(text, non_ascii_only=False)
+
+
+def pad_slashes_and_hyphens(text: str) -> str:
+    """Adds spaces around '/' and '-' so LaTeX can break near compound terms."""
+    if not text:
+        return text
+
+    text = re.sub(r"(?<!\s)(?<!\\)/", r" /", text)
+    text = re.sub(r"(?<!\\)/(?!\s)", r"/ ", text)
+    text = re.sub(r"(?<!\s)(?<!\\)-", r" -", text)
+    text = re.sub(r"(?<!\\)-(?!\s)", r"- ", text)
+
+    return text
+
+
+def _normalize_whitespace(text: str) -> str:
+    return re.sub(r"\s+", " ", text).strip().lower()
+
+
+def _strip_braces(text: str) -> str:
+    return text.replace("{", "").replace("}", "")
+
+
+def _canonicalize_doi(doi: str) -> str:
+    doi = doi.strip()
+    doi = re.sub(r"^https?://(dx\.)?doi\.org/", "", doi, flags=re.IGNORECASE)
+    doi = re.sub(r"^doi:\s*", "", doi, flags=re.IGNORECASE)
+    return doi.strip().lower()
+
+
+def _canonicalize_url(url: str) -> str:
+    url = url.strip()
+    url = re.sub(r"^https?://", "", url, flags=re.IGNORECASE)
+    url = re.sub(r"^www\.", "", url, flags=re.IGNORECASE)
+    # Trailing slash differences shouldn't impact deduplication
+    url = url.rstrip("/")
+    return url.lower()
+
+
+def _canonicalize_title(title: str) -> str:
+    title = _strip_braces(title)
+    return _normalize_whitespace(title)
+
+
+def _parse_single_bibtex_entry(entry: str) -> Dict[str, Any]:
+    """
+    Parses a single BibTeX entry string and returns the first entry dictionary.
+    """
+    try:
+        bib_db = bibtexparser.loads(entry)
+        if bib_db.entries:
+            return bib_db.entries[0]
+    except Exception:
+        pass
+    return {}
+
+
+def _get_duplicate_key(entry: Dict[str, Any]) -> Optional[Tuple[str, str]]:
+    """
+    Returns a tuple describing how to detect duplicates for a BibTeX entry.
+    The tuple structure is (key_type, canonical_value).
+    """
+    if not entry:
+        return None
+
+    doi = entry.get("doi")
+    if isinstance(doi, str) and doi.strip():
+        return ("doi", _canonicalize_doi(doi))
+
+    # Prefer arXiv IDs if available
+    eprint = entry.get("eprint")
+    if isinstance(eprint, str) and eprint.strip():
+        archive = entry.get("archiveprefix", "")
+        if not archive or archive.lower() == "arxiv":
+            return ("arxiv", _normalize_whitespace(eprint))
+
+    url = entry.get("url")
+    if isinstance(url, str) and url.strip():
+        return ("url", _canonicalize_url(url))
+
+    title = entry.get("title")
+    if isinstance(title, str) and title.strip():
+        return ("title", _canonicalize_title(title))
+
+    return None
 
 
 def validate_bibtex_entries(bibtex_str):
@@ -407,6 +506,7 @@ class GenerateLatex:
         """
         bib_entries = []
         found_labels = set()
+        seen_papers: Dict[Tuple[str, str], Tuple[str, str]] = {}
         fatal_errors = False
 
         for entry in self.entries:
@@ -462,15 +562,29 @@ class GenerateLatex:
                     )
                     fatal_errors = True
 
+                entry_data = _parse_single_bibtex_entry(cite_entry)
+                duplicate_key = _get_duplicate_key(entry_data)
+                if duplicate_key:
+                    existing = seen_papers.get(duplicate_key)
+                    if existing and existing[0] != label:
+                        duplicate_kind = duplicate_key[0]
+                        Console.error(
+                            f"Entry '{name}' citation '{label}' matches the same {duplicate_kind} as "
+                            f"entry '{existing[1]}' citation '{existing[0]}'. Please consolidate duplicate BibTeX entries."
+                        )
+                        fatal_errors = True
+                    else:
+                        seen_papers.setdefault(duplicate_key, (label, name))
+
                 if label not in found_labels:
                     found_labels.add(label)
                     bib_entries.append(cite_entry)
 
-        # if fatal_errors:
-        #     print()
-        #     Console.error("BibTeX entries contain errors. Please fix them to proceed.")
-        #     print()
-        #     sys.exit(1)
+        if fatal_errors:
+            print()
+            Console.error("BibTeX entries contain errors. Please fix them to proceed.")
+            print()
+            sys.exit(1)
 
         content = "\n\n".join(bib_entries)
 
@@ -943,7 +1057,11 @@ class GenerateLatex:
                 id = entry.get("id", "unknown")
                 image = f"{id}_radar.pdf"
 
-                content = f"\\includegraphics[width=0.15\\textwidth]{{{image}}}"
+                content = (
+                    r"\raisebox{-0.5\height}{\includegraphics[width=0.85\linewidth]{"
+                    + image
+                    + "}}"
+                )
 
             elif col == "cite":
                 cite_entries = (
@@ -970,7 +1088,13 @@ class GenerateLatex:
             # Ensure content is not empty
             if not content.strip():
                 content = "N/A"
-
+            else:
+                special = col in {"ratings", "cite"} or content.lstrip().startswith(
+                    ("\\includegraphics", "\\cite")
+                )
+                if not special:
+                    content = pad_slashes_and_hyphens(content)
+            
             row.append(content)
 
         result = " & ".join(row) + r" \\ \hline"
@@ -1006,12 +1130,14 @@ class GenerateLatex:
 
             width = []
             names = []
+            column_order = []
             total_width = 0
             for col in columns:
                 if col in ALL_COLUMNS:
                     total_width += float(ALL_COLUMNS[col]["width"])
                     width.append(ALL_COLUMNS[col]["width"])
                     names.append(ALL_COLUMNS[col]["label"])
+                    column_order.append(col)
 
             # #add ratings
             # if average_ratings:
@@ -1029,7 +1155,11 @@ class GenerateLatex:
 
             formatted_names = [f"\\textbf{{{escape_latex(name)}}}" for name in names]
             formatted_names_str = " & ".join(formatted_names) + r" "
-            formatted_width = "{|" + "|".join([f"p{{{x}}}" for x in width]) + "|}"
+            column_specs = []
+            for idx, col in enumerate(column_order):
+                col_type = COLUMN_TYPE_OVERRIDES.get(col, "P")
+                column_specs.append(f"{col_type}{{{width[idx]}}}")
+            formatted_width = "{|" + "|".join(column_specs) + "|}"
 
             return formatted_width, formatted_names_str
 

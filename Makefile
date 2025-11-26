@@ -109,8 +109,6 @@ check:
 
 check_urls:
 	python ${SCRIPT} --files ${CHECK_FILES} --check_url 
-check_urls:
-	python ${SCRIPT} --files ${CHECK_FILES} --check_url 
 
 u:
 	python ${SCRIPT} --files ${CHECK_FILES} --check_url --url=https://pubs.acs.org/doi/10.1021/acscatal.2c05426

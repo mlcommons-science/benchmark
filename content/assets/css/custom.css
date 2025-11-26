@@ -62,6 +62,13 @@ details.bibtex summary::before {
   opacity: 0.7;
   position: absolute;
   left: -1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* Nudge the default disclosure arrow up to align with text */
+details.bibtex summary::after {
+  position: relative;
+  top: -0em;
 }
 details.bibtex summary svg {
   display: none !important;

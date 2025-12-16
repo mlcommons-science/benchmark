@@ -112,16 +112,18 @@ Ben Hawks, Gregor von Laszewski, Matthew D. Sinclair, Marco Colombo, Shivaram Ve
 ```
 
 ### AI Benchmarks Carpentry and Democratization
-Authors. 2025. *AI Benchmarks Carpentry and Democratization.* To appear.
+Gregor von Laszewski, Wesley Brewer, Jeyan Thiyagalingam, Juri Papay, Armstrong Foundjem, Piotr Luszczek, Murali Emani, Shirley V. Moore, Vijay Janapa Reddi, Matthew D. Sinclair, Sebastian Lobentanzer, Sujata Goswami, Benjamin Hawks, Marco Colombo, Nhan Tran, Christine R. Kirkpatrick, Abdulkareem Alsudais, Gregg Barrett, Tianhao Li, Kirsten Morehouse, Shivaram Venkataraman, Rutwik Jain, Kartik Mathur, Victor Lu, Tejinder Singh, Khojasteh Z. Mirza, Kongtao Chen, Sasidhar Kunapuli, Gavin Farrell, Renato Umeton, and Geoffrey C. Fox. 2025. *AI Benchmark Democratization and Carpentry.* arXiv:2512.11588.
 
 **BibTeX:**
 ```bibtex
-@article{mlcommons2025carpentry,
-  author = {Authors},
-  title = {AI Benchmarks Carpentry and Democratization},
-  journal = {To appear},
+@misc{vonlaszewski2025aibenchmarkdemocratizationcarpentry,
+  title = {AI Benchmark Democratization and Carpentry},
+  author = {Gregor von Laszewski and Wesley Brewer and Jeyan Thiyagalingam and Juri Papay and Armstrong Foundjem and Piotr Luszczek and Murali Emani and Shirley V. Moore and Vijay Janapa Reddi and Matthew D. Sinclair and Sebastian Lobentanzer and Sujata Goswami and Benjamin Hawks and Marco Colombo and Nhan Tran and Christine R. Kirkpatrick and Abdulkareem Alsudais and Gregg Barrett and Tianhao Li and Kirsten Morehouse and Shivaram Venkataraman and Rutwik Jain and Kartik Mathur and Victor Lu and Tejinder Singh and Khojasteh Z. Mirza and Kongtao Chen and Sasidhar Kunapuli and Gavin Farrell and Renato Umeton and Geoffrey C. Fox},
   year = {2025},
-  note = {Forthcoming publication}
+  eprint = {2512.11588},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  url = {https://arxiv.org/abs/2512.11588}
 }
 ```
 

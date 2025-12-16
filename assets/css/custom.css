@@ -24,6 +24,68 @@
 /* Muted helper text */
 .md-typeset .muted { color: var(--md-default-fg-color--light); }
 
+
+details.bibtex {
+  all: unset;
+  display: block;
+  margin: 0.6rem 0 1.2rem;
+}
+
+details.bibtex summary {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.6;
+  position: relative;
+  gap: 0.35rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--md-primary-fg-color);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.12em;
+  padding: 0;
+  margin: 0;
+  padding-inline-start: 0;
+  margin-inline-start: 0;
+}
+details.bibtex summary::marker,
+details.bibtex summary::-webkit-details-marker {
+  display: none;
+}
+details.bibtex summary::before {
+  content: "⧉";
+  font-size: 0.8rem;
+  color: var(--md-primary-fg-color);
+  opacity: 0.7;
+  position: absolute;
+  left: -1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* Nudge the default disclosure arrow up to align with text */
+details.bibtex summary::after {
+  position: relative;
+  top: -0em;
+}
+details.bibtex summary svg {
+  display: none !important;
+}
+details.bibtex[open] summary {
+  text-decoration: none;
+}
+
+details.bibtex pre {
+  margin: 0.35rem 0 0;
+  padding: 0.6rem 0.85rem;
+  border-radius: 6px;
+  background: var(--md-code-bg-color);
+  overflow-x: auto;
+}
+
+
 /* ==========================================================================
    Sticky Filter Bar (opaque background + robust layout)
    - Uses grid template AREAS to keep Reset visible & ergonomic
@@ -476,4 +538,16 @@
 /* (optional global safety) */
 .benchmark-card.is-hidden {
   display: none !important;
+}
+
+/* ============================================================
+   Index page width tweak
+   - widen landing page similar to cards view
+   - target the unique h1 slug produced by MkDocs
+   ============================================================ */
+.md-grid:has(#mlcommons-science-working-group-ai-benchmarks-collection) {
+  max-width: min(82rem, 98vw);
+}
+.md-content__inner:has(#mlcommons-science-working-group-ai-benchmarks-collection) {
+  max-width: min(76rem, 96vw);
 }

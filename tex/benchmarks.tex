@@ -6,18 +6,27 @@
 \usepackage[T1]{fontenc}
 
 \usepackage{makecell}
+\usepackage[english]{babel}
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{pdflscape}
 \usepackage{wasysym}
 \usepackage{longtable}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{xurl}
 \usepackage[style=ieee, url=true]{biblatex}
 \addbibresource{benchmarks.bib} 
 \usepackage{caption}
 \usepackage{url}
 \usepackage{graphicx}
 \graphicspath{{images/}}
+
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{Q}[1]{>{\RaggedRight\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\setlength{\tabcolsep}{2pt}
 
 
 \usepackage{textcomp}
@@ -33,7 +42,6 @@
 \hfuzz=100pt
 \emergencystretch=3em
 \hbadness=10000
-
 \setlength{\parindent}{0pt}
 
 \begin{document}

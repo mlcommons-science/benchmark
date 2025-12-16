@@ -367,6 +367,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    MLCommons Science Working Group AI Benchmarks Collection
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -378,6 +391,85 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#online-browsing-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      Online Browsing Views
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-cite" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Cite
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Cite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mlcommons-science-working-group-ai-benchmarks-collection_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      MLCommons Science Working Group AI Benchmarks Collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-mlcommons-scientific-benchmarks-ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      An MLCommons Scientific Benchmarks Ontology
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-benchmarks-carpentry-and-democratization" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Benchmarks Carpentry and Democratization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -491,6 +583,74 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#online-browsing-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      Online Browsing Views
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-cite" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Cite
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Cite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mlcommons-science-working-group-ai-benchmarks-collection_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      MLCommons Science Working Group AI Benchmarks Collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-mlcommons-scientific-benchmarks-ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      An MLCommons Scientific Benchmarks Ontology
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-benchmarks-carpentry-and-democratization" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Benchmarks Carpentry and Democratization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -509,13 +669,38 @@
 
 
 <h1 id="mlcommons-science-working-group-ai-benchmarks-collection">MLCommons Science Working Group AI Benchmarks Collection</h1>
-<p>This site curates a collection of AI benchmarks.<br />
-The main artifact is the PDF report:</p>
+<p>This site curates a collection of AI benchmarks developed and maintained by the <strong>MLCommons Science Working Group</strong>. The repository provides a structured <em>ontology</em> of benchmark definitions, tooling for validation and publication, and a generated website for browsing the collection.</p>
+<p>The primary artifact of this project is the benchmark report:</p>
 <ul>
 <li><strong>Report (PDF):</strong> <a href="benchmarks.pdf">benchmarks.pdf</a></li>
 </ul>
-<p>If you cite this work, please reference the PDF (not the Markdown pages). A BibTeX entry is provided below.</p>
-<div class="highlight"><pre><span></span><code><span class="nc">@misc</span><span class="p">{</span><span class="nl">www-las-mlcommons-benchmark-coolection</span><span class="p">,</span>
+<p>Users can explore the benchmark collection through the web interfaces described below. Contributions to the ontology and tooling are welcome, and citation guidelines are provided at the end of this document.</p>
+<h2 id="online-browsing-views">Online Browsing Views</h2>
+<p>We provide three views for browsing (each entry links to its detailed page):</p>
+<ul>
+<li><strong><a href="md/benchmarks/cards/">Cards view</a></strong>: richest UI with advanced filtering, tag-based quick filters, and interactive sorting controls.</li>
+<li><strong><a href="md/benchmarks_table/">Table view</a></strong>: compact table where you can toggle visible columns and download the data as CSV or JSON.</li>
+<li><strong><a href="md/benchmarks/">List view</a></strong>: straightforward alphabetical list of benchmark names.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> The Markdown pages are generated for web browsing and should <strong>not</strong> be cited.</p>
+</blockquote>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions to the benchmark collection are welcome. For full guidelines, please see the repository documentation. In brief:</p>
+<ul>
+<li>Proposed changes, new benchmarks, or corrections should follow the workflow described in <code>CONTRIBUTING.md</code>.</li>
+<li>Benchmark definitions should adhere to the YAML schema provided in the repository.</li>
+<li>All generated content (Markdown, LaTeX, MkDocs pages) is automatically produced; please do not edit generated files directly.</li>
+</ul>
+<p>For the complete contribution workflow, consult: <a href="https://github.com/mlcommons-science/benchmark">https://github.com/mlcommons-science/benchmark</a>.</p>
+<h2 id="how-to-cite">How to Cite</h2>
+<p>If you use this repository, the benchmark collection, or any derived artifacts, please cite all relevant works associated with this project, including the benchmark collection itself and the companion papers.</p>
+<h3 id="mlcommons-science-working-group-ai-benchmarks-collection_1">MLCommons Science Working Group AI Benchmarks Collection</h3>
+<p>Gregor von Laszewski, Ben Hawks, Marco Colombo, Reece Shiraishi, Anjay Krishnan, Nhan Tran, and Geoffrey C. Fox. 2025. <em>MLCommons Science Working Group AI Benchmarks Collection.</em> MLCommons Science Working Group. Available at: https://mlcommons-science.github.io/benchmark/benchmarks.pdf</p>
+<details class="bibtex">
+<summary>BibTeX entry</summary>
+
+<div class="highlight"><pre><span></span><code><span class="nc">@misc</span><span class="p">{</span><span class="nl">mlcommons-benchmarks-collection</span><span class="p">,</span>
 <span class="w">  </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{</span>
 <span class="s">    Gregor von Laszewski and </span>
 <span class="s">    Ben Hawks and </span>
@@ -523,25 +708,55 @@ The main artifact is the PDF report:</p>
 <span class="s">    Reece Shiraishi and</span>
 <span class="s">    Anjay Krishnan and</span>
 <span class="s">    Nhan Tran and</span>
-<span class="s">    Geoffrey C. Fox}</span><span class="p">,</span>
+<span class="s">    Geoffrey C. Fox</span>
+<span class="s">  }</span><span class="p">,</span>
 <span class="w">  </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{MLCommons Science Working Group AI Benchmarks Collection}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://mlcommons-science.github.io/benchmark/benchmarks.pdf}</span>
-<span class="w">  </span><span class="nv">note</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">&quot;Online</span><span class="w"> </span><span class="err">Collection:</span><span class="w"> </span><span class="err">\url={https://mlcommons-science.github.io/benchmark/</span><span class="p">}</span><span class="c">&quot;,</span>
-<span class="w">  </span><span class="c">month = jun,</span>
-<span class="w">  </span><span class="c">year = 2025,</span>
-<span class="w">  </span><span class="c">howpublished = &quot;GitHub&quot;</span>
-<span class="c">}</span>
+<span class="w">  </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://mlcommons-science.github.io/benchmark/benchmarks.pdf}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">note</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Online Collection: \url{https://mlcommons-science.github.io/benchmark/}&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="na">month</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nv">jun</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">2025</span><span class="p">,</span>
+<span class="w">  </span><span class="na">howpublished</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{GitHub}</span>
+<span class="p">}</span>
 </code></pre></div>
-<p>For online browsing, we provide three views (each entry links to its detailed page):</p>
-<ul>
-<li><strong><a href="md/benchmarks/cards/">Cards view</a></strong>: richest UI with advanced filtering, tag-based quick filters, and interactive sorting controls.</li>
-<li><strong><a href="md/benchmarks_table/">Table view</a></strong>: compact table where you can toggle visible columns and download the data as CSV or JSON.</li>
-<li><strong><a href="md/benchmarks/">List view</a></strong>: straightforward alphabetical list of benchmark names.</li>
-</ul>
-<blockquote>
-<p><strong>Note:</strong> The Markdown pages are generated for web browsing and should <strong>not</strong> be cited. Please cite the PDF report above.</p>
-</blockquote>
-<p>All pages are generated automatically; please don’t edit them directly. To propose changes, contributions, or corrections, follow the guidelines in the project repository: <a href="https://github.com/mlcommons-science/benchmark">https://github.com/mlcommons-science/benchmark</a>.  </p>
+
+</details>
+
+<h3 id="an-mlcommons-scientific-benchmarks-ontology">An MLCommons Scientific Benchmarks Ontology</h3>
+<p>Ben Hawks, Gregor von Laszewski, Matthew D. Sinclair, Marco Colombo, Shivaram Venkataraman, Rutwik Jain, Yiwei Jiang, Nhan Tran, and Geoffrey Fox. 2025. <em>An MLCommons Scientific Benchmarks Ontology.</em> arXiv:2511.05614.</p>
+<details class="bibtex">
+<summary>BibTeX entry</summary>
+
+<div class="highlight"><pre><span></span><code><span class="nc">@misc</span><span class="p">{</span><span class="nl">hawks2025mlcommonsscientificbenchmarksontology</span><span class="p">,</span>
+<span class="w">      </span><span class="na">title</span><span class="p">=</span><span class="s">{An MLCommons Scientific Benchmarks Ontology}</span><span class="p">,</span><span class="w"> </span>
+<span class="w">      </span><span class="na">author</span><span class="p">=</span><span class="s">{Ben Hawks and Gregor von Laszewski and Matthew D. Sinclair and Marco Colombo and Shivaram Venkataraman and Rutwik Jain and Yiwei Jiang and Nhan Tran and Geoffrey Fox}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">year</span><span class="p">=</span><span class="s">{2025}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">eprint</span><span class="p">=</span><span class="s">{2511.05614}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">archivePrefix</span><span class="p">=</span><span class="s">{arXiv}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">primaryClass</span><span class="p">=</span><span class="s">{cs.LG}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">url</span><span class="p">=</span><span class="s">{https://arxiv.org/abs/2511.05614}</span><span class="p">,</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div>
+
+</details>
+
+<h3 id="ai-benchmarks-carpentry-and-democratization">AI Benchmarks Carpentry and Democratization</h3>
+<p>Gregor von Laszewski, Wesley Brewer, Jeyan Thiyagalingam, Juri Papay, Armstrong Foundjem, Piotr Luszczek, Murali Emani, Shirley V. Moore, Vijay Janapa Reddi, Matthew D. Sinclair, Sebastian Lobentanzer, Sujata Goswami, Benjamin Hawks, Marco Colombo, Nhan Tran, Christine R. Kirkpatrick, Abdulkareem Alsudais, Gregg Barrett, Tianhao Li, Kirsten Morehouse, Shivaram Venkataraman, Rutwik Jain, Kartik Mathur, Victor Lu, Tejinder Singh, Khojasteh Z. Mirza, Kongtao Chen, Sasidhar Kunapuli, Gavin Farrell, Renato Umeton, and Geoffrey C. Fox. 2025. <em>AI Benchmark Democratization and Carpentry.</em> arXiv:2512.11588.</p>
+<details class="bibtex">
+<summary>BibTeX entry</summary>
+
+<div class="highlight"><pre><span></span><code><span class="nc">@misc</span><span class="p">{</span><span class="nl">vonlaszewski2025aibenchmarkdemocratizationcarpentry</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{AI Benchmark Democratization and Carpentry}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Gregor von Laszewski and Wesley Brewer and Jeyan Thiyagalingam and Juri Papay and Armstrong Foundjem and Piotr Luszczek and Murali Emani and Shirley V. Moore and Vijay Janapa Reddi and Matthew D. Sinclair and Sebastian Lobentanzer and Sujata Goswami and Benjamin Hawks and Marco Colombo and Nhan Tran and Christine R. Kirkpatrick and Abdulkareem Alsudais and Gregg Barrett and Tianhao Li and Kirsten Morehouse and Shivaram Venkataraman and Rutwik Jain and Kartik Mathur and Victor Lu and Tejinder Singh and Khojasteh Z. Mirza and Kongtao Chen and Sasidhar Kunapuli and Gavin Farrell and Renato Umeton and Geoffrey C. Fox}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2025}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">eprint</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2512.11588}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">archivePrefix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{arXiv}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">primaryClass</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{cs.AI}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://arxiv.org/abs/2512.11588}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</details>
+
 <p>For program-level improvements, contact <strong>Gregor von Laszewski</strong> at <code>laszewski at gmail.com</code>.</p>
 
 

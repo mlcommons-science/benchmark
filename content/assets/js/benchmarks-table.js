@@ -205,10 +205,7 @@
     col({ title: 'Focus',       width: '280px', lines: 2,      data: r => r.focus }),
     col({
       title: 'AI / ML Motif', width: '220px', lines: 2,
-      data: r => dedupeStrings([
-        ...asList(r.ai_capability_measured),
-        ...asList(r.ml_motif)
-      ])
+      data: r => dedupeStrings(asList(r.ml_motif))
     }),
     col({ title: 'Models',       width: '200px', lines: 2, data: r => asList(r.models) }),
     col({ title: 'Summary',     width: '320px', lines: 3,      data: r => r.summary }),

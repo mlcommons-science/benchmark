@@ -239,8 +239,9 @@ class BenchmarkEntry:
         subtitle_parts: List[str] = []
         if self.domains:
             subtitle_parts.append(", ".join(self.domains))
-        if self.metrics:
-            subtitle_parts.append(", ".join(self.metrics))
+        ml_motif = _as_list(self.raw.get("ml_motif"))
+        if ml_motif:
+            subtitle_parts.append(", ".join(ml_motif))
         subtitle_html = (
             f'<p class="muted">{_esc(" • ".join(subtitle_parts))}</p>'
             if subtitle_parts

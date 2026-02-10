@@ -1,0 +1,87 @@
+- date: "2023-12-03"
+  version: "v1.0"
+  last_updated: "2023-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-12-03"
+  name: "4D-STEM"
+  url: "https://openreview.net/pdf?id=7yt3N0o0W9"
+  doi: "unknown"
+  domain:
+  - Materials Science
+  focus: "Real-time ML for scanning transmission electron microscopy"
+  keywords:
+  - "4D-STEM"
+  - "electron microscopy"
+  - "real-time"
+  - "image processing"
+  summary: |
+    Proposes ML methods for real-time analysis of 4D scanning transmission electron microscopy
+    datasets; framework details in progress.
+  licensing: "unknown"
+  task_types:
+  - "Image Classification"
+  - "Streamed data inference"
+  ai_capability_measured:
+  - "Real-time large-scale microscopy inference"
+  metrics:
+  - "Classification accuracy"
+  - "Throughput"
+  models:
+  - "CNN models (prototype)"
+  ml_motif:
+  - Classification
+  type: "Model"
+  ml_task:
+  - "Image Classification"
+  solutions: "0"
+  notes: |
+    In-progress; model design under development.
+  contact:
+    name: "Shuyu Qin"
+    email: "shq219@lehigh.edu"
+  cite:
+  - |
+    @inproceedings{qin2023extremely,
+      title={Extremely Noisy 4D-TEM Strain Mapping Using Cycle Consistent Spatial Transforming Autoencoders},
+      author={Shuyu Qin and Joshua Agar and Nhan Tran},
+      booktitle={AI for Accelerated Materials Design - NeurIPS 2023 Workshop},
+      year={2023},
+      url={https://openreview.net/forum?id=7yt3N0o0W9}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1RhoGej2LmTOb0ZF3mPzhPqV2aCct805dF40LARh_YZE/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "in progress"
+    benchmark_ready: "No"
+  ratings:
+    software:
+      rating: 2
+      reason: |
+        No standalone code repository or setup instructions provided
+    specification:
+      rating: 5
+      reason: |
+        None
+    dataset:
+      rating: 2
+      reason: |
+        No dataset links or FAIR metadata; unclear public access
+    metrics:
+      rating: 4
+      reason: |
+        Only localization accuracy and inference time mentioned; not formally benchmarked with scripts
+    reference_solution:
+      rating: 3
+      reason: |
+        BraggNN model is described and evaluated, but no direct implementation or inference scripts available
+    documentation:
+      rating: 3
+      reason: |
+        Paper is clear, but lacks a GitHub repo or full reproducibility pipeline

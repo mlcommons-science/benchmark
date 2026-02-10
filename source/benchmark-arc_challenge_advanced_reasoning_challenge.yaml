@@ -1,0 +1,91 @@
+- date: "2018-03-14"
+  version: "1"
+  last_updated: "2018-03-14"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2018-03-14"
+  name: "ARC-Challenge (Advanced Reasoning Challenge)"
+  url: "https://allenai.org/data/arc"
+  doi: "10.48550/arXiv.1803.05457"
+  domain:
+  - Computational Science & AI
+  focus: "Grade-school science with reasoning emphasis"
+  keywords:
+  - "grade-school"
+  - "science QA"
+  - "challenge set"
+  - "reasoning"
+  summary: |
+    The AI2 Reasoning Challenge (ARC) Challenge set comprises 7,787 natural, grade-school
+    science questions that retrieval-based and word co-occurrence algorithms both fail, 
+    requiring advanced reasoning over a 14-million-sentence corpus.
+  licensing: "Apache 2.0 License"
+  task_types:
+  - "Multiple choice"
+  ai_capability_measured:
+  - "Commonsense and scientific reasoning"
+  metrics:
+  - "Accuracy"
+  models:
+  - "GPT-4"
+  - "Claude"
+  ml_motif:
+  - Reasoning & Generalization
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "0"
+  notes: "Good"
+  contact:
+    name: "unknown"
+    email: "unknown"
+  cite:
+  - |
+    @article{allenai:arc,
+      author    = {Peter Clark  and Isaac Cowhey and Oren Etzioni and Tushar Khot and
+                    Ashish Sabharwal and Carissa Schoenick and Oyvind Tafjord},
+      title     = {Think you have Solved Question Answering? Try ARC, the AI2 Reasoning Challenge},
+      journal   = {arXiv:1803.05457v1},
+      year      = {2018},
+      doi       = {10.48550/arXiv.1803.05457}
+    }
+  datasets:
+    links:
+    - name: "Hugging Face"
+      url: "https://huggingface.co/datasets/allenai/ai2_arc"
+  results:
+    links:
+    - name: "ARC-Solvers"
+      url: "https://github.com/allenai/arc-solvers"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Code is available and well documented for evaluation.
+    specification:
+      rating: 4
+      reason: |
+        Task is clear and inputs/outputs are provided along with format on dataset card.
+    dataset:
+      rating: 5
+      reason: |
+        Data accessible, offers instructions on how to download the data via CLI tools. Splits provided on Huggingface
+    metrics:
+      rating: 5
+      reason: |
+        All questions in the dataset are multiple choice, all have a correct answer
+    reference_solution:
+      rating: 5
+      reason: |
+        Reference solution is available and containerized
+    documentation:
+      rating: 5
+      reason: |
+        Explains all necessary information inside a paper
+
+
+
+

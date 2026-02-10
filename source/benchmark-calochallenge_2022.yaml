@@ -1,0 +1,106 @@
+- date: "2024-10-28"
+  version: "v1.0"
+  last_updated: "2024-10"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-10-28"
+  name: "CaloChallenge 2022"
+  url: "http://arxiv.org/abs/2410.21611"
+  doi: "10.48550/arXiv.2410.21611"
+  domain:
+  - High Energy Physics
+  focus: "Fast generative-model-based calorimeter shower simulation evaluation"
+  keywords:
+  - "calorimeter simulation"
+  - "generative models"
+  - "surrogate modeling"
+  - "LHC"
+  - "fast simulation"
+  summary: |
+    The Fast Calorimeter Simulation Challenge 2022 assessed 31 generative-model submissions (VAEs, GANs, Flows, Diffusion)
+    on four calorimeter shower datasets; benchmarking shower quality, generation speed, and model complexity .
+  licensing: "Via Fermilab"
+  task_types:
+  - "Surrogate modeling"
+  ai_capability_measured:
+  - "Simulation fidelity"
+  - "speed"
+  - "efficiency"
+  metrics:
+  - "Histogram similarity"
+  - "Classifier AUC"
+  - "Generation latency"
+  models:
+  - "VAE variants"
+  - "GAN variants"
+  - "Normalizing flows"
+  - "Diffusion models"
+  ml_motif:
+  - Generative
+  type: "Dataset"
+  ml_task:
+  - "Surrogate Modeling"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    The most comprehensive survey to date on ML-based calorimeter simulation; 31 submissions over different dataset sizes.
+  contact:
+    name: "Claudius Krause (CaloChallenge Lead)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{krause2024calochallenge2022communitychallenge,
+      archiveprefix = {arXiv},
+      author        = {Claudius Krause and Michele Faucci Giannelli and Gregor Kasieczka and Benjamin Nachman and Dalila Salamani and David Shih and Anna Zaborowska and Oz Amram and Kerstin Borras and Matthew R. Buckley and Erik Buhmann and Thorsten Buss and Renato Paulo Da Costa Cardoso and Anthony L. Caterini and Nadezda Chernyavskaya and Federico A. G. Corchia and Jesse C. Cresswell and Sascha Diefenbacher and Etienne Dreyer and Vijay Ekambaram and Engin Eren and Florian Ernst and Luigi Favaro and Matteo Franchini and Frank Gaede and Eilam Gross and Shih-Chieh Hsu and Kristina Jaruskova and Benno Käch and Jayant Kalagnanam and Raghav Kansal and Taewoo Kim and Dmitrii Kobylianskii and Anatolii Korol and William Korcari and Dirk Krücker and Katja Krüger and Marco Letizia and Shu Li and Qibin Liu and Xiulong Liu and Gabriel Loaiza-Ganem and Thandikire Madula and Peter McKeown and Isabell-A. Melzer-Pellmann and Vinicius Mikuni and Nam Nguyen and Ayodele Ore and Sofia Palacios Schweitzer and Ian Pang and Kevin Pedro and Tilman Plehn and Witold Pokorski and Huilin Qu and Piyush Raikwar and John A. Raine and Humberto Reyes-Gonzalez and Lorenzo Rinaldi and Brendan Leigh Ross and Moritz A. W. Scham and Simon Schnake and Chase Shimmin and Eli Shlizerman and Nathalie Soybelman and Mudhakar Srivatsa and Kalliopi Tsolaki and Sofia Vallecorsa and Kyongmin Yeo and Rui Zhang},
+      eprint        = {2410.21611},
+      primaryclass  = {physics.ins-det},
+      title         = {CaloChallenge 2022: A Community Challenge for Fast Calorimeter Simulation},
+      url           = {https://arxiv.org/abs/2410.21611},
+      year          = {2024}
+    }
+  datasets:
+    links:
+    - name: "Four LHC calorimeter shower datasets"
+      url: "various voxel resolutions"
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1JBH3WTDp2jpSt_utc1p5Dv3-MBX4xY-NVzzfXCd9xhA/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 4
+      reason: |
+        Community GitHub repos and model implementations are available for the 31 submissions.
+        While not fully unified in one place, the software is accessible and reproducible.
+    specification:
+      rating: 5
+      reason: |
+        The task—evaluating fast generative calorimeter simulations—is clearly defined with
+        benchmarking protocols, constraints like latency and model complexity, and structured
+        evaluation criteria.
+    dataset:
+      rating: 5
+      reason: |
+        Four well-structured calorimeter datasets are provided, with different voxel resolutions,
+        open access, signal/background separation, and metadata. FAIR principles are well covered.
+    metrics:
+      rating: 5
+      reason: |
+        Metrics like histogram similarity, classifier AUC, and generation latency are well defined
+        and relevant for simulation quality, fidelity, and performance.
+    reference_solution:
+      rating: 4
+      reason: |
+        Several baselines (GANs, VAEs, flows, diffusion models) are documented and evaluated.
+        Some are available via community repos, though not all are fully standardized or bundled.
+    documentation:
+      rating: 4
+      reason: |
+        Accompanied by a detailed paper and dataset description. Reproduction of pipelines may require
+        additional setup or familiarity with the model submissions.
+
+

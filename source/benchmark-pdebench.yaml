@@ -1,0 +1,101 @@
+- date: "2022-10-13"
+  version: "v0.1.0"
+  last_updated: "2025-05"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2022-10-13"
+  name: "PDEBench"
+  url: "https://github.com/pdebench/PDEBench"
+  doi: "10.48550/arXiv.2210.07182"
+  domain:
+  - Computational Science & AI
+  - Climate & Earth Science
+  - Mathematics
+  focus: "Benchmark suite for ML-based surrogates solving time-dependent PDEs"
+  keywords:
+  - "PDEs"
+  - "CFD"
+  - "scientific ML"
+  - "surrogate modeling"
+  - "NeurIPS"
+  summary: |
+    PDEBench offers forward/inverse PDE tasks with large ready-to-use datasets and baselines (FNO, U-Net, PINN), packaged via a unified API. It won the SimTech Best Paper Award 2023 .
+  licensing: "Other"
+  task_types:
+  - "Supervised Learning"
+  ai_capability_measured:
+  - "Time-dependent PDE modeling; physical accuracy"
+  metrics:
+  - "RMSE"
+  - "boundary RMSE"
+  - "Fourier RMSE"
+  models:
+  - "FNO"
+  - "U-Net"
+  - "PINN"
+  - "Gradient-Based inverse methods"
+  ml_motif:
+  - Regression
+  type: "Framework"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Datasets hosted on DaRUS (DOI:10.18419/darus-2986); contact maintainers by email 
+  contact:
+    name: "Makoto Takamoto (makoto.takamoto@neclab.eu)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{takamoto2024pdebenchextensivebenchmarkscientific,
+      archiveprefix = {arXiv},
+      author        = {Makoto Takamoto and Timothy Praditia and Raphael Leiteritz and Dan MacKinlay and Francesco Alesiani and Dirk Pflüger and Mathias Niepert},
+      eprint        = {2210.07182},
+      primaryclass  = {cs.LG},
+      title         = {PDEBENCH: An Extensive Benchmark for Scientific Machine Learning},
+      url           = {https://arxiv.org/abs/2210.07182},
+      year          = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1MvXdFub0PxUDtB49wqli6mmSCdLErv2nLdOJUtMylOo/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        GitHub repository (https://github.com/pdebench/PDEBench) is actively maintained and includes
+        training pipelines, data loaders, and evaluation scripts. Installation and usage are well-documented.
+    specification:
+      rating: 5
+      reason: |
+        Clearly defined tasks for forward and inverse PDE problems, with structured input/output formats,
+        system constraints, and task specifications.
+    dataset:
+      rating: 5
+      reason: |
+        Diverse PDE datasets (synthetic and real-world) hosted on DaRUS with DOIs. Datasets are
+        well-documented, structured, and follow FAIR practices.
+    metrics:
+      rating: 4
+      reason: |
+        Includes RMSE, boundary RMSE, and Fourier-domain RMSE. These are well-suited to PDE problems,
+        though rationale behind metric choices could be expanded in some cases.
+    reference_solution:
+      rating: 4
+      reason: |
+        Baselines (FNO, U-Net, PINN, etc.) are available and documented, but not every model
+        includes full training and evaluation reproducibility out-of-the-box.
+    documentation:
+      rating: 4
+      reason: |
+        Strong documentation on GitHub including examples, configs, and usage instructions.
+        Some model-specific details and tutorials could be further expanded.
+

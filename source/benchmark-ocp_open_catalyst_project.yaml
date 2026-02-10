@@ -1,0 +1,108 @@
+- date: "2020-10-20"
+  version: "1"
+  last_updated: "2020-10-20"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2020-10-20"
+  name: "OCP (Open Catalyst Project)"
+  url: "https://opencatalystproject.org/"
+  doi: "unknown"
+  domain:
+  - Chemistry
+  - Materials Science
+  focus: "Catalyst adsorption energy prediction"
+  keywords:
+  - "DFT relaxations"
+  - "adsorption energy"
+  - "graph neural networks"
+  summary: |
+    The Open Catalyst Project (OC20 and OC22) provides DFT-calculated catalyst-adsorbate 
+    relaxation datasets, challenging ML models to predict energies and forces for 
+    renewable energy applications.
+  licensing: "OCP Terms of Use"
+  task_types:
+  - "Energy prediction"
+  - "Force prediction"
+  ai_capability_measured:
+  - "Prediction of adsorption energies and forces"
+  metrics:
+  - "MAE (energy)"
+  - "MAE (force)"
+  models:
+  - "CGCNN"
+  - "SchNet"
+  - "DimeNet++"
+  - "GemNet-OC"
+  ml_motif:
+  - Regression
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "0"
+  notes: "Public leaderboards; active community development"
+  contact:
+    name: "unknown"
+    email: "unknown"
+  cite:
+  - |
+    @article{chanussot2021oc20,
+      title     = {The Open Catalyst 2020 (OC20) Dataset and Community Challenges},
+      author    = {Chanussot, Lowik and Das, Abhishek and Goyal, Siddharth and Lavril, Thibaut and Shuaibi, Muhammed and Riviere, Morgane and Tran, Kevin and Heras-Domingo, Javier and Ho, Caleb and Hu, Weihua and Palizhati, Aini and Sriram, Anuroop and Wood, Brandon and Yoon, Junwoong and Parikh, Devi and Zitnick, C. Lawrence and Ulissi, Zachary},
+      journal   = {ACS Catalysis},
+      volume    = {11},
+      number    = {10},
+      pages     = {6059--6072},
+      year      = {2021},
+      doi       = {10.1021/acscatal.0c04525},
+      url       = {https://pubs.acs.org/doi/10.1021/acscatal.0c04525}
+    }
+  - |
+    @article{tran2023oc22,
+      title     = {The Open Catalyst 2022 (OC22) Dataset and Challenges for Oxide Electrocatalysts},
+      author    = {Tran, Richard and Lan, Janice and Shuaibi, Muhammed and Wood, Brandon M. and Goyal, Siddharth and Das, Abhishek and Heras-Domingo, Javier and Kolluru, Adeesh and Rizvi, Ammar and Shoghi, Nima and Sriram, Anuroop and Therrien, F\'{e}lix and Abed, Jehad and Voznyy, Oleksandr and Sargent, Edward H. and Ulissi, Zachary and Zitnick, C. Lawrence},
+      journal   = {ACS Catalysis},
+      volume    = {13},
+      number    = {5},
+      pages     = {3066--3084},
+      year      = {2023},
+      doi       = {10.1021/acscatal.2c05426},
+      url       = {https://pubs.acs.org/doi/10.1021/acscatal.2c05426}
+    }
+  datasets:
+    links:
+    - name: "OCP Dataset"
+      url: "https://fair-chem.github.io/catalysts/datasets/summary"
+  results:
+    links:
+    - name: "OCP Pretrained Models"
+      url: "https://fair-chem.github.io/catalysts/models.html"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Data provided in Github links
+    specification:
+      rating: 5
+      reason: |
+        Tasks (energy and force prediction) are clearly defined with explicit I/O specifications, constraints, and physical relevance for renewable energy.
+    dataset:
+      rating: 5
+      reason: |
+        Fully FAIR- OC20, per-adsorbate trajectories, and OC22 are versioned; datasets come with standardized splits, metadata, and are downloadable.
+    metrics:
+      rating: 5
+      reason: |
+        MAE (energy and force) are standard and reproducible.
+    reference_solution:
+      rating: 4
+      reason: |
+        Multiple baselines (GemNet-OC, DimeNet++, etc.) implemented and evaluated. No hardware listed.
+    documentation:
+      rating: 1
+      reason: |
+        Paper exists, but content is behind a paywall.
+
+

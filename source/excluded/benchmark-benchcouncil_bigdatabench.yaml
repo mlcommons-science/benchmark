@@ -1,0 +1,93 @@
+- date: "2020-01-01"
+  version: "v1.0"
+  last_updated: "2020-01"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2020-01-01"
+  name: "BenchCouncil BigDataBench"
+  url: "https://www.benchcouncil.org/BigDataBench/"
+  doi: "10.48550/arXiv.1802.08254"
+  domain:
+  - General
+  focus: "Big data and AI benchmarking across structured, semi-structured, and unstructured data workloads"
+  keywords:
+  - "big data"
+  - "AI benchmarking"
+  - "data analytics"
+  summary: |
+    BigDataBench provides benchmarks for evaluating big data and AI workloads with realistic datasets (13 sources) and pipelines across analytics, graph, warehouse, NoSQL, streaming, and AI.
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Data preprocessing"
+  - "Inference"
+  - "End-to-end data pipelines"
+  ai_capability_measured:
+  - "Data processing and AI model inference performance at scale"
+  metrics:
+  - "Data throughput"
+  - "Latency"
+  - "Accuracy"
+  models:
+  - "CNN"
+  - "LSTM"
+  - "SVM"
+  - "XGBoost"
+  ml_motif:
+  - "General"
+  type: "Benchmark"
+  ml_task:
+  - "NA"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Built on eight data motifs; provides Hadoop, Spark, Flink, MPI implementations.
+  contact:
+    name: "Jianfeng Zhan (BenchCouncil)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{gao2018bigdatabenchscalableunifiedbig,
+      archiveprefix = {arXiv},
+      author        = {Wanling Gao and Jianfeng Zhan and Lei Wang and Chunjie Luo and Daoyi Zheng and Xu Wen and Rui Ren and Chen Zheng and Xiwen He and Hainan Ye and Haoning Tang and Zheng Cao and Shujie Zhang and Jiahui Dai},
+      eprint        = {1802.08254},
+      primaryclass  = {cs.DC},
+      title         = {BigDataBench: A Scalable and Unified Big Data and AI Benchmark Suite},
+      url           = {https://arxiv.org/abs/1802.08254},
+      year          = {2018}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1FlvWeGm_J5QabOL7J0RWN3udzl0QFDs7wafptXx8sRU/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: "https://docs.google.com/document/d/1VFRxhR2G5A83S8PqKBrP99LLVgcCGvX2WW4vTtwxmQ4/edit?usp=sharing"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        No automated setup across all tasks; some components require manual integration.
+    specification:
+      rating: 4
+      reason: |
+        Specific I/O formats and hardware constraints are not uniformly detailed across all tasks.
+    dataset:
+      rating: 4
+      reason: |
+        Some datasets lack consistent versioning or rich metadata annotations.
+    metrics:
+      rating: 5
+      reason: |
+        None
+    reference_solution:
+      rating: 4
+      reason: |
+        Not all benchmark components have fully reproducible baselines; deployment across platforms is fragmented.
+    documentation:
+      rating: 4
+      reason: |
+        Setup requires manual steps; some task-specific instructions lack clarity.
+# Exclusion Reason: Platform for hosting code for scientific papers, not a benchmark itself

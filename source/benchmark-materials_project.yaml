@@ -1,0 +1,91 @@
+- date: "2011-10-01"
+  version: "1"
+  last_updated: "2011-10-01"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2011-10-01"
+  name: "Materials Project"
+  url: "https://materialsproject.org/"
+  doi: "unknown"
+  domain:
+  - Materials Science
+  focus: "DFT-based property prediction"
+  keywords:
+  - "DFT"
+  - "materials genome"
+  - "high-throughput"
+  summary: |
+    The Materials Project provides an open-access database of computed properties for
+    inorganic materials via high-throughput density functional theory (DFT), accelerating 
+    materials discovery.
+  licensing: "https://next-gen.materialsproject.org/about/terms"
+  task_types:
+  - "Property prediction"
+  ai_capability_measured:
+  - "Prediction of inorganic material properties"
+  metrics:
+  - "MAE"
+  - "R^2"
+  models:
+  - "Automatminer"
+  - "Crystal Graph Neural Networks"
+  ml_motif:
+  - Regression
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "0"
+  notes: "Core component of the Materials Genome Initiative"
+  contact:
+    name: "unknown"
+    email: "unknown"
+  cite:
+  - |
+    @article{jain2013materials,
+      title={The Materials Project: A materials genome approach},
+      author={Jain, Anubhav and Ong, Shyue Ping and Hautier, Geoffroy and Chen, Wei and Richards, William Davidson and Dacek, Stephen and Cholia, Shreyas and Gunter, Dan and Skinner, David and Ceder, Gerbrand and Persson, Kristin A.},
+      journal={APL Materials},
+      volume    = {1},
+      number    = {1},
+      year={2013},
+      doi       = {10.1063/1.4812323},
+      url={https://materialsproject.org/}
+    }
+  datasets:
+    links:
+    - name: "Materials Project Catalysis Explorer"
+      url: "https://next-gen.materialsproject.org/catalysis"
+  results:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 0
+      reason: |
+        No instructions available
+    specification:
+      rating: 1.5
+      reason: |
+        The platform offers a wide range of material property prediction tasks, but task framing and I/O formats vary by API use and are not always standardized across use cases.
+    dataset:
+      rating: 3
+      reason: |
+        API key required to access data. No predefined splits.
+    metrics:
+      rating: 5
+      reason: |
+        Uses numerical metrics like MAE and $R^2$
+    reference_solution:
+      rating: 2
+      reason: |
+        Numerous models (e.g., Automatminer, CGCNN) trained on the database, but no constraints or documentation listed.
+    documentation:
+      rating: 0
+      reason: |
+        No explanations or paper provided
+
+

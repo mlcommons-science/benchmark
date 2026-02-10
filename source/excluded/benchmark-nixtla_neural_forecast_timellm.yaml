@@ -1,0 +1,99 @@
+- date: "2023-10-03"
+  version: "v3.0.2"
+  last_updated: "2025-06"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-10-03"
+  name: "Nixtla Neural Forecast TimeLLM"
+  url: "https://github.com/Nixtla/neuralforecast"
+  doi: "10.48550/arXiv.2310.01728"
+  domain:
+  - Computational Science & AI
+  focus: "Reprogramming LLMs for time series forecasting"
+  keywords:
+  - "Time-LLM"
+  - "language model"
+  - "time-series"
+  - "reprogramming"
+  summary: |
+    Time-LLM uses reprogramming layers to adapt frozen LLMs for time series forecasting, treating
+    forecasting as a language task .
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Time-series forecasting"
+  ai_capability_measured:
+  - "Model reuse via LLM"
+  - "few-shot forecasting"
+  metrics:
+  - "RMSE"
+  - "MAPE"
+  models:
+  - "Time-LLM"
+  ml_motif:
+  - Sequence Prediction/Forecasting
+  type: "Platform"
+  ml_task:
+  - "Forecasting"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Fully open-source; transforms forecasting using LLM text reconstruction.
+  contact:
+    name: "Ming Jin (Nixtla)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{jin2024timellmtimeseriesforecasting,
+      title={Time-LLM: Time Series Forecasting by Reprogramming Large Language Models}, 
+      author={Ming Jin and Shiyu Wang and Lintao Ma and Zhixuan Chu and James Y. Zhang and Xiaoming Shi and Pin-Yu Chen and Yuxuan Liang and Yuan-Fang Li and Shirui Pan and Qingsong Wen},
+      year={2024},
+      eprint={2310.01728},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2310.01728}, 
+    }
+  datasets:
+    links:
+    - name: "Standard forecast datasets, M4"
+      url: ""
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1xXGzRt-qhUFTvnBGQi2IbcoBdYyo-ZrAn3IOkswd3fw/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 4
+      reason: |
+        Fully open-source under Apache 2.0, integrated into the NeuralForecast library.
+        Includes Time-LLM implementation with example usage and training scripts.
+    specification:
+      rating: 3
+      reason: |
+        High-level framing of forecasting as language modeling is clear, but detailed input/output
+        specifications, constraints, and task formalization are minimal.
+    dataset:
+      rating: 3
+      reason: |
+        Evaluated on standard datasets like M4 and ETT, but dataset splits and versioning are not
+        bundled or explicitly FAIR-compliant.
+    metrics:
+      rating: 4
+      reason: |
+        Standard forecasting metrics such as RMSE, MAPE, and SMAPE are reported.
+        Evaluation is consistent, though deeper metric justification is limited.
+    reference_solution:
+      rating: 3
+      reason: |
+        Time-LLM implementation is open and reproducible, but limited baselines or comparative
+        implementations are included directly.
+    documentation:
+      rating: 3
+      reason: |
+        GitHub README provides installation and quick usage examples, but lacks detailed API docs,
+        training walkthroughs, or extended tutorials.
+
+# Exclusion Reason: Not a benchmark, baseline/foundation models for time series/neural forcasting

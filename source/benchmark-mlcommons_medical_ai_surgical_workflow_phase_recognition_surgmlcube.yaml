@@ -1,0 +1,108 @@
+- date: "2023-07-17"
+  version: "v1.0"
+  last_updated: "2023-07"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-07-17"
+  name: "MLCommons Medical AI -  Surgical Workflow Phase Recognition (SurgMLCube)"
+  url: "https://github.com/mlcommons/medical"
+  doi: "10.1038/s42256-023-00652-2"
+  domain:
+  - Biology & Medicine
+  focus: "Federated benchmarking and evaluation of medical AI models across diverse real-world clinical data"
+  keywords:
+  - "medical AI"
+  - "federated evaluation"
+  - "privacy-preserving"
+  - "fairness"
+  - "healthcare benchmarks"
+  summary: |
+    The MLCommons Medical AI working group develops benchmarks, best practices, and platforms (MedPerf, GaNDLF, COFE)
+    to accelerate robust, privacy-preserving AI development for healthcare. MedPerf enables federated testing of clinical
+    models on diverse datasets, improving generalizability and equity while keeping data onsite .
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Federated evaluation"
+  - "Model validation"
+  ai_capability_measured:
+  - "Clinical accuracy"
+  - "fairness"
+  - "generalizability"
+  - "privacy compliance"
+  metrics:
+  - "ROC AUC"
+  - "Accuracy"
+  - "Fairness metrics"
+  models:
+  - "MedPerf-validated CNNs"
+  - "GaNDLF workflows"
+  ml_motif:
+  - Classification
+  type: "Platform"
+  ml_task:
+  - "NA"
+  solutions: "0"
+  notes: |
+    Open-source platform under Apache-2.0; used across 20+ institutions and hospitals .
+  contact:
+    name: "Alex Karargyris (MLCommons Medical AI)"
+    email: "unknown"
+  cite:
+  - |
+    @article{karargyris2023federated,
+      author = {Karargyris, Alexandros and Umeton, Renato and Sheller, Micah J. and Aristizabal, Alejandro and George, Johnu and Wuest, Anna and Pati, Sarthak and Kassem, Hasan and Zenk, Maximilian and Baid, Ujjwal and Narayana Moorthy, Prakash and Chowdhury, Alexander and Guo, Junyi and Nalawade, Sahil and Rosenthal, Jacob and Kanter, David and Xenochristou, Maria and Beutel, Daniel J. and Chung, Verena and Bergquist, Timothy and Eddy, James and Abid, Abubakar and Tunstall, Lewis and Sanseviero, Omar and Dimitriadis, Dimitrios and Qian, Yiming and Xu, Xinxing and Liu, Yong and Goh, Rick Siow Mong and Bala, Srini and Bittorf, Victor and Puchala, Sreekar Reddy and Ricciuti, Biagio and Samineni, Soujanya and Sengupta, Eshna and Chaudhari, Akshay and Coleman, Cody and Desinghu, Bala and Diamos, Gregory and Dutta, Debo and Feddema, Diane and Fursin, Grigori and Huang, Xinyuan and Kashyap, Satyananda and Lane, Nicholas and Mallick, Indranil and Mascagni, Pietro and Mehta, Virendra and Moraes, Cassiano Ferro and Natarajan, Vivek and Nikolov, Nikola and Padoy, Nicolas and Pekhimenko, Gennady and Reddi, Vijay Janapa and Reina, G. Anthony and Ribalta, Pablo and Singh, Abhishek and Thiagarajan, Jayaraman J. and Albrecht, Jacob and Wolf, Thomas and Miller, Geralyn and Fu, Huazhu and Shah, Prashant and Xu, Daguang and Yadav, Poonam and Talby, David and Awad, Mark M. and Howard, Jeremy P. and Rosenthal, Michael and Marchionni, Luigi and Loda, Massimo and Johnson, Jason M. and Bakas, Spyridon and Mattson, Peter and FeTS Consortium and BraTS-2020 Consortium and AI4SafeChole Consortium},
+      month = jul,
+      doi = {10.1038/s42256-023-00652-2},
+      journal = {Nature Machine Intelligence},
+      number = {7},
+      pages = {799--810},
+      title = {Federated benchmarking of medical artificial intelligence with MedPerf},
+      url = {https://doi.org/10.1038/s42256-023-00652-2},
+      volume = {5},
+      year = {2023},
+    }
+  datasets:
+    links:
+    - name: "Multi-institutional clinical datasets, radiology"
+      url: ""
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/17dgw85X7wVRUt-ylrQsNOYTWrN15lE9bx0BxA-vcPhM/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        GitHub repository (https://github.com/mlcommons/medical) provides actively maintained
+        open-source tools like MedPerf and GaNDLF for federated medical AI evaluation.
+    specification:
+      rating: 4
+      reason: |
+        The platform defines federated tasks and model evaluation scenarios. Some clinical and
+        system-level constraints are implied but not uniformly formalized across all use cases.
+    dataset:
+      rating: 4
+      reason: |
+        Multi-institutional datasets used in federated settings; real-world data is handled
+        privately onsite, but some FAIR aspects (e.g., accessibility and metadata) are implicit.
+    metrics:
+      rating: 5
+      reason: |
+        Metrics such as ROC AUC, accuracy, and fairness are clearly specified and directly
+        support goals like generalizability and equity.
+    reference_solution:
+      rating: 3
+      reason: |
+        GaNDLF workflows and MedPerf-validated CNNs are referenced, but not all baseline models
+        are centrally documented or easily reproducible.
+    documentation:
+      rating: 5
+      reason: |
+        Extensive documentation, papers, and community support exist. Clear examples and usage
+        instructions are provided in GitHub and publications.
+

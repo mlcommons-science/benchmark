@@ -1,0 +1,92 @@
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "Delta Squared-DFT"
+  url: "https://neurips.cc/virtual/2024/poster/97788"
+  doi: "10.48550/arXiv.2406.14347"
+  domain:
+  - Chemistry
+  - Materials Science
+  focus: "Benchmarking machine-learning corrections to DFT using Delta Squared-trained models for reaction energies"
+  keywords:
+  - "density functional theory"
+  - "Delta Squared-ML correction"
+  - "reaction energetics"
+  - "quantum chemistry"
+  summary: |
+    Introduces the Delta Squared-ML paradigm-using ML corrections to DFT to predict reaction energies with accuracy comparable to CCSD(T), while training on small CC datasets. Evaluated across 10 reaction datasets covering organic and organometallic transformations.
+  licensing: "unknown"
+  task_types:
+  - "Regression"
+  ai_capability_measured:
+  - "High-accuracy energy prediction"
+  - "DFT correction"
+  metrics:
+  - "Mean Absolute Error (eV)"
+  - "Energy ranking accuracy"
+  models:
+  - "Delta Squared-ML correction networks"
+  - "Kernel ridge regression"
+  ml_motif:
+  - Regression
+  type: "Dataset + Benchmark"
+  ml_task:
+  - "Regression"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Demonstrates CC-level accuracy with ~1% of high-level data. Benchmarks publicly included for reproducibility.
+  contact:
+    name: "Wei Liu"
+    email: "unknown"
+  cite:
+  - |
+    @misc{khrabrov2024nabla2dftuniversalquantumchemistry,
+      title={Delta-Squared DFT: A Universal Quantum Chemistry Dataset of Drug-Like Molecules and a Benchmark for Neural Network Potentials}, 
+      author={Kuzma Khrabrov and Anton Ber and Artem Tsypin and Konstantin Ushenin and Egor Rumiantsev and Alexander Telepov and Dmitry Protasov and Ilya Shenbin and Anton Alekseev and Mikhail Shirokikh and Sergey Nikolenko and Elena Tutubalina and Artur Kadurin},
+      year={2024},
+      eprint={2406.14347},
+      archivePrefix={arXiv},
+      primaryClass={physics.chem-ph},
+      url={https://arxiv.org/abs/2406.14347}, 
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Source code and baseline models available for ML correction to DFT; framework maturity is moderate.
+    specification:
+      rating: 4
+      reason: |
+        Benchmark focuses on reaction energy prediction with clear goals, though some task specifics could be formalized further.
+    dataset:
+      rating: 4.5
+      reason: |
+        Multi-modal quantum chemistry datasets are standardized and accessible; repository available.
+    metrics:
+      rating: 4
+      reason: |
+        Uses standard regression metrics like MAE and energy ranking accuracy; appropriate for task.
+    reference_solution:
+      rating: 3.5
+      reason: |
+        Includes baseline regression and kernel ridge models; implementations are reproducible.
+    documentation:
+      rating: 4
+      reason: |
+        Source code supports pipeline reuse, but formal evaluation splits may vary.
+
+

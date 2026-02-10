@@ -1,0 +1,91 @@
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "SPIQA (LLM)"
+  url: "https://neurips.cc/virtual/2024/poster/97575"
+  doi: "10.48550/arXiv.2407.09413"
+  domain:
+  - Computational Science & AI
+  focus: "Evaluating LLMs on image-based scientific paper figure QA tasks (LLM Adapter performance)"
+  keywords:
+  - "multimodal QA"
+  - "scientific figures"
+  - "image+text"
+  - "chain-of-thought prompting"
+  summary: |
+    A workshop version of SPIQA comparing 10 LLM adapter methods on the SPIQA benchmark with scientific diagram/questions. Highlights performance differences between chain-of-thought and end-to-end adapter models.
+  licensing: "unknown"
+  task_types:
+  - "Multimodal QA"
+  ai_capability_measured:
+  - "Visual reasoning"
+  - "scientific figure understanding"
+  metrics:
+  - "Accuracy"
+  - "F1 score"
+  models:
+  - "LLaVA"
+  - "MiniGPT-4"
+  - "Owl-LLM adapter variants"
+  ml_motif:
+  - Multimodal Reasoning
+  type: "Benchmark"
+  ml_task:
+  - "Multimodal QA"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Companion to SPIQA main benchmark; compares adapter strategies using same images and QA pairs.
+  contact:
+    name: "Xiaoyan Zhong"
+    email: "unknown"
+  cite:
+  - |
+    @misc{pramanick2025spiqadatasetmultimodalquestion,
+      title={SPIQA: A Dataset for Multimodal Question Answering on Scientific Papers}, 
+      author={Shraman Pramanick and Rama Chellappa and Subhashini Venugopalan},
+      year={2025},
+      eprint={2407.09413},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2407.09413}, 
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Well-documented codebase available on Github
+    specification:
+      rating: 3.5
+      reason: |
+        Task of QA over scientific figures is sufficient but not fully formalized in input/output terms. No hawrdware constraints.
+    dataset:
+      rating: 5
+      reason: |
+        Full dataset available on Hugging Face with train/test/valid splits.
+    metrics:
+      rating: 4
+      reason: |
+        Reports accuracy and F1; fair but no visual reasoning-specific metric.
+    reference_solution:
+      rating: 4
+      reason: |
+        10 LLM adapter baselines; results included without constraints.
+    documentation:
+      rating: 5
+      reason: |
+        Full paper available
+

@@ -1,0 +1,95 @@
+- date: "2025-03-03"
+  version: "v1.0"
+  last_updated: "2025-03"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2025-03-03"
+  name: "HDR ML Anomaly Challenge - Sea Level Rise"
+  url: "https://www.codabench.org/competitions/3223/"
+  doi: "10.48550/arXiv.2503.02112"
+  domain:
+  - Climate & Earth Science
+  focus: "Detecting anomalous sea-level rise and flooding events via time-series and satellite imagery"
+  keywords:
+  - "anomaly detection"
+  - "climate science"
+  - "sea-level rise"
+  - "time-series"
+  - "remote sensing"
+  summary: |
+    A challenge combining North Atlantic sea-level time-series and satellite imagery to detect flooding anomalies. Models submitted via Codabench. 
+  licensing: "NA"
+  task_types:
+  - "Anomaly Detection"
+  ai_capability_measured:
+  - "Detection of environmental anomalies"
+  metrics:
+  - "ROC-AUC"
+  - "Precision/Recall"
+  models:
+  - "CNNs, RNNs, Transformers"
+  ml_motif:
+  - Anomaly Detection
+  type: "Dataset"
+  ml_task:
+  - "Anomaly Detection"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Sponsored by NSF HDR; integrates sensor and satellite data. 
+  contact:
+    name: "HDR A3D3 Team"
+    email: "unknown"
+  cite:
+  - |
+    @misc{campolongo2025buildingmachinelearningchallenges,
+      archiveprefix = {arXiv},
+      author        = {Elizabeth G. Campolongo and Yuan-Tang Chou and Ekaterina Govorkova and Wahid Bhimji and Wei-Lun Chao and Chris Harris and Shih-Chieh Hsu and Hilmar Lapp and Mark S. Neubauer and Josephine Namayanja and Aneesh Subramanian and Philip Harris and Advaith Anand and David E. Carlyn and Subhankar Ghosh and Christopher Lawrence and Eric Moreno and Ryan Raikman and Jiaman Wu and Ziheng Zhang and Bayu Adhi and Mohammad Ahmadi Gharehtoragh and Saúl Alonso Monsalve and Marta Babicz and Furqan Baig and Namrata Banerji and William Bardon and Tyler Barna and Tanya Berger-Wolf and Adji Bousso Dieng and Micah Brachman and Quentin Buat and David C. Y. Hui and Phuong Cao and Franco Cerino and Yi-Chun Chang and Shivaji Chaulagain and An-Kai Chen and Deming Chen and Eric Chen and Chia-Jui Chou and Zih-Chen Ciou and Miles Cochran-Branson and Artur Cordeiro Oudot Choi and Michael Coughlin and Matteo Cremonesi and Maria Dadarlat and Peter Darch and Malina Desai and Daniel Diaz and Steven Dillmann and Javier Duarte and Isla Duporge and Urbas Ekka and Saba Entezari Heravi and Hao Fang and Rian Flynn and Geoffrey Fox and Emily Freed and Hang Gao and Jing Gao and Julia Gonski and Matthew Graham and Abolfazl Hashemi and Scott Hauck and James Hazelden and Joshua Henry Peterson and Duc Hoang and Wei Hu and Mirco Huennefeld and David Hyde and Vandana Janeja and Nattapon Jaroenchai and Haoyi Jia and Yunfan Kang and Maksim Kholiavchenko and Elham E. Khoda and Sangin Kim and Aditya Kumar and Bo-Cheng Lai and Trung Le and Chi-Wei Lee and JangHyeon Lee and Shaocheng Lee and Suzan van der Lee and Charles Lewis and Haitong Li and Haoyang Li and Henry Liao and Mia Liu and Xiaolin Liu and Xiulong Liu and Vladimir Loncar and Fangzheng Lyu and Ilya Makarov and Abhishikth Mallampalli Chen-Yu Mao and Alexander Michels and Alexander Migala and Farouk Mokhtar and Mathieu Morlighem and Min Namgung and Andrzej Novak and Andrew Novick and Amy Orsborn and Anand Padmanabhan and Jia-Cheng Pan and Sneh Pandya and Zhiyuan Pei and Ana Peixoto and George Percivall and Alex Po Leung and Sanjay Purushotham and Zhiqiang Que and Melissa Quinnan and Arghya Ranjan and Dylan Rankin and Christina Reissel and Benedikt Riedel and Dan Rubenstein and Argyro Sasli and Eli Shlizerman and Arushi Singh and Kim Singh and Eric R. Sokol and Arturo Sorensen and Yu Su and Mitra Taheri and Vaibhav Thakkar and Ann Mariam Thomas and Eric Toberer and Chenghan Tsai and Rebecca Vandewalle and Arjun Verma and Ricco C. Venterea and He Wang and Jianwu Wang and Sam Wang and Shaowen Wang and Gordon Watts and Jason Weitz and Andrew Wildridge and Rebecca Williams and Scott Wolf and Yue Xu and Jianqi Yan and Jai Yu and Yulei Zhang and Haoran Zhao and Ying Zhao and Yibo Zhong},
+      eprint        = {2503.02112},
+      primaryclass  = {cs.LG},
+      title         = {Building Machine Learning Challenges for Anomaly Detection in Science},
+      url           = {https://arxiv.org/abs/2503.02112},
+      year          = {2025}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://www.codabench.org/competitions/3223/"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 2
+      reason: |
+        Benchmark platform exists on Codabench, but no baseline code or maintained repository
+        for reference solutions provided yet.
+    specification:
+      rating: 5
+      reason: |
+        Well-defined anomaly detection task combining satellite imagery and time-series data,
+        with clear physical and domain-specific framing.
+    dataset:
+      rating: 5
+      reason: |
+        Uses preprocessed, public, and well-structured sensor and satellite data for the
+        North Atlantic sea-level rise region.
+    metrics:
+      rating: 5
+      reason: |
+        Standard metrics such as ROC-AUC, precision, and recall are specified and suitable
+        for the anomaly detection tasks.
+    reference_solution:
+      rating: 1
+      reason: |
+        No starter models or baseline implementations linked or provided publicly.
+    documentation:
+      rating: 5
+      reason: |
+        Challenge page, starter kits, and related papers offer strong guidance for participants.
+
+
+

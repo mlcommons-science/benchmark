@@ -1,0 +1,88 @@
+- date: "2024-11-07"
+  version: "1"
+  last_updated: "2024-11-07"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2024-11-07"
+  name: "FrontierMath"
+  url: "https://arxiv.org/abs/2411.04872"
+  doi: "10.48550/arXiv.2411.04872"
+  domain:
+  - Mathematics
+  focus: "Challenging advanced mathematical reasoning"
+  keywords:
+  - "symbolic reasoning"
+  - "number theory"
+  - "algebraic geometry"
+  - "category theory"
+  summary: |
+    FrontierMath is a benchmark of hundreds of expert-vetted mathematics problems spanning
+    number theory, real analysis, algebraic geometry, and category theory, measuring LLMs 
+    ability to solve problems requiring deep abstract reasoning.
+  licensing: "unknown"
+  task_types:
+  - "Problem solving"
+  ai_capability_measured:
+  - "Symbolic and abstract mathematical reasoning"
+  metrics:
+  - "Accuracy"
+  models:
+  - unknown
+  ml_motif:
+  - Reasoning & Generalization
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "0"
+  notes: "More information available at https://epoch.ai/frontiermath/about"
+  contact:
+    name: "FrontierMath team"
+    email: "math_evals@epochai.org"
+  cite:
+  - |
+    @misc{glazer2024frontiermathbenchmarkevaluatingadvanced,
+      archiveprefix = {arXiv},
+      author        = {Elliot Glazer and Ege Erdil and Tamay Besiroglu and Diego Chicharro and Evan Chen and Alex Gunning and Caroline Falkman Olsson and Jean-Stanislas Denain and Anson Ho and Emily de Oliveira Santos and Olli J\"{a}rviniemi and Matthew Barnett and Robert Sandler and Matej Vrzala and Jaime Sevilla and Qiuyu Ren and Elizabeth Pratt and Lionel Levine and Grant Barkley and Natalie Stewart and Bogdan Grechuk and Tetiana Grechuk and Shreepranav Varma Enugandla and Mark Wildon},
+      eprint        = {2411.04872},
+      primaryclass  = {cs.AI},
+      title         = {FrontierMath: A Benchmark for Evaluating Advanced Mathematical Reasoning in AI},
+      url           = {https://arxiv.org/abs/2411.04872},
+      year          = {2024}
+    }
+  datasets:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  results:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  fair:
+    reproducible: "No"
+    benchmark_ready: "No"
+  ratings:
+    software:
+      rating: 0
+      reason: |
+        No publicaly available code to run the benchmark
+    specification:
+      rating: 3
+      reason: |
+        Well-specified process for asking questions and receiving answers. No software or hardware constraints
+    dataset:
+      rating: 0
+      reason: |
+        Only samples of dataset exist, not publicly available
+    metrics:
+      rating: 5
+      reason: |
+        All questions in the dataset have a correct answer
+    reference_solution:
+      rating: 2
+      reason: |
+        Displays result of leading models on the benchmark, but none are trainable or list constraints
+    documentation:
+      rating: 5
+      reason: |
+        All necessary information is in the paper and website
+

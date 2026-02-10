@@ -1,0 +1,91 @@
+- date: "2023-11-20"
+  version: "1"
+  last_updated: "2023-11-20"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2023-11-20"
+  name: "GPQA Diamond"
+  url: "https://arxiv.org/abs/2311.12022"
+  doi: "10.48550/arXiv.2311.12022"
+  domain:
+  - Biology & Medicine
+  - Chemistry
+  - High Energy Physics
+  focus: "Graduate-level scientific reasoning"
+  keywords:
+  - "Google-proof"
+  - "graduate-level"
+  - "science QA"
+  - "chemistry"
+  - "physics"
+  summary: |
+    GPQA is a dataset of 448 challenging, multiple-choice questions in biology, physics,
+    and chemistry, written by domain experts. It is Google-proof - experts score 65% 
+    (74% after error correction) while skilled non-experts with web access score only 34%. 
+    State-of-the-art LLMs like GPT-4 reach around 39% accuracy.
+  licensing: "unknown"
+  task_types:
+  - "Multiple choice"
+  - "Multi-step QA"
+  ai_capability_measured:
+  - "Scientific reasoning, deep knowledge"
+  metrics:
+  - "Accuracy"
+  models:
+  - "o1"
+  - "DeepSeek-R1"
+  ml_motif:
+  - Reasoning & Generalization
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "0"
+  notes: "Good"
+  contact:
+    name: "Julian Michael"
+    email: "julianjm@nyu.edu"
+  cite:
+  - |
+    @misc{rein2023gpqagraduatelevelgoogleproofqa,
+      title={GPQA: A Graduate-Level Google-Proof Q and A Benchmark},
+      author={Rein, David and Hou, Betty Li and Stickland, Asa Cooper},
+      year={2023},
+      url={https://arxiv.org/abs/2311.12022}
+    }
+  datasets:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  results:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Python version and requirements specified on Github site
+    specification:
+      rating: 2
+      reason: |
+        No system constraints or I/O specified
+    dataset:
+      rating: 5
+      reason: |
+        Easily able to access dataset. Comes with predefined splits as mentioned in the paper
+    metrics:
+      rating: 5
+      reason: |
+        Each question has a correct answer, representing the tested model's performance.
+    reference_solution:
+      rating: 1
+      reason: |
+        Common models such as GPT-3.5 were compared. They are not open and don't provide requirements
+    documentation:
+      rating: 5
+      reason: |
+        All information is listed in the associated paper
+

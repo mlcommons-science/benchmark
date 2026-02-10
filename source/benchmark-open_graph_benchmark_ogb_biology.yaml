@@ -1,0 +1,91 @@
+- date: "2020-05-02"
+  version: "1"
+  last_updated: "2020-05-02"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2020-05-02"
+  name: "Open Graph Benchmark (OGB) - Biology"
+  url: "https://ogb.stanford.edu/docs/home/"
+  doi: "10.48550/arXiv.2005.00687"
+  domain:
+  - Biology & Medicine
+  focus: "Biological graph property prediction"
+  keywords:
+  - "node prediction"
+  - "link prediction"
+  - "graph classification"
+  summary: |
+    OGB-Biology is a suite of large-scale biological network datasets (protein-protein
+    interaction, drug-target, etc.) with standardized splits and evaluation protocols 
+    for node, link, and graph property prediction tasks.
+  licensing: "MIT License"
+  task_types:
+  - "Node property prediction"
+  - "Link property prediction"
+  - "Graph property prediction"
+  ai_capability_measured:
+  - "Scalability and generalization in graph ML for biology"
+  metrics:
+  - "Accuracy"
+  - "ROC-AUC"
+  models:
+  - "GCN"
+  - "GraphSAGE"
+  - "GAT"
+  ml_motif:
+  - Sequence Prediction/Forecasting
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "0"
+  notes: "Community-driven updates"
+  contact:
+    name: "OGB Team"
+    email: "ogb@cs.stanford.edu"
+  cite:
+  - |
+    @misc{hu2021opengraphbenchmarkdatasets,
+        archiveprefix = {arXiv},
+        author        = {Weihua Hu and Matthias Fey and Marinka Zitnik and Yuxiao Dong and Hongyu Ren and Bowen Liu and Michele Catasta and Jure Leskovec},
+        eprint        = {2005.00687},
+        primaryclass  = {cs.LG},
+        title         = {Open Graph Benchmark: Datasets for Machine Learning on Graphs},
+        url           = {https://arxiv.org/abs/2005.00687},
+        year          = {2021}
+    }
+  datasets:
+    links:
+    - name: "OGB Webpage"
+      url: "https://ogb.stanford.edu/docs/dataset_overview/"
+  results:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        All necessary information is provided on the Github
+    specification:
+      rating: 4
+      reason: |
+        Tasks (node/link/graph property prediction) are clearly specified with input/output formats and standardized protocols; splits are well-defined.
+    dataset:
+      rating: 5
+      reason: |
+        Fully FAIR- datasets are versioned, split, and accessible via a standardized API; extensive metadata and documentation are included.
+    metrics:
+      rating: 5
+      reason: |
+        Reproducible, quantitative metrics (e.g., ROC-AUC, accuracy) that are tightly aligned with the tasks.
+    reference_solution:
+      rating: 5
+      reason: |
+        Multiple baselines implemented and documented (GCN, GAT, GraphSAGE).
+    documentation:
+      rating: 5
+      reason: |
+        All necessary information is included in a paper.

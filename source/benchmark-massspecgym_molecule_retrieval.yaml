@@ -1,0 +1,110 @@
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "MassSpecGym - Molecule Retrieval"
+  url: "https://neurips.cc/virtual/2024/poster/97823"
+  doi: "unknown"
+  domain:
+  - Chemistry
+  focus: "Benchmark suite for discovery and identification of molecules via MS/MS"
+  keywords:
+  - "mass spectrometry"
+  - "molecular structure"
+  - "de novo generation"
+  - "retrieval"
+  - "dataset"
+  summary: |
+    MassSpecGym curates the largest public MS/MS dataset with three standardized tasks-de novo structure 
+    generation, molecule retrieval, and spectrum simulation-using challenging generalization splits to 
+    propel ML-driven molecule discovery.
+  licensing: "unknown"
+  task_types:
+  - "De novo generation"
+  - "Retrieval"
+  - "Simulation"
+  ai_capability_measured:
+  - "Molecular identification and generation from spectral data"
+  metrics:
+  - "Structure accuracy"
+  - "Retrieval precision"
+  - "Simulation MSE"
+  models:
+  - "Graph-based generative models"
+  - "Retrieval baselines"
+  ml_motif:
+  - Regression
+  type: "Dataset, Benchmark"
+  ml_task:
+  - "Generation, retrieval, simulation"
+  solutions: "0"
+  notes: |
+    Dataset~>1M spectra; open-source GitHub repo; widely cited as a go-to benchmark for MS/MS tasks.
+  contact:
+    name: "Roman Bushuiev"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{neurips2024_c6c31413,
+      author = {Bushuiev, Roman and Bushuiev, Anton and de Jonge, Niek F. and 
+                Young, Adamo and Kretschmer, Fleming and Samusevich, Raman and 
+                Heirman, Janne and Wang, Fei and Zhang, Luke and D\"{u}hrkop, Kai and 
+                Ludwig, Marcus and Haupt, Nils A. and Kalia, Apurva and Brungs, Corinna and 
+                Schmid, Robin and Greiner, Russell and Wang, Bo and Wishart, David S. and 
+                Liu, Li-Ping and Rousu, Juho and Bittremieux, Wout and Rost, Hannes and 
+                Mak, Tytus D. and Hassoun, Soha and Huber, Florian and van der Hooft, Justin J.J. and 
+                Stravs, Michael A. and B\"{o}cker, Sebastian and Sivic, Josef and Pluskal, Tom\'{a}\v{s}},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {110010--110027},
+      publisher = {Curran Associates, Inc.},
+      title = {MassSpecGym: A benchmark for the discovery and identification of molecules},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/c6c31413d5c53b7d1c343c1498734b0f-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Open-source GitHub repository available; baseline models and training code partially
+        provided but overall framework maturity is moderate.
+    specification:
+      rating: 5
+      reason: |
+        Clearly defined tasks including molecule generation, retrieval, and spectrum simulation,
+        scoped for MS/MS molecular identification.
+    dataset:
+      rating: 5
+      reason: |
+        Largest public MS/MS dataset with extensive annotations; minor point deducted for
+        lack of explicit train/validation/test splits.
+    metrics:
+      rating: 5
+      reason: |
+        Well-defined metrics such as structure accuracy, retrieval precision, and simulation MSE
+        used consistently.
+    reference_solution:
+      rating: 3.5
+      reason: |
+        CNN-based baselines are referenced, but pretrained weights and comprehensive training
+        pipelines are not fully documented.
+    documentation:
+      rating: 1
+      reason: |
+        Paper and poster describe benchmark goals and design, but documentation and user
+        guides are minimal and repo status uncertain.
+

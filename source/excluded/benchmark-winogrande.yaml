@@ -1,0 +1,90 @@
+- date: "2019-07-24"
+  version: "1"
+  last_updated: "2019-07-24"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2019-07-24"
+  name: "Winogrande"
+  url: "https://leaderboard.allenai.org/winogrande/submissions/public"
+  doi: "10.48550/arXiv.1907.10641"
+  domain:
+  - Computational Science & AI
+  focus: "Winograd Schema-style pronoun resolution"
+  keywords:
+  - "adversarial"
+  - "pronoun resolution"
+  summary: |
+    WinoGrande is a large-scale adversarial dataset of 44,000 Winograd Schema-style 
+    questions with reduced bias using AFLite, serving as both a benchmark and transfer 
+    learning resource.
+  licensing: "CC-BY"
+  task_types:
+  - "Pronoun resolution"
+  ai_capability_measured:
+  - "Robust commonsense reasoning"
+  metrics:
+  - "Accuracy"
+  - "AUC"
+  models:
+  - "RoBERTa"
+  - "BERT"
+  - "GPT-2"
+  ml_motif:
+  - Reasoning & Generalization
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "2"
+  notes: "Human ~94%"
+  contact:
+    name: "Keisuke Sakaguchi"
+    email: "keisukes@allenai.org"
+  cite:
+  - |
+    @misc{sakaguchi2019winograndeadversarialwinogradschema,
+      archiveprefix = {arXiv},
+      author        = {Keisuke Sakaguchi and Ronan Le Bras and Chandra Bhagavatula and Yejin Choi},
+      eprint        = {1907.10641},
+      primaryclass  = {cs.CL},
+      title         = {WinoGrande: An Adversarial Winograd Schema Challenge at Scale},
+      url           = {https://arxiv.org/abs/1907.10641},
+      year          = {2019}
+    }
+  datasets:
+    links:
+    - name: "Hugging Face / AllenAI"
+      url: "https://huggingface.co/datasets/allenai/winogrande"
+  results:
+    links:
+    - name: "Papers With Code leaderboard"
+      url: "https://paperswithcode.com/dataset/winogrande"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 0
+      reason: |
+        No template code provided
+    specification:
+      rating: 5
+      reason: |
+        Task (pronoun/coreference resolution) is clearly defined in Winograd Schema style, with consistent input/output format; no system constraints included.
+    dataset:
+      rating: 5
+      reason: |
+        Public, versioned, and FAIR-compliant with AFLite-generated splits to reduce annotation artifacts; hosted by AllenAI with good metadata.
+    metrics:
+      rating: 5
+      reason: |
+        Accuracy and AUC are quantitative and well-aligned with disambiguation goals; standardized across evaluations.
+    reference_solution:
+      rating: 4
+      reason: |
+        Baseline results available, requiring users to submit their methods along with their submissions. Constraints are not required in submissions.
+    documentation:
+      rating: 5
+      reason: |
+        Dataset page and paper provide sufficient detail
+
+# Exclusion Reason: Not specifically a scientific benchmark, some scientific tasks present, but very minimal compared to other tasks.

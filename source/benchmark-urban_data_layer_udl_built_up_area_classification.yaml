@@ -1,0 +1,95 @@
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "Urban Data Layer (UDL) - Built-up Area Classification"
+  url: "https://neurips.cc/virtual/2024/poster/97837"
+  doi: "unknown"
+  domain:
+  - Climate & Earth Science
+  focus: "Unified data pipeline for multi-modal urban science research"
+  keywords:
+  - "data pipeline"
+  - "urban science"
+  - "multi-modal"
+  - "benchmark"
+  summary: |
+    UrbanDataLayer standardizes heterogeneous urban data formats and provides pipelines for tasks like air quality prediction and land-use classification, enabling the rapid creation of multi-modal urban benchmarks .
+  licensing: "unknown"
+  task_types:
+  - "Prediction"
+  - "Classification"
+  ai_capability_measured:
+  - "Multi-modal urban inference"
+  - "standardization"
+  metrics:
+  - "Task-specific accuracy or RMSE"
+  models:
+  - "Baseline regression/classification pipelines"
+  ml_motif:
+  - Classification
+  type: "Framework"
+  ml_task:
+  - "Prediction, classification"
+  solutions: "0"
+  notes: |
+    Source code available on GitHub (SJTU-CILAB/udl); promotes reusable urban-science foundation models .
+  contact:
+    name: "Yiheng Wang"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{neurips2024_0db7f135,
+      author = {Wang, Yiheng and Wang, Tianyu and Zhang, Yuying and Zhang, Hongji and Zheng, Haoyu and Zheng, Guanjie and Kong, Linghe},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {7296--7310},
+      publisher = {Curran Associates, Inc.},
+      title = {UrbanDataLayer: A Unified Data Pipeline for Urban Science},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/0db7f135f6991e8cec5e516ecc66bfba-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Source code is publicly available on GitHub; baseline regression and classification
+        pipelines are included but framework maturity is moderate.
+    specification:
+      rating: 5
+      reason: |
+        Multiple urban science tasks like prediction and classification are well specified
+        with clear input/output and evaluation criteria.
+    dataset:
+      rating: 5
+      reason: |
+        Large, multi-modal urban datasets are open-source, well-documented, and support
+        reproducible research.
+    metrics:
+      rating: 5
+      reason: |
+        Uses task-specific accuracy and RMSE metrics appropriate for prediction and classification.
+    reference_solution:
+      rating: 4
+      reason: |
+        Baseline models available but not exhaustive; community adoption and extensions expected.
+    documentation:
+      rating: 5
+      reason: |
+        GitHub repository and conference poster provide comprehensive code and reproducibility
+        instructions.
+

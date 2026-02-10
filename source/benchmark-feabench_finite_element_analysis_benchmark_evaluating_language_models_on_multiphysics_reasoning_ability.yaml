@@ -1,0 +1,88 @@
+- date: "2023-01-26"
+  version: "1"
+  last_updated: "2023-01-26"
+  expired: "false"
+  valid: "no"
+  valid_date: "2023-01-26"
+  name: "FEABench (Finite Element Analysis Benchmark): Evaluating Language Models on Multiphysics Reasoning Ability"
+  url: "https://github.com/google/feabench"
+  doi: "unknown"
+  domain:
+  - Mathematics
+  focus: "FEA simulation accuracy and performance"
+  keywords:
+  - "finite element"
+  - "simulation"
+  - "PDE"
+  summary: |
+    N/A
+  licensing: "unknown"
+  task_types:
+  - "Simulation"
+  - "Performance evaluation"
+  ai_capability_measured:
+  - "Numerical simulation accuracy and efficiency"
+  metrics:
+  - "Solve time"
+  - "Error norm"
+  models:
+  - "FEniCS"
+  - "deal.II"
+  ml_motif:
+  - Reasoning & Generalization
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "unknown"
+  notes: "OK"
+  contact:
+    name: "unknown"
+    email: "unknown"
+  cite:
+  - |
+    @misc{mudur2025feabenchevaluatinglanguagemodels,
+      title={FEABench: Evaluating Language Models on Multiphysics Reasoning Ability}, 
+      author={Nayantara Mudur and Hao Cui and Subhashini Venugopalan and Paul Raccuglia and Michael P. Brenner and Peter Norgaard},
+      year={2025},
+      eprint={2504.06260},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2504.06260}, 
+      }
+  datasets:
+    links:
+    - name: "FEABench Github"
+      url: "https://github.com/google/feabench?tab=readme-ov-file#datasets"
+  results:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 4
+      reason: |
+        Code is available, but poorly documented
+    specification:
+      rating: 1
+      reason: |
+        Output is defined and task clarity is questionable
+    dataset:
+      rating: 4
+      reason: |
+        Available, but not split into sets
+    metrics:
+      rating: 5
+      reason: |
+        Fully defined metrics
+    reference_solution:
+      rating: 4
+      reason: |
+        Three open-source models were used. No system constraints.
+    documentation:
+      rating: 5
+      reason: |
+        In associated paper
+

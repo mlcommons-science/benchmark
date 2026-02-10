@@ -1,0 +1,93 @@
+- date: "2023-11-20"
+  version: "v1.0"
+  last_updated: "2023-11"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-11-20"
+  name: "GPQA: A Graduate-Level Google-Proof Question and Answer Benchmark"
+  url: "https://arxiv.org/abs/2311.12022"
+  doi: "10.48550/arXiv.2311.12022"
+  domain:
+  - Biology & Medicine
+  - High Energy Physics
+  - Chemistry
+  focus: "Graduate-level, expert-validated multiple-choice questions hard even with web access"
+  keywords:
+  - "Google-proof"
+  - "multiple-choice"
+  - "expert reasoning"
+  - "science QA"
+  summary: |
+    Contains 448 challenging questions written by domain experts, with expert accuracy at 65% (74% discounting clear errors) and non-experts reaching just 34%. GPT-4 baseline scores ~39%-designed for scalable oversight evaluation. 
+  licensing: "NA"
+  task_types:
+  - "Multiple choice"
+  ai_capability_measured:
+  - "Scientific reasoning"
+  - "knowledge probing"
+  metrics:
+  - "Accuracy"
+  models:
+  - "GPT-4 baseline"
+  ml_motif:
+  - Reasoning & Generalization
+  type: "Benchmark"
+  ml_task:
+  - "Multiple choice"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Google-proof, supports oversight research.
+  contact:
+    name: "David Rein (NYU)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{rein2023gpqagraduatelevelgoogleproofqa2,
+      archiveprefix = {arXiv},
+      author        = {David Rein and Betty Li Hou and Asa Cooper Stickland and Jackson Petty and Richard Yuanzhe Pang and Julien Dirani and Julian Michael and Samuel R. Bowman},
+      eprint        = {2311.12022},
+      primaryclass  = {cs.AI},
+      title         = {GPQA: A Graduate-Level Google-Proof Q and A Benchmark},
+      url           = {https://arxiv.org/abs/2311.12022},
+      year          = {2023}
+    }
+  datasets:
+    links:
+    - name: "GPQA dataset"
+      url: "zip/HuggingFace"
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "(none)"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Dataset and benchmark materials are publicly available via HuggingFace and GitHub,
+        but no integrated runnable code or software framework is provided.
+    specification:
+      rating: 5
+      reason: |
+        Task is clearly defined as a multiple-choice benchmark requiring expert-level scientific reasoning.
+        Input/output formats and evaluation criteria are well described.
+    dataset:
+      rating: 5
+      reason: |
+        The GPQA dataset is publicly released, well curated, with metadata and clearly documented splits.
+    metrics:
+      rating: 5
+      reason: |
+        Accuracy is the primary metric and is clearly defined and appropriate for multiple-choice QA.
+    reference_solution:
+      rating: 1
+      reason: |
+        No baseline implementations or starter code are linked or provided for reproduction.
+    documentation:
+      rating: 3
+      reason: |
+        Documentation includes dataset description and benchmark instructions, but lacks detailed usage tutorials or pipelines.

@@ -1,0 +1,94 @@
+- date: "2024-07-08"
+  version: "v1.0"
+  last_updated: "2024-07"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-07-08"
+  name: "Ultrafast jet classification at the HL-LHC"
+  url: "https://arxiv.org/pdf/2402.01876"
+  doi: "10.48550/arXiv.2402.01876"
+  domain:
+  - High Energy Physics
+  focus: "FPGA-optimized real-time jet origin classification at the HL-LHC"
+  keywords:
+  - "jet classification"
+  - "FPGA"
+  - "quantization-aware training"
+  - "Deep Sets"
+  - "Interaction Networks"
+  summary: |
+    Demonstrates three ML models (MLP, Deep Sets, Interaction Networks) optimized for FPGA deployment with O(100 ns) inference using quantized models and hls4ml, targeting real-time jet tagging in the L1 trigger environment at the high-luminosity LHC. Data is available on Zenodo DOI:10.5281/zenodo.3602260. 
+  licensing: "CC-BY"
+  task_types:
+  - "Classification"
+  ai_capability_measured:
+  - "Real-time inference under FPGA constraints"
+  metrics:
+  - "Accuracy"
+  - "Latency"
+  - "Resource utilization"
+  models:
+  - "MLP"
+  - "Deep Sets"
+  - "Interaction Network"
+  ml_motif:
+  - Classification
+  type: "Model"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Uses quantization-aware training; hardware synthesis evaluated via hls4ml
+  contact:
+    name: "Patrick Odagiu"
+    email: "podagiu@ethz.ch"
+  cite:
+  - |
+    @misc{odagiu2024ultrafastjetclassificationfpgas,
+      archiveprefix = {arXiv},
+      author        = {Patrick Odagiu and Zhiqiang Que and Javier Duarte and Johannes Haller and Gregor Kasieczka and Artur Lobanov and Vladimir Loncar and Wayne Luk and Jennifer Ngadiuba and Maurizio Pierini and Philipp Rincke and Arpita Seksaria and Sioni Summers and Andre Sznajder and Alexander Tapper and Thea K. Aarrestad},
+      doi           = {https://doi.org/10.1088/2632-2153/ad5f10},
+      eprint        = {2402.01876},
+      primaryclass  = {hep-ex},
+      title         = {Ultrafast jet classification on FPGAs for the HL-LHC},
+      url           = {https://arxiv.org/abs/2402.01876},
+      year          = {2024}
+    }
+  datasets:
+    links:
+    - name: "Zenodo dataset"
+      url: "https://zenodo.org/records/3602260"
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1Hk2zHauNv6BcRH4ZY5RH6v_oKDfeKzyjhoYyP0Xw4h4"
+    - name: "ChatGPT LLM"
+      url: "https://docs.google.com/document/d/1gDf1CIYtfmfZ9urv1jCRZMYz_3WwEETkugUC65OZBdw"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "No"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Not containerized; Setup and automation incomplete
+    specification:
+      rating: 4
+      reason: |
+        Hardware constraints are referenced but not fully detailed or standardized
+    dataset:
+      rating: 4
+      reason: |
+        FAIR metadata limited; no clear mention of dataset format or splits
+    metrics:
+      rating: 3
+      reason: |
+        Metrics exist (accuracy, latency, utilization), but formal definitions and evaluation guidance are limited
+    reference_solution:
+      rating: 2
+      reason: |
+        Reference implementations not fully reproducible; no evaluation pipeline or training setup provided
+    documentation:
+      rating: 3
+      reason: |
+        No linked GitHub repo or setup instructions; paper provides partial guidance only

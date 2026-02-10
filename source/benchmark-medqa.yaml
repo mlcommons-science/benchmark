@@ -1,0 +1,89 @@
+- date: "2020-09-28"
+  version: "1"
+  last_updated: "2020-09-28"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2020-09-28"
+  name: "MedQA"
+  url: "https://arxiv.org/abs/2009.13081"
+  doi: "10.48550/arXiv.2009.13081"
+  domain:
+  - Biology & Medicine
+  focus: "Medical board exam QA"
+  keywords:
+  - "USMLE"
+  - "diagnostic QA"
+  - "medical knowledge"
+  - "multilingual"
+  summary: |
+    MedQA is a large-scale multiple-choice dataset drawn from professional medical
+    board exams (e.g., USMLE), testing AI systems on diagnostic and medical knowledge 
+    questions in English and Chinese.
+  licensing: "Under Association for the Advancement of Artificial Intelligence"
+  task_types:
+  - "Multiple choice"
+  ai_capability_measured:
+  - "Medical diagnosis and knowledge retrieval"
+  metrics:
+  - "Accuracy"
+  models:
+  - "Neural reader"
+  - "Retrieval-based QA systems"
+  ml_motif:
+  - Reasoning & Generalization
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "0"
+  notes: "Multilingual (English, Simplified and Traditional Chinese)"
+  contact:
+    name: "Di Jin"
+    email: "jindi15@mit.edu"
+  cite:
+  - |
+    @misc{jin2020diseasedoespatienthave,
+        archiveprefix = {arXiv},
+        author        = {Di Jin and Eileen Pan and Nassim Oufattole and Wei-Hung Weng and Hanyi Fang and Peter Szolovits},
+        eprint        = {2009.13081},
+        primaryclass  = {cs.CL},
+        title         = {What Disease does this Patient Have? A Large-scale Open Domain Question Answering Dataset from Medical Exams},
+        url           = {https://arxiv.org/abs/2009.13081},
+        year          = {2020}
+      }
+  datasets:
+    links:
+    - name: "Github"
+      url: "https://github.com/jind11/MedQA"
+  results:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        All code available on the github
+    specification:
+      rating: 3
+      reason: |
+        Task is clearly defined as multiple-choice QA for medical board exams; input and output formats are explicit; task scope is rigorous and structured. System constraints not specified.
+    dataset:
+      rating: 4
+      reason: |
+        Dataset is publicly available (GitHub, paper, Hugging Face), well-structured. However, versioning and metadata could be more standardized to fully meet FAIR criteria.
+    metrics:
+      rating: 5
+      reason: |
+        Uses clear, quantitative metric (accuracy), standard for multiple-choice benchmarks; easily comparable across models.
+    reference_solution:
+      rating: 0
+      reason: |
+        No reference solution mentioned.
+    documentation:
+      rating: 4
+      reason: |
+        Paper is available. Evaluation criteria are not mentioned.
+

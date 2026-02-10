@@ -1,0 +1,93 @@
+- date: "2020-01-01"
+  version: "v1.0"
+  last_updated: "2020-01"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2020-01-01"
+  name: "BenchCouncil AIBench"
+  url: "https://www.benchcouncil.org/AIBench/"
+  doi: "10.48550/arXiv.1908.08998"
+  domain:
+  - General
+  focus: "End-to-end AI benchmarking across micro, component, and application levels"
+  keywords:
+  - "benchmarking"
+  - "AI systems"
+  - "application-level evaluation"
+  summary: |
+    AIBench is a comprehensive benchmark suite that evaluates AI workloads at different levels (micro, component, application) across hardware systems-covering image generation, object detection, translation, recommendation, video prediction, etc.
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Training"
+  - "Inference"
+  - "End-to-end AI workloads"
+  ai_capability_measured:
+  - "System-level AI workload performance"
+  metrics:
+  - "Throughput"
+  - "Latency"
+  - "Accuracy"
+  models:
+  - "ResNet"
+  - "BERT"
+  - "GANs"
+  - "Recommendation systems"
+  ml_motif:
+  - "General"
+  type: "Benchmark"
+  ml_task:
+  - "NA"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Covers scenario-distilling, micro, component, and end-to-end benchmarks.
+  contact:
+    name: "Wanling Gao (BenchCouncil)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{gao2019aibenchindustrystandardinternet,
+      archiveprefix = {arXiv},
+      author        = {Wanling Gao and Fei Tang and Lei Wang and Jianfeng Zhan and Chunxin Lan and Chunjie Luo and Yunyou Huang and Chen Zheng and Jiahui Dai and Zheng Cao and Daoyi Zheng and Haoning Tang and Kunlin Zhan and Biao Wang and Defei Kong and Tong Wu and Minghe Yu and Chongkang Tan and Huan Li and Xinhui Tian and Yatao Li and Junchao Shao and Zhenyu Wang and Xiaoyu Wang and Hainan Ye},
+      eprint        = {1908.08998},
+      primaryclass  = {cs.CV},
+      title         = {AIBench: An Industry Standard Internet Service AI Benchmark Suite},
+      url           = {https://arxiv.org/abs/1908.08998},
+      year          = {2019}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1scxhARd4vzEaWpVfwKPF_nTSxv4DirlQqcGlSG0yzJc/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        No containerized or automated implementation provided for full benchmark suite
+    specification:
+      rating: 4
+      reason: |
+        Task coverage is broad and well-scoped, but system constraints and expected outputs are not uniformly defined
+    dataset:
+      rating: 3
+      reason: |
+        Multiple datasets are mentioned, but not consistently FAIR-documented, versioned, or linked
+    metrics:
+      rating: 4
+      reason: |
+        Metrics are appropriate, but standardization and reproducibility across tasks vary
+    reference_solution:
+      rating: 3
+      reason: |
+        Reference models (e.g., ResNet, BERT) described; no turnkey implementation or results repository for all levels
+    documentation:
+      rating: 3
+      reason: |
+        Paper is comprehensive, but minimal user-facing documentation or structured reproduction guide
+# Exclusion Reason: Not a scientific benchmark specifically

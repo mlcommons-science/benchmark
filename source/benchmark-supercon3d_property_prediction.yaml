@@ -1,0 +1,99 @@
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "SuperCon3D - Property Prediction"
+  url: "https://neurips.cc/virtual/2024/poster/97553"
+  doi: "unknown"
+  domain:
+  - Materials Science
+  focus: "Dataset and models for predicting and generating high-Tc superconductors using 3D crystal structures"
+  keywords:
+  - "superconductivity"
+  - "crystal structures"
+  - "equivariant GNN"
+  - "generative models"
+  summary: |
+    SuperCon3D introduces 3D crystal structures with associated critical temperatures (Tc) and two deep-learning models: SODNet (equivariant graph model) and DiffCSP-SC (diffusion generator) designed to screen and synthesize high-Tc candidates .
+  licensing: "unknown"
+  task_types:
+  - "Regression (Tc prediction)"
+  - "Generative modeling"
+  ai_capability_measured:
+  - "Structure-to-property prediction"
+  - "structure generation"
+  metrics:
+  - "MAE (Tc)"
+  - "Validity of generated structures"
+  models:
+  - "SODNet"
+  - "DiffCSP-SC"
+  ml_motif:
+  - Regression
+  type: "Dataset + Models"
+  ml_task:
+  - "Regression, Generation"
+  solutions: "0"
+  notes: |
+    Demonstrates advantage of combining ordered and disordered structural data in model design .
+  contact:
+    name: "Zhong Zuo"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{neurips2024_c4e3b55e,
+      author = {Chen, Pin and Peng, Luoxuan and Jiao, Rui and Mo, Qing and Wang, Zhen and Huang, Wenbing and Liu, Yang and Lu, Yutong},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {108902--108928},
+      publisher = {Curran Associates, Inc.},
+      title = {Learning Superconductivity from Ordered and Disordered Material Structures},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/c4e3b55ed4ac9ba52d7df11f8bddbbf4-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Baseline models (SODNet, DiffCSP-SC) are described in the paper; however,
+        fully reproducible code and pretrained models are not publicly available yet.
+    specification:
+      rating: 5
+      reason: |
+        Tasks for regression (Tc prediction) and generative modeling with clear input/output
+        structures and domain constraints are well defined.
+    dataset:
+      rating: 5
+      reason: |
+        Dataset contains 3D crystal structures and associated properties; well-curated but
+        not fully released publicly at this time.
+    metrics:
+      rating: 4
+      reason: |
+        Metrics such as MAE for Tc prediction and validity checks for generated structures
+        are appropriate and clearly described.
+    reference_solution:
+      rating: 4
+      reason: |
+        Paper provides model architecture details and some training insights, but no
+        complete open-source reference implementations yet.
+    documentation:
+      rating: 4
+      reason: |
+        Paper and GitHub provide good metadata and data processing descriptions; tutorials
+        and user guides could be expanded.
+

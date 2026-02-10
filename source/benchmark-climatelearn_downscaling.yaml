@@ -1,0 +1,87 @@
+- date: "2023-07-19"
+  version: "1"
+  last_updated: "2023-07-19"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2023-07-19"
+  name: "ClimateLearn - Downscaling"
+  url: "https://arxiv.org/abs/2307.01909"
+  doi: "10.48550/arXiv.2307.01909"
+  domain:
+  - Climate & Earth Science
+  focus: "ML for weather and climate modeling"
+  keywords:
+  - "medium-range forecasting"
+  - "ERA5"
+  - "data-driven"
+  summary: |
+    ClimateLearn provides standardized datasets and evaluation protocols for machine 
+    learning models in medium-range weather and climate forecasting using ERA5 reanalysis.
+  licensing: "CC-BY-4.0"
+  task_types:
+  - "Forecasting"
+  ai_capability_measured:
+  - "Global weather prediction (3-5 days)"
+  metrics:
+  - "RMSE"
+  - "Anomaly correlation"
+  models:
+  - "CNN baselines"
+  - "ResNet variants"
+  ml_motif:
+  - Regression
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "Multiple baseline models provided"
+  notes: "Includes physical and ML baselines."
+  contact:
+    name: "Jason Jewik"
+    email: "jason.jewik@ucla.edu"
+  cite:
+  - |
+    @misc{nguyen2023climatelearnbenchmarkingmachinelearning, 
+      title={ClimateLearn: Benchmarking Machine Learning for Weather and Climate Modeling}, 
+      author={Tung Nguyen and Jason Jewik and Hritik Bansal and Prakhar Sharma and Aditya Grover},
+      year={2023}, eprint={2307.01909}, 
+      archivePrefix={arXiv}, 
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2307.01909}
+    }
+  datasets:
+    links:
+    - name: "ClimateLearn GitHub Repository (data loaders and processing)"
+      url: "https://github.com/aditya-grover/climate-learn"
+  results:
+    links:
+    - name: "ClimateLearn Paper (results section)"
+      url: "https://arxiv.org/abs/2307.01909"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Quickstart notebook makes for easy usage
+    specification:
+      rating: 5
+      reason: |
+        Task framing (medium-range climate forecasting), input/output formats, and evaluation windows are clearly defined; benchmark supports both physical and learned models with detailed constraints.
+    dataset:
+      rating: 5
+      reason: |
+        Provides standardized access to ERA5 and other reanalysis datasets, with ML-ready splits, metadata, and Xarray-compatible formats; versioned and fully FAIR-compliant.
+    metrics:
+      rating: 5
+      reason: |
+        ACC and RMSE are standard, quantitative, and appropriate for climate forecasting; well-integrated into the benchmark, though interpretation across domains may vary.
+    reference_solution:
+      rating: 5
+      reason: |
+        A Quickstart notebook is provided that uses ResNet as a baseline model
+    documentation:
+      rating: 5
+      reason: |
+        Explained in the benchmark's paper. 
+

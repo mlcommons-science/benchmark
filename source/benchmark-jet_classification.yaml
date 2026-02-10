@@ -1,0 +1,94 @@
+- date: "2024-05-01"
+  version: "v0.2.0"
+  last_updated: "2024-05"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-05-01"
+  name: "Jet Classification"
+  url: "https://github.com/fastmachinelearning/fastml-science/tree/main/jet-classify"
+  doi: "10.48550/arXiv.2207.07958"
+  domain:
+  - High Energy Physics
+  focus: "Real-time classification of particle jets using HL-LHC simulation features"
+  keywords:
+  - "classification"
+  - "real-time ML"
+  - "jet tagging"
+  - "QKeras"
+  summary: |
+    This benchmark evaluates ML models for real-time classification of
+    particle jets using high-level features derived from simulated LHC data. It
+    includes both full-precision and quantized models optimized for FPGA deployment.
+  licensing: "Apache License 2.0"
+  task_types:
+  - Classification
+  ai_capability_measured:
+  - "Real-time inference"
+  - "model compression performance"
+  metrics:
+  - "Accuracy"
+  - "AUC"
+  models:
+  - "Keras DNN"
+  - "QKeras quantized DNN"
+  ml_motif:
+  - Classification
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Includes both float and quantized models using QKeras
+  contact:
+    name: "Jules Muhizi"
+    email: "unknown"
+  cite:
+  - |
+    @misc{duarte2022fastml,
+      archiveprefix = {arXiv},
+      author        = {Javier Duarte and Nhan Tran and Ben Hawks and Christian Herwig and Jules Muhizi and Shvetank Prakash and Vijay Janapa Reddi},
+      eprint        = {2207.07958},
+      primaryclass  = {cs.LG},
+      title         = {FastML Science Benchmarks: Accelerating Real-Time Scientific Edge Machine Learning},
+      url           = {https://arxiv.org/abs/2207.07958},
+      year          = {2022}
+    }
+  datasets:
+    links:
+    - name: "OpenML: hls4ml_lhc_jets_hlf"
+      url: "https://www.openml.org/d/42468"
+    - name: "JetClass"
+      url: "https://zenodo.org/record/6619768"
+  results:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Not containerized; Setup automation/documentation could be improved
+    specification:
+      rating: 4
+      reason: |
+        System constraints missing
+    dataset:
+      rating: 5
+      reason: |
+        None
+    metrics:
+      rating: 5
+      reason: |
+        None
+    reference_solution:
+      rating: 4
+      reason: |
+        HW/SW requirements missing; Reference not bundled as official starter kit
+    documentation:
+      rating: 4
+      reason: |
+        Full reproducibility requires manual setup
+

@@ -1,0 +1,89 @@
+- date: "2024-07-12"
+  version: "1"
+  last_updated: "2024-07-12"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2024-07-12"
+  name: "SPIQA (Scientific Paper Image Question Answering)"
+  url: "https://arxiv.org/abs/2407.09413"
+  doi: "10.48550/arXiv.2407.09413"
+  domain:
+  - Computational Science & AI
+  focus: "Multimodal QA on scientific figures"
+  keywords:
+  - "multimodal QA"
+  - "figure understanding"
+  - "table comprehension"
+  - "chain-of-thought"
+  summary: |
+    SPIQA assesses AI models' ability to interpret and answer questions about figures
+    and tables in scientific papers by integrating visual and textual modalities 
+    with chain-of-thought reasoning.
+  licensing: "Apache 2.0 License"
+  task_types:
+  - "Question answering"
+  - "Multimodal QA"
+  - "Chain-of-Thought evaluation"
+  ai_capability_measured:
+  - "Visual-textual reasoning in scientific contexts"
+  metrics:
+  - "Accuracy"
+  - "F1 score"
+  models:
+  - "Chain-of-Thought models"
+  - "Multimodal QA systems"
+  ml_motif:
+  - Multimodal Reasoning
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "0"
+  notes: "Good"
+  contact:
+    name: "Subhashini Venugopalan"
+    email: "vsubhashini@google.com"
+  cite:
+  - |
+    @misc{zhong2024spiqa,
+      title={SPIQA: Scientific Paper Image Question Answering},
+      author={Zhong, Xiaoyan and Gao, Yijian and Gururangan, Suchin},
+      year={2024},
+      url={https://arxiv.org/abs/2407.09413}
+    }
+  datasets:
+    links:
+    - name: "Hugging Face"
+      url: "https://huggingface.co/datasets/google/spiqa"
+  results:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 0
+      reason: |
+        Not provided
+    specification:
+      rating: 5
+      reason: |
+        Task administration clearly defined; prompt instructions explicitly given, no ambiguity in format or scope.
+    dataset:
+      rating: 5
+      reason: |
+        Dataset is available (via paper/appendix), includes train/test/valid split. FAIR-compliant with minor gaps in versioning or access standardization.
+    metrics:
+      rating: 5
+      reason: |
+        Uses quantitative metrics (Accuracy, F1) aligned with the task
+    reference_solution:
+      rating: 2
+      reason: |
+        Multiple model results (e.g., GPT-4V, Gemini) reported; baselines exist, but full runnable code not confirmed for all.
+    documentation:
+      rating: 5
+      reason: |
+        All information provided in paper
+

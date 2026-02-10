@@ -1,0 +1,97 @@
+- date: "2024-04-02"
+  version: "1"
+  last_updated: "2024-04-02"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2024-04-02"
+  name: "CURIE (Scientific Long-Context Understanding, Reasoning and Information Extraction)"
+  url: "https://arxiv.org/abs/2503.13517"
+  doi: "10.48550/arXiv.2503.13517"
+  domain:
+  - Materials Science
+  - High Energy Physics
+  - Biology & Medicine
+  - Chemistry
+  - Climate & Earth Science
+  focus: "Long-context scientific reasoning"
+  keywords:
+  - "long-context"
+  - "information extraction"
+  - "multimodal"
+  summary: |
+    CURIE is a benchmark of 580 problems across six scientific disciplines-materials
+    science, quantum computing, biology, chemistry, climate science, and astrophysics-
+    designed to evaluate LLMs on long-context understanding, reasoning, and information 
+    extraction in realistic scientific workflows.
+  licensing: "Apache 2.0 License"
+  task_types:
+  - "Information extraction"
+  - "Reasoning"
+  - "Concept tracking"
+  - "Aggregation"
+  - "Algebraic manipulation"
+  - "Multimodal comprehension"
+  ai_capability_measured:
+  - "Long-context understanding and scientific reasoning"
+  metrics:
+  - "Accuracy"
+  models:
+  - "unkown"
+  ml_motif:
+  - Reasoning & Generalization
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "0"
+  notes: "Good"
+  contact:
+    name: "Subhashini Venugopalan"
+    email: "vsubhashini@google.com"
+  cite:
+  - |
+    @misc{cui2025curieevaluatingllmsmultitask,
+      title={CURIE: Evaluating LLMs On Multitask Scientific Long Context Understanding and Reasoning}, 
+      author={Hao Cui and Zahra Shamsi and Gowoon Cheon and Xuejian Ma and Shutong Li and Maria Tikhanovskaya and Peter Norgaard and Nayantara Mudur and Martyna Plomecka and Paul Raccuglia and Yasaman Bahri and Victor V. Albert and Pranesh Srinivasan and Haining Pan and Philippe Faist and Brian Rohr and Ekin Dogus Cubuk and Muratahan Aykol and Amil Merchant and Michael J. Statt and Dan Morris and Drew Purves and Elise Kleeman and Ruth Alcantara and Matthew Abraham and Muqthar Mohammad and Ean Phing VanLee and Chenfei Jiang and Elizabeth Dorfman and Eun-Ah Kim and Michael P Brenner and Viren Jain and Sameera Ponda and Subhashini Venugopalan},
+      year={2025},
+      eprint={2503.13517},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2503.13517}, 
+    }
+  datasets:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  results:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 4
+      reason: |
+        Code is available, but not well documented
+    specification:
+      rating: 1
+      reason: |
+        Explains types of problems in detail, but does not state exactly how to administer them.
+    dataset:
+      rating: 4
+      reason: |
+        Dataset is available via Github, but hard to find
+    metrics:
+      rating: 5
+      reason: |
+        Quantitiative metrics such as ROUGE-L and F1 used. Metrics are tailored to the specific problem.
+    reference_solution:
+      rating: 1
+      reason: |
+        Exists, but is not open
+    documentation:
+      rating: 5
+      reason: |
+        Associated paper explains all criteria
+

@@ -1,0 +1,94 @@
+- date: "2024-05-01"
+  version: "v0.2.0"
+  last_updated: "2024-05"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-05-01"
+  name: "Irregular Sensor Data Compression"
+  url: "https://github.com/fastmachinelearning/fastml-science/tree/main/sensor-data-compression"
+  doi: "10.48550/arXiv.2207.07958"
+  domain:
+  - High Energy Physics
+  focus: "Real-time compression of sparse sensor data with autoencoders"
+  keywords:
+  - "compression"
+  - "autoencoder"
+  - "sparse data"
+  - "irregular sampling"
+  summary: |
+    This benchmark addresses lossy compression of irregularly sampled
+    sensor data from particle detectors using real-time autoencoder architectures,
+    targeting latency-critical applications in physics experiments.
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Compression"
+  ai_capability_measured:
+  - "Reconstruction quality"
+  - "compression efficiency"
+  metrics:
+  - "MSE"
+  - "Compression ratio"
+  models:
+  - "Autoencoder"
+  - "Quantized autoencoder"
+  ml_motif:
+  - Generative
+  type: "Benchmark"
+  ml_task:
+  - "Unsupervised Learning"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Based on synthetic but realistic physics sensor data
+  contact:
+    name: "Ben Hawks, Nhan Tran"
+    email: "unknown"
+  cite:
+  - |
+    @misc{duarte2022fastml,
+      archiveprefix = {arXiv},
+      author        = {Javier Duarte and Nhan Tran and Ben Hawks and Christian Herwig and Jules Muhizi and Shvetank Prakash and Vijay Janapa Reddi},
+      eprint        = {2207.07958},
+      primaryclass  = {cs.LG},
+      title         = {FastML Science Benchmarks: Accelerating Real-Time Scientific Edge Machine Learning},
+      url           = {https://arxiv.org/abs/2207.07958},
+      year          = {2022}
+    }
+  datasets:
+    links:
+    - name: "Custom synthetic irregular sensor dataset"
+      url: "https://github.com/fastmachinelearning/fastml-science/tree/main/sensor-data-compression"
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1Q_kENN-Lxod5_BmqUZuqC7yT0tG1KObU9mjS1AV3zK0"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Not containerized; Full automation and documentation could be improved
+    specification:
+      rating: 4
+      reason: |
+        Exact latency or resource constraints not numerically specified
+    dataset:
+      rating: 5
+      reason: |
+        All criteria met
+    metrics:
+      rating: 5
+      reason: |
+        All criteria met
+    reference_solution:
+      rating: 4
+      reason: |
+        Not fully documented or automated for reproducibility
+    documentation:
+      rating: 4
+      reason: |
+        Setup for deployment (e.g., FPGA pipeline) requires familiarity with tooling
+

@@ -1,0 +1,87 @@
+- date: "2024-07-18"
+  version: "1"
+  last_updated: "2024-07-18"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2024-07-18"
+  name: "SciCode"
+  url: "https://scicode-bench.github.io/"
+  doi: "10.48550/arXiv.2407.13168"
+  domain:
+  - Computational Science & AI
+  focus: "Scientific code generation and problem solving"
+  keywords:
+  - "code synthesis"
+  - "scientific computing"
+  - "programming benchmark"
+  summary: |
+    SciCode is a scientist-curated coding benchmark with 338 subproblems derived from 80
+    real research tasks across 16 scientific subfields, evaluating models on knowledge recall, 
+    reasoning, and code synthesis for scientific computing tasks.
+  licensing: "unknown"
+  task_types:
+  - "Coding"
+  ai_capability_measured:
+  - "Program synthesis, scientific computing"
+  metrics:
+  - "Solve rate (%)"
+  models:
+  - "Claude3.5-Sonnet"
+  ml_motif:
+  - Generative
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "unknown"
+  notes: "Good"
+  contact:
+    name: "Minyang Tian"
+    email: "mtian8@illinois.edu"
+  cite:
+  - |
+    @misc{tian2024scicoderesearchcodingbenchmark,
+      archiveprefix = {arXiv},
+      author        = {Minyang Tian and Luyu Gao and Shizhuo Dylan Zhang and Xinan Chen and Cunwei Fan and Xuefei Guo and Roland Haas and Pan Ji and Kittithat Krongchon and Yao Li and Shengyan Liu and Di Luo and Yutao Ma and Hao Tong and Kha Trinh and Chenyu Tian and Zihan Wang and Bohao Wu and Yanyu Xiong and Shengzhu Yin and Minhui Zhu and Kilian Lieret and Yanxin Lu and Genglin Liu and Yufeng Du and Tianhua Tao and Ofir Press and Jamie Callan and Eliu Huerta and Hao Peng},
+      eprint        = {2407.13168},
+      primaryclass  = {cs.AI},
+      title         = {SciCode: A Research Coding Benchmark Curated by Scientists},
+      url           = {https://arxiv.org/abs/2407.13168},
+      year          = {2024}
+    }
+  datasets:
+    links:
+    - name: "SciCode on Huggingface"
+      url: "https://huggingface.co/datasets/SciCode1/SciCode"
+  results:
+    links:
+    - name: "SciCode Learderboard"
+      url: "https://scicode-bench.github.io/leaderboard/"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Code to run exists on github repo
+    specification:
+      rating: 4
+      reason: |
+        Expected outputs and broad types of inputs stated. Few details on output grading. No HW constraints.
+    dataset:
+      rating: 5
+      reason: |
+        Dataset meets all FAIR principles, test and validation splits are available (no train split)
+    metrics:
+      rating: 4
+      reason: |
+        Metrics stated, grading guidelines are provided in repo (problems are pass/fail)
+    reference_solution:
+      rating: 5
+      reason: |
+        Code to evaluate is available and well documented. Baseline models include closed and open weight models
+    documentation:
+      rating: 4
+      reason: |
+        Paper containing all needed info except for evlauation criteria
+

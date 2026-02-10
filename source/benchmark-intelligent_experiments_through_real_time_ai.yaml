@@ -1,0 +1,94 @@
+- date: "2025-01-08"
+  version: "v1.0"
+  last_updated: "2025-01"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2025-01-08"
+  name: "Intelligent experiments through real-time AI"
+  url: "https://arxiv.org/pdf/2501.04845"
+  doi: "10.48550/arXiv.2501.04845"
+  domain:
+  - High Energy Physics
+  focus: "Real-time FPGA-based triggering and detector control for sPHENIX and future EIC"
+  keywords:
+  - "FPGA"
+  - "Graph Neural Network"
+  - "hls4ml"
+  - "real-time inference"
+  - "detector control"
+  summary: |
+    Research and Development demonstrator for real-time processing of high-rate tracking data from the sPHENIX detector (RHIC) and future EIC systems. Uses GNNs with hls4ml for FPGA-based trigger generation to identify rare events (heavy flavor, DIS electrons) within 10 micros latency. Demonstrated improved accuracy and latency on Alveo/FELIX platforms.
+  licensing: "CC BY-NC-ND 4.0"
+  task_types:
+  - "Trigger classification"
+  - "Detector control"
+  - "Real-time inference"
+  ai_capability_measured:
+  - "Low-latency GNN inference on FPGA"
+  metrics:
+  - "Accuracy (charm and beauty detection)"
+  - "Latency (micros)"
+  - "Resource utilization (LUT/FF/BRAM/DSP)"
+  models:
+  - "Bipartite Graph Network with Set Transformers (BGN-ST)"
+  - "GarNet (edge-classifier)"
+  ml_motif:
+  - Classification
+  type: "Model"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Achieved ~97.4% accuracy for beauty decay triggers; sub-10 micros latency on Alveo U280; hit-based FPGA design via hls4ml and FlowGNN.
+  contact:
+    name: "Jakub Kvapil"
+    email: "Jakub.Kvapil@lanl.gov"
+  cite:
+  - |
+    @misc{kvapil2025intelligentexperimentsrealtimeai,
+      archiveprefix={arXiv},
+      author={J. Kvapil and G. Borca-Tasciuc and H. Bossi and K. Chen and Y. Chen and Y. Corrales Morales and H. Da Costa and C. Da Silva and C. Dean and J. Durham and S. Fu and C. Hao and P. Harris and O. Hen and H. Jheng and Y. Lee and P. Li and X. Li and Y. Lin and M. X. Liu and V. Loncar and J. P. Mitrevski and A. Olvera and M. L. Purschke and J. S. Renck and G. Roland and J. Schambach and Z. Shi and N. Tran and N. Wuerfel and B. Xu and D. Yu and H. Zhang},
+      eprint={2501.04845},
+      primaryclass={physics.ins-det},
+      title={Intelligent experiments through real-time AI: Fast Data Processing and Autonomous Detector Control for sPHENIX and future EIC detectors},
+      url={https://arxiv.org/abs/2501.04845},
+      year={2025}
+    }
+  datasets:
+    links:
+    - name: "Internal simulated tracking data (sPHENIX and EIC DIS-electron tagger)"
+      url: ""
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "No"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        No containerized or open-source setup provided
+    specification:
+      rating: 4
+      reason: |
+        Architectural/system specifications are incomplete
+    dataset:
+      rating: 2
+      reason: |
+        Dataset is internal and not publicly available or FAIR-compliant
+    metrics:
+      rating: 3
+      reason: |
+        Metrics relevant but not supported by evaluation scripts or baselines
+    reference_solution:
+      rating: 3
+      reason: |
+        No public or reproducible implementation released
+    documentation:
+      rating: 3
+      reason: |
+        No public GitHub or complete pipeline documentation

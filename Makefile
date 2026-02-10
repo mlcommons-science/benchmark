@@ -3,9 +3,13 @@ SUDO := $(shell command -v sudo >/dev/null 2>&1 && echo sudo || echo)
 
 BASE=.
 
-FILES=${BASE}/source/benchmarks.yaml,${BASE}/source/benchmarks-addon.yaml 
+# Dynamically discover benchmark YAML files in the source directory.
+# Includes files matching: benchmark-*.yaml
+# Note: Other files like verified_urls.yaml and index.md are excluded by not matching the pattern.
+FILES := $(shell find ${BASE}/source -maxdepth 1 -name 'benchmark-*.yaml' \
+    -type f 2>/dev/null | sort | paste -sd',' -)
 
-CHECK_FILES=${BASE}/source/benchmarks.yaml,${BASE}/source/benchmarks-addon.yaml 
+CHECK_FILES := $(FILES)
 
 SCRIPT=bin/generate.py
 
@@ -29,10 +33,10 @@ ls:
 
 install_latex:
 	$(SUDO) apt-get update
-	$(SUDO) apt-get install texlive-full
-	$(SUDO) apt-get install latexmk
-	$(SUDO) apt-get install bibtool
-	$(SUDO) apt-get install biber
+	$(SUDO) apt-get install -y texlive-full
+	$(SUDO) apt-get install -y latexmk
+	$(SUDO) apt-get install -y bibtool
+	$(SUDO) apt-get install -y biber
 	$(SUDO) apt-get update
 	biber --version
 	latexmk --version

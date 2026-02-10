@@ -1,0 +1,91 @@
+- date: "2022-02-22"
+  version: "1"
+  last_updated: "2022-02-22"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2022-02-22"
+  name: "Quantum Computing Benchmarks (QML)"
+  url: "https://github.com/XanaduAI/qml-benchmarks"
+  doi: "10.48550/arXiv.2403.07059"
+  domain:
+  - Computational Science & AI
+  focus: "Quantum algorithm performance evaluation"
+  keywords:
+  - "quantum circuits"
+  - "state preparation"
+  - "error correction"
+  summary: |
+    A suite of benchmarks evaluating quantum hardware and algorithms on tasks such as state 
+    preparation, circuit optimization, and error correction across multiple platforms.
+  licensing: "Apache-2.0"
+  task_types:
+  - "Circuit benchmarking"
+  - "State classification"
+  ai_capability_measured:
+  - "Quantum algorithm performance and fidelity"
+  metrics:
+  - "Fidelity"
+  - "Success probability"
+  models:
+  - "IBM Q"
+  - "IonQ"
+  - "AQT@LBNL"
+  ml_motif:
+  - Classification
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "Varies per benchmark"
+  notes: "Hardware-agnostic, application-level metrics. The citation may not be correct."
+  contact:
+    name: "Xanadu AI"
+    email: "support@xanadu.ai"
+  cite:
+  - |
+    @misc{bowles2024betterclassicalsubtleart,
+      title={Better than classical? The subtle art of benchmarking quantum machine learning models}, 
+      author={Joseph Bowles and Shahnawaz Ahmed and Maria Schuld},
+      year={2024},
+      eprint={2403.07059},
+      archivePrefix={arXiv},
+      primaryClass={quant-ph},
+      url={https://arxiv.org/abs/2403.07059}, 
+    }
+  datasets:
+    links:
+    - name: "PennyLane QML Benchmarks Datasets"
+      url: "https://pennylane.ai/datasets/collection/qml-benchmarks"
+  results:
+    links:
+    - name: "QML Benchmarks GitHub Repository (Results section)"
+      url: "https://github.com/XanaduAI/qml-benchmarks#results-and-leaderboards"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 4
+      reason: |
+        Software is built upon multiple common frameworks for simulation, training, and benchmarking workflows.
+    specification:
+      rating: 3
+      reason: |
+        No system constraints. Task clarity and dataset format are not clearly specified.
+    dataset:
+      rating: 4
+      reason: |
+        Datasets are accessible, but not split.
+    metrics:
+      rating: 3
+      reason: |
+        Partially defined, somewhat inferrable metrics. Unknown whether a system's performance is captured.
+    reference_solution:
+      rating: 0
+      reason: |
+        Not provided
+    documentation:
+      rating: 5
+      reason: |
+        Paper is available with all required information. 
+
+

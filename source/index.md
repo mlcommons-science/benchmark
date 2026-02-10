@@ -22,7 +22,8 @@ We provide three views for browsing (each entry links to its detailed page):
 
 Contributions to the benchmark collection are welcome. For full guidelines, please see the repository documentation. In brief:
 
-- Proposed changes, new benchmarks, or corrections should follow the workflow described in `CONTRIBUTING.md`.
+- To add a new benchmark, create a new file named `benchmark-<your-benchmark-name>.yaml` in the `source/` directory containing a single benchmark entry, following the YAML schema in `source/sample/benchmarks-format.yaml`.
+- Fork the repository, create a feature branch with your new benchmark file, and open a pull request.
 - Benchmark definitions should adhere to the YAML schema provided in the repository.
 - All generated content (Markdown, LaTeX, MkDocs pages) is automatically produced; please do not edit generated files directly.
 

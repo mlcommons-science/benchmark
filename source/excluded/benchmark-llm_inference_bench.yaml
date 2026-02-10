@@ -1,0 +1,105 @@
+- date: "2024-10-31"
+  version: "v1.0"
+  last_updated: "2024-11"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-10-31"
+  name: "LLM-Inference-Bench"
+  url: "https://github.com/argonne-lcf/LLM-Inference-Bench"
+  doi: "unknown"
+  domain:
+  - LLM
+  - HPC/inference
+  focus: "Hardware performance benchmarking of LLMs on AI accelerators"
+  keywords:
+  - "LLM"
+  - "inference benchmarking"
+  - "GPU"
+  - "accelerator"
+  - "throughput"
+  summary: |
+    A suite evaluating inference performance of LLMs (LLaMA, Mistral, Qwen) across diverse accelerators (NVIDIA, AMD, Intel, SambaNova) and frameworks (vLLM, DeepSpeed-MII, etc.), with an interactive dashboard and per-platform metrics.
+  licensing: "BSD 3-Clause New or Revised License"
+  task_types:
+  - "Inference Benchmarking"
+  ai_capability_measured:
+  - "Inference throughput"
+  - "latency"
+  - "hardware utilization"
+  metrics:
+  - "Token throughput (tok/s)"
+  - "Latency"
+  - "Framework-hardware mix performance"
+  models:
+  - "LLaMA-2-7B"
+  - "LLaMA-2-70B"
+  - "Mistral-7B"
+  - "Qwen-7B"
+  ml_motif:
+  - "HPC/inference"
+  type: "Dataset"
+  ml_task:
+  - "Inference Benchmarking"
+  solutions: "0"
+  notes: |
+    Licensed under BSD-3, maintained by Argonne; supports GPUs and accelerators.
+  contact:
+    name: "Krishna Teja Chitty-Venkata (Argonne LCF)"
+    email: "unknown"
+  cite:
+  - |
+    @INPROCEEDINGS{10820566,
+      author={Chitty-Venkata, Krishna Teja and Raskar, Siddhisanket and Kale, Bharat and Ferdaus, Farah and Tanikanti, Aditya and Raffenetti, Ken and Taylor, Valerie and Emani, Murali and Vishwanath, Venkatram},
+      booktitle={SC24-W: Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis}, 
+      title={LLM-Inference-Bench: Inference Benchmarking of Large Language Models on AI Accelerators}, 
+      year={2024},
+      volume={},
+      number={},
+      pages={1362-1379},
+      doi={10.1109/SCW63240.2024.00178}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1I3UvByGn4KaruQC1pi6XcfoAOzt4iiA61S0nR9ovC94/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Public GitHub repository under BSD-3 license.
+        Includes scripts, configurations, and dashboards for running and visualizing LLM inference benchmarks
+        across multiple accelerator platforms.
+    specification:
+      rating: 5
+      reason: |
+        Benchmark scope, models, accelerator targets, and supported frameworks are clearly specified.
+        Input configurations and output metrics are standardized across hardware types.
+    dataset:
+      rating: 2
+      reason: |
+        No novel dataset is introduced; benchmark relies on pre-trained LLMs and synthetic inference inputs.
+        Dataset structure and FAIR considerations are minimal.
+    metrics:
+      rating: 5
+      reason: |
+        Hardware-specific metrics (token throughput, latency, utilization) are well-defined, consistently measured,
+        and aggregated in dashboards.
+    reference_solution:
+      rating: 3
+      reason: |
+        Inference configurations and baseline performance results are provided, but there are no
+        full reference training pipelines or model implementations.
+    documentation:
+      rating: 4
+      reason: |
+        GitHub repo provides clear usage instructions, setup guides, and interactive dashboard tooling.
+        Some areas like benchmarking extensions or advanced tuning are less detailed.
+
+# Exclusion Reason: Not specifically a scientific benchmark, focuses on common sense questions

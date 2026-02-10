@@ -1,0 +1,98 @@
+- date: "2021-07-05"
+  version: "v1.0"
+  last_updated: "2021-07"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2021-07-05"
+  name: "LHC New Physics Dataset"
+  url: "https://arxiv.org/pdf/2107.02157"
+  doi: "unknown"
+  domain:
+  - High Energy Physics
+  focus: "Real-time LHC event filtering for anomaly detection using proton collision data"
+  keywords:
+  - "anomaly detection"
+  - "proton collision"
+  - "real-time inference"
+  - "event filtering"
+  - "unsupervised ML"
+  summary: |
+    A dataset of proton-proton collision events emulating a 40 MHz real-time data stream from LHC detectors, pre-filtered on electron or muon presence. Designed for unsupervised new-physics detection algorithms under latency/bandwidth constraints.
+  licensing: "unknown"
+  task_types:
+  - "Anomaly Detection"
+  - "Event classification"
+  ai_capability_measured:
+  - "Unsupervised signal detection under latency and bandwidth constraints"
+  metrics:
+  - "ROC-AUC"
+  - "Detection efficiency"
+  models:
+  - "Autoencoder"
+  - "Variational autoencoder"
+  - "Isolation forest"
+  ml_motif:
+  - Anomaly Detection
+  type: "Framework"
+  ml_task:
+  - "NA"
+  solutions: "0"
+  notes: |
+    Includes electron/muon-filtered background and black-box signal benchmarks; 1M events per black box.
+  contact:
+    name: "Ema Puljak"
+    email: "ema.puljak@cern.ch"
+  cite:
+  - |
+    @misc{https://doi.org/10.5281/zenodo.5046389,
+      author    = {Aarrestad, Thea and Govorkova, Ekaterina and Ngadiuba, Jennifer and Puljak, Ema and Pierini, Maurizio and Wozniak, Kinga Anna},
+      copyright = {Creative Commons Attribution 4.0 International},
+      doi       = {10.5281/ZENODO.5046389},
+      publisher = {Zenodo},
+      title     = {Unsupervised New Physics detection at 40 MHz: Training Dataset},
+      url       = {https://zenodo.org/record/5046389},
+      year      = {2021}
+    }
+  datasets:
+    links:
+    - name: "Zenodo stores, background + 3 black-box signal sets. 1M events each"
+      url: ""
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1BnX67GfTQxHbDuUsH-MuHIl1uKxCIjrXHSoxvIaB72g/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        While not formally evaluated in the previous version, Zenodo and paper links suggest available code for baseline models
+        (e.g., autoencoders, GANs), though they are scattered and not unified in a single repository.
+    specification:
+      rating: 3
+      reason: |
+        The task and context are clearly described, but system constraints and formal inputs/outputs are not fully specified.
+    dataset:
+      rating: 5
+      reason: |
+        Large-scale dataset hosted on Zenodo, publicly available, well-documented, with defined train/test structure.
+        Appears to follow at least 4 FAIR principles.
+    metrics:
+      rating: 4
+      reason: |
+        Uses reasonable metrics (ROC-AUC, detection efficiency) that capture performance but lacks
+        full explanation and standard evaluation tools.
+    reference_solution:
+      rating: 2
+      reason: |
+        Baselines are described across multiple papers but lack centralized, reproducible implementations
+        and hardware/software setup details.
+    documentation:
+      rating: 3
+      reason: |
+        Some description in papers and dataset metadata exists, but lacks a unified guide, README,
+        or training setup in a central location.

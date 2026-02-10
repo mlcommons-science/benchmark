@@ -1,0 +1,99 @@
+- date: "2022-01-01"
+  version: "v1.0"
+  last_updated: "2025-03"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2022-01-01"
+  name: "Codabench"
+  url: "https://www.codabench.org/"
+  doi: "https://doi.org/10.1016/j.patter.2022.100543"
+  domain:
+  - General ML
+  - Multiple
+  focus: "Open-source platform for organizing reproducible AI benchmarks and competitions"
+  keywords:
+  - "benchmark platform"
+  - "code submission"
+  - "competitions"
+  - "meta-benchmark"
+  summary: |
+    Codabench (successor to CodaLab) is a flexible, easy-to-use, reproducible API platform for hosting AI benchmarks
+    and code-submission challenges. It supports custom scoring, inverted benchmarks, and scalable public or private queues .
+  licensing: "https://github.com/codalab/codalab-competitions/wiki/Privacy"
+  task_types:
+  - "Multiple"
+  ai_capability_measured:
+  - "Model reproducibility"
+  - "performance across datasets"
+  metrics:
+  - "Submission count"
+  - "Leaderboard ranking"
+  - "Task-specific metrics"
+  models:
+  - "Arbitrary code submissions"
+  ml_motif:
+  - "Multiple"
+  type: "Platform"
+  ml_task:
+  - "Multiple"
+  solutions: "Several"
+  notes: |
+    Hosts 51 public competitions, ~26 k users, 177 k submissions
+  contact:
+    name: "Isabelle Guyon (Université Paris-Saclay)"
+    email: "unknown"
+  cite:
+  - |
+    @article{xu-2022,
+      author    = {Xu, Zhen and Escalera, Sergio and Pavão, Adrien and Richard, Magali and Tu, Wei-Wei and Yao, Quanming and Zhao, Huan and Guyon, Isabelle},
+      doi       = {10.1016/j.patter.2022.100543},
+      issn      = {2666-3899},
+      journal   = {Patterns},
+      month     = jul,
+      number    = {7},
+      pages     = {100543},
+      publisher = {Elsevier BV},
+      title     = {Codabench: Flexible, easy-to-use, and reproducible meta-benchmark platform},
+      url       = {http://dx.doi.org/10.1016/j.patter.2022.100543},
+      volume    = {3},
+      year      = {2022}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1sIwNDCs01s790DApVt5leiG8UaBDFVINA4bOixZ1CUw/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 1
+      reason: |
+        This is a platform for posting benchmarks, not a benchmark in itself.
+    specification:
+      rating: 1
+      reason: |
+        This is a platform for posting benchmarks, not a benchmark in itself.
+    dataset:
+      rating: 1
+      reason: |
+        This is a platform for posting benchmarks, not a benchmark in itself.
+    metrics:
+      rating: 1
+      reason: |
+        This is a platform for posting benchmarks, not a benchmark in itself.
+    reference_solution:
+      rating: 1
+      reason: |
+        This is a platform for posting benchmarks, not a benchmark in itself.
+    documentation:
+      rating: 1
+      reason: |
+        This is a platform for posting benchmarks, not a benchmark in itself.
+
+
+# Exclusion Reason: Dashboard & Benchmark for pure inference performance of vLLM Library, not a scientific benchmark

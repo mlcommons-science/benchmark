@@ -1,0 +1,87 @@
+- date: "2024-10-01"
+  version: "1"
+  last_updated: "2024-10-01"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2024-10-01"
+  name: "CFDBench (Fluid Dynamics)"
+  url: "https://arxiv.org/abs/2310.05963"
+  doi: "10.48550/arXiv.2310.05963"
+  domain:
+  - Mathematics
+  focus: "Neural operator surrogate modeling"
+  keywords:
+  - "neural operators"
+  - "CFD"
+  - "FNO"
+  - "DeepONet"
+  summary: |
+    CFDBench provides large-scale CFD data for four canonical fluid flow problems, 
+    assessing neural operators' ability to generalize to unseen PDE parameters and domains.
+  licensing: "CC-BY-4.0"
+  task_types:
+  - "Surrogate modeling"
+  ai_capability_measured:
+  - "Generalization of neural operators for PDEs"
+  metrics:
+  - "L2 error"
+  - "MAE"
+  models:
+  - "FNO"
+  - "DeepONet"
+  - "U-Net"
+  ml_motif:
+  - Regression
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "Numerous, as it's a benchmark for ML models"
+  notes: "302K frames across 739 cases"
+  contact:
+    name: "Yining Luo"
+    email: "yining.luo@mail.utoronto.ca"
+  cite:
+  - |
+    @misc{luo2024cfdbenchlargescalebenchmarkmachine,
+      title={CFDBench: A Large-Scale Benchmark for Machine Learning Methods in Fluid Dynamics},
+      author={Luo, Yining and Chen, Yingfa and Zhang, Zhen},
+      year={2024},
+      url={https://arxiv.org/abs/2310.05963}
+    }
+  datasets:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  results:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        The benchmark provides Python scripts for data loading, preprocessing, and model training/evaluation
+    specification:
+      rating: 0
+      reason: |
+        Not listed
+    dataset:
+      rating: 0
+      reason: |
+        Not given
+    metrics:
+      rating: 5
+      reason: |
+        Quantitative metrics (L2 error, MAE, relative error) are clearly defined and align with regression task objectives.
+    reference_solution:
+      rating: 5
+      reason: |
+        Baseline models like FNO and DeepONet are implemented, hardware specified.
+    documentation:
+      rating: 5
+      reason: |
+        Associated paper gives all necessary information.
+

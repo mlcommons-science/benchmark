@@ -1,0 +1,103 @@
+- date: "2023-12-12"
+  version: "v0.4.9"
+  last_updated: "2025-06"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-12-12"
+  name: "SGLang Framework"
+  url: "https://github.com/sgl-project/sglang/tree/main/benchmark"
+  doi: "10.48550/arXiv.2312.07104"
+  domain:
+  - LLM Vision
+  focus: "Fast serving framework for LLMs and vision-language models"
+  keywords:
+  - "LLM serving"
+  - "vision-language"
+  - "RadixAttention"
+  - "performance"
+  - "JSON decoding"
+  summary: |
+    A high-performance open-source serving framework combining efficient backend runtime (RadixAttention, batching, quantization) and expressive frontend language, boosting LLM/VLM inference throughput up to ~3x over alternatives.
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Model serving framework"
+  ai_capability_measured:
+  - "Serving throughput"
+  - "JSON/task-specific latency"
+  metrics:
+  - "Tokens/sec"
+  - "Time-to-first-token"
+  - "Throughput gain vs baseline"
+  models:
+  - "LLaVA"
+  - "DeepSeek"
+  - "Llama"
+  ml_motif:
+  - "LLM Vision"
+  type: "Framework"
+  ml_task:
+  - "Model serving"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Deployed in production (xAI, NVIDIA, Google Cloud); v0.4.8 release June 2025.
+  contact:
+    name: "SGLang Team"
+    email: "unknown"
+  cite:
+  - |
+    @misc{zheng2024sglangefficientexecutionstructured,
+      archiveprefix = {arXiv},
+      author        = {Lianmin Zheng and Liangsheng Yin and Zhiqiang Xie and Chuyue Sun and Jeff Huang and Cody Hao Yu and Shiyi Cao and Christos Kozyrakis and Ion Stoica and Joseph E. Gonzalez and Clark Barrett and Ying Sheng},
+      eprint        = {2312.07104},
+      primaryclass  = {cs.AI},
+      title         = {SGLang: Efficient Execution of Structured Language Model Programs},
+      url           = {https://arxiv.org/abs/2312.07104},
+      year          = {2024}
+    }
+  datasets:
+    links:
+    - name: "Benchmark configs"
+      url: ""
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Actively maintained and production-deployed (e.g., xAI, NVIDIA); source code available under
+        Apache 2.0. Includes efficient backends (RadixAttention, quantization, batching) and full
+        serving infrastructure.
+    specification:
+      rating: 4
+      reason: |
+        The framework clearly defines performance targets, serving logic, and model integration.
+        Input/output expectations are consistent, but not all benchmarks are standardized.
+    dataset:
+      rating: 2
+      reason: |
+        Does not introduce new datasets; instead, it evaluates performance using existing model benchmarks.
+        Only configuration files are included.
+    metrics:
+      rating: 5
+      reason: |
+        Serving-related metrics such as tokens/sec, time-to-first-token, and throughput gain vs. baselines
+        are well-defined and consistently applied.
+    reference_solution:
+      rating: 3
+      reason: |
+        Provides benchmark configs and example integrations (e.g., with LLaVA, DeepSeek), but not all
+        models or scripts are runnable out-of-the-box.
+    documentation:
+      rating: 4
+      reason: |
+        Strong GitHub documentation, install guides, and benchmarks. Some advanced topics (e.g.,
+        scaling, hardware tuning) could use deeper walkthroughs.
+
+# Exclusion Reason: Not a scientific benchmark specifically

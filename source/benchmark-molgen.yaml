@@ -1,0 +1,92 @@
+- date: "2024-12-17"
+  version: "1"
+  last_updated: "2023-01-26"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2023-01-26"
+  name: "MOLGEN"
+  url: "https://github.com/zjunlp/MolGen"
+  doi: "10.48550/arXiv.2301.11259"
+  domain:
+  - Chemistry
+  focus: "Molecular generation and optimization"
+  keywords:
+  - "SELFIES"
+  - "GAN"
+  - "property optimization"
+  summary: |
+    MolGen is a pre-trained molecular language model that generates chemically valid
+    molecules using SELFIES and reinforcement learning, guided by chemical feedback 
+    to optimize properties such as logP, QED, and docking score.
+  licensing: "MIT License"
+  task_types:
+  - "Distribution learning"
+  - "Goal-oriented generation"
+  ai_capability_measured:
+  - "Generation of valid and optimized molecular structures"
+  metrics:
+  - "Validity%"
+  - "Novelty%"
+  - "QED"
+  - "Docking score"
+  - "penalized logP"
+  models:
+  - "MolGen"
+  ml_motif:
+  - Generative
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "0"
+  notes: ""
+  contact:
+    name: "zhangningyu@zju.edu.cn"
+    email: "Ningyu Zhang"
+  cite:
+  - |
+    @misc{fang2024domainagnosticmoleculargenerationchemical,
+      archiveprefix = {arXiv},
+      author        = {Yin Fang and Ningyu Zhang and Zhuo Chen and Lingbing Guo and Xiaohui Fan and Huajun Chen},
+      eprint        = {2301.11259},
+      primaryclass  = {cs.LG},
+      title         = {Domain-Agnostic Molecular Generation with Chemical Feedback},
+      url           = {https://arxiv.org/abs/2301.11259},
+      year          = {2024}
+    }
+  datasets:
+    links:
+    - name: "MolGen: A Pre-trained Molecular Language Model"
+      url: "https://github.com/zjunlp/MolGen/tree/main"
+  results:
+    links:
+    - name: "Domain-Agnostic Molecular Generation with Chemical Feedback"
+      url: "https://arxiv.org/abs/2301.11259"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Code is available on the github repo, along with instructions to run the model and reproduce results.
+    specification:
+      rating: 4
+      reason: |
+        Task, datset format, and input/output formats are well specified. No system constraints are mentioned.
+    dataset:
+      rating: 5
+      reason: |
+        Dataset and train/test splits are available through the github repo, as well as mentions of source datasets in the paper.
+    metrics:
+      rating: 5
+      reason: |
+        Metrics are well defined and appropriate for the task
+    reference_solution:
+      rating: 5
+      reason: |
+        A pretrained model is provided, as well as training code and instructions
+    documentation:
+      rating: 5
+      reason: |
+        All necessary information is provided in the paper and github repo
+

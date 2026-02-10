@@ -1,0 +1,101 @@
+- date: "2023-06-01"
+  version: "v3.0.2"
+  last_updated: "2025-06"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-06-01"
+  name: "Nixtla Neural Forecast NHITS"
+  url: "https://github.com/Nixtla/neuralforecast"
+  doi: "unknown"
+  domain:
+  - Computational Science & AI
+  focus: "Official NHITS implementation for long-horizon time series forecasting"
+  keywords:
+  - "NHITS"
+  - "long-horizon forecasting"
+  - "neural interpolation"
+  - "time-series"
+  summary: |
+    NHITS (Neural Hierarchical Interpolation for Time Series) is a state-of-the-art model that
+    improved accuracy by ~25% and reduced compute by 50x compared to Transformer baselines,
+    using hierarchical interpolation and multi-rate sampling .
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Time-series forecasting"
+  ai_capability_measured:
+  - "Accuracy"
+  - "compute efficiency for long series"
+  metrics:
+  - "RMSE"
+  - "MAPE"
+  models:
+  - "NHITS"
+  ml_motif:
+  - Sequence Prediction/Forecasting
+  type: "Platform"
+  ml_task:
+  - "Forecasting"
+  solutions: "0"
+  notes: |
+    Official implementation in NeuralForecast, included since its AAAI 2023 release.
+  contact:
+    name: "Kin G. Olivares (Nixtla)"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{challu2023nhits,
+     title={Nhits: Neural hierarchical interpolation for time series forecasting},
+     author={Challu, Cristian and Olivares, Kin G and Oreshkin, Boris N and Ramirez, Federico Garza and Canseco, Max Mergenthaler and Dubrawski, Artur},
+     booktitle={Proceedings of the AAAI conference on artificial intelligence},
+     volume={37},
+     number={6},
+     pages={6989--6997},
+     year={2023}
+     }
+  datasets:
+    links:
+    - name: "Standard forecast datasets, M4"
+      url: ""
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/15Hm5ekGu99aQWsdtiUIwX6JMoaoFpRbIhDylrWqSoHY/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Implemented within the open-source NeuralForecast library under Apache 2.0.
+        Includes training, evaluation, and hyperparameter tuning pipelines. Actively maintained.
+    specification:
+      rating: 5
+      reason: |
+        The NHITS forecasting task is clearly defined with structured input/output formats.
+        Model design targets long-horizon accuracy and compute efficiency.
+    dataset:
+      rating: 3
+      reason: |
+        Uses standard benchmark datasets like M4, but does not bundle them directly.
+        FAIR compliance depends on external dataset sources and user setup.
+    metrics:
+      rating: 5
+      reason: |
+        Evaluated using RMSE, MAPE, and other standard forecasting metrics, integrated
+        into training and evaluation APIs.
+    reference_solution:
+      rating: 4
+      reason: |
+        Official NHITS implementation is fully reproducible with training/eval configs,
+        though pretrained weights are not always provided.
+    documentation:
+      rating: 4
+      reason: |
+        Well-documented on GitHub and in AAAI paper, with code examples, training guidance,
+        and usage tutorials. More model-specific docs could improve clarity further.
+
+
+# Exclusion Reason: Not a benchmark, baseline/foundation models for time series/neural forcasting

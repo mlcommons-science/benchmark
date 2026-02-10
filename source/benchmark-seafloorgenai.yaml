@@ -1,0 +1,100 @@
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "SeafloorGenAI"
+  url: "https://neurips.cc/virtual/2024/poster/97432"
+  doi: "10.48550/arXiv.2411.00172"
+  domain:
+  - Climate & Earth Science
+  focus: "Large-scale vision-language dataset for seafloor mapping and geological classification"
+  keywords:
+  - "sonar imagery"
+  - "vision-language"
+  - "seafloor mapping"
+  - "segmentation"
+  - "QA"
+  summary: |
+    A first-of-its-kind dataset covering 17,300 sq.km of seafloor with 696K sonar images, 827K segmentation masks, and 696K natural-language descriptions plus ~7M QA pairs-designed for both vision and language-based ML models in marine science
+  licensing: "unknown"
+  task_types:
+  - "Image segmentation"
+  - "Vision-language QA"
+  ai_capability_measured:
+  - "Geospatial understanding"
+  - "multimodal reasoning"
+  metrics:
+  - "Segmentation pixel accuracy"
+  - "QA accuracy"
+  models:
+  - "SegFormer"
+  - "ViLT-style multimodal models"
+  ml_motif:
+  - Reasoning & Generalization
+  type: "Dataset"
+  ml_task:
+  - "Segmentation, QA"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Data processing code publicly available, covering five geological layers; curated with marine scientists
+  contact:
+    name: "Kien X. Nguyen"
+    email: "unknown"
+  cite:
+  - |
+    @misc{nguyen2024seafloor,
+      archiveprefix = {arXiv},
+      author = {Kien X. Nguyen and Fengchun Qiao and Arthur Trembanis and Xi Peng},
+      eprint = {2411.00172},
+      primaryclass = {cs.CV},
+      title = {SeafloorAI: A Large-scale Vision-Language Dataset for Seafloor Geological Survey},
+      url = {https://arxiv.org/abs/2411.00172},
+      year=2024
+    }
+  datasets:
+    links:
+    - name: "Sonar imagery + annotations"
+      url: "unknown"
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "unknown"
+    - name: "ChatGPT LLM"
+      url: "unknown"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Data processing code is publicly available, but no full benchmark framework or
+        runnable model implementations are provided yet.
+    specification:
+      rating: 5
+      reason: |
+        Tasks (image segmentation and vision-language QA) are clearly defined with
+        geospatial and multimodal objectives well specified.
+    dataset:
+      rating: 5
+      reason: |
+        Large-scale, well-annotated sonar imagery dataset with segmentation masks
+        and natural language descriptions; curated with domain experts.
+    metrics:
+      rating: 5
+      reason: |
+        Standard segmentation pixel accuracy and QA accuracy metrics are clearly specified
+        and appropriate for the tasks.
+    reference_solution:
+      rating: 4
+      reason: |
+        Some baseline models (e.g., SegFormer, ViLT-style) are mentioned, but
+        reproducible code or pretrained weights are not fully available yet.
+    documentation:
+      rating: 4
+      reason: |
+        Dataset description and data processing instructions are provided,
+        but tutorials and benchmark usage guides are limited.
+

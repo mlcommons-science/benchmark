@@ -1,0 +1,89 @@
+- date: "2023-12-05"
+  version: "v1.0"
+  last_updated: "2023-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-12-05"
+  name: "In-Situ High-Speed Computer Vision"
+  url: "https://arxiv.org/abs/2312.00128"
+  doi: "10.48550/arXiv.2312.00128"
+  domain:
+  - High Energy Physics
+  focus: "Real-time image classification for in-situ plasma diagnostics"
+  keywords:
+  - "plasma"
+  - "in-situ vision"
+  - "real-time ML"
+  summary: |
+    Applies low-latency CNN models for image classification of plasma diagnostics streams; supports deployment on embedded platforms.
+  licensing: "Via Fermilab"
+  task_types:
+  - "Image Classification"
+  ai_capability_measured:
+  - "Real-time diagnostic inference"
+  metrics:
+  - "Accuracy"
+  - "FPS"
+  models:
+  - "CNN"
+  ml_motif:
+  - Classification
+  type: "Model"
+  ml_task:
+  - "Image Classification"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Embedded/deployment details in progress.
+  contact:
+    name: "unknown"
+    email: "unknown"
+  cite:
+  - |
+    @misc{wei2024lowlatencyopticalbasedmode,
+      archiveprefix = {arXiv},
+      author        = {Yumou Wei and Ryan F. Forelli and Chris Hansen and Jeffrey P. Levesque and Nhan Tran and Joshua C. Agar and Giuseppe Di Guglielmo and Michael E. Mauel and Gerald A. Navratil},
+      doi           = {https://doi.org/10.1063/5.0190354},
+      eprint        = {2312.00128},
+      primaryclass  = {physics.plasm-ph},
+      title         = {Low latency optical-based mode tracking with machine learning deployed on FPGAs on a tokamak},
+      url           = {https://arxiv.org/abs/2312.00128},
+      year          = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1OcPX1eQpCcQpwZ19oOoUdzY3gcIxLCHA5R_JrCPVt2A/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: "https://docs.google.com/document/d/1EqkRHuQs1yQqMvZs_L6p9JAy2vKX5OCTubzttFBuRoQ/edit?usp=sharing"
+  fair:
+    reproducible: "in progress"
+    benchmark_ready: "No"
+  ratings:
+    software:
+      rating: 1
+      reason: |
+        No public implementation or containerized setup released
+    specification:
+      rating: 3
+      reason: |
+        No standardized I/O, latency constraint, or complete framing
+    dataset:
+      rating: 0
+      reason: |
+        Dataset not provided or described in any formal way
+    metrics:
+      rating: 2
+      reason: |
+        Throughput and accuracy mentioned, but not defined or benchmarked
+    reference_solution:
+      rating: 1
+      reason: |
+        Prototype CNNs described; no code, baseline, or training details available
+    documentation:
+      rating: 2
+      reason: |
+        Some insight via papers, but no working repo, setup, or replication path
+
+

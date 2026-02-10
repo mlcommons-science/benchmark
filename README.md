@@ -5,8 +5,8 @@ This repository holds a list of scientific AI benchmarks maintained by the MLCom
 ## Quick Links
 
 - Benchmark website: <https://mlcommons-science.github.io/benchmark/>
-- Ontology sources (current): `source/benchmarks.yaml`, `source/benchmarks-addon.yaml`
-- YAML schema and example: `source/benchmarks-format.yaml`, `source/benchmarks-sample.yaml`
+- Benchmark sources: Individual YAML files in `source/` matching `benchmark-*.yaml`
+- YAML schema and example: `source/sample/benchmarks-format.yaml`, `source/sample/benchmarks-sample.yaml`
 - Benchmark format guide: `docs/benchmark-format.md`
 - Tooling reference: `docs/tooling.md`
 - Rating system: `docs/ratings.md`
@@ -46,7 +46,7 @@ You can execute the Makefile targets and scripts inside the container.
 ## Add or Update a Benchmark
 
 1. Create a feature branch in your fork (see `CONTRIBUTING.md` for the full workflow).
-2. Use `source/benchmarks-sample.yaml` together with the schema in `source/benchmarks-format.yaml` as a reference. Additional YAML source files can be introduced following the same structure.
+2. Create a new file named `benchmark-<your-benchmark-name>.yaml` in the `source/` directory containing a single benchmark entry. Use `source/sample/benchmarks-sample.yaml` and `source/sample/benchmarks-format.yaml` as a reference for the required fields and structure.
 3. Apply edits with two-space indentation and use the literal string `"unknown"` when information is unavailable.
 4. Run the catalogue checks before committing:
    ```bash
@@ -54,7 +54,7 @@ You can execute the Makefile targets and scripts inside the container.
    make check_url      # optional; validates that referenced URLs resolve
    ```
    If a site blocks automated requests (so the URL works in your browser but still fails in the script), follow the “URL verification workflow” in `docs/tooling.md`.
-5. Review your diff so the pull request contains only YAML and documentation updates. Avoid committing changes under `content/` or `www/`.
+5. Review your diff so the pull request contains only your new YAML file and any documentation updates. Avoid committing changes under `content/` or `www/`.
 6. Open a pull request. Maintainers will regenerate Markdown, LaTeX, and MkDocs outputs during review before publishing.
 
 Consult `docs/tooling.md` for the full list of Make targets and script options.

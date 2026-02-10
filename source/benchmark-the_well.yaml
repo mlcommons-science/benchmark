@@ -1,0 +1,101 @@
+- date: "2024-12-03"
+  version: "v1.0"
+  last_updated: "2025-06"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-03"
+  name: "The Well"
+  url: "https://polymathic-ai.org/the_well/"
+  doi: "unknown"
+  domain:
+  - Biology & Medicine
+  - Computational Science & AI
+  - High Energy Physics
+  focus: "Foundation model + surrogate dataset spanning 16 physical simulation domains"
+  keywords:
+  - "surrogate modeling"
+  - "foundation model"
+  - "physics simulations"
+  - "spatiotemporal dynamics"
+  summary: |
+    A 15 TB collection of ML-ready physics simulation datasets (HDF5), covering 16 domains-from biology to astrophysical magnetohydrodynamic simulations-with unified API and metadata. Ideal for training surrogate and foundation models on scientific data. 
+  licensing: "BSD 3-Clause License"
+  task_types:
+  - "Supervised Learning"
+  ai_capability_measured:
+  - "Surrogate modeling"
+  - "physics-based prediction"
+  metrics:
+  - "Dataset size"
+  - "Domain breadth"
+  models:
+  - "FNO baselines"
+  - "U-Net baselines"
+  ml_motif:
+  - Sequence Prediction/Forecasting
+  type: "Dataset"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "1"
+  notes: |
+    Includes unified API and dataset metadata; see 2025 NeurIPS paper for full benchmark details. Size: 15 TB. "Benchmarks" are nominally baseline models that were trained on different parts of the dataset, all of them being time series prediction tasks.
+  contact:
+    name: "Ruben Ohana"
+    email: "rohana@flatironinstitute.org"
+  cite:
+  - |
+    @inproceedings{neurips2024_4f9a5acd,
+      author = {Ohana, Ruben and McCabe, Michael and Meyer, Lucas and Morel, Rudy and Agocs, Fruzsina J. and Beneitez, Miguel and Berger, Marsha and Burkhart, Blakesley and Dalziel, Stuart B. and Fielding, Drummond B. and Fortunato, Daniel and Goldberg, Jared A. and Hirashima, Keiya and Jiang, Yan-Fei and Kerswell, Rich R. and Maddu, Suryanarayana and Miller, Jonah and Mukhopadhyay, Payel and Nixon, Stefan S. and Shen, Jeff and Watteaux, Romain and Blancard, Bruno R\'{e}galdo-Saint and Rozet, Fran\c{c}ois and Parker, Liam H. and Cranmer, Miles and Ho, Shirley},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {44989--45037},
+      publisher = {Curran Associates, Inc.},
+      title = {The Well: a Large-Scale Collection of Diverse Physics Simulations for Machine Learning},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/4f9a5acd91ac76569f2fe291b1f4772b-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links:
+    - name: "16 simulation datasets"
+      url: "HDF5) via PyPI/GitHub"
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1axQvD_aY9O71A2nxWaoFvsfE8HvZ4TmwDoZ4cQQwW58/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        BSD-licensed software and unified API are available via GitHub and PyPI.
+        Supports loading and manipulating large HDF5 datasets across 16 domains.
+    specification:
+      rating: 4
+      reason: |
+        The benchmark includes clearly defined surrogate modeling tasks, data structure, and metadata.
+        However, constraints and formal task specs vary slightly across domains.
+    dataset:
+      rating: 5
+      reason: |
+        15 TB of ML-ready HDF5 datasets across 16 physics domains. Public, well-structured,
+        richly annotated, and designed with FAIR principles in mind.
+    metrics:
+      rating: 3
+      reason: |
+        Domain breadth and dataset size are emphasized. Standardized quantitative metrics for
+        model evaluation (e.g., RMSE, accuracy) are not uniformly applied across all domains.
+    reference_solution:
+      rating: 3
+      reason: |
+        Includes FNO and U-Net baselines, but does not yet provide fully trained, reproducible
+        models or scripts across all datasets.
+    documentation:
+      rating: 4
+      reason: |
+        The GitHub repo and NeurIPS paper provide detailed guidance on dataset use,
+        structure, and training setup. Tutorials and walkthroughs could be expanded further.

@@ -1,0 +1,91 @@
+- date: "2024-06-24"
+  version: "v1.0"
+  last_updated: "2024-06"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-06-24"
+  name: "Smart Pixels for LHC"
+  url: "https://arxiv.org/abs/2406.14860"
+  doi: "10.48550/arXiv.2406.14860"
+  domain:
+  - High Energy Physics
+  focus: "On-sensor, in-pixel ML filtering for high-rate LHC pixel detectors"
+  keywords:
+  - "smart pixel"
+  - "on-sensor inference"
+  - "data reduction"
+  - "trigger"
+  summary: |
+    Presents a 256x256-pixel ROIC in 28 nm CMOS with embedded 2-layer NN for cluster filtering
+    at 25 ns, achieving 54-75% data reduction while maintaining noise and latency constraints. Prototype
+    consumes ~300 microW/pixel and operates in combinatorial digital logic.
+  licensing: "Via Fermilab"
+  task_types:
+  - "Image Classification"
+  - "Data filtering"
+  ai_capability_measured:
+  - "On-chip"
+  - "low-power inference; data reduction"
+  metrics:
+  - "Data rejection rate"
+  - "Power per pixel"
+  models:
+  - "2-layer pixel NN"
+  ml_motif:
+  - Classification
+  type: "Benchmark"
+  ml_task:
+  - "Image Classification"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Prototype in CMOS 28 nm; proof-of-concept for Phase III pixel upgrades.
+  contact:
+    name: "Lindsey Gray; Jennet Dickinson"
+    email: "unknown"
+  cite:
+  - |
+    @misc{parpillon2024smartpixelsinpixelai,
+      archiveprefix = {arXiv},
+      author        = {Benjamin Parpillon and Chinar Syal and Jieun Yoo and Jennet Dickinson and Morris Swartz and Giuseppe Di Guglielmo and Alice Bean and Douglas Berry and Manuel Blanco Valentin and Karri DiPetrillo and Anthony Badea and Lindsey Gray and Petar Maksimovic and Corrinne Mills and Mark S. Neubauer and Gauri Pradhan and Nhan Tran and Dahai Wen and Farah Fahim},
+      eprint        = {2406.14860},
+      primaryclass  = {physics.ins-det},
+      title         = {Smart Pixels: In-pixel AI for on-sensor data filtering},
+      url           = {https://arxiv.org/abs/2406.14860},
+      year          = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1Fevo7IGGAFC8pHrGGGA4t9V-nUwZkDezncAKDHN4v0E/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes (Zenodo:7331128)"
+  ratings:
+    software:
+      rating: 2
+      reason: |
+        No packaged code or setup scripts available; replication depends on hardware description and paper
+    specification:
+      rating: 5
+      reason: |
+        None
+    dataset:
+      rating: 2
+      reason: |
+        No dataset links; not publicly hosted or FAIR-compliant
+    metrics:
+      rating: 5
+      reason: |
+        None
+    reference_solution:
+      rating: 3
+      reason: |
+        In-pixel 2-layer NN described and evaluated, but reproducibility and source files are not released
+    documentation:
+      rating: 3
+      reason: |
+        Paper contains detailed descriptions, but no repo or external guide for reproducing results

@@ -1,0 +1,91 @@
+- date: "2020-09-07"
+  version: "1"
+  last_updated: "2020-09-07"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2025-07-28"
+  name: "MMLU (Massive Multitask Language Understanding)"
+  url: "https://huggingface.co/datasets/cais/mmlu"
+  doi: "10.48550/arXiv.2009.03300"
+  domain:
+  - Computational Science & AI
+  focus: "Academic knowledge and reasoning across 57 subjects"
+  keywords:
+  - "multitask"
+  - "multiple-choice"
+  - "zero-shot"
+  - "few-shot"
+  - "knowledge probing"
+  summary: |
+    Measuring Massive Multitask Language Understanding (MMLU) is a benchmark of 57 
+    multiple-choice tasks covering elementary mathematics, US history, computer science, 
+    law, and more, designed to evaluate a model's breadth and depth of knowledge in 
+    zero-shot and few-shot settings.
+  licensing: "MIT License"
+  task_types:
+  - "Multiple choice"
+  ai_capability_measured:
+  - "General reasoning, subject-matter understanding"
+  metrics:
+  - "Accuracy"
+  models:
+  - "GPT-4o"
+  - "Gemini 1.5 Pro"
+  - "o1"
+  - "DeepSeek-R1"
+  ml_motif:
+  - "Reasoning & Generalization"
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "1"
+  notes: "Good"
+  contact:
+    name: "Dan Hendrycks"
+    email: "dan (at) safe.ai"
+  cite:
+  - |
+    @misc{hendrycks2021measuring,
+      title={Measuring Massive Multitask Language Understanding},
+      author={Hendrycks, Dan and Burns, Collin and Kadavath, Saurav},
+      journal={arXiv preprint arXiv:2009.03300},
+      year={2021},
+      url={https://arxiv.org/abs/2009.03300}
+    }
+  datasets:
+    links:
+    - name: "Huggingface Dataset"
+      url: "https://huggingface.co/datasets/cais/mmlu"
+  results:
+    links:
+    - name: "Measuring Massive Multitask Language Understanding - Test Leaderboard"
+      url: "https://github.com/hendrycks/test?tab=readme-ov-file#test-leaderboard"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 2
+      reason: |
+        Some code is available on github to reproduce results via OpenAI API, but not well documented
+    specification:
+      rating: 4
+      reason: |
+        No system constraints
+    dataset:
+      rating: 5
+      reason: |
+        Meets all FAIR principles and properly versioned.
+    metrics:
+      rating: 5
+      reason: |
+        Fully defined, represents a solution's performance.
+    reference_solution:
+      rating: 2
+      reason: |
+        Reference models are available (i.e. GPT-3), but are not trainable or publicly documented
+    documentation:
+      rating: 5
+      reason: |
+        Well-explained in a provided paper.
+

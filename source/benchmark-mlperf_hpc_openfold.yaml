@@ -1,0 +1,92 @@
+- date: "2021-10-20"
+  version: "v1.0"
+  last_updated: "2021-10"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2021-10-20"
+  name: "MLPerf HPC - OpenFold"
+  url: "https://github.com/mlcommons/hpc"
+  doi: "10.48550/arXiv.2110.11466"
+  domain:
+  - Biology & Medicine
+  focus: "Scientific ML training and inference on HPC systems"
+  keywords:
+  - "HPC"
+  - "training"
+  - "inference"
+  - "scientific ML"
+  summary: |
+    MLPerf HPC introduces scientific model benchmarks (e.g., CosmoFlow, DeepCAM) aimed at large-scale HPC evaluation with >10x performance scaling through system-level optimizations.
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Training"
+  - "Inference"
+  ai_capability_measured:
+  - "Scaling efficiency"
+  - "training time"
+  - "model accuracy on HPC"
+  metrics:
+  - "Training time"
+  - "Accuracy"
+  - "GPU utilization"
+  models:
+  - "DeepCAM"
+  ml_motif:
+  - Sequence Prediction/Forecasting
+  type: "Framework"
+  ml_task:
+  - "NA"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Shared framework with MLCommons Science; reference implementations included.
+  contact:
+    name: "Steven Farrell (MLCommons)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{farrell2021mlperfhpcholisticbenchmark,
+      archiveprefix = {arXiv},
+      author        = {Steven Farrell and Murali Emani and Jacob Balma and Lukas Drescher and Aleksandr Drozd and Andreas Fink and Geoffrey Fox and David Kanter and Thorsten Kurth and Peter Mattson and Dawei Mu and Amit Ruhela and Kento Sato and Koichi Shirahata and Tsuguchika Tabaru and Aristeidis Tsaris and Jan Balewski and Ben Cumming and Takumi Danjo and Jens Domke and Takaaki Fukai and Naoto Fukumoto and Tatsuya Fukushi and Balazs Gerofi and Takumi Honda and Toshiyuki Imamura and Akihiko Kasagi and Kentaro Kawakami and Shuhei Kudo and Akiyoshi Kuroda and Maxime Martinasso and Satoshi Matsuoka and Henrique Mendonça and Kazuki Minami and Prabhat Ram and Takashi Sawada and Mallikarjun Shankar and Tom St. John and Akihiro Tabuchi and Venkatram Vishwanath and Mohamed Wahib and Masafumi Yamazaki and Junqi Yin},
+      eprint        = {2110.11466},
+      primaryclass  = {cs.LG},
+      title         = {MLPerf HPC: A Holistic Benchmark Suite for Scientific Machine Learning on HPC Systems},
+      url           = {https://arxiv.org/abs/2110.11466},
+      year          = {2021}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "See MLCommons Science entry below"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Reference implementations exist but containerization and environment setup require manual effort across HPC systems.
+    specification:
+      rating: 4
+      reason: |
+        Hardware constraints and I/O formats are not fully defined for all scenarios.
+    dataset:
+      rating: 5
+      reason: |
+        Not all data is independently versioned or comes with standardized FAIR metadata.
+    metrics:
+      rating: 5
+      reason: |
+        None
+    reference_solution:
+      rating: 4
+      reason: |
+        Reproducibility and environment tuning depend on system configuration; baseline models not uniformly bundled.
+    documentation:
+      rating: 4
+      reason: |
+        Central guidance is available but requires domain-specific effort to replicate results across systems.
+

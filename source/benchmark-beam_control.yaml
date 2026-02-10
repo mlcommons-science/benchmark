@@ -1,0 +1,102 @@
+- date: "2024-05-01"
+  version: "v0.2.0"
+  last_updated: "2024-05"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-05-01"
+  name: "Beam Control"
+  url: "https://github.com/fastmachinelearning/fastml-science/tree/main/beam-control"
+  doi: "10.48550/arXiv.2207.07958"
+  domain:
+  - High Energy Physics
+  focus: "Reinforcement learning control of accelerator beam position"
+  keywords:
+  - "RL"
+  - "beam stabilization"
+  - "control systems"
+  - "simulation"
+  summary: |
+    Beam Control explores real-time reinforcement learning strategies for maintaining 
+    stable beam trajectories in particle accelerators. The benchmark is based on the 
+    BOOSTR environment for accelerator simulation.
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Control"
+  ai_capability_measured:
+  - "Policy performance in simulated accelerator control"
+  metrics:
+  - "Stability"
+  - "Control loss"
+  models:
+  - "DDPG"
+  - "PPO (planned)"
+  ml_motif:
+  - Reinforcement Learning/Control
+  type: "Benchmark"
+  ml_task:
+  - "Reinforcement Learning"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Environment defined, baseline RL implementation is in progress
+  contact:
+    name: "Ben Hawks, Nhan Tran"
+    email: "unknown"
+  cite:
+  - |
+    @misc{duarte2022fastml,
+      archiveprefix = {arXiv},
+      author        = {Javier Duarte and Nhan Tran and Ben Hawks and Christian Herwig and Jules Muhizi and Shvetank Prakash and Vijay Janapa Reddi},
+      eprint        = {2207.07958},
+      primaryclass  = {cs.LG},
+      title         = {FastML Science Benchmarks: Accelerating Real-Time Scientific Edge Machine Learning},
+      url           = {https://arxiv.org/abs/2207.07958},
+      year          = {2022}
+    }
+  - |
+    @misc{kafkes2021boostrdatasetacceleratorcontrol,
+      archiveprefix = {arXiv},
+      author        = {Diana Kafkes and Jason St. John},
+      eprint        = {2101.08359},
+      primaryclass  = {physics.acc-ph},
+      title         = {BOOSTR: A Dataset for Accelerator Control Systems},
+      url           = {https://arxiv.org/abs/2101.08359},
+      year          = {2021}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1dqOsPNlp7oLix6uDsqXi-j9xHq50DGf5wnQi-Jms2DQ"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "in progress"
+    benchmark_ready: "in progress"
+  ratings:
+    software:
+      rating: 1
+      reason: |
+        Code not documented; Incomplete setup and not containerized
+    specification:
+      rating: 4
+      reason: |
+        Latency/resource constraints not fully quantified
+    dataset:
+      rating: 3
+      reason: |
+        Not findable (no DOI/indexing); Not interoperable (format/schema unspecified)
+    metrics:
+      rating: 5
+      reason: |
+        All criteria met
+    reference_solution:
+      rating: 2
+      reason: |
+        HW/SW requirements missing; Metrics not evaluated with reference; Baseline not trainable/open
+    documentation:
+      rating: 3
+      reason: |
+        Setup instructions and pretrained model details are missing
+
+

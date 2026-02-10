@@ -1,0 +1,89 @@
+- date: "2025-05-13"
+  version: "1"
+  last_updated: "2025-05-13"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2025-05-13"
+  name: "BaisBench (Biological AI Scientist Benchmark) - Question Answering"
+  url: "https://arxiv.org/abs/2505.08341"
+  doi: "10.48550/arXiv.2505.08341"
+  domain:
+  - Biology & Medicine
+  focus: "Omics-driven AI research tasks"
+  keywords:
+  - "single-cell annotation"
+  - "biological QA"
+  - "autonomous discovery"
+  summary: |
+    BaisBench evaluates AI scientists' ability to perform data-driven biological research
+    by annotating cell types in single-cell datasets and answering MCQs derived from 
+    biological study insights, measuring autonomous scientific discovery.
+  licensing: "MIT License"
+  task_types:
+  - "Cell type annotation"
+  - "Multiple choice"
+  ai_capability_measured:
+  - "Autonomous biological research capabilities"
+  metrics:
+  - "Annotation accuracy"
+  - "QA accuracy"
+  models:
+  - "LLM-based AI scientist agents"
+  ml_motif:
+  - Reasoning & Generalization
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "0"
+  notes: "Underperforms human experts; aims to advance AI-driven discovery"
+  contact:
+    name: "Xuegong Zhang"
+    email: "zhangxg@mail.tsinghua.edu.cn"
+  cite:
+  - |
+    @misc{luo2025benchmarkingaiscientistsomics,
+      archiveprefix = {arXiv},
+      author        = {Erpai Luo and Jinmeng Jia and Yifan Xiong and Xiangyu Li and Xiaobo Guo and Baoqi Yu and Lei Wei and Xuegong Zhang},
+      eprint        = {2505.08341},
+      primaryclass  = {cs.AI},
+      title         = {Benchmarking AI scientists in omics data-driven biological research},
+      url           = {https://arxiv.org/abs/2505.08341},
+      year          = {2025}
+    }
+  datasets:
+    links:
+    - name: "Github"
+      url: "https://github.com/EperLuo/BaisBench"
+  results:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Instructions for environment setup available
+    specification:
+      rating: 4
+      reason: |
+        Task clearly defined-cell type annotation and biological QA; input/output formats are well-described; system constraints are not quantified.
+    dataset:
+      rating: 5
+      reason: |
+        Uses public scRNA-seq datasets linked in paper appendix; structured and accessible, though versioning and full metadata not formalized per FAIR standards.
+    metrics:
+      rating: 5
+      reason: |
+        Includes precise and interpretable metrics (annotation and QA accuracy); directly aligned with task outputs and benchmarking goals.
+    reference_solution:
+      rating: 0
+      reason: |
+        Model evaluations and LLM agent results discussed; however, no fully packaged, runnable baseline confirmed yet.
+    documentation:
+      rating: 5
+      reason: |
+        Dataset and paper accessible; IPYNB files for setup are available on the github repo.
+

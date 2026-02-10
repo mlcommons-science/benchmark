@@ -1,0 +1,89 @@
+- date: "2023-04-23"
+  version: "1"
+  last_updated: "2023-04-23"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2023-04-23"
+  name: "SatImgNet"
+  url: "https://satinbenchmark.github.io/"
+  doi: "10.48550/arXiv.2304.11619"
+  domain:
+  - Climate & Earth Science
+  focus: "Satellite imagery classification"
+  keywords:
+  - "land-use"
+  - "zero-shot"
+  - "multi-task"
+  summary: |
+    SATIN (sometimes referred to as SatImgNet) is a multi-task metadataset of 27 satellite
+    imagery classification datasets evaluating zero-shot transfer of vision-language models
+    across diverse remote sensing tasks.
+  licensing: "CC-BY-4.0"
+  task_types:
+  - "Image classification"
+  ai_capability_measured:
+  - "Zero-shot land-use classification"
+  metrics:
+  - "Accuracy"
+  models:
+  - "CLIP"
+  - "BLIP"
+  - "ALBEF"
+  ml_motif:
+  - Multimodal Reasoning
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "Numerous, evaluated via leaderboard"
+  notes: "Public leaderboard available"
+  contact:
+    name: "Jonathan Roberts"
+    email: "j.roberts@cs.ox.ac.uk"
+  cite:
+  - |
+    @article{roberts2023satin,
+    author = "Roberts, Jonathan and Han, Kai and Albanie, Samuel",
+    title = "Satin: A multi-task metadataset for classifying satellite imagery using vision-language models",
+    year = "2023",
+    month = "3",
+    journal = "ICCV Workshop: Towards the Next Generation of Computer Vision Datasets",
+    doi = "10.48550/arXiv.2304.11619"
+    }
+  datasets:
+    links:
+    - name: "SatImgNet on Hugging Face"
+      url: "https://huggingface.co/datasets/jonathan-roberts1/SATIN"
+  results:
+    links:
+    - name: "SatImgNet Leaderboard"
+      url: "https://satinbenchmark.github.io/_pages/leaderboard/"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 0
+      reason: |
+        No scripts or environment information provided
+    specification:
+      rating: 4
+      reason: |
+        Tasks (image classification across 27 satellite datasets) are clearly defined with multi-task and zero-shot framing; input/output structure is mostly standard but some task-specific nuances require interpretation.
+    dataset:
+      rating: 5
+      reason: |
+        Hosted on Hugging Face, versioned, FAIR-compliant with rich metadata; covers many well-known remote sensing datasets unified under one metadataset, though documentation depth varies slightly across tasks.
+    metrics:
+      rating: 5
+      reason: |
+        Accuracy of classification is an appropriate metric
+    reference_solution:
+      rating: 4
+      reason: |
+        Baselines like CLIP, BLIP, ALBEF evaluated in the paper; no constraints specified
+    documentation:
+      rating: 5
+      reason: |
+        Paper provides all required information
+
+

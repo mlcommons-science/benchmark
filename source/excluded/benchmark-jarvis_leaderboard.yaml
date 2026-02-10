@@ -1,0 +1,93 @@
+- date: "2023-06-20"
+  version: "1"
+  last_updated: "2023-06-20"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2023-06-20"
+  name: "JARVIS-Leaderboard"
+  url: "https://arxiv.org/abs/2306.11688"
+  doi: "10.48550/arXiv.2306.11688"
+  domain:
+  - Materials Science
+  focus: "Comparative evaluation of materials design methods"
+  keywords:
+  - "leaderboards"
+  - "materials methods"
+  - "simulation"
+  summary: |
+    JARVIS-Leaderboard is a community-driven platform benchmarking AI, electronic
+    structure, force-fields, quantum computing, and experimental methods across hundreds
+    of materials science tasks.
+  licensing: "NIST"
+  task_types:
+  - "Method benchmarking"
+  - "Leaderboard ranking"
+  ai_capability_measured:
+  - "Performance comparison across diverse materials design methods"
+  metrics:
+  - "MAE"
+  - "RMSE"
+  - "Accuracy"
+  models:
+  - "unknown"
+  ml_motif:
+  - Regression
+  - Classification
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "0"
+  notes: "1281 contributions across 274 benchmarks"
+  contact:
+    name: "Kamal Choudhary"
+    email: "kamal.choudhary@nist.gov"
+  cite:
+  - |
+    @article{choudhary2024jarvis,
+      title = {{JARVIS-Leaderboard}: a large scale benchmark of materials design methods},
+    author = {Choudhary, Kamal and Wines, Daniel and Li, Kangming and Garrity, Kevin F. and Gupta, Vishu and Romero, Aldo H. and Krogel, Jaron T. and Saritas, Kayahan and Fuhr, Addis and Ganesh, Panchapakesan and Kent, Paul R. C. and Yan, Keqiang and Lin, Yuchao and Ji, Shuiwang and Blaiszik, Ben and Reiser, Patrick and Friederich, Pascal and Agrawal, Ankit and Tiwary, Pratyush and Beyerle, Eric and Minch, Peter and Rhone, Trevor D. and Takeuchi, Ichiro and Wexler, Robert B. and Mannodi-Kanakkithodi, Arun and Ertekin, Elif and Mishra, Avanish and Mathew, Nithin and Wood, Mitchell and Rohskopf, Andrew D. and Hattrick-Simpers, Jason and Wang, Shih-Han and Achenie, Luke E. K. and Xin, Hongliang and Williams, Maureen and Biacchi, Adam J. and Tavazza, Francesca},
+      journal = {npj Computational Materials},
+      volume = {10},
+      number = {1},
+      pages = {93},
+      year = {2024},
+      doi = {10.1038/s41524-024-01259-w},
+      url = {https://doi.org/10.1038/s41524-024-01259-w}
+    }
+  datasets:
+    links:
+    - name: "AI model specific benchmarks"
+      url: "https://pages.nist.gov/jarvis_leaderboard/AI/"
+  results:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 2
+      reason: |
+        Setup script provided, but no code provided
+    specification:
+      rating: 4
+      reason: |
+        Tasks, inputs, and outputs are well specified. No system constraints mentioned.
+    dataset:
+      rating: 4
+      reason: |
+        Data is public and adheres to FAIR principles across the NIST-hosted infrastructure; however, metadata completeness varies slightly across benchmarks. No splits.
+    metrics:
+      rating: 5
+      reason: |
+        Metrics stated for each benchmark.
+    reference_solution:
+      rating: 4
+      reason: |
+        Many baselines across tasks (CGCNN, ALIGNN, M3GNet, etc.); no constraints specified.
+    documentation:
+      rating: 5
+      reason: |
+        All information available in paper and website
+# Exclusion Reason: Not a benchmark, baseline/foundation models for time series/neural forcasting

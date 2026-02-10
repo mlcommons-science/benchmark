@@ -1,0 +1,98 @@
+- date: "2021-09-27"
+  version: "v1.0"
+  last_updated: "2023-07"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2021-09-27"
+  name: "Sabath (SBI-FAIR)"
+  url: "https://sbi-fair.github.io/docs/software/sabath/"
+  doi: "unknown"
+  domain:
+  - Climate & Earth Science
+  - High Energy Physics
+  - Materials Science
+  focus: "FAIR metadata framework for ML-driven surrogate workflows in HPC systems"
+  keywords:
+  - "meta-benchmark"
+  - "metadata"
+  - "HPC"
+  - "surrogate modeling"
+  summary: |
+    Sabath is a metadata framework from the SBI-FAIR group (UTK, Argonne, Virginia) facilitating
+    FAIR-compliant benchmarking and surrogate execution logging across HPC systems .
+  licensing: "BSD 3-Clause License"
+  task_types:
+  - "Systems benchmarking"
+  ai_capability_measured:
+  - "Metadata tracking"
+  - "reproducible HPC workflows"
+  metrics:
+  - "Metadata completeness"
+  - "FAIR compliance"
+  models:
+  - "NA"
+  ml_motif:
+  - Generative
+  - Classification
+  - Regression
+  type: "Platform"
+  ml_task:
+  - "NA"
+  solutions: "0"
+  notes: |
+    Developed by PI Piotr Luszczek at UTK; integrates with MiniWeatherML, AutoPhaseNN, Cosmoflow, etc.
+  contact:
+    name: "Piotr Luszczek"
+    email: "luszczek@utk.edu"
+  cite:
+  - |
+    @techreport{luszczek2021sabath,
+      title={SABATH: FAIR Metadata Technology for Surrogate Benchmarks},
+      author={Luszczek, Piotr},
+      year={2021},
+      institution={University of Tennessee},
+      url={https://github.com/icl-utk-edu/slip/tree/sabath}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "(none)"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "N/A"
+  ratings:
+    software:
+      rating: 4
+      reason: |
+        Actively maintained GitHub repository (https://github.com/icl-utk-edu/slip/tree/sabath)
+        with BSD-licensed tooling for FAIR metadata capture; integrates with existing surrogate
+        modeling benchmarks.
+    specification:
+      rating: 4
+      reason: |
+        FAIR metadata structure and logging goals are clearly described. Input/output definitions
+        are implied through integrations (e.g., MiniWeatherML), though not always formalized.
+    dataset:
+      rating: 4
+      reason: |
+        Datasets used in surrogate benchmarks are publicly available, well-structured, and
+        FAIR-aligned, but not independently hosted by Sabath itself.
+    metrics:
+      rating: 4
+      reason: |
+        Emphasizes metadata completeness and FAIR compliance. Metrics are clear and well-matched
+        to its metadata-focused benchmarking context.
+    reference_solution:
+      rating: 3
+      reason: |
+        Includes integration with multiple surrogate benchmarks and models, though not all are
+        fully documented or packaged as standardized reference solutions.
+    documentation:
+      rating: 3
+      reason: |-
+        Basic instructions and code are provided on GitHub, but more detailed walkthroughs,
+        use-case examples, or tutorials are limited.

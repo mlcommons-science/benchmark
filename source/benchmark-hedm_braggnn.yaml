@@ -1,0 +1,89 @@
+- date: "2023-10-03"
+  version: "v1.0"
+  last_updated: "2023-10"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-10-03"
+  name: "HEDM (BraggNN)"
+  url: "https://arxiv.org/abs/2008.08198"
+  doi: "10.48550/arXiv.2008.08198"
+  domain:
+  - Materials Science
+  focus: "Fast Bragg peak analysis using deep learning in diffraction microscopy"
+  keywords:
+  - "BraggNN"
+  - "diffraction"
+  - "peak finding"
+  - "HEDM"
+  summary: |
+    Uses BraggNN, a deep neural network, for rapid Bragg peak localization in 
+    high-energy diffraction microscopy, achieving about 13x speedup compared 
+    to Voigt-based methods while maintaining sub-pixel accuracy.
+  licensing: "DOE Public Access Plan"
+  task_types:
+  - "Peak detection"
+  ai_capability_measured:
+  - "High-throughput peak localization"
+  metrics:
+  - "Localization accuracy"
+  - "Inference time"
+  models:
+  - "BraggNN"
+  ml_motif:
+  - Classification
+  type: "Framework"
+  ml_task:
+  - "Peak finding"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Enables real-time HEDM workflows; basis for NAC case study.
+  contact:
+    name: "Jason Weitz (UCSD)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{liu2021braggnnfastxraybragg,
+      archiveprefix = {arXiv},
+      author        = {Zhengchun Liu and Hemant Sharma and Jun-Sang Park and Peter Kenesei and Antonino Miceli and Jonathan Almer and Rajkumar Kettimuthu and Ian Foster},
+      eprint        = {2008.08198},
+      primaryclass  = {eess.IV},
+      title         = {BraggNN: Fast X-ray Bragg Peak Analysis Using Deep Learning},
+      url           = {https://arxiv.org/abs/2008.08198},
+      year          = {2021}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1wdUwyMyOi00QzQmkI8VBfwseTVXndxPAurwGsuvoQmQ/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 2
+      reason: |
+        No standalone code repository or setup instructions provided
+    specification:
+      rating: 5
+      reason: |
+        None
+    dataset:
+      rating: 2
+      reason: |
+        No dataset links or FAIR metadata; unclear public access
+    metrics:
+      rating: 4
+      reason: |
+        Only localization accuracy and inference time mentioned; not formally benchmarked with scripts
+    reference_solution:
+      rating: 3
+      reason: |
+        BraggNN model is described and evaluated, but no direct implementation or inference scripts available
+    documentation:
+      rating: 3
+      reason: |
+        Paper is clear, but lacks a GitHub repo or full reproducibility pipeline

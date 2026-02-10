@@ -1,0 +1,100 @@
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "GeSS - Track Pileup"
+  url: "https://neurips.cc/virtual/2024/poster/97816"
+  doi: "unknown"
+  domain:
+  - High Energy Physics
+  focus: "Benchmark suite evaluating geometric deep learning models under real-world distribution shifts"
+  keywords:
+  - "geometric deep learning"
+  - "distribution shift"
+  - "OOD robustness"
+  - "scientific applications"
+  summary: |
+    GeSS provides 30 benchmark scenarios across particle physics, materials science, and biochemistry, evaluating 3 GDL backbones and 11 algorithms under covariate, concept, and conditional shifts, with varied OOD access .
+  licensing: "unknown"
+  task_types:
+  - "Classification"
+  ai_capability_measured:
+  - "OOD performance in scientific settings"
+  metrics:
+  - "Accuracy"
+  - "RMSE"
+  - "OOD robustness delta"
+  models:
+  - "GCN"
+  - "EGNN"
+  - "DimeNet++"
+  ml_motif:
+  - Classification
+  type: "Benchmark"
+  ml_task:
+  - "Classification, Regression"
+  solutions: "0"
+  notes: |
+    Includes no-OOD, unlabeled-OOD, and few-label scenarios .
+  contact:
+    name: "Deyu Zou"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{neurips2024_a8063075,
+      author = {Zou, Deyu and Liu, Shikun and Miao, Siqi and Fung, Victor and Chang, Shiyu and Li, Pan},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {92499--92528},
+      publisher = {Curran Associates, Inc.},
+      title = {GeSS: Benchmarking Geometric Deep Learning under Scientific Applications with Distribution Shifts},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/a8063075b00168dc39bc81683619f1a8-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Reference code expected post-conference; current public software availability limited.
+        Benchmark infrastructure partially described but not fully released yet.
+    specification:
+      rating: 5
+      reason: |
+        Benchmark clearly defines OOD robustness scenarios with classification and regression
+        tasks in scientific domains, though no explicit hardware constraints are given.
+    dataset:
+      rating: 5
+      reason: |
+        Curated datasets of 3D crystal structures and material properties are included and
+        publicly available for reproducible research.
+    metrics:
+      rating: 5
+      reason: |
+        Uses well-established metrics such as MAE and structural validity for materials modeling,
+        plus accuracy and OOD robustness deltas.
+    reference_solution:
+      rating: 4
+      reason: |
+        Two reference models (SODNet, DiffCSP-SC) are reported with results, code expected
+        to be released soon.
+    documentation:
+      rating: 4
+      reason: |
+        Paper and poster provide solid explanation of benchmarks and scientific motivation;
+        more extensive user documentation forthcoming.
+
+

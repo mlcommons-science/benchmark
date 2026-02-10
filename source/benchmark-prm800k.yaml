@@ -1,0 +1,86 @@
+- date: "2023-05-30"
+  version: "1"
+  last_updated: "2023-05-30"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2023-05-30"
+  name: "PRM800K"
+  url: "https://github.com/openai/prm800k/tree/main"
+  doi: "10.48550/arXiv.2305.20050"
+  domain:
+  - Mathematics
+  focus: "Math reasoning generalization"
+  keywords:
+  - "calculus"
+  - "algebra"
+  - "number theory"
+  - "geometry"
+  summary: |
+    PRM800K is a process supervision dataset containing 800,000 step-level correctness labels for model-generated solutions to problems from the MATH dataset.
+  licensing: "MIT License"
+  task_types:
+  - "Problem solving"
+  ai_capability_measured:
+  - "Math reasoning and generalization"
+  metrics:
+  - "Accuracy"
+  models:
+  - "GPT-4"
+  ml_motif:
+  - Reasoning & Generalization
+  type: "Benchmark"
+  ml_task:
+  - "Reasoning"
+  solutions: "0"
+  notes: "Math problems & Annotated reasoning steps based off of Dan Hendrycks' MATH dataset"
+  contact:
+    name: "Karl Cobbe"
+    email: "karl@openai.com"
+  cite:
+  - |
+    @article{lightman2023lets,
+          title={Let's Verify Step by Step}, 
+          author={Lightman, Hunter and Kosaraju, Vineet and Burda, Yura and Edwards, Harri and Baker, Bowen and Lee, Teddy and Leike, Jan and Schulman, John and Sutskever, Ilya and Cobbe, Karl},
+          journal={arXiv preprint arXiv:2305.20050},
+          year={2023},
+          Eprint = {arXiv:2305.20050},
+          doi = {10.48550/arXiv.2305.20050}
+    }
+  datasets:
+    links:
+    - name: "PRM800K: A Process Supervision Dataset"
+      url: "https://github.com/openai/prm800k/tree/main"
+  results:
+    links:
+    - name: "Let's Verify Step by Step"
+      url: "https://arxiv.org/abs/2305.20050"
+
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Code is provided in the PRM800K Repo for evaluation and grading, documentation is present but no environment details, baseline model, or training code is given
+    specification:
+      rating: 4
+      reason: |
+        Task is well specified, format, inputs, and outputs are mentioned. No system constraints are provided.
+    dataset:
+      rating: 5
+      reason: |
+        Dataset follows all FAIR Principles. Train/Test splits are available in the PRM800K repo
+    metrics:
+      rating: 4
+      reason: |
+        Correctness is used as the primary metric, with grading guidelines provided.
+    reference_solution:
+      rating: 2
+      reason: |
+        A reference solution is mentioned in the "Lets Verify Step by Step" paper, but the model is not open-sourced.
+    documentation:
+      rating: 5
+      reason: |
+        Documentation is present in the PRM800K repo and "Lets Verify Step by Step" paper.
+

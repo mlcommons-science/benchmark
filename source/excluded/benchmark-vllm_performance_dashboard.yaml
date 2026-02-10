@@ -1,0 +1,99 @@
+- date: "2022-06-22"
+  version: "v1.0"
+  last_updated: "2025-01"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2022-06-22"
+  name: "vLLM Performance Dashboard"
+  url: "https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/"
+  doi: "unknown"
+  domain:
+  - LLM
+  - HPC/inference
+  focus: "Interactive dashboard showing inference performance of vLLM"
+  keywords:
+  - "Dashboard"
+  - "Throughput visualization"
+  - "Latency analysis"
+  - "Metric tracking"
+  summary: |
+    A live visual dashboard for vLLM showcasing throughput, latency, and other inference metrics across models and hardware configurations.
+  licensing: "unknown"
+  task_types:
+  - "Performance visualization"
+  ai_capability_measured:
+  - "Throughput"
+  - "latency"
+  - "hardware utilization"
+  metrics:
+  - "Tokens/sec"
+  - "TTFT"
+  - "Memory usage"
+  models:
+  - "LLaMA-2"
+  - "Mistral"
+  - "Qwen"
+  ml_motif:
+  - "HPC/inference"
+  type: "Framework"
+  ml_task:
+  - "Visualization"
+  solutions: "0"
+  notes: |
+    Built using ObservableHQ; integrates live data from vLLM benchmarks.
+    The URL requires a login to access the content.
+  contact:
+    name: "Simon Mo"
+    email: "unknown"
+  cite:
+  - |
+    @misc{mo2024vllm_dashboard,
+      title={vLLM Performance Dashboard},
+      author={Mo, Simon},
+      year={2024},
+      url={https://simon-mo-workspace.observablehq.cloud/vllm-dashboard-v0/}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "(none)"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 4
+      reason: |
+        Interactive dashboard built with ObservableHQ and linked to vLLM benchmarks.
+        Source code is not fully open, but backend integration with vLLM is well-maintained.
+    specification:
+      rating: 4
+      reason: |
+        While primarily a visualization tool, it includes benchmark configurations,
+        metric definitions, and supports comparison across models and hardware.
+    dataset:
+      rating: 2
+      reason: |
+        No datasets are bundled; the dashboard visualizes metrics derived from model
+        inference logs or external endpoints, not a formal dataset.
+    metrics:
+      rating: 4
+      reason: |
+        Tracks tokens/sec, TTFT, memory usage, and platform comparisons. Metrics are clear
+        but focused on visualization rather than statistical robustness.
+    reference_solution:
+      rating: 3
+      reason: |
+        Dashboards include reproducible views of benchmarked models, but do not ship
+        with runnable model code. Relies on external serving infrastructure.
+    documentation:
+      rating: 4
+      reason: |
+        Public dashboard with instructions and tooltips; documentation is clear, though access
+        is restricted (login required) and backend setup is opaque to users.
+
+# Exclusion Reason: Library for serving LLMs, Benchmark is for library's inference performance, not a scientific benchmark

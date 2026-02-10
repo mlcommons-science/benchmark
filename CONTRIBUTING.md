@@ -10,9 +10,9 @@ Thank you for helping expand the MLCommons Science AI Benchmark Collection. This
 
 ## Adding or Updating a Benchmark
 
-1. Decide whether your change belongs in `source/benchmarks.yaml` (main catalogue) or `source/benchmarks-addon.yaml` (supplemental entries).
-2. Copy the skeleton from `source/benchmarks-sample.yaml` or use an existing entry as a template.
-3. Fill out every field described in `source/benchmarks-format.yaml`. Use the literal `"unknown"` when information is unavailable.
+1. Create a new file named `benchmark-<your-benchmark-name>.yaml` in the `source/` directory. Each file should contain exactly one benchmark entry.
+2. Copy the skeleton from `source/sample/benchmarks-sample.yaml` or use an existing `benchmark-*.yaml` file as a template.
+3. Fill out every field described in `source/sample/benchmarks-format.yaml`. Use the literal `"unknown"` when information is unavailable.
 4. Keep indentation at two spaces and wrap strings in double quotes to avoid parsing issues.
 5. If you introduce new URLs, prefer official project pages, repositories, or publications.
 

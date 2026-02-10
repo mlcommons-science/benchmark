@@ -1,0 +1,93 @@
+- date: "2024-10-15"
+  version: "v1.0"
+  last_updated: "2024-10"
+  expired: "no"
+  valid: "yes"
+  valid_date: "2024-10-15"
+  name: "Quench detection"
+  url: "https://indico.cern.ch/event/1387540/contributions/6153618/attachments/2948441/5182077/fast_ml_magnets_2024_final.pdf"
+  doi: "NA"
+  domain:
+  - High Energy Physics
+  focus: "Real-time detection of superconducting magnet quenches using ML"
+  keywords:
+  - "quench detection"
+  - "autoencoder"
+  - "anomaly detection"
+  - "real-time"
+  summary: |
+    Exploration of real-time quench detection using unsupervised and RL approaches, combining multi-modal sensor data (BPM, power supply, acoustic), operating on kHz-MHz streams with anomaly detection and frequency-domain features.
+  licensing: "Via Fermilab"
+  task_types:
+  - "Anomaly Detection"
+  - "Quench localization"
+  ai_capability_measured:
+  - "Real-time anomaly detection with multi-modal sensors"
+  metrics:
+  - "ROC-AUC"
+  - "Detection latency"
+  models:
+  - "Autoencoder"
+  - "RL agents (in development)"
+  ml_motif:
+  - Anomaly Detection
+  type: "Benchmark"
+  ml_task:
+  - "Reinforcement, Unsupervised Learning"
+  solutions: "0"
+  notes: |
+    Precursor detection in progress; multi-modal and dynamic weighting methods
+  contact:
+    name: "Maira Khan"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{quench2024,
+      author = {Maira Khan and Steve Krave and Vittorio Marinozzi and Jennifer Ngadiuba and Stoyan Stoynev and Nhan Tran},
+      title = {Benchmarking and Interpreting Real Time Quench Detection Algorithms},
+      booktitle = {Fast Machine Learning for Science Conference 2024},
+      year = {2024},
+      month = oct,
+      address = {Purdue University, IN},
+      publisher = {indico.cern.ch},
+      url = {https://indico.cern.ch/event/1387540/contributions/6153618/attachments/2948441/5182077/fast_ml_magnets_2024_final.pdf}
+    }
+  datasets:
+    links:
+    - name: "BPM and power supply data from BNL"
+      url: ""
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1O7NGfSIKpXqFM1D_y0DWRueYHGm5Sqj0MaWNZzMzb6w"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "in progress"
+    benchmark_ready: "No"
+  ratings:
+    software:
+      rating: 1
+      reason: |
+        Code not provided; no evidence of documentation or containerization
+    specification:
+      rating: 4
+      reason: |
+        Real-time detection task is clearly described, but exact constraints, inputs/outputs, and evaluation protocol are only partially specified
+    dataset:
+      rating: 2
+      reason: |
+        Dataset URL is missing; FAIR principles largely unmet
+    metrics:
+      rating: 3
+      reason: |
+        ROC-AUC and latency are mentioned, but metric definitions and formal evaluation setup are missing
+    reference_solution:
+      rating: 1
+      reason: |
+        No baseline or reproducible model implementation available
+    documentation:
+      rating: 2
+      reason: |
+        Only a conference slide deck is available; lacks detailed instructions or repository for reproduction
+

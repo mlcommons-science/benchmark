@@ -1,0 +1,123 @@
+- date: "2023-06-01"
+  version: "v1.0"
+  last_updated: "2023-06"
+  expired: "no"
+  valid: "yes"
+  valid_date: "2023-06-01"
+  name: "MLCommons Science - STEMDL"
+  url: "https://github.com/mlcommons/science"
+  doi: "10.1007/978-3-031-23220-6_4"
+  domain:
+  - Materials Science
+  focus: "AI benchmarks for scientific applications including time-series, imaging, and simulation"
+  keywords:
+  - "science AI"
+  - "benchmark"
+  - "MLCommons"
+  - "HPC"
+  summary: |
+    MLCommons Science assembles benchmark tasks with datasets, targets, and implementations across earthquake forecasting, satellite imagery, drug screening, electron microscopy, and CFD to drive scientific ML reproducibility.
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Time-series analysis"
+  - "Image classification"
+  - "Simulation surrogate modeling"
+  ai_capability_measured:
+  - "Inference accuracy"
+  - "simulation speed-up"
+  - "generalization"
+  metrics:
+  - "MAE"
+  - "Accuracy"
+  - "Speedup vs simulation"
+  models:
+  - "CNN"
+  - "GNN"
+  - "Transformer"
+  ml_motif:
+  - Classification
+  type: "Framework"
+  ml_task:
+  - "NA"
+  solutions: "0"
+  notes: |
+    Joint effort under Apache-2.0 license.
+  contact:
+    name: "MLCommons Science Working Group"
+    email: "science-chairs@mlcommons.org"
+  cite:
+  - |
+    @InProceedings{10.1007/978-3-031-23220-6_4,
+      author="Thiyagalingam, Jeyan
+      and von Laszewski, Gregor
+      and Yin, Junqi
+      and Emani, Murali
+      and Papay, Juri
+      and Barrett, Gregg
+      and Luszczek, Piotr
+      and Tsaris, Aristeidis
+      and Kirkpatrick, Christine
+      and Wang, Feiyi
+      and Gibbs, Tom
+      and Vishwanath, Venkatram
+      and Shankar, Mallikarjun
+      and Fox, Geoffrey
+      and Hey, Tony",
+      editor="Anzt, Hartwig
+      and Bienz, Amanda
+      and Luszczek, Piotr
+      and Baboulin, Marc",
+      title="AI Benchmarking for Science: Efforts from the MLCommons Science Working Group",
+      booktitle="High Performance Computing. ISC High Performance 2022 International Workshops",
+      year="2022",
+      publisher="Springer International Publishing",
+      address="Cham",
+      pages="47--64",
+      abstract="With machine learning (ML) becoming a transformative tool for science, the scientific community needs a clear catalogue of ML techniques, and their relative benefits on various scientific problems, if they were to make significant advances in science using AI. Although this comes under the purview of benchmarking, conventional benchmarking initiatives are focused on performance, and as such, science, often becomes a secondary criteria.",
+      isbn="978-3-031-23220-6"
+    }
+  datasets:
+    links:
+    - name: "A Database of Convergent Beam Electron Diffraction Patterns for Machine Learning of the Structural Properties of Materials"
+      url: "https://doi.ccs.ornl.gov/dataset/7aed61eb-e44c-5b14-82ea-07917d1b2d3b"
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1UuDwy7ATzyYBqVDmvjQpxHt33FKws6hjcP8FFD1m1GI/edit?usp=chatgpt.com"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Actively maintained GitHub repository available at https://github.com/mlcommons/science
+        with implementations, scripts, and reproducibility support.
+    specification:
+      rating: 5
+      reason: |
+        All five specification aspects are covered: system constraints, task, dataset format,
+        benchmark inputs, and outputs.
+    dataset:
+      rating: 5
+      reason: |
+        Public scientific datasets are used with defined splits. At least 4 FAIR principles
+        are followed.
+    metrics:
+      rating: 5
+      reason: |
+        Clearly defined metrics such as accuracy, training time, and GPU utilization are
+        used. These metrics are explained and effectively capture solution performance.
+    reference_solution:
+      rating: 5
+      reason: |
+        A reference implementation is available, well-documented, trainable/open, and includes
+        full metric evaluation and software/hardware details.
+    documentation:
+      rating: 5
+      reason: |
+        Thorough documentation exists covering the task, background, motivation, evaluation
+        criteria, and includes a supporting paper.
+

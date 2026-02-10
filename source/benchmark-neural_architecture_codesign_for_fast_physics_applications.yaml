@@ -1,0 +1,96 @@
+- date: "2025-01-09"
+  version: "v1.0"
+  last_updated: "2025-01"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2025-01-09"
+  name: "Neural Architecture Codesign for Fast Physics Applications"
+  url: "https://arxiv.org/abs/2501.05515"
+  doi: "10.48550/arXiv.2501.05515"
+  domain:
+  - High Energy Physics
+  focus: "Automated neural architecture search and hardware-efficient model codesign for fast physics applications"
+  keywords:
+  - "neural architecture search"
+  - "FPGA deployment"
+  - "quantization"
+  - "pruning"
+  - "hls4ml"
+  summary: |
+    Introduces a two-stage neural architecture codesign (NAC) pipeline combining global and local search,
+    quantization-aware training, and pruning to design efficient models for fast Bragg peak finding and
+    jet classification, synthesized for FPGA deployment with hls4ml. Achieves >30x reduction in BOPs
+    and sub-100 ns inference latency on FPGA.
+  licensing: "Via Fermilab"
+  task_types:
+  - "Classification"
+  - "Peak finding"
+  ai_capability_measured:
+  - "Hardware-aware model optimization; low-latency inference"
+  metrics:
+  - "Accuracy"
+  - "Latency"
+  - "Resource utilization"
+  models:
+  - "NAC-based BraggNN"
+  - "NAC-optimized Deep Sets (jet)"
+  ml_motif:
+  - Classification
+  type: "Framework"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Demonstrated two case studies (materials science, HEP); pipeline and code open-sourced.
+  contact:
+    name: "Jason Weitz (UCSD), Nhan Tran (FNAL)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{weitz2025neuralarchitecturecodesignfast,
+      archiveprefix={arXiv},
+      author={Jason Weitz and Dmitri Demler and Luke McDermott and Nhan Tran and Javier Duarte},
+      eprint={2501.05515},
+      primaryclass={cs.LG},
+      title={Neural Architecture Codesign for Fast Physics Applications},
+      url={https://arxiv.org/abs/2501.05515},
+      year={2025}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1X6RvGHaF1rZGYSorZSEEAxlwGMYau9RQHVOn82vWv2I/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes (nac-opt, hls4ml)"
+    benchmark_ready: "No"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Toolchain (hls4ml, nac-opt) described but not yet containerized or fully packaged
+    specification:
+      rating: 5
+      reason: |
+        Fully specified task with constraints and target deployment; includes hardware context
+    dataset:
+      rating: 2
+      reason: |
+        Simulated datasets referenced but not publicly available or FAIR-compliant
+    metrics:
+      rating: 5
+      reason: |
+        Clear, quantitative metrics aligned with task goals and hardware evaluation
+    reference_solution:
+      rating: 4
+      reason: |
+        Models tested on hardware with source code references; full training pipeline not yet released
+    documentation:
+      rating: 4
+      reason: |
+        Detailed paper and tools described; open repo planned but not yet complete
+
+

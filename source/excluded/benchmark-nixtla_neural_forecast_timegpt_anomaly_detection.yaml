@@ -1,0 +1,98 @@
+- date: "2023-10-05"
+  version: "v3.0.2"
+  last_updated: "2025-06"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2023-10-05"
+  name: "Nixtla Neural Forecast TimeGPT - Anomaly Detection"
+  url: "https://github.com/Nixtla/neuralforecast"
+  doi: "10.48550/arXiv.2310.03589"
+  domain:
+  - Computational Science & AI
+  focus: "Time-series foundation model \"TimeGPT\" for forecasting and anomaly detection"
+  keywords:
+  - "TimeGPT"
+  - "foundation model"
+  - "time-series"
+  - "generative model"
+  summary: |
+    TimeGPT is a transformer-based generative pretrained model on 100B+ time series data for
+    zero-shot forecasting and anomaly detection via API .
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Time-series forecasting"
+  - "Anomaly Detection"
+  ai_capability_measured:
+  - "Zero-shot forecasting"
+  - "anomaly detection"
+  metrics:
+  - "RMSE"
+  - "Anomaly Detection metrics"
+  models:
+  - "TimeGPT"
+  ml_motif:
+  - Anomaly Detection
+  type: "Platform"
+  ml_task:
+  - "Forecasting"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Offered via Nixtla API and Azure Studio; enterprise-grade support available.
+  contact:
+    name: "Azul Garza (Nixtla)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{garza2024timegpt1,
+      archiveprefix = {arXiv},
+      author        = {Azul Garza and Cristian Challu and Max Mergenthaler-Canseco},
+      eprint        = {2310.03589},
+      primaryclass  = {cs.LG},
+      title         = {TimeGPT-1},
+      url           = {https://arxiv.org/abs/2310.03589},
+      year          = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1KmKs9JtcfpKe40fNuLrgdFcOmBnfj3ZG7AwcfTH4tXE/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 4
+      reason: |
+        Fully open-source Apache 2.0 implementation integrated in NeuralForecast,
+        supporting training and evaluation via API. Production-grade deployment available via Nixtla API and Azure.
+    specification:
+      rating: 3
+      reason: |
+        Concept and forecasting goals are described, but formal input/output definitions
+        and task constraints are not rigorously specified.
+    dataset:
+      rating: 3
+      reason: |
+        Evaluated on existing open datasets, but consolidated data release, splits, and FAIR
+        metadata are not provided.
+    metrics:
+      rating: 4
+      reason: |
+        Uses standard forecasting metrics such as RMSE, MASE, SMAPE, and anomaly detection
+        metrics consistently across evaluations.
+    reference_solution:
+      rating: 3
+      reason: |
+        TimeGPT implementation is available, but baseline comparisons and additional reference
+        models are limited.
+    documentation:
+      rating: 3
+      reason: |
+        Basic README with installation and usage examples; more detailed API docs and tutorials
+        would improve usability.
+
+# Exclusion Reason: Not a benchmark, baseline/foundation models for time series/neural forcasting

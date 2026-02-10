@@ -1,0 +1,100 @@
+- date: "2022-04-01"
+  version: "v3.0.2"
+  last_updated: "2025-06"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2022-04-01"
+  name: "Nixtla NeuralForecast"
+  url: "https://github.com/Nixtla/neuralforecast"
+  doi: "unknown"
+  domain:
+  - Computational Science & AI
+  focus: "High-performance neural forecasting library with >30 models"
+  keywords:
+  - "time-series"
+  - "neural forecasting"
+  - "NBEATS, NHITS, TFT"
+  - "probabilistic forecasting"
+  - "usability"
+  summary: |
+    NeuralForecast offers scalable, user-friendly implementations of over 30 neural forecasting models (NBEATS, NHITS, TFT, DeepAR, etc.),
+    emphasizing quality, usability, interpretability, and performance.
+  licensing: "Apache License 2.0"
+  task_types:
+  - "Time-series forecasting"
+  ai_capability_measured:
+  - "Forecast accuracy"
+  - "interpretability"
+  - "speed"
+  metrics:
+  - "RMSE"
+  - "MAPE"
+  - "CRPS"
+  models:
+  - "NBEATS"
+  - "NHITS"
+  - "TFT"
+  - "DeepAR"
+  ml_motif:
+  - Sequence Prediction/Forecasting
+  type: "Platform"
+  ml_task:
+  - "Forecasting"
+  solutions: "0"
+  notes: |
+    AutoModel supports hyperparameter tuning and distributed execution via Ray and Optuna. First official NHITS implementation. contentReference oaicite:4 ndex=4
+  contact:
+    name: "Kin G. Olivares (Nixtla)"
+    email: "unknown"
+  cite:
+  - |
+    @misc{olivares2022library_neuralforecast,
+      author={Kin G. Olivares and Cristian Chall\'{u} and Federico Garza and Max Mergenthaler Canseco and Artur Dubrawski},
+      title = {NeuralForecast: User friendly state-of-the-art neural forecasting models.},
+      year={2022},
+      howpublished={PyCon Salt Lake City, Utah, US 2022},
+      url={https://github.com/Nixtla/neuralforecast}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "https://docs.google.com/document/d/1VzhaUubIm-SHK7cfKWyoi8GtykpCuOH2qPM-k_g8bKU/edit?usp=sharing"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        Actively maintained open-source library under Apache 2.0. Offers a clean API,
+        extensive model zoo (>30 models), integration with Ray, Optuna, and supports
+        scalable training and inference workflows.
+    specification:
+      rating: 5
+      reason: |
+        Forecasting task is well-defined with clear input/output structures. Framework supports
+        probabilistic and deterministic forecasting, with unified interfaces and support for batch evaluation.
+    dataset:
+      rating: 3
+      reason: |
+        NeuralForecast does not include its own datasets but supports standard datasets (e.g., M4, M5, ETT).
+        FAIR compliance depends on user-supplied data.
+    metrics:
+      rating: 5
+      reason: |
+        RMSE, MAPE, CRPS, and other domain-relevant metrics are well supported and integrated into the evaluation loop.
+    reference_solution:
+      rating: 4
+      reason: |
+        Includes runnable model baselines and training scripts for all supported models.
+        Some models have pretrained weights, but not all are fully benchmarked out-of-the-box.
+    documentation:
+      rating: 5
+      reason: |
+        Rich documentation with examples, API references, tutorials, notebooks, and CLI support.
+        PyPI, GitHub, and official blog posts offer clear guidance for usage and extension.
+# Exclusion Reason: Not a benchmark, but a framework that uses external benchmarks/models - should use those as seperate entries instead

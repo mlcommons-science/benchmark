@@ -1,0 +1,90 @@
+- date: "2019-11-20"
+  version: "1"
+  last_updated: "2019-11-20"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2019-11-20"
+  name: "CommonSenseQA"
+  url: "https://huggingface.co/datasets/tau/commonsense_qa"
+  doi: "10.48550/arXiv.1811.00937"
+  domain:
+  - Computational Science & AI
+  focus: "Commonsense question answering"
+  keywords:
+  - "ConceptNet"
+  - "multiple-choice"
+  - "adversarial"
+  summary: |
+    CommonsenseQA is a challenging multiple-choice QA dataset built from ConceptNet,
+    requiring models to apply commonsense knowledge to select the correct answer 
+    among five choices.
+  licensing: "MIT"
+  task_types:
+  - "Multiple choice"
+  ai_capability_measured:
+  - "Commonsense reasoning and knowledge integration"
+  metrics:
+  - "Accuracy"
+  models:
+  - "BERT-large"
+  - "RoBERTa"
+  - "GPT-3"
+  ml_motif:
+  - Reasoning & Generalization
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "2"
+  notes: "Baseline 56%, human 89%"
+  contact:
+    name: "Alon Talmor, Jonathan Herzig, Nicholas Lourie, Jonathan Berant"
+    email: "Unknown"
+  cite:
+  - |
+    @misc{talmor2019commonsenseqaquestionansweringchallenge,
+      title={CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge}, 
+      author={Alon Talmor and Jonathan Herzig and Nicholas Lourie and Jonathan Berant},
+      year={2019},
+      eprint={1811.00937},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/1811.00937}, 
+    }
+  datasets:
+    links:
+    - name: "CommonsenseQA Dataset (Hugging Face)"
+      url: "https://huggingface.co/datasets/commonsense_qa"
+  results:
+    links:
+    - name: "Papers With Code Leaderboard for CommonsenseQA"
+      url: "https://paperswithcode.com/dataset/commonsenseqa"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        All code given on Github site
+    specification:
+      rating: 4
+      reason: |
+        Task and format (multiple-choice QA with 5 options) are clearly defined; grounded in ConceptNet with consistent structure, though no hardware/system constraints are specified.
+    dataset:
+      rating: 5
+      reason: |
+        Public, versioned, and FAIR-compliant; includes metadata, splits, and licensing; well-integrated with HuggingFace and other ML libraries.
+    metrics:
+      rating: 5
+      reason: |
+        Accuracy is a simple, reproducible metric aligned with task goals; no ambiguity in evaluation.
+    reference_solution:
+      rating: 4
+      reason: |
+        Several baseline models (e.g., BERT, RoBERTa) are reported with scores; implementations exist in public repos, but not run with hardware constraints
+    documentation:
+      rating: 5
+      reason: |
+        Given in paper.
+
+# Exclusion Reason: Not specifically a scientific benchmark, focuses on fill in the blank problems

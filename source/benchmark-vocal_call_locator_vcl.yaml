@@ -1,0 +1,96 @@
+- date: "2024-12-13"
+  version: "v1.0"
+  last_updated: "2024-12"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2024-12-13"
+  name: "Vocal Call Locator (VCL)"
+  url: "https://neurips.cc/virtual/2024/poster/97470"
+  doi: "unknown"
+  domain:
+  - Biology & Medicine
+  focus: "Benchmarking sound-source localization of rodent vocalizations from multi-channel audio"
+  keywords:
+  - "source localization"
+  - "bioacoustics"
+  - "time-series"
+  - "SSL"
+  summary: |
+    The first large-scale benchmark (767K sounds across 9 conditions) for localizing rodent vocal calls using synchronized audio and video in standard lab environments, enabling systematic evaluation of sound-source localization algorithms in bioacoustics .
+  licensing: "unknown"
+  task_types:
+  - "Sound source localization"
+  ai_capability_measured:
+  - "Source localization accuracy in bioacoustic settings"
+  metrics:
+  - "Localization error (cm)"
+  - "Recall/Precision"
+  models:
+  - "CNN-based SSL models"
+  ml_motif:
+  - Regression
+  type: "Dataset"
+  ml_task:
+  - "Anomaly Detection / localization"
+  solutions: "0"
+  notes: |
+    Dataset spans real, simulated, and mixed audio; supports benchmarking across data types .
+  contact:
+    name: "Ralph Peterson"
+    email: "unknown"
+  cite:
+  - |
+    @inproceedings{neurips2024_c00d37d6,
+      author = {Peterson, Ralph E and Tanelus, Aramis and Ick, Christopher and Mimica, Bartul and Francis, Niegil and Ivan, Violet J and Choudhri, Aman and Falkner, Annegret L and Murthy, Mala and Schneider, David M and Sanes, Dan H and Williams, Alex H},
+      booktitle = {Advances in Neural Information Processing Systems},
+      editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+      pages = {106370--106382},
+      publisher = {Curran Associates, Inc.},
+      title = {Vocal Call Locator Benchmark (VCL) for localizing rodent vocalizations from multi-channel audio},
+      url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/c00d37d6b04d73b870b963a4d70051c1-Paper-Datasets_and_Benchmarks_Track.pdf},
+      volume = {37},
+      year = {2024}
+    }
+  datasets:
+    links: []
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: ""
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Some baseline CNN models for sound source localization are reported,
+        but no publicly available or fully integrated runnable codebase yet.
+    specification:
+      rating: 5
+      reason: |
+        Well-defined localization tasks with multiple scenarios and real-world
+        environment conditions; input/output formats clearly described.
+    dataset:
+      rating: 4
+      reason: |
+        Large-scale audio dataset covering real and simulated data with
+        standardized splits, though exact data formats are not fully detailed.
+    metrics:
+      rating: 5
+      reason: |
+        Includes localization error, precision, recall, and other relevant metrics
+        for robust evaluation.
+    reference_solution:
+      rating: 5
+      reason: |
+        Multiple baselines evaluated over diverse models and architectures,
+        supporting reproducibility of benchmark comparisons.
+    documentation:
+      rating: 1
+      reason: |
+        Methodology and paper are thorough, but setup instructions and runnable
+        code are not publicly provided, limiting user onboarding.
+

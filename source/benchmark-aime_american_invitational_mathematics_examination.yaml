@@ -1,0 +1,87 @@
+- date: "2025-03-13"
+  version: "1"
+  last_updated: "2025-03-13"
+  expired: "false"
+  valid: "yes"
+  valid_date: "2025-03-13"
+  name: "AIME (American Invitational Mathematics Examination)"
+  url: "https://artofproblemsolving.com/wiki/index.php/AIME_Problems_and_Solutions"
+  doi: "NA"
+  domain:
+  - Mathematics
+  focus: "Pre-college advanced problem solving"
+  keywords:
+  - "algebra"
+  - "combinatorics"
+  - "number theory"
+  - "geometry"
+  summary: |
+    The AIME is a 15-question, 3-hour exam for high-school students featuring challenging
+    short-answer math problems in algebra, number theory, geometry, and combinatorics, 
+    assessing depth of problem-solving ability.
+  licensing: "unknown"
+  task_types:
+  - "Problem solving"
+  ai_capability_measured:
+  - "Mathematical problem-solving and reasoning"
+  metrics:
+  - "Accuracy"
+  models:
+  - "unknown"
+  ml_motif:
+  - Reasoning & Generalization
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "0"
+  notes: "Designed for human test-takers"
+  contact:
+    name: "unknown"
+    email: "unknown"
+  cite:
+  - |
+    @misc{www-aime,
+      author = {TBD},
+      title = {AIME},
+      url = {https://www.vals.ai/benchmarks/aime-2025-03-13},
+      month = mar,
+      year = 2025,
+      note = {[Online accessed 2025-06-24]}
+    }
+  datasets:
+    links:
+    - name: "AoPS website"
+      url: "https://artofproblemsolving.com/wiki/index.php/AIME_Problems_and_Solutions"
+  results:
+    links:
+    - name: "unknown"
+      url: "unknown"
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 0
+      reason: |
+        No code available
+    specification:
+      rating: 3
+      reason: |
+        Task and Inputs/Outputs are well specified. No system constraints or dataset format is mentioned
+    dataset:
+      rating: 4
+      reason: |
+        Easily accessible data with problems and solutions, but no splits
+    metrics:
+      rating: 4
+      reason: |
+        Correctness is measured, but no grading guidelines are provided.
+    reference_solution:
+      rating: 0
+      reason: |
+        Not given. Human performance stats exist, but no mentions of AI performance
+    documentation:
+      rating: 3
+      reason: |
+        Some background and other information is provided, but it is not comprehensive. No info on how to run an evaluation
+

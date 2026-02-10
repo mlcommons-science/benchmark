@@ -1,0 +1,95 @@
+- date: "2025-01-24"
+  version: "v1.0"
+  last_updated: "2025-02"
+  expired: "unknown"
+  valid: "yes"
+  valid_date: "2025-01-24"
+  name: "Single Qubit Readout on QICK System"
+  url: "https://github.com/fastmachinelearning/ml-quantum-readout"
+  doi: "10.48550/arXiv.2501.14663"
+  domain:
+  - Computational Science & AI
+  focus: "Real-time single-qubit state classification using FPGA firmware"
+  keywords:
+  - "qubit readout"
+  - "hls4ml"
+  - "FPGA"
+  - "QICK"
+  summary: |
+    Implements real-time ML models for single-qubit readout on the Quantum Instrumentation Control Kit (QICK), using hls4ml to deploy quantized neural networks on RFSoC FPGAs. Offers high-fidelity, low-latency quantum state discrimination. :contentReference[oaicite:0]{index=0}
+  licensing: "NA"
+  task_types:
+  - "Classification"
+  ai_capability_measured:
+  - "Single-shot fidelity"
+  - "inference latency"
+  metrics:
+  - "Accuracy"
+  - "Latency"
+  models:
+  - "hls4ml quantized NN"
+  ml_motif:
+  - Classification
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  solutions: "Solution details are described in the referenced paper or repository."
+  notes: |
+    Achieves ~96% fidelity with ~32 ns latency and low FPGA resource utilization. 
+  contact:
+    name: "Javier Campos, Giuseppe Di Guglielmo"
+    email: "unknown"
+  cite:
+  - |
+    @misc{diguglielmo2025endtoendworkflowmachinelearningbased,
+      archiveprefix = {arXiv},
+      author        = {Giuseppe Di Guglielmo and Botao Du and Javier Campos and Alexandra Boltasseva and Akash V. Dixit and Farah Fahim and Zhaxylyk Kudyshev and Santiago Lopez and Ruichao Ma and Gabriel N. Perdue and Nhan Tran and Omer Yesilyurt and Daniel Bowring},
+      eprint        = {2501.14663},
+      primaryclass  = {quant-ph},
+      title         = {End-to-end workflow for machine learning-based qubit readout with QICK and hls4ml},
+      url           = {https://arxiv.org/abs/2501.14663},
+      year          = {2025}
+    }
+  datasets:
+    links:
+    - name: "Zenodo: ml-quantum-readout dataset"
+      url: "zenodo.org/records/14427490"
+  results:
+    links:
+    - name: "Gemini LLM Deep Research"
+      url: "(none)"
+    - name: "ChatGPT LLM"
+      url: ""
+  fair:
+    reproducible: "Yes"
+    benchmark_ready: "Yes"
+  ratings:
+    software:
+      rating: 3
+      reason: |
+        Code and FPGA firmware available on GitHub; integration with hls4ml demonstrated.
+        Some deployment details and examples are provided but overall software maturity is moderate.
+    specification:
+      rating: 4
+      reason: |
+        Task clearly defined: real-time single-qubit state classification with latency and
+        fidelity constraints. Labeling and ground truth definitions could be more explicit.
+    dataset:
+      rating: 4
+      reason: |
+        Dataset hosted on Zenodo with structured data; however, detailed documentation on
+        image acquisition and labeling pipeline is limited.
+    metrics:
+      rating: 5
+      reason: |
+        Standard classification metrics (accuracy, latency) are used and directly relevant
+        to the quantum readout task.
+    reference_solution:
+      rating: 1
+      reason: |
+        No baseline or starter models with runnable code are linked publicly.
+    documentation:
+      rating: 4
+      reason: |
+        Codabench task page and GitHub repo provide descriptions and usage instructions,
+        but detailed API or deployment tutorials are limited.

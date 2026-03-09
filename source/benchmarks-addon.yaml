@@ -3630,7 +3630,7 @@
         but could benefit from more thorough tutorials and code walkthroughs.
 - date: "2025-03-03"
   version: "v1.0"
-  last_updated: "2025-03"
+  last_updated: "2026-03"
   expired: "unknown"
   valid: "yes"
   valid_date: "2025-03-03"
@@ -3654,8 +3654,8 @@
   ai_capability_measured:
   - "Hybrid detection in biological systems"
   metrics:
-  - "Classification accuracy"
-  - "F1 score"
+  - "TPR at TNR = 95%"
+  - "PRC AUC"
   models:
   - "CNN-based detectors"
   ml_motif:
@@ -3681,13 +3681,13 @@
       year          = {2025}
     }
   datasets:
-    links: []
+    links:
+    - name: "Challenge Data Documentation"
+      url: "https://github.com/Imageomics/HDR-anomaly-challenge/blob/main/pages/data.md"
   results:
     links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://www.codabench.org/competitions/3764/"
-    - name: "ChatGPT LLM"
-      url: ""
+    - name: "Codabench Results Tab"
+      url: "https://www.codabench.org/competitions/3764/#/results-tab"
   fair:
     reproducible: "Yes"
     benchmark_ready: "Yes"
@@ -3695,33 +3695,34 @@
     software:
       rating: 3
       reason: |
-        Codabench platform provides submission infrastructure but no fully maintained
-        code repository or reproducible baseline implementations.
+        Core benchmark code and bundle components are complete and publicly available with
+        container/setup guidance, but documentation depth and no-modification local run robustness
+        are limited.
     specification:
       rating: 4
       reason: |
-        Task is clearly described with domain-specific anomaly detection objectives and
-        relevant physics motivation.
+        Task, dataset format, inputs, and outputs are clearly specified; system constraints are
+        present but mostly policy-level rather than technical.
     dataset:
-      rating: 3
+      rating: 5
       reason: |
-        Dataset consists of real detector data with synthetic anomaly injections; access
-        is restricted and requires NDA, limiting openness and FAIR compliance.
+        Primary artifacts show strong FAIR alignment with documented provenance/licensing and
+        explicit train/development/final structure.
     metrics:
-      rating: 3
+      rating: 5
       reason: |
-        Standard metrics (ROC, F1, precision) are used; evaluation protocols are clear
-        but not deeply elaborated.
+        Metrics are clearly specified and implemented, and they directly capture benchmark goals.
     reference_solution:
-      rating: 2
-      reason: |
-        Baselines are partially described but lack public code or reproducible execution
-        scripts.
-    documentation:
       rating: 3
       reason: |
-        Challenge website provides basic descriptions and evaluation metrics but lacks
-        comprehensive tutorials or example workflows.
+        Public baseline submission directories and scoring workflow are available and sufficiently
+        documented for benchmark use, but full HW specification and strict baseline training details
+        (hyperparameters/training code) are not fully provided in the primary challenge repository.
+    documentation:
+      rating: 4
+      reason: |
+        Documentation strongly covers task, background, motivation, and evaluation;
+        no benchmark-specific publication was identified in the primary artifacts.
 
 - date: "2025-03-03"
   version: "v1.0"

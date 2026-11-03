@@ -5101,3 +5101,107 @@
       reason: |
         The GitHub repo and NeurIPS paper provide detailed guidance on dataset use,
         structure, and training setup. Tutorials and walkthroughs could be expanded further.
+
+- date: "2026-09-15"
+  version: "2026-11-03 (55-task edition)"
+  last_updated: "2026-11-03"
+  expired: "no"
+  valid: true
+  valid_date: "2026-11-03"
+  name: "LifeSci Diamond"
+  url: "https://www.arca.inc/blog/lifesci-diamond"
+  doi: "unknown"
+  domain:
+    - "Life Sciences"
+    - "Regulatory Affairs"
+  focus: "Regulatory affairs deliverables for drugs, biologics and medical devices"
+  keywords:
+    - "regulatory affairs"
+    - "life sciences"
+    - "document consistency"
+    - "grounded generation"
+    - "tool use"
+  summary: |
+    LifeSci Diamond evaluates AI systems on 55 regulatory affairs tasks developed
+    with practising regulatory specialists. Tasks include post-approval change
+    classifications, dossier consistency checks and drafting from incomplete
+    evidence. Answers are graded against task-specific rubrics by a three-vendor
+    LLM jury. Strict pass requires every rubric line to be fully met with no
+    fail or penalty line triggered. Ten tasks and the harness are public; the
+    remaining 45 tasks are held out. The best evaluated system passes 29.1%
+    of the full 55-task benchmark. Public-subset scores are not comparable to
+    the full-set results.
+  licensing: "Apache-2.0 (code); CC-BY-4.0 (public tasks and documents)"
+  task_types:
+    - "Document-grounded generation"
+    - "Classification"
+    - "Consistency checking"
+  ai_capability_measured:
+    - "Regulatory reasoning"
+    - "Evidence grounding"
+    - "Recognising missing evidence"
+  metrics:
+    - "Strict task pass rate"
+  models:
+    - "GPT-6 Astra"
+    - "Claude Opus 5"
+    - "Claude Opus 5.5"
+    - "Muse Wonder"
+    - "Arca Auto"
+  ml_motif:
+    - "Language modelling"
+    - "Tool-augmented reasoning"
+  type: "Benchmark"
+  ml_task:
+    - "Natural Language Generation"
+  solutions: "22"
+  notes: |
+    The article reports 18 plain model APIs and four Arca configurations, with
+    model IDs, settings and run batches. Forty-four answer keys were written
+    or reviewed by regulatory specialists; eleven have not had expert review.
+    Grading is stochastic and each result uses one answer per task/system.
+    Full-set results cannot be independently reproduced from the public subset.
+    The contributor is affiliated with Arca; ratings are left for catalogue review.
+  contact:
+    name: "Arca"
+    email: "contact@arca.inc"
+  cite:
+    - |
+      @misc{arca2026lifescidiamond,
+        title={Introducing LifeSci Diamond},
+        author={{Arca}},
+        year={2026},
+        url={https://www.arca.inc/blog/lifesci-diamond}
+      }
+  datasets:
+    links:
+      - name: "LifeSci Diamond public subset (10 tasks)"
+        url: "https://huggingface.co/datasets/arca-inc/lifesci-diamond"
+      - name: "Public harness and task documents"
+        url: "https://github.com/arcainc/lifesci-diamond"
+  results:
+    links:
+      - name: "55-task results, methodology and run settings"
+        url: "https://www.arca.inc/blog/lifesci-diamond#models-and-run-settings"
+  fair:
+    reproducible: false
+    benchmark_ready: true
+  ratings:
+    software:
+      rating: "unknown"
+      reason: "Not independently rated by the catalogue maintainers."
+    specification:
+      rating: "unknown"
+      reason: "Not independently rated by the catalogue maintainers."
+    dataset:
+      rating: "unknown"
+      reason: "Not independently rated by the catalogue maintainers."
+    metrics:
+      rating: "unknown"
+      reason: "Not independently rated by the catalogue maintainers."
+    reference_solution:
+      rating: "unknown"
+      reason: "Not independently rated by the catalogue maintainers."
+    documentation:
+      rating: "unknown"
+      reason: "Not independently rated by the catalogue maintainers."

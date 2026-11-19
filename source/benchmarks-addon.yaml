@@ -668,97 +668,286 @@
         Detailed paper and tools described; open repo planned but not yet complete
 
 
-- date: "2024-06-24"
-  version: "v1.0"
-  last_updated: "2024-06"
-  expired: "unknown"
-  valid: "yes"
-  valid_date: "2024-06-24"
-  name: "Smart Pixels for LHC"
-  url: "https://arxiv.org/abs/2406.14860"
-  doi: "10.48550/arXiv.2406.14860"
+- date: "2026-11-18"
+  version: "v0.1.0"
+  last_updated: "2026-11-18"
+  expired: "no"
+  valid: true
+  valid_date: "2026-11-18"
+  name: "Smart Pixels Filter"
+  url: "https://github.com/smart-pix/smartpixels-benchmark/tree/main/benchmarks/filter"
+  doi: "10.1088/2632-2153/ad6a00"
   domain:
-  - High Energy Physics
-  focus: "On-sensor, in-pixel ML filtering for high-rate LHC pixel detectors"
+  - "High Energy Physics"
+  focus: "On-sensor rejection of low-pT pixel clusters with a network small enough to run inside the pixel ASIC"
   keywords:
-  - "smart pixel"
+  - "smart pixels"
   - "on-sensor inference"
   - "data reduction"
-  - "trigger"
+  - "quantized neural networks"
+  - "QKeras"
+  - "ASIC"
+  - "pixel detector"
+  - "HL-LHC"
   summary: |
-    Presents a 256x256-pixel ROIC in 28 nm CMOS with embedded 2-layer NN for cluster filtering
-    at 25 ns, achieving 54-75% data reduction while maintaining noise and latency constraints. Prototype
-    consumes ~300 microW/pixel and operates in combinatorial digital logic.
-  licensing: "Via Fermilab"
+    Classify one silicon-pixel cluster, seen by a 13 x 21 pixel readout chip with 50 x 12.5 um2 pixels
+    in a 100 um sensor, as coming from a high-momentum track (|pT| > 0.2 GeV, keep) or a low-momentum
+    track of either charge (reject). Inputs are the cluster's y charge profile at 4 ns (or 8 time slices)
+    and its y position. An asic track fixes the on-chip constraints (at most 2819 parameters, 2-bit
+    pixel charge at 400/1600/2400 e, 6-bit y position); an open track has none. The primary metric is
+    the background rejection at the paper's signal efficiency of 0.933, with signal efficiency, background
+    rejection and data reduction at the argmax operating point, all reweighted to the physical pT spectrum.
+    Five-seed reference runs of the paper's models reproduce Yoo et al. (2024) Table 1 within 1.3
+    point. Data are Zenodo 10783560 v3 (PixelAV, CC-BY-4.0); the package includes training, Slurm jobs,
+    committed reference weights and results, and a validated Codabench results-submission bundle.
+  licensing: "Apache-2.0 (code); CC-BY-4.0 (dataset)"
   task_types:
-  - "Image Classification"
-  - "Data filtering"
+  - "Classification"
   ai_capability_measured:
-  - "On-chip"
-  - "low-power inference; data reduction"
+  - "Low-power, low-latency on-chip inference"
+  - "Accuracy under hardware (parameter and bit-width) constraints"
   metrics:
-  - "Data rejection rate"
-  - "Power per pixel"
+  - "Background rejection at fixed signal efficiency (0.933)"
+  - "Signal efficiency"
+  - "Background rejection"
+  - "Data reduction"
+  - "Turn-on curve (acceptance vs pT)"
   models:
-  - "2-layer pixel NN"
+  - "M1: y-size + y-position dense network"
+  - "M2: y-profile + y-position dense network"
+  - "M3: 8-time-slice y-profile Conv2D network"
+  - "QM2: QKeras-quantized M2 (asic track)"
   ml_motif:
-  - Classification
+  - "Classification"
   type: "Benchmark"
   ml_task:
-  - "Image Classification"
-  solutions: "Solution details are described in the referenced paper or repository."
+  - "Supervised Learning"
   notes: |
-    Prototype in CMOS 28 nm; proof-of-concept for Phase III pixel upgrades.
+    Replaces the earlier "Smart Pixels for LHC" entry. Sibling benchmark: "Smart Pixels Regression", in the
+    same repository. Every divergence from the paper is recorded in docs/VALIDATION.md. The paper's Table 2
+    estimate on CMS-internal tracked/untracked samples is not part of this release.
   contact:
     name: "Lindsey Gray; Jennet Dickinson"
-    email: "unknown"
+    email: "lagray@fnal.gov; jennet.dickinson@cornell.edu"
   cite:
   - |
+    @software{smartpixels_benchmark,
+      author = {Gray, Lindsey},
+      title = {Smart Pixels benchmarks},
+      version = {0.1.0},
+      year = {2026},
+      license = {Apache-2.0},
+      url = {https://github.com/smart-pix/smartpixels-benchmark}
+    }
+  - |
+    @article{Yoo_2024,
+      title = {Smart pixel sensors: towards on-sensor filtering of pixel clusters with deep learning},
+      volume = {5},
+      ISSN = {2632-2153},
+      url = {http://dx.doi.org/10.1088/2632-2153/ad6a00},
+      DOI = {10.1088/2632-2153/ad6a00},
+      number = {3},
+      journal = {Machine Learning: Science and Technology},
+      publisher = {IOP Publishing},
+      author = {Yoo, Jieun and Dickinson, Jennet and Swartz, Morris and Di Guglielmo, Giuseppe and Bean, Alice and Berry, Douglas and Blanco Valentin, Manuel and DiPetrillo, Karri and Fahim, Farah and Gray, Lindsey and Hirschauer, James and Kulkarni, Shruti R and Lipton, Ron and Maksimovic, Petar and Mills, Corrinne and Neubauer, Mark S and Parpillon, Benjamin and Pradhan, Gauri and Syal, Chinar and Tran, Nhan and Wen, Dahai and Young, Aaron},
+      year = {2024},
+      month = aug,
+      pages = {035047}
+    }
+  - |
     @misc{parpillon2024smartpixelsinpixelai,
-      archiveprefix = {arXiv},
-      author        = {Benjamin Parpillon and Chinar Syal and Jieun Yoo and Jennet Dickinson and Morris Swartz and Giuseppe Di Guglielmo and Alice Bean and Douglas Berry and Manuel Blanco Valentin and Karri DiPetrillo and Anthony Badea and Lindsey Gray and Petar Maksimovic and Corrinne Mills and Mark S. Neubauer and Gauri Pradhan and Nhan Tran and Dahai Wen and Farah Fahim},
-      eprint        = {2406.14860},
-      primaryclass  = {physics.ins-det},
-      title         = {Smart Pixels: In-pixel AI for on-sensor data filtering},
-      url           = {https://arxiv.org/abs/2406.14860},
-      year          = {2024}
+      doi = {10.48550/ARXIV.2406.14860},
+      url = {https://arxiv.org/abs/2406.14860},
+      author = {Parpillon, Benjamin and Syal, Chinar and Yoo, Jieun and Dickinson, Jennet and Swartz, Morris and Di Guglielmo, Giuseppe and Bean, Alice and Berry, Douglas and Valentin, Manuel Blanco and DiPetrillo, Karri and Badea, Anthony and Gray, Lindsey and Maksimovic, Petar and Mills, Corrinne and Neubauer, Mark S. and Pradhan, Gauri and Tran, Nhan and Wen, Dahai and Fahim, Farah},
+      title = {Smart Pixels: In-pixel AI for on-sensor data filtering},
+      publisher = {arXiv},
+      year = {2024}
+    }
+  - |
+    @misc{swartz2024smartpixeldataset,
+      doi = {10.5281/ZENODO.10783560},
+      url = {https://zenodo.org/doi/10.5281/zenodo.10783560},
+      author = {Swartz, Morris and Dickinson, Jennet},
+      title = {Smart pixel dataset},
+      publisher = {Zenodo},
+      year = {2024}
     }
   datasets:
-    links: []
+    links:
+    - name: "Smart pixel dataset, Zenodo 10783560 (v3)"
+      url: "https://doi.org/10.5281/zenodo.10783560"
   results:
     links:
-    - name: "Gemini LLM Deep Research"
-      url: "https://docs.google.com/document/d/1Fevo7IGGAFC8pHrGGGA4t9V-nUwZkDezncAKDHN4v0E/edit?usp=sharing"
-    - name: "ChatGPT LLM"
-      url: ""
+    - name: "Filter reference leaderboard (5 seeds per model)"
+      url: "https://github.com/smart-pix/smartpixels-benchmark/blob/main/reference_results/filter/LEADERBOARD.md"
+    - name: "Validation record (paper comparison)"
+      url: "https://github.com/smart-pix/smartpixels-benchmark/blob/main/docs/VALIDATION.md"
+    - name: "Rubric self-score"
+      url: "https://github.com/smart-pix/smartpixels-benchmark/blob/main/benchmarks/filter/SCORE_REPORT.md"
   fair:
-    reproducible: "Yes"
-    benchmark_ready: "Yes (Zenodo:7331128)"
+    reproducible: true
+    benchmark_ready: true
   ratings:
     software:
-      rating: 2
+      rating: 5
       reason: |
-        No packaged code or setup scripts available; replication depends on hardware description and paper
+        None. Pinned uv environment, tests, and Slurm jobs that reran the full reference on HiPerGator.
     specification:
       rating: 5
       reason: |
-        None
+        None. Task, input/output format and asic-track hardware constraints are stated and checked at scoring.
     dataset:
-      rating: 2
+      rating: 5
       reason: |
-        No dataset links; not publicly hosted or FAIR-compliant
+        None. Public, versioned Zenodo record (CC-BY-4.0) with documented schema, file-disjoint splits and sample IDs.
     metrics:
       rating: 5
       reason: |
-        None
+        None. Formulas, reweighting and edge cases are defined; the paper's stored predictions reproduce exactly.
     reference_solution:
-      rating: 3
+      rating: 5
       reason: |
-        In-pixel 2-layer NN described and evaluated, but reproducibility and source files are not released
+        None. Four reference models trained over 5 seeds, with committed weights (sha256) and every metric reported.
     documentation:
-      rating: 3
+      rating: 5
       reason: |
-        Paper contains detailed descriptions, but no repo or external guide for reproducing results
+        None. The cited papers define the task, data and reference models; no paper describes this benchmark package itself.
+
+- date: "2026-11-18"
+  version: "v0.1.0"
+  last_updated: "2026-11-18"
+  expired: "no"
+  valid: true
+  valid_date: "2026-11-18"
+  name: "Smart Pixels Regression"
+  url: "https://github.com/smart-pix/smartpixels-benchmark/tree/main/benchmarks/regression"
+  doi: "10.48550/arXiv.2602.15946"
+  domain:
+  - "High Energy Physics"
+  focus: "On-chip estimation of a pixel cluster's hit position and angles, with uncertainties, under ASIC constraints"
+  keywords:
+  - "smart pixels"
+  - "on-sensor inference"
+  - "probabilistic regression"
+  - "uncertainty estimation"
+  - "quantized neural networks"
+  - "QKeras"
+  - "ASIC"
+  - "pixel detector"
+  summary: |
+    From one silicon-pixel cluster on a 16 x 16 pixel readout chip (50 x 12.5 um2 pixels, 100 um sensor),
+    predict where the particle crossed the sensor mid-plane (x, y) and its incidence angles (cot alpha,
+    cot beta), with a 1-sigma uncertainty for probabilistic models. Models train on the 3sExtended set
+    and are scored on two test sets (3s and 2s) to expose population effects. Four configurations follow
+    the paper, from 20 full-precision time frames to 2 frames with 2-bit inputs at learned thresholds and
+    quantized weights and activations. The asic track allows at most 2734 parameters, time slices 0 and 19,
+    2-bit inputs at three declared thresholds, and at most 8-bit weights and activations; an open track has
+    no constraints. The primary metric is rank_i68, the mean over x, y and beta of the 68 % shortest-interval
+    resolution relative to the quantized Full MLP reference. Residual means, predicted sigma, pulls, Gaussian
+    NLL and interval calibration are reported too. Five-seed reference runs of the paper's seven models
+    reproduce its qualitative findings; data are Zenodo 18472791 (CC-BY-4.0).
+  licensing: "Apache-2.0 (code); CC-BY-4.0 (dataset)"
+  task_types:
+  - "Regression"
+  ai_capability_measured:
+  - "Low-power, low-latency on-chip inference"
+  - "Uncertainty estimation and calibration"
+  - "Accuracy under hardware (input bit-width and quantization) constraints"
+  metrics:
+  - "rank_i68 (I68 relative to reference)"
+  - "I68 resolution (shortest 68 % interval of residuals)"
+  - "Residual mean"
+  - "Mean predicted uncertainty"
+  - "Pull mean and width"
+  - "Gaussian negative log-likelihood"
+  - "Interval calibration (1 and 2 sigma coverage)"
+  models:
+  - "Max Conv2D (multivariate-normal uncertainty head)"
+  - "Full Conv2D, Conv1D and MLP (per-variable uncertainties)"
+  - "Slim Conv2D, Conv1D and MLP (x, y, cot beta only)"
+  - "QKeras-quantized versions of each (asic track)"
+  - "Barycenter, LocalReco and Geometric non-ML baselines"
+  ml_motif:
+  - "Regression"
+  type: "Benchmark"
+  ml_task:
+  - "Supervised Learning"
+  notes: |
+    Replaces the earlier "Smart Pixels for LHC" entry together with "Smart Pixels Filter", in the same
+    repository. Every divergence from the paper (e.g. the Slim loss reduction and seed instabilities in
+    Max Conv2D) is recorded in docs/VALIDATION.md.
+  contact:
+    name: "Lindsey Gray; Jennet Dickinson"
+    email: "lagray@fnal.gov; jennet.dickinson@cornell.edu"
+  cite:
+  - |
+    @software{smartpixels_benchmark,
+      author = {Gray, Lindsey},
+      title = {Smart Pixels benchmarks},
+      version = {0.1.0},
+      year = {2026},
+      license = {Apache-2.0},
+      url = {https://github.com/smart-pix/smartpixels-benchmark}
+    }
+  - |
+    @misc{das2026onchipprobabilistic,
+      doi = {10.48550/ARXIV.2602.15946},
+      url = {https://arxiv.org/abs/2602.15946},
+      author = {Das, Arghya Ranjan and Jiang, David and Kovach-Fuentes, Rachel and Kuang, Shiqi and Mu{\~n}oz, Ana Sof{\'i}a Calle and Shekar, Danush and Dickinson, Jennet and Di Guglielmo, Giuseppe and Gray, Lindsey and Liu, Mia and Mills, Corrinne and Neubauer, Mark S. and Abadjiev, Daniel and Berry, Doug and DiPetrillo, Karri and Fahim, Farah and Gandrakota, Abhijith and Gupta, Harshul and Hirschauer, James and Howard, Eliza and Lipton, Ron and Maksimovic, Petar and Manganelli, Nick and Parpillon, Benjamin and Pearkes, Jannicke and Silvestre, Ricardo and Swartz, Morris and Syal, Chinar and Tran, Nhan and Trivedi, Amit and Ulmer, Keith and Wadud, Mohammad Abrar and Weiss, Benjamin and You, Eric},
+      title = {On-chip probabilistic inference for charged-particle tracking at the sensor edge},
+      publisher = {arXiv},
+      year = {2026}
+    }
+  - |
+    @misc{shekar2026smartpixels16x16,
+      doi = {10.5281/ZENODO.18472791},
+      url = {https://zenodo.org/doi/10.5281/zenodo.18472791},
+      author = {Shekar, Danush and Swartz, Morris and Dickinson, Jennet and Wadud, Mohammad Abrar},
+      title = {Smartpixels 16x16 datasets},
+      publisher = {Zenodo},
+      year = {2026}
+    }
+  datasets:
+    links:
+    - name: "Smartpixels 16x16 datasets, Zenodo 18472791"
+      url: "https://doi.org/10.5281/zenodo.18472791"
+  results:
+    links:
+    - name: "Regression reference leaderboard (5 seeds per model and configuration)"
+      url: "https://github.com/smart-pix/smartpixels-benchmark/blob/main/reference_results/regression/LEADERBOARD.md"
+    - name: "Validation record (paper comparison)"
+      url: "https://github.com/smart-pix/smartpixels-benchmark/blob/main/docs/VALIDATION.md"
+    - name: "Rubric self-score"
+      url: "https://github.com/smart-pix/smartpixels-benchmark/blob/main/benchmarks/regression/SCORE_REPORT.md"
+  fair:
+    reproducible: true
+    benchmark_ready: true
+  ratings:
+    software:
+      rating: 5
+      reason: |
+        None. Pinned uv environment, tests, and Slurm jobs that reran the full reference on HiPerGator.
+    specification:
+      rating: 5
+      reason: |
+        None. Task, input/output format and asic-track hardware constraints are stated and checked at scoring.
+    dataset:
+      rating: 5
+      reason: |
+        None. Public Zenodo record (CC-BY-4.0) with documented schema, containment selection, file-disjoint splits and sample IDs.
+    metrics:
+      rating: 5
+      reason: |
+        None. Resolution, bias and uncertainty-calibration metrics are defined with edge cases; ranking is fixed in code.
+    reference_solution:
+      rating: 5
+      reason: |
+        None. Seven models in four configurations trained over 5 seeds, with committed weights (sha256) and non-ML baselines.
+    documentation:
+      rating: 5
+      reason: |
+        None. The cited papers define the task, data and reference models; no paper describes this benchmark package itself.
+
 - date: "2023-10-03"
   version: "v1.0"
   last_updated: "2023-10"
